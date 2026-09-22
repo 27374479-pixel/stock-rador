@@ -192,6 +192,28 @@ Do not turn this into a mechanical exit rule. The purpose is to distinguish a sh
 
 If the expected duration cannot be defended from point-in-time evidence, the decision cannot exceed **Watch**.
 
+
+### Causal checkpoint / surprise-persistence plan (V3.3+)
+
+A structural regime can remain true after the stock-specific expectation gap has closed. Therefore every V3.3+ Candidate must predeclare a **checkpoint plan** before outcomes are opened.
+
+For each Candidate:
+- describe the **current surprise** at selection;
+- state what must remain **incremental** versus the market's already-known steady state;
+- list observable **closure indicators** showing that the earnings-surprise gap is closing even if the physical regime remains intact;
+- predeclare one or more checkpoint horizons in trading days;
+- for every checkpoint, specify which evidence must be refreshed and explicit conditions for **Continue**, **Downgrade**, and **Exit**.
+
+At a historical checkpoint, use only information available by that checkpoint timestamp. Freeze the checkpoint decision **before** opening the next price segment.
+
+Do not use the checkpoint protocol as a disguised fixed stop-loss or take-profit rule. Price can be used as expectation/valuation context at the checkpoint, but the decision must be grounded in causal state and company-realized economics.
+
+A useful decomposition is:
+
+`physical regime -> company realized economics -> incremental earnings surprise -> price/expectation gap`
+
+The first link can remain intact while the last two close.
+
 ### Balance sheet / cycle sensitivity
 Especially for cyclical or commodity signals, inspect:
 - inventory amount and purchase timing;
