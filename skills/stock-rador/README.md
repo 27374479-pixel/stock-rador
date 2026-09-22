@@ -3,7 +3,27 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 0.7.0
+## Current version: 0.8.0
+
+- [SKILL.md](versions/0.8.0/SKILL.md)
+- [EVALS.md](versions/0.8.0/EVALS.md)
+- [DISCOVERY.md](versions/0.8.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/0.8.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/0.8.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/0.8.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/0.8.0/missed-opportunity-audit.template.json)
+
+V0.8 keeps the v0.7 expectation-reset discipline and adds two independent High-priority gates:
+- **Opportunity Timing Gate** — pre-cutoff fundamental/revision persistence plus deterministic
+  20/60-day opportunity-basket relative-return breadth;
+- **Cross-sectional Asymmetry Gate** — select the acceptable-quality company with the best
+  unreflected revision headroom / valuation / catalyst / downside trade-off, rather than
+  mechanically selecting the highest-quality company.
+
+Neutral/adverse timing or mixed asymmetry may remain Research; they cannot be silently
+promoted to High-priority.
+
+## Previous current contract: 0.7.0
 
 - [SKILL.md](versions/0.7.0/SKILL.md)
 - [EVALS.md](versions/0.7.0/EVALS.md)
