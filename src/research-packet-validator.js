@@ -39,11 +39,15 @@ function validateResearchPacket(packet, options = {}) {
   if (!Array.isArray(packet.signals) || !packet.signals.length) throw new Error('signals must be a non-empty array');
 
   for (const [signalIndex, signal] of packet.signals.entries()) {
+    const signalCutoff = signal.asOf ? ts(signal.asOf, `signals[${signalIndex}].asOf`) : cutoff;
+    if (signalCutoff > cutoff) {
+      throw new Error(`signals[${signalIndex}].asOf cannot be later than packet.asOf`);
+    }
     if (!signal.beneficiaryArchetype || typeof signal.beneficiaryArchetype !== 'string') {
       throw new Error(`signals[${signalIndex}].beneficiaryArchetype is required`);
     }
-    validateEvidence(signal.evidence ?? [], cutoff, `signals[${signalIndex}].evidence`);
-    validateEvidence(signal.contraryEvidence ?? [], cutoff, `signals[${signalIndex}].contraryEvidence`);
+    validateEvidence(signal.evidence ?? [], signalCutoff, `signals[${signalIndex}].evidence`);
+    validateEvidence(signal.contraryEvidence ?? [], signalCutoff, `signals[${signalIndex}].contraryEvidence`);
 
     const candidates = signal.candidates ?? [];
     if (!Array.isArray(candidates)) throw new Error(`signals[${signalIndex}].candidates must be an array`);
