@@ -4,13 +4,14 @@ import json
 import re
 import sys
 import time
+import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
 from openpyxl import load_workbook
 
-SSE_URL = "https://query.sse.com.cn/security/stock/downloadStockListFile.do?csrcCode=&stockCode=&areaName=&stockType=1"
+SSE_URL = "https://query.sse.com.cn/sseQuery/commonQuery.do"
 SZSE_URL = "https://www.szse.cn/api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1110&TABKEY=tab1"
 
 UA = "Mozilla/5.0 stock-rador-audit-universe/0.6"
@@ -35,6 +36,68 @@ def http_bytes(url, referer):
                 break
             time.sleep(0.5 * (2 ** (attempt - 1)))
     raise RuntimeError(f"failed after retries: {url}: {last}")
+
+def http_json(url, params, headers):
+    last = None
+    query = urllib.parse.urlencode(params)
+    full_url = f"{url}?{query}"
+    for attempt in range(1, 6):
+        try:
+            req = urllib.request.Request(full_url, headers=headers)
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                raw = resp.read()
+                if len(raw) < 100:
+                    raise RuntimeError(f"response too small: {len(raw)} bytes")
+                return json.loads(raw.decode("utf-8")), attempt, full_url
+        except Exception as exc:
+            last = exc
+            if attempt == 5:
+                break
+            time.sleep(0.5 * (2 ** (attempt - 1)))
+    raise RuntimeError(f"failed after retries: {full_url}: {last}")
+
+def fetch_sse_main():
+    params = {
+        "STOCK_TYPE": "1",
+        "REG_PROVINCE": "",
+        "CSRC_CODE": "",
+        "STOCK_CODE": "",
+        "sqlId": "COMMON_SSE_CP_GPJCTPZ_GPLB_GP_L",
+        "COMPANY_STATUS": "2,4,5,7,8",
+        "type": "inParams",
+        "isPagination": "true",
+        "pageHelp.cacheSize": "1",
+        "pageHelp.beginPage": "1",
+        "pageHelp.pageSize": "10000",
+        "pageHelp.pageNo": "1",
+        "pageHelp.endPage": "1",
+    }
+    headers = {
+        "Host": "query.sse.com.cn",
+        "Pragma": "no-cache",
+        "Referer": "https://www.sse.com.cn/assortment/stock/list/share/",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131 Safari/537.36",
+    }
+    body, attempts, full_url = http_json(SSE_URL, params, headers)
+    rows = body.get("result")
+    if not isinstance(rows, list) or len(rows) < 1000:
+        raise RuntimeError(f"unexpected SSE result count: {len(rows) if isinstance(rows, list) else 'missing'}")
+    out = {}
+    for row in rows:
+        code = clean_text(row.get("A_STOCK_CODE"))
+        name = clean_text(row.get("SEC_NAME_CN"))
+        if not re.fullmatch(r"\d{6}", code) or not name:
+            continue
+        out[code] = {
+            "code": code,
+            "name": name,
+            "exchange": "SH",
+            "marketCode": 1,
+            "board": board_for(code),
+        }
+    if len(out) < 1000:
+        raise RuntimeError(f"unexpected SSE parsed main-board count: {len(out)}")
+    return list(out.values()), attempts, full_url
 
 def board_for(code):
     if code.startswith(MAIN_SH):
@@ -142,13 +205,10 @@ def main():
     if output.exists():
         raise RuntimeError(f"refusing to overwrite existing universe {output}")
 
-    sse_bytes, sse_attempts = http_bytes(SSE_URL, "https://www.sse.com.cn/assortment/stock/list/share/")
+    sse, sse_attempts, sse_query_url = fetch_sse_main()
     szse_bytes, szse_attempts = http_bytes(SZSE_URL, "https://www.szse.cn/market/product/stock/list/index.html")
 
-    sse = extract_rows(sse_bytes, "SH")
     szse = extract_rows(szse_bytes, "SZ")
-    if len(sse) < 1000:
-        raise RuntimeError(f"unexpected SSE parsed count: {len(sse)}")
     if len(szse) < 2000:
         raise RuntimeError(f"unexpected SZSE parsed count: {len(szse)}")
 
@@ -183,7 +243,7 @@ def main():
             "provider": "SSE + SZSE official stock-list downloads",
             "retrievedAt": now,
             "files": [
-                {"exchange": "SH", "url": SSE_URL, "parsedCount": len(sse), "attempts": sse_attempts},
+                {"exchange": "SH", "url": sse_query_url, "parsedCount": len(sse), "attempts": sse_attempts},
                 {"exchange": "SZ", "url": SZSE_URL, "parsedCount": len(szse), "attempts": szse_attempts},
             ],
         },
