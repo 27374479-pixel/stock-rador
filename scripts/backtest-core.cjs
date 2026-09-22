@@ -51,6 +51,7 @@ function validateManifest(manifest) {
   if (!manifest?.skill?.path) errors.push('skill.path is required');
   if (!manifest?.skill?.version) errors.push('skill.version is required');
   if (!manifest?.model?.name) errors.push('model.name is required');
+  if (!manifest?.screeningPath) errors.push('screeningPath is required');
   try { assertDate(manifest?.discoveryWindow?.startDate, 'discoveryWindow.startDate'); } catch (error) { errors.push(error.message); }
   try { assertDate(manifest?.discoveryWindow?.endDate, 'discoveryWindow.endDate'); } catch (error) { errors.push(error.message); }
   if (manifest?.discoveryWindow?.startDate && manifest?.discoveryWindow?.endDate && manifest.discoveryWindow.startDate > manifest.discoveryWindow.endDate) {
@@ -102,6 +103,8 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
   const files = [{ role: 'manifest', path: relativeManifest, sha256: sha256File(absoluteManifest) }];
   const skillPath = resolveInside(root, manifest.skill.path);
   files.push({ role: 'skill', path: manifest.skill.path, sha256: sha256File(skillPath) });
+  const screeningPath = resolveInside(root, manifest.screeningPath);
+  files.push({ role: 'screening', path: manifest.screeningPath, sha256: sha256File(screeningPath) });
 
   if (manifest.evaluationMode === 'historical_replay') {
     const sourcePackPath = resolveInside(root, manifest.contaminationControls.sourcePackPath);
