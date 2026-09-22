@@ -18,10 +18,7 @@ jobs:
           node-version: '24'
       - run: npm test
 
-  # Historical freeze/evaluation jobs are intentionally not replayed on every
-  # push. Their committed locks and uploaded artifacts are point-in-time records.
-  # Routine CI runs only the active untouched-window stage.
-  evaluate-skill-v33-2025-12-checkpoint20:
+  validate-v33-2025-12-checkpoint20:
     needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -30,11 +27,4 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node scripts/evaluate-skill-v33-window-2025-12-checkpoint20.cjs
-      - uses: actions/upload-artifact@v4
-        with:
-          name: skill-v33-2025-12-checkpoint20
-          path: |
-            research/skill_v33_2025_12_checkpoint20_outcome.json
-            research/skill_v33_2025_12_checkpoint20_outcome.md
-          if-no-files-found: error
+      - run: node scripts/validate-skill-v33-2025-12-checkpoint20.cjs
