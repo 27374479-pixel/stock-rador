@@ -179,6 +179,19 @@ Avoid fake precision. The purpose is to test whether the earnings change is plau
 
 If a meaningful valuation/expectation bridge cannot be built, the decision cannot exceed **Watch**.
 
+### Causal half-life / horizon bridge
+
+For every Candidate, state:
+- shock class: `event-repricing`, `cyclical-multi-quarter`, or `structural-multi-year`;
+- expected causal half-life in plain language;
+- the specific observable variables that would show normalization or thesis aging;
+- an expected research horizon;
+- why that horizon matches the earnings mechanism rather than a fixed backtest convention.
+
+Do not turn this into a mechanical exit rule. The purpose is to distinguish a short-lived repricing edge from a durable multi-year earnings regime before selection.
+
+If the expected duration cannot be defended from point-in-time evidence, the decision cannot exceed **Watch**.
+
 ### Balance sheet / cycle sensitivity
 Especially for cyclical or commodity signals, inspect:
 - inventory amount and purchase timing;
