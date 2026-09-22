@@ -112,3 +112,56 @@ test('V3.2 candidate requires a causal horizon bridge',()=>{
   };
   assert.equal(validateResearchPacket(p),true);
 });
+
+
+test('V3.3 candidate requires a predeclared checkpoint plan',()=>{
+  const p=packet();
+  p.schemaVersion='3.3';
+  p.signals[0].candidates[0].horizonBridge={
+    shockClass:'structural-multi-year',
+    expectedHalfLife:'several quarters',
+    normalizationIndicators:['realized ASP rolls over'],
+    expectedResearchHorizon:'120-250 trading days',
+    whyHorizonMatches:'earnings transition is multi-quarter'
+  };
+  assert.throws(()=>validateResearchPacket(p),/requires checkpointPlan/);
+  p.signals[0].candidates[0].checkpointPlan={
+    surprisePersistence:{
+      currentSurprise:'realized ASP and profit are accelerating',
+      whatMustRemainIncremental:'realized economics must continue to beat the pre-selection steady-state assumption',
+      closureIndicators:['profit growth decelerates without a new volume or margin bridge']
+    },
+    checkpoints:[{
+      afterTradingDays:120,
+      evidenceToRefresh:['latest company filing','realized ASP or shipment data'],
+      continueIf:['causal regime remains intact and earnings surprise remains open'],
+      downgradeIf:['physical regime persists but earnings surprise is closing'],
+      exitIf:['company-realized economics contradict the thesis']
+    }]
+  };
+  assert.equal(validateResearchPacket(p),true);
+});
+
+test('V3.3 checkpoint plan must be ordered and actionable',()=>{
+  const p=packet();
+  p.schemaVersion='3.3';
+  p.signals[0].candidates[0].horizonBridge={
+    shockClass:'structural-multi-year',
+    expectedHalfLife:'several quarters',
+    normalizationIndicators:['orders roll over'],
+    expectedResearchHorizon:'120-250 trading days',
+    whyHorizonMatches:'multi-quarter adoption'
+  };
+  p.signals[0].candidates[0].checkpointPlan={
+    surprisePersistence:{
+      currentSurprise:'orders accelerating',
+      whatMustRemainIncremental:'earnings estimates lag orders',
+      closureIndicators:['estimate revisions catch up']
+    },
+    checkpoints:[
+      {afterTradingDays:120,evidenceToRefresh:['filing'],continueIf:['intact'],downgradeIf:['slower'],exitIf:['broken']},
+      {afterTradingDays:60,evidenceToRefresh:['filing'],continueIf:['intact'],downgradeIf:['slower'],exitIf:['broken']}
+    ]
+  };
+  assert.throws(()=>validateResearchPacket(p),/unique and ascending/);
+});
