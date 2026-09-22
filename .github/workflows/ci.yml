@@ -92,3 +92,22 @@ jobs:
           name: skill-v32-2024-12-prefreeze
           path: research/skill_v32_2024_12_prefreeze.json
           if-no-files-found: error
+
+
+  evaluate-skill-v32-2024-12:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/evaluate-skill-v32-window-2024-12.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skill-v32-2024-12-outcomes
+          path: |
+            research/skill_v32_2024_12_outcomes.json
+            research/skill_v32_2024_12_outcomes.md
+          if-no-files-found: error
