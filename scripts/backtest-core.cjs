@@ -44,7 +44,7 @@ function resolveInside(rootDir, relativePath) {
 
 function validateManifest(manifest) {
   const errors = [];
-  if (!['1.0', '1.1'].includes(manifest?.schemaVersion)) errors.push('schemaVersion must be 1.0 or 1.1');
+  if (!['1.0', '1.1', '1.2'].includes(manifest?.schemaVersion)) errors.push('schemaVersion must be 1.0, 1.1 or 1.2');
   if (!/^[A-Za-z0-9._-]+$/.test(manifest?.runId ?? '')) errors.push('runId must use letters, numbers, dot, underscore or dash');
   if (!['historical_replay', 'forward'].includes(manifest?.evaluationMode)) errors.push('evaluationMode must be historical_replay or forward');
   try { assertIso(manifest?.createdAt, 'createdAt'); } catch (error) { errors.push(error.message); }
@@ -70,12 +70,25 @@ function validateManifest(manifest) {
   if (manifest?.outcomePolicy?.entryRule !== 'next_trading_day_open_after_cutoff_date') {
     errors.push('outcomePolicy.entryRule must be next_trading_day_open_after_cutoff_date');
   }
-  const trackedStates = manifest?.trackedMemoStates ?? manifest?.eligibleMemoStates;
-  const primaryStates = manifest?.primarySignalStates ?? trackedStates;
-  if (!Array.isArray(trackedStates) || trackedStates.length === 0) errors.push('trackedMemoStates must be non-empty');
-  if (!Array.isArray(primaryStates) || primaryStates.length === 0) errors.push('primarySignalStates must be non-empty');
-  if (Array.isArray(trackedStates) && Array.isArray(primaryStates) && primaryStates.some((state) => !trackedStates.includes(state))) {
-    errors.push('primarySignalStates must be a subset of trackedMemoStates');
+  if (manifest?.schemaVersion === '1.2') {
+    const trackedHypothesisStates = manifest?.trackedHypothesisStates;
+    const trackedSelectionStates = manifest?.trackedSelectionStates;
+    const primarySelectionStates = manifest?.primarySelectionStates;
+    if (!Array.isArray(trackedHypothesisStates) || trackedHypothesisStates.length === 0) errors.push('trackedHypothesisStates must be non-empty');
+    if (!Array.isArray(trackedSelectionStates) || trackedSelectionStates.length === 0) errors.push('trackedSelectionStates must be non-empty');
+    if (!Array.isArray(primarySelectionStates) || primarySelectionStates.length === 0) errors.push('primarySelectionStates must be non-empty');
+    if (Array.isArray(trackedSelectionStates) && Array.isArray(primarySelectionStates) &&
+        primarySelectionStates.some((state) => !trackedSelectionStates.includes(state))) {
+      errors.push('primarySelectionStates must be a subset of trackedSelectionStates');
+    }
+  } else {
+    const trackedStates = manifest?.trackedMemoStates ?? manifest?.eligibleMemoStates;
+    const primaryStates = manifest?.primarySignalStates ?? trackedStates;
+    if (!Array.isArray(trackedStates) || trackedStates.length === 0) errors.push('trackedMemoStates must be non-empty');
+    if (!Array.isArray(primaryStates) || primaryStates.length === 0) errors.push('primarySignalStates must be non-empty');
+    if (Array.isArray(trackedStates) && Array.isArray(primaryStates) && primaryStates.some((state) => !trackedStates.includes(state))) {
+      errors.push('primarySignalStates must be a subset of trackedMemoStates');
+    }
   }
   if (!Array.isArray(manifest?.selections)) errors.push('selections must be an array');
   if (manifest?.outcomePolicy?.matchedControlStatistic &&
@@ -85,8 +98,8 @@ function validateManifest(manifest) {
   if (manifest?.evaluationMode === 'historical_replay') {
     if (!manifest?.contaminationControls?.modelMemoryRisk) errors.push('historical_replay requires contaminationControls.modelMemoryRisk');
     if (!manifest?.contaminationControls?.sourcePackPath) errors.push('historical_replay requires contaminationControls.sourcePackPath');
-    if (manifest?.schemaVersion === '1.1' && !manifest?.contaminationControls?.identityStressPath) {
-      errors.push('schemaVersion 1.1 historical replay requires contaminationControls.identityStressPath');
+    if (['1.1', '1.2'].includes(manifest?.schemaVersion) && !manifest?.contaminationControls?.identityStressPath) {
+      errors.push('schemaVersion 1.1/1.2 historical replay requires contaminationControls.identityStressPath');
     }
   }
   return errors;
@@ -94,7 +107,7 @@ function validateManifest(manifest) {
 
 function validateScreening(screening, manifest) {
   const errors = [];
-  if (manifest?.schemaVersion !== '1.1') return errors;
+  if (!['1.1', '1.2'].includes(manifest?.schemaVersion)) return errors;
   if (screening?.runId !== manifest.runId) errors.push('screening.runId must match manifest.runId');
   const decisions = screening?.reviewDecisions;
   if (!Array.isArray(decisions)) {
@@ -123,7 +136,7 @@ function validateScreening(screening, manifest) {
 
 function validateIdentityStress(stress, manifest) {
   const errors = [];
-  if (manifest?.schemaVersion !== '1.1' || manifest?.evaluationMode !== 'historical_replay') return errors;
+  if (!['1.1', '1.2'].includes(manifest?.schemaVersion) || manifest?.evaluationMode !== 'historical_replay') return errors;
   if (stress?.runId !== manifest.runId) errors.push('identity stress runId must match manifest.runId');
   if (!['passed', 'failed', 'not_feasible'].includes(stress?.status)) {
     errors.push('identity stress status must be passed, failed or not_feasible');
@@ -135,17 +148,39 @@ function validateIdentityStress(stress, manifest) {
 
 function validateMemoForSelection(memo, selection, manifest) {
   const errors = [];
+  const isV12 = manifest?.schemaVersion === '1.2';
   const trackedStates = manifest?.trackedMemoStates ?? manifest?.eligibleMemoStates ?? [];
   const primaryStates = manifest?.primarySignalStates ?? trackedStates;
+  const trackedHypothesisStates = manifest?.trackedHypothesisStates ?? [];
+  const trackedSelectionStates = manifest?.trackedSelectionStates ?? [];
+  const primarySelectionStates = manifest?.primarySelectionStates ?? [];
+
   try { assertIso(memo?.cutoffAt, `${selection.memoPath}.cutoffAt`); } catch (error) { errors.push(error.message); }
   try { assertIso(memo?.researchReadyAt, `${selection.memoPath}.researchReadyAt`); } catch (error) { errors.push(error.message); }
   if (memo?.actionableAt !== null && memo?.actionableAt !== undefined) {
     try { assertIso(memo.actionableAt, `${selection.memoPath}.actionableAt`); } catch (error) { errors.push(error.message); }
   }
+
   if (memo?.skillVersion !== manifest.skill.version) errors.push(`${selection.memoPath} skillVersion does not match manifest`);
   if (memo?.hypothesisId !== selection.hypothesisId) errors.push(`${selection.memoPath} hypothesisId does not match selection`);
-  if (!trackedStates.includes(memo?.state)) errors.push(`${selection.memoPath} state ${memo?.state} is not tracked`);
-  const primary = primaryStates.includes(memo?.state);
+
+  let primary = false;
+  if (isV12) {
+    if (!trackedHypothesisStates.includes(memo?.hypothesisState)) {
+      errors.push(`${selection.memoPath} hypothesisState ${memo?.hypothesisState} is not tracked`);
+    }
+    if (!trackedSelectionStates.includes(memo?.selectionState)) {
+      errors.push(`${selection.memoPath} selectionState ${memo?.selectionState} is not tracked`);
+    }
+    primary = primarySelectionStates.includes(memo?.selectionState);
+    if (memo?.selectionState === 'No selection') {
+      errors.push(`${selection.memoPath} is referenced by a ticker selection but memo.selectionState is No selection`);
+    }
+  } else {
+    if (!trackedStates.includes(memo?.state)) errors.push(`${selection.memoPath} state ${memo?.state} is not tracked`);
+    primary = primaryStates.includes(memo?.state);
+  }
+
   if (primary && !memo?.actionableAt) errors.push(`${selection.memoPath} primary-signal state requires actionableAt`);
   if (!primary && memo?.actionableAt) errors.push(`${selection.memoPath} non-primary state must keep actionableAt null`);
   if (memo?.researchReadyAt && memo?.cutoffAt && Date.parse(memo.researchReadyAt) > Date.parse(memo.cutoffAt)) {
@@ -157,14 +192,19 @@ function validateMemoForSelection(memo, selection, manifest) {
   if (memo?.actionableAt && memo?.cutoffAt && Date.parse(memo.actionableAt) > Date.parse(memo.cutoffAt)) {
     errors.push(`${selection.memoPath} actionableAt must not be after cutoffAt`);
   }
+
   const realization = memo?.expectedRealization;
   if (!realization || ![realization.earliestTradingDays, realization.baseTradingDays, realization.latestTradingDays].every((n) => Number.isInteger(n) && n > 0)) {
     errors.push(`${selection.memoPath} expectedRealization must define positive earliest/base/latest trading days`);
   } else if (!(realization.earliestTradingDays <= realization.baseTradingDays && realization.baseTradingDays <= realization.latestTradingDays)) {
     errors.push(`${selection.memoPath} expectedRealization horizons must be ascending`);
   }
+
   const candidates = Array.isArray(memo?.aShareCandidates) ? memo.aShareCandidates : [];
-  if (!candidates.some((candidate) => candidate?.ticker === selection.ticker)) errors.push(`${selection.memoPath} does not contain selected ticker ${selection.ticker}`);
+  if (!candidates.some((candidate) => candidate?.ticker === selection.ticker)) {
+    errors.push(`${selection.memoPath} does not contain selected ticker ${selection.ticker}`);
+  }
+
   const controls = Array.isArray(memo?.matchedControls) ? memo.matchedControls : [];
   const controlTickers = new Set();
   for (const control of controls) {
@@ -184,12 +224,56 @@ function validateMemoForSelection(memo, selection, manifest) {
       errors.push(`${selection.memoPath} matched control ${control?.ticker ?? 'unknown'} lacks whySelectedCompanyShouldOutperform`);
     }
   }
-  if (primary && manifest?.schemaVersion === '1.1') {
+
+  if (primary && ['1.1', '1.2'].includes(manifest?.schemaVersion)) {
     const exception = typeof memo?.matchedControlException === 'string' && memo.matchedControlException.trim();
     if ((controls.length < 2 || controls.length > 5) && !exception) {
       errors.push(`${selection.memoPath} primary signal requires 2-5 matched controls or matchedControlException`);
     }
   }
+
+  if (isV12 && memo?.selectionState !== 'No selection') {
+    const comparison = memo?.selectionComparison;
+    if (!comparison || comparison.selectedTicker !== selection.ticker) {
+      errors.push(`${selection.memoPath} selectionComparison.selectedTicker must match selected ticker`);
+    } else {
+      const pairwise = Array.isArray(comparison.pairwise) ? comparison.pairwise : [];
+      const pairwiseTickers = new Set();
+      for (const item of pairwise) {
+        if (!controlTickers.has(item?.controlTicker)) {
+          errors.push(`${selection.memoPath} pairwise comparison references non-control ${item?.controlTicker ?? 'unknown'}`);
+        }
+        if (item?.controlTicker) {
+          if (pairwiseTickers.has(item.controlTicker)) errors.push(`${selection.memoPath} duplicates pairwise control ${item.controlTicker}`);
+          pairwiseTickers.add(item.controlTicker);
+        }
+        if (!['selected', 'control', 'mixed', 'insufficient'].includes(item?.netEdge)) {
+          errors.push(`${selection.memoPath} pairwise ${item?.controlTicker ?? 'unknown'} has invalid netEdge`);
+        }
+        if (!Array.isArray(item?.selectedAdvantages) || !Array.isArray(item?.selectedDisadvantages)) {
+          errors.push(`${selection.memoPath} pairwise ${item?.controlTicker ?? 'unknown'} requires advantage/disadvantage arrays`);
+        }
+        if (!Array.isArray(item?.evidenceRefs)) {
+          errors.push(`${selection.memoPath} pairwise ${item?.controlTicker ?? 'unknown'} requires evidenceRefs`);
+        }
+      }
+      if (controls.length && pairwise.length !== controls.length) {
+        errors.push(`${selection.memoPath} requires one pairwise comparison per matched control`);
+      }
+      if (!['clear', 'credible', 'mixed', 'insufficient'].includes(comparison?.selectionEdgeConclusion)) {
+        errors.push(`${selection.memoPath} selectionComparison.selectionEdgeConclusion is invalid`);
+      }
+      if (primary) {
+        if (!['clear', 'credible'].includes(comparison.selectionEdgeConclusion)) {
+          errors.push(`${selection.memoPath} High-priority selection requires clear or credible selection edge`);
+        }
+        if (pairwise.some((item) => ['control', 'insufficient'].includes(item?.netEdge))) {
+          errors.push(`${selection.memoPath} High-priority selection cannot have control/insufficient pairwise edge`);
+        }
+      }
+    }
+  }
+
   const cutoffDate = memo?.cutoffAt?.slice?.(0, 10);
   if (cutoffDate && (cutoffDate < manifest.discoveryWindow.startDate || cutoffDate > manifest.discoveryWindow.endDate)) {
     errors.push(`${selection.memoPath} cutoff date is outside discoveryWindow`);
@@ -222,7 +306,7 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
   if (manifest.evaluationMode === 'historical_replay') {
     const sourcePackPath = resolveInside(root, manifest.contaminationControls.sourcePackPath);
     files.push({ role: 'source_pack', path: manifest.contaminationControls.sourcePackPath, sha256: sha256File(sourcePackPath) });
-    if (manifest.schemaVersion === '1.1') {
+    if (['1.1', '1.2'].includes(manifest.schemaVersion)) {
       const identityStressPath = resolveInside(root, manifest.contaminationControls.identityStressPath);
       const identityStress = readJson(identityStressPath);
       const identityErrors = validateIdentityStress(identityStress, manifest);
@@ -359,6 +443,8 @@ function summarizeOutcomes(results, horizon) {
       medianExcessReturn: null, excessHitRate: null, positiveReturnRate: null,
       matchedControlCount: 0, meanMatchedControlExcess: null,
       medianMatchedControlExcess: null, matchedControlHitRate: null,
+      bestControlCount: 0, meanExcessVsBestControl: null,
+      medianExcessVsBestControl: null, winsAllControlsRate: null,
       meanRankPercentile: null, blockedEntryCount: 0
     };
   }
@@ -366,6 +452,8 @@ function summarizeOutcomes(results, horizon) {
   const excess = values.map((value) => value.excessReturn);
   const net = values.map((value) => value.netReturn);
   const matched = values.map((value) => value.matchedControlExcess).filter(Number.isFinite);
+  const bestControlExcess = values.map((value) => value.excessVsBestControl).filter(Number.isFinite);
+  const winsAll = values.map((value) => value.winsAllControls).filter((value) => typeof value === 'boolean');
   const rankPercentiles = values.map((value) => value.rankPercentile).filter(Number.isFinite);
   return {
     count: values.length,
@@ -379,6 +467,10 @@ function summarizeOutcomes(results, horizon) {
     meanMatchedControlExcess: mean(matched),
     medianMatchedControlExcess: median(matched),
     matchedControlHitRate: matched.length ? matched.filter((value) => value > 0).length / matched.length : null,
+    bestControlCount: bestControlExcess.length,
+    meanExcessVsBestControl: mean(bestControlExcess),
+    medianExcessVsBestControl: median(bestControlExcess),
+    winsAllControlsRate: winsAll.length ? winsAll.filter(Boolean).length / winsAll.length : null,
     meanRankPercentile: mean(rankPercentiles),
     blockedEntryCount: eligible.filter((result) => result.execution.status === 'blocked').length
   };
@@ -403,7 +495,9 @@ function aggregateByHypothesis(results, horizons) {
     }
     hypothesisResults.push({
       hypothesisId,
-      states: [...new Set(members.map((member) => member.state))],
+      states: [...new Set(members.map((member) => member.state).filter(Boolean))],
+      hypothesisStates: [...new Set(members.map((member) => member.hypothesisState).filter(Boolean))],
+      selectionStates: [...new Set(members.map((member) => member.selectionState).filter(Boolean))],
       tickerCount: members.length,
       horizons: horizonValues
     });
@@ -429,7 +523,10 @@ function aggregateByHypothesis(results, horizons) {
 function evaluateRun(manifest, memosByPath, prices) {
   const standardHorizons = manifest.outcomePolicy.holdingTradingDays;
   const cost = manifest.outcomePolicy.oneWayCostRate;
-  const primaryStates = manifest.primarySignalStates ?? manifest.trackedMemoStates ?? manifest.eligibleMemoStates ?? [];
+  const isV12 = manifest.schemaVersion === '1.2';
+  const primaryStates = isV12
+    ? (manifest.primarySelectionStates ?? [])
+    : (manifest.primarySignalStates ?? manifest.trackedMemoStates ?? manifest.eligibleMemoStates ?? []);
   const benchmarkTicker = manifest.benchmark.ticker;
   const benchmarkSeries = prices?.series?.[benchmarkTicker];
   if (!benchmarkSeries) throw new Error(`missing benchmark price series ${benchmarkTicker}`);
@@ -439,7 +536,8 @@ function evaluateRun(manifest, memosByPath, prices) {
   for (const selection of manifest.selections) {
     const memo = memosByPath[selection.memoPath];
     if (!memo) throw new Error(`missing memo ${selection.memoPath}`);
-    const isPrimarySignal = primaryStates.includes(memo.state);
+    const signalState = isV12 ? memo.selectionState : memo.state;
+    const isPrimarySignal = primaryStates.includes(signalState);
     const entryAnchorAt = isPrimarySignal ? memo.actionableAt : memo.researchReadyAt;
     if (!entryAnchorAt) throw new Error(`${selection.memoPath} lacks required entry anchor`);
     const entryAnchorDate = entryAnchorAt.slice(0, 10);
@@ -488,6 +586,12 @@ function evaluateRun(manifest, memosByPath, prices) {
       }
       const matchedControlBasketReturn = controlReturns.length ? mean(controlReturns.map((item) => item.netReturn)) : null;
       const matchedControlExcess = Number.isFinite(matchedControlBasketReturn) ? netReturn - matchedControlBasketReturn : null;
+      const bestControl = controlReturns.length
+        ? [...controlReturns].sort((a, b) => b.netReturn - a.netReturn || a.ticker.localeCompare(b.ticker))[0]
+        : null;
+      const bestControlReturn = bestControl?.netReturn ?? null;
+      const excessVsBestControl = Number.isFinite(bestControlReturn) ? netReturn - bestControlReturn : null;
+      const winsAllControls = controlReturns.length ? controlReturns.every((item) => netReturn > item.netReturn) : null;
       const ranked = [{ ticker: selection.ticker, netReturn, selected: true }, ...controlReturns.map((item) => ({ ...item, selected: false }))]
         .sort((a, b) => b.netReturn - a.netReturn || a.ticker.localeCompare(b.ticker));
       const selectedRank = ranked.findIndex((item) => item.selected) + 1;
@@ -499,6 +603,10 @@ function evaluateRun(manifest, memosByPath, prices) {
         excessReturn: netReturn - benchmarkReturn,
         matchedControlBasketReturn,
         matchedControlExcess,
+        bestControlTicker: bestControl?.ticker ?? null,
+        bestControlReturn,
+        excessVsBestControl,
+        winsAllControls,
         selectedRank,
         matchedSetSize: ranked.length,
         rankPercentile,
@@ -511,7 +619,10 @@ function evaluateRun(manifest, memosByPath, prices) {
       hypothesisId: selection.hypothesisId,
       ticker: selection.ticker,
       memoPath: selection.memoPath,
-      state: memo.state,
+      state: signalState,
+      hypothesisState: memo.hypothesisState ?? null,
+      selectionState: memo.selectionState ?? null,
+      selectionComparison: memo.selectionComparison ?? null,
       isPrimarySignal,
       researchReadyAt: memo.researchReadyAt,
       actionableAt: memo.actionableAt ?? null,
@@ -536,6 +647,8 @@ function evaluateRun(manifest, memosByPath, prices) {
   const primaryBaseExcess = primaryResults.map((result) => result.thesisBaseOutcome.excessReturn);
   const primaryBaseNet = primaryResults.map((result) => result.thesisBaseOutcome.netReturn);
   const primaryBaseMatched = primaryResults.map((result) => result.thesisBaseOutcome.matchedControlExcess).filter(Number.isFinite);
+  const primaryBaseBest = primaryResults.map((result) => result.thesisBaseOutcome.excessVsBestControl).filter(Number.isFinite);
+  const primaryBaseWinsAll = primaryResults.map((result) => result.thesisBaseOutcome.winsAllControls).filter((value) => typeof value === 'boolean');
   const primaryBaseRanks = primaryResults.map((result) => result.thesisBaseOutcome.rankPercentile).filter(Number.isFinite);
 
   return {
@@ -556,6 +669,10 @@ function evaluateRun(manifest, memosByPath, prices) {
         meanMatchedControlExcess: mean(primaryBaseMatched),
         medianMatchedControlExcess: median(primaryBaseMatched),
         matchedControlHitRate: primaryBaseMatched.length ? primaryBaseMatched.filter((value) => value > 0).length / primaryBaseMatched.length : null,
+        bestControlCount: primaryBaseBest.length,
+        meanExcessVsBestControl: mean(primaryBaseBest),
+        medianExcessVsBestControl: median(primaryBaseBest),
+        winsAllControlsRate: primaryBaseWinsAll.length ? primaryBaseWinsAll.filter(Boolean).length / primaryBaseWinsAll.length : null,
         meanRankPercentile: mean(primaryBaseRanks)
       }
     },
