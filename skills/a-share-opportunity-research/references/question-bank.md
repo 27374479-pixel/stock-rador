@@ -206,3 +206,10 @@ Origin: 2025-09 refrigerant structural thesis.
 - What checkpoint evidence would downgrade a structural Candidate even if the original bottleneck has not disappeared?
 
 Status: **promoted as a process requirement for V3.3 checkpoints**, but not as a numerical growth threshold or fixed holding-day rule.
+
+
+## 2025-12 first V3.3 checkpoint validation
+
+江西铜业 is the first full historical test of the V3.3 checkpoint protocol. The selected thesis generated +37.5% excess through the 20-day checkpoint, while the physical copper regime still looked strong. The checkpoint nevertheless froze **Exit** because record prices, broad narrative recognition and evidence of industrial demand destruction implied that the stock-specific expectation gap was closing. Later selected-stock prices remain unopened.
+
+Learning: **causal persistence and expectation-gap persistence are different state variables.** The checkpoint protocol should continue to evaluate both. This is not evidence for a fixed +X% take-profit.
