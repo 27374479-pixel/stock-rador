@@ -35,3 +35,22 @@ jobs:
             research/pilot_backtest.json
             research/pilot_backtest.md
           if-no-files-found: error
+
+
+  freeze-v2-2022-03:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/freeze-v2-window-2022-03.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v2-2022-03-selection
+          path: |
+            research/v2_2022_03_selection.json
+            research/v2_2022_03_selection.md
+          if-no-files-found: error
