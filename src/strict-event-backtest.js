@@ -100,7 +100,8 @@ function backtestEvent(options) {
     entryDelayBars = 0,
     buyCostRate = 0.001,
     sellCostRate = buyCostRate,
-    benchmarkBars = null
+    benchmarkBars = null,
+    enforceCashEquityTPlusOne = true
   } = options ?? {};
 
   assertBars(bars);
@@ -134,6 +135,16 @@ function backtestEvent(options) {
       status: 'blocked_entry',
       signalDate,
       entryDate: entryBar.date,
+      entryExecution
+    };
+  }
+
+  if(enforceCashEquityTPlusOne && holdingTradingDays < 2){
+    return {
+      status:'invalid_exit_schedule',
+      reason:'A-share cash equities bought on the entry session cannot be sold on the same trading session; holdingTradingDays must be at least 2',
+      signalDate,
+      entryDate:entryBar.date,
       entryExecution
     };
   }
@@ -201,8 +212,11 @@ function backtestEvent(options) {
     exitExecution,
     assumptions: {
       tPlusOne: true,
+      cashEquitySellTPlusOne: enforceCashEquityTPlusOne,
       entryRule: 'first trading session strictly after signalDate, plus entryDelayBars, at open',
-      exitRule: 'holdingTradingDays counts the entry session as day 1; exit at target close',
+      exitRule: enforceCashEquityTPlusOne
+        ? 'holdingTradingDays counts the entry session as day 1; A-share cash-equity settlement forbids selling on entry day, so holdingTradingDays must be at least 2'
+        : 'holdingTradingDays counts the entry session as day 1; exit at target close',
       blockedFillRule: 'no fill is assumed on zero-volume sessions, one-price limit-up buys, or one-price limit-down sells',
       historicalLimitRule: 'limitRate must be supplied from point-in-time data; board/ST rules are not inferred from the current ticker',
       adjustedPriceRule: executionBars === bars
