@@ -14,10 +14,12 @@ function manifest() {
     skill: { path: 'skills/SKILL.md', version: '0.2.0' },
     model: { name: 'test-model', reasoning: 'high' },
     screeningPath: 'screening.json',
+    implementationPaths: ['impl.js'],
     discoveryWindow: { startDate: '2024-01-01', endDate: '2024-12-31' },
     contaminationControls: { modelMemoryRisk: 'known_uncontrolled', sourcePackPath: 'sources.json' },
     benchmark: { ticker: '000300.SH', name: '沪深300' },
-    eligibleMemoStates: ['Research', 'High-priority research'],
+    trackedMemoStates: ['Research', 'High-priority research'],
+    primarySignalStates: ['High-priority research'],
     outcomePolicy: { entryRule: 'next_trading_day_open_after_cutoff_date', holdingTradingDays: [2], oneWayCostRate: 0.001 },
     selections: [{ memoPath: 'memo.json', hypothesisId: 'h1', ticker: '000001.SZ', limitRate: 0.10 }]
   };
@@ -28,6 +30,9 @@ function memo() {
     schemaVersion: '0.1',
     skillVersion: '0.2.0',
     cutoffAt: '2024-01-02T15:00:00.000+08:00',
+    researchReadyAt: '2024-01-02T14:00:00.000+08:00',
+    actionableAt: null,
+    expectedRealization: { earliestTradingDays: 1, baseTradingDays: 2, latestTradingDays: 2, rationale: 'test' },
     hypothesisId: 'h1',
     state: 'Research',
     aShareCandidates: [{ ticker: '000001.SZ', name: 'Example' }]
@@ -60,23 +65,37 @@ test('run lock hashes screening, skill, source pack, manifest and memo and detec
   fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
   fs.writeFileSync(path.join(root, 'sources.json'), '{}');
   fs.writeFileSync(path.join(root, 'screening.json'), '{}');
+  fs.writeFileSync(path.join(root, 'impl.js'), 'implementation');
   fs.writeFileSync(path.join(root, 'memo.json'), JSON.stringify(memo()));
   fs.writeFileSync(path.join(root, 'manifest.json'), JSON.stringify(manifest()));
   const lock = lockRun(path.join(root, 'manifest.json'), root);
   assert.equal(lock.candidateCount, 1);
   assert.equal(verifyLock(lock, root).length, 0);
   assert.ok(lock.files.some((file) => file.role === 'screening'));
+  assert.ok(lock.files.some((file) => file.role === 'implementation'));
   fs.appendFileSync(path.join(root, 'memo.json'), '\n');
   assert.ok(verifyLock(lock, root).some((item) => item.includes('memo.json')));
 });
 
-test('evaluation uses the next trading day and fixed benchmark-aligned horizon', () => {
+test('research candidates are tracked but excluded from primary signal metric', () => {
   const item = manifest();
   const evaluated = evaluateRun(item, { 'memo.json': memo() }, prices());
   assert.equal(evaluated.results[0].entryDate, '2024-01-03');
   assert.equal(evaluated.results[0].horizons['2'].exitDate, '2024-01-04');
-  assert.equal(evaluated.aggregate['2'].count, 1);
-  assert.ok(evaluated.results[0].horizons['2'].excessReturn > 0);
+  assert.equal(evaluated.aggregate.tickerLevel['2'].count, 1);
+  assert.equal(evaluated.aggregate.primaryTickerLevel['2'].count, 0);
+  assert.equal(evaluated.aggregate.primaryThesisBase.count, 0);
+});
+
+test('high-priority candidate enters from actionableAt and counts as primary', () => {
+  const item = manifest();
+  const action = memo();
+  action.state = 'High-priority research';
+  action.actionableAt = '2024-01-02T14:30:00.000+08:00';
+  const evaluated = evaluateRun(item, { 'memo.json': action }, prices());
+  assert.equal(evaluated.results[0].isPrimarySignal, true);
+  assert.equal(evaluated.aggregate.primaryTickerLevel['2'].count, 1);
+  assert.ok(evaluated.aggregate.primaryThesisBase.meanExcessReturn > 0);
 });
 
 test('round-trip costs are multiplicative', () => {
