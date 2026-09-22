@@ -4,6 +4,19 @@
 
 需要 Node.js 24 或更高版本。
 
+## AI Research Skill
+
+仓库现在把“研究判断”和“程序约束”分开：
+
+- AI 研究员：负责跨来源搜索、真伪核验、因果链推演、价值链映射、预期差与估值判断、反证和下一步研究；
+- 程序审计员：负责时间戳、`availableAt`、证据引用、独立来源、历史截点和价格回放，避免未来函数与事后挑样本。
+
+核心 Skill 在 [skills/stock-rador/SKILL.md](skills/stock-rador/SKILL.md)。它不预设 AI、存储、新能源、农业等行业白名单，而是从“现实世界发生了什么变化”开始，再寻找真正受益/受损的 A 股公司。
+
+评估协议见 [skills/stock-rador/EVALS.md](skills/stock-rador/EVALS.md)。每一版 Skill 都应先冻结，再生成 point-in-time 研究 memo，锁定之后才能打开后续收益；修改后的 Skill 必须换新的历史 holdout 或前向样本，不能在同一批赢家上反复调提示词。
+
+标准机会研究输出模板见 [skills/stock-rador/opportunity-memo.template.json](skills/stock-rador/opportunity-memo.template.json)。
+
 ## 快速开始
 
 仓库已经包含 6 条真实论坛记录。先校验并查看当前评级：

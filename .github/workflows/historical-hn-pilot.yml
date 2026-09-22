@@ -1,0 +1,42 @@
+name: historical-hn-pilot
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.2-20260922
+    paths:
+      - .github/workflows/historical-hn-pilot.yml
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.2-20260922
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Collect frozen Q1 2025 HN source pack
+        run: |
+          node scripts/collect-hn-generic.cjs \
+            --start 2025-01-01 \
+            --end 2025-04-01 \
+            --max-pages 3 \
+            --review-limit 120 \
+            --out backtests/runs/2025q1-hn-v0.2-001/source-pack.json
+
+      - name: Commit source pack
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025q1-hn-v0.2-001/source-pack.json
+          git commit -m "data: freeze 2025Q1 generic HN source pack"
+          git push origin HEAD:ai-skill-v0.2-20260922

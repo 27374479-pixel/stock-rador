@@ -1,0 +1,42 @@
+name: lock-2025q1-skill-run
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.2-20260922
+    paths:
+      - .github/workflows/lock-2025q1-skill-run.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.2-20260922
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Run repository tests
+        run: npm test
+
+      - name: Lock frozen research run
+        run: |
+          node scripts/lock-skill-run.cjs \
+            backtests/runs/2025q1-hn-v0.2-001/manifest.json \
+            backtests/runs/2025q1-hn-v0.2-001/lock.json
+
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025q1-hn-v0.2-001/lock.json
+          git commit -m "backtest: lock 2025Q1 skill run before outcome reveal"
+          git push origin HEAD:ai-skill-v0.2-20260922
