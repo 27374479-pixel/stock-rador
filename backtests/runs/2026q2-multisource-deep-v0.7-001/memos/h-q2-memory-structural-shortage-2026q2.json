@@ -1,0 +1,332 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.7.0",
+  "cutoffAt": "2026-05-31T23:59:59+08:00",
+  "researchReadyAt": "2026-05-29T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q2-memory-structural-shortage-2026q2",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Structural memory shortages can keep estimates moving for multiple quarters, but after a rapid price rerating the selection question is whether incremental earnings can still outrun absorbed expectations."
+  },
+  "changeHypothesis": {
+    "summary": "Q2 evidence strengthened the memory shortage from cyclical to structural, and 兆易创新 had already delivered extraordinary Q1 earnings plus a >3x 2026 forecast reset. However, by the Q2 event's first frozen discovery date, the stock had already rerated sharply toward its 52-week high, so the new information did not leave a clean price-relative burden.",
+    "firstCredibleDate": "2026-05-29",
+    "valueChain": [
+      "AI/server demand",
+      "capacity migration",
+      "DRAM/NOR/SLC shortage",
+      "ASP and mix",
+      "company earnings",
+      "estimate reset",
+      "price absorption"
+    ],
+    "persistenceReason": "TrendForce described persistent server-memory deficits and later mature-memory shortages with no visible near-term capacity relief.",
+    "disconfirmingEvidence": [
+      "All Q2 industry discovery items share one specialist origin.",
+      "The stock price had already moved dramatically after Q1 results and forecast reset.",
+      "北京君正 also had a strong earnings/forecast reset, reducing cross-sectional uniqueness."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-memory-20260529",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tf-memory-structural-20260529",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "gigadevice-q1-20260430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "gigadevice-research-20260501",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "gigadevice-price-20260529",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "beijing-junzheng-q1-20260429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "beijing-junzheng-research-20260429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "structural memory shortage",
+      "to": "memory ASP/mix",
+      "mechanism": "Capacity migration and depleted inventory raise supplier pricing power.",
+      "evidenceRefs": [
+        "tf-memory-20260529",
+        "tf-memory-structural-20260529"
+      ],
+      "failureMode": "new capacity or demand normalization arrives faster than expected",
+      "lag": "quarters"
+    },
+    {
+      "from": "ASP/mix",
+      "to": "兆易创新 earnings",
+      "mechanism": "Q1 already showed simultaneous revenue, profit and cash-flow acceleration; analyst forecasts were reset sharply upward.",
+      "evidenceRefs": [
+        "gigadevice-q1-20260430",
+        "gigadevice-research-20260501"
+      ],
+      "failureMode": "Q1 was peak inventory/mix or pricing cannot persist",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "earnings reset",
+      "to": "future stock alpha",
+      "mechanism": "Further alpha requires estimates to rise faster than the already-large May price rerating.",
+      "evidenceRefs": [
+        "gigadevice-research-20260501",
+        "gigadevice-price-20260529"
+      ],
+      "failureMode": "Price has already absorbed the structural-shortage thesis",
+      "lag": "immediate to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "memory suppliers with real pricing power and wafer access"
+    ],
+    "secondOrderWinners": [
+      "channels with favorable inventory"
+    ],
+    "losers": [
+      "OEMs facing higher memory BOM"
+    ],
+    "substitutes": [
+      "alternative suppliers/memory types"
+    ],
+    "bottlenecks": [
+      "wafer allocation",
+      "legacy-memory capacity"
+    ],
+    "falseThemeMatches": [
+      "semiconductor names without material memory earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Q1 revenue +119%, profit +523%, CFO +431%; 2026E analyst forecast was raised from RMB2.07bn to RMB6.62bn.",
+      "evidenceRefs": [
+        "gigadevice-q1-20260430",
+        "gigadevice-research-20260501"
+      ],
+      "earningsSensitivity": {
+        "base": "Post-Q1 estimates already embed a major memory-cycle reset.",
+        "favorable": "Structural shortage persists and 2026 estimates rise again materially.",
+        "adverse": "Price has front-run the earnings reset or shortage normalizes."
+      },
+      "principalRisks": [
+        "expectation saturation",
+        "high price absorption",
+        "single-origin industry evidence"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Q1 memory revenue RMB1.018bn +53.63%; company Q1 profit +332%; 2026E forecast was more than doubled.",
+      "evidenceRefs": [
+        "beijing-junzheng-q1-20260429",
+        "beijing-junzheng-research-20260429"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong memory-cycle exposure and forecast reset.",
+        "favorable": "DRAM price/margin realization exceeds post-Q1 baseline.",
+        "adverse": "Supply constraints cap volumes or high valuation absorbs upside."
+      },
+      "principalRisks": [
+        "high valuation",
+        "supply limits",
+        "forecast saturation"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct non-STAR A-share memory-design peer with Q1 realized earnings acceleration and its own major forecast reset.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 had a larger realized revenue/profit acceleration and stronger cash conversion, but the price-relative edge became mixed after its May rerating.",
+      "evidenceRefs": [
+        "gigadevice-q1-20260430",
+        "gigadevice-research-20260501",
+        "gigadevice-price-20260529",
+        "beijing-junzheng-q1-20260429",
+        "beijing-junzheng-research-20260429"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "selectedAdvantages": [
+          "much larger Q1 revenue/profit acceleration",
+          "strong operating cash-flow conversion",
+          "larger post-result earnings forecast reset"
+        ],
+        "selectedDisadvantages": [
+          "兆易创新 price had already rerated sharply by May29",
+          "北京君正 also had a very large forecast reset and direct DRAM exposure",
+          "price-relative valuation edge was no longer clearly favorable"
+        ],
+        "evidenceRefs": [
+          "gigadevice-q1-20260430",
+          "gigadevice-research-20260501",
+          "gigadevice-price-20260529",
+          "beijing-junzheng-q1-20260429",
+          "beijing-junzheng-research-20260429"
+        ],
+        "switchCondition": "Prefer 北京君正 or No selection if 兆易创新's incremental forecast revisions no longer exceed its higher absorbed valuation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Fundamental acceleration favors 兆易创新, but at the actual Q2 discovery cutoff the large intervening price rerating destroys a clear cross-sectional price-relative edge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The Q1 earnings reset was already public for about a month. The May1 report raised 2026E profit from RMB2.07bn to RMB6.62bn at a 32.7x PE reference; by May29 the stock closed at RMB467.01 near a recent 52-week high.",
+    "thesisExpectation": "The structural shortage may sustain further earnings upgrades, but the stock must deliver another meaningful reset to outrun the already-absorbed Q1 surprise.",
+    "measurableGap": "Using the unchanged May1 EPS forecast as a simple burden reference, the May29 price implies roughly a high-40s/around-50x 2026E PE instead of the original 32.7x reference, showing substantial price absorption.",
+    "evidenceRefs": [
+      "gigadevice-research-20260501",
+      "gigadevice-price-20260529",
+      "tf-memory-20260529"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward-earnings burden updated for price absorption plus peer reset comparison.",
+    "referencePriceAtCutoff": 467.01,
+    "marketBaseline": "Post-Q1 2026E profit had already been reset to RMB6.62bn from RMB2.07bn; the stock then rerated sharply before the Q2 structural-shortage event was frozen.",
+    "thesisScenario": "Structural shortage persists long enough to drive another material earnings-estimate increase beyond the already-tripled post-Q1 forecast.",
+    "breakevenCondition": "Further earnings revisions must be large enough to offset the May price rerating and restore a clear relative valuation/earnings edge versus 北京君正.",
+    "ordinaryScenarioFailure": "The industry thesis remains correct and earnings stay strong, but price had already capitalized the reset so the stock fails to generate selection alpha.",
+    "catalystOrTimingBridge": "Subsequent contract-price data and Q2 earnings could confirm another reset, but the burden is already high.",
+    "evidenceRefs": [
+      "gigadevice-research-20260501",
+      "gigadevice-price-20260529",
+      "beijing-junzheng-research-20260429"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "conflicted",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q1 revenue/profit/cash flow and the external shortage evidence show exceptional acceleration.",
+      "evidenceRefs": [
+        "gigadevice-q1-20260430",
+        "tf-memory-20260529"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "The company had already realized the industry up-cycle in Q1 financials.",
+      "evidenceRefs": [
+        "gigadevice-q1-20260430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "兆易创新's realized acceleration was stronger than 北京君正, but both had meaningful memory-cycle resets.",
+      "evidenceRefs": [
+        "gigadevice-q1-20260430",
+        "beijing-junzheng-q1-20260429"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "The May1 report explicitly recorded a prior 2026 forecast RMB2.07bn and reset it to RMB6.62bn.",
+      "evidenceRefs": [
+        "gigadevice-research-20260501"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare the May29 close/52-week position with the Apr29 price basis used in the post-Q1 forecast-reset report.",
+      "evidenceRefs": [
+        "gigadevice-research-20260501",
+        "gigadevice-price-20260529"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": 467.01,
+    "nextExecutablePrice": null,
+    "valuationContext": "The earnings reset was real, but Q2 discovery arrived only after a major stock rerating. The old 2026E earnings estimate no longer leaves obvious valuation room.",
+    "alreadyPricedAssessment": "substantially absorbed; Research only",
+    "constraints": [
+      "Q2 industry evidence shares one specialist origin",
+      "price absorption is high",
+      "selection edge versus 北京君正 is mixed"
+    ]
+  },
+  "bearCase": "The shortage remains real but the stock merely delivers already-capitalized earnings while multiple expansion reverses.",
+  "invalidationConditions": [
+    {
+      "indicator": "memory price/shortage persistence",
+      "observationMethod": "subsequent contract-price and supply data",
+      "threshold": "clear normalization before another earnings reset"
+    },
+    {
+      "indicator": "earnings revisions relative to price",
+      "observationMethod": "next estimates/results",
+      "threshold": "no material upward revision beyond the post-Q1 baseline while valuation remains elevated"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay; current-model memory may encode later outcomes.",
+    "result": "not_clean",
+    "caveats": [
+      "Do not upgrade based on revealed returns."
+    ]
+  },
+  "unknowns": [
+    "full consensus distribution at May29",
+    "exact segment incremental margin",
+    "future capacity response"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection only.",
+    "Use as a test of the v0.7 price-absorption guardrail.",
+    "Do not backdate actionability to the Apr30 earnings report because the frozen Q2 discovery event arrived later."
+  ]
+}
