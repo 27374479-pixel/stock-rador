@@ -10,21 +10,14 @@ This ledger prevents accidental reuse of viewed outcomes as untouched validation
 
 ## Current untouched queue
 
-V2.1 remains frozen for the next window. The untouched queue from the original protocol is:
+Skill-first V3 is frozen for the remaining untouched windows:
 
-- 2022-09-01 through 2022-09-14
-- 2022-12-01 through 2022-12-14
-- 2023-03-01 through 2023-03-14
-- 2023-06-01 through 2023-06-14
-- 2023-09-01 through 2023-09-14
-- 2023-12-01 through 2023-12-14
 - 2024-03-01 through 2024-03-14
 - 2024-06-01 through 2024-06-14
 - 2024-09-01 through 2024-09-14
 - 2024-12-01 through 2024-12-14
 
-No rule change is permitted to use a future queue window's outcomes before its selection lock is committed.
-
+No future-window outcome may be inspected before its selection lock is committed.
 
 ## Viewed-outcome ticker quarantine
 
@@ -44,7 +37,7 @@ For 2022-12, only `301211.SZ` was newly outcome-viewed. `000756.SZ`, `002728.SZ`
 
 ## March 2023 timestamp note
 
-The lithium-warning lead in the consumed March 2023 window exposed a timezone-normalization bug in evidence cutoff handling. It did not alter a selected trade because that lead was already NO TRADE. Any timestamp fix must be applied forward-only; March 2023 will not be rescored.
+The lithium-warning lead included a source for which the research record had a publication date but no reliable intraday timestamp. The point-in-time engine conservatively treated its end-of-day placeholder as later than the China-time cutoff, so that source did not receive same-day credit. March 2023 remains consumed and will not be rescored.
 
 
 ## 2023-09 Watch-future preservation
