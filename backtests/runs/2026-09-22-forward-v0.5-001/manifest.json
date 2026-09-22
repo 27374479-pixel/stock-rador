@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "1.2",
+  "runId": "2026-09-22-forward-v0.5-001",
+  "evaluationMode": "forward",
+  "createdAt": "2026-09-22T21:09:16+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/0.5.0/SKILL.md",
+    "version": "0.5.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-22"
+  },
+  "screeningPath": "backtests/runs/2026-09-22-forward-v0.5-001/screening.json",
+  "implementationPaths": [
+    "scripts/collect-hn-generic.cjs",
+    "scripts/backtest-core.cjs",
+    "scripts/lock-skill-run.cjs",
+    "scripts/fetch-backtest-prices.cjs",
+    "scripts/evaluate-skill-run.cjs"
+  ],
+  "contaminationControls": {
+    "sourcePackPath": "backtests/runs/2026-09-22-forward-v0.5-001/source-pack.json",
+    "modelMemoryRisk": "not_applicable_to_future_outcome",
+    "notes": "Prospective forward run. Research and company-selection judgments are frozen before the next trading-day entry and before any 20/60/120-day outcome exists."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedHypothesisStates": [
+    "Research hypothesis",
+    "High-priority hypothesis"
+  ],
+  "trackedSelectionStates": [
+    "No selection",
+    "Research selection",
+    "High-priority selection"
+  ],
+  "primarySelectionStates": [
+    "High-priority selection"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "hypothesisMemoPaths": [
+    "backtests/runs/2026-09-22-forward-v0.5-001/memos/h-niche-memory-20260922.json",
+    "backtests/runs/2026-09-22-forward-v0.5-001/memos/h-copper-tightness-20260922.json"
+  ],
+  "selections": [
+    {
+      "memoPath": "backtests/runs/2026-09-22-forward-v0.5-001/memos/h-niche-memory-20260922.json",
+      "hypothesisId": "h-niche-memory-20260922",
+      "ticker": "603986.SH",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2026-09-22-forward-v0.5-001/memos/h-copper-tightness-20260922.json",
+      "hypothesisId": "h-copper-tightness-20260922",
+      "ticker": "603993.SH",
+      "limitRate": 0.1
+    }
+  ],
+  "reportingPolicy": {
+    "primaryMetric": "primary_thesis_base_matched_control_excess",
+    "mustReportAllSelections": true,
+    "mustReportMatchedControls": true,
+    "mustReportBestControl": true,
+    "mustReportHypothesisAndSelectionStates": true,
+    "noSignalIsValid": true,
+    "outcomeRevealAllowedNow": false
+  }
+}
