@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.2",
+  "runId": "2026-09-22-forward-v0.5-001",
+  "purpose": "Prospective forward-frozen evaluation of Stock Rador v0.5 two-gate opportunity/selection contract.",
+  "declaredAt": "2026-09-22T21:09:16+08:00",
+  "evaluationMode": "forward",
+  "discoveryWindow": {
+    "startDate": "2026-09-01",
+    "endDate": "2026-09-22"
+  },
+  "marketDataCutoffAt": "2026-09-22T15:00:00+08:00",
+  "researchCutoffAt": "2026-09-22T21:09:16+08:00",
+  "discoveryPolicy": {
+    "industryWhitelist": false,
+    "manualStockWatchlistSeed": false,
+    "direction": "Start from current real-economy changes, verify independently, then map value chains and A-share companies.",
+    "broadChangeClasses": [
+      "shortage",
+      "price/spread",
+      "inventory",
+      "lead time",
+      "capacity",
+      "customer capex",
+      "regulation/trade flow",
+      "technology substitution"
+    ],
+    "futureOutcomeDataAvailable": false
+  },
+  "validationClass": "forward_frozen",
+  "outcomePolicy": {
+    "benchmark": "000300.SH",
+    "standardHoldingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "primaryCompanyMetric": "matched-control excess at each memo's pre-registered base horizon"
+  }
+}
