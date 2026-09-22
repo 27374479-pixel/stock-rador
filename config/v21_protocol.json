@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "2.1",
+  "effectiveFromWindow": "v2-2022-06",
+  "frozenAt": "2026-09-22T03:18:00.000Z",
+  "derivation": {
+    "developmentWindow": "v2-2022-03",
+    "rule": "March 2022 outcomes may motivate this revision, but March is permanently consumed and cannot be rescored as untouched validation."
+  },
+  "candidateThreshold": 20,
+  "hardGates": {
+    "minimumExposureScore": 6,
+    "minimumSurpriseScore": 4,
+    "minimumMonetizationScore": 5,
+    "maximumReversalRiskPenalty": 5,
+    "claimStatusAllowed": ["confirmed", "probable"]
+  },
+  "newFactor": {
+    "name": "monetization/capture of the bottleneck",
+    "fields": {
+      "canDeliverIntoBottleneck": [0, 3],
+      "documentedSubstitutionOrShareGain": [0, 3],
+      "marginCapture": [0, 2],
+      "persistenceAfterNormalization": [0, 2],
+      "inputConstraintExposure": [0, 3]
+    },
+    "reason": "A verified shortage is not automatically positive for the mapped producer. The company must be able to deliver into the shortage and retain economic benefit."
+  },
+  "newPenalty": {
+    "name": "reversal risk",
+    "fields": {
+      "priceMomentumRollingOver": [0, 3],
+      "inventoryBuild": [0, 2],
+      "demandDestruction": [0, 3]
+    },
+    "reason": "Contemporaneous evidence of falling spot prices, inventory accumulation or demand destruction must be considered before a cyclical shortage is treated as an upside signal."
+  },
+  "unchangedIntegrityRules": [
+    "fixed discovery windows and operational search lexicon",
+    "forum is discovery, not truth",
+    "same-root evidence shares one independenceGroup",
+    "future evidence is excluded by timestamp",
+    "selection commit precedes outcome retrieval",
+    "T+1 executable-price evaluation with transaction costs and benchmark"
+  ]
+}

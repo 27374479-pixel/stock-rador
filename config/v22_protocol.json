@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "2.2",
+  "effectiveFromWindow": "v22-2023-09",
+  "frozenAt": "2026-09-22T06:43:00.000Z",
+  "derivation": {
+    "consumedDevelopmentWindows": [
+      "v2-2022-03",
+      "v21-2022-06",
+      "v21-2022-09",
+      "v21-2022-12",
+      "v21-2023-03",
+      "v21-2023-06"
+    ],
+    "rule": "Viewed outcomes may motivate V2.2 but none of those windows may be rescored as fresh validation."
+  },
+  "candidateThreshold": 25,
+  "hardGates": {
+    "minimumExposureScore": 6,
+    "minimumSurpriseScore": 4,
+    "minimumMonetizationScore": 5,
+    "minimumIncrementalEarningsBridgeScore": 5,
+    "minimumOfRevenueMaterialityOrShipmentProof": 2,
+    "maximumReversalRiskPenalty": 5,
+    "claimStatusAllowed": ["confirmed", "probable"]
+  },
+  "newFactor": {
+    "name": "incremental earnings bridge",
+    "fields": {
+      "bottleneckSpecificRevenueMateriality": [0, 3],
+      "shipmentOrOrderProof": [0, 3],
+      "unitEconomicsLeverage": [0, 2],
+      "durationVisibility": [0, 2],
+      "adjacencyPenalty": [0, 3]
+    },
+    "reason": "V2.1 could over-credit a large generic segment even when the specific new bottleneck product had not yet become economically material. V2.2 requires point-in-time evidence that the new demand can plausibly move revenue or earnings, or that shipment/order proof is already strong."
+  },
+  "unchangedIntegrityRules": [
+    "fixed discovery windows and operational search lexicon",
+    "forum is discovery, not truth",
+    "same-root evidence shares one independenceGroup",
+    "uncertain same-day publication time receives conservative treatment",
+    "future evidence is excluded by timestamp",
+    "viewed-outcome tickers are quarantined",
+    "selection commit precedes outcome retrieval",
+    "Watch futures remain unopened when possible",
+    "T+1 executable-price evaluation with costs and benchmark"
+  ]
+}

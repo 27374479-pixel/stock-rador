@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "2.0",
+  "frozenAt": "2026-09-22T02:46:00.000Z",
+  "purpose": "Leakage-controlled validation of community/trade weak signals mapped to A-shares.",
+  "selectionRule": {
+    "forumRole": "discovery_only",
+    "candidateThreshold": 15,
+    "minimumExposureScore": 6,
+    "minimumSurpriseScore": 4,
+    "claimStatusAllowed": ["confirmed", "probable"],
+    "noSimplePublicDisclosurePenalty": true,
+    "futureOutcomeFieldsForbiddenBeforeSelectionCommit": true
+  },
+  "sourceClasses": {
+    "primary_official": {
+      "examples": ["exchange filings", "company filings", "government statistics", "customs", "public tenders", "regulator/industry-association primary data"],
+      "use": "truth verification and exposure mapping"
+    },
+    "professional_data": {
+      "examples": ["trade publications with named sources/data", "industry trackers with disclosed methodology", "earnings-call transcripts"],
+      "use": "corroboration and magnitude estimation"
+    },
+    "practitioner_firsthand": {
+      "examples": ["working electricians", "data-center operators", "network engineers", "procurement/installer discussions"],
+      "use": "early weak-signal discovery"
+    },
+    "specialist_forum": {
+      "examples": ["technical enthusiast/professional communities where identity or firsthand role is uncertain"],
+      "use": "discovery; requires stronger corroboration"
+    },
+    "investor_social": {
+      "examples": ["雪球", "东方财富股吧", "general stock forums"],
+      "use": "attention/expectations measurement, not factual truth by itself"
+    },
+    "repost": {
+      "examples": ["aggregators", "copied press releases", "same-wire rewrites"],
+      "use": "no independent corroboration credit"
+    }
+  },
+  "claimVerification": {
+    "independenceRule": "same wire story, same press release, same quoted anonymous source, or copied post share one independenceGroup",
+    "requiredChecks": [
+      "original URL and historical timestamp",
+      "author/role when available",
+      "firsthand vs hearsay",
+      "specific product/geography/customer/time window",
+      "independent corroboration",
+      "primary or professional-data cross-check",
+      "contradictory evidence search",
+      "edit/repost/manipulation flags"
+    ]
+  },
+  "validationWindows": {
+    "rule": "first 14 calendar days of March, June, September and December for each year 2022-2024",
+    "windows": [
+      ["2022-03-01", "2022-03-14"],
+      ["2022-06-01", "2022-06-14"],
+      ["2022-09-01", "2022-09-14"],
+      ["2022-12-01", "2022-12-14"],
+      ["2023-03-01", "2023-03-14"],
+      ["2023-06-01", "2023-06-14"],
+      ["2023-09-01", "2023-09-14"],
+      ["2023-12-01", "2023-12-14"],
+      ["2024-03-01", "2024-03-14"],
+      ["2024-06-01", "2024-06-14"],
+      ["2024-09-01", "2024-09-14"],
+      ["2024-12-01", "2024-12-14"]
+    ]
+  },
+  "searchLexicon": {
+    "englishOperationalTerms": [
+      "shortage", "lead time", "backlog", "allocation", "wait time", "price increase",
+      "inventory", "sold out", "order book", "capacity", "utilization", "delivery delay",
+      "qualification", "customer orders", "capex"
+    ],
+    "chineseOperationalTerms": [
+      "缺货", "交期", "积压订单", "配额", "涨价", "库存", "售罄", "订单",
+      "排产", "产能", "满产", "交付延期", "认证", "客户订单", "资本开支"
+    ],
+    "forbiddenOutcomeTermsDuringDiscovery": [
+      "牛股", "翻倍", "涨幅", "暴涨", "十倍股", "winner", "best performing", "multibagger"
+    ]
+  },
+  "outcomeProtocol": {
+    "benchmark": "000300.SH",
+    "entry": "T+1 open after signal timestamp/date",
+    "costPerSide": 0.001,
+    "horizonsTradingDays": [20, 60, 120, 250],
+    "selectionMustBeCommittedBeforeOutcomeFetch": true,
+    "developmentCasesExcludedFromFreshValidation": [
+      "transformer-shortage-early-2023-05-04",
+      "switchgear-shortage-repeat-2023-10-04",
+      "800g-optics-demand-2023-11-17",
+      "transformer-shortage-late-2024-04-26"
+    ]
+  }
+}
