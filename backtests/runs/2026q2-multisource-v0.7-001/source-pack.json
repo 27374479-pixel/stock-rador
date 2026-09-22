@@ -1,0 +1,610 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2026q2-multisource-v0.7-001",
+  "cutoffAt": "2026-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources provably available by the Q2 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China macro/industry data available by the Q2 cutoff.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS PPI/PMI series relevant to surfaced events; not an exhaustive agency crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "First-party order, backlog, revenue and operating confirmation from major global suppliers.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on globally relevant power/electrification suppliers surfaced by broad event searches; not a complete issuer crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable product-price, utilization and supply-demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce price/market summaries; proprietary datasets remain unavailable."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting for cross-border policy, physical-flow and macro changes.",
+      "coverageStatus": "partial",
+      "limitations": "Concentrated on accessible Reuters historical reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist semiconductor/electronics/battery supply-demand research.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce reports rather than all paid specialist research."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl is used in this Q2 holdout; the lane is declared unavailable rather than silently omitted."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "tf-battery-20260416",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Rising Costs to Drive Further Increases in EV Cell Prices in 2Q26",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260416-13015.html",
+      "publishedAt": "2026-04-16T00:00:00+08:00",
+      "availableAt": "2026-04-16T00:00:00+08:00",
+      "originGroup": "trendforce-battery-20260416",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "ESS cell prices were stable with strong demand, full order books and high utilization; 2Q26 demand was expected to remain solid while raw-material costs pushed cell pricing upward."
+      ],
+      "entities": [
+        "ESS cells",
+        "LFP",
+        "lithium",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "ESS demand remains strong",
+        "cell pricing has upward bias",
+        "input costs rise"
+      ]
+    },
+    {
+      "itemId": "gev-q1-20260422",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "GE Vernova Releases First Quarter 2026 Financial Results",
+      "publisher": "GE Vernova",
+      "url": "https://www.gevernova.com/news/articles/ge-vernova-releases-first-quarter-2026-financial-results",
+      "publishedAt": "2026-04-22T00:00:00-04:00",
+      "availableAt": "2026-04-22T00:00:00-04:00",
+      "originGroup": "gev-q1-2026-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Orders were $18.3B, +71% organically; backlog rose $13B sequentially; Electrification booked $2.4B of data-center equipment orders in Q1, more than all of 2025; 2026 guidance was raised."
+      ],
+      "entities": [
+        "GE Vernova",
+        "Electrification",
+        "Power",
+        "data centers",
+        "transformers"
+      ],
+      "observedChanges": [
+        "orders accelerate",
+        "backlog accelerates",
+        "guidance raised"
+      ]
+    },
+    {
+      "itemId": "abb-q1-20260422",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "ABB Q1 2026 results",
+      "publisher": "ABB",
+      "url": "https://www.abb.com/global/en/news/135137",
+      "publishedAt": "2026-04-22T00:00:00+02:00",
+      "availableAt": "2026-04-22T00:00:00+02:00",
+      "originGroup": "abb-q1-2026-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Group orders rose 32% and comparable orders 24%; Electrification comparable orders rose 44%, order backlog rose 40%, and data-center orders grew triple-digits."
+      ],
+      "entities": [
+        "ABB",
+        "Electrification",
+        "data centers",
+        "grid"
+      ],
+      "observedChanges": [
+        "record orders",
+        "electrification backlog acceleration",
+        "data-center demand acceleration"
+      ]
+    },
+    {
+      "itemId": "tf-mlcc-20260428",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Strong AI Demand vs. Weak Consumer Segment Creates Pricing Divergence Among MLCC Suppliers",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260428-13023.html",
+      "publishedAt": "2026-04-28T00:00:00+08:00",
+      "availableAt": "2026-04-28T00:00:00+08:00",
+      "originGroup": "trendforce-mlcc-20260428",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "AI demand remained strong while consumer demand was soft; rising silver, aluminum and copper costs drove 10-15% average price increases in several passive components from April 1; OEMs were building inventory amid component tightness."
+      ],
+      "entities": [
+        "MLCC",
+        "passive components",
+        "AI servers",
+        "silver",
+        "copper"
+      ],
+      "observedChanges": [
+        "AI/consumer demand divergence",
+        "passive-component price increases",
+        "strategic inventory building"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20260430",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2026年4月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202604/t20260430_1963473.html",
+      "publishedAt": "2026-04-30T09:30:00+08:00",
+      "availableAt": "2026-04-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202604",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "April manufacturing PMI was 50.3; production 51.5 and new orders 50.6 remained expansionary while supplier delivery time stayed below 50."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing expansion stable",
+        "new-order growth slows"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20260511",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2026年4月份工业生产者出厂价格同比上涨2.8% 环比上涨1.7%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202605/t20260511_1963658.html",
+      "publishedAt": "2026-05-11T09:30:00+08:00",
+      "availableAt": "2026-05-11T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202604",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "April PPI rose 2.8% YoY and 1.7% MoM; purchasing prices rose 3.5% YoY and 2.1% MoM; non-ferrous materials/wires rose 21.3% YoY and chemical raw materials 5.9%."
+      ],
+      "entities": [
+        "China PPI",
+        "non-ferrous metals",
+        "chemicals"
+      ],
+      "observedChanges": [
+        "producer inflation accelerates",
+        "metal input prices rise",
+        "chemical input prices rise"
+      ]
+    },
+    {
+      "itemId": "tf-memory-20260529",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Server DIMM Price May 2026",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP260529ZS",
+      "publishedAt": "2026-05-29T00:00:00+08:00",
+      "availableAt": "2026-05-29T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q2-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Server DRAM contract prices kept rising because of supply deficits and depleted inventories; cloud/server demand remained robust and the market undersupplied."
+      ],
+      "entities": [
+        "server DRAM",
+        "DIMM",
+        "CSP"
+      ],
+      "observedChanges": [
+        "server memory shortage persists",
+        "seller pricing power strengthens"
+      ]
+    },
+    {
+      "itemId": "tf-memory-structural-20260529",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "Agentic AI Drives Structural Expansion in Memory Demand",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260529-13068.html",
+      "publishedAt": "2026-05-29T00:00:00+08:00",
+      "availableAt": "2026-05-29T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q2-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce sharply raised its 2026 and 2027 global memory-market forecasts and said the supply deficit was unlikely to resolve in the short term as inference-centric AI expanded memory demand."
+      ],
+      "entities": [
+        "DRAM",
+        "NAND",
+        "Agentic AI"
+      ],
+      "observedChanges": [
+        "memory market forecast raised",
+        "structural demand outlook strengthened"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20260531",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2026年5月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202605/t20260531_1963824.html",
+      "publishedAt": "2026-05-31T09:30:00+08:00",
+      "availableAt": "2026-05-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202605",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May manufacturing PMI fell to 50.0; new orders were 49.9 and new export orders 48.6, while production remained 51.2; raw-material purchasing-price index stayed high at 60.5."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "demand weakens",
+        "input-price pressure remains high"
+      ]
+    },
+    {
+      "itemId": "reuters-pmi-20260531",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "repost",
+      "title": "China factory activity stalls in May as demand weakens",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/china/china-factory-activity-stalls-may-demand-weakens-2026-05-31/",
+      "publishedAt": "2026-05-31T00:00:00Z",
+      "availableAt": "2026-05-31T00:00:00Z",
+      "originGroup": "nbs-pmi-202605",
+      "derivativeOf": "nbs-pmi-20260531",
+      "normalizedClaims": [
+        "Reuters highlighted May PMI at 50.0, weaker new/export orders and continuing raw-material cost pressure."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "factory demand stalls"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20260601",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Rapid Contract Price Surge Drives 1Q26 DRAM Industry Up 81% QoQ",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260601-13070.html",
+      "publishedAt": "2026-06-01T00:00:00+08:00",
+      "availableAt": "2026-06-01T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q2-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "1Q26 conventional DRAM contract prices rose roughly 93-98% QoQ and industry revenue rose 81% QoQ to $97B; supplier inventories remained extremely low in Q2."
+      ],
+      "entities": [
+        "DRAM",
+        "server memory"
+      ],
+      "observedChanges": [
+        "realized DRAM revenue surge",
+        "supplier inventories extremely low"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20260610",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2026年5月份工业生产者出厂价格同比上涨3.9% 环比上涨0.5%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202606/t20260610_1963922.html",
+      "publishedAt": "2026-06-10T09:30:00+08:00",
+      "availableAt": "2026-06-10T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202605",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May PPI rose 3.9% YoY; producer purchasing prices rose 5.8% YoY; non-ferrous materials/wires rose 22.0%, chemicals 11.8% and fuel/power 10.0%."
+      ],
+      "entities": [
+        "China PPI",
+        "non-ferrous metals",
+        "chemicals",
+        "energy"
+      ],
+      "observedChanges": [
+        "producer inflation broadens",
+        "input-price pressure remains elevated"
+      ]
+    },
+    {
+      "itemId": "tf-nor-slc-20260616",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Contract Prices Surged More Than 100% in 1H26; Structural Shortages to Keep NOR Flash and SLC NAND Prices Rising in 2H26",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260616-13102.html",
+      "publishedAt": "2026-06-16T00:00:00+08:00",
+      "availableAt": "2026-06-16T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q2-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NOR Flash and SLC NAND contract prices rose more than 100% cumulatively in 1H26 as capacity shifted to higher-value memory; no significant capacity expansion was visible and shortages were expected to continue."
+      ],
+      "entities": [
+        "NOR Flash",
+        "SLC NAND",
+        "automotive",
+        "edge AI"
+      ],
+      "observedChanges": [
+        "mature-memory structural shortage",
+        "contract prices more than double"
+      ]
+    },
+    {
+      "itemId": "reuters-critical-minerals-20260617",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "G7 sets up critical minerals alliance, platform to cut reliance on China",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/europe/g7-sets-up-critical-minerals-alliance-crisis-platform-2026-06-17/",
+      "publishedAt": "2026-06-17T00:00:00Z",
+      "availableAt": "2026-06-17T00:00:00Z",
+      "originGroup": "g7-critical-minerals-20260617",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "G7 governments created a critical-minerals alliance/crisis platform and discussed stockpiling, subsidies and procurement to reduce single-source dependence."
+      ],
+      "entities": [
+        "critical minerals",
+        "lithium",
+        "nickel",
+        "rare earths"
+      ],
+      "observedChanges": [
+        "policy response to supply-chain concentration intensifies"
+      ]
+    },
+    {
+      "itemId": "reuters-tanker-20260630",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Hormuz half-open: tanker fleet prices in recovery hope",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/commentary/reuters-open-interest/hormuz-half-open-tanker-fleet-prices-recovery-hope-2026-06-30/",
+      "publishedAt": "2026-06-30T00:00:00Z",
+      "availableAt": "2026-06-30T00:00:00Z",
+      "originGroup": "hormuz-tanker-normalization-20260630",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "By late June tanker operators were repositioning for recovery in Gulf exports; VLCC earnings had fallen sharply as vessels crowded the Middle East even though physical flows were not fully normalized."
+      ],
+      "entities": [
+        "VLCC",
+        "Hormuz",
+        "oil tankers"
+      ],
+      "observedChanges": [
+        "VLCC rate shock reverses",
+        "fleet repositioning anticipates normalization"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-q2-memory-structural-shortage",
+      "statement": "Memory tightness moved from a cyclical price-upgrade story toward a broader structural shortage in Q2: realized DRAM revenue and prices surged, inventories stayed very low, and mature NOR/SLC supply was squeezed by capacity migration.",
+      "changeType": "realized_price_and_supply_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-05-29T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-memory-20260529",
+        "tf-memory-structural-20260529",
+        "tf-dram-20260601",
+        "tf-nor-slc-20260616"
+      ],
+      "independentOriginGroups": [
+        "trendforce-memory-q2-2026"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "NOR Flash/SLC NAND suppliers",
+        "memory modules",
+        "server/edge/auto OEMs"
+      ],
+      "contradictionSearchNotes": "All Q2 discovery items share one specialist origin. Deep research must independently verify A-share company realization and test whether the enormous Q1/Q2 re-rating already absorbed the reset.",
+      "researchQuestion": "Did any A-share memory company show a newly realized earnings reset that still had price-relative room versus peers at a Q2 cutoff?"
+    },
+    {
+      "eventId": "event-q2-power-orders-accelerate",
+      "statement": "Global electrification/power-equipment demand accelerated beyond the already-strong Q4/Q1 narrative: GE Vernova and ABB independently reported record/rapid order growth, sharp backlog expansion and unusually strong data-center electrification demand.",
+      "changeType": "orders_backlog_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-04-22T00:00:00+02:00",
+      "memberItemIds": [
+        "gev-q1-20260422",
+        "abb-q1-20260422"
+      ],
+      "independentOriginGroups": [
+        "abb-q1-2026-results",
+        "gev-q1-2026-results"
+      ],
+      "affectedValueChain": [
+        "transformers",
+        "switchgear",
+        "grid equipment",
+        "data-center power",
+        "gas turbines"
+      ],
+      "contradictionSearchNotes": "The theme was already known. V0.7 must require a new A-share company-level acceleration/baseline reset rather than recycling prior thematic winners.",
+      "researchQuestion": "Did a specific A-share supplier report an acceleration or guidance reset large enough to create a fresh cross-sectional edge?"
+    },
+    {
+      "eventId": "event-q2-ess-demand-high-utilization",
+      "statement": "Energy-storage cells entered Q2 with strong demand, full order books and high utilization while raw-material costs pushed battery-cell pricing from flat toward an upward bias.",
+      "changeType": "demand_and_price_reacceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-04-16T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-battery-20260416"
+      ],
+      "independentOriginGroups": [
+        "trendforce-battery-20260416"
+      ],
+      "affectedValueChain": [
+        "ESS cells",
+        "battery materials",
+        "storage integrators"
+      ],
+      "contradictionSearchNotes": "EV demand remained weaker and higher lithium/copper/aluminum costs can reduce cell-maker margin. One specialist origin requires first-party company confirmation.",
+      "researchQuestion": "Which A-share battery maker, if any, converts ESS utilization into accelerating profit rather than just revenue while preserving margins?"
+    },
+    {
+      "eventId": "event-q2-passive-component-divergence",
+      "statement": "AI infrastructure demand and strategic inventory building supported passive components while consumer demand stayed soft; simultaneously silver/aluminum/copper inflation triggered broad 10-15% passive-component price increases.",
+      "changeType": "demand_divergence_with_cost_pass_through",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-04-28T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-mlcc-20260428",
+        "nbs-ppi-20260511",
+        "nbs-ppi-20260610"
+      ],
+      "independentOriginGroups": [
+        "nbs-ppi-202604",
+        "nbs-ppi-202605",
+        "trendforce-mlcc-20260428"
+      ],
+      "affectedValueChain": [
+        "MLCC",
+        "inductors",
+        "resistors",
+        "AI servers",
+        "consumer electronics"
+      ],
+      "contradictionSearchNotes": "Price hikes may only offset metal cost inflation; consumer weakness may overwhelm AI mix benefits. Deep research must separate pass-through from real margin expansion.",
+      "researchQuestion": "Is there an A-share passive-component supplier with verified AI mix acceleration and pricing power beyond simple cost pass-through?"
+    },
+    {
+      "eventId": "event-q2-broad-upstream-inflation",
+      "statement": "China producer/input inflation accelerated sharply in April-May, especially in non-ferrous metals, chemicals and fuel/power.",
+      "changeType": "broad_input_inflation",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-05-11T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-ppi-20260511",
+        "nbs-ppi-20260610"
+      ],
+      "independentOriginGroups": [
+        "nbs-ppi-202604",
+        "nbs-ppi-202605"
+      ],
+      "affectedValueChain": [
+        "metals",
+        "chemicals",
+        "energy",
+        "manufacturing inputs"
+      ],
+      "contradictionSearchNotes": "Broad input inflation identifies cost pressure but not who captures margin; downstream demand weakened in May.",
+      "researchQuestion": "Does this broad signal contain any narrow, independently verified earnings mechanism or should it remain macro context?"
+    },
+    {
+      "eventId": "event-q2-manufacturing-demand-stall",
+      "statement": "China manufacturing demand softened by May: PMI fell to 50.0, new orders slipped below 50 and export orders weakened even as production remained expansionary and input-price pressure stayed high.",
+      "changeType": "demand_slowdown",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-05-31T00:00:00Z",
+      "memberItemIds": [
+        "nbs-pmi-20260430",
+        "nbs-pmi-20260531",
+        "reuters-pmi-20260531"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202604",
+        "nbs-pmi-202605"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "exporters",
+        "input-intensive downstream firms"
+      ],
+      "contradictionSearchNotes": "Reuters is derivative of the official NBS release and does not create an independent origin. Broad weakness can be context but lacks a specific beneficiary.",
+      "researchQuestion": "Is this only a macro contradiction filter for other Q2 themes?"
+    },
+    {
+      "eventId": "event-q2-critical-mineral-policy-response",
+      "statement": "Governments escalated strategic responses to concentrated critical-mineral supply chains, including a G7 alliance/crisis platform and prospective stockpiling/investment measures.",
+      "changeType": "policy_supply_chain_response",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-06-17T00:00:00Z",
+      "memberItemIds": [
+        "reuters-critical-minerals-20260617"
+      ],
+      "independentOriginGroups": [
+        "g7-critical-minerals-20260617"
+      ],
+      "affectedValueChain": [
+        "lithium",
+        "nickel",
+        "rare earths",
+        "critical-mineral projects"
+      ],
+      "contradictionSearchNotes": "Policy intent is not the same as realized shortage, price or company earnings. A single policy report is insufficient for selection.",
+      "researchQuestion": "Is there a pre-cutoff realized physical/economic change behind the policy response, or only strategic narrative?"
+    },
+    {
+      "eventId": "event-q2-tanker-shock-normalizes",
+      "statement": "The Q1 Hormuz tanker-rate shock began reversing by late Q2 as fleets repositioned for export recovery; VLCC earnings fell sharply even before physical flows fully normalized.",
+      "changeType": "price_shock_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-06-30T00:00:00Z",
+      "memberItemIds": [
+        "reuters-tanker-20260630"
+      ],
+      "independentOriginGroups": [
+        "hormuz-tanker-normalization-20260630"
+      ],
+      "affectedValueChain": [
+        "VLCC owners",
+        "oil exporters",
+        "energy importers"
+      ],
+      "contradictionSearchNotes": "This directly challenges extrapolating the Q1 spot-rate spike. It is a negative-control/reversal event, not a reason to preserve a stale long thesis.",
+      "researchQuestion": "Does the system correctly retire short-half-life shipping shocks when physical/rate evidence reverses?"
+    }
+  ]
+}
