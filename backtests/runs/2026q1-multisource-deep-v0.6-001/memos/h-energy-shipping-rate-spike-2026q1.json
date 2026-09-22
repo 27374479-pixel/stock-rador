@@ -1,0 +1,236 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-03-27T23:59:59+08:00",
+  "researchReadyAt": "2026-03-27T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-energy-shipping-rate-spike-2026q1",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Spot tanker-rate shocks reprice immediately, but realized earnings depend on voyage fixing, fleet availability and duration across subsequent months."
+  },
+  "changeHypothesis": {
+    "summary": "Hormuz disruption produced an extreme tanker/LNG shipping-rate signal. 中远海能 has direct international oil-tanker sensitivity and a purer energy-shipping profile than diversified 招商轮船, but the geopolitical half-life and lack of a frozen cutoff valuation make the edge only research-grade.",
+    "firstCredibleDate": "2026-03-02",
+    "valueChain": [
+      "Hormuz traffic disruption",
+      "vessel scarcity/route risk",
+      "spot tanker rates",
+      "voyage TCE",
+      "shipping earnings"
+    ],
+    "persistenceReason": "Physical route disruption can constrain vessel availability and raise rates while it persists.",
+    "disconfirmingEvidence": [
+      "The event can reverse abruptly with geopolitical de-escalation.",
+      "2025 baseline international oil-tanker gross profit at 中远海能 had not been accelerating despite revenue growth.",
+      "Shipping equities can reprice before earnings are booked."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-shipping-20260302",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen rate-shock evidence."
+    },
+    {
+      "id": "cosco-energy-annual-20260327",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen company exposure evidence."
+    },
+    {
+      "id": "cm-energy-annual-20260327",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen matched-control exposure evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Hormuz disruption",
+      "to": "tanker-rate spike",
+      "mechanism": "Route risk and reduced vessel availability raise spot freight rates.",
+      "evidenceRefs": [
+        "reuters-shipping-20260302"
+      ],
+      "failureMode": "traffic normalizes quickly",
+      "lag": "days"
+    },
+    {
+      "from": "spot rates",
+      "to": "中远海能 earnings",
+      "mechanism": "Large international oil-tanker/VLCC exposure can capture higher voyage TCE as ships re-fix.",
+      "evidenceRefs": [
+        "cosco-energy-annual-20260327"
+      ],
+      "failureMode": "contract mix, idle time or short shock duration limits capture",
+      "lag": "weeks to months"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "spot-exposed crude/product tanker owners"
+    ],
+    "secondOrderWinners": [
+      "shipping services with rate-linked economics"
+    ],
+    "losers": [
+      "energy importers and shippers paying freight"
+    ],
+    "substitutes": [
+      "alternative routes/pipelines where available"
+    ],
+    "bottlenecks": [
+      "VLCC/Aframax availability",
+      "Hormuz passage"
+    ],
+    "falseThemeMatches": [
+      "shipping firms dominated by dry bulk/container exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600026.SH",
+      "name": "中远海能",
+      "verifiedExposure": "2025 international oil-tanker revenue RMB 15.133bn and a large global oil-tanker/VLCC fleet give direct rate sensitivity.",
+      "evidenceRefs": [
+        "cosco-energy-annual-20260327"
+      ],
+      "earningsSensitivity": {
+        "base": "2025 international tanker margin 22.3% with revenue +3.8%.",
+        "favorable": "Elevated spot rates persist long enough to re-fix voyages at higher TCE.",
+        "adverse": "Hormuz normalizes before the rate spike is monetized."
+      },
+      "principalRisks": [
+        "geopolitical reversal",
+        "spot/contract timing",
+        "asset-cycle volatility"
+      ]
+    },
+    {
+      "ticker": "601872.SH",
+      "name": "招商轮船",
+      "verifiedExposure": "Substantial VLCC/oil-tanker fleet within a more diversified shipping portfolio.",
+      "evidenceRefs": [
+        "cm-energy-annual-20260327"
+      ],
+      "earningsSensitivity": {
+        "base": "Direct tanker exposure but diluted by other shipping businesses.",
+        "favorable": "VLCC spot rates stay elevated.",
+        "adverse": "Diversification dampens rate torque or shock fades."
+      },
+      "principalRisks": [
+        "same geopolitical reversal",
+        "diversified exposure"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601872.SH",
+      "name": "招商轮船",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large A-share VLCC/oil-tanker owner exposed to the same spot-rate shock.",
+      "whySelectedCompanyShouldOutperform": "中远海能's business mix is more directly concentrated in energy/oil transport, so an international tanker-rate shock should be more material to group earnings.",
+      "evidenceRefs": [
+        "cosco-energy-annual-20260327",
+        "cm-energy-annual-20260327"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600026.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601872.SH",
+        "selectedAdvantages": [
+          "more concentrated energy/oil-shipping exposure",
+          "large disclosed international oil-tanker revenue base"
+        ],
+        "selectedDisadvantages": [
+          "招商轮船 is also a major VLCC owner",
+          "shock duration and exact spot-vs-contract exposure are not fully quantified",
+          "cutoff valuation is not frozen"
+        ],
+        "evidenceRefs": [
+          "cosco-energy-annual-20260327",
+          "cm-energy-annual-20260327"
+        ],
+        "switchCondition": "Prefer 招商轮船 if its VLCC spot exposure/fleet availability is demonstrably greater or if 中远海能's rate sensitivity is already more fully priced.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Purity favors 中远海能, but both are valid tanker expressions and the geopolitical/valuation burden prevents a clear edge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The March rate spike was already public and tied to an obvious geopolitical event.",
+    "thesisExpectation": "If disruption persists for multiple fixing cycles, spot-exposed tanker owners can realize earnings upside.",
+    "measurableGap": "The unresolved variable is shock duration and how much of the spike equities already discounted.",
+    "evidenceRefs": [
+      "reuters-shipping-20260302",
+      "cosco-energy-annual-20260327"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Normalized tanker-cycle earnings plus spot-rate sensitivity versus a matched VLCC peer.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "By late March the shipping-rate shock was well known; 2025 annual results provide baseline exposure but not a clean pre-shock valuation anchor.",
+    "thesisScenario": "Elevated rates persist for enough voyages to lift 2026 earnings materially above normalized 2025 economics.",
+    "breakevenCondition": "中远海能 must convert higher spot rates into greater incremental group earnings than 招商轮船 before the geopolitical premium normalizes.",
+    "ordinaryScenarioFailure": "Rates stay high briefly but normalize before enough voyages re-fix, so both stocks had already priced the event.",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [
+      "reuters-shipping-20260302",
+      "cosco-energy-annual-20260327",
+      "cm-energy-annual-20260327"
+    ],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No frozen valuation anchor; event already public for weeks.",
+    "alreadyPricedAssessment": "potentially partially priced",
+    "constraints": [
+      "short causal half-life",
+      "Research selection only"
+    ]
+  },
+  "bearCase": "Geopolitical de-escalation collapses rates before earnings capture, or 招商轮船 has comparable/better spot torque.",
+  "invalidationConditions": [
+    {
+      "indicator": "Hormuz traffic and tanker spot rates",
+      "observationMethod": "physical traffic/rate data",
+      "threshold": "normalization before multiple voyage-fixing cycles"
+    },
+    {
+      "indicator": "relative tanker earnings sensitivity",
+      "observationMethod": "company operating updates",
+      "threshold": "招商轮船 shows clearly stronger rate capture"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical selection results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "exact spot-vs-COA mix at cutoff",
+    "fleet availability",
+    "cutoff valuation premium"
+  ],
+  "nextResearchActions": [
+    "Freeze 中远海能 versus 招商轮船 as Research selection.",
+    "Do not infer success from a one-week geopolitical price move; use the pre-registered horizons."
+  ]
+}
