@@ -223,6 +223,10 @@ function memoV5(selectionState = 'High-priority selection') {
       latestTradingDays: 2,
       rationale: 'test'
     },
+    evidenceLedger: [
+      { id: 'e1', sourcePackRef: 'evidenceDocuments', relation: 'supports', supportsClaim: 'test evidence one' },
+      { id: 'e2', sourcePackRef: 'evidenceDocuments', relation: 'context', supportsClaim: 'test evidence two' }
+    ],
     aShareCandidates: [{ ticker: '000001.SZ', name: 'Selected' }],
     matchedControls: [
       {
@@ -266,10 +270,20 @@ function memoV5(selectionState = 'High-priority selection') {
   };
 }
 
+function sourcePackV5() {
+  return {
+    reviewItems: [],
+    evidenceDocuments: [
+      { id: 'e1', publishedAt: '2024-01-01T00:00:00Z' },
+      { id: 'e2', publishedAt: '2024-01-01T00:00:00Z' }
+    ]
+  };
+}
+
 function writeV5Run(root, memoValue) {
   fs.mkdirSync(path.join(root, 'skills'));
   fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
-  fs.writeFileSync(path.join(root, 'sources.json'), '{}');
+  fs.writeFileSync(path.join(root, 'sources.json'), JSON.stringify(sourcePackV5()));
   fs.writeFileSync(path.join(root, 'screening.json'), JSON.stringify({
     runId: 'demo-v5',
     reviewItemCount: 1,
@@ -361,7 +375,7 @@ test('v0.5 locks high-priority hypothesis with no stock selection', () => {
 
   fs.mkdirSync(path.join(root, 'skills'));
   fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
-  fs.writeFileSync(path.join(root, 'sources.json'), '{}');
+  fs.writeFileSync(path.join(root, 'sources.json'), JSON.stringify(sourcePackV5()));
   fs.writeFileSync(path.join(root, 'screening.json'), JSON.stringify({
     runId: 'demo-v5',
     reviewItemCount: 1,
