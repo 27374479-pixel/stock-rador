@@ -1,8 +1,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const EASTMONEY_URL =
-  'https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=10000&po=1&np=1&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14';
+const EASTMONEY_BASE =
+  'https://push2.eastmoney.com/api/qt/clist/get?po=1&np=1&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14';
+const PAGE_SIZE = 100;
+const EASTMONEY_URL = `${EASTMONEY_BASE}&pn=1&pz=${PAGE_SIZE}`;
 
 function normalizeName(name) {
   return String(name ?? '').trim();
@@ -92,18 +94,51 @@ function buildUniverse(rows, metadata = {}) {
   };
 }
 
-async function fetchRows() {
-  const response = await fetch(EASTMONEY_URL, {
+async function fetchPage(page) {
+  const url = `${EASTMONEY_BASE}&pn=${page}&pz=${PAGE_SIZE}`;
+  const response = await fetch(url, {
     headers: { 'User-Agent': 'stock-rador-audit-universe/0.6' },
     signal: AbortSignal.timeout(30000)
   });
-  if (!response.ok) throw new Error(`HTTP ${response.status}: Eastmoney universe fetch`);
+  if (!response.ok) throw new Error(`HTTP ${response.status}: Eastmoney universe page ${page}`);
   const body = await response.json();
   const rows = body?.data?.diff;
-  if (!Array.isArray(rows) || rows.length < 1000) {
-    throw new Error(`unexpected Eastmoney universe payload: ${Array.isArray(rows) ? rows.length : 'missing'} rows`);
+  if (!Array.isArray(rows)) throw new Error(`unexpected Eastmoney page ${page} payload`);
+  return { rows, total: Number(body?.data?.total), url };
+}
+
+async function fetchRows() {
+  const first = await fetchPage(1);
+  if (!Number.isInteger(first.total) || first.total < 1000) {
+    throw new Error(`unexpected Eastmoney universe total: ${first.total}`);
   }
-  return rows;
+  const pageCount = Math.ceil(first.total / PAGE_SIZE);
+  const pages = [{ page: 1, ...first }];
+
+  for (let start = 2; start <= pageCount; start += 6) {
+    const numbers = Array.from(
+      { length: Math.min(6, pageCount - start + 1) },
+      (_, index) => start + index
+    );
+    const batch = await Promise.all(numbers.map(async (page) => ({ page, ...(await fetchPage(page)) })));
+    pages.push(...batch);
+  }
+
+  pages.sort((a, b) => a.page - b.page);
+  const byCode = new Map();
+  for (const page of pages) {
+    for (const row of page.rows) {
+      const key = `${row?.f13}:${row?.f12}`;
+      if (byCode.has(key)) throw new Error(`duplicate Eastmoney security across pages: ${key}`);
+      byCode.set(key, row);
+    }
+  }
+
+  const rows = [...byCode.values()];
+  if (rows.length < Math.min(first.total, 1000)) {
+    throw new Error(`unexpected paged Eastmoney universe payload: ${rows.length}/${first.total} rows`);
+  }
+  return { rows, total: first.total, pageCount };
 }
 
 async function main() {
@@ -114,9 +149,12 @@ async function main() {
     process.exit(2);
   }
   if (!/^\d{4}-\d{2}-\d{2}$/.test(asOfDate)) throw new Error('as-of-date must be YYYY-MM-DD');
-  const rows = await fetchRows();
+  const fetched = await fetchRows();
   const retrievedAt = new Date().toISOString();
-  const universe = buildUniverse(rows, { asOfDate, retrievedAt, generatedAt: retrievedAt, url: EASTMONEY_URL });
+  const universe = buildUniverse(fetched.rows, { asOfDate, retrievedAt, generatedAt: retrievedAt, url: EASTMONEY_URL });
+  universe.source.reportedTotal = fetched.total;
+  universe.source.pageCount = fetched.pageCount;
+  universe.source.pageSize = PAGE_SIZE;
   if (universe.summary.includedCount < 1000) {
     throw new Error(`included universe unexpectedly small: ${universe.summary.includedCount}`);
   }
@@ -135,4 +173,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { EASTMONEY_URL, boardFor, buildUniverse, exclusionReason, tickerFor };
+module.exports = { EASTMONEY_URL, PAGE_SIZE, boardFor, buildUniverse, exclusionReason, tickerFor };
