@@ -14,20 +14,23 @@ This ledger prevents accidental reuse of viewed outcomes as untouched validation
 | 2025-03 fixed window | Skill V3.2 | consumed | AI/server: 深南电路 Candidate; steel/cobalt: NO TRADE | 深南电路 excess -10.9% 20d, +0.4% 60d, +75.9% 120d, +135.0% 250d |
 | 2025-06 fixed window | Skill V3.2 | consumed | transpacific frontload: 中远海控 Candidate; rare-earth/PV: NO TRADE | 中远海控 excess -1.5% 20d, -14.1% 60d, -13.2% 120d, -30.2% 250d |
 | 2025-09 fixed window | Skill V3.2 | consumed | refrigerants: 三美股份 Candidate; Grasberg/soybean: NO TRADE | 三美 excess -6.9% 20d, -1.8% 60d, +17.0% 120d, -7.4% 250d |
+| 2025-12 fixed window | Skill V3.3 | consumed at checkpoint 20 | copper: 江西铜业 Candidate; memory/laser/yttrium: NO TRADE | exited at frozen 20d checkpoint; +37.5% excess; later selected-stock path unopened |
 
 ## Current untouched queue
 
-The original 2022–2024 fixed-window validation queue is fully consumed. V3.2 remains frozen for a new extension set:
+The original 2022–2025 fixed-window queue is now consumed. V3.3 is the active framework.
 
-- 2025-12-01 through 2025-12-14
+Next extension windows:
+- 2026-03-01 through 2026-03-14 — enough history exists for multi-month validation.
+- 2026-06-01 through 2026-06-14 — only shorter checkpoint horizons are currently mature; do not pretend 250-day outcomes exist.
 
-These extension windows are retrospective and retain the same caveat about historical search visibility. No outcome may be opened before each selection lock is committed.
+Each window remains retrospective and must lock selection and checkpoint contracts before any selected-stock outcome segment is opened.
 
 ## Viewed-outcome ticker quarantine
 
 Future windows must reject these tickers before scoring because their post-signal paths have already been inspected in a consumed set:
 
-`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH, 301211.SZ, 603019.SH, 000977.SZ, 002837.SZ, 301018.SZ, 002335.SZ, 300394.SZ, 603083.SH, 300870.SZ, 002851.SZ, 002364.SZ, 002518.SZ, 002463.SZ, 300045.SZ, 301308.SZ, 688525.SH, 001309.SZ, 603993.SH, 002714.SZ, 601600.SH, 002922.SZ, 002916.SZ, 601919.SH, 603379.SH`
+`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH, 301211.SZ, 603019.SH, 000977.SZ, 002837.SZ, 301018.SZ, 002335.SZ, 300394.SZ, 603083.SH, 300870.SZ, 002851.SZ, 002364.SZ, 002518.SZ, 002463.SZ, 300045.SZ, 301308.SZ, 688525.SH, 001309.SZ, 603993.SH, 002714.SZ, 601600.SH, 002922.SZ, 002916.SZ, 601919.SH, 603379.SH, 600362.SH`
 
 The quarantine is procedural, not a statement about those companies. It prevents known future paths from leaking into later historical selections.
 
@@ -97,3 +100,8 @@ The first skill-first window selected 洛阳钼业 on a newly escalated copper-c
 ## 2025-09 V3.2 structural-regime vs surprise note
 
 三美股份 was selected as a structural refrigerant-quota thesis and produced +17.0% excess at 120 trading days but -7.4% at 250 days. Later company data showed the physical quota/price regime remained supportive while earnings growth decelerated materially by 2026H1. This creates a forward process requirement to distinguish **causal regime persistence** from **incremental earnings-surprise persistence** through locked re-underwriting checkpoints. 巨化股份 remains unquarantined because its post-signal path was not opened.
+
+
+## 2025-12 V3.3 checkpoint note
+
+江西铜业 produced +37.5% excess through the first predeclared 20-trading-day checkpoint. The checkpoint then froze an Exit because the physical copper regime remained strong but record pricing, broad narrative recognition and emerging Chinese demand destruction indicated that the incremental expectation gap was closing. No selected-stock prices after 2026-01-13 were opened. This is the first complete validation of the V3.3 causal-checkpoint protocol and does not create a mechanical take-profit rule.
