@@ -282,3 +282,22 @@ jobs:
             research/v22_2023_09_selection.json
             research/v22_2023_09_selection.md
           if-no-files-found: error
+
+
+  evaluate-v22-2023-09:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/evaluate-v22-window-2023-09.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v22-2023-09-outcomes
+          path: |
+            research/v22_2023_09_outcomes.json
+            research/v22_2023_09_outcomes.md
+          if-no-files-found: error
