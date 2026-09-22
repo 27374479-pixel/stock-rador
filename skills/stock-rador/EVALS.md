@@ -16,6 +16,10 @@ Every evaluation run records:
 
 The research artifact is immutable after outcome data are opened.
 
+Use `scripts/lock-skill-run.cjs` to hash the manifest, skill, source pack and selected
+memos before any post-cutoff price outcome is opened. `scripts/evaluate-skill-run.cjs`
+fails if any frozen file changes after the lock.
+
 ## 2. Three evaluation sets
 
 ### Development set
@@ -25,9 +29,22 @@ Used to identify broad failure classes and improve the skill.
 Not used while editing the current skill version. It is opened only after the version is
 frozen.
 
+Historical replay has a special limitation: the current model weights may already encode
+knowledge about events, winners and losers that occurred after the simulated cutoff.
+Restricting web sources to the past does **not** remove that leakage channel.
+
+Every historical replay must therefore freeze a source pack and record
+`contaminationControls.modelMemoryRisk`. Prefer mechanically sampled windows, preserve
+the discovery denominator and rejected cases, and use anonymized identity ablations where
+possible. Treat unusually strong historical results as provisional until reproduced on
+a different holdout and ultimately a forward sample.
+
 ### Forward set
 Collected prospectively. This is the most important set for detecting hidden hindsight
 bias and must never be used to tune old memos.
+
+Forward runs should be frozen before future outcome data exist. They use the same
+manifest/lock/evaluator pipeline as historical runs.
 
 ## 3. Evaluate the whole funnel
 
@@ -95,12 +112,13 @@ the underlying event.
 
 Before accepting an evaluation:
 1. Could the AI have seen information published after the cutoff?
-2. Was `availableAt` genuinely provable?
-3. Were candidates selected before viewing future returns?
-4. Were delisted/suspended/failed names retained?
-5. Were transaction constraints represented?
-6. Was the benchmark fixed in advance?
-7. Were prompt/rule changes tested on a new period?
-8. Can another researcher reproduce the memo from the evidence ledger?
+2. Could the model weights themselves contain post-cutoff knowledge, and is that risk recorded?
+3. Was `availableAt` genuinely provable?
+4. Were candidates selected before viewing future returns?
+5. Were delisted/suspended/failed names retained?
+6. Were transaction constraints represented?
+7. Was the benchmark fixed in advance?
+8. Were prompt/rule changes tested on a new period?
+9. Can another researcher reproduce the memo from the evidence ledger?
 
-If any answer is no, label the run exploratory rather than validation.
+If any material answer is no, label the run exploratory rather than validation.
