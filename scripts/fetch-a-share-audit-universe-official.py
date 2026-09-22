@@ -12,7 +12,7 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 SSE_URL = "https://query.sse.com.cn/sseQuery/commonQuery.do"
-SZSE_URL = "https://www.szse.cn/api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1110&TABKEY=tab1"
+SZSE_URL = "https://www.szse.cn/api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1110&TABKEY=tab1&random=0.6935816432433362"
 
 UA = "Mozilla/5.0 stock-rador-audit-universe/0.6"
 MAIN_SH = ("600", "601", "603", "605")
