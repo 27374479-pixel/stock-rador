@@ -23,6 +23,18 @@ function packet(){
         decision:'Candidate',
         earningsBridge:['volume','gross profit','EPS'],
         priceExpectation:'not fully reflected',
+        basisReconciliation:{
+          externalIndicator:'industry price',
+          companyRealizedBasis:'company realized ASP',
+          basisRisk:'basis may move'
+        },
+        valuationBridge:{
+          marketCapOrEV:'100bn market cap',
+          bearCase:'80bn value',
+          baseCase:'120bn value',
+          upsideCase:'160bn value',
+          impliedExpectation:'market implies only partial earnings capture'
+        },
         thesisBreakers:['lead times normalize','capacity fails','customer orders fall']
       }]
     }]
@@ -59,4 +71,17 @@ test('signal-specific cutoff blocks evidence that is before packet cutoff but af
   p.signals[0].evidence[0].publishedAt='2024-03-06T00:00:00+08:00';
   p.signals[0].evidence[0].availableAt='2024-03-06T00:00:00+08:00';
   assert.throws(()=>validateResearchPacket(p),/future evidence/);
+});
+
+
+test('candidate requires basis reconciliation',()=>{
+  const p=packet();
+  delete p.signals[0].candidates[0].basisReconciliation;
+  assert.throws(()=>validateResearchPacket(p),/basisReconciliation/);
+});
+
+test('candidate requires valuation bridge',()=>{
+  const p=packet();
+  delete p.signals[0].candidates[0].valuationBridge;
+  assert.throws(()=>validateResearchPacket(p),/valuationBridge/);
 });
