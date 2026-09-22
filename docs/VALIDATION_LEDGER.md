@@ -63,3 +63,8 @@ The hog signal exposed a general mapping flaw: an external industry price series
 ## 2024-03 Skill V3 note
 
 The first skill-first window selected 洛阳钼业 on a newly escalated copper-concentrate squeeze despite strong pre-signal momentum. Excess return was strongest at 20/60 trading days and decayed by 250 days. This adds an Experimental question: **what is the expected repricing half-life of the shock?** Structural architecture changes and acute supply squeezes may require different holding-horizon expectations even when both pass the earnings-bridge test.
+
+
+## 2024-03 Skill V3 horizon-decay note
+
+洛阳钼业 produced +31.1% 20-day and +16.2% 60-day excess, but only +5.7% at 250 days. The physical bottleneck thesis worked, yet alpha decayed as the event aged. Skill V3 therefore adds an experimental question about the expected half-life of each causal shock. No hard holding-period rule is changed from this one window.
