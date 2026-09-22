@@ -1,0 +1,39 @@
+name: snapshot-v08-2025q3-precutoff-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.8-20260923
+    paths:
+      - .github/workflows/snapshot-v08-2025q3-precutoff-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.8-20260923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Freeze pre-cutoff price regimes
+        run: |
+          node scripts/fetch-precutoff-regime.cjs backtests/runs/2025q3-multisource-v0.8-001/regime/memory-20250827.json backtests/runs/2025q3-multisource-v0.8-001/regime/memory-20250827.snapshot.json
+          node scripts/fetch-precutoff-regime.cjs backtests/runs/2025q3-multisource-v0.8-001/regime/power-20250831.json backtests/runs/2025q3-multisource-v0.8-001/regime/power-20250831.snapshot.json
+          node scripts/fetch-precutoff-regime.cjs backtests/runs/2025q3-multisource-v0.8-001/regime/rareearth-20250830.json backtests/runs/2025q3-multisource-v0.8-001/regime/rareearth-20250830.snapshot.json
+          node scripts/fetch-precutoff-regime.cjs backtests/runs/2025q3-multisource-v0.8-001/regime/passive-20250829.json backtests/runs/2025q3-multisource-v0.8-001/regime/passive-20250829.snapshot.json
+      - name: Commit regime snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025q3-multisource-v0.8-001/regime/*.snapshot.json
+          git commit -m "backtest: freeze v0.8 2025Q3 pre-cutoff regimes"
+          git pull --rebase origin ai-skill-v0.8-20260923
+          git push origin HEAD:ai-skill-v0.8-20260923
