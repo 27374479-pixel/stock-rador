@@ -394,3 +394,17 @@ test('v0.5 manifest requires every selected memo to be included in hypothesisMem
   item.hypothesisMemoPaths = [];
   assert.ok(validateManifest(item).some((error) => error.includes('included in hypothesisMemoPaths')));
 });
+
+
+test('v0.5 forward run freezes its source pack even without historical identity stress', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v5-forward-'));
+  const item = memoV5('High-priority selection');
+  writeV5Run(root, item);
+  const manifestItem = manifestV5();
+  manifestItem.evaluationMode = 'forward';
+  delete manifestItem.contaminationControls.identityStressPath;
+  fs.writeFileSync(path.join(root, 'manifest.json'), JSON.stringify(manifestItem));
+  const lock = lockRun(path.join(root, 'manifest.json'), root);
+  assert.ok(lock.files.some((file) => file.role === 'source_pack' && file.path === 'sources.json'));
+  assert.equal(lock.files.some((file) => file.role === 'identity_stress'), false);
+});
