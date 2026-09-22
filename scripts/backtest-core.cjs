@@ -91,6 +91,18 @@ function validateManifest(manifest) {
     }
   }
   if (!Array.isArray(manifest?.selections)) errors.push('selections must be an array');
+  if (manifest?.schemaVersion === '1.2') {
+    if (!Array.isArray(manifest?.hypothesisMemoPaths)) {
+      errors.push('hypothesisMemoPaths must be an array');
+    } else if (Array.isArray(manifest?.selections)) {
+      const memoSet = new Set(manifest.hypothesisMemoPaths);
+      for (const selection of manifest.selections) {
+        if (selection?.memoPath && !memoSet.has(selection.memoPath)) {
+          errors.push(`selection memoPath must be included in hypothesisMemoPaths: ${selection.memoPath}`);
+        }
+      }
+    }
+  }
   if (manifest?.outcomePolicy?.matchedControlStatistic &&
       manifest.outcomePolicy.matchedControlStatistic !== 'equal_weight_mean') {
     errors.push('outcomePolicy.matchedControlStatistic must be equal_weight_mean');
@@ -143,6 +155,62 @@ function validateIdentityStress(stress, manifest) {
   }
   if (stress?.performedBeforeReveal !== true) errors.push('identity stress must be performedBeforeReveal');
   if (typeof stress?.method !== 'string' || !stress.method) errors.push('identity stress method is required');
+  return errors;
+}
+
+function validateOpportunityMemo(memo, memoPath, manifest) {
+  const errors = [];
+  if (manifest?.schemaVersion !== '1.2') return errors;
+
+  try { assertIso(memo?.cutoffAt, `${memoPath}.cutoffAt`); } catch (error) { errors.push(error.message); }
+  try { assertIso(memo?.researchReadyAt, `${memoPath}.researchReadyAt`); } catch (error) { errors.push(error.message); }
+  if (memo?.actionableAt !== null && memo?.actionableAt !== undefined) {
+    try { assertIso(memo.actionableAt, `${memoPath}.actionableAt`); } catch (error) { errors.push(error.message); }
+  }
+
+  if (memo?.skillVersion !== manifest.skill.version) errors.push(`${memoPath} skillVersion does not match manifest`);
+  if (typeof memo?.hypothesisId !== 'string' || !memo.hypothesisId) errors.push(`${memoPath} hypothesisId is required`);
+  if (!manifest.trackedHypothesisStates.includes(memo?.hypothesisState)) {
+    errors.push(`${memoPath} hypothesisState ${memo?.hypothesisState} is not tracked`);
+  }
+  if (!manifest.trackedSelectionStates.includes(memo?.selectionState)) {
+    errors.push(`${memoPath} selectionState ${memo?.selectionState} is not tracked`);
+  }
+
+  const primary = manifest.primarySelectionStates.includes(memo?.selectionState);
+  if (primary && !memo?.actionableAt) errors.push(`${memoPath} primary selection requires actionableAt`);
+  if (!primary && memo?.actionableAt) errors.push(`${memoPath} non-primary selection must keep actionableAt null`);
+  if (memo?.researchReadyAt && memo?.cutoffAt && Date.parse(memo.researchReadyAt) > Date.parse(memo.cutoffAt)) {
+    errors.push(`${memoPath} researchReadyAt must not be after cutoffAt`);
+  }
+  if (memo?.actionableAt && memo?.researchReadyAt && Date.parse(memo.actionableAt) < Date.parse(memo.researchReadyAt)) {
+    errors.push(`${memoPath} actionableAt must not be before researchReadyAt`);
+  }
+  if (memo?.actionableAt && memo?.cutoffAt && Date.parse(memo.actionableAt) > Date.parse(memo.cutoffAt)) {
+    errors.push(`${memoPath} actionableAt must not be after cutoffAt`);
+  }
+
+  const realization = memo?.expectedRealization;
+  if (!realization || ![realization.earliestTradingDays, realization.baseTradingDays, realization.latestTradingDays].every((n) => Number.isInteger(n) && n > 0)) {
+    errors.push(`${memoPath} expectedRealization must define positive earliest/base/latest trading days`);
+  } else if (!(realization.earliestTradingDays <= realization.baseTradingDays && realization.baseTradingDays <= realization.latestTradingDays)) {
+    errors.push(`${memoPath} expectedRealization horizons must be ascending`);
+  }
+
+  const cutoffDate = memo?.cutoffAt?.slice?.(0, 10);
+  if (cutoffDate && (cutoffDate < manifest.discoveryWindow.startDate || cutoffDate > manifest.discoveryWindow.endDate)) {
+    errors.push(`${memoPath} cutoff date is outside discoveryWindow`);
+  }
+
+  if (memo?.selectionState === 'No selection') {
+    if (memo?.selectionComparison?.selectedTicker) {
+      errors.push(`${memoPath} No selection must keep selectionComparison.selectedTicker null`);
+    }
+    if (Array.isArray(memo?.matchedControls) && memo.matchedControls.length) {
+      errors.push(`${memoPath} No selection must not freeze matchedControls`);
+    }
+  }
+
   return errors;
 }
 
@@ -316,6 +384,20 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
   }
 
   const seenMemoPaths = new Set();
+  if (manifest.schemaVersion === '1.2') {
+    const seenHypothesisIds = new Set();
+    for (const memoRelativePath of manifest.hypothesisMemoPaths) {
+      if (seenMemoPaths.has(memoRelativePath)) throw new Error(`duplicate hypothesisMemoPath: ${memoRelativePath}`);
+      const memoPath = resolveInside(root, memoRelativePath);
+      const memo = readJson(memoPath);
+      const memoErrors = validateOpportunityMemo(memo, memoRelativePath, manifest);
+      if (memoErrors.length) throw new Error(`invalid opportunity memo:\n- ${memoErrors.join('\n- ')}`);
+      if (seenHypothesisIds.has(memo.hypothesisId)) throw new Error(`duplicate hypothesisId across memos: ${memo.hypothesisId}`);
+      seenHypothesisIds.add(memo.hypothesisId);
+      files.push({ role: 'memo', path: memoRelativePath, sha256: sha256File(memoPath) });
+      seenMemoPaths.add(memoRelativePath);
+    }
+  }
   for (const selection of manifest.selections) {
     if (!selection?.memoPath || !selection?.hypothesisId || !selection?.ticker) throw new Error('each selection requires memoPath, hypothesisId and ticker');
     const memoPath = resolveInside(root, selection.memoPath);
@@ -520,6 +602,33 @@ function aggregateByHypothesis(results, horizons) {
   return { hypothesisResults, aggregate };
 }
 
+function summarizeHypothesisMemos(manifest, memosByPath) {
+  const paths = manifest?.schemaVersion === '1.2'
+    ? (manifest.hypothesisMemoPaths ?? [])
+    : [...new Set(manifest.selections.map((selection) => selection.memoPath))];
+  const rows = paths.map((memoPath) => {
+    const memo = memosByPath[memoPath];
+    if (!memo) throw new Error(`missing hypothesis memo ${memoPath}`);
+    return {
+      memoPath,
+      hypothesisId: memo.hypothesisId,
+      hypothesisState: memo.hypothesisState ?? null,
+      selectionState: memo.selectionState ?? memo.state ?? null,
+      actionableAt: memo.actionableAt ?? null
+    };
+  });
+  const countBy = (field, value) => rows.filter((row) => row[field] === value).length;
+  return {
+    count: rows.length,
+    highPriorityHypothesisCount: countBy('hypothesisState', 'High-priority hypothesis'),
+    researchHypothesisCount: countBy('hypothesisState', 'Research hypothesis'),
+    noSelectionCount: countBy('selectionState', 'No selection'),
+    researchSelectionCount: countBy('selectionState', 'Research selection'),
+    highPrioritySelectionCount: countBy('selectionState', 'High-priority selection'),
+    rows
+  };
+}
+
 function evaluateRun(manifest, memosByPath, prices) {
   const standardHorizons = manifest.outcomePolicy.holdingTradingDays;
   const cost = manifest.outcomePolicy.oneWayCostRate;
@@ -652,6 +761,7 @@ function evaluateRun(manifest, memosByPath, prices) {
   const primaryBaseRanks = primaryResults.map((result) => result.thesisBaseOutcome.rankPercentile).filter(Number.isFinite);
 
   return {
+    hypothesisMemoSummary: summarizeHypothesisMemos(manifest, memosByPath),
     results,
     aggregate: {
       tickerLevel,
@@ -689,6 +799,7 @@ module.exports = {
   returnAfterCost,
   sha256File,
   validateManifest,
+  validateOpportunityMemo,
   validateScreening,
   validateIdentityStress,
   verifyLock
