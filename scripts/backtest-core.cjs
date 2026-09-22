@@ -77,7 +77,7 @@ function validateManifest(manifest) {
   if (Array.isArray(trackedStates) && Array.isArray(primaryStates) && primaryStates.some((state) => !trackedStates.includes(state))) {
     errors.push('primarySignalStates must be a subset of trackedMemoStates');
   }
-  if (!Array.isArray(manifest?.selections) || manifest.selections.length === 0) errors.push('selections must be non-empty');
+  if (!Array.isArray(manifest?.selections)) errors.push('selections must be an array');
   if (manifest?.evaluationMode === 'historical_replay') {
     if (!manifest?.contaminationControls?.modelMemoryRisk) errors.push('historical_replay requires contaminationControls.modelMemoryRisk');
     if (!manifest?.contaminationControls?.sourcePackPath) errors.push('historical_replay requires contaminationControls.sourcePackPath');
