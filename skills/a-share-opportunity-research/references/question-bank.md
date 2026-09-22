@@ -174,3 +174,14 @@ Origin: 2024-06 hog margin miss and earlier price-attractiveness ambiguity.
 - If this bridge cannot be built with enough confidence, why is the stock more than Watch?
 
 Status: **promoted into V3.1 core process** as a universal answer to "is the stock actually cheap enough?", not as a numerical valuation threshold.
+
+
+### X4 — Causal half-life / horizon decay
+Origin: 2024-03 copper-concentrate squeeze.
+- What is the expected half-life of the causal shock?
+- Which observable variable tells us the bottleneck is normalizing?
+- Is this a 20-day repricing event, a multi-quarter earnings bridge, or a multi-year architecture transition?
+- Should the thesis be re-underwritten when the original bottleneck has normalized even if the company remains high quality?
+- Does the expected holding horizon match the duration of the economic edge rather than a fixed backtest convention?
+
+Status: **experimental**. One Skill V3 consumed window so far.
