@@ -6,7 +6,7 @@ This ledger prevents accidental reuse of viewed outcomes as untouched validation
 | --- | --- | --- | --- | --- |
 | 2023-05 / 2023-10 / 2023-11 / 2024-04 pilot cases | V1 | development set | mixed select/abstain | used to design V2; never fresh validation again |
 | 2022-03 fixed window | V2 | consumed | MCU: select; PLC: select | MCU primary 250d excess -18.4%; PLC primary +42.8% |
-| 2022-06 fixed window | V2.1 | consumed | NO TRADE | watch diagnostics: 亚钾国际 -34.5%, 云天化 -43.7% 250d excess |
+| 2022-06 fixed window | V2.1 | consumed | NO TRADE | watch diagnostics: 亚钾国际 -34.5%, 云天化 -43.7% 250d excess |\n| 2022-09 fixed window | V2.1 | consumed | heat pump: select; ammonia: NO TRADE | 海信家电 primary +120.6% 250d excess; selected basket +52.0% |
 
 ## Current untouched queue
 
@@ -24,3 +24,12 @@ V2.1 remains frozen for the next window. The untouched queue from the original p
 - 2024-12-01 through 2024-12-14
 
 No rule change is permitted to use a future queue window's outcomes before its selection lock is committed.
+
+
+## Viewed-outcome ticker quarantine
+
+Future windows must reject these tickers before scoring because their post-signal paths have already been inspected in a consumed set:
+
+`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH`
+
+The quarantine is procedural, not a statement about those companies. It prevents known future paths from leaking into later historical selections.
