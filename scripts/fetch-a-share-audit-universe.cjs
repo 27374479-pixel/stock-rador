@@ -94,17 +94,35 @@ function buildUniverse(rows, metadata = {}) {
   };
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function fetchPage(page) {
   const url = `${EASTMONEY_BASE}&pn=${page}&pz=${PAGE_SIZE}`;
-  const response = await fetch(url, {
-    headers: { 'User-Agent': 'stock-rador-audit-universe/0.6' },
-    signal: AbortSignal.timeout(30000)
-  });
-  if (!response.ok) throw new Error(`HTTP ${response.status}: Eastmoney universe page ${page}`);
-  const body = await response.json();
-  const rows = body?.data?.diff;
-  if (!Array.isArray(rows)) throw new Error(`unexpected Eastmoney page ${page} payload`);
-  return { rows, total: Number(body?.data?.total), url };
+  let lastError = null;
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers: { 'User-Agent': 'stock-rador-audit-universe/0.6' },
+        signal: AbortSignal.timeout(30000)
+      });
+      if (!response.ok) {
+        const retryable = response.status === 429 || response.status >= 500;
+        if (!retryable) throw new Error(`HTTP ${response.status}: Eastmoney universe page ${page}`);
+        throw new Error(`retryable HTTP ${response.status}: Eastmoney universe page ${page}`);
+      }
+      const body = await response.json();
+      const rows = body?.data?.diff;
+      if (!Array.isArray(rows)) throw new Error(`unexpected Eastmoney page ${page} payload`);
+      return { rows, total: Number(body?.data?.total), url, attempts: attempt };
+    } catch (error) {
+      lastError = error;
+      if (attempt === 5) break;
+      await sleep(500 * (2 ** (attempt - 1)) + page * 15);
+    }
+  }
+  throw new Error(`Eastmoney universe page ${page} failed after retries: ${lastError?.message ?? 'unknown error'}`);
 }
 
 async function fetchRows() {
@@ -115,9 +133,9 @@ async function fetchRows() {
   const pageCount = Math.ceil(first.total / PAGE_SIZE);
   const pages = [{ page: 1, ...first }];
 
-  for (let start = 2; start <= pageCount; start += 6) {
+  for (let start = 2; start <= pageCount; start += 2) {
     const numbers = Array.from(
-      { length: Math.min(6, pageCount - start + 1) },
+      { length: Math.min(2, pageCount - start + 1) },
       (_, index) => start + index
     );
     const batch = await Promise.all(numbers.map(async (page) => ({ page, ...(await fetchPage(page)) })));
@@ -138,7 +156,12 @@ async function fetchRows() {
   if (rows.length < Math.min(first.total, 1000)) {
     throw new Error(`unexpected paged Eastmoney universe payload: ${rows.length}/${first.total} rows`);
   }
-  return { rows, total: first.total, pageCount };
+  return {
+    rows,
+    total: first.total,
+    pageCount,
+    maxAttemptsUsed: Math.max(...pages.map((page) => page.attempts ?? 1))
+  };
 }
 
 async function main() {
@@ -155,6 +178,7 @@ async function main() {
   universe.source.reportedTotal = fetched.total;
   universe.source.pageCount = fetched.pageCount;
   universe.source.pageSize = PAGE_SIZE;
+  universe.source.maxAttemptsUsed = fetched.maxAttemptsUsed;
   if (universe.summary.includedCount < 1000) {
     throw new Error(`included universe unexpectedly small: ${universe.summary.includedCount}`);
   }
