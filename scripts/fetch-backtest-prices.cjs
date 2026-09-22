@@ -67,7 +67,12 @@ async function main() {
   if (cutoffDates.some((date) => !/^\d{4}-\d{2}-\d{2}$/.test(date || ''))) throw new Error('invalid memo cutoff date');
 
   const start = addDays(cutoffDates.sort()[0], -15);
-  const end = addDays(cutoffDates.sort().at(-1), 160);
+  const memoHorizons = Object.values(memoFiles).flatMap((memo) => {
+    const r = memo.expectedRealization;
+    return r ? [r.earliestTradingDays, r.baseTradingDays, r.latestTradingDays] : [];
+  });
+  const maxTradingDays = Math.max(...manifest.outcomePolicy.holdingTradingDays, ...memoHorizons);
+  const end = addDays(cutoffDates.sort().at(-1), maxTradingDays * 2 + 45);
   const tickers = [...new Set([manifest.benchmark.ticker, ...manifest.selections.map((selection) => selection.ticker)])];
   const fetchedAt = new Date().toISOString();
   const series = {};
