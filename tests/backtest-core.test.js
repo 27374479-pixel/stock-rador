@@ -458,3 +458,109 @@ test('v0.5 evidence audit rejects orphan and post-cutoff references', () => {
   assert.ok(errors.some((x) => x.includes('future-doc') && x.includes('not declared in evidenceLedger')));
   assert.ok(errors.some((x) => x.includes('orphan-ledger-ref') && x.includes('missing from frozen source pack')));
 });
+
+
+function manifestV6() {
+  const item = manifestV5();
+  item.schemaVersion = '1.3';
+  item.runId = 'demo-v6';
+  item.skill = { path: 'skills/SKILL.md', version: '0.6.0' };
+  return item;
+}
+
+function memoV6(selectionState = 'High-priority selection') {
+  const item = memoV5(selectionState);
+  item.schemaVersion = '0.5';
+  item.skillVersion = '0.6.0';
+  for (const pair of item.selectionComparison.pairwise) {
+    pair.switchCondition = `control becomes preferable if its earnings revisions improve while selected expectations do not`;
+  }
+  item.expectationBurdenTest = {
+    valuationMethod: 'forward PE with frozen consensus earnings',
+    referencePriceAtCutoff: 100,
+    marketBaseline: 'Frozen consensus implies normalized earnings of 10 per share.',
+    thesisScenario: 'The thesis requires earnings to reach 12 per share within the realization window.',
+    breakevenCondition: 'At least 20% earnings upside versus the frozen baseline without a lower relative multiple versus controls.',
+    ordinaryScenarioFailure: 'Earnings meet consensus but do not exceed it, leaving no price-relative edge versus controls.',
+    catalystOrTimingBridge: 'A scheduled reporting update inside the base horizon can reveal the earnings delta.',
+    evidenceRefs: ['e1', 'e2'],
+    conclusion: 'room'
+  };
+  return item;
+}
+
+function writeV6Run(root, memoValue) {
+  fs.mkdirSync(path.join(root, 'skills'));
+  fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
+  fs.writeFileSync(path.join(root, 'sources.json'), JSON.stringify(sourcePackV5()));
+  fs.writeFileSync(path.join(root, 'screening.json'), JSON.stringify({
+    runId: 'demo-v6',
+    reviewItemCount: 1,
+    reviewDecisions: [{ itemId: 'x1', decision: 'promote', reasonCode: 'economic_change', rationale: 'test' }]
+  }));
+  fs.writeFileSync(path.join(root, 'identity.json'), JSON.stringify({
+    runId: 'demo-v6',
+    status: 'passed',
+    performedBeforeReveal: true,
+    method: 'masked test'
+  }));
+  fs.writeFileSync(path.join(root, 'impl.js'), 'implementation');
+  fs.writeFileSync(path.join(root, 'memo.json'), JSON.stringify(memoValue));
+  fs.writeFileSync(path.join(root, 'manifest.json'), JSON.stringify(manifestV6()));
+}
+
+test('v0.6 manifest accepts schema 1.3', () => {
+  assert.deepEqual(validateManifest(manifestV6()), []);
+});
+
+test('v0.6 high-priority selection requires auditable expectation burden and switch conditions', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v6-'));
+  const item = memoV6('High-priority selection');
+  writeV6Run(root, item);
+  const lock = lockRun(path.join(root, 'manifest.json'), root);
+  assert.equal(lock.candidateCount, 1);
+});
+
+test('v0.6 rejects fully-priced high-priority selection', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v6-priced-'));
+  const item = memoV6('High-priority selection');
+  item.expectationBurdenTest.conclusion = 'fully_priced';
+  writeV6Run(root, item);
+  assert.throws(
+    () => lockRun(path.join(root, 'manifest.json'), root),
+    /High-priority selection cannot have fully_priced expectation burden/
+  );
+});
+
+test('v0.6 tight high-priority selection requires a catalyst or timing bridge', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v6-tight-'));
+  const item = memoV6('High-priority selection');
+  item.expectationBurdenTest.conclusion = 'tight';
+  item.expectationBurdenTest.catalystOrTimingBridge = '';
+  writeV6Run(root, item);
+  assert.throws(
+    () => lockRun(path.join(root, 'manifest.json'), root),
+    /tight High-priority selection requires catalystOrTimingBridge/
+  );
+});
+
+test('v0.6 pairwise comparisons require explicit switch conditions', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v6-switch-'));
+  const item = memoV6('High-priority selection');
+  item.selectionComparison.pairwise[0].switchCondition = '';
+  writeV6Run(root, item);
+  assert.throws(
+    () => lockRun(path.join(root, 'manifest.json'), root),
+    /requires switchCondition/
+  );
+});
+
+test('v0.6 research selection may remain unresolved on expectation burden', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v6-research-'));
+  const item = memoV6('Research selection');
+  item.expectationBurdenTest.conclusion = 'unresolved';
+  item.expectationBurdenTest.catalystOrTimingBridge = '';
+  writeV6Run(root, item);
+  const lock = lockRun(path.join(root, 'manifest.json'), root);
+  assert.equal(lock.candidateCount, 1);
+});
