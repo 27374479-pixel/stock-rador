@@ -58,3 +58,8 @@ The memory-price rebound was real and all three selected names had direct produc
 ## 2024-06 basis-match and valuation note
 
 The hog signal exposed a general mapping flaw: an external industry price series was compared directly with company production cost even though the company's own reported realized selling price was materially lower. The window also showed that qualitative PB/PE context is not enough to answer whether an opportunity is actually cheap. These become forward-only V3.1 research requirements; 2024-06 remains consumed. 中远海控 and 温氏股份 remain unquarantined because their futures were not opened.
+
+
+## 2024-03 Skill V3 note
+
+The first skill-first window selected 洛阳钼业 on a newly escalated copper-concentrate squeeze despite strong pre-signal momentum. Excess return was strongest at 20/60 trading days and decayed by 250 days. This adds an Experimental question: **what is the expected repricing half-life of the shock?** Structural architecture changes and acute supply squeezes may require different holding-horizon expectations even when both pass the earnings-bridge test.
