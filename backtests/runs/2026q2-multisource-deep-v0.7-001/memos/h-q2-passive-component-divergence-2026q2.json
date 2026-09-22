@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.7.0",
+  "cutoffAt": "2026-04-30T15:10:00+08:00",
+  "researchReadyAt": "2026-04-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q2-passive-component-divergence-2026q2",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Passive-component price/mix changes can affect quarterly margins quickly; 20-60 days tests estimate repricing and 120 days covers a second reporting cycle."
+  },
+  "changeHypothesis": {
+    "summary": "AI-related passive-component demand and price increases were real, but the economic incidence varied sharply. 三环集团 had strong Q1 revenue/profit acceleration and an analyst forecast reset, while 顺络电子's margins were hit by metals and 风华高科 grew more slowly. However, by Apr30 三环's price had effectively reached the newly raised analyst target and its valuation was already near a five-year extreme, so the company edge did not translate into a High-priority price-relative selection.",
+    "firstCredibleDate": "2026-04-28",
+    "valueChain": [
+      "AI/server demand",
+      "MLCC/passive component demand",
+      "metal input inflation",
+      "price pass-through and product mix",
+      "gross margin/profit",
+      "valuation absorption"
+    ],
+    "persistenceReason": "TrendForce identified AI/consumer divergence and price hikes; company Q1 results showed large differences in actual margin/profit capture.",
+    "disconfirmingEvidence": [
+      "Consumer demand remained weak.",
+      "Metal inflation can make price hikes merely cost pass-through rather than margin expansion.",
+      "三环 valuation and price had already rerated strongly by the actionable cutoff."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-mlcc-20260428",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "sanhuan-q1-20260424",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "sanhuan-research-20260425",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "sanhuan-price-20260430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "sanhuan-valuation-20260424",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "shunluo-q1-20260430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "shunluo-research-20260430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "fenghua-q1-20260429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "AI demand plus passive-component price hikes",
+      "to": "supplier revenue/mix",
+      "mechanism": "High-end AI/server components can improve volume/mix while industry price increases pass through metal costs.",
+      "evidenceRefs": [
+        "tf-mlcc-20260428",
+        "sanhuan-research-20260425",
+        "shunluo-research-20260430"
+      ],
+      "failureMode": "consumer weakness or commodity inflation overwhelms AI mix",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "revenue/mix",
+      "to": "profit conversion",
+      "mechanism": "三环 showed strong Q1 profit/扣非 growth; 顺络's profit fell as metals compressed margin; 风华's growth was positive but slower.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424",
+        "shunluo-q1-20260430",
+        "fenghua-q1-20260429"
+      ],
+      "failureMode": "三环 Q1 mix is temporary or peers recover margin quickly",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "profit reset",
+      "to": "stock alpha",
+      "mechanism": "Even a superior company must leave valuation room. 三环's Apr30 price nearly reached the newly raised analyst target and its TTM valuation was already near a five-year extreme.",
+      "evidenceRefs": [
+        "sanhuan-research-20260425",
+        "sanhuan-price-20260430",
+        "sanhuan-valuation-20260424"
+      ],
+      "failureMode": "strong earnings continue but price already discounts the reset",
+      "lag": "immediate"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "high-end MLCC/passive suppliers with AI exposure and cost pass-through"
+    ],
+    "secondOrderWinners": [
+      "materials suppliers with pricing power"
+    ],
+    "losers": [
+      "passive suppliers unable to pass metal inflation"
+    ],
+    "substitutes": [
+      "alternative component architectures/suppliers"
+    ],
+    "bottlenecks": [
+      "high-end qualification",
+      "silver/copper/aluminum costs"
+    ],
+    "falseThemeMatches": [
+      "generic passive-component names without AI mix or margin capture"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300408.SZ",
+      "name": "三环集团",
+      "verifiedExposure": "Q1 revenue +46.25%, profit +48.48%,扣非 +60.82%; analyst work described Q1 as above expectations and raised 2026/27 forecasts materially.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424",
+        "sanhuan-research-20260425"
+      ],
+      "earningsSensitivity": {
+        "base": "MLCC/optical mix supports strong growth but valuation is already elevated.",
+        "favorable": "AI MLCC, optical components and SOFC drive another estimate reset.",
+        "adverse": "Price/multiple mean strong fundamentals only meet expectations."
+      },
+      "principalRisks": [
+        "high valuation",
+        "price absorption",
+        "consumer weakness"
+      ]
+    },
+    {
+      "ticker": "002138.SZ",
+      "name": "顺络电子",
+      "verifiedExposure": "AI-server power-module demand was growing, but Q1 profit fell 23.71% and gross margin was hit by metal inflation.",
+      "evidenceRefs": [
+        "shunluo-q1-20260430",
+        "shunluo-research-20260430"
+      ],
+      "earningsSensitivity": {
+        "base": "Revenue growth but weak margin conversion.",
+        "favorable": "Q2 cost pass-through restores margin.",
+        "adverse": "Metal inflation persists."
+      },
+      "principalRisks": [
+        "raw-material costs",
+        "margin pressure"
+      ]
+    },
+    {
+      "ticker": "000636.SZ",
+      "name": "风华高科",
+      "verifiedExposure": "Q1 revenue +18.90% and profit +37.14%, but acceleration was materially below 三环.",
+      "evidenceRefs": [
+        "fenghua-q1-20260429"
+      ],
+      "earningsSensitivity": {
+        "base": "Moderate recovery.",
+        "favorable": "Price hikes and mix improve margin.",
+        "adverse": "Consumer weakness/costs slow recovery."
+      },
+      "principalRisks": [
+        "cash conversion",
+        "lower growth"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002138.SZ",
+      "name": "顺络电子",
+      "controlType": "peer",
+      "fairCounterfactualReason": "A-share passive/electronic-component supplier with AI-server exposure and the same metal-cost shock.",
+      "whySelectedCompanyShouldOutperform": "三环 showed much stronger realized profit growth and did not suffer the same Q1 margin collapse, though its valuation burden was much higher.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424",
+        "shunluo-q1-20260430",
+        "shunluo-research-20260430"
+      ]
+    },
+    {
+      "ticker": "000636.SZ",
+      "name": "风华高科",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct A-share passive-component peer exposed to the same industry pricing/recovery cycle.",
+      "whySelectedCompanyShouldOutperform": "三环 had materially faster revenue/扣非 growth and stronger AI/high-end mix evidence.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424",
+        "sanhuan-research-20260425",
+        "fenghua-q1-20260429"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300408.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002138.SZ",
+        "selectedAdvantages": [
+          "much stronger Q1 profit conversion",
+          "higher-end MLCC/AI and optical mix evidence",
+          "forecast was raised after an above-expectation quarter"
+        ],
+        "selectedDisadvantages": [
+          "valuation burden materially higher",
+          "stock price already absorbed much of the reset"
+        ],
+        "evidenceRefs": [
+          "sanhuan-q1-20260424",
+          "sanhuan-research-20260425",
+          "shunluo-q1-20260430",
+          "shunluo-research-20260430"
+        ],
+        "switchCondition": "Prefer 顺络 if metal cost pass-through restores margin while 三环's valuation remains extreme and incremental revisions fade.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "000636.SZ",
+        "selectedAdvantages": [
+          "faster revenue and profit growth",
+          "stronger high-end/AI mix evidence"
+        ],
+        "selectedDisadvantages": [
+          "much higher absorbed valuation burden"
+        ],
+        "evidenceRefs": [
+          "sanhuan-q1-20260424",
+          "sanhuan-research-20260425",
+          "fenghua-q1-20260429"
+        ],
+        "switchCondition": "Prefer 风华 if industry price recovery broadens while 三环's premium valuation compresses.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "Company fundamentals clearly favor 三环 versus frozen passive-component peers, but V0.7 deliberately separates company quality from price-relative opportunity."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Q1 was already labeled above expectations and analyst 2026/27 forecasts were raised from RMB3.288/3.890bn to RMB3.997/5.495bn. Yet by Apr30 the stock closed at RMB85.70, nearly equal to the newly raised RMB86.1 target; contemporaneous TTM valuation was near the top of its five-year history.",
+    "thesisExpectation": "AI/high-end MLCC and optical demand can support further growth, but another earnings reset is required to create price-relative upside from the cutoff.",
+    "measurableGap": "Fundamental gap versus peers is large; expectation/valuation gap is small because the price had almost fully caught the post-Q1 target by cutoff.",
+    "evidenceRefs": [
+      "sanhuan-research-20260425",
+      "sanhuan-price-20260430",
+      "sanhuan-valuation-20260424"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward earnings/target-price burden plus historical valuation percentile versus passive peers.",
+    "referencePriceAtCutoff": 85.7,
+    "marketBaseline": "Post-Q1 analyst forecasts were already raised materially and target price set at RMB86.1; TTM PE was near a five-year extreme.",
+    "thesisScenario": "High-end MLCC/optical demand and price increases produce another meaningful earnings upgrade beyond the Apr25 reset.",
+    "breakevenCondition": "三环 needs a new earnings reset large enough to move fair value materially above the already-reached RMB86.1 target, rather than simply deliver the raised forecast.",
+    "ordinaryScenarioFailure": "The company executes well and beats peers fundamentally, but the stock produces little selection alpha because valuation already capitalized the improvement.",
+    "catalystOrTimingBridge": "Q2 product pricing and earnings could create another reset, but the cutoff burden provides little cushion.",
+    "evidenceRefs": [
+      "sanhuan-research-20260425",
+      "sanhuan-price-20260430",
+      "sanhuan-valuation-20260424"
+    ],
+    "conclusion": "fully_priced"
+  },
+  "expectationEvidenceStatus": "conflicted",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q1 revenue/profit/扣非 growth accelerated strongly and the industry AI/passive signal was positive.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424",
+        "tf-mlcc-20260428"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "The acceleration was already visible in reported Q1 financials.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "三环's reported profit conversion was materially stronger than 顺络 and faster than 风华.",
+      "evidenceRefs": [
+        "sanhuan-q1-20260424",
+        "shunluo-q1-20260430",
+        "fenghua-q1-20260429"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The Apr25 report explicitly raised 2026/27 forecasts versus its prior estimates.",
+      "evidenceRefs": [
+        "sanhuan-research-20260425"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare Apr30 close with the Apr25 target price and contemporaneous historical valuation percentile.",
+      "evidenceRefs": [
+        "sanhuan-price-20260430",
+        "sanhuan-valuation-20260424",
+        "sanhuan-research-20260425"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": 85.7,
+    "nextExecutablePrice": null,
+    "valuationContext": "Apr30 price was essentially at the newly raised RMB86.1 target; valuation was historically elevated.",
+    "alreadyPricedAssessment": "company-level acceleration largely absorbed; Research only",
+    "constraints": [
+      "high price absorption",
+      "consumer-demand divergence",
+      "metal-cost risk"
+    ]
+  },
+  "bearCase": "三环 remains the best company in the peer set but valuation compression offsets earnings growth, while cheaper peers recover margins.",
+  "invalidationConditions": [
+    {
+      "indicator": "incremental earnings forecast reset",
+      "observationMethod": "next analyst/company earnings updates",
+      "threshold": "no meaningful increase beyond the Apr25 forecast"
+    },
+    {
+      "indicator": "MLCC/AI margin capture",
+      "observationMethod": "next quarterly gross margin and product commentary",
+      "threshold": "price hikes merely offset metal inflation without improving economics"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay; later outcomes may exist in current model memory.",
+    "result": "not_clean",
+    "caveats": [
+      "Do not promote after reveal."
+    ]
+  },
+  "unknowns": [
+    "exact MLCC segment margin",
+    "full peer valuation distribution",
+    "duration of AI/consumer demand divergence"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection, not High-priority.",
+    "Use this as an explicit v0.7 high-price-absorption negative control."
+  ]
+}
