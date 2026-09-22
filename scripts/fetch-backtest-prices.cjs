@@ -74,7 +74,14 @@ async function main() {
   });
   const maxTradingDays = Math.max(...manifest.outcomePolicy.holdingTradingDays, ...memoHorizons);
   const end = addDays([...anchorDates].sort().at(-1), maxTradingDays * 2 + 45);
-  const tickers = [...new Set([manifest.benchmark.ticker, ...manifest.selections.map((selection) => selection.ticker)])];
+  const controlTickers = Object.values(memoFiles).flatMap((memo) =>
+    Array.isArray(memo.matchedControls) ? memo.matchedControls.map((control) => control.ticker).filter(Boolean) : []
+  );
+  const tickers = [...new Set([
+    manifest.benchmark.ticker,
+    ...manifest.selections.map((selection) => selection.ticker),
+    ...controlTickers
+  ])];
   const fetchedAt = new Date().toISOString();
   const series = {};
 
