@@ -195,3 +195,14 @@ Origin: 2025-06 transpacific frontload miss.
 - Is a low trailing/normalized valuation merely compensating for an earnings peak that the market expects to fade?
 
 Status: **experimental**. One consumed event-repricing window so far. Do not convert this into a momentum cutoff or a mechanical news-age threshold.
+
+
+### X8 — Structural regime persistence versus earnings-surprise persistence
+Origin: 2025-09 refrigerant structural thesis.
+- Is the physical/policy regime merely still present, or is it still producing incremental earnings surprise?
+- Are realized ASP, unit margin, volume, order growth and cash conversion still accelerating, stable, or decelerating?
+- Has the market already revised to the new steady-state earnings level?
+- Can a thesis remain fundamentally true while its stock-specific expectation gap closes?
+- What checkpoint evidence would downgrade a structural Candidate even if the original bottleneck has not disappeared?
+
+Status: **promoted as a process requirement for V3.3 checkpoints**, but not as a numerical growth threshold or fixed holding-day rule.
