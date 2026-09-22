@@ -1,0 +1,20 @@
+name: v0.5-ci
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.5-20260922
+    paths:
+      - .github/workflows/v0.5-ci.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.5-20260922
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
