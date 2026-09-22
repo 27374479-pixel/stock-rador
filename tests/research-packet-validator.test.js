@@ -12,6 +12,7 @@ function packet(){
     discoveryQueries:['transformer lead time shortage'],
     signals:[{
       id:'s1',
+      asOf:'2024-03-05T23:59:59+08:00',
       claim:'lead times increased',
       beneficiaryArchetype:'supplier with available capacity and qualified customers',
       evidence:[{publishedAt:'2024-03-01T00:00:00Z',availableAt:'2024-03-01T00:00:00Z'}],
@@ -32,7 +33,7 @@ test('valid skill packet passes',()=>assert.equal(validateResearchPacket(packet(
 
 test('future evidence is rejected',()=>{
   const p=packet();
-  p.signals[0].evidence[0].availableAt='2024-03-20T00:00:00Z';
+  p.signals[0].evidence[0].availableAt='2024-03-06T00:00:00+08:00';
   assert.throws(()=>validateResearchPacket(p),/future evidence/);
 });
 
@@ -50,4 +51,12 @@ test('candidate requires falsifiable thesis breakers',()=>{
   const p=packet();
   p.signals[0].candidates[0].thesisBreakers=['only one'];
   assert.throws(()=>validateResearchPacket(p),/three thesisBreakers/);
+});
+
+
+test('signal-specific cutoff blocks evidence that is before packet cutoff but after signal cutoff',()=>{
+  const p=packet();
+  p.signals[0].evidence[0].publishedAt='2024-03-06T00:00:00+08:00';
+  p.signals[0].evidence[0].availableAt='2024-03-06T00:00:00+08:00';
+  assert.throws(()=>validateResearchPacket(p),/future evidence/);
 });
