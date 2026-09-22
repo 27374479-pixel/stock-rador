@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.8.0",
+  "cutoffAt": "2025-08-30T23:59:59+08:00",
+  "researchReadyAt": "2025-08-30T22:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q3-rareearth-control-2025q3",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Rare-earth policy/price changes can affect earnings quickly but policy incidence and valuation can dominate within one to two quarters."
+  },
+  "changeHypothesis": {
+    "summary": "Rare-earth supply control and price recovery were real and company profits improved sharply, but by end-August the entire listed basket had already massively rerated. The opportunity hypothesis is high priority; the timing/valuation state is not clean enough for a stock selection.",
+    "firstCredibleDate": "2025-08-07",
+    "valueChain": [
+      "quota/export control",
+      "oxide/metal supply",
+      "rare-earth prices",
+      "miner/separator margins",
+      "earnings"
+    ],
+    "persistenceReason": "Policy control and H1 company results both showed supply/pricing effects.",
+    "disconfirmingEvidence": [
+      "60d basket excess was ~90pp with 100% breadth.",
+      "北方稀土 forward PE was ~76x; 中国稀土 TTM PE ~831x.",
+      "Policy incidence differs across upstream/downstream firms."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-rareearth-export-20250807",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-rareearth-quota-20250822",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-rareearth-20250830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "northrare-h1-20250827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "northrare-research-20250829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "chinarare-h1-20250829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenghe-h1-20250830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "quota/export control",
+      "to": "scarcity/pricing power",
+      "mechanism": "Administrative constraints can tighten accessible supply.",
+      "evidenceRefs": [
+        "reuters-rareearth-export-20250807",
+        "reuters-rareearth-quota-20250822"
+      ],
+      "failureMode": "policy loosening or alternative supply",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "price recovery",
+      "to": "upstream earnings",
+      "mechanism": "Higher prices and volume improve resource/separation economics.",
+      "evidenceRefs": [
+        "northrare-h1-20250827",
+        "shenghe-h1-20250830"
+      ],
+      "failureMode": "input costs/volume restrictions offset price",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings improvement",
+      "to": "stock alpha",
+      "mechanism": "Only if the rerating has not already consumed the earnings reset.",
+      "evidenceRefs": [
+        "regime-rareearth-20250830",
+        "northrare-research-20250829"
+      ],
+      "failureMode": "late-cycle multiple compression",
+      "lag": "immediate"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "resource-rich rare-earth producers with pricing power"
+    ],
+    "secondOrderWinners": [
+      "separation/material firms"
+    ],
+    "losers": [
+      "export-dependent downstream users"
+    ],
+    "substitutes": [
+      "non-China supply and alternative materials"
+    ],
+    "bottlenecks": [
+      "quotas/licensing"
+    ],
+    "falseThemeMatches": [
+      "policy-theme names without earnings sensitivity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600111.SH",
+      "name": "北方稀土",
+      "verifiedExposure": "H1 revenue +45%, profit +1952%, cash flow sharply improved; direct resource/processing scale.",
+      "evidenceRefs": [
+        "northrare-h1-20250827",
+        "northrare-research-20250829"
+      ],
+      "earningsSensitivity": {
+        "base": "2025E profit RMB2.54bn.",
+        "favorable": "price cycle persists.",
+        "adverse": "valuation compresses."
+      },
+      "principalRisks": [
+        "late-cycle valuation",
+        "commodity/policy"
+      ]
+    },
+    {
+      "ticker": "000831.SZ",
+      "name": "中国稀土",
+      "verifiedExposure": "H1 revenue +62%, profit turnaround.",
+      "evidenceRefs": [
+        "chinarare-h1-20250829"
+      ],
+      "earningsSensitivity": {
+        "base": "strong recovery but extremely high TTM valuation.",
+        "favorable": "heavy rare-earth prices rise further.",
+        "adverse": "valuation collapse."
+      },
+      "principalRisks": [
+        "extreme valuation",
+        "feedstock"
+      ]
+    },
+    {
+      "ticker": "600392.SH",
+      "name": "盛和资源",
+      "verifiedExposure": "H1 profit turned strongly positive as rare-earth prices/volumes improved.",
+      "evidenceRefs": [
+        "shenghe-h1-20250830"
+      ],
+      "earningsSensitivity": {
+        "base": "turnaround earnings.",
+        "favorable": "price cycle persists.",
+        "adverse": "cash conversion/price reversal."
+      },
+      "principalRisks": [
+        "cash-flow quality",
+        "commodity volatility"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company can be High-priority because timing/late-cycle risk is too elevated after an extreme sector-wide rerating."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The entire basket had already outperformed CSI300 by ~90pp over 60d, with 100% positive breadth. 北方稀土's frozen 2025E PE was ~76x and 中国稀土's TTM PE ~831x.",
+    "thesisExpectation": "Rare-earth prices/profits can stay strong, but another large positive surprise is required to outrun the rerating.",
+    "measurableGap": "Fundamental direction is strong; price-relative room is not.",
+    "evidenceRefs": [
+      "regime-rareearth-20250830",
+      "northrare-research-20250829",
+      "chinarare-h1-20250829"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Opportunity-level thesis remains valid but sector-wide price absorption is extreme.",
+    "alreadyPricedAssessment": "late-cycle/high absorption",
+    "constraints": [
+      "extreme prior relative return",
+      "high valuation",
+      "policy incidence ambiguity"
+    ]
+  },
+  "bearCase": "Fundamentals remain good but sector multiples compress after the large rerating.",
+  "invalidationConditions": [
+    {
+      "indicator": "rare-earth prices/policy",
+      "observationMethod": "price/policy updates",
+      "threshold": "normalization/loosening"
+    },
+    {
+      "indicator": "sector price regime",
+      "observationMethod": "future frozen regime snapshot",
+      "threshold": "breadth/momentum reverses or valuation normalizes enough for a new entry"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "normalized-cycle earnings",
+    "duration of quota tightness"
+  ],
+  "nextResearchActions": [
+    "Keep High-priority hypothesis / No selection.",
+    "Require a later fresh cutoff if price/valuation resets."
+  ]
+}
