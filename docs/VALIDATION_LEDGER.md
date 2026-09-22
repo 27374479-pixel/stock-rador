@@ -11,12 +11,12 @@ This ledger prevents accidental reuse of viewed outcomes as untouched validation
 | 2024-06 fixed window | Skill V3 | consumed | hog: 牧原股份 Candidate; shipping/PV: NO TRADE | 牧原 excess +0.4% 20d, -8.0% 60d, -24.7% 120d, -16.6% 250d |
 | 2024-09 fixed window | Skill V3.1 | consumed | alumina: 中国铝业 Candidate; antimony/freight: NO TRADE | 中国铝业 excess +15.9% 20d, -7.5% 60d, -1.8% 120d, -21.3% 250d |
 | 2024-12 fixed window | Skill V3.2 | consumed | transformer: 伊戈尔 Candidate; antimony/enterprise SSD: NO TRADE | 伊戈尔 excess +13.1% 20d, +14.4% 60d, -2.0% 120d, +76.3% 250d |
+| 2025-03 fixed window | Skill V3.2 | consumed | AI/server: 深南电路 Candidate; steel/cobalt: NO TRADE | 深南电路 excess -10.9% 20d, +0.4% 60d, +75.9% 120d, +135.0% 250d |
 
 ## Current untouched queue
 
 The original 2022–2024 fixed-window validation queue is fully consumed. V3.2 remains frozen for a new extension set:
 
-- 2025-03-01 through 2025-03-14
 - 2025-06-01 through 2025-06-14
 - 2025-09-01 through 2025-09-14
 - 2025-12-01 through 2025-12-14
@@ -27,7 +27,7 @@ These extension windows are retrospective and retain the same caveat about histo
 
 Future windows must reject these tickers before scoring because their post-signal paths have already been inspected in a consumed set:
 
-`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH, 301211.SZ, 603019.SH, 000977.SZ, 002837.SZ, 301018.SZ, 002335.SZ, 300394.SZ, 603083.SH, 300870.SZ, 002851.SZ, 002364.SZ, 002518.SZ, 002463.SZ, 300045.SZ, 301308.SZ, 688525.SH, 001309.SZ, 603993.SH, 002714.SZ, 601600.SH, 002922.SZ`
+`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH, 301211.SZ, 603019.SH, 000977.SZ, 002837.SZ, 301018.SZ, 002335.SZ, 300394.SZ, 603083.SH, 300870.SZ, 002851.SZ, 002364.SZ, 002518.SZ, 002463.SZ, 300045.SZ, 301308.SZ, 688525.SH, 001309.SZ, 603993.SH, 002714.SZ, 601600.SH, 002922.SZ, 002916.SZ`
 
 The quarantine is procedural, not a statement about those companies. It prevents known future paths from leaking into later historical selections.
 
@@ -82,3 +82,8 @@ The first skill-first window selected 洛阳钼业 on a newly escalated copper-c
 ## 2024-12 V3.2 structural-horizon note
 
 伊戈尔 was classified pre-outcome as a structural-multi-year transformer thesis with a 120–250 trading-day research horizon. Excess return was +13.1% at 20d, +14.4% at 60d, -2.0% at 120d, then +76.3% at 250d. This is evidence against a universal calendar-based exit rule and supports monitoring predeclared causal normalization indicators instead. 湖南黄金 and 华钰矿业 remain unquarantined because their post-signal paths were not opened.
+
+
+## 2025-03 V3.2 structural-path note
+
+深南电路 was selected before outcomes as a structural-multi-year server/data-center infrastructure thesis. Excess return was -10.9% at 20d, only +0.4% at 60d, then +75.9% at 120d and +135.0% at 250d. This independently supports the V3.2 rule that structural theses should be monitored through causal normalization indicators rather than price weakness or a universal calendar exit. 澜起科技 and 宝钢股份 remain unquarantined because their post-signal paths were not opened.
