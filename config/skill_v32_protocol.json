@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "3.2",
+  "name": "skill-first-opportunity-research",
+  "effectiveFromWindow": "2024-12",
+  "frozenAt": "2026-09-22T09:40:00.000Z",
+  "inherits": "config/skill_v31_protocol.json",
+  "forwardOnly": true,
+  "newCoreRequirements": {
+    "causalHalfLife": {
+      "shockClass": ["event-repricing", "cyclical-multi-quarter", "structural-multi-year"],
+      "expectedHalfLife": "Plain-language estimate of how long the economic edge should remain differentiated.",
+      "normalizationIndicators": "One or more observable point-in-time variables that would show the shock is normalizing or the thesis is aging.",
+      "expectedResearchHorizon": "Reasoned horizon range matched to the earnings mechanism.",
+      "whyHorizonMatches": "Explanation of why the chosen horizon follows from causality rather than a fixed backtest convention."
+    }
+  },
+  "unchangedSafeguards": [
+    "basis reconciliation required for Candidate",
+    "valuation/expectation bridge required for Candidate",
+    "no post-cutoff evidence",
+    "selection lock before outcome fetch",
+    "quarantined tickers forbidden",
+    "Watch futures remain unopened",
+    "no outcome-oriented discovery queries",
+    "at least three thesis breakers"
+  ],
+  "diagnosticHorizonsTradingDays": [20, 60, 120, 250],
+  "nextUntouchedWindows": [
+    ["2024-12-01", "2024-12-14"]
+  ]
+}
