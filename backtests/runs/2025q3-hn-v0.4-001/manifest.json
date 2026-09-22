@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "2025q3-hn-v0.4-001",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-22T14:08:00.000Z",
+  "skill": {
+    "path": "skills/stock-rador/versions/0.4.0/SKILL.md",
+    "version": "0.4.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2025-07-01",
+    "endDate": "2025-09-30"
+  },
+  "screeningPath": "backtests/runs/2025q3-hn-v0.4-001/screening.json",
+  "implementationPaths": [
+    "scripts/collect-hn-generic.cjs",
+    "scripts/backtest-core.cjs",
+    "scripts/lock-skill-run.cjs",
+    "scripts/fetch-backtest-prices.cjs",
+    "scripts/evaluate-skill-run.cjs"
+  ],
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/2025q3-hn-v0.4-001/source-pack.json",
+    "identityStressPath": "backtests/runs/2025q3-hn-v0.4-001/identity-stress.json",
+    "searchResultFutureLeakageObserved": true,
+    "validationClass": "exploratory_contaminated",
+    "notes": "Live search result pages exposed post-cutoff snippets during evidence research. Those snippets are excluded from the memo evidence but cannot be unseen; this run is a process/mechanics test, not clean holdout validation."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedMemoStates": [
+    "Research",
+    "High-priority research"
+  ],
+  "primarySignalStates": [
+    "High-priority research"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "selections": [
+    {
+      "memoPath": "backtests/runs/2025q3-hn-v0.4-001/memos/h-aidc-power-equipment-2025q3.json",
+      "hypothesisId": "h-aidc-power-equipment-2025q3",
+      "ticker": "688676.SH",
+      "limitRate": 0.2
+    }
+  ],
+  "reportingPolicy": {
+    "primaryMetric": "primary_thesis_base_matched_control_excess",
+    "mustReportAllSelections": true,
+    "mustReportBlockedEntries": true,
+    "mustRetainFailures": true,
+    "mustReportTickerAndHypothesisLevels": true,
+    "mustReportMatchedControls": true,
+    "noSignalIsValid": true
+  }
+}
