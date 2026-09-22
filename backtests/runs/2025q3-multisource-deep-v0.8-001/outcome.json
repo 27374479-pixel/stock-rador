@@ -1,0 +1,1109 @@
+{
+  "schemaVersion": "1.1",
+  "evaluatorVersion": "0.6.1-partial-horizons",
+  "runId": "2025q3-multisource-deep-v0.8-001",
+  "evaluatedAt": "2026-09-22T23:39:49.678Z",
+  "frozenLockSha256": "e121169e99b7b569d995bae89b614f08d3b2cfe7a2c2884ced326c1487097499",
+  "priceSource": {
+    "provider": "Tencent public daily kline",
+    "fetchedAt": "2026-09-22T23:39:43.715Z",
+    "path": "backtests/runs/2025q3-multisource-deep-v0.8-001/prices.json"
+  },
+  "hypothesisMemoSummary": {
+    "count": 4,
+    "highPriorityHypothesisCount": 4,
+    "researchHypothesisCount": 0,
+    "noSelectionCount": 1,
+    "researchSelectionCount": 1,
+    "highPrioritySelectionCount": 2,
+    "rows": [
+      {
+        "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-memory-legacy-shortage-2025q3.json",
+        "hypothesisId": "h-q3-memory-legacy-shortage-2025q3",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-power-asymmetry-xuji-2025q3.json",
+        "hypothesisId": "h-q3-power-asymmetry-xuji-2025q3",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "High-priority selection",
+        "actionableAt": "2025-08-31T20:00:00+08:00"
+      },
+      {
+        "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-passive-asymmetry-sunlord-2025q3.json",
+        "hypothesisId": "h-q3-passive-asymmetry-sunlord-2025q3",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "High-priority selection",
+        "actionableAt": "2025-08-29T18:00:00+08:00"
+      },
+      {
+        "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-rareearth-control-2025q3.json",
+        "hypothesisId": "h-q3-rareearth-control-2025q3",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      }
+    ]
+  },
+  "results": [
+    {
+      "hypothesisId": "h-q3-memory-legacy-shortage-2025q3",
+      "ticker": "603986.SH",
+      "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-memory-legacy-shortage-2025q3.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "603986.SH",
+        "pairwise": [
+          {
+            "controlTicker": "300223.SZ",
+            "selectedAdvantages": [
+              "stronger H1 profit scale/growth",
+              "lower frozen 2025E PE than Beijing Junzheng",
+              "broader product base"
+            ],
+            "selectedDisadvantages": [
+              "both valuations elevated",
+              "兆易创新 had already outperformed more strongly"
+            ],
+            "evidenceRefs": [
+              "giga-research-20250825",
+              "junzheng-research-20250826",
+              "regime-memory-20250827"
+            ],
+            "switchCondition": "Prefer 北京君正 if its new-process DRAM qualification produces faster revisions at a lower effective valuation.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "301308.SZ",
+            "selectedAdvantages": [
+              "positive and growing profit",
+              "cleaner earnings quality"
+            ],
+            "selectedDisadvantages": [
+              "江波龙 could have greater cyclical torque if margins normalize"
+            ],
+            "evidenceRefs": [
+              "giga-h1-20250823",
+              "longsys-h1-20250823"
+            ],
+            "switchCondition": "Prefer 江波龙 only after gross-margin/profit recovery is already visible before cutoff.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "001309.SZ",
+            "selectedAdvantages": [
+              "positive earnings and stronger quality floor"
+            ],
+            "selectedDisadvantages": [
+              "德明利 has much higher revenue growth torque"
+            ],
+            "evidenceRefs": [
+              "giga-h1-20250823",
+              "demingli-h1-20250822"
+            ],
+            "switchCondition": "Prefer 德明利 only after losses and cash-flow weakness reverse.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "兆易创新 was the strongest company expression, but v0.8 separates that from whether the payoff asymmetry is clean enough for High-priority."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2025-08-27T23:30:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2025-08-27T23:30:00+08:00",
+      "entryDate": "2025-08-28",
+      "entryAdjustedOpen": 160.25,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Legacy-memory supply changes and contract-price resets can affect one to two reporting cycles; 60d is the base horizon."
+      },
+      "matchedControls": [
+        {
+          "ticker": "300223.SZ",
+          "name": "北京君正",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct A-share memory-chip peer exposed to DDR4/LPDDR4.",
+          "whySelectedCompanyShouldOutperform": "兆易创新 had stronger H1 earnings/cash-scale and a somewhat lower frozen forward-PE burden.",
+          "evidenceRefs": [
+            "giga-h1-20250823",
+            "giga-research-20250825",
+            "junzheng-h1-20250826",
+            "junzheng-research-20250826"
+          ]
+        },
+        {
+          "ticker": "301308.SZ",
+          "name": "江波龙",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large listed storage supplier exposed to the same price cycle.",
+          "whySelectedCompanyShouldOutperform": "江波龙 H1 profit fell 97.5%, indicating much weaker earnings quality.",
+          "evidenceRefs": [
+            "longsys-h1-20250823",
+            "giga-h1-20250823"
+          ]
+        },
+        {
+          "ticker": "001309.SZ",
+          "name": "德明利",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Storage supplier with high revenue sensitivity to the same cycle.",
+          "whySelectedCompanyShouldOutperform": "德明利 remained loss-making and cash-flow weak despite rapid revenue growth.",
+          "evidenceRefs": [
+            "demingli-h1-20250822",
+            "giga-h1-20250823"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.01494042740969559
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2025-09-24",
+          "netReturn": 0.2396399232592683,
+          "benchmarkReturn": 0.0429484426821134,
+          "excessReturn": 0.1966914805771549,
+          "matchedControlBasketReturn": 0.5348224179405185,
+          "matchedControlExcess": -0.29518249468125024,
+          "bestControlTicker": "001309.SZ",
+          "bestControlReturn": 0.8957862221460551,
+          "excessVsBestControl": -0.6561462988867868,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 4,
+          "rankPercentile": 0.3333333333333333,
+          "controlReturns": [
+            {
+              "ticker": "300223.SZ",
+              "controlType": "peer",
+              "netReturn": 0.14886122503906174
+            },
+            {
+              "ticker": "301308.SZ",
+              "controlType": "peer",
+              "netReturn": 0.5598198066364388
+            },
+            {
+              "ticker": "001309.SZ",
+              "controlType": "peer",
+              "netReturn": 0.8957862221460551
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.1256490727532097,
+            "peakDate": "2025-09-02",
+            "troughDate": "2025-09-04"
+          }
+        },
+        "60": {
+          "exitDate": "2025-11-27",
+          "netReturn": 0.2462413717327916,
+          "benchmarkReturn": 0.03137477044522208,
+          "excessReturn": 0.21486660128756951,
+          "matchedControlBasketReturn": 0.9136929988218047,
+          "matchedControlExcess": -0.6674516270890131,
+          "bestControlTicker": "301308.SZ",
+          "bestControlReturn": 1.4781077884040683,
+          "excessVsBestControl": -1.2318664166712767,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 4,
+          "rankPercentile": 0.3333333333333333,
+          "controlReturns": [
+            {
+              "ticker": "300223.SZ",
+              "controlType": "peer",
+              "netReturn": 0.031246656462317057
+            },
+            {
+              "ticker": "301308.SZ",
+              "controlType": "peer",
+              "netReturn": 1.4781077884040683
+            },
+            {
+              "ticker": "001309.SZ",
+              "controlType": "peer",
+              "netReturn": 1.231724551599029
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.27526401299756287,
+            "peakDate": "2025-10-28",
+            "troughDate": "2025-11-24"
+          }
+        },
+        "120": {
+          "exitDate": "2026-03-03",
+          "netReturn": 0.69482847885344,
+          "benchmarkReturn": 0.06346675681355118,
+          "excessReturn": 0.6313617220398888,
+          "matchedControlBasketReturn": 1.2250553866760392,
+          "matchedControlExcess": -0.5302269078225992,
+          "bestControlTicker": "301308.SZ",
+          "bestControlReturn": 1.7259196080333021,
+          "excessVsBestControl": -1.0310911291798621,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 4,
+          "rankPercentile": 0.3333333333333333,
+          "controlReturns": [
+            {
+              "ticker": "300223.SZ",
+              "controlType": "peer",
+              "netReturn": 0.5659426174356501
+            },
+            {
+              "ticker": "301308.SZ",
+              "controlType": "peer",
+              "netReturn": 1.7259196080333021
+            },
+            {
+              "ticker": "001309.SZ",
+              "controlType": "peer",
+              "netReturn": 1.3833039345591653
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.27526401299756287,
+            "peakDate": "2025-10-28",
+            "troughDate": "2025-11-24"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2025-11-27",
+        "netReturn": 0.2462413717327916,
+        "benchmarkReturn": 0.03137477044522208,
+        "excessReturn": 0.21486660128756951,
+        "matchedControlBasketReturn": 0.9136929988218047,
+        "matchedControlExcess": -0.6674516270890131,
+        "bestControlTicker": "301308.SZ",
+        "bestControlReturn": 1.4781077884040683,
+        "excessVsBestControl": -1.2318664166712767,
+        "winsAllControls": false,
+        "selectedRank": 3,
+        "matchedSetSize": 4,
+        "rankPercentile": 0.3333333333333333,
+        "controlReturns": [
+          {
+            "ticker": "300223.SZ",
+            "controlType": "peer",
+            "netReturn": 0.031246656462317057
+          },
+          {
+            "ticker": "301308.SZ",
+            "controlType": "peer",
+            "netReturn": 1.4781077884040683
+          },
+          {
+            "ticker": "001309.SZ",
+            "controlType": "peer",
+            "netReturn": 1.231724551599029
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.27526401299756287,
+          "peakDate": "2025-10-28",
+          "troughDate": "2025-11-24"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-q3-power-asymmetry-xuji-2025q3",
+      "ticker": "000400.SZ",
+      "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-power-asymmetry-xuji-2025q3.json",
+      "state": "High-priority selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "High-priority selection",
+      "selectionComparison": {
+        "selectedTicker": "000400.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "002028.SZ",
+            "selectedAdvantages": [
+              "lower forward valuation",
+              "contract liabilities +74%",
+              "Q2 cash flow sharply above profit",
+              "lower expectation baseline creates catch-up headroom"
+            ],
+            "selectedDisadvantages": [
+              "思源 has much stronger H1 revenue/profit growth and overseas momentum"
+            ],
+            "evidenceRefs": [
+              "xuji-research-20250822",
+              "siyuan-research-20250831"
+            ],
+            "switchCondition": "Prefer 思源 if 许继 backlog fails to convert or if 思源 receives another material upward revision without rerating.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "002922.SZ",
+            "selectedAdvantages": [
+              "lower 2025E PE",
+              "stronger balance/cash-flow evidence",
+              "larger mature grid exposure"
+            ],
+            "selectedDisadvantages": [
+              "伊戈尔 has more direct AIDC growth optionality"
+            ],
+            "evidenceRefs": [
+              "xuji-research-20250822",
+              "igor-research-20250831"
+            ],
+            "switchCondition": "Prefer 伊戈尔 if AIDC orders become sufficiently material and its profit estimates rise faster than price.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "credible",
+        "rationale": "v0.8 prefers the lower-expectation catch-up candidate rather than automatically selecting the best H1 growth company."
+      },
+      "isPrimarySignal": true,
+      "researchReadyAt": "2025-08-31T20:00:00+08:00",
+      "actionableAt": "2025-08-31T20:00:00+08:00",
+      "entryAnchorAt": "2025-08-31T20:00:00+08:00",
+      "entryDate": "2025-09-01",
+      "entryAdjustedOpen": 22.871,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Contract liabilities/backlog and UHV/grid delivery should convert through H2 over one to two reporting cycles."
+      },
+      "matchedControls": [
+        {
+          "ticker": "002028.SZ",
+          "name": "思源电气",
+          "controlType": "peer",
+          "fairCounterfactualReason": "High-quality A-share power-equipment peer benefiting from the same global cycle.",
+          "whySelectedCompanyShouldOutperform": "许继 had much lower frozen forward valuation and lower expectations, while contract liabilities/cash flow offered a visible H2 catch-up bridge.",
+          "evidenceRefs": [
+            "xuji-research-20250822",
+            "siyuan-research-20250831"
+          ]
+        },
+        {
+          "ticker": "002922.SZ",
+          "name": "伊戈尔",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Power transformer/AIDC peer exposed to the same demand trend.",
+          "whySelectedCompanyShouldOutperform": "许继 had lower 2025E PE, stronger cash-flow evidence and more established grid/UHV delivery base.",
+          "evidenceRefs": [
+            "xuji-research-20250822",
+            "igor-research-20250831"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.0004288164665522398
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2025-09-26",
+          "netReturn": 0.07349250810402497,
+          "benchmarkReturn": 0.007343564584403328,
+          "excessReturn": 0.06614894351962164,
+          "matchedControlBasketReturn": 0.005389279863541929,
+          "matchedControlExcess": 0.06810322824048304,
+          "bestControlTicker": "002028.SZ",
+          "bestControlReturn": 0.15710376579941832,
+          "excessVsBestControl": -0.08361125769539335,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "002028.SZ",
+              "controlType": "peer",
+              "netReturn": 0.15710376579941832
+            },
+            {
+              "ticker": "002922.SZ",
+              "controlType": "peer",
+              "netReturn": -0.14632520607233446
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.04214324436439765,
+            "peakDate": "entry",
+            "troughDate": "2025-09-03"
+          }
+        },
+        "60": {
+          "exitDate": "2025-12-01",
+          "netReturn": 0.11965953682538011,
+          "benchmarkReturn": 0.013197162643240334,
+          "excessReturn": 0.10646237418213977,
+          "matchedControlBasketReturn": 0.414105166549115,
+          "matchedControlExcess": -0.2944456297237349,
+          "bestControlTicker": "002028.SZ",
+          "bestControlReturn": 0.6347480644355645,
+          "excessVsBestControl": -0.5150885276101844,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "002028.SZ",
+              "controlType": "peer",
+              "netReturn": 0.6347480644355645
+            },
+            {
+              "ticker": "002922.SZ",
+              "controlType": "peer",
+              "netReturn": 0.19346226866266547
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.1485706479046417,
+            "peakDate": "2025-11-11",
+            "troughDate": "2025-11-27"
+          }
+        },
+        "120": {
+          "exitDate": "2026-03-05",
+          "netReturn": 0.46438498758030056,
+          "benchmarkReturn": 0.028960255751757646,
+          "excessReturn": 0.4354247318285429,
+          "matchedControlBasketReturn": 1.2603298202706312,
+          "matchedControlExcess": -0.7959448326903307,
+          "bestControlTicker": "002028.SZ",
+          "bestControlReturn": 1.598963536463537,
+          "excessVsBestControl": -1.1345785488832365,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "002028.SZ",
+              "controlType": "peer",
+              "netReturn": 1.598963536463537
+            },
+            {
+              "ticker": "002922.SZ",
+              "controlType": "peer",
+              "netReturn": 0.9216961040777254
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.1485706479046417,
+            "peakDate": "2025-11-11",
+            "troughDate": "2025-11-27"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2025-12-01",
+        "netReturn": 0.11965953682538011,
+        "benchmarkReturn": 0.013197162643240334,
+        "excessReturn": 0.10646237418213977,
+        "matchedControlBasketReturn": 0.414105166549115,
+        "matchedControlExcess": -0.2944456297237349,
+        "bestControlTicker": "002028.SZ",
+        "bestControlReturn": 0.6347480644355645,
+        "excessVsBestControl": -0.5150885276101844,
+        "winsAllControls": false,
+        "selectedRank": 3,
+        "matchedSetSize": 3,
+        "rankPercentile": 0,
+        "controlReturns": [
+          {
+            "ticker": "002028.SZ",
+            "controlType": "peer",
+            "netReturn": 0.6347480644355645
+          },
+          {
+            "ticker": "002922.SZ",
+            "controlType": "peer",
+            "netReturn": 0.19346226866266547
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.1485706479046417,
+          "peakDate": "2025-11-11",
+          "troughDate": "2025-11-27"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-q3-passive-asymmetry-sunlord-2025q3",
+      "ticker": "002138.SZ",
+      "memoPath": "backtests/runs/2025q3-multisource-deep-v0.8-001/memos/h-q3-passive-asymmetry-sunlord-2025q3.json",
+      "state": "High-priority selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "High-priority selection",
+      "selectionComparison": {
+        "selectedTicker": "002138.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "300408.SZ",
+            "selectedAdvantages": [
+              "faster H1 profit growth",
+              "lower frozen forward PE",
+              "explicit data-center order growth"
+            ],
+            "selectedDisadvantages": [
+              "三环 has higher margins and broader ceramic optionality"
+            ],
+            "evidenceRefs": [
+              "sunlord-research-20250731",
+              "sanhuan-h1-research-20250829"
+            ],
+            "switchCondition": "Prefer 三环 if its MLCC/optical revisions reaccelerate without further rerating.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "000636.SZ",
+            "selectedAdvantages": [
+              "stronger profit/cash quality",
+              "lower PE",
+              "clearer data-center order evidence"
+            ],
+            "selectedDisadvantages": [
+              "风华 could have larger catch-up beta if demand broadens"
+            ],
+            "evidenceRefs": [
+              "sunlord-h1-20250731",
+              "fenghua-research-20250822"
+            ],
+            "switchCondition": "Prefer 风华 if its forecast cuts reverse and valuation discount emerges.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "顺络 passes the quality floor and has the strongest frozen revision/valuation/catalyst combination."
+      },
+      "isPrimarySignal": true,
+      "researchReadyAt": "2025-08-29T18:00:00+08:00",
+      "actionableAt": "2025-08-29T18:00:00+08:00",
+      "entryAnchorAt": "2025-08-29T18:00:00+08:00",
+      "entryDate": "2025-09-01",
+      "entryAdjustedOpen": 31.788,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Data-center/AI component orders and mix should affect one to two reporting cycles."
+      },
+      "matchedControls": [
+        {
+          "ticker": "300408.SZ",
+          "name": "三环集团",
+          "controlType": "peer",
+          "fairCounterfactualReason": "High-quality passive/ceramic peer with AI/MLCC exposure.",
+          "whySelectedCompanyShouldOutperform": "顺络 had faster H1 profit growth, explicit data-center order growth and lower frozen PE.",
+          "evidenceRefs": [
+            "sunlord-research-20250731",
+            "sanhuan-h1-research-20250829"
+          ]
+        },
+        {
+          "ticker": "000636.SZ",
+          "name": "风华高科",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct passive-component peer exposed to the same demand split.",
+          "whySelectedCompanyShouldOutperform": "顺络 had stronger realized profit/cash conversion and lower valuation while 风华 forecasts were cut.",
+          "evidenceRefs": [
+            "sunlord-h1-20250731",
+            "fenghua-research-20250822"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2025-09-26",
+          "netReturn": 0.08088627114674685,
+          "benchmarkReturn": 0.007343564584403328,
+          "excessReturn": 0.07354270656234352,
+          "matchedControlBasketReturn": 0.021485100044325633,
+          "matchedControlExcess": 0.05940117110242121,
+          "bestControlTicker": "300408.SZ",
+          "bestControlReturn": 0.04562387648255495,
+          "excessVsBestControl": 0.0352623946641919,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "300408.SZ",
+              "controlType": "peer",
+              "netReturn": 0.04562387648255495
+            },
+            {
+              "ticker": "000636.SZ",
+              "controlType": "peer",
+              "netReturn": -0.002653676393903681
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.07475462223236728,
+            "peakDate": "2025-09-01",
+            "troughDate": "2025-09-09"
+          }
+        },
+        "60": {
+          "exitDate": "2025-12-01",
+          "netReturn": 0.0855956048481532,
+          "benchmarkReturn": 0.013197162643240334,
+          "excessReturn": 0.07239844220491287,
+          "matchedControlBasketReturn": 0.022232273603974062,
+          "matchedControlExcess": 0.06336333124417914,
+          "bestControlTicker": "000636.SZ",
+          "bestControlReturn": 0.06356943759216938,
+          "excessVsBestControl": 0.02202616725598383,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "300408.SZ",
+              "controlType": "peer",
+              "netReturn": -0.01910489038422125
+            },
+            {
+              "ticker": "000636.SZ",
+              "controlType": "peer",
+              "netReturn": 0.06356943759216938
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.19850514463211033,
+            "peakDate": "2025-10-27",
+            "troughDate": "2025-11-21"
+          }
+        },
+        "120": {
+          "exitDate": "2026-03-05",
+          "netReturn": 0.25984095180018185,
+          "benchmarkReturn": 0.028960255751757646,
+          "excessReturn": 0.2308806960484242,
+          "matchedControlBasketReturn": 0.45191051642344215,
+          "matchedControlExcess": -0.1920695646232603,
+          "bestControlTicker": "000636.SZ",
+          "bestControlReturn": 0.5507355137471426,
+          "excessVsBestControl": -0.29089456194696073,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "300408.SZ",
+              "controlType": "peer",
+              "netReturn": 0.35308551909974173
+            },
+            {
+              "ticker": "000636.SZ",
+              "controlType": "peer",
+              "netReturn": 0.5507355137471426
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.20627062706270627,
+            "peakDate": "2025-10-27",
+            "troughDate": "2025-12-16"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2025-12-01",
+        "netReturn": 0.0855956048481532,
+        "benchmarkReturn": 0.013197162643240334,
+        "excessReturn": 0.07239844220491287,
+        "matchedControlBasketReturn": 0.022232273603974062,
+        "matchedControlExcess": 0.06336333124417914,
+        "bestControlTicker": "000636.SZ",
+        "bestControlReturn": 0.06356943759216938,
+        "excessVsBestControl": 0.02202616725598383,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 3,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "300408.SZ",
+            "controlType": "peer",
+            "netReturn": -0.01910489038422125
+          },
+          {
+            "ticker": "000636.SZ",
+            "controlType": "peer",
+            "netReturn": 0.06356943759216938
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.19850514463211033,
+          "peakDate": "2025-10-27",
+          "troughDate": "2025-11-21"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "tickerLevel": {
+      "20": {
+        "count": 3,
+        "meanNetReturn": 0.13133956750334672,
+        "medianNetReturn": 0.08088627114674685,
+        "meanExcessReturn": 0.11212771021970669,
+        "medianExcessReturn": 0.07354270656234352,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 3,
+        "meanMatchedControlExcess": -0.05589269844611533,
+        "medianMatchedControlExcess": 0.05940117110242121,
+        "matchedControlHitRate": 0.6666666666666666,
+        "bestControlCount": 3,
+        "meanExcessVsBestControl": -0.23483172063932942,
+        "medianExcessVsBestControl": -0.08361125769539335,
+        "winsAllControlsRate": 0.3333333333333333,
+        "meanRankPercentile": 0.611111111111111,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 3,
+        "meanNetReturn": 0.1504988378021083,
+        "medianNetReturn": 0.11965953682538011,
+        "meanExcessReturn": 0.1312424725582074,
+        "medianExcessReturn": 0.10646237418213977,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 3,
+        "meanMatchedControlExcess": -0.2995113085228563,
+        "medianMatchedControlExcess": -0.2944456297237349,
+        "matchedControlHitRate": 0.3333333333333333,
+        "bestControlCount": 3,
+        "meanExcessVsBestControl": -0.5749762590084925,
+        "medianExcessVsBestControl": -0.5150885276101844,
+        "winsAllControlsRate": 0.3333333333333333,
+        "meanRankPercentile": 0.4444444444444444,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 3,
+        "meanNetReturn": 0.4730181394113075,
+        "medianNetReturn": 0.46438498758030056,
+        "meanExcessReturn": 0.432555716638952,
+        "medianExcessReturn": 0.4354247318285429,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 3,
+        "meanMatchedControlExcess": -0.5060804350453968,
+        "medianMatchedControlExcess": -0.5302269078225992,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 3,
+        "meanExcessVsBestControl": -0.8188547466700197,
+        "medianExcessVsBestControl": -1.0310911291798621,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.1111111111111111,
+        "blockedEntryCount": 0
+      }
+    },
+    "hypothesisLevel": {
+      "20": {
+        "count": 3,
+        "meanNetReturn": 0.13133956750334672,
+        "medianNetReturn": 0.08088627114674685,
+        "meanExcessReturn": 0.11212771021970669,
+        "medianExcessReturn": 0.07354270656234352,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 3,
+        "meanNetReturn": 0.1504988378021083,
+        "medianNetReturn": 0.11965953682538011,
+        "meanExcessReturn": 0.1312424725582074,
+        "medianExcessReturn": 0.10646237418213977,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 3,
+        "meanNetReturn": 0.4730181394113075,
+        "medianNetReturn": 0.46438498758030056,
+        "meanExcessReturn": 0.432555716638952,
+        "medianExcessReturn": 0.4354247318285429,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryTickerLevel": {
+      "20": {
+        "count": 2,
+        "meanNetReturn": 0.0771893896253859,
+        "medianNetReturn": 0.0771893896253859,
+        "meanExcessReturn": 0.06984582504098258,
+        "medianExcessReturn": 0.06984582504098258,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": 0.06375219967145213,
+        "medianMatchedControlExcess": 0.06375219967145213,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.024174431515600725,
+        "medianExcessVsBestControl": -0.024174431515600725,
+        "winsAllControlsRate": 0.5,
+        "meanRankPercentile": 0.75,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 2,
+        "meanNetReturn": 0.10262757083676666,
+        "medianNetReturn": 0.10262757083676666,
+        "meanExcessReturn": 0.08943040819352632,
+        "medianExcessReturn": 0.08943040819352632,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": -0.11554114923977787,
+        "medianMatchedControlExcess": -0.11554114923977787,
+        "matchedControlHitRate": 0.5,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.2465311801771003,
+        "medianExcessVsBestControl": -0.2465311801771003,
+        "winsAllControlsRate": 0.5,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 2,
+        "meanNetReturn": 0.3621129696902412,
+        "medianNetReturn": 0.3621129696902412,
+        "meanExcessReturn": 0.33315271393848356,
+        "medianExcessReturn": 0.33315271393848356,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": -0.4940071986567955,
+        "medianMatchedControlExcess": -0.4940071986567955,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.7127365554150986,
+        "medianExcessVsBestControl": -0.7127365554150986,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0,
+        "blockedEntryCount": 0
+      }
+    },
+    "primaryHypothesisLevel": {
+      "20": {
+        "count": 2,
+        "meanNetReturn": 0.0771893896253859,
+        "medianNetReturn": 0.0771893896253859,
+        "meanExcessReturn": 0.06984582504098258,
+        "medianExcessReturn": 0.06984582504098258,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 2,
+        "meanNetReturn": 0.10262757083676666,
+        "medianNetReturn": 0.10262757083676666,
+        "meanExcessReturn": 0.08943040819352632,
+        "medianExcessReturn": 0.08943040819352632,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 2,
+        "meanNetReturn": 0.3621129696902412,
+        "medianNetReturn": 0.3621129696902412,
+        "meanExcessReturn": 0.33315271393848356,
+        "medianExcessReturn": 0.33315271393848356,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryThesisBase": {
+      "count": 2,
+      "pendingBaseCount": 0,
+      "meanNetReturn": 0.10262757083676666,
+      "medianNetReturn": 0.10262757083676666,
+      "meanExcessReturn": 0.08943040819352632,
+      "medianExcessReturn": 0.08943040819352632,
+      "excessHitRate": 1,
+      "matchedControlCount": 2,
+      "meanMatchedControlExcess": -0.11554114923977787,
+      "medianMatchedControlExcess": -0.11554114923977787,
+      "matchedControlHitRate": 0.5,
+      "bestControlCount": 2,
+      "meanExcessVsBestControl": -0.2465311801771003,
+      "medianExcessVsBestControl": -0.2465311801771003,
+      "winsAllControlsRate": 0.5,
+      "meanRankPercentile": 0.5
+    }
+  },
+  "hypothesisResults": [
+    {
+      "hypothesisId": "h-q3-memory-legacy-shortage-2025q3",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.2396399232592683,
+          "excessReturn": 0.1966914805771549
+        },
+        "60": {
+          "netReturn": 0.2462413717327916,
+          "excessReturn": 0.21486660128756951
+        },
+        "120": {
+          "netReturn": 0.69482847885344,
+          "excessReturn": 0.6313617220398888
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-q3-power-asymmetry-xuji-2025q3",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.07349250810402497,
+          "excessReturn": 0.06614894351962164
+        },
+        "60": {
+          "netReturn": 0.11965953682538011,
+          "excessReturn": 0.10646237418213977
+        },
+        "120": {
+          "netReturn": 0.46438498758030056,
+          "excessReturn": 0.4354247318285429
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-q3-passive-asymmetry-sunlord-2025q3",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.08088627114674685,
+          "excessReturn": 0.07354270656234352
+        },
+        "60": {
+          "netReturn": 0.0855956048481532,
+          "excessReturn": 0.07239844220491287
+        },
+        "120": {
+          "netReturn": 0.25984095180018185,
+          "excessReturn": 0.2308806960484242
+        }
+      }
+    }
+  ],
+  "primaryHypothesisResults": [
+    {
+      "hypothesisId": "h-q3-power-asymmetry-xuji-2025q3",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.07349250810402497,
+          "excessReturn": 0.06614894351962164
+        },
+        "60": {
+          "netReturn": 0.11965953682538011,
+          "excessReturn": 0.10646237418213977
+        },
+        "120": {
+          "netReturn": 0.46438498758030056,
+          "excessReturn": 0.4354247318285429
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-q3-passive-asymmetry-sunlord-2025q3",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.08088627114674685,
+          "excessReturn": 0.07354270656234352
+        },
+        "60": {
+          "netReturn": 0.0855956048481532,
+          "excessReturn": 0.07239844220491287
+        },
+        "120": {
+          "netReturn": 0.25984095180018185,
+          "excessReturn": 0.2308806960484242
+        }
+      }
+    }
+  ]
+}
