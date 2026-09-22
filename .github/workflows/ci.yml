@@ -54,3 +54,22 @@ jobs:
             research/v2_2022_03_selection.json
             research/v2_2022_03_selection.md
           if-no-files-found: error
+
+
+  evaluate-v2-2022-03:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/evaluate-v2-window-2022-03.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v2-2022-03-outcomes
+          path: |
+            research/v2_2022_03_outcomes.json
+            research/v2_2022_03_outcomes.md
+          if-no-files-found: error
