@@ -1,0 +1,275 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-03-31T23:59:59+08:00",
+  "researchReadyAt": "2026-03-31T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-memory-tightness-accelerates-2026q1",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Memory contract-price changes can reprice earnings expectations within one quarter, while inventory, wafer allocation and customer pass-through make full earnings conversion multi-quarter."
+  },
+  "changeHypothesis": {
+    "summary": "Q1 2026 memory tightness accelerated sharply as server/HBM allocation constrained conventional DRAM/NAND. The industry signal is strong; among non-STAR A shares, 兆易创新 showed much stronger realized earnings and memory-segment conversion than 北京君正, but exact price-relative expectation burden remains unresolved.",
+    "firstCredibleDate": "2026-01-05",
+    "valueChain": [
+      "AI/server demand",
+      "wafer allocation to HBM/server",
+      "conventional DRAM/NAND tightness",
+      "memory ASP and mix",
+      "supplier revenue/gross margin",
+      "earnings revisions"
+    ],
+    "persistenceReason": "TrendForce repeatedly raised Q1/Q2 price expectations and company disclosures at the cutoff described tight DRAM supply and rising memory economics.",
+    "disconfirmingEvidence": [
+      "The price-upcycle was already a prominent narrative by late Q1.",
+      "Fabless suppliers can be volume-constrained even when ASP rises.",
+      "Exact consensus/valuation burden at the cutoff is not frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-memory-20260105",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "tf-memory-20260202",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "tf-memory-20260331",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "gigadevice-annual-20260331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "beijing-junzheng-annual-20260328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "beijing-junzheng-ir-20260331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "AI/server demand",
+      "to": "conventional-memory tightness",
+      "mechanism": "Capacity allocation toward HBM/server memory reduces flexible supply for conventional DRAM/NAND.",
+      "evidenceRefs": [
+        "tf-memory-20260105",
+        "tf-memory-20260202",
+        "tf-memory-20260331"
+      ],
+      "failureMode": "Capacity returns faster than expected or end demand weakens.",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "memory tightness",
+      "to": "A-share supplier economics",
+      "mechanism": "Higher ASP/mix can lift revenue and gross margin if a supplier has inventory/wafer access and can pass pricing through.",
+      "evidenceRefs": [
+        "gigadevice-annual-20260331",
+        "beijing-junzheng-ir-20260331"
+      ],
+      "failureMode": "Wafer scarcity caps shipments or input-price increases absorb ASP gains.",
+      "lag": "one to three quarters"
+    },
+    {
+      "from": "supplier economics",
+      "to": "selection alpha",
+      "mechanism": "A selected supplier must convert the cycle better than peers and exceed already-elevated expectations.",
+      "evidenceRefs": [
+        "gigadevice-annual-20260331",
+        "beijing-junzheng-annual-20260328"
+      ],
+      "failureMode": "The cycle is fully discounted or the control has greater incremental sensitivity.",
+      "lag": "one to two reporting cycles"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "fabless memory suppliers with secured wafer allocation and pricing power"
+    ],
+    "secondOrderWinners": [
+      "memory module/channel firms with favorable inventory"
+    ],
+    "losers": [
+      "OEMs exposed to higher memory BOM"
+    ],
+    "substitutes": [
+      "alternative memory types and suppliers"
+    ],
+    "bottlenecks": [
+      "DRAM wafer allocation",
+      "HBM-driven capacity competition"
+    ],
+    "falseThemeMatches": [
+      "semiconductor names without material memory exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "2025 memory-chip revenue RMB 6.566bn, +26.41%, with memory gross margin 42.84%; company-wide net profit +49.47%.",
+      "evidenceRefs": [
+        "gigadevice-annual-20260331"
+      ],
+      "earningsSensitivity": {
+        "base": "Memory up-cycle already improved 2025 price/volume and margin.",
+        "favorable": "Q1/Q2 contract-price increases convert into further ASP/margin upside.",
+        "adverse": "Wafer allocation tightness or already-high expectations cap incremental upside."
+      },
+      "principalRisks": [
+        "expectation saturation",
+        "wafer allocation",
+        "cycle reversal"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Company describes automotive/industrial DRAM exposure, tight 2026 supply and expected price/margin improvement; 2025 profit growth was modest.",
+      "evidenceRefs": [
+        "beijing-junzheng-annual-20260328",
+        "beijing-junzheng-ir-20260331"
+      ],
+      "earningsSensitivity": {
+        "base": "2025 earnings showed limited memory-cycle contribution.",
+        "favorable": "2026 DRAM pricing and margin improve while inventory and allocations support shipment growth.",
+        "adverse": "Supply constraints prevent volume growth or cost pass-through dilutes margin."
+      },
+      "principalRisks": [
+        "supply cap",
+        "inventory risk",
+        "slower earnings conversion"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct automotive/industrial DRAM exposure with the same Q1 memory-cycle tailwind.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 entered the cutoff with materially stronger realized memory revenue, margin and company-wide profit conversion, whereas 北京君正 still depended more heavily on 2026 forward improvement.",
+      "evidenceRefs": [
+        "gigadevice-annual-20260331",
+        "beijing-junzheng-annual-20260328",
+        "beijing-junzheng-ir-20260331"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "selectedAdvantages": [
+          "larger disclosed memory revenue base",
+          "2025 memory revenue and gross margin already accelerating",
+          "much stronger 2025 net-profit growth"
+        ],
+        "selectedDisadvantages": [
+          "北京君正 may have greater incremental upside if 2026 DRAM pricing flows through from a lower earnings base",
+          "exact cutoff valuation comparison is not frozen"
+        ],
+        "evidenceRefs": [
+          "gigadevice-annual-20260331",
+          "beijing-junzheng-annual-20260328",
+          "beijing-junzheng-ir-20260331"
+        ],
+        "switchCondition": "Prefer 北京君正 if its wafer allocation and quarterly price pass-through produce clearly faster earnings revisions while 兆易创新's valuation already discounts the memory up-cycle.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "兆易创新 has the stronger verified current earnings bridge, but the price-relative edge cannot be called clear without a frozen valuation/consensus baseline."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The memory shortage and price-upcycle were already visible by late Q1 and both companies discussed it publicly.",
+    "thesisExpectation": "Tightness persists into Q2 and raises earnings, with 兆易创新 showing the cleaner already-realized bridge.",
+    "measurableGap": "Fundamental direction is supported; the remaining unknown is how much of that direction was already embedded in each stock price.",
+    "evidenceRefs": [
+      "tf-memory-20260331",
+      "gigadevice-annual-20260331",
+      "beijing-junzheng-ir-20260331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward earnings/segment-growth burden versus a direct memory peer; no fixed PE threshold.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Late-Q1 public information already described a strong memory up-cycle, so simply forecasting higher ASP is not an expectation gap.",
+    "thesisScenario": "兆易创新 sustains memory price/volume growth and margin expansion enough to produce revisions beyond the already-known cycle.",
+    "breakevenCondition": "Incremental memory earnings must outpace 北京君正 after adjusting for the amount of cycle improvement already visible in 2025 results and priced by the market.",
+    "ordinaryScenarioFailure": "Memory fundamentals improve as expected but both stocks merely deliver the already-known cycle, leaving no selection alpha.",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [
+      "tf-memory-20260331",
+      "gigadevice-annual-20260331",
+      "beijing-junzheng-ir-20260331"
+    ],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Exact point-in-time valuation/consensus was not frozen in the evidence pack, so this cannot be High-priority.",
+    "alreadyPricedAssessment": "industry opportunity strong; stock-selection burden unresolved.",
+    "constraints": [
+      "Historical contaminated run",
+      "Research selection only"
+    ]
+  },
+  "bearCase": "The memory cycle is real but already priced, or the more supply-constrained 北京君正 produces greater incremental earnings torque from a lower base.",
+  "invalidationConditions": [
+    {
+      "indicator": "Memory contract-price tightness",
+      "observationMethod": "subsequent contract-price and company disclosures",
+      "threshold": "clear reversal or normalization inconsistent with the Q2 persistence thesis"
+    },
+    {
+      "indicator": "兆易创新 relative earnings conversion",
+      "observationMethod": "next reporting cycle versus 北京君正",
+      "threshold": "no superior revenue/margin/earnings revision despite the stronger starting bridge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical selection results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "Exact cutoff valuation and consensus",
+    "wafer-allocation economics by product",
+    "incremental gross margin on Q2 price increases"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection, not High-priority.",
+    "Evaluate versus 北京君正 only after lock.",
+    "Do not add a second control post-reveal merely to improve the result."
+  ]
+}
