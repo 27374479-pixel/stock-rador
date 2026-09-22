@@ -1,0 +1,980 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2025q3-multisource-deep-v0.8-001",
+  "cutoffAt": "2025-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2025Q3 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China PMI/PPI data available during 2025Q3.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS manufacturing and producer-price series relevant to discovered changes; not an exhaustive agency crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "First-party global power/electrification orders and backlog.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on major suppliers surfaced by broad event searches, not a complete issuer universe."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable memory prices, supply tightness and component demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data/summaries; proprietary datasets are unavailable."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on supply-side policy, physical commodity flows and strategic materials.",
+      "coverageStatus": "partial",
+      "limitations": "Concentrated on Reuters historical reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist memory/passive-component supply-demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce reports rather than all paid research."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl is used in this holdout; unavailable is declared explicitly."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "tf-dram-20250707",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Transition between DRAM Generations Drives Diverging 3Q25 Price Trends",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20250707-12633.html",
+      "publishedAt": "2025-07-07T00:00:00+08:00",
+      "availableAt": "2025-07-07T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "3Q25 conventional DRAM contract prices were projected +10-15% QoQ; consumer DDR4 prices could rise >40% as suppliers shifted capacity to high-end products and EOL plans triggered restocking."
+      ],
+      "entities": [
+        "DRAM",
+        "DDR4",
+        "HBM",
+        "server"
+      ],
+      "observedChanges": [
+        "legacy DRAM supply tightens",
+        "contract-price outlook rises"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20250811",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "DDR4 and LPDDR4 Supply Tightens Sharply in 2H25",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20250811-12667.html",
+      "publishedAt": "2025-08-11T00:00:00+08:00",
+      "availableAt": "2025-08-11T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DDR4 remained structurally undersupplied through 2H25; July consumer DDR4 contract prices had risen 60-85%, and 3Q25 LPDDR4X was revised to +38-43% QoQ."
+      ],
+      "entities": [
+        "DDR4",
+        "LPDDR4X",
+        "CSP",
+        "PC",
+        "consumer electronics"
+      ],
+      "observedChanges": [
+        "legacy memory shortage becomes structural",
+        "price hikes accelerate sharply"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20250924",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Market Bulletin - Sep. 24, 2025",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP250924CQ",
+      "publishedAt": "2025-09-24T00:00:00+08:00",
+      "availableAt": "2025-09-24T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Tight DRAM supply and low supplier inventories supported continued contract/spot price increases; 4Q25 contract prices were projected to rise >10% QoQ and CSP demand remained strong."
+      ],
+      "entities": [
+        "DRAM",
+        "DDR4",
+        "DDR5",
+        "CSP"
+      ],
+      "observedChanges": [
+        "memory tightness persists",
+        "supplier inventory declines"
+      ]
+    },
+    {
+      "itemId": "abb-q2-20250717",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "ABB Q2 2025 results",
+      "publisher": "ABB",
+      "url": "https://new.abb.com/news/detail/127767/q2-2025-results",
+      "publishedAt": "2025-07-17T00:00:00+02:00",
+      "availableAt": "2025-07-17T00:00:00+02:00",
+      "originGroup": "abb-q2-2025-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "ABB recorded all-time-high orders of $9.785bn, +16% reported/+14% comparable; order growth was broad across business areas, regions and short/project-cycle businesses."
+      ],
+      "entities": [
+        "ABB",
+        "Electrification",
+        "data centers",
+        "industrial automation"
+      ],
+      "observedChanges": [
+        "record orders",
+        "broad order growth"
+      ]
+    },
+    {
+      "itemId": "gev-q2-20250723",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "GE Vernova reports second quarter 2025 financial results",
+      "publisher": "GE Vernova",
+      "url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2025-financial",
+      "publishedAt": "2025-07-23T00:00:00-04:00",
+      "availableAt": "2025-07-23T00:00:00-04:00",
+      "originGroup": "gev-q2-2025-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Orders were $12.4bn, backlog grew $5.2bn sequentially, gas equipment backlog/slot reservations rose from 50 to 55GW, and full-year revenue/margin/free-cash-flow guidance was raised."
+      ],
+      "entities": [
+        "GE Vernova",
+        "Power",
+        "Electrification",
+        "grid"
+      ],
+      "observedChanges": [
+        "backlog grows",
+        "guidance raised",
+        "power/electrification demand persists"
+      ]
+    },
+    {
+      "itemId": "reuters-overcapacity-20250724",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Markets bet Beijing is getting serious about China's overcapacity",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/china/markets-bet-beijing-is-getting-serious-about-chinas-overcapacity-2025-07-24/",
+      "publishedAt": "2025-07-24T00:00:00Z",
+      "availableAt": "2025-07-24T00:00:00Z",
+      "originGroup": "reuters-anti-involution-20250724",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Prices of several commodities including steel and polysilicon rallied after policy signals against disorderly price competition; analysts warned profit improvement could take much longer and capacity closures might be conservative."
+      ],
+      "entities": [
+        "polysilicon",
+        "steel",
+        "coal",
+        "lithium",
+        "China industrial policy"
+      ],
+      "observedChanges": [
+        "anti-involution policy expectations rise",
+        "commodity prices rebound"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20250731",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年7月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202507/t20250731_1960551.html",
+      "publishedAt": "2025-07-31T09:30:00+08:00",
+      "availableAt": "2025-07-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202507",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "July manufacturing PMI was 49.3; production remained >50 but new orders were below 50."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing demand remains contractionary"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-20250801",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China 2025 copper output set to hit record high despite feedstock shortages",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/commodities/china-2025-copper-output-set-hit-record-high-despite-feedstock-shortages-2025-08-01/",
+      "publishedAt": "2025-08-01T00:00:00Z",
+      "availableAt": "2025-08-01T00:00:00Z",
+      "originGroup": "reuters-copper-20250801",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China refined copper output was expected to reach a record despite global concentrate shortages; smelters used inventories/scrap and by-product economics while grid investment and exports supported copper demand."
+      ],
+      "entities": [
+        "copper concentrate",
+        "refined copper",
+        "smelters",
+        "power grid"
+      ],
+      "observedChanges": [
+        "copper concentrate shortage",
+        "refined output remains strong",
+        "grid demand improves"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20250809",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年7月份工业生产者出厂价格环比降幅收窄",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202508/t20250809_1960634.html",
+      "publishedAt": "2025-08-09T09:30:00+08:00",
+      "availableAt": "2025-08-09T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202507",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "July PPI fell 3.6% YoY and 0.2% MoM; non-ferrous material/wire purchasing prices rose 2.8% YoY while most producer categories remained deflationary."
+      ],
+      "entities": [
+        "China PPI",
+        "non-ferrous metals"
+      ],
+      "observedChanges": [
+        "broad producer deflation persists",
+        "non-ferrous inputs diverge upward"
+      ]
+    },
+    {
+      "itemId": "reuters-rareearth-export-20250807",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China rare earth exports slid in July after hitting peak in prior month",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/asia/china-rare-earth-exports-slid-july-after-hitting-peak-prior-month-2025-08-07/",
+      "publishedAt": "2025-08-07T00:00:00Z",
+      "availableAt": "2025-08-07T00:00:00Z",
+      "originGroup": "reuters-rareearth-customs-20250807",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "July rare-earth exports fell 23% MoM after a June peak; licensing and strategic scrutiny remained important, but preliminary aggregate data were volatile."
+      ],
+      "entities": [
+        "rare earths",
+        "exports",
+        "magnets"
+      ],
+      "observedChanges": [
+        "rare-earth export flow drops",
+        "licensing remains binding"
+      ]
+    },
+    {
+      "itemId": "reuters-rareearth-quota-20250822",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China tightens grip over rare earth supply quotas",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/china/china-tightens-grip-over-rare-earth-supply-quotas-2025-08-22/",
+      "publishedAt": "2025-08-22T00:00:00Z",
+      "availableAt": "2025-08-22T00:00:00Z",
+      "originGroup": "reuters-rareearth-policy-20250822",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China tightened rare-earth supply-chain controls and extended quota rules to imported raw materials used in mining/smelting/separation, reinforcing state control over strategic supply."
+      ],
+      "entities": [
+        "rare earths",
+        "mining",
+        "smelting",
+        "separation",
+        "quotas"
+      ],
+      "observedChanges": [
+        "rare-earth supply control tightens"
+      ]
+    },
+    {
+      "itemId": "tf-mlcc-20250730",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "AI Demand Stands Out While Consumer Electronics Face Tariff Headwinds",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20250730-12656.html",
+      "publishedAt": "2025-07-30T00:00:00+08:00",
+      "availableAt": "2025-07-30T00:00:00+08:00",
+      "originGroup": "trendforce-mlcc-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "AI demand remained strong while smartphone/notebook/tablet orders were weak/conservative as tariff-frontloading faded, creating a sharp high-end versus consumer MLCC split."
+      ],
+      "entities": [
+        "MLCC",
+        "AI servers",
+        "smartphones",
+        "notebooks"
+      ],
+      "observedChanges": [
+        "AI/consumer component demand diverges"
+      ]
+    },
+    {
+      "itemId": "tf-mlcc-20250826",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "MLCC Market Bulletin - Aug. 26, 2025",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP250826RJ",
+      "publishedAt": "2025-08-26T00:00:00+08:00",
+      "availableAt": "2025-08-26T00:00:00+08:00",
+      "originGroup": "trendforce-mlcc-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Consumer electronics orders remained weak and suppliers controlled inventory; AI infrastructure orders continued to support high-end MLCC demand."
+      ],
+      "entities": [
+        "MLCC",
+        "AI infrastructure",
+        "consumer electronics"
+      ],
+      "observedChanges": [
+        "high-end MLCC demand persists",
+        "consumer weakness persists"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20250831",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202508/t20250831_1960937.html",
+      "publishedAt": "2025-08-31T09:30:00+08:00",
+      "availableAt": "2025-08-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202508",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August manufacturing PMI was 49.4; production expanded but new orders remained below 50."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing demand still weak"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20250910",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年8月份工业生产者出厂价格同比降幅收窄",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202509/t20250910_1961108.html",
+      "publishedAt": "2025-09-10T09:30:00+08:00",
+      "availableAt": "2025-09-10T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202508",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August PPI fell 2.9% YoY but was flat MoM; non-ferrous material/wire purchasing prices rose 4.7% YoY while broad input/output prices remained weak."
+      ],
+      "entities": [
+        "China PPI",
+        "non-ferrous metals"
+      ],
+      "observedChanges": [
+        "producer deflation narrows",
+        "non-ferrous input inflation strengthens"
+      ]
+    },
+    {
+      "itemId": "reuters-coal-20250923",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Stronger East Asian imports give global coal markets a jolt",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/asia/stronger-east-asian-imports-give-global-coal-markets-jolt-2025-09-23/",
+      "publishedAt": "2025-09-23T00:00:00Z",
+      "availableAt": "2025-09-23T00:00:00Z",
+      "originGroup": "reuters-coal-20250923",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August global thermal-coal exports rebounded to the highest since late 2024, driven by China/Japan/Korea imports; China's lower domestic production and East Asian industrial activity supported the reversal."
+      ],
+      "entities": [
+        "thermal coal",
+        "China imports",
+        "East Asia"
+      ],
+      "observedChanges": [
+        "coal trade reverses upward",
+        "China imports rebound"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20250930",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年9月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202509/t20250930_1961438.html",
+      "publishedAt": "2025-09-30T09:30:00+08:00",
+      "availableAt": "2025-09-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202509",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "September manufacturing PMI improved to 49.8; production rose to 51.9, but new orders remained below the expansion threshold."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing improves but demand remains sub-50"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-q3-memory-legacy-shortage",
+      "statement": "Legacy DRAM moved into a structural shortage during Q3 2025 as supplier EOL/capacity migration collided with server/CSP demand; price expectations were repeatedly revised higher and supplier inventories stayed tight into quarter-end.",
+      "changeType": "structural_supply_shortage",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-07-07T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20250707",
+        "tf-dram-20250811",
+        "tf-dram-20250924"
+      ],
+      "independentOriginGroups": [
+        "trendforce-memory-q3-2025"
+      ],
+      "affectedValueChain": [
+        "DDR4/LPDDR4 suppliers",
+        "memory modules",
+        "servers",
+        "industrial/consumer OEMs"
+      ],
+      "contradictionSearchNotes": "The physical signal is strong but comes from one specialist origin; company-level realized earnings and pre-cutoff price-regime evidence are mandatory before selection.",
+      "researchQuestion": "Which A-share memory supplier had real legacy-memory exposure, unreflected earnings headroom and a favorable pre-cutoff opportunity regime?"
+    },
+    {
+      "eventId": "event-q3-power-equipment-supercycle",
+      "statement": "Global power/electrification equipment demand remained exceptionally strong in Q3 discovery: ABB reported record orders and GE Vernova expanded backlog/slot reservations while raising guidance.",
+      "changeType": "orders_backlog_persistence",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-07-17T00:00:00+02:00",
+      "memberItemIds": [
+        "abb-q2-20250717",
+        "gev-q2-20250723"
+      ],
+      "independentOriginGroups": [
+        "abb-q2-2025-results",
+        "gev-q2-2025-results"
+      ],
+      "affectedValueChain": [
+        "transformers",
+        "switchgear",
+        "grid equipment",
+        "gas power",
+        "data-center power"
+      ],
+      "contradictionSearchNotes": "This is already a recognized theme. Deep research must prove a fresh A-share revision/asymmetry edge and favorable timing, not merely thematic exposure.",
+      "researchQuestion": "Which A-share power-equipment name, if any, combines acceptable quality with the largest unreflected revision headroom at a favorable industry regime?"
+    },
+    {
+      "eventId": "event-q3-anti-involution-policy",
+      "statement": "Chinese policy signals against disorderly price competition triggered sharp commodity/sector rallies, but official producer prices remained broadly deflationary through August.",
+      "changeType": "policy_expectation_without_broad_realization",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-07-24T00:00:00Z",
+      "memberItemIds": [
+        "reuters-overcapacity-20250724",
+        "nbs-ppi-20250809",
+        "nbs-ppi-20250910"
+      ],
+      "independentOriginGroups": [
+        "nbs-ppi-202507",
+        "nbs-ppi-202508",
+        "reuters-anti-involution-20250724"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "steel",
+        "coal",
+        "lithium",
+        "industrial commodities"
+      ],
+      "contradictionSearchNotes": "Market prices reacted before broad PPI/profit evidence. This is a useful negative-control against promoting policy narratives that lack realized company economics.",
+      "researchQuestion": "Is there a narrow realized supply/earnings mechanism, or only a broad policy rerating?"
+    },
+    {
+      "eventId": "event-q3-copper-concentrate-squeeze",
+      "statement": "Copper concentrate availability tightened while Chinese refined output remained on track for a record, creating a margin-incidence puzzle rather than a simple copper-winner story; non-ferrous input prices strengthened.",
+      "changeType": "input_shortage_with_downstream_output_resilience",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-08-01T00:00:00Z",
+      "memberItemIds": [
+        "reuters-copper-20250801",
+        "nbs-ppi-20250809",
+        "nbs-ppi-20250910"
+      ],
+      "independentOriginGroups": [
+        "nbs-ppi-202507",
+        "nbs-ppi-202508",
+        "reuters-copper-20250801"
+      ],
+      "affectedValueChain": [
+        "copper mines",
+        "smelters",
+        "scrap",
+        "grid equipment"
+      ],
+      "contradictionSearchNotes": "Concentrate shortage can help miners but hurt smelters; record refined output means the sign of A-share earnings exposure cannot be inferred from copper scarcity alone.",
+      "researchQuestion": "Can any listed company show a clean margin benefit after accounting for treatment charges, scrap/by-products and grid demand?"
+    },
+    {
+      "eventId": "event-q3-rareearth-control-tightens",
+      "statement": "China tightened strategic control over rare-earth supply through export licensing/flow volatility and expanded quota rules, increasing scarcity/policy optionality but with ambiguous incidence across miners, processors and magnet exporters.",
+      "changeType": "strategic_supply_control",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-08-07T00:00:00Z",
+      "memberItemIds": [
+        "reuters-rareearth-export-20250807",
+        "reuters-rareearth-quota-20250822"
+      ],
+      "independentOriginGroups": [
+        "reuters-rareearth-customs-20250807",
+        "reuters-rareearth-policy-20250822"
+      ],
+      "affectedValueChain": [
+        "rare-earth mining",
+        "smelting/separation",
+        "magnets",
+        "downstream exporters"
+      ],
+      "contradictionSearchNotes": "Lower exports are not automatically bullish for Chinese listed firms; downstream exporters can lose volume and policy can change quickly.",
+      "researchQuestion": "Is there an upstream A-share company with retained pricing power and favorable asymmetry, or is the policy incidence too mixed?"
+    },
+    {
+      "eventId": "event-q3-mlcc-ai-consumer-divergence",
+      "statement": "Passive-component demand bifurcated in Q3: AI/high-end MLCC orders remained strong while smartphones/notebooks/consumer electronics stayed weak and suppliers managed inventories conservatively.",
+      "changeType": "end_market_demand_divergence",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-07-30T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-mlcc-20250730",
+        "tf-mlcc-20250826",
+        "nbs-pmi-20250731",
+        "nbs-pmi-20250831"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202507",
+        "nbs-pmi-202508",
+        "trendforce-mlcc-q3-2025"
+      ],
+      "affectedValueChain": [
+        "high-end MLCC",
+        "AI servers",
+        "consumer electronics",
+        "component distributors"
+      ],
+      "contradictionSearchNotes": "Strong AI mix can coexist with weak broad demand. Deep research must prove company mix and relative revision headroom, not generic component exposure.",
+      "researchQuestion": "Which A-share passive-component supplier has enough AI mix and earnings sensitivity to overcome weak consumer demand, without already-maxed valuation?"
+    },
+    {
+      "eventId": "event-q3-manufacturing-demand-sub50",
+      "statement": "China manufacturing PMI stayed below 50 through July-September even as production expanded and headline conditions improved toward quarter-end.",
+      "changeType": "broad_demand_weakness",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-07-31T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20250731",
+        "nbs-pmi-20250831",
+        "nbs-pmi-20250930"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202507",
+        "nbs-pmi-202508",
+        "nbs-pmi-202509"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "exporters",
+        "consumer-linked suppliers"
+      ],
+      "contradictionSearchNotes": "Broad weakness is useful as a contradiction/regime filter but does not identify a standalone long beneficiary.",
+      "researchQuestion": "Should this remain context rather than a stock-selection hypothesis?"
+    },
+    {
+      "eventId": "event-q3-coal-import-reversal",
+      "statement": "East Asian thermal-coal imports rebounded sharply in August after a long decline, with China contributing materially as domestic production weakened.",
+      "changeType": "trade_flow_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-09-23T00:00:00Z",
+      "memberItemIds": [
+        "reuters-coal-20250923"
+      ],
+      "independentOriginGroups": [
+        "reuters-coal-20250923"
+      ],
+      "affectedValueChain": [
+        "thermal coal producers",
+        "traders",
+        "power generators"
+      ],
+      "contradictionSearchNotes": "One-month flow reversal may reflect weather, mine inspections or inventory timing; no independent company economics are frozen.",
+      "researchQuestion": "Is the reversal persistent enough to matter for A-share coal earnings, or a short-lived restocking/weather effect?"
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-memory-20250827",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff memory opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2025q3-multisource-v0.8-001/regime/memory-20250827.snapshot.json",
+      "publishedAt": "2025-08-27T15:00:00+08:00",
+      "availableAt": "2025-08-27T15:00:00+08:00",
+      "normalizedClaims": [
+        "20d equal-weight basket excess +9.75pp, 60d +15.82pp; positive breadth 100% at both horizons; conclusion favorable."
+      ]
+    },
+    {
+      "id": "regime-power-20250831",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff power-equipment opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2025q3-multisource-v0.8-001/regime/power-20250831.snapshot.json",
+      "publishedAt": "2025-08-29T15:00:00+08:00",
+      "availableAt": "2025-08-29T15:00:00+08:00",
+      "normalizedClaims": [
+        "20d basket excess +7.55pp, 60d +9.17pp; positive breadth 66.7% at both horizons; conclusion favorable."
+      ]
+    },
+    {
+      "id": "regime-rareearth-20250830",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff rare-earth opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2025q3-multisource-v0.8-001/regime/rareearth-20250830.snapshot.json",
+      "publishedAt": "2025-08-29T15:00:00+08:00",
+      "availableAt": "2025-08-29T15:00:00+08:00",
+      "normalizedClaims": [
+        "20d basket excess +33.57pp, 60d +90.04pp; positive breadth 100% at both horizons; favorable mechanical regime but extreme prior appreciation."
+      ]
+    },
+    {
+      "id": "regime-passive-20250829",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff passive-component opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2025q3-multisource-v0.8-001/regime/passive-20250829.snapshot.json",
+      "publishedAt": "2025-08-29T15:00:00+08:00",
+      "availableAt": "2025-08-29T15:00:00+08:00",
+      "normalizedClaims": [
+        "20d basket excess +7.99pp, 60d +7.81pp; positive breadth 66.7% at both horizons; conclusion favorable."
+      ]
+    },
+    {
+      "id": "giga-h1-20250823",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "兆易创新2025H1 results",
+      "publisher": "中证智能财讯/东方财富",
+      "url": "https://fund.eastmoney.com/a/202508223492229695.html",
+      "publishedAt": "2025-08-23T00:00:00+08:00",
+      "availableAt": "2025-08-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB4.15bn +15.0%; attributable profit RMB575m +11.31%; CFO RMB958m -23.3%; Aug22 TTM PE about 86.3x."
+      ]
+    },
+    {
+      "id": "giga-research-20250825",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "兆易创新：多领域齐头并进，DRAM格局改善带动量价齐升",
+      "publisher": "华安证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/roll/2025-08-25/doc-infneftp7813717.shtml",
+      "publishedAt": "2025-08-25T00:00:00+08:00",
+      "availableAt": "2025-08-25T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025-27 profit forecast RMB1.55/2.07/2.59bn; Aug22 price implied PE 64.6/48.3/38.6x; report expected DRAM structure improvement and price/volume benefits."
+      ]
+    },
+    {
+      "id": "junzheng-h1-20250826",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "北京君正2025年半年度报告",
+      "publisher": "北京君正",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11361645&stockid=300223",
+      "publishedAt": "2025-08-26T00:00:00+08:00",
+      "availableAt": "2025-08-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB2.249bn +6.75%; attributable profit RMB203m +2.85%;扣非 profit -19.05%; Q2 profit improved sequentially."
+      ]
+    },
+    {
+      "id": "junzheng-research-20250826",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "北京君正：强化AI研发布局，“计算+存储+模拟”多维发展",
+      "publisher": "华安证券/东方财富",
+      "url": "https://data.eastmoney.com/report/info/AP202508261734776610.html",
+      "publishedAt": "2025-08-26T00:00:00+08:00",
+      "availableAt": "2025-08-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025-27 profit forecast RMB460m/700m/1.05bn; Aug25 price implied PE 78.5/52.0/34.8x; new-process DDR4/LPDDR4 samples were beginning."
+      ]
+    },
+    {
+      "id": "longsys-h1-20250823",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "江波龙2025H1 results",
+      "publisher": "中证智能财讯/东方财富",
+      "url": "https://fund.eastmoney.com/a/202508233492614125.html",
+      "publishedAt": "2025-08-23T00:00:00+08:00",
+      "availableAt": "2025-08-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB10.196bn +12.8%; attributable profit RMB14.8m -97.51%; CFO improved to RMB693m."
+      ]
+    },
+    {
+      "id": "demingli-h1-20250822",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "德明利2025H1 results",
+      "publisher": "中证智能财讯/东方财富",
+      "url": "https://fund.eastmoney.com/a/202508223491085662.html",
+      "publishedAt": "2025-08-22T00:00:00+08:00",
+      "availableAt": "2025-08-22T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB4.109bn +88.83%; attributable loss RMB118m; CFO -RMB590m; TTM PE negative."
+      ]
+    },
+    {
+      "id": "siyuan-h1-20250816",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "思源电气2025年半年度报告",
+      "publisher": "思源电气",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11306404&stockid=002028",
+      "publishedAt": "2025-08-16T00:00:00+08:00",
+      "availableAt": "2025-08-16T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB8.497bn +37.8%; attributable profit RMB1.293bn +45.71%;扣非 +47.04%."
+      ]
+    },
+    {
+      "id": "siyuan-research-20250831",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "思源电气：25H1收入、利润同比均高增，海外业务爆发式增长",
+      "publisher": "华安证券 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/809968416608/index.phtml",
+      "publishedAt": "2025-08-31T00:00:00+08:00",
+      "availableAt": "2025-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 overseas revenue +88.95%; 2025-27 profit forecast RMB2.769/3.358/3.662bn; PE 24.6/20.3/18.6x."
+      ]
+    },
+    {
+      "id": "xuji-h1-20250821",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "许继电气2025年半年度报告",
+      "publisher": "许继电气",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11322602&stockid=000400",
+      "publishedAt": "2025-08-21T00:00:00+08:00",
+      "availableAt": "2025-08-21T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB6.447bn -5.68%; attributable profit RMB634m +0.96%; operating cash flow RMB1.12bn +237.08%."
+      ]
+    },
+    {
+      "id": "xuji-research-20250822",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "许继电气2025年中报点评：业绩整体符合市场预期，盈利能力显著改善",
+      "publisher": "东吴证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/roll/2025-08-22/doc-infmvuwc5124320.shtml",
+      "publishedAt": "2025-08-22T00:00:00+08:00",
+      "availableAt": "2025-08-22T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q2 contract liabilities RMB2.586bn +74.04%; Q2 operating cash flow RMB957m +1232%; 2025-27 profit forecasts cut to RMB1.426/1.705/2.126bn but still imply +28%/+20%/+25%; PE 17/14/11x."
+      ]
+    },
+    {
+      "id": "igor-h1-20250828",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "伊戈尔2025年半年度报告",
+      "publisher": "伊戈尔",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11398005&stockid=002922",
+      "publishedAt": "2025-08-28T00:00:00+08:00",
+      "availableAt": "2025-08-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 energy-product revenue RMB1.836bn +23.67%; overall profit was down year-on-year while Q2 profitability improved."
+      ]
+    },
+    {
+      "id": "igor-research-20250831",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "伊戈尔2025年半年报点评：25Q2盈利环比改善，AIDC有望成为新曲线",
+      "publisher": "民生证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/roll/2025-08-31/doc-infnvpzr9290978.shtml",
+      "publishedAt": "2025-08-31T00:00:00+08:00",
+      "availableAt": "2025-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025-27 revenue forecasts RMB5.898/7.45/9.164bn and profit RMB307/457/590m; Aug29 PE 32/22/17x; data-center transformer capacity/products were expanding."
+      ]
+    },
+    {
+      "id": "sanhuan-h1-research-20250829",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "三环集团：业务多点开花，业绩稳定增长",
+      "publisher": "华西证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/roll/2025-08-29/doc-infnrnmk6020537.shtml",
+      "publishedAt": "2025-08-29T11:45:00+08:00",
+      "availableAt": "2025-08-29T11:45:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB4.149bn +21.05%, profit RMB1.237bn +20.63%; 2025-27 forecasts were slightly reduced; Aug28 PE 30.27/22.69/17.46x."
+      ]
+    },
+    {
+      "id": "sunlord-h1-20250731",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "顺络电子2025年半年度报告",
+      "publisher": "顺络电子",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11270825&stockid=002138",
+      "publishedAt": "2025-07-31T00:00:00+08:00",
+      "availableAt": "2025-07-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB3.224bn +19.80%; profit RMB486m +32.03%;扣非 +32.87%; CFO +21.33%; data-center orders achieved important growth."
+      ]
+    },
+    {
+      "id": "sunlord-research-20250731",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "顺络电子：AI终端带动需求提升，新兴战略业务增速显著",
+      "publisher": "华西证券 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/807272238088/index.phtml",
+      "publishedAt": "2025-07-31T00:00:00+08:00",
+      "availableAt": "2025-07-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025-27 profit forecasts RMB1.05/1.313/1.581bn; Jul30 PE 22.16/17.71/14.71x; report described H1 as in line and data-center/AI businesses growing strongly."
+      ]
+    },
+    {
+      "id": "fenghua-research-20250822",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "风华高科：业绩符合预期，新兴市场助力长期发展",
+      "publisher": "华西证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/roll/2025-08-22/doc-infmuxsr3914648.shtml",
+      "publishedAt": "2025-08-22T00:00:00+08:00",
+      "availableAt": "2025-08-22T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 AI/storage/low-altitude markets grew, but 2025-27 profit forecasts were cut to RMB453/604/735m; Aug21 PE 38.76/29.12/23.90x."
+      ]
+    },
+    {
+      "id": "northrare-h1-20250827",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "北方稀土2025H1 results",
+      "publisher": "中证智能财讯/东方财富",
+      "url": "https://fund.eastmoney.com/a/202508273496764835.html",
+      "publishedAt": "2025-08-27T00:00:00+08:00",
+      "availableAt": "2025-08-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB18.866bn +45.24%; profit RMB931m +1951.52%; CFO +1251.81%; Aug26 TTM PE about 93.9x."
+      ]
+    },
+    {
+      "id": "northrare-research-20250829",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "北方稀土2025H1点评：轻稀土步入上行新周期",
+      "publisher": "中航证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/roll/2025-08-29/doc-infnsira2500634.shtml",
+      "publishedAt": "2025-08-29T17:27:00+08:00",
+      "availableAt": "2025-08-29T17:27:00+08:00",
+      "normalizedClaims": [
+        "2025-27 profit forecasts RMB2.54/3.30/4.10bn; corresponding PE 76/59/47x; report expected an upcycle in light rare-earth pricing."
+      ]
+    },
+    {
+      "id": "chinarare-h1-20250829",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "中国稀土2025H1 results",
+      "publisher": "新浪财经鹰眼",
+      "url": "https://finance.sina.com.cn/stock/aiassist/yjbg/2025-08-29/doc-infnscia5825737.shtml",
+      "publishedAt": "2025-08-29T19:56:00+08:00",
+      "availableAt": "2025-08-29T19:56:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB1.875bn +62.38%; profit RMB162m +166.16%; Aug29 TTM PE about 831x, PB 13.12x."
+      ]
+    },
+    {
+      "id": "shenghe-h1-20250830",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "盛和资源2025H1 results",
+      "publisher": "新浪财经鹰眼",
+      "url": "https://finance.sina.com.cn/stock/yyyj/2025-08-30/doc-infnusvy1283361.shtml",
+      "publishedAt": "2025-08-30T00:00:00+08:00",
+      "availableAt": "2025-08-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB6.179bn +13.62%; attributable profit RMB377m +650.09%; operating cash flow RMB116m -72.62%, below profit."
+      ]
+    }
+  ]
+}
