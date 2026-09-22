@@ -111,3 +111,34 @@ V0.6.1 只修复评估软件，不改变 v0.6 Skill：当 240 日等未来 horiz
 它显示数据中心电气设备事件在 20/60 日有研究价值，但伊戈尔在预注册 120 日基准期没有形成相对沪深300/同行的持续优势，因此仍然不能事后升级为 High-priority selection。
 
 Forward missed-opportunity audit 另外冻结精确股票 universe；只有 universe 中的 ticker 才能进入未来赢家/漏报分母，避免事后改变股票池。
+
+
+## Forward missed-opportunity 审计分母
+
+V0.6 的首个 forward discovery run 已经在未来结果出现前冻结了精确股票分母：
+
+- run：`2026-09-22-forward-discovery-v0.6-001`
+- universe version：`cn-a-share-main-chinext-official-v1`
+- as-of：`2026-09-22`
+- 官方原始证券数：4,604
+- 最终纳入：**4,413**
+- 排除：191（ST/*ST 188、N/C 新股标记 2、规则外 1）
+- 来源：上交所官方股票列表查询 + 深交所官方 A 股 JSON 分页列表
+- ticker digest：`e24393502faf23ef3233dd4418f571adafebe70514d55afdcec5810e5739aa87`
+
+股票池和抓取/锁定代码见：
+`backtests/runs/2026-09-22-forward-discovery-v0.6-001/audit-universe.json`
+与
+`audit-universe-lock.json`。
+
+未来 120 个交易日成熟后，漏网候选不能人工挑选。已经冻结的机械规则是：
+
+- benchmark：沪深300；
+- horizon：120 个交易日；
+- 候选 = benchmark-relative 前 1% **并集** 超额收益 >= 50%；
+- 120 日 outcome snapshot 必须覆盖冻结 universe 的每一只 ticker；
+- 退市、停牌、数据缺失、执行阻塞只能显式标状态，不能从分母消失；
+- 同一时期的 missed cases 只能诊断 failure stage，不能用来修改当前 Skill 后再宣称本期 recall 提高。
+
+完整 recall 方法已经另外冻结在
+`recall-pipeline-lock.json`。任何后续代码/模板变化都只能建立新的 prospective pipeline version，不能替换这份锁。
