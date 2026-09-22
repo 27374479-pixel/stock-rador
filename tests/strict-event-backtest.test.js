@@ -155,3 +155,34 @@ test('execution blockers use unadjusted bars while returns can use adjusted bars
   assert.equal(result.status, 'blocked_entry');
   assert.equal(result.entryExecution.onePriceLimitUp, true);
 });
+
+
+test('A-share cash-equity T+1 settlement forbids same-session exit', () => {
+  const bars = [
+    bar('2026-01-02', 10),
+    bar('2026-01-05', 10.1),
+    bar('2026-01-06', 10.2)
+  ];
+  const result = backtestEvent({
+    bars,
+    signalDate: '2026-01-02',
+    holdingTradingDays: 1
+  });
+  assert.equal(result.status, 'invalid_exit_schedule');
+  assert.match(result.reason, /cannot be sold on the same trading session/);
+});
+
+test('same-session exit can only be enabled explicitly for non-cash-equity experiments', () => {
+  const bars = [
+    bar('2026-01-02', 10),
+    bar('2026-01-05', 10.1)
+  ];
+  const result = backtestEvent({
+    bars,
+    signalDate: '2026-01-02',
+    holdingTradingDays: 1,
+    enforceCashEquityTPlusOne: false
+  });
+  assert.equal(result.status, 'executed');
+  assert.equal(result.entryDate, result.exitDate);
+});
