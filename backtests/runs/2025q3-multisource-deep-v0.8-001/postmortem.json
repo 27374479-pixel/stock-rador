@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025q3-multisource-deep-v0.8-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "power_xuji_vs_siyuan",
+      "frozenDecision": "许继电气 High-priority selection over 思源电气/伊戈尔",
+      "base60d": {
+        "selectedReturn": 0.11965953682538011,
+        "bestControlTicker": "002028.SZ",
+        "bestControlReturn": 0.6347480644355645,
+        "excessVsBestControl": -0.5150885276101844
+      },
+      "postOutcomeFundamentalDiagnosis": "The inferred H2 catch-up bridge did not materialize by Q3: 许继 Q3 profit was roughly flat YoY while 思源 Q3 profit remained ~49% YoY growth.",
+      "failureClass": "revision_headroom_without_realized_conversion_bridge",
+      "generalLesson": "Low expectations, lower valuation, contract liabilities and cash receipts are not sufficient evidence of upward revision headroom. A High-priority catch-up thesis needs a measurable conversion bridge from backlog/order/price to near-term revenue or margin."
+    },
+    {
+      "case": "memory_quality_vs_cyclical_convexity",
+      "frozenDecision": "兆易创新 Research selection over 北京君正/江波龙/德明利",
+      "base60d": {
+        "selectedReturn": 0.2462413717327916,
+        "bestControlTicker": "301308.SZ",
+        "bestControlReturn": 1.4781077884040683,
+        "excessVsBestControl": -1.2318664166712767
+      },
+      "postOutcomeFundamentalDiagnosis": "江波龙 Q3 single-quarter profit surged as the storage cycle turned; 德明利 also returned to quarterly profit despite still-negative YTD earnings/cash flow.",
+      "failureClass": "quality_floor_missed_turning_point_operating_leverage",
+      "generalLesson": "For cyclical turning points, current earnings quality can be a lagging state variable. Evaluate operating leverage/convexity explicitly while retaining a separate liquidity/solvency downside floor."
+    },
+    {
+      "case": "passive_sunlord",
+      "frozenDecision": "顺络电子 High-priority selection over 三环集团/风华高科",
+      "base60d": {
+        "selectedReturn": 0.0855956048481532,
+        "bestControlTicker": "000636.SZ",
+        "bestControlReturn": 0.06356943759216938,
+        "excessVsBestControl": 0.02202616725598383
+      },
+      "postOutcomeFundamentalDiagnosis": "The 60d pre-registered base horizon succeeded versus both controls. By 120d controls later outperformed, which is a dynamic re-ranking/horizon issue rather than evidence that the original 60d selection was invalid.",
+      "failureClass": "base_horizon_success_later_reranking_needed",
+      "generalLesson": "Do not use later-horizon control reversal to overwrite a correct pre-registered base-horizon decision. Add periodic re-underwriting separately."
+    }
+  ],
+  "prohibitedUses": [
+    "Do not change v0.8 thresholds or labels inside this frozen run.",
+    "Do not claim v0.9 success from these cases.",
+    "Any new mechanism inspired by these failures must be versioned and tested on another holdout/forward window."
+  ]
+}
