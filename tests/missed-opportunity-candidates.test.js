@@ -41,9 +41,9 @@ test('candidate generation mechanically unions top 1% and >=50% excess names', (
   });
   assert.deepEqual(errors, []);
   assert.equal(result.rule.topCount, 2);
-  assert.ok(result.candidates.some((x) => x.ticker === '000001.SZ'));
-  assert.ok(result.candidates.some((x) => x.ticker === '000002.SZ'));
-  assert.ok(result.candidates.some((x) => x.ticker === '000011.SZ' && x.absoluteThresholdHit));
+  assert.ok(result.candidates.some((x) => x.ticker === '000001.SZ' && x.percentileRuleHit));
+  assert.equal(result.candidates.some((x) => x.ticker === '000002.SZ'), false);
+  assert.ok(result.candidates.some((x) => x.ticker === '000011.SZ' && x.percentileRuleHit && x.absoluteThresholdHit));
 });
 
 test('candidate generation refuses survivor-biased snapshots with missing universe names', () => {
