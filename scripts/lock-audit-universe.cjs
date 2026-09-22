@@ -50,6 +50,16 @@ try {
         role: 'universe_locker',
         path: 'scripts/lock-audit-universe.cjs',
         sha256: sha256(path.resolve(root, 'scripts/lock-audit-universe.cjs'))
+      },
+      {
+        role: 'miss_candidate_core',
+        path: 'scripts/missed-opportunity-candidates-core.cjs',
+        sha256: sha256(path.resolve(root, 'scripts/missed-opportunity-candidates-core.cjs'))
+      },
+      {
+        role: 'miss_candidate_cli',
+        path: 'scripts/generate-missed-opportunity-candidates.cjs',
+        sha256: sha256(path.resolve(root, 'scripts/generate-missed-opportunity-candidates.cjs'))
       }
     ],
     includedTickerCount: universe.summary.includedCount,
