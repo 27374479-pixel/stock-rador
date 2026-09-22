@@ -15,6 +15,7 @@ Minimum shape:
   "signals": [
     {
       "id": "signal-id",
+      "asOf": "ISO timestamp for this signal",
       "claim": "real-world change",
       "shockTypes": [],
       "evidence": [],
@@ -55,7 +56,7 @@ Minimum shape:
 
 Rules:
 - `outcomeDataUsed` must be false in historical selection.
-- all evidence timestamps must be <= `asOf`;
+- each signal should carry its own `asOf`; its evidence timestamps must be <= that signal cutoff, and the signal cutoff must be <= packet `asOf`;
 - quarantined tickers are forbidden;
 - outcome-oriented discovery terms are forbidden;
 - `beneficiaryArchetype` must be written before candidate search in the research process;
