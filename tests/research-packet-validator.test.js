@@ -85,3 +85,30 @@ test('candidate requires valuation bridge',()=>{
   delete p.signals[0].candidates[0].valuationBridge;
   assert.throws(()=>validateResearchPacket(p),/valuationBridge/);
 });
+
+
+test('V3.2 candidate requires a causal horizon bridge',()=>{
+  const p=packet();
+  p.schemaVersion='3.2';
+  p.signals[0].candidates[0].basisReconciliation={
+    externalIndicator:'industry price',
+    companyRealizedBasis:'company realized ASP',
+    basisRisk:'basis can diverge'
+  };
+  p.signals[0].candidates[0].valuationBridge={
+    marketCapOrEV:'100bn',
+    bearCase:'bear',
+    baseCase:'base',
+    upsideCase:'upside',
+    impliedExpectation:'not heroic'
+  };
+  assert.throws(()=>validateResearchPacket(p),/requires horizonBridge/);
+  p.signals[0].candidates[0].horizonBridge={
+    shockClass:'cyclical-multi-quarter',
+    expectedHalfLife:'two to four quarters',
+    normalizationIndicators:['spread normalizes'],
+    expectedResearchHorizon:'60-120 trading days',
+    whyHorizonMatches:'earnings follows the cycle with a lag'
+  };
+  assert.equal(validateResearchPacket(p),true);
+});
