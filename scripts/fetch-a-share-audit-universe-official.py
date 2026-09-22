@@ -139,6 +139,17 @@ def likely_name(value):
         return False
     return len(text) <= 40
 
+def debug_workbook(xlsx_bytes, label):
+    wb = load_workbook(io.BytesIO(xlsx_bytes), read_only=True, data_only=True)
+    print(f"[debug] {label} sheets={wb.sheetnames}")
+    for ws in wb.worksheets:
+        print(f"[debug] sheet={ws.title} max_row={ws.max_row} max_column={ws.max_column}")
+        for idx, row in enumerate(ws.iter_rows(values_only=True)):
+            if idx >= 12:
+                break
+            vals = [clean_text(v) for v in row[:12]]
+            print(f"[debug] {label} {ws.title} row{idx+1}: {vals}")
+
 def extract_rows(xlsx_bytes, exchange):
     wb = load_workbook(io.BytesIO(xlsx_bytes), read_only=True, data_only=True)
     candidates = {}
@@ -210,6 +221,7 @@ def main():
 
     szse = extract_rows(szse_bytes, "SZ")
     if len(szse) < 2000:
+        debug_workbook(szse_bytes, "SZSE")
         raise RuntimeError(f"unexpected SZSE parsed count: {len(szse)}")
 
     all_items = sse + szse
