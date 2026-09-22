@@ -157,6 +157,28 @@ Trace explicitly:
 
 If a link is speculative, label it.
 
+### Basis reconciliation
+
+Before using an external operating indicator in company economics:
+- reconcile geography, product grade/specification, transaction stage, unit, timing and customer/channel basis;
+- prefer the company's own realized ASP / shipment / order data when available;
+- quantify or explain the historical basis between the external indicator and company realization;
+- if the indicator cannot be reconciled to what the company actually earns, the decision cannot exceed **Watch**.
+
+### Valuation / expectation bridge
+
+For every Candidate, use only point-in-time information to translate the operating thesis into a rough bear/base/upside economic range:
+- sustainable company-realized price, not just a spot/reference peak;
+- sustainable volume/capacity;
+- gross-margin or unit-margin sensitivity;
+- rough EBIT / net profit / free-cash-flow implication;
+- current market cap / enterprise value and relevant balance-sheet claims;
+- what earnings level/duration the current price seems to require.
+
+Avoid fake precision. The purpose is to test whether the earnings change is plausibly larger than what the price already embeds.
+
+If a meaningful valuation/expectation bridge cannot be built, the decision cannot exceed **Watch**.
+
 ### Balance sheet / cycle sensitivity
 Especially for cyclical or commodity signals, inspect:
 - inventory amount and purchase timing;
