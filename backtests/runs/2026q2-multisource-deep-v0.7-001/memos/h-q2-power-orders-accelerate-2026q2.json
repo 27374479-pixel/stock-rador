@@ -1,0 +1,233 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.7.0",
+  "cutoffAt": "2026-04-29T23:59:59+08:00",
+  "researchReadyAt": "2026-04-29T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q2-power-orders-accelerate-2026q2",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 60,
+    "baseTradingDays": 120,
+    "latestTradingDays": 240,
+    "rationale": "Power-equipment backlog and capacity conversion are multi-quarter mechanisms; a fresh company-selection edge should be visible through order quality, margins and earnings conversion rather than a short price reaction."
+  },
+  "changeHypothesis": {
+    "summary": "GE Vernova and ABB independently showed a genuine further acceleration in global electrification/data-center orders. The A-share opportunity remained real, but the frozen Q1 company evidence did not identify a newly differentiated winner: 思源电气 had strong revenue/order context but slower reported profit growth, while 伊戈尔 had faster profit growth from a smaller base but weaker revenue growth and sharply negative operating cash flow.",
+    "firstCredibleDate": "2026-04-22",
+    "valueChain": [
+      "grid/data-center capex",
+      "transformer/switchgear orders",
+      "backlog",
+      "capacity/utilization",
+      "revenue/margin conversion",
+      "A-share earnings"
+    ],
+    "persistenceReason": "Two independent first-party global suppliers reported large order/backlog acceleration, including data-center electrical equipment.",
+    "disconfirmingEvidence": [
+      "The theme had already been strong since 2025, increasing expectation saturation.",
+      "思源 Q1 reported profit growth well below revenue growth.",
+      "伊戈尔 Q1 operating cash flow deteriorated sharply and revenue growth was only 17.7%."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "gev-q1-20260422",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "abb-q1-20260422",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "siyuan-q1-20260425",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "siyuan-research-20260426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "igor-q1-20260429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "global grid/data-center capex",
+      "to": "electrification order acceleration",
+      "mechanism": "Large projects require transformers, switchgear and grid interconnection equipment.",
+      "evidenceRefs": [
+        "gev-q1-20260422",
+        "abb-q1-20260422"
+      ],
+      "failureMode": "project delays, capacity additions or data-center capex slowdown",
+      "lag": "quarters"
+    },
+    {
+      "from": "order acceleration",
+      "to": "A-share supplier earnings",
+      "mechanism": "A-share suppliers benefit only when overseas qualification/order share converts at attractive margins.",
+      "evidenceRefs": [
+        "siyuan-q1-20260425",
+        "siyuan-research-20260426",
+        "igor-q1-20260429"
+      ],
+      "failureMode": "mix/costs and overseas investment absorb revenue growth",
+      "lag": "one to four quarters"
+    },
+    {
+      "from": "earnings conversion",
+      "to": "selection alpha",
+      "mechanism": "A fresh winner needs a new company-level surprise or valuation edge, not generic exposure to an already-saturated theme.",
+      "evidenceRefs": [
+        "siyuan-research-20260426",
+        "igor-q1-20260429"
+      ],
+      "failureMode": "all peers rise together or expectations already discount backlog",
+      "lag": "multi-quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified transformer/switchgear/grid-equipment suppliers"
+    ],
+    "secondOrderWinners": [
+      "electrical components and conductor suppliers"
+    ],
+    "losers": [
+      "project developers facing long equipment lead times"
+    ],
+    "substitutes": [
+      "local equipment suppliers and alternative architectures"
+    ],
+    "bottlenecks": [
+      "transformer capacity",
+      "switchgear",
+      "overseas qualification"
+    ],
+    "falseThemeMatches": [
+      "AI names without realized power-equipment orders"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002028.SZ",
+      "name": "思源电气",
+      "verifiedExposure": "Q1 revenue +41.6%; global order context remained strong and analyst work cited inventory/contract liabilities supporting future delivery.",
+      "evidenceRefs": [
+        "siyuan-q1-20260425",
+        "siyuan-research-20260426"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong revenue/order environment but Q1 profit growth lagged revenue.",
+        "favorable": "High-quality overseas orders and product mix improve margins from Q2 onward.",
+        "adverse": "Mix, R&D/sales investment and FX keep profit growth below revenue."
+      },
+      "principalRisks": [
+        "expectation saturation",
+        "margin mix",
+        "FX"
+      ]
+    },
+    {
+      "ticker": "002922.SZ",
+      "name": "伊戈尔",
+      "verifiedExposure": "Q1 revenue +17.71%, attributable profit +63.53%,扣非 +89.82%, but operating cash flow was RMB-191m.",
+      "evidenceRefs": [
+        "igor-q1-20260429"
+      ],
+      "earningsSensitivity": {
+        "base": "Profit growth is strong from a smaller base.",
+        "favorable": "Data-center/overseas order conversion accelerates revenue while margins remain strong.",
+        "adverse": "Working-capital/cash conversion and slower revenue constrain quality."
+      },
+      "principalRisks": [
+        "cash conversion",
+        "smaller scale",
+        "high prior expectations"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "The industry event is high priority, but neither frozen A-share candidate showed a sufficiently clean new price-relative company reset to justify selection."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The global power-equipment shortage/backlog narrative was already well established. 思源's Q1 revenue was strong but profit conversion was less impressive; 伊戈尔 showed profit acceleration but weaker top-line/cash conversion.",
+    "thesisExpectation": "The global order cycle can remain structurally strong, but the system should wait for a fresh company-specific order/margin reset before selecting.",
+    "measurableGap": "Opportunity-level acceleration is verified; stock-level expectation gap is not.",
+    "evidenceRefs": [
+      "gev-q1-20260422",
+      "abb-q1-20260422",
+      "siyuan-research-20260426",
+      "igor-q1-20260429"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No company passes the v0.7 selection/expectation gate.",
+    "alreadyPricedAssessment": "industry opportunity credible but stock-level differentiation insufficient",
+    "constraints": [
+      "theme saturation",
+      "mixed company-level conversion"
+    ]
+  },
+  "bearCase": "Global orders stay strong but A-share names merely meet already-high expectations, or margin/cash conversion lags revenue.",
+  "invalidationConditions": [
+    {
+      "indicator": "global electrification order/backlog growth",
+      "observationMethod": "major supplier quarterly results",
+      "threshold": "material slowdown inconsistent with structural demand"
+    },
+    {
+      "indicator": "A-share margin/order conversion",
+      "observationMethod": "company filings and order disclosures",
+      "threshold": "no company develops a differentiated earnings reset"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model memory contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No later return should be used to retroactively select a company."
+    ]
+  },
+  "unknowns": [
+    "fresh A-share order values by end-market",
+    "exact Q2 cutoff consensus dispersion",
+    "incremental margins on overseas orders"
+  ],
+  "nextResearchActions": [
+    "Keep High-priority hypothesis / No selection.",
+    "Require a fresh company-specific reset in a future window rather than recycle Q4/Q1 winners."
+  ]
+}
