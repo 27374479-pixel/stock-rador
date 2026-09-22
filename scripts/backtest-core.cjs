@@ -44,7 +44,7 @@ function resolveInside(rootDir, relativePath) {
 
 function validateManifest(manifest) {
   const errors = [];
-  if (!['1.0', '1.1', '1.2'].includes(manifest?.schemaVersion)) errors.push('schemaVersion must be 1.0, 1.1 or 1.2');
+  if (!['1.0', '1.1', '1.2', '1.3'].includes(manifest?.schemaVersion)) errors.push('schemaVersion must be 1.0, 1.1, 1.2 or 1.3');
   if (!/^[A-Za-z0-9._-]+$/.test(manifest?.runId ?? '')) errors.push('runId must use letters, numbers, dot, underscore or dash');
   if (!['historical_replay', 'forward'].includes(manifest?.evaluationMode)) errors.push('evaluationMode must be historical_replay or forward');
   try { assertIso(manifest?.createdAt, 'createdAt'); } catch (error) { errors.push(error.message); }
@@ -70,7 +70,7 @@ function validateManifest(manifest) {
   if (manifest?.outcomePolicy?.entryRule !== 'next_trading_day_open_after_cutoff_date') {
     errors.push('outcomePolicy.entryRule must be next_trading_day_open_after_cutoff_date');
   }
-  if (manifest?.schemaVersion === '1.2') {
+  if (['1.2', '1.3'].includes(manifest?.schemaVersion)) {
     const trackedHypothesisStates = manifest?.trackedHypothesisStates;
     const trackedSelectionStates = manifest?.trackedSelectionStates;
     const primarySelectionStates = manifest?.primarySelectionStates;
@@ -91,7 +91,7 @@ function validateManifest(manifest) {
     }
   }
   if (!Array.isArray(manifest?.selections)) errors.push('selections must be an array');
-  if (manifest?.schemaVersion === '1.2') {
+  if (['1.2', '1.3'].includes(manifest?.schemaVersion)) {
     if (!Array.isArray(manifest?.hypothesisMemoPaths)) {
       errors.push('hypothesisMemoPaths must be an array');
     } else if (Array.isArray(manifest?.selections)) {
@@ -107,14 +107,14 @@ function validateManifest(manifest) {
       manifest.outcomePolicy.matchedControlStatistic !== 'equal_weight_mean') {
     errors.push('outcomePolicy.matchedControlStatistic must be equal_weight_mean');
   }
-  if (manifest?.schemaVersion === '1.2' && !manifest?.contaminationControls?.sourcePackPath) {
+  if (['1.2', '1.3'].includes(manifest?.schemaVersion) && !manifest?.contaminationControls?.sourcePackPath) {
     errors.push('schemaVersion 1.2 requires contaminationControls.sourcePackPath for every evaluation mode');
   }
   if (manifest?.evaluationMode === 'historical_replay') {
     if (!manifest?.contaminationControls?.modelMemoryRisk) errors.push('historical_replay requires contaminationControls.modelMemoryRisk');
     if (!manifest?.contaminationControls?.sourcePackPath) errors.push('historical_replay requires contaminationControls.sourcePackPath');
-    if (['1.1', '1.2'].includes(manifest?.schemaVersion) && !manifest?.contaminationControls?.identityStressPath) {
-      errors.push('schemaVersion 1.1/1.2 historical replay requires contaminationControls.identityStressPath');
+    if (['1.1', '1.2', '1.3'].includes(manifest?.schemaVersion) && !manifest?.contaminationControls?.identityStressPath) {
+      errors.push('schemaVersion 1.1/1.2/1.3 historical replay requires contaminationControls.identityStressPath');
     }
   }
   return errors;
@@ -122,7 +122,7 @@ function validateManifest(manifest) {
 
 function validateScreening(screening, manifest) {
   const errors = [];
-  if (!['1.1', '1.2'].includes(manifest?.schemaVersion)) return errors;
+  if (!['1.1', '1.2', '1.3'].includes(manifest?.schemaVersion)) return errors;
   if (screening?.runId !== manifest.runId) errors.push('screening.runId must match manifest.runId');
   const decisions = screening?.reviewDecisions;
   if (!Array.isArray(decisions)) {
@@ -151,7 +151,7 @@ function validateScreening(screening, manifest) {
 
 function validateIdentityStress(stress, manifest) {
   const errors = [];
-  if (!['1.1', '1.2'].includes(manifest?.schemaVersion) || manifest?.evaluationMode !== 'historical_replay') return errors;
+  if (!['1.1', '1.2', '1.3'].includes(manifest?.schemaVersion) || manifest?.evaluationMode !== 'historical_replay') return errors;
   if (stress?.runId !== manifest.runId) errors.push('identity stress runId must match manifest.runId');
   if (!['passed', 'failed', 'not_feasible'].includes(stress?.status)) {
     errors.push('identity stress status must be passed, failed or not_feasible');
@@ -232,7 +232,7 @@ function validateMemoEvidenceRefs(memo, memoPath, sourcePack) {
 
 function validateOpportunityMemo(memo, memoPath, manifest) {
   const errors = [];
-  if (manifest?.schemaVersion !== '1.2') return errors;
+  if (!['1.2', '1.3'].includes(manifest?.schemaVersion)) return errors;
 
   try { assertIso(memo?.cutoffAt, `${memoPath}.cutoffAt`); } catch (error) { errors.push(error.message); }
   try { assertIso(memo?.researchReadyAt, `${memoPath}.researchReadyAt`); } catch (error) { errors.push(error.message); }
@@ -283,12 +283,39 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
     }
   }
 
+  if (manifest?.schemaVersion === '1.3' && memo?.selectionState !== 'No selection') {
+    const burden = memo?.expectationBurdenTest;
+    if (!burden || typeof burden !== 'object') {
+      errors.push(`${memoPath} selected company requires expectationBurdenTest`);
+    } else {
+      for (const field of ['valuationMethod', 'marketBaseline', 'thesisScenario', 'breakevenCondition', 'ordinaryScenarioFailure']) {
+        if (typeof burden[field] !== 'string' || !burden[field].trim()) {
+          errors.push(`${memoPath} expectationBurdenTest.${field} is required`);
+        }
+      }
+      if (!Array.isArray(burden.evidenceRefs) || burden.evidenceRefs.length === 0) {
+        errors.push(`${memoPath} expectationBurdenTest.evidenceRefs must be non-empty`);
+      }
+      if (!['room', 'tight', 'fully_priced', 'unresolved'].includes(burden.conclusion)) {
+        errors.push(`${memoPath} expectationBurdenTest.conclusion is invalid`);
+      }
+      const primary = manifest.primarySelectionStates.includes(memo.selectionState);
+      if (primary && ['fully_priced', 'unresolved'].includes(burden.conclusion)) {
+        errors.push(`${memoPath} High-priority selection cannot have ${burden.conclusion} expectation burden`);
+      }
+      if (primary && burden.conclusion === 'tight' &&
+          (typeof burden.catalystOrTimingBridge !== 'string' || !burden.catalystOrTimingBridge.trim())) {
+        errors.push(`${memoPath} tight High-priority selection requires catalystOrTimingBridge`);
+      }
+    }
+  }
+
   return errors;
 }
 
 function validateMemoForSelection(memo, selection, manifest) {
   const errors = [];
-  const isV12 = manifest?.schemaVersion === '1.2';
+  const isV12 = ['1.2', '1.3'].includes(manifest?.schemaVersion);
   const trackedStates = manifest?.trackedMemoStates ?? manifest?.eligibleMemoStates ?? [];
   const primaryStates = manifest?.primarySignalStates ?? trackedStates;
   const trackedHypothesisStates = manifest?.trackedHypothesisStates ?? [];
@@ -365,7 +392,7 @@ function validateMemoForSelection(memo, selection, manifest) {
     }
   }
 
-  if (primary && ['1.1', '1.2'].includes(manifest?.schemaVersion)) {
+  if (primary && ['1.1', '1.2', '1.3'].includes(manifest?.schemaVersion)) {
     const exception = typeof memo?.matchedControlException === 'string' && memo.matchedControlException.trim();
     if ((controls.length < 2 || controls.length > 5) && !exception) {
       errors.push(`${selection.memoPath} primary signal requires 2-5 matched controls or matchedControlException`);
@@ -395,6 +422,10 @@ function validateMemoForSelection(memo, selection, manifest) {
         }
         if (!Array.isArray(item?.evidenceRefs)) {
           errors.push(`${selection.memoPath} pairwise ${item?.controlTicker ?? 'unknown'} requires evidenceRefs`);
+        }
+        if (manifest?.schemaVersion === '1.3' &&
+            (typeof item?.switchCondition !== 'string' || !item.switchCondition.trim())) {
+          errors.push(`${selection.memoPath} pairwise ${item?.controlTicker ?? 'unknown'} requires switchCondition`);
         }
       }
       if (controls.length && pairwise.length !== controls.length) {
@@ -449,7 +480,7 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
     sourcePack = readJson(sourcePackPath);
     files.push({ role: 'source_pack', path: manifest.contaminationControls.sourcePackPath, sha256: sha256File(sourcePackPath) });
   }
-  if (manifest.evaluationMode === 'historical_replay' && ['1.1', '1.2'].includes(manifest.schemaVersion)) {
+  if (manifest.evaluationMode === 'historical_replay' && ['1.1', '1.2', '1.3'].includes(manifest.schemaVersion)) {
     const identityStressPath = resolveInside(root, manifest.contaminationControls.identityStressPath);
     const identityStress = readJson(identityStressPath);
     const identityErrors = validateIdentityStress(identityStress, manifest);
@@ -458,7 +489,7 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
   }
 
   const seenMemoPaths = new Set();
-  if (manifest.schemaVersion === '1.2') {
+  if (['1.2', '1.3'].includes(manifest.schemaVersion)) {
     const seenHypothesisIds = new Set();
     for (const memoRelativePath of manifest.hypothesisMemoPaths) {
       if (seenMemoPaths.has(memoRelativePath)) throw new Error(`duplicate hypothesisMemoPath: ${memoRelativePath}`);
@@ -679,7 +710,7 @@ function aggregateByHypothesis(results, horizons) {
 }
 
 function summarizeHypothesisMemos(manifest, memosByPath) {
-  const paths = manifest?.schemaVersion === '1.2'
+  const paths = ['1.2', '1.3'].includes(manifest?.schemaVersion)
     ? (manifest.hypothesisMemoPaths ?? [])
     : [...new Set(manifest.selections.map((selection) => selection.memoPath))];
   const rows = paths.map((memoPath) => {
@@ -708,7 +739,7 @@ function summarizeHypothesisMemos(manifest, memosByPath) {
 function evaluateRun(manifest, memosByPath, prices) {
   const standardHorizons = manifest.outcomePolicy.holdingTradingDays;
   const cost = manifest.outcomePolicy.oneWayCostRate;
-  const isV12 = manifest.schemaVersion === '1.2';
+  const isV12 = ['1.2', '1.3'].includes(manifest.schemaVersion);
   const primaryStates = isV12
     ? (manifest.primarySelectionStates ?? [])
     : (manifest.primarySignalStates ?? manifest.trackedMemoStates ?? manifest.eligibleMemoStates ?? []);
