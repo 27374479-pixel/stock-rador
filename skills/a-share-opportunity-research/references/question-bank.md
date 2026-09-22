@@ -134,7 +134,7 @@ Origin: 2022-12 antipyretic miss versus 2023-03 800G success.
 - Is the shock measured in weeks, quarters or years?
 - Does a large prior move reflect temporary hype or rational repricing of a structural transition?
 
-Status: **experimental**. Supported by multiple contrasting consumed windows; candidate for promotion in a future protocol version after formal review.
+Status: **experimental**. Supported by multiple contrasting consumed windows, now including 2024-03 where a stock with +47.6% prior-60-day momentum still delivered +31.1% subsequent 20-day excess. Candidate for promotion only after formal review; do not convert this into a pro-momentum rule.
 
 ### X3 — Primary product versus adjacency inside a correct theme
 Origin: 2023-03 liquid-cooling dispersion.
@@ -143,3 +143,14 @@ Origin: 2023-03 liquid-cooling dispersion.
 - What percentage of future profit can the theme realistically move?
 
 Status: **experimental**, with supporting evidence from more than one cluster but not yet encoded as a hard gate beyond the existing earnings-bridge requirement.
+
+
+### X4 — Shock half-life versus holding horizon
+Origin: 2024-03 copper-concentrate squeeze.
+- Is the shock likely to change earnings for weeks, quarters or years?
+- What evidence shows the bottleneck will persist after the first repricing?
+- Is the company benefiting from a durable structural change or a temporary bargaining/commodity dislocation?
+- Should the thesis be considered stale once the physical indicator normalizes, even if the company remains high quality?
+- Is a long holding period accidentally converting a correct short-lived signal into mediocre excess return?
+
+Status: **experimental**. One Skill V3 consumed window so far. This is a research question, not a new exit rule.
