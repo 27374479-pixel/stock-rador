@@ -1,0 +1,294 @@
+{
+  "schemaVersion": "1.0",
+  "frozenAt": "2026-09-22T02:30:00.000Z",
+  "purpose": "Fast retrospective sanity check of whether practitioner-forum supply/demand clues can map to A-shares before later returns are inspected. This is not statistical alpha proof.",
+  "policy": {
+    "benchmark": { "ticker": "000300.SH", "symbol": "sh000300", "name": "沪深300" },
+    "priceStart": "2022-05-01",
+    "priceEnd": "2025-12-31",
+    "holdingTradingDays": [20, 60, 120, 250],
+    "entryDelayBars": 0,
+    "buyCostRate": 0.001,
+    "sellCostRate": 0.001,
+    "decisionThreshold": 7,
+    "noveltyPenalty": {
+      "themeSeenBefore": 2,
+      "companyAlreadyDisclosedTheme": 2,
+      "prior60ReturnAbove": { "threshold": 0.4, "penalty": 1 },
+      "prior180ReturnAbove": { "threshold": 0.8, "penalty": 2 }
+    }
+  },
+  "cases": [
+    {
+      "id": "transformer-shortage-early-2023-05-04",
+      "signalDate": "2023-05-04",
+      "theme": "US transformer and switchgear lead-time shortage",
+      "sourceQualityScore": 2,
+      "themeSeenBefore": false,
+      "source": {
+        "platform": "Reddit r/electricians",
+        "url": "https://www.reddit.com/r/electricians/comments/137grn7/",
+        "summary": "Professional electricians report 22-30 week panel lead times, more than a year for switchboards, and multi-year transformer delays."
+      },
+      "candidateUniverse": [
+        {
+          "ticker": "688676.SH",
+          "symbol": "sh688676",
+          "name": "金盘科技",
+          "limitRate": 0.2,
+          "pointInTimeExposureScore": 6,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-03-21",
+              "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8896489&stockid=688676",
+              "summary": "2022 annual report: dry transformers were the main business; products served global mid/high-end customers and had been exported to about 83 countries/regions."
+            }
+          ]
+        },
+        {
+          "ticker": "601179.SH",
+          "symbol": "sh601179",
+          "name": "中国西电",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-04-21",
+              "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9029619&stockid=601179",
+              "summary": "2022 annual report: transformer revenue was RMB 5.58bn and foreign revenue RMB 2.55bn."
+            }
+          ]
+        },
+        {
+          "ticker": "600089.SH",
+          "symbol": "sh600089",
+          "name": "特变电工",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-04-25",
+              "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletin/stockid/600089.phtml?ftype=ndbg",
+              "summary": "2022 annual report was public before the signal and established transformer manufacturing exposure; the company was materially more diversified than a pure-play transformer maker."
+            }
+          ]
+        },
+        {
+          "ticker": "002028.SZ",
+          "symbol": "sz002028",
+          "name": "思源电气",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-04-15",
+              "url": "https://stock.stockstar.com/notice/SN2023041400037708.shtml",
+              "summary": "2022 annual report was public before the signal and established transmission/distribution equipment exposure."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "switchgear-shortage-repeat-2023-10-04",
+      "signalDate": "2023-10-04",
+      "theme": "US switchgear and meter-stack lead-time shortage",
+      "sourceQualityScore": 2,
+      "themeSeenBefore": true,
+      "source": {
+        "platform": "Reddit r/electricians",
+        "url": "https://www.reddit.com/r/electricians/comments/16znbhx/",
+        "summary": "A practitioner reports 6-12 month lead times for meter stacks; supply-house replies say availability is extremely tight and expensive."
+      },
+      "candidateUniverse": [
+        {
+          "ticker": "688676.SH",
+          "symbol": "sh688676",
+          "name": "金盘科技",
+          "limitRate": 0.2,
+          "pointInTimeExposureScore": 6,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2023-08-30",
+              "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9480793",
+              "summary": "2023 half-year report already described global batch supply and expanding overseas market share for transformer products."
+            }
+          ]
+        },
+        {
+          "ticker": "601179.SH",
+          "symbol": "sh601179",
+          "name": "中国西电",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-04-21",
+              "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9029619&stockid=601179",
+              "summary": "2022 annual report established transformer and switchgear revenue exposure."
+            }
+          ]
+        },
+        {
+          "ticker": "600089.SH",
+          "symbol": "sh600089",
+          "name": "特变电工",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-04-25",
+              "url": "https://money.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/600089.phtml?ftype=ndbg",
+              "summary": "2022 annual report established transformer exposure, with substantial diversification."
+            }
+          ]
+        },
+        {
+          "ticker": "002028.SZ",
+          "symbol": "sz002028",
+          "name": "思源电气",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": false,
+          "evidence": [
+            {
+              "publishedAt": "2023-07-03",
+              "url": "https://static.cninfo.com.cn/finalpage/2023-07-03/1217202295.PDF",
+              "summary": "Investor communication before the signal said power transformers and other main products were moving into overseas markets and transformer demand had increased."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "800g-optics-demand-2023-11-17",
+      "signalDate": "2023-11-17",
+      "theme": "800G optical demand for H100 training clusters",
+      "sourceQualityScore": 2,
+      "themeSeenBefore": false,
+      "source": {
+        "platform": "Reddit r/datacenter",
+        "url": "https://www.reddit.com/r/datacenter/comments/17xj85h/",
+        "summary": "A data-center discussion reports strong demand for 800G datacom transceivers/optics in H100 training clusters."
+      },
+      "candidateUniverse": [
+        {
+          "ticker": "300308.SZ",
+          "symbol": "sz300308",
+          "name": "中际旭创",
+          "limitRate": 0.2,
+          "pointInTimeExposureScore": 6,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2023-08-28",
+              "url": "https://static.cninfo.com.cn/finalpage/2023-08-28/1217655323.PDF",
+              "summary": "2023 half-year report had already linked generative-AI demand to 800G optical-module growth."
+            },
+            {
+              "publishedAt": "2023-10-26",
+              "url": "https://www.yicai.com/news/101885268.html",
+              "summary": "Before the forum signal the company said AI customers had not cut 800G demand and were asking for faster delivery."
+            }
+          ]
+        },
+        {
+          "ticker": "300502.SZ",
+          "symbol": "sz300502",
+          "name": "新易盛",
+          "limitRate": 0.2,
+          "pointInTimeExposureScore": 5,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2023-08-25",
+              "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9445677",
+              "summary": "2023 half-year report already showed a full optical-module product line including 800G and overseas operations."
+            }
+          ]
+        },
+        {
+          "ticker": "002281.SZ",
+          "symbol": "sz002281",
+          "name": "光迅科技",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2023-07-21",
+              "url": "https://www.cls.cn/detail/1411285",
+              "summary": "Before the signal the company said 800G demand was mainly overseas and its 800G modules had already begun small-volume shipments."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transformer-shortage-late-2024-04-26",
+      "signalDate": "2024-04-26",
+      "theme": "US medium-voltage and large-power transformer lead-time shortage",
+      "sourceQualityScore": 2,
+      "themeSeenBefore": true,
+      "source": {
+        "platform": "Reddit r/electricians",
+        "url": "https://www.reddit.com/r/electricians/comments/1cdvmi4/",
+        "summary": "Practitioners report multi-year lead times for large power transformers and 18+ months for smaller units, while noting only slow improvement."
+      },
+      "candidateUniverse": [
+        {
+          "ticker": "688676.SH",
+          "symbol": "sh688676",
+          "name": "金盘科技",
+          "limitRate": 0.2,
+          "pointInTimeExposureScore": 6,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2024-03-21",
+              "url": "https://static.cninfo.com.cn/finalpage/2024-03-21/1219360066.PDF",
+              "summary": "2023 annual report, public before the signal, documented broad global transformer supply and overseas expansion."
+            }
+          ]
+        },
+        {
+          "ticker": "601179.SH",
+          "symbol": "sh601179",
+          "name": "中国西电",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2024-04-11",
+              "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9956782&stockid=601179",
+              "summary": "2023 annual report showed transformer revenue grew 40.31% year over year."
+            }
+          ]
+        },
+        {
+          "ticker": "002028.SZ",
+          "symbol": "sz002028",
+          "name": "思源电气",
+          "limitRate": 0.1,
+          "pointInTimeExposureScore": 4,
+          "companyAlreadyDisclosedTheme": true,
+          "evidence": [
+            {
+              "publishedAt": "2024-04-20",
+              "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=10014744&stockid=002028",
+              "summary": "2023 annual report was public before the signal and reflected the company's transmission/distribution equipment growth."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
