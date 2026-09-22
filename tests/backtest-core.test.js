@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
-const { evaluateRun, lockRun, returnAfterCost, validateManifest, verifyLock } = require('../scripts/backtest-core.cjs');
+const { evaluateRun, lockRun, returnAfterCost, validateManifest, validateMemoEvidenceRefs, verifyLock } = require('../scripts/backtest-core.cjs');
 
 function manifest() {
   return {
@@ -407,4 +407,40 @@ test('v0.5 forward run freezes its source pack even without historical identity 
   const lock = lockRun(path.join(root, 'manifest.json'), root);
   assert.ok(lock.files.some((file) => file.role === 'source_pack' && file.path === 'sources.json'));
   assert.equal(lock.files.some((file) => file.role === 'identity_stress'), false);
+});
+
+
+test('v0.5 evidence refs resolve across reviewItems and evidenceDocuments', () => {
+  const memoItem = {
+    cutoffAt: '2026-09-22T21:00:00+08:00',
+    evidenceLedger: [
+      { id: 'disc-1', sourcePackRef: 'reviewItems' },
+      { id: 'doc-1', sourcePackRef: 'evidenceDocuments' }
+    ],
+    causalChain: [{ evidenceRefs: ['disc-1', 'doc-1'] }]
+  };
+  const sourcePack = {
+    reviewItems: [{ itemId: 'disc-1', publishedAt: '2026-09-20T00:00:00Z' }],
+    evidenceDocuments: [{ id: 'doc-1', publishedAt: '2026-09-21T00:00:00Z' }]
+  };
+  assert.deepEqual(validateMemoEvidenceRefs(memoItem, 'memo.json', sourcePack), []);
+});
+
+test('v0.5 evidence audit rejects orphan and post-cutoff references', () => {
+  const memoItem = {
+    cutoffAt: '2026-09-22T21:00:00+08:00',
+    evidenceLedger: [
+      { id: 'disc-1', sourcePackRef: 'reviewItems' },
+      { id: 'missing-doc', sourcePackRef: 'evidenceDocuments' }
+    ],
+    causalChain: [{ evidenceRefs: ['future-doc', 'orphan-ledger-ref'] }]
+  };
+  const sourcePack = {
+    reviewItems: [{ itemId: 'disc-1', publishedAt: '2026-09-20T00:00:00Z' }],
+    evidenceDocuments: [{ id: 'future-doc', publishedAt: '2026-09-23T00:00:00Z' }]
+  };
+  const errors = validateMemoEvidenceRefs(memoItem, 'memo.json', sourcePack);
+  assert.ok(errors.some((x) => x.includes('missing-doc') && x.includes('missing from frozen source pack')));
+  assert.ok(errors.some((x) => x.includes('future-doc') && x.includes('not declared in evidenceLedger')));
+  assert.ok(errors.some((x) => x.includes('orphan-ledger-ref') && x.includes('missing from frozen source pack')));
 });
