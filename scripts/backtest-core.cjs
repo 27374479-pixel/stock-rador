@@ -52,6 +52,9 @@ function validateManifest(manifest) {
   if (!manifest?.skill?.version) errors.push('skill.version is required');
   if (!manifest?.model?.name) errors.push('model.name is required');
   if (!manifest?.screeningPath) errors.push('screeningPath is required');
+  if (!Array.isArray(manifest?.implementationPaths) || manifest.implementationPaths.length === 0) {
+    errors.push('implementationPaths must be non-empty');
+  }
   try { assertDate(manifest?.discoveryWindow?.startDate, 'discoveryWindow.startDate'); } catch (error) { errors.push(error.message); }
   try { assertDate(manifest?.discoveryWindow?.endDate, 'discoveryWindow.endDate'); } catch (error) { errors.push(error.message); }
   if (manifest?.discoveryWindow?.startDate && manifest?.discoveryWindow?.endDate && manifest.discoveryWindow.startDate > manifest.discoveryWindow.endDate) {
@@ -67,7 +70,13 @@ function validateManifest(manifest) {
   if (manifest?.outcomePolicy?.entryRule !== 'next_trading_day_open_after_cutoff_date') {
     errors.push('outcomePolicy.entryRule must be next_trading_day_open_after_cutoff_date');
   }
-  if (!Array.isArray(manifest?.eligibleMemoStates) || manifest.eligibleMemoStates.length === 0) errors.push('eligibleMemoStates must be non-empty');
+  const trackedStates = manifest?.trackedMemoStates ?? manifest?.eligibleMemoStates;
+  const primaryStates = manifest?.primarySignalStates ?? trackedStates;
+  if (!Array.isArray(trackedStates) || trackedStates.length === 0) errors.push('trackedMemoStates must be non-empty');
+  if (!Array.isArray(primaryStates) || primaryStates.length === 0) errors.push('primarySignalStates must be non-empty');
+  if (Array.isArray(trackedStates) && Array.isArray(primaryStates) && primaryStates.some((state) => !trackedStates.includes(state))) {
+    errors.push('primarySignalStates must be a subset of trackedMemoStates');
+  }
   if (!Array.isArray(manifest?.selections) || manifest.selections.length === 0) errors.push('selections must be non-empty');
   if (manifest?.evaluationMode === 'historical_replay') {
     if (!manifest?.contaminationControls?.modelMemoryRisk) errors.push('historical_replay requires contaminationControls.modelMemoryRisk');
@@ -78,10 +87,34 @@ function validateManifest(manifest) {
 
 function validateMemoForSelection(memo, selection, manifest) {
   const errors = [];
+  const trackedStates = manifest?.trackedMemoStates ?? manifest?.eligibleMemoStates ?? [];
+  const primaryStates = manifest?.primarySignalStates ?? trackedStates;
   try { assertIso(memo?.cutoffAt, `${selection.memoPath}.cutoffAt`); } catch (error) { errors.push(error.message); }
+  try { assertIso(memo?.researchReadyAt, `${selection.memoPath}.researchReadyAt`); } catch (error) { errors.push(error.message); }
+  if (memo?.actionableAt !== null && memo?.actionableAt !== undefined) {
+    try { assertIso(memo.actionableAt, `${selection.memoPath}.actionableAt`); } catch (error) { errors.push(error.message); }
+  }
   if (memo?.skillVersion !== manifest.skill.version) errors.push(`${selection.memoPath} skillVersion does not match manifest`);
   if (memo?.hypothesisId !== selection.hypothesisId) errors.push(`${selection.memoPath} hypothesisId does not match selection`);
-  if (!manifest.eligibleMemoStates.includes(memo?.state)) errors.push(`${selection.memoPath} state ${memo?.state} is not eligible`);
+  if (!trackedStates.includes(memo?.state)) errors.push(`${selection.memoPath} state ${memo?.state} is not tracked`);
+  const primary = primaryStates.includes(memo?.state);
+  if (primary && !memo?.actionableAt) errors.push(`${selection.memoPath} primary-signal state requires actionableAt`);
+  if (!primary && memo?.actionableAt) errors.push(`${selection.memoPath} non-primary state must keep actionableAt null`);
+  if (memo?.researchReadyAt && memo?.cutoffAt && Date.parse(memo.researchReadyAt) > Date.parse(memo.cutoffAt)) {
+    errors.push(`${selection.memoPath} researchReadyAt must not be after cutoffAt`);
+  }
+  if (memo?.actionableAt && memo?.researchReadyAt && Date.parse(memo.actionableAt) < Date.parse(memo.researchReadyAt)) {
+    errors.push(`${selection.memoPath} actionableAt must not be before researchReadyAt`);
+  }
+  if (memo?.actionableAt && memo?.cutoffAt && Date.parse(memo.actionableAt) > Date.parse(memo.cutoffAt)) {
+    errors.push(`${selection.memoPath} actionableAt must not be after cutoffAt`);
+  }
+  const realization = memo?.expectedRealization;
+  if (!realization || ![realization.earliestTradingDays, realization.baseTradingDays, realization.latestTradingDays].every((n) => Number.isInteger(n) && n > 0)) {
+    errors.push(`${selection.memoPath} expectedRealization must define positive earliest/base/latest trading days`);
+  } else if (!(realization.earliestTradingDays <= realization.baseTradingDays && realization.baseTradingDays <= realization.latestTradingDays)) {
+    errors.push(`${selection.memoPath} expectedRealization horizons must be ascending`);
+  }
   const candidates = Array.isArray(memo?.aShareCandidates) ? memo.aShareCandidates : [];
   if (!candidates.some((candidate) => candidate?.ticker === selection.ticker)) errors.push(`${selection.memoPath} does not contain selected ticker ${selection.ticker}`);
   const cutoffDate = memo?.cutoffAt?.slice?.(0, 10);
@@ -105,6 +138,10 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
   files.push({ role: 'skill', path: manifest.skill.path, sha256: sha256File(skillPath) });
   const screeningPath = resolveInside(root, manifest.screeningPath);
   files.push({ role: 'screening', path: manifest.screeningPath, sha256: sha256File(screeningPath) });
+  for (const implementationPath of manifest.implementationPaths) {
+    const absoluteImplementation = resolveInside(root, implementationPath);
+    files.push({ role: 'implementation', path: implementationPath, sha256: sha256File(absoluteImplementation) });
+  }
 
   if (manifest.evaluationMode === 'historical_replay') {
     const sourcePackPath = resolveInside(root, manifest.contaminationControls.sourcePackPath);
@@ -231,9 +268,75 @@ function median(values) {
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
+function summarizeOutcomes(results, horizon) {
+  const eligible = results.filter((result) => result.horizons[String(horizon)]);
+  if (!eligible.length) {
+    return {
+      count: 0, meanNetReturn: null, medianNetReturn: null, meanExcessReturn: null,
+      medianExcessReturn: null, excessHitRate: null, positiveReturnRate: null, blockedEntryCount: 0
+    };
+  }
+  const values = eligible.map((result) => result.horizons[String(horizon)]);
+  const excess = values.map((value) => value.excessReturn);
+  const net = values.map((value) => value.netReturn);
+  return {
+    count: values.length,
+    meanNetReturn: mean(net),
+    medianNetReturn: median(net),
+    meanExcessReturn: mean(excess),
+    medianExcessReturn: median(excess),
+    excessHitRate: excess.filter((value) => value > 0).length / excess.length,
+    positiveReturnRate: net.filter((value) => value > 0).length / net.length,
+    blockedEntryCount: eligible.filter((result) => result.execution.status === 'blocked').length
+  };
+}
+
+function aggregateByHypothesis(results, horizons) {
+  const grouped = new Map();
+  for (const result of results) {
+    if (!grouped.has(result.hypothesisId)) grouped.set(result.hypothesisId, []);
+    grouped.get(result.hypothesisId).push(result);
+  }
+  const hypothesisResults = [];
+  for (const [hypothesisId, members] of grouped.entries()) {
+    const horizonValues = {};
+    for (const horizon of horizons) {
+      const outcomes = members.map((member) => member.horizons[String(horizon)]).filter(Boolean);
+      if (!outcomes.length) continue;
+      horizonValues[String(horizon)] = {
+        netReturn: mean(outcomes.map((value) => value.netReturn)),
+        excessReturn: mean(outcomes.map((value) => value.excessReturn))
+      };
+    }
+    hypothesisResults.push({
+      hypothesisId,
+      states: [...new Set(members.map((member) => member.state))],
+      tickerCount: members.length,
+      horizons: horizonValues
+    });
+  }
+  const aggregate = {};
+  for (const horizon of horizons) {
+    const rows = hypothesisResults.map((item) => item.horizons[String(horizon)]).filter(Boolean);
+    const excess = rows.map((row) => row.excessReturn);
+    const net = rows.map((row) => row.netReturn);
+    aggregate[String(horizon)] = {
+      count: rows.length,
+      meanNetReturn: mean(net),
+      medianNetReturn: median(net),
+      meanExcessReturn: mean(excess),
+      medianExcessReturn: median(excess),
+      excessHitRate: rows.length ? excess.filter((value) => value > 0).length / rows.length : null,
+      positiveReturnRate: rows.length ? net.filter((value) => value > 0).length / rows.length : null
+    };
+  }
+  return { hypothesisResults, aggregate };
+}
+
 function evaluateRun(manifest, memosByPath, prices) {
-  const horizons = manifest.outcomePolicy.holdingTradingDays;
+  const standardHorizons = manifest.outcomePolicy.holdingTradingDays;
   const cost = manifest.outcomePolicy.oneWayCostRate;
+  const primaryStates = manifest.primarySignalStates ?? manifest.trackedMemoStates ?? manifest.eligibleMemoStates ?? [];
   const benchmarkTicker = manifest.benchmark.ticker;
   const benchmarkSeries = prices?.series?.[benchmarkTicker];
   if (!benchmarkSeries) throw new Error(`missing benchmark price series ${benchmarkTicker}`);
@@ -243,17 +346,27 @@ function evaluateRun(manifest, memosByPath, prices) {
   for (const selection of manifest.selections) {
     const memo = memosByPath[selection.memoPath];
     if (!memo) throw new Error(`missing memo ${selection.memoPath}`);
-    const cutoffDate = memo.cutoffAt.slice(0, 10);
+    const isPrimarySignal = primaryStates.includes(memo.state);
+    const entryAnchorAt = isPrimarySignal ? memo.actionableAt : memo.researchReadyAt;
+    if (!entryAnchorAt) throw new Error(`${selection.memoPath} lacks required entry anchor`);
+    const entryAnchorDate = entryAnchorAt.slice(0, 10);
     const instrument = prices?.series?.[selection.ticker];
     if (!instrument) throw new Error(`missing price series ${selection.ticker}`);
     const adjusted = normalizeRows(instrument.adjusted ?? instrument, `${selection.ticker}.adjusted`);
     const unadjusted = normalizeRows(instrument.unadjusted ?? instrument.adjusted ?? instrument, `${selection.ticker}.unadjusted`);
-    const entryBenchmarkIndex = benchmarkRows.findIndex((row) => row.date > cutoffDate);
-    if (entryBenchmarkIndex < 0) throw new Error(`no benchmark trading day after ${cutoffDate}`);
+    const entryBenchmarkIndex = benchmarkRows.findIndex((row) => row.date > entryAnchorDate);
+    if (entryBenchmarkIndex < 0) throw new Error(`no benchmark trading day after ${entryAnchorDate}`);
     const entryDate = benchmarkRows[entryBenchmarkIndex].date;
     const entry = adjusted.find((row) => row.date === entryDate);
     if (!entry) throw new Error(`${selection.ticker} lacks entry bar ${entryDate}`);
     const execution = entryExecutionCheck(unadjusted, entryDate, selection.limitRate);
+    const realization = memo.expectedRealization;
+    const horizons = [...new Set([
+      ...standardHorizons,
+      realization.earliestTradingDays,
+      realization.baseTradingDays,
+      realization.latestTradingDays
+    ])].sort((a, b) => a - b);
     const outcome = {};
 
     for (const holdingDays of horizons) {
@@ -279,32 +392,48 @@ function evaluateRun(manifest, memosByPath, prices) {
       hypothesisId: selection.hypothesisId,
       ticker: selection.ticker,
       memoPath: selection.memoPath,
-      cutoffAt: memo.cutoffAt,
+      state: memo.state,
+      isPrimarySignal,
+      researchReadyAt: memo.researchReadyAt,
+      actionableAt: memo.actionableAt ?? null,
+      entryAnchorAt,
       entryDate,
       entryAdjustedOpen: entry.open,
+      expectedRealization: realization,
       execution,
-      horizons: outcome
+      horizons: outcome,
+      thesisBaseOutcome: outcome[String(realization.baseTradingDays)]
     });
   }
 
-  const aggregate = {};
-  for (const holdingDays of horizons) {
-    const values = results.map((result) => result.horizons[String(holdingDays)]);
-    const excess = values.map((value) => value.excessReturn);
-    const net = values.map((value) => value.netReturn);
-    aggregate[String(holdingDays)] = {
-      count: values.length,
-      meanNetReturn: mean(net),
-      medianNetReturn: median(net),
-      meanExcessReturn: mean(excess),
-      medianExcessReturn: median(excess),
-      excessHitRate: excess.filter((value) => value > 0).length / excess.length,
-      positiveReturnRate: net.filter((value) => value > 0).length / net.length,
-      blockedEntryCount: results.filter((result) => result.execution.status === 'blocked').length
-    };
-  }
+  const allHorizons = [...new Set(results.flatMap((result) => Object.keys(result.horizons).map(Number)))].sort((a, b) => a - b);
+  const tickerLevel = Object.fromEntries(allHorizons.map((horizon) => [String(horizon), summarizeOutcomes(results, horizon)]));
+  const primaryResults = results.filter((result) => result.isPrimarySignal);
+  const primaryTickerLevel = Object.fromEntries(allHorizons.map((horizon) => [String(horizon), summarizeOutcomes(primaryResults, horizon)]));
+  const hypothesisLevel = aggregateByHypothesis(results, allHorizons);
+  const primaryHypothesisLevel = aggregateByHypothesis(primaryResults, allHorizons);
+  const primaryBaseExcess = primaryResults.map((result) => result.thesisBaseOutcome.excessReturn);
+  const primaryBaseNet = primaryResults.map((result) => result.thesisBaseOutcome.netReturn);
 
-  return { results, aggregate };
+  return {
+    results,
+    aggregate: {
+      tickerLevel,
+      hypothesisLevel: hypothesisLevel.aggregate,
+      primaryTickerLevel,
+      primaryHypothesisLevel: primaryHypothesisLevel.aggregate,
+      primaryThesisBase: {
+        count: primaryResults.length,
+        meanNetReturn: mean(primaryBaseNet),
+        medianNetReturn: median(primaryBaseNet),
+        meanExcessReturn: mean(primaryBaseExcess),
+        medianExcessReturn: median(primaryBaseExcess),
+        excessHitRate: primaryResults.length ? primaryBaseExcess.filter((value) => value > 0).length / primaryResults.length : null
+      }
+    },
+    hypothesisResults: hypothesisLevel.hypothesisResults,
+    primaryHypothesisResults: primaryHypothesisLevel.hypothesisResults
+  };
 }
 
 module.exports = {
