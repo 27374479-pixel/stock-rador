@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.1",
+  "runId": "replace-me",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-22T13:40:00.000Z",
+  "skill": {
+    "path": "skills/stock-rador/versions/0.4.0/SKILL.md",
+    "version": "0.4.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2025-07-01",
+    "endDate": "2025-09-30"
+  },
+  "screeningPath": "backtests/runs/replace-me/screening.json",
+  "implementationPaths": [
+    "scripts/collect-hn-generic.cjs",
+    "scripts/backtest-core.cjs",
+    "scripts/lock-skill-run.cjs",
+    "scripts/fetch-backtest-prices.cjs",
+    "scripts/evaluate-skill-run.cjs"
+  ],
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/replace-me/source-pack.json",
+    "identityStressPath": "backtests/runs/replace-me/identity-stress.json",
+    "notes": "Historical replay. Strong results remain provisional until reproduced on new holdouts and forward samples."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedMemoStates": [
+    "Research",
+    "High-priority research"
+  ],
+  "primarySignalStates": [
+    "High-priority research"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "selections": [],
+  "reportingPolicy": {
+    "primaryMetric": "primary_thesis_base_matched_control_excess",
+    "mustReportAllSelections": true,
+    "mustReportBlockedEntries": true,
+    "mustRetainFailures": true,
+    "mustReportTickerAndHypothesisLevels": true,
+    "mustReportMatchedControls": true,
+    "noSignalIsValid": true
+  }
+}

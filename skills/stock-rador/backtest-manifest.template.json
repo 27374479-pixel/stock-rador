@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "replace-me",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-22T12:00:00.000Z",
+  "skill": {
+    "path": "skills/stock-rador/SKILL.md",
+    "version": "0.2.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2025-01-01",
+    "endDate": "2025-03-31"
+  },
+  "screeningPath": "backtests/runs/replace-me/screening.json",
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/replace-me/source-pack.json",
+    "notes": "Historical replay: model weights may contain post-cutoff knowledge. Treat strong results as provisional until forward validation."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "eligibleMemoStates": [
+    "Research",
+    "High-priority research"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60
+    ],
+    "oneWayCostRate": 0.001
+  },
+  "selections": [
+    {
+      "memoPath": "backtests/runs/replace-me/memos/h001.json",
+      "hypothesisId": "h001",
+      "ticker": "000001.SZ",
+      "limitRate": 0.1
+    }
+  ],
+  "reportingPolicy": {
+    "primaryMetric": "60d_mean_excess_return",
+    "mustReportAllSelections": true,
+    "mustReportBlockedEntries": true,
+    "mustRetainFailures": true
+  }
+}

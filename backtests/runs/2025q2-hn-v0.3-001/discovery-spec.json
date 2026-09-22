@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025q2-hn-v0.3-001",
+  "purpose": "Second historical holdout for Stock Rador skill v0.3 after v0.2 development postmortem",
+  "declaredAt": "2026-09-22T12:58:00.000Z",
+  "evaluationMode": "historical_replay",
+  "historicalWindow": {
+    "startDate": "2025-04-01",
+    "endDateExclusive": "2025-07-01"
+  },
+  "discovery": {
+    "channel": "Hacker News Algolia historical search",
+    "collectorPath": "scripts/collect-hn-generic.cjs",
+    "maxPagesPerQueryType": 3,
+    "reviewLimit": 120,
+    "industryWhitelist": false,
+    "manualThemeAdditionsAllowed": false,
+    "outputPath": "backtests/runs/2025q2-hn-v0.3-001/source-pack.json"
+  },
+  "research": {
+    "skillPath": "skills/stock-rador/versions/0.3.0/SKILL.md",
+    "skillVersion": "0.3.0",
+    "model": "GPT-5.6 Sol",
+    "reasoning": "high",
+    "mustPreserveRejectedCandidates": true,
+    "primarySignalState": "High-priority research"
+  },
+  "outcomePolicy": {
+    "benchmark": "000300.SH",
+    "standardHoldingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "entryRule": "next_trading_day_open_after_actionable_or_research_ready_date",
+    "oneWayCostRate": 0.001,
+    "outcomeDataMayBeOpenedOnlyAfterResearchLock": true
+  },
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "searchEngineHindsightRisk": "avoided_for_discovery_by_time-bounded_HN_API",
+    "historicalIndexAvailabilityRisk": "HN item timestamps are historical but historical Algolia visibility is not independently proven",
+    "interpretation": "Historical holdout. Do not tune v0.3 on this window before the lock and outcome reveal."
+  }
+}
