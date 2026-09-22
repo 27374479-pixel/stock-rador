@@ -20,8 +20,38 @@ async function fetchJson(url) {
   return response.json();
 }
 
-function tencentUrl(symbol, adjustment) {
-  return `https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=${symbol},day,${CONFIG.policy.priceStart},${CONFIG.policy.priceEnd},1200,${adjustment}`;
+const PRICE_CHUNKS = [
+  ['2022-05-01', '2023-06-30'],
+  ['2023-07-01', '2024-08-31'],
+  ['2024-09-01', '2025-12-31']
+];
+
+function tencentUrl(symbol, adjustment, startDate, endDate) {
+  return `https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=${symbol},day,${startDate},${endDate},500,${adjustment}`;
+}
+
+function mergeRows(chunks) {
+  const byDate = new Map();
+  for (const rows of chunks) {
+    for (const row of rows) byDate.set(row.date, row);
+  }
+  return [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date));
+}
+
+async function fetchSeries(symbol, adjustment, isIndex = false) {
+  const chunks = [];
+  const urls = [];
+  for (const [startDate, endDate] of PRICE_CHUNKS) {
+    const url = tencentUrl(symbol, adjustment, startDate, endDate);
+    const response = await fetchJson(url);
+    chunks.push(parseRows(response, symbol, adjustment, isIndex));
+    urls.push(url);
+  }
+  const rows = mergeRows(chunks);
+  if (rows[0]?.date > CONFIG.policy.priceStart || rows.at(-1)?.date < CONFIG.policy.priceEnd) {
+    throw new Error(`Incomplete merged history for ${symbol}: ${rows[0]?.date}..${rows.at(-1)?.date}`);
+  }
+  return { rows, urls };
 }
 
 function parseRows(response, symbol, adjustment, isIndex = false) {
@@ -206,19 +236,19 @@ async function main() {
   const rawSources = {};
 
   for (const [symbol] of unique) {
-    const qfqUrl = tencentUrl(symbol, 'qfq');
-    const rawUrl = tencentUrl(symbol, 'none');
-    const [qfqResponse, rawResponse] = await Promise.all([fetchJson(qfqUrl), fetchJson(rawUrl)]);
+    const [adjusted, unadjusted] = await Promise.all([
+      fetchSeries(symbol, 'qfq'),
+      fetchSeries(symbol, 'none')
+    ]);
     marketData[symbol] = {
-      adjusted: parseRows(qfqResponse, symbol, 'qfq'),
-      unadjusted: parseRows(rawResponse, symbol, 'none')
+      adjusted: adjusted.rows,
+      unadjusted: unadjusted.rows
     };
-    rawSources[symbol] = { qfqUrl, rawUrl };
+    rawSources[symbol] = { qfqUrls: adjusted.urls, rawUrls: unadjusted.urls };
   }
 
-  const benchmarkUrl = tencentUrl(benchmark.symbol, 'none');
-  const benchmarkResponse = await fetchJson(benchmarkUrl);
-  const benchmarkBars = parseRows(benchmarkResponse, benchmark.symbol, 'none', true);
+  const benchmarkSeries = await fetchSeries(benchmark.symbol, 'none', true);
+  const benchmarkBars = benchmarkSeries.rows;
 
   const cases = CONFIG.cases.map((testCase) => {
     const ranking = scoreCandidates(testCase, marketData);
@@ -259,7 +289,8 @@ async function main() {
       provider: 'Tencent public daily K-line endpoint',
       adjusted: 'qfqday',
       execution: 'day',
-      benchmark: benchmarkUrl,
+      benchmark: benchmarkSeries.urls,
+      chunks: PRICE_CHUNKS,
       symbols: rawSources
     }
   };
