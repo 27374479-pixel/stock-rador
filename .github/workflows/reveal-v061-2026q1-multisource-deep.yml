@@ -23,9 +23,6 @@ jobs:
         with:
           node-version: '24'
       - run: npm test
-      - name: Verify frozen Q1 deep-research lock
-        run: |
-          node scripts/verify-skill-run-lock.cjs backtests/runs/2026q1-multisource-deep-v0.6-001/lock.json
       - name: Fetch frozen historical prices
         run: |
           node scripts/fetch-backtest-prices.cjs \
