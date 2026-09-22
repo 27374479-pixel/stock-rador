@@ -490,6 +490,28 @@ result:
 A failed masking test does not automatically invalidate the economic thesis, but it lowers
 confidence in historical alpha claims. Forward-frozen samples remain the final standard.
 
+### Historical retrieval isolation
+
+For a historical run intended as validation, the AI should reason from a frozen historical
+document pack rather than an open-ended live search-results page.
+
+A live search result may display snippets from documents published after the simulated
+cutoff even when the query itself contains historical dates. Merely seeing such snippets is
+a leakage channel.
+
+Therefore:
+- every material document used for historical reasoning must be stored in the frozen source
+  pack with a provable publication/availability time at or before the cutoff;
+- do not use post-cutoff snippets, later summaries, or retrospective articles to choose a
+  hypothesis, company, control or ranking;
+- if the research process observes material post-cutoff search-result content before lock,
+  record `searchResultFutureLeakageObserved: true` and downgrade the run to
+  `exploratory_contaminated`;
+- a contaminated run may test software/process mechanics but must not be reported as
+  holdout validation.
+
+The safest historical workflow is retrieval first, freeze second, reasoning third.
+
 ## Search behavior
 
 Use multiple query formulations and source types. Search both the thesis and its opposite.
