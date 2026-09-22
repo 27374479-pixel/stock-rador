@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-01-30T23:59:59+08:00",
+  "researchReadyAt": "2026-01-30T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-power-equipment-backlog-2026q1",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 60,
+    "baseTradingDays": 120,
+    "latestTradingDays": 240,
+    "rationale": "Backlog conversion and new power-equipment capacity are multi-quarter mechanisms."
+  },
+  "changeHypothesis": {
+    "summary": "Independent GE Vernova and ABB disclosures confirmed continued acceleration in power/electrification orders and backlog, but this was a continuation of a well-known Q4 theme and the Q1 frozen pack supplied no new A-share-specific differentiation strong enough to rerank prior candidates.",
+    "firstCredibleDate": "2026-01-28",
+    "valueChain": [
+      "data-center/grid capex",
+      "transformer/switchgear demand",
+      "OEM backlog",
+      "capacity utilization",
+      "supplier earnings"
+    ],
+    "persistenceReason": "Two independent first-party global equipment suppliers reported strong orders/backlogs.",
+    "disconfirmingEvidence": [
+      "The theme was already widely recognized in Q4.",
+      "A-share peers may all benefit together, creating sector beta rather than selection alpha.",
+      "No fresh Q1 company-specific edge is frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "gev-q4-20260128",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "abb-q4-20260129",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "power/data-center capex",
+      "to": "equipment backlog",
+      "mechanism": "Projects require transformers, switchgear and generation/grid equipment.",
+      "evidenceRefs": [
+        "gev-q4-20260128",
+        "abb-q4-20260129"
+      ],
+      "failureMode": "project delays or capacity additions normalize backlog",
+      "lag": "quarters"
+    },
+    {
+      "from": "global backlog",
+      "to": "A-share selection alpha",
+      "mechanism": "Requires a newly differentiated A-share order, qualification or valuation edge rather than generic thematic exposure.",
+      "evidenceRefs": [
+        "gev-q4-20260128",
+        "abb-q4-20260129"
+      ],
+      "failureMode": "all peers rerate together or prior winners already discount demand",
+      "lag": "multi-quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified transformer/switchgear suppliers"
+    ],
+    "secondOrderWinners": [
+      "electrical components and conductors"
+    ],
+    "losers": [
+      "project developers facing long lead times"
+    ],
+    "substitutes": [
+      "local suppliers and alternative architectures"
+    ],
+    "bottlenecks": [
+      "transformers",
+      "switchgear",
+      "capacity/qualification"
+    ],
+    "falseThemeMatches": [
+      "AI names without power-equipment revenue"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company passed the selection gate at the cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Power/data-center equipment tightness was already a strong prior-quarter narrative.",
+    "thesisExpectation": "Backlog remains structurally strong, but a new stock-selection edge requires fresh company evidence.",
+    "measurableGap": "Opportunity-level evidence strengthened; stock-level differentiation did not.",
+    "evidenceRefs": [
+      "gev-q4-20260128",
+      "abb-q4-20260129"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No new Q1 company evidence was frozen for a clean cross-sectional reranking.",
+    "alreadyPricedAssessment": "possible saturation at stock level",
+    "constraints": [
+      "continuation event",
+      "selection evidence absent"
+    ]
+  },
+  "bearCase": "The industry thesis stays right while direct A-share power-equipment names merely deliver already-discounted growth.",
+  "invalidationConditions": [
+    {
+      "indicator": "global order/backlog growth",
+      "observationMethod": "major supplier results",
+      "threshold": "material deceleration inconsistent with structural tightness"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical selection results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "fresh A-share order differentiation",
+    "Q1 cutoff valuations"
+  ],
+  "nextResearchActions": [
+    "Do not recycle the Q4 winner/near-winner list without new evidence.",
+    "Require a fresh company-specific catalyst before selection."
+  ]
+}
