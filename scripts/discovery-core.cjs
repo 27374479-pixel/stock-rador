@@ -161,6 +161,34 @@ function validateDiscoveryPack(pack, manifest) {
   return errors;
 }
 
+function validateDiscoveryScreening(screening, pack, manifest) {
+  const errors = [];
+  if (manifest?.schemaVersion !== '1.4') return errors;
+  const events = Array.isArray(pack?.eventClusters) ? pack.eventClusters : [];
+  const eventIds = new Set(events.map((event) => event.eventId));
+  const decisions = Array.isArray(screening?.reviewDecisions) ? screening.reviewDecisions : [];
+  if (screening?.reviewItemCount !== events.length) {
+    errors.push(`screening.reviewItemCount must equal frozen eventClusters.length (${events.length})`);
+  }
+  const seen = new Set();
+  for (const decision of decisions) {
+    if (decision?.decisionTargetType !== 'event_cluster') {
+      errors.push(`screening decision ${decision?.itemId ?? 'unknown'} must target event_cluster`);
+    }
+    if (!eventIds.has(decision?.itemId)) {
+      errors.push(`screening decision references unknown event cluster ${decision?.itemId ?? 'unknown'}`);
+    }
+    if (decision?.itemId) {
+      if (seen.has(decision.itemId)) errors.push(`duplicate screening decision for event ${decision.itemId}`);
+      seen.add(decision.itemId);
+    }
+  }
+  for (const eventId of eventIds) {
+    if (!seen.has(eventId)) errors.push(`event cluster ${eventId} has no screening decision`);
+  }
+  return errors;
+}
+
 function summarizeDiscoveryPack(pack) {
   const lanes = Array.isArray(pack?.lanes) ? pack.lanes : [];
   const items = Array.isArray(pack?.sourceItems) ? pack.sourceItems : [];
@@ -265,5 +293,6 @@ module.exports = {
   auditMissedOpportunities,
   readJson,
   summarizeDiscoveryPack,
-  validateDiscoveryPack
+  validateDiscoveryPack,
+  validateDiscoveryScreening
 };
