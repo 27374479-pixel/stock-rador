@@ -174,3 +174,8 @@ Origin: 2024-06 hog margin miss and earlier price-attractiveness ambiguity.
 - If this bridge cannot be built with enough confidence, why is the stock more than Watch?
 
 Status: **promoted into V3.1 core process** as a universal answer to "is the stock actually cheap enough?", not as a numerical valuation threshold.
+
+
+## 2024-12 structural transformer confirmation
+
+The first V3.2 test supports the promoted causal-horizon process. 伊戈尔 was classified as structural-multi-year before outcomes; its 120-day excess briefly fell below zero while 250-day excess reached +76.3%. This is supporting evidence that structural theses should be re-underwritten against causal normalization indicators rather than automatically exited at a fixed intermediate horizon. This does **not** create a return-based holding rule.
