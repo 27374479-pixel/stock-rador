@@ -100,3 +100,14 @@ node src/cli.js review research/new_leads.json --write
 首个 v0.6 forward discovery 快照位于
 [backtests/runs/2026-09-22-forward-discovery-v0.6-001](backtests/runs/2026-09-22-forward-discovery-v0.6-001)。
 其未来 missed-opportunity case 生成规则已经在 manifest 中预注册，不能根据未来赢家反向改写。
+
+
+## V0.6.1 evaluator 与 forward recall 分母
+
+V0.6.1 只修复评估软件，不改变 v0.6 Skill：当 240 日等未来 horizon 尚未成熟时，不再让整轮失败，而是保留已成熟的 20/60/120 日结果并把未来 horizon 标为 `pending`。旧 lock 引用的 evaluator 文件保持不变。
+
+首个 Q4 deep-research 诊断见
+[backtests/runs/2025q4-multisource-deep-v0.6-002](backtests/runs/2025q4-multisource-deep-v0.6-002)。
+它显示数据中心电气设备事件在 20/60 日有研究价值，但伊戈尔在预注册 120 日基准期没有形成相对沪深300/同行的持续优势，因此仍然不能事后升级为 High-priority selection。
+
+Forward missed-opportunity audit 另外冻结精确股票 universe；只有 universe 中的 ticker 才能进入未来赢家/漏报分母，避免事后改变股票池。
