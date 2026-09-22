@@ -43,8 +43,8 @@ try {
       },
       {
         role: 'universe_fetcher',
-        path: 'scripts/fetch-a-share-audit-universe.cjs',
-        sha256: sha256(path.resolve(root, 'scripts/fetch-a-share-audit-universe.cjs'))
+        path: 'scripts/fetch-a-share-audit-universe-official.py',
+        sha256: sha256(path.resolve(root, 'scripts/fetch-a-share-audit-universe-official.py'))
       },
       {
         role: 'universe_locker',
