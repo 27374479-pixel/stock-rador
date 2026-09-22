@@ -39,6 +39,18 @@ Minimum shape:
           "balanceSheetCycle": "",
           "competitiveQuality": "",
           "priceExpectation": "",
+          "basisReconciliation": {
+            "externalIndicator": "",
+            "companyRealizedBasis": "",
+            "basisRisk": ""
+          },
+          "valuationBridge": {
+            "marketCapOrEV": "",
+            "bearCase": "",
+            "baseCase": "",
+            "upsideCase": "",
+            "impliedExpectation": ""
+          },
           "contraryEvidence": [],
           "thesisBreakers": [],
           "unansweredQuestions": []
@@ -61,5 +73,7 @@ Rules:
 - outcome-oriented discovery terms are forbidden;
 - `beneficiaryArchetype` must be written before candidate search in the research process;
 - every Candidate needs at least three thesis breakers;
+- every Candidate must reconcile external operating indicators to the company's own realized economic basis;
+- every Candidate must include a point-in-time valuation/expectation bridge; if either bridge is not supportable, use Watch instead;
 - Watch and No Trade are valid outcomes;
 - no post-cutoff return or later earnings field belongs in this packet.
