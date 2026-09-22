@@ -21,6 +21,19 @@ function validateEvidence(items, cutoff, label) {
   }
 }
 
+function versionAtLeast(version, target) {
+  const a=String(version??'0').split('.').map(Number);
+  const b=String(target).split('.').map(Number);
+  const n=Math.max(a.length,b.length);
+  for(let i=0;i<n;i++){
+    const x=Number.isFinite(a[i])?a[i]:0;
+    const y=Number.isFinite(b[i])?b[i]:0;
+    if(x>y)return true;
+    if(x<y)return false;
+  }
+  return true;
+}
+
 function validateResearchPacket(packet, options = {}) {
   if (!packet || typeof packet !== 'object') throw new Error('packet must be an object');
   if (packet.mode !== 'historical') throw new Error('only historical packet validation is supported');
@@ -72,13 +85,41 @@ function validateResearchPacket(packet, options = {}) {
         if (!valuation || !valuation.marketCapOrEV || !valuation.bearCase || !valuation.baseCase || !valuation.upsideCase || !valuation.impliedExpectation) {
           throw new Error(`Candidate ${candidate.ticker} requires valuationBridge`);
         }
-        if (packet.schemaVersion === '3.2') {
+        if (versionAtLeast(packet.schemaVersion, '3.2')) {
           const horizon = candidate.horizonBridge;
           const allowed = new Set(['event-repricing','cyclical-multi-quarter','structural-multi-year']);
           if (!horizon || !allowed.has(horizon.shockClass) || !horizon.expectedHalfLife ||
               !Array.isArray(horizon.normalizationIndicators) || !horizon.normalizationIndicators.length ||
               !horizon.expectedResearchHorizon || !horizon.whyHorizonMatches) {
-            throw new Error(`Candidate ${candidate.ticker} requires horizonBridge under V3.2`);
+            throw new Error(`Candidate ${candidate.ticker} requires horizonBridge under V3.2+`);
+          }
+        }
+        if (versionAtLeast(packet.schemaVersion, '3.3')) {
+          const plan=candidate.checkpointPlan;
+          if (!plan || !plan.surprisePersistence || !Array.isArray(plan.checkpoints) || !plan.checkpoints.length) {
+            throw new Error(`Candidate ${candidate.ticker} requires checkpointPlan under V3.3+`);
+          }
+          const sp=plan.surprisePersistence;
+          if (!sp.currentSurprise || !sp.whatMustRemainIncremental ||
+              !Array.isArray(sp.closureIndicators) || !sp.closureIndicators.length) {
+            throw new Error(`Candidate ${candidate.ticker} requires surprisePersistence under V3.3+`);
+          }
+          let previous=-Infinity;
+          const seen=new Set();
+          for (const [checkpointIndex,checkpoint] of plan.checkpoints.entries()) {
+            const days=checkpoint?.afterTradingDays;
+            if (!Number.isInteger(days) || days <= 0) {
+              throw new Error(`Candidate ${candidate.ticker} checkpoint[${checkpointIndex}] requires positive integer afterTradingDays`);
+            }
+            if (seen.has(days) || days <= previous) {
+              throw new Error(`Candidate ${candidate.ticker} checkpoints must be unique and ascending`);
+            }
+            seen.add(days); previous=days;
+            for (const key of ['evidenceToRefresh','continueIf','downgradeIf','exitIf']) {
+              if (!Array.isArray(checkpoint[key]) || !checkpoint[key].length) {
+                throw new Error(`Candidate ${candidate.ticker} checkpoint[${checkpointIndex}].${key} is required`);
+              }
+            }
           }
         }
       }
@@ -88,4 +129,4 @@ function validateResearchPacket(packet, options = {}) {
   return true;
 }
 
-module.exports = { validateResearchPacket };
+module.exports = { validateResearchPacket, versionAtLeast };
