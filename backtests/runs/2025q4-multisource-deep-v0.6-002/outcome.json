@@ -1,0 +1,504 @@
+{
+  "schemaVersion": "1.1",
+  "evaluatorVersion": "0.6.1-partial-horizons",
+  "runId": "2025q4-multisource-deep-v0.6-002",
+  "evaluatedAt": "2026-09-22T14:01:31.730Z",
+  "frozenLockSha256": "d826ac8213076b1f431a95e523fdb45709f5728222054949f20d1a9d54d9b154",
+  "priceSource": {
+    "provider": "Tencent public daily kline",
+    "fetchedAt": "2026-09-22T14:01:28.723Z",
+    "path": "backtests/runs/2025q4-multisource-deep-v0.6-002/prices.json"
+  },
+  "hypothesisMemoSummary": {
+    "count": 3,
+    "highPriorityHypothesisCount": 2,
+    "researchHypothesisCount": 1,
+    "noSelectionCount": 2,
+    "researchSelectionCount": 1,
+    "highPrioritySelectionCount": 0,
+    "rows": [
+      {
+        "memoPath": "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-data-center-electrification-orders-2025q4.json",
+        "hypothesisId": "h-data-center-electrification-orders-2025q4",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-critical-material-shortage-2025q4.json",
+        "hypothesisId": "h-critical-material-shortage-2025q4",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-china-solar-grid-reacceleration-2025q4.json",
+        "hypothesisId": "h-china-solar-grid-reacceleration-2025q4",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      }
+    ]
+  },
+  "results": [
+    {
+      "hypothesisId": "h-data-center-electrification-orders-2025q4",
+      "ticker": "002922.SZ",
+      "memoPath": "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-data-center-electrification-orders-2025q4.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "002922.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "688676.SH",
+            "selectedAdvantages": [
+              "lower 2026E valuation reference",
+              "reported >400% data-center order growth",
+              "new overseas factories improve local delivery"
+            ],
+            "selectedDisadvantages": [
+              "金盘 had a larger directly disclosed overseas AIDC contract and stronger established AIDC revenue base"
+            ],
+            "evidenceRefs": [
+              "igor-research-20251231",
+              "jinpan-research-20251231"
+            ],
+            "switchCondition": "Prefer 金盘 if AIDC order/revenue conversion remains clearly stronger without a materially worse valuation burden.",
+            "netEdge": "mixed"
+          },
+          {
+            "controlTicker": "002028.SZ",
+            "selectedAdvantages": [
+              "more explicit data-center order narrative and overseas data-center product expansion"
+            ],
+            "selectedDisadvantages": [
+              "思源 had materially stronger company-wide profit growth, broader overseas order quality and lower thematic concentration risk"
+            ],
+            "evidenceRefs": [
+              "igor-research-20251231",
+              "siyuan-q3-20251018",
+              "siyuan-ir-20251110",
+              "siyuan-research-20251128"
+            ],
+            "switchCondition": "Prefer 思源 if broad order/earnings growth continues to outpace 伊戈尔 while data-center-specific exposure becomes directly verified.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "mixed",
+        "rationale": "The event is strong, but direct AIDC exposure, valuation and company-wide earnings quality point to different winners; no company has a clear cross-sectional edge."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2025-12-31T23:59:59+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2025-12-31T23:59:59+08:00",
+      "entryDate": "2026-01-05",
+      "entryAdjustedOpen": 30.682,
+      "expectedRealization": {
+        "earliestTradingDays": 60,
+        "baseTradingDays": 120,
+        "latestTradingDays": 240,
+        "rationale": "Electrical-equipment orders can reprice suppliers quickly, but backlog conversion and overseas factory/customer qualification are multi-quarter mechanisms."
+      },
+      "matchedControls": [
+        {
+          "ticker": "688676.SH",
+          "name": "金盘科技",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct AIDC/transformer exposure with a large overseas data-center order and established data-center revenue.",
+          "whySelectedCompanyShouldOutperform": "伊戈尔 had a lower 2026E valuation reference and faster reported data-center order growth, but 金盘 had stronger proven AIDC revenue/order scale.",
+          "evidenceRefs": [
+            "igor-research-20251231",
+            "jinpan-research-20251231"
+          ]
+        },
+        {
+          "ticker": "002028.SZ",
+          "name": "思源电气",
+          "controlType": "sector_proxy",
+          "fairCounterfactualReason": "High-quality broad grid-equipment exporter with rapid profit/order growth and potential North American data-center spillover.",
+          "whySelectedCompanyShouldOutperform": "伊戈尔 had more explicit data-center order exposure, but 思源 had stronger overall earnings quality and broader grid-equipment growth.",
+          "evidenceRefs": [
+            "igor-research-20251231",
+            "siyuan-q3-20251018",
+            "siyuan-ir-20251110",
+            "siyuan-research-20251128"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.011757021554539504
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2026-01-30",
+          "netReturn": 0.26114769136736427,
+          "benchmarkReturn": 0.00959323153753422,
+          "excessReturn": 0.25155445982983005,
+          "matchedControlBasketReturn": 0.10730887611563045,
+          "matchedControlExcess": 0.15383881525173382,
+          "bestControlTicker": "002028.SZ",
+          "bestControlReturn": 0.19391882404423844,
+          "excessVsBestControl": 0.06722886732312583,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "688676.SH",
+              "controlType": "peer",
+              "netReturn": 0.02069892818702246
+            },
+            {
+              "ticker": "002028.SZ",
+              "controlType": "sector_proxy",
+              "netReturn": 0.19391882404423844
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.08785789524083099,
+            "peakDate": "2026-01-21",
+            "troughDate": "2026-01-29"
+          }
+        },
+        "60": {
+          "exitDate": "2026-04-07",
+          "netReturn": 0.10371565726496978,
+          "benchmarkReturn": -0.04740841166804677,
+          "excessReturn": 0.15112406893301655,
+          "matchedControlBasketReturn": 0.04067006488224428,
+          "matchedControlExcess": 0.0630455923827255,
+          "bestControlTicker": "002028.SZ",
+          "bestControlReturn": 0.29379036065630415,
+          "excessVsBestControl": -0.19007470339133437,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "688676.SH",
+              "controlType": "peer",
+              "netReturn": -0.21245023089181558
+            },
+            {
+              "ticker": "002028.SZ",
+              "controlType": "sector_proxy",
+              "netReturn": 0.29379036065630415
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.29428892308972177,
+            "peakDate": "2026-03-09",
+            "troughDate": "2026-04-07"
+          }
+        },
+        "120": {
+          "exitDate": "2026-07-06",
+          "netReturn": 0.0239587672610293,
+          "benchmarkReturn": 0.038694702699919814,
+          "excessReturn": -0.014735935438890513,
+          "matchedControlBasketReturn": 0.027425663663169286,
+          "matchedControlExcess": -0.003466896402139985,
+          "bestControlTicker": "002028.SZ",
+          "bestControlReturn": 0.12517607806450504,
+          "excessVsBestControl": -0.10121731080347574,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "688676.SH",
+              "controlType": "peer",
+              "netReturn": -0.07032475073816646
+            },
+            {
+              "ticker": "002028.SZ",
+              "controlType": "sector_proxy",
+              "netReturn": 0.12517607806450504
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.3843850089430556,
+            "peakDate": "2026-03-09",
+            "troughDate": "2026-07-02"
+          }
+        }
+      },
+      "pendingHorizons": [
+        {
+          "holdingDays": 240,
+          "status": "pending",
+          "reason": "benchmark_horizon_not_yet_mature",
+          "availableTradingDays": 176
+        }
+      ],
+      "thesisBaseOutcome": {
+        "exitDate": "2026-07-06",
+        "netReturn": 0.0239587672610293,
+        "benchmarkReturn": 0.038694702699919814,
+        "excessReturn": -0.014735935438890513,
+        "matchedControlBasketReturn": 0.027425663663169286,
+        "matchedControlExcess": -0.003466896402139985,
+        "bestControlTicker": "002028.SZ",
+        "bestControlReturn": 0.12517607806450504,
+        "excessVsBestControl": -0.10121731080347574,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 3,
+        "rankPercentile": 0.5,
+        "controlReturns": [
+          {
+            "ticker": "688676.SH",
+            "controlType": "peer",
+            "netReturn": -0.07032475073816646
+          },
+          {
+            "ticker": "002028.SZ",
+            "controlType": "sector_proxy",
+            "netReturn": 0.12517607806450504
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.3843850089430556,
+          "peakDate": "2026-03-09",
+          "troughDate": "2026-07-02"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "tickerLevel": {
+      "20": {
+        "count": 1,
+        "meanNetReturn": 0.26114769136736427,
+        "medianNetReturn": 0.26114769136736427,
+        "meanExcessReturn": 0.25155445982983005,
+        "medianExcessReturn": 0.25155445982983005,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 1,
+        "meanMatchedControlExcess": 0.15383881525173382,
+        "medianMatchedControlExcess": 0.15383881525173382,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 1,
+        "meanExcessVsBestControl": 0.06722886732312583,
+        "medianExcessVsBestControl": 0.06722886732312583,
+        "winsAllControlsRate": 1,
+        "meanRankPercentile": 1,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 1,
+        "meanNetReturn": 0.10371565726496978,
+        "medianNetReturn": 0.10371565726496978,
+        "meanExcessReturn": 0.15112406893301655,
+        "medianExcessReturn": 0.15112406893301655,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 1,
+        "meanMatchedControlExcess": 0.0630455923827255,
+        "medianMatchedControlExcess": 0.0630455923827255,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 1,
+        "meanExcessVsBestControl": -0.19007470339133437,
+        "medianExcessVsBestControl": -0.19007470339133437,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 1,
+        "meanNetReturn": 0.0239587672610293,
+        "medianNetReturn": 0.0239587672610293,
+        "meanExcessReturn": -0.014735935438890513,
+        "medianExcessReturn": -0.014735935438890513,
+        "excessHitRate": 0,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 1,
+        "meanMatchedControlExcess": -0.003466896402139985,
+        "medianMatchedControlExcess": -0.003466896402139985,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 1,
+        "meanExcessVsBestControl": -0.10121731080347574,
+        "medianExcessVsBestControl": -0.10121731080347574,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      }
+    },
+    "hypothesisLevel": {
+      "20": {
+        "count": 1,
+        "meanNetReturn": 0.26114769136736427,
+        "medianNetReturn": 0.26114769136736427,
+        "meanExcessReturn": 0.25155445982983005,
+        "medianExcessReturn": 0.25155445982983005,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 1,
+        "meanNetReturn": 0.10371565726496978,
+        "medianNetReturn": 0.10371565726496978,
+        "meanExcessReturn": 0.15112406893301655,
+        "medianExcessReturn": 0.15112406893301655,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 1,
+        "meanNetReturn": 0.0239587672610293,
+        "medianNetReturn": 0.0239587672610293,
+        "meanExcessReturn": -0.014735935438890513,
+        "medianExcessReturn": -0.014735935438890513,
+        "excessHitRate": 0,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryTickerLevel": {
+      "20": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      }
+    },
+    "primaryHypothesisLevel": {
+      "20": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      },
+      "60": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      },
+      "120": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      }
+    },
+    "primaryThesisBase": {
+      "count": 0,
+      "pendingBaseCount": 0,
+      "meanNetReturn": null,
+      "medianNetReturn": null,
+      "meanExcessReturn": null,
+      "medianExcessReturn": null,
+      "excessHitRate": null,
+      "matchedControlCount": 0,
+      "meanMatchedControlExcess": null,
+      "medianMatchedControlExcess": null,
+      "matchedControlHitRate": null,
+      "bestControlCount": 0,
+      "meanExcessVsBestControl": null,
+      "medianExcessVsBestControl": null,
+      "winsAllControlsRate": null,
+      "meanRankPercentile": null
+    }
+  },
+  "hypothesisResults": [
+    {
+      "hypothesisId": "h-data-center-electrification-orders-2025q4",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.26114769136736427,
+          "excessReturn": 0.25155445982983005
+        },
+        "60": {
+          "netReturn": 0.10371565726496978,
+          "excessReturn": 0.15112406893301655
+        },
+        "120": {
+          "netReturn": 0.0239587672610293,
+          "excessReturn": -0.014735935438890513
+        }
+      }
+    }
+  ],
+  "primaryHypothesisResults": []
+}
