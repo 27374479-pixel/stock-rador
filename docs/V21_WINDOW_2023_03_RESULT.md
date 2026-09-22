@@ -63,7 +63,7 @@ The more defensible interpretation is that **high prior momentum can coexist wit
 
 Frozen decision: **NO TRADE**.
 
-A timestamp-normalization issue caused the evidence engine to label the lead `unverified` even though the economic warning had multiple contemporaneous sources. This did not change the frozen action because no long candidate was selected. The bug is documented and may be fixed forward-only; March 2023 will not be rescored.
+One supporting article had only a publication date available to the research record, represented conservatively as a UTC end-of-day timestamp. That placed it after the China-time cutoff, so the evidence engine left the lead `unverified`. This is intentional conservative point-in-time handling when exact publication time is unknown, not a reason to backfill the source. The frozen action was NO TRADE and March 2023 will not be rescored.
 
 ## What this window changes — and what it does not
 
