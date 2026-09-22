@@ -123,6 +123,20 @@ Statuses:
 A passed stress test does not eliminate model-memory risk. A failed test reduces confidence.
 Forward-frozen samples remain the strongest evidence.
 
+## Search-result leakage audit
+
+Historical validation should use a frozen document pack. Live search pages are dangerous
+because their snippets can contain post-cutoff facts.
+
+Record:
+- `searchResultFutureLeakageObserved`: boolean;
+- the leaked source/date if observed;
+- whether it could affect event selection, company mapping, controls or ranking.
+
+If material future snippets were seen before lock, classify the run
+`exploratory_contaminated` even if every cited source is pre-cutoff. Do not use that run
+to claim holdout performance or to compare skill versions as clean out-of-sample evidence.
+
 ## Anti-overfitting rules
 
 Never change the next version because:
