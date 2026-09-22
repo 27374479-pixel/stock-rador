@@ -1,0 +1,901 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2026q1-multisource-deep-v0.6-001",
+  "cutoffAt": "2026-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Constructed in September 2026 using live historical retrieval. Only documents published/available by 2026-03-31 are stored, but current-model memory and live-search leakage cannot be excluded. This run tests discovery mechanics and repeatability, not clean historical alpha.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official economic/industry statistics available by the Q1 cutoff.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS industrial/PPI series relevant to discovered changes; not an exhaustive official-agency crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Company first-party orders/backlog and operating evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on globally relevant suppliers surfaced by industry-wide searches; not a complete issuer crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable prices, shortages and physical supply-demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible market/specialist pricing evidence; many proprietary datasets remain unavailable."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting for cross-border supply disruptions, shortages and trade-flow changes.",
+      "coverageStatus": "partial",
+      "limitations": "Coverage concentrated on accessible Reuters historical reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist semiconductor, battery and commodity supply-demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce/Argus summaries rather than all paid research."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl was added to this Q1 multi-source run; Q1 tests repeatability of the broader source architecture without forcing a community lane."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "tf-memory-20260105",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "1Q26 memory prices continue rising as capacity shifts to server applications",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.cn/presscenter/news/20260105-12861.html",
+      "publishedAt": "2026-01-05T00:00:00+08:00",
+      "availableAt": "2026-01-05T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q1-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce forecast 1Q26 conventional DRAM contract prices +55-60% QoQ and NAND +33-38%, with server/HBM capacity allocation squeezing other applications."
+      ],
+      "entities": [
+        "DRAM",
+        "NAND",
+        "HBM",
+        "server"
+      ],
+      "observedChanges": [
+        "memory supply tightening",
+        "price increase"
+      ]
+    },
+    {
+      "itemId": "tf-memory-20260202",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Memory Price Outlook for 1Q26 Sharply Upgraded",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260202-12911.html",
+      "publishedAt": "2026-02-02T00:00:00+08:00",
+      "availableAt": "2026-02-02T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q1-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce raised 1Q26 conventional DRAM forecast to +90-95% QoQ and NAND to +55-60%; PC DRAM was expected to at least double and enterprise SSD +53-58%."
+      ],
+      "entities": [
+        "DRAM",
+        "NAND",
+        "enterprise SSD"
+      ],
+      "observedChanges": [
+        "memory price outlook sharply upgraded"
+      ]
+    },
+    {
+      "itemId": "tf-memory-20260331",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "AI Server Demand to Drive Memory Contract Price Increases in 2Q26",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260331-12995.html",
+      "publishedAt": "2026-03-31T00:00:00+08:00",
+      "availableAt": "2026-03-31T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q1-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "At the Q1 cutoff, TrendForce still expected 2Q26 conventional DRAM +58-63% QoQ and NAND +70-75%, with capacity continuing to shift toward server/HBM."
+      ],
+      "entities": [
+        "DRAM",
+        "NAND",
+        "AI servers"
+      ],
+      "observedChanges": [
+        "tightness persists into Q2"
+      ]
+    },
+    {
+      "itemId": "reuters-cpu-20260206",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Intel, AMD notify customers in China of lengthy waits for CPUs",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/china/intel-amd-notify-customers-china-lengthy-waits-cpus-2026-02-06/",
+      "publishedAt": "2026-02-06T00:00:00Z",
+      "availableAt": "2026-02-06T00:00:00Z",
+      "originGroup": "reuters-server-cpu-20260206",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Intel warned some Chinese server customers of lead times up to six months; AMD delays were 8-10 weeks for some products; Intel server CPU prices in China rose more than 10% generally."
+      ],
+      "entities": [
+        "Intel",
+        "AMD",
+        "server CPU",
+        "China"
+      ],
+      "observedChanges": [
+        "CPU shortage",
+        "lead-time extension",
+        "price increase"
+      ]
+    },
+    {
+      "itemId": "tf-cpu-20260206",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "repost",
+      "title": "Intel Reportedly Warns China of CPU Shortages",
+      "publisher": "TrendForce News",
+      "url": "https://www.trendforce.com/news/2026/02/06/news-intel-reportedly-warns-china-customers-of-cpu-shortages-prices-up-10-delivery-times-up-to-6-months/",
+      "publishedAt": "2026-02-06T23:59:59+08:00",
+      "availableAt": "2026-02-06T23:59:59+08:00",
+      "originGroup": "reuters-server-cpu-20260206",
+      "derivativeOf": "reuters-cpu-20260206",
+      "normalizedClaims": [
+        "TrendForce summarized the Reuters CPU shortage report; it is derivative and does not add an independent origin."
+      ],
+      "entities": [
+        "Intel",
+        "AMD",
+        "Xeon"
+      ],
+      "observedChanges": [
+        "CPU shortage"
+      ]
+    },
+    {
+      "itemId": "gev-q4-20260128",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "GE Vernova reports fourth quarter and full year 2025 financial results",
+      "publisher": "GE Vernova",
+      "url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-fourth-quarter-full-year-2025-financial-results",
+      "publishedAt": "2026-01-28T00:00:00-05:00",
+      "availableAt": "2026-01-28T00:00:00-05:00",
+      "originGroup": "gev-q4-2025-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q4 orders were $22.2B, +65% organically; Power/Electrification backlog rose $15B sequentially; gas equipment backlog plus slot reservations grew 62→83GW; Electrification equipment backlog reached $30.5B, +53% YoY."
+      ],
+      "entities": [
+        "GE Vernova",
+        "gas turbines",
+        "grid equipment"
+      ],
+      "observedChanges": [
+        "power equipment backlog acceleration"
+      ]
+    },
+    {
+      "itemId": "abb-q4-20260129",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "ABB Q4 2025 results",
+      "publisher": "ABB",
+      "url": "https://new.abb.com/news/detail/132985/q4-2025-results",
+      "publishedAt": "2026-01-29T00:00:00+01:00",
+      "availableAt": "2026-01-29T00:00:00+01:00",
+      "originGroup": "abb-q4-2025-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "ABB Q4 orders rose 36% reported / 32% comparable; Electrification demand was led by very strong double-digit data-center growth and new AI-ready data-center power designs."
+      ],
+      "entities": [
+        "ABB",
+        "data centers",
+        "electrification"
+      ],
+      "observedChanges": [
+        "electrification order acceleration"
+      ]
+    },
+    {
+      "itemId": "reuters-lithium-20260104",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Energy storage boom strengthens demand outlook for beaten-down lithium",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/sustainability/climate-energy/energy-storage-boom-strengthens-demand-outlook-beaten-down-lithium-2026-01-04/",
+      "publishedAt": "2026-01-04T00:00:00Z",
+      "availableAt": "2026-01-04T00:00:00Z",
+      "originGroup": "reuters-lithium-storage-20260104",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Energy storage demand was becoming a major lithium demand driver after a long glut; 2026 demand forecasts were strong but supply forecasts and sodium-ion substitution created uncertainty."
+      ],
+      "entities": [
+        "lithium",
+        "energy storage"
+      ],
+      "observedChanges": [
+        "storage demand acceleration",
+        "lithium outlook improves"
+      ]
+    },
+    {
+      "itemId": "tf-battery-20260112",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "EV Cells Continue Rising in December 2025; Mild Demand Pullback Expected in 1Q26",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260112-12875.html",
+      "publishedAt": "2026-01-12T00:00:00+08:00",
+      "availableAt": "2026-01-12T00:00:00+08:00",
+      "originGroup": "trendforce-battery-q1-2026",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Battery-grade lithium carbonate had risen 17% MoM to CNY103,000/t in Dec 2025; EV cells rose 2-4% and ESS cells 2-3%, while ESS restocking kept utilization high."
+      ],
+      "entities": [
+        "lithium carbonate",
+        "EV cells",
+        "ESS cells"
+      ],
+      "observedChanges": [
+        "raw-material rebound",
+        "battery cell price increase"
+      ]
+    },
+    {
+      "itemId": "reuters-lithium-zimbabwe-20260226",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China lithium price soars after Zimbabwe suspends export",
+      "publisher": "Reuters",
+      "url": "https://in.marketscreener.com/news/china-s-lithium-price-soars-after-zimbabwe-suspends-export-ce7e5cd8da8ef224",
+      "publishedAt": "2026-02-26T00:00:00Z",
+      "availableAt": "2026-02-26T00:00:00Z",
+      "originGroup": "zimbabwe-lithium-export-ban-20260226",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China lithium carbonate futures jumped after Zimbabwe suspended raw mineral and lithium concentrate exports; Zimbabwe was Africa's largest lithium producer and shipped most concentrate to China."
+      ],
+      "entities": [
+        "lithium",
+        "Zimbabwe",
+        "China"
+      ],
+      "observedChanges": [
+        "raw-material export disruption",
+        "lithium price spike"
+      ]
+    },
+    {
+      "itemId": "reuters-lithium-20260303",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China lithium prices tumble as weak EV sales and Middle East war cloud demand",
+      "publisher": "Reuters",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-03-03/china-lithium-prices-tumble-weak-ev-sales-middle-east-war-cloud-demand",
+      "publishedAt": "2026-03-03T00:00:00Z",
+      "availableAt": "2026-03-03T00:00:00Z",
+      "originGroup": "reuters-lithium-demand-20260303",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Lithium futures fell nearly 13% as weak EV sales and external demand uncertainty challenged the bullish storage/supply narrative; storage demand remained a supportive structural factor."
+      ],
+      "entities": [
+        "lithium",
+        "EV",
+        "energy storage"
+      ],
+      "observedChanges": [
+        "commodity reversal",
+        "demand contradiction"
+      ]
+    },
+    {
+      "itemId": "reuters-fertilizer-20260318",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Brazil sounds alarm on fertilizers as price spike spurs cheaper alternatives",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/brazil-sounds-alarm-fertilizers-price-spike-spurs-cheaper-alternatives-2026-03-18/",
+      "publishedAt": "2026-03-18T00:00:00Z",
+      "availableAt": "2026-03-18T00:00:00Z",
+      "originGroup": "brazil-urea-shock-20260318",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Brazil delivered urea prices rose about 35% in two weeks; some sellers suspended sales and buyers shifted toward ammonium sulfate."
+      ],
+      "entities": [
+        "urea",
+        "Brazil",
+        "ammonium sulfate"
+      ],
+      "observedChanges": [
+        "fertilizer price spike",
+        "substitution"
+      ]
+    },
+    {
+      "itemId": "reuters-fertilizer-20260320",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "War in Iran threatens fresh food-price shock across developing world",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/war-iran-threatens-fresh-food-price-shock-across-developing-world-2026-03-20/",
+      "publishedAt": "2026-03-20T00:00:00Z",
+      "availableAt": "2026-03-20T00:00:00Z",
+      "originGroup": "global-fertilizer-hormuz-20260320",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Disrupted fertilizer shipments and energy costs pushed urea prices up roughly 30-40%; fertilizer trade through Hormuz was a major physical chokepoint and no global fertilizer reserve existed."
+      ],
+      "entities": [
+        "urea",
+        "fertilizer",
+        "Hormuz"
+      ],
+      "observedChanges": [
+        "global fertilizer squeeze"
+      ]
+    },
+    {
+      "itemId": "reuters-fertilizer-russia-20260324",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Russia stops ammonium nitrate exports for one month amid global supply crunch",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/russia-imposes-restrictions-some-nitrogen-fertiliser-exports-2026-03-24/",
+      "publishedAt": "2026-03-24T00:00:00Z",
+      "availableAt": "2026-03-24T00:00:00Z",
+      "originGroup": "russia-ammonium-nitrate-20260324",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Russia, a major ammonium nitrate producer/exporter, stopped exports for a month amid global tightness and a damaged domestic production asset."
+      ],
+      "entities": [
+        "ammonium nitrate",
+        "Russia"
+      ],
+      "observedChanges": [
+        "fertilizer export restriction"
+      ]
+    },
+    {
+      "itemId": "reuters-shipping-20260302",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Global oil and gas shipping costs surge as Iran vows to close Strait of Hormuz",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/middle-east/middle-east-oil-shipping-costs-surge-all-time-high-us-iran-conflict-intensifies-2026-03-02/",
+      "publishedAt": "2026-03-02T00:00:00Z",
+      "availableAt": "2026-03-02T00:00:00Z",
+      "originGroup": "hormuz-shipping-20260302",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Middle East-to-China VLCC rates reached an all-time high around $423,736/day; LNG tanker rates jumped more than 40% as vessel availability tightened."
+      ],
+      "entities": [
+        "VLCC",
+        "LNG shipping",
+        "Hormuz"
+      ],
+      "observedChanges": [
+        "shipping-rate spike",
+        "vessel scarcity"
+      ]
+    },
+    {
+      "itemId": "reuters-rareearth-20260226",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China export-control enforcement expands as firms seek clarity",
+      "publisher": "Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/analysisas-trump-reins-in-china-tech-curbs-beijings-export-controls-come-of-age-4530155",
+      "publishedAt": "2026-02-26T00:00:00Z",
+      "availableAt": "2026-02-26T00:00:00Z",
+      "originGroup": "china-rareearth-controls-20260226",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China was expanding export-control enforcement manpower and compliance nationwide; exporters across multiple products faced licensing uncertainty and shipping delays."
+      ],
+      "entities": [
+        "rare earths",
+        "magnets",
+        "China exports"
+      ],
+      "observedChanges": [
+        "export-control enforcement broadens"
+      ]
+    },
+    {
+      "itemId": "reuters-rareearth-20260325",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "South Korea, Germany exposed to rare earths shortage",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/energy/south-korea-germany-exposed-rare-earths-shortage-australias-arafura-says-2026-03-25/",
+      "publishedAt": "2026-03-25T00:00:00Z",
+      "availableAt": "2026-03-25T00:00:00Z",
+      "originGroup": "arafura-rareearth-shortage-20260325",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "South Korea and Germany were described as exposed to rare-earth shortages as US/Japan locked long-term supply and non-China availability remained limited."
+      ],
+      "entities": [
+        "rare earths",
+        "South Korea",
+        "Germany"
+      ],
+      "observedChanges": [
+        "non-China supply scarcity"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-20260129",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Copper's ascent above $14,000 creates investor dilemma",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/finance/coppers-ascent-above-14000-creates-investor-dilemma-2026-01-29/",
+      "publishedAt": "2026-01-29T00:00:00Z",
+      "availableAt": "2026-01-29T00:00:00Z",
+      "originGroup": "copper-record-20260129",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "LME copper hit a record $14,527.50/t in an 11% one-day rally, but the move was heavily speculative/short-covering while physical China demand was weak and inventories high."
+      ],
+      "entities": [
+        "copper",
+        "LME",
+        "China"
+      ],
+      "observedChanges": [
+        "record futures price",
+        "weak physical confirmation"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-202601",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Industrial Producer Price Indexes in January 2026",
+      "publisher": "National Bureau of Statistics of China",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202602/t20260212_1962614.html",
+      "publishedAt": "2026-02-12T00:00:00+08:00",
+      "availableAt": "2026-02-12T00:00:00+08:00",
+      "originGroup": "nbs-ppi-202601",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Industrial purchase prices for nonferrous metals and cables rose 16.1% YoY and 4.5% MoM in January."
+      ],
+      "entities": [
+        "China PPI",
+        "nonferrous metals",
+        "cables"
+      ],
+      "observedChanges": [
+        "nonferrous input inflation"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-202602",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Industrial Producer Price Indexes in February 2026",
+      "publisher": "National Bureau of Statistics of China",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202603/t20260310_1962747.html",
+      "publishedAt": "2026-03-10T00:00:00+08:00",
+      "availableAt": "2026-03-10T00:00:00+08:00",
+      "originGroup": "nbs-ppi-202602",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Industrial purchase prices for nonferrous metals and cables rose 21.3% YoY and 4.8% MoM in February; nonferrous ore mining prices rose 30.2% YoY."
+      ],
+      "entities": [
+        "China PPI",
+        "nonferrous metals",
+        "cables"
+      ],
+      "observedChanges": [
+        "nonferrous input inflation accelerates"
+      ]
+    },
+    {
+      "itemId": "nbs-industrial-20260316",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2026年1—2月份规模以上工业增加值增长6.3%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202603/t20260316_1962782.html",
+      "publishedAt": "2026-03-16T00:00:00+08:00",
+      "availableAt": "2026-03-16T00:00:00+08:00",
+      "originGroup": "nbs-industry-20260102",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Feb industrial value added grew 6.3%; general equipment +8.9%, special equipment +8.8%, electrical machinery +8.7%, computers/communications/electronics +14.2%."
+      ],
+      "entities": [
+        "China manufacturing",
+        "equipment",
+        "electronics"
+      ],
+      "observedChanges": [
+        "broad industrial production growth"
+      ]
+    },
+    {
+      "itemId": "nbs-fai-20260317",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Investment in Fixed Assets from January to February 2026",
+      "publisher": "National Bureau of Statistics of China",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202603/t20260317_1962801.html",
+      "publishedAt": "2026-03-17T00:00:00+08:00",
+      "availableAt": "2026-03-17T00:00:00+08:00",
+      "originGroup": "nbs-fai-20260102",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Feb equipment/instrument purchases rose 11.5%; power/heat/gas/water investment +13.1%; railway/ship/aerospace equipment investment +31.1%, while private investment fell 2.6%."
+      ],
+      "entities": [
+        "China fixed investment",
+        "equipment"
+      ],
+      "observedChanges": [
+        "equipment capex growth",
+        "mixed macro breadth"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-q1-memory-tightness-accelerates",
+      "statement": "The Q4 memory shortage intensified in Q1 2026: suppliers repeatedly raised DRAM/NAND price expectations as AI/server capacity allocation crowded out PC/consumer applications, and tightness was still projected to persist into Q2.",
+      "changeType": "supply_demand_tightening",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-01-05T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-memory-20260105",
+        "tf-memory-20260202",
+        "tf-memory-20260331"
+      ],
+      "independentOriginGroups": [
+        "trendforce-memory-q1-2026"
+      ],
+      "affectedValueChain": [
+        "DRAM/NAND suppliers",
+        "memory modules",
+        "enterprise SSD",
+        "PC/smartphone OEMs"
+      ],
+      "contradictionSearchNotes": "All three observations share one specialist origin; pricing magnitude is strong but independent first-party/company evidence is still required before company selection.",
+      "researchQuestion": "Did A-share memory suppliers retain earnings upside after the Q4 re-rating and Q1 price-upgrade expectations?"
+    },
+    {
+      "eventId": "event-q1-server-cpu-shortage",
+      "statement": "Server CPUs became a new AI-infrastructure bottleneck in China, with Intel lead times up to six months, AMD delays of 8-10 weeks and Intel server pricing generally more than 10% higher.",
+      "changeType": "lead_time_and_price_increase",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-02-06T00:00:00Z",
+      "memberItemIds": [
+        "reuters-cpu-20260206",
+        "tf-cpu-20260206"
+      ],
+      "independentOriginGroups": [
+        "reuters-server-cpu-20260206"
+      ],
+      "affectedValueChain": [
+        "server CPUs",
+        "server OEMs",
+        "cloud infrastructure",
+        "foundry"
+      ],
+      "contradictionSearchNotes": "TrendForce item is derivative of Reuters; event has only one independent origin and may benefit foreign CPU vendors more directly than A-share companies.",
+      "researchQuestion": "Is there a material A-share earnings bridge through server OEMs, domestic CPU substitutes, packaging/foundry or adjacent supply rather than only thematic association?"
+    },
+    {
+      "eventId": "event-q1-power-equipment-backlog",
+      "statement": "Long-cycle power and electrification equipment demand continued accelerating into 2026, with GE Vernova and ABB independently reporting very strong order/backlog growth led by power/grid and data-center demand.",
+      "changeType": "orders_backlog",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-01-28T00:00:00-05:00",
+      "memberItemIds": [
+        "gev-q4-20260128",
+        "abb-q4-20260129"
+      ],
+      "independentOriginGroups": [
+        "gev-q4-2025-results",
+        "abb-q4-2025-results"
+      ],
+      "affectedValueChain": [
+        "gas turbines",
+        "transformers",
+        "switchgear",
+        "grid equipment",
+        "data-center power"
+      ],
+      "contradictionSearchNotes": "This was already a strong Q4 narrative; new backlog confirmation may be real but expectation saturation and A-share valuation remain central.",
+      "researchQuestion": "Did any A-share supplier acquire a newly differentiated order/valuation edge versus the peers already identified in Q4?"
+    },
+    {
+      "eventId": "event-q1-lithium-storage-rebound",
+      "statement": "Energy-storage demand revived lithium economics and battery-cell pricing, while policy/export disruptions created supply upside, but weak EV demand produced sharp commodity volatility by March.",
+      "changeType": "demand_recovery_with_supply_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-01-04T00:00:00Z",
+      "memberItemIds": [
+        "reuters-lithium-20260104",
+        "tf-battery-20260112",
+        "reuters-lithium-zimbabwe-20260226",
+        "reuters-lithium-20260303"
+      ],
+      "independentOriginGroups": [
+        "reuters-lithium-storage-20260104",
+        "trendforce-battery-q1-2026",
+        "zimbabwe-lithium-export-ban-20260226",
+        "reuters-lithium-demand-20260303"
+      ],
+      "affectedValueChain": [
+        "lithium miners",
+        "lithium salts",
+        "battery cells",
+        "ESS integrators",
+        "EV makers"
+      ],
+      "contradictionSearchNotes": "The March 13% futures drop and weak EV sales show that storage strength does not create a one-way lithium price thesis; miners and battery makers may have opposite sensitivities.",
+      "researchQuestion": "Which A-share companies benefit from storage volume growth without requiring persistently rising lithium input prices?"
+    },
+    {
+      "eventId": "event-q1-fertilizer-supply-shock",
+      "statement": "Global nitrogen-fertilizer supply tightened abruptly in March as Hormuz disruption drove urea prices sharply higher and Russia separately stopped ammonium nitrate exports.",
+      "changeType": "physical_supply_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-03-18T00:00:00Z",
+      "memberItemIds": [
+        "reuters-fertilizer-20260318",
+        "reuters-fertilizer-20260320",
+        "reuters-fertilizer-russia-20260324"
+      ],
+      "independentOriginGroups": [
+        "brazil-urea-shock-20260318",
+        "global-fertilizer-hormuz-20260320",
+        "russia-ammonium-nitrate-20260324"
+      ],
+      "affectedValueChain": [
+        "urea/ammonia producers",
+        "ammonium nitrate",
+        "fertilizer distributors",
+        "crop producers"
+      ],
+      "contradictionSearchNotes": "The shock is partly geopolitical and may reverse quickly; high prices can cause substitution or reduced fertilizer application.",
+      "researchQuestion": "Which A-share fertilizer producers have export/energy/feedstock economics that actually improve under the shock rather than suffer higher input/logistics costs?"
+    },
+    {
+      "eventId": "event-q1-energy-shipping-rate-spike",
+      "statement": "Oil and LNG shipping rates spiked to extreme levels in early March as Hormuz traffic collapsed and vessel availability tightened.",
+      "changeType": "freight_capacity_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-03-02T00:00:00Z",
+      "memberItemIds": [
+        "reuters-shipping-20260302"
+      ],
+      "independentOriginGroups": [
+        "hormuz-shipping-20260302"
+      ],
+      "affectedValueChain": [
+        "VLCC owners",
+        "LNG shipping",
+        "oil/LNG producers",
+        "energy importers"
+      ],
+      "contradictionSearchNotes": "Single-event geopolitical shock may be short-lived and route-specific; listed shipping exposure must be verified by vessel class/route and contract mix.",
+      "researchQuestion": "Are any A-share tanker/LNG-shipping earnings sufficiently exposed to spot rates for this to be investable rather than event beta?"
+    },
+    {
+      "eventId": "event-q1-rareearth-export-bottleneck",
+      "statement": "China's rare-earth export-control enforcement became more operationally restrictive while non-China buyers continued to face limited supply, extending the critical-material bottleneck.",
+      "changeType": "regulatory_supply_constraint",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-02-26T00:00:00Z",
+      "memberItemIds": [
+        "reuters-rareearth-20260226",
+        "reuters-rareearth-20260325"
+      ],
+      "independentOriginGroups": [
+        "china-rareearth-controls-20260226",
+        "arafura-rareearth-shortage-20260325"
+      ],
+      "affectedValueChain": [
+        "rare-earth oxides/metals",
+        "magnets",
+        "automotive",
+        "aerospace",
+        "industrial motors"
+      ],
+      "contradictionSearchNotes": "Export controls can hurt Chinese downstream exporters as well as support upstream scarcity; policy can change quickly and direct A-share profit mapping remains difficult.",
+      "researchQuestion": "Is there an A-share producer with retained upstream pricing power rather than merely a rare-earth theme label?"
+    },
+    {
+      "eventId": "event-q1-copper-record-without-physical-confirmation",
+      "statement": "Copper futures reached a spectacular record above $14,500/t, but weak China physical demand, high inventories and speculative short-covering contradicted a clean physical-shortage interpretation.",
+      "changeType": "price_spike",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-01-29T00:00:00Z",
+      "memberItemIds": [
+        "reuters-copper-20260129",
+        "nbs-ppi-202601",
+        "nbs-ppi-202602"
+      ],
+      "independentOriginGroups": [
+        "copper-record-20260129",
+        "nbs-ppi-202601",
+        "nbs-ppi-202602"
+      ],
+      "affectedValueChain": [
+        "copper miners",
+        "smelters",
+        "electrical equipment",
+        "cables"
+      ],
+      "contradictionSearchNotes": "Official China input-price inflation confirms cost pressure, not necessarily physical end-demand. Reuters explicitly reports weak physical demand/high inventories.",
+      "researchQuestion": "Should the Skill reject record-price headlines when physical confirmation is absent even if producer-input inflation is visible?"
+    },
+    {
+      "eventId": "event-q1-broad-equipment-capex",
+      "statement": "China's Jan-Feb industrial production and equipment investment were relatively strong in several equipment/electronics categories, but the signal was broad and mixed against weak private investment and some sector declines.",
+      "changeType": "broad_capex_growth",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-03-16T00:00:00+08:00",
+      "memberItemIds": [
+        "nbs-industrial-20260316",
+        "nbs-fai-20260317"
+      ],
+      "independentOriginGroups": [
+        "nbs-industry-20260102",
+        "nbs-fai-20260102"
+      ],
+      "affectedValueChain": [
+        "general equipment",
+        "electronics",
+        "transport equipment",
+        "power infrastructure"
+      ],
+      "contradictionSearchNotes": "Broad macro growth lacks a narrow earnings transmission and may reflect state-led capex rather than listed-company expectation gaps.",
+      "researchQuestion": "Is any specific sub-industry change sufficiently differentiated to deserve a separate event, or should this remain macro context?"
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "gigadevice-annual-20260331",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兆易创新：2025年年度报告",
+      "publisher": "兆易创新",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12044980&stockid=603986",
+      "publishedAt": "2026-03-31T00:00:00+08:00",
+      "availableAt": "2026-03-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025 revenue RMB 9.203bn, +25.12% YoY; attributable net profit RMB 1.648bn, +49.47%.",
+        "Memory-chip revenue RMB 6.566bn, +26.41%, gross margin 42.84%, +2.57pp; management attributed growth partly to an up-cycle and improved memory supply-demand."
+      ]
+    },
+    {
+      "id": "beijing-junzheng-annual-20260328",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "北京君正：2025年年度报告",
+      "publisher": "北京君正",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-03-28/1225045085.PDF",
+      "publishedAt": "2026-03-28T00:00:00+08:00",
+      "availableAt": "2026-03-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025 revenue RMB 4.741bn, +12.54% YoY; attributable net profit RMB 376m, +2.74%; operating cash flow RMB 623m, +71.30%.",
+        "The annual report described tight DRAM supply and expected the 2026 memory cycle to continue."
+      ]
+    },
+    {
+      "id": "beijing-junzheng-ir-20260331",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "北京君正：投资者关系活动记录表 20260330",
+      "publisher": "北京君正",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12051419&stockid=300223",
+      "publishedAt": "2026-03-31T00:00:00+08:00",
+      "availableAt": "2026-03-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "Management said 2026 DRAM capacity was tight, new capacity would take at least 18 months, and current allocation could support some volume growth.",
+        "Management expected 2026 DRAM pricing and gross margin to improve, but supply constraints could limit volume."
+      ]
+    },
+    {
+      "id": "catl-annual-20260310",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "宁德时代：2025年年度报告",
+      "publisher": "宁德时代",
+      "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0309/2026030901592_c.pdf",
+      "publishedAt": "2026-03-10T00:00:00+08:00",
+      "availableAt": "2026-03-10T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025 energy-storage battery-system revenue RMB 62.440bn, +8.99% YoY, gross margin 26.71%.",
+        "Total 2025 revenue was about RMB 423.7bn and attributable profit about RMB 72.2bn."
+      ]
+    },
+    {
+      "id": "eve-annual-20260328",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "亿纬锂能：2025年年度报告",
+      "publisher": "亿纬锂能",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12033427",
+      "publishedAt": "2026-03-28T00:00:00+08:00",
+      "availableAt": "2026-03-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025 energy-storage battery revenue RMB 24.441bn, +28.45% YoY, gross margin 12.28%, down 2.44pp.",
+        "Total revenue RMB 61.470bn, +26.44% YoY."
+      ]
+    },
+    {
+      "id": "cosco-energy-annual-20260327",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中远海能：2025年年度报告",
+      "publisher": "中远海能",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12024345&stockid=600026",
+      "publishedAt": "2026-03-27T00:00:00+08:00",
+      "availableAt": "2026-03-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "2025 international oil-tanker revenue RMB 15.133bn, +3.8% YoY; gross profit RMB 3.372bn, -6.0%; gross margin 22.3%.",
+        "The company operates a large global oil-tanker fleet including VLCC exposure, giving direct sensitivity to international tanker rates."
+      ]
+    },
+    {
+      "id": "cm-energy-annual-20260327",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "招商轮船：2025年年度报告",
+      "publisher": "招商轮船",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12023996&stockid=601872",
+      "publishedAt": "2026-03-27T00:00:00+08:00",
+      "availableAt": "2026-03-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "The company disclosed a substantial oil-tanker/VLCC fleet within a more diversified shipping portfolio, making it a fair tanker-rate counterfactual to 中远海能."
+      ]
+    }
+  ]
+}
