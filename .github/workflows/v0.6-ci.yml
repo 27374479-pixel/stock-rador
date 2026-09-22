@@ -1,0 +1,23 @@
+name: v0.6-ci
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.6-20260922
+    paths:
+      - .github/workflows/v0.6-ci.yml
+      - scripts/**
+      - tests/**
+      - skills/stock-rador/versions/0.6.0/**
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.6-20260922
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
