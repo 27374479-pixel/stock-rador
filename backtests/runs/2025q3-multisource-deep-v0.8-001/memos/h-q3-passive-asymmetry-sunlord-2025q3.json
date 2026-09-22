@@ -1,0 +1,477 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.8.0",
+  "cutoffAt": "2025-08-29T23:59:59+08:00",
+  "researchReadyAt": "2025-08-29T18:00:00+08:00",
+  "actionableAt": "2025-08-29T18:00:00+08:00",
+  "hypothesisId": "h-q3-passive-asymmetry-sunlord-2025q3",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Data-center/AI component orders and mix should affect one to two reporting cycles."
+  },
+  "changeHypothesis": {
+    "summary": "AI/high-end passive-component demand remained strong while consumer demand was weaker. 顺络电子 combined H1 profit growth and cash-flow quality with first-party data-center order growth, while its frozen valuation was lower than 三环/风华. This produced a cleaner asymmetry than simply selecting the highest-margin company.",
+    "firstCredibleDate": "2025-07-30",
+    "valueChain": [
+      "AI/data-center demand",
+      "high-end inductors/passives",
+      "orders/utilization/mix",
+      "profit revisions"
+    ],
+    "persistenceReason": "TrendForce repeatedly showed AI/consumer divergence; 顺络 disclosed important data-center order growth.",
+    "disconfirmingEvidence": [
+      "Consumer weakness can offset AI mix.",
+      "Metal/input costs may hurt margins.",
+      "三环 has higher absolute margins and broad ceramic optionality."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-mlcc-20250730",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-mlcc-20250826",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-passive-20250829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sunlord-h1-20250731",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sunlord-research-20250731",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sanhuan-h1-research-20250829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "fenghua-research-20250822",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "AI/data-center demand",
+      "to": "high-end passive orders",
+      "mechanism": "AI servers require higher-value power/signal components even when consumer electronics are weak.",
+      "evidenceRefs": [
+        "tf-mlcc-20250730",
+        "sunlord-h1-20250731"
+      ],
+      "failureMode": "AI capex or customer qualification slows",
+      "lag": "quarters"
+    },
+    {
+      "from": "orders/mix",
+      "to": "earnings revisions",
+      "mechanism": "Higher-end product mix and utilization can lift profit faster than revenue.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731",
+        "sunlord-research-20250731"
+      ],
+      "failureMode": "input costs absorb mix gains",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "revision headroom",
+      "to": "stock alpha",
+      "mechanism": "Lower valuation than stronger-branded peers creates room if data-center orders convert.",
+      "evidenceRefs": [
+        "sunlord-research-20250731",
+        "sanhuan-h1-research-20250829",
+        "fenghua-research-20250822"
+      ],
+      "failureMode": "price rerates before order conversion",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "high-end passive suppliers with AI/data-center exposure"
+    ],
+    "secondOrderWinners": [
+      "materials/process suppliers"
+    ],
+    "losers": [
+      "consumer-only component suppliers"
+    ],
+    "substitutes": [
+      "alternative passive technologies"
+    ],
+    "bottlenecks": [
+      "qualification/high-end process capacity"
+    ],
+    "falseThemeMatches": [
+      "generic passive suppliers without AI mix"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002138.SZ",
+      "name": "顺络电子",
+      "verifiedExposure": "H1 profit +32%, CFO +21%, data-center orders achieved important growth.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731",
+        "sunlord-research-20250731"
+      ],
+      "earningsSensitivity": {
+        "base": "2025E profit RMB1.05bn.",
+        "favorable": "AI/data-center mix drives faster revisions.",
+        "adverse": "consumer weakness/input costs offset."
+      },
+      "principalRisks": [
+        "input costs",
+        "consumer weakness"
+      ]
+    },
+    {
+      "ticker": "300408.SZ",
+      "name": "三环集团",
+      "verifiedExposure": "H1 profit +20.6%, strong MLCC/optical demand, but estimates slightly reduced and 2025E PE ~30.3x.",
+      "evidenceRefs": [
+        "sanhuan-h1-research-20250829"
+      ],
+      "earningsSensitivity": {
+        "base": "high quality already reflected.",
+        "favorable": "MLCC/optical acceleration beats revised forecasts.",
+        "adverse": "premium multiple compresses."
+      },
+      "principalRisks": [
+        "higher valuation",
+        "expectation saturation"
+      ]
+    },
+    {
+      "ticker": "000636.SZ",
+      "name": "风华高科",
+      "verifiedExposure": "AI/storage markets growing but H1 forecast was cut; 2025E PE ~38.8x.",
+      "evidenceRefs": [
+        "fenghua-research-20250822"
+      ],
+      "earningsSensitivity": {
+        "base": "recovery but weaker profit quality.",
+        "favorable": "new markets drive revision rebound.",
+        "adverse": "consumer/competition persist."
+      },
+      "principalRisks": [
+        "forecast cuts",
+        "high PE"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300408.SZ",
+      "name": "三环集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "High-quality passive/ceramic peer with AI/MLCC exposure.",
+      "whySelectedCompanyShouldOutperform": "顺络 had faster H1 profit growth, explicit data-center order growth and lower frozen PE.",
+      "evidenceRefs": [
+        "sunlord-research-20250731",
+        "sanhuan-h1-research-20250829"
+      ]
+    },
+    {
+      "ticker": "000636.SZ",
+      "name": "风华高科",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct passive-component peer exposed to the same demand split.",
+      "whySelectedCompanyShouldOutperform": "顺络 had stronger realized profit/cash conversion and lower valuation while 风华 forecasts were cut.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731",
+        "fenghua-research-20250822"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002138.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300408.SZ",
+        "selectedAdvantages": [
+          "faster H1 profit growth",
+          "lower frozen forward PE",
+          "explicit data-center order growth"
+        ],
+        "selectedDisadvantages": [
+          "三环 has higher margins and broader ceramic optionality"
+        ],
+        "evidenceRefs": [
+          "sunlord-research-20250731",
+          "sanhuan-h1-research-20250829"
+        ],
+        "switchCondition": "Prefer 三环 if its MLCC/optical revisions reaccelerate without further rerating.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "000636.SZ",
+        "selectedAdvantages": [
+          "stronger profit/cash quality",
+          "lower PE",
+          "clearer data-center order evidence"
+        ],
+        "selectedDisadvantages": [
+          "风华 could have larger catch-up beta if demand broadens"
+        ],
+        "evidenceRefs": [
+          "sunlord-h1-20250731",
+          "fenghua-research-20250822"
+        ],
+        "switchCondition": "Prefer 风华 if its forecast cuts reverse and valuation discount emerges.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "顺络 passes the quality floor and has the strongest frozen revision/valuation/catalyst combination."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Jul30 frozen reference valued 顺络 at ~22.2x 2025E; 三环 Aug28 ~30.3x, 风华 Aug21 ~38.8x. 顺络 August price momentum was positive but only mildly above benchmark.",
+    "thesisExpectation": "Data-center/AI orders convert into earnings revisions faster than the diversified consumer drag.",
+    "measurableGap": "The order signal is first-party and valuation requires less perfection than controls.",
+    "evidenceRefs": [
+      "sunlord-research-20250731",
+      "regime-passive-20250829",
+      "sanhuan-h1-research-20250829",
+      "fenghua-research-20250822"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus order/mix revision headroom versus matched passive peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2025E profit RMB1.05bn and Jul30 PE 22.16x.",
+    "thesisScenario": "Data-center/AI order conversion drives revisions beyond maintained forecasts.",
+    "breakevenCondition": "Profit growth only needs to remain above broad consumer-linked peers; no premium multiple is required.",
+    "ordinaryScenarioFailure": "AI order growth remains too small to offset consumer/input pressure.",
+    "catalystOrTimingBridge": "Q3/Q4 order and earnings updates should reveal conversion in 20-60d.",
+    "evidenceRefs": [
+      "sunlord-research-20250731",
+      "regime-passive-20250829"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "H1 profit grew faster than revenue and data-center orders achieved important growth.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Profit and CFO both grew while new business orders were disclosed.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Controls had slower growth/higher valuation or forecast cuts.",
+      "evidenceRefs": [
+        "sanhuan-h1-research-20250829",
+        "fenghua-research-20250822"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Maintained forecasts may not fully reflect data-center order conversion.",
+      "evidenceRefs": [
+        "sunlord-research-20250731"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use frozen 20/60d basket and selected relative return.",
+      "evidenceRefs": [
+        "regime-passive-20250829"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen passive basket versus CSI300",
+      "lookback20Excess": 0.07985973294874893,
+      "lookback60Excess": 0.07805660877069827,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-passive-20250829"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "AI/high-end demand remained strong across July-August while company orders confirmed conversion.",
+      "evidenceRefs": [
+        "tf-mlcc-20250730",
+        "tf-mlcc-20250826",
+        "sunlord-h1-20250731"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "顺络 had strong H1 conversion while 三环 was steady and 风华 estimates were cut.",
+      "evidenceRefs": [
+        "sunlord-research-20250731",
+        "sanhuan-h1-research-20250829",
+        "fenghua-research-20250822"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "AI server qualification/order cycles persist beyond a single month.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Basket momentum is positive but not universally extreme; one-third of names lag the benchmark.",
+      "evidenceRefs": [
+        "regime-passive-20250829"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Physical/company demand and price breadth align without the extreme saturation seen in rare earths."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002138.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Record H1 revenue/profit, positive CFO growth and diversified customers clear quality.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Data-center order growth is not obviously fully reflected in maintained forecasts.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731",
+        "sunlord-research-20250731"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Frozen PE was materially lower than 三环/风华 references.",
+      "evidenceRefs": [
+        "sunlord-research-20250731",
+        "sanhuan-h1-research-20250829",
+        "fenghua-research-20250822"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Order conversion and quarterly earnings are inside the 20-60d base window.",
+      "evidenceRefs": [
+        "sunlord-h1-20250731"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Lower valuation and existing profit/cash growth provide cushion if AI acceleration is merely moderate.",
+      "evidenceRefs": [
+        "sunlord-research-20250731"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300408.SZ",
+        "revisionAdvantage": "顺络 has explicit new data-center order growth and faster H1 profit growth.",
+        "valuationAdvantage": "~22x vs ~30x 2025E reference.",
+        "qualityTradeoff": "三环 has higher margins; both pass quality.",
+        "catalystAdvantage": "顺络's order conversion is explicit and nearer-term.",
+        "downsideTradeoff": "顺络 has lower valuation burden.",
+        "evidenceRefs": [
+          "sunlord-research-20250731",
+          "sanhuan-h1-research-20250829"
+        ],
+        "switchCondition": "Switch if 三环 revisions rise materially while its valuation premium compresses.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "000636.SZ",
+        "revisionAdvantage": "顺络 forecasts were maintained with strong orders; 风华 estimates were cut.",
+        "valuationAdvantage": "顺络 reference PE materially lower.",
+        "qualityTradeoff": "顺络 has stronger profit/cash conversion.",
+        "catalystAdvantage": "Data-center orders already disclosed.",
+        "downsideTradeoff": "Lower PE and stronger quality favor 顺络.",
+        "evidenceRefs": [
+          "sunlord-h1-20250731",
+          "fenghua-research-20250822"
+        ],
+        "switchCondition": "Switch if 风华 forecast cuts reverse with a material valuation discount.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority because quality floor, timing, revisions and relative valuation all align.",
+    "alreadyPricedAssessment": "moderate but not excessive",
+    "constraints": [
+      "consumer demand weak",
+      "input-cost risk"
+    ]
+  },
+  "bearCase": "AI/data-center business remains too small and consumer weakness or input costs dominate.",
+  "invalidationConditions": [
+    {
+      "indicator": "data-center orders/revenue",
+      "observationMethod": "company updates",
+      "threshold": "no meaningful conversion"
+    },
+    {
+      "indicator": "gross margin",
+      "observationMethod": "next quarter",
+      "threshold": "material deterioration despite order growth"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact data-center revenue share",
+    "customer concentration"
+  ],
+  "nextResearchActions": [
+    "Freeze as High-priority selection.",
+    "Evaluate against 三环 and 风华 after lock."
+  ]
+}
