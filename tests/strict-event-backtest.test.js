@@ -134,3 +134,24 @@ test('historical limit rate is explicit instead of inferred from the ticker', ()
   assert.equal(check.onePriceLimitUp, false);
   assert.equal(check.limitRate, 0.20);
 });
+
+test('execution blockers use unadjusted bars while returns can use adjusted bars', () => {
+  const adjustedBars = [
+    bar('2026-01-02', 5),
+    bar('2026-01-05', 5.5),
+    bar('2026-01-06', 5.6)
+  ];
+  const executionBars = [
+    bar('2026-01-02', 10),
+    bar('2026-01-05', 11, 11, 100, { high: 11, low: 11 }),
+    bar('2026-01-06', 11.2)
+  ];
+  const result = backtestEvent({
+    bars: adjustedBars,
+    executionBars,
+    signalDate: '2026-01-02',
+    holdingTradingDays: 2
+  });
+  assert.equal(result.status, 'blocked_entry');
+  assert.equal(result.entryExecution.onePriceLimitUp, true);
+});
