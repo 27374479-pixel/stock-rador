@@ -23,3 +23,20 @@ jobs:
 # every consumed window creates noise and unnecessary external-data fetches.
 # The active untouched-window job is added temporarily when a new selection
 # or outcome is ready to execute, then replaced for the next stage.
+
+
+  prefreeze-skill-v3-2024-06:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/prefreeze-skill-v3-window-2024-06.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skill-v3-2024-06-prefreeze
+          path: research/skill_v3_2024_06_prefreeze.json
+          if-no-files-found: error
