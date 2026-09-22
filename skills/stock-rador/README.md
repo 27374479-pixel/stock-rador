@@ -3,7 +3,24 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 0.6.0
+## Current version: 0.7.0
+
+- [SKILL.md](versions/0.7.0/SKILL.md)
+- [EVALS.md](versions/0.7.0/EVALS.md)
+- [DISCOVERY.md](versions/0.7.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/0.7.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/0.7.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/0.7.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/0.7.0/missed-opportunity-audit.template.json)
+
+V0.7 keeps all v0.6 discovery and selection controls and adds a strict
+**fundamental-acceleration / expectation-reset substitute**. It can only substitute for
+missing point-in-time burden measurement when the unresolved reason is measurement-only
+and realized fundamentals, peer differentiation, baseline lag and price-absorption checks
+are all already strong. It cannot override fully-priced, conflicted, missing-baseline or
+high-absorption cases.
+
+## Previous current contract: 0.6.0
 
 - [SKILL.md](versions/0.6.0/SKILL.md)
 - [EVALS.md](versions/0.6.0/EVALS.md)
