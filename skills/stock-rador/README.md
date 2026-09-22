@@ -53,3 +53,25 @@ discipline.
 
 The unversioned files under `skills/stock-rador/` are retained for old locked runs and
 must not be silently repointed or overwritten.
+
+
+### Forward recall denominator
+
+V0.6 freezes discovery recall independently from stock-selection alpha.
+
+The first prospective denominator is:
+- 4,413 Shanghai/Shenzhen main-board + ChiNext names;
+- sourced from official SSE/SZSE stock lists;
+- frozen on 2026-09-22 before the 120-trading-day outcome exists;
+- identified by ticker digest
+  `e24393502faf23ef3233dd4418f571adafebe70514d55afdcec5810e5739aa87`.
+
+The future miss-case generator is also prospective:
+- every frozen ticker must appear in the outcome snapshot;
+- top 1% benchmark-relative performers are included;
+- any name with >=50% excess return is included;
+- the two sets are unioned;
+- delisted/suspended/missing/execution-blocked names remain in the denominator;
+- same-period misses may not tune the reported Skill.
+
+See the run's `audit-universe-lock.json` and `recall-pipeline-lock.json`.
