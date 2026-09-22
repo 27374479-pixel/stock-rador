@@ -1,6 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { validateOpportunityMemo } = require('../scripts/backtest-core-v080.cjs');
+const { classifyPriceRegime } = require('../scripts/fetch-precutoff-regime.cjs');
 
 function manifest() {
   return {
@@ -166,4 +167,19 @@ test('v0.8 allows adverse timing for Research selection but never silently promo
   };
   m.opportunityTimingTest.overallConclusion = 'adverse';
   assert.deepEqual(validateOpportunityMemo(m, 'memo.json', manifest()), []);
+});
+
+test('v0.8 deterministic regime classifier follows frozen sign/breadth rules', () => {
+  assert.equal(classifyPriceRegime({
+    lookback20Excess: 0.01, lookback60Excess: 0.02,
+    positiveBreadth20: 0.5, positiveBreadth60: 0.75
+  }), 'favorable');
+  assert.equal(classifyPriceRegime({
+    lookback20Excess: -0.01, lookback60Excess: -0.02,
+    positiveBreadth20: 0.25, positiveBreadth60: 0.25
+  }), 'adverse');
+  assert.equal(classifyPriceRegime({
+    lookback20Excess: 0.01, lookback60Excess: -0.02,
+    positiveBreadth20: 0.75, positiveBreadth60: 0.25
+  }), 'neutral');
 });
