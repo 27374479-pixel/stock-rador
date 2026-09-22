@@ -48,7 +48,10 @@ async function fetchSeries(symbol, adjustment, isIndex = false) {
     urls.push(url);
   }
   const rows = mergeRows(chunks);
-  if (rows[0]?.date > CONFIG.policy.priceStart || rows.at(-1)?.date < CONFIG.policy.priceEnd) {
+  const requestedStart = Date.parse(`${CONFIG.policy.priceStart}T00:00:00Z`);
+  const firstObserved = Date.parse(`${rows[0]?.date}T00:00:00Z`);
+  const startLagDays = (firstObserved - requestedStart) / 86400000;
+  if (!Number.isFinite(startLagDays) || startLagDays < 0 || startLagDays > 14 || rows.at(-1)?.date < CONFIG.policy.priceEnd) {
     throw new Error(`Incomplete merged history for ${symbol}: ${rows[0]?.date}..${rows.at(-1)?.date}`);
   }
   return { rows, urls };
