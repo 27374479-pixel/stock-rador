@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2025-12-31T23:59:59+08:00",
+  "researchReadyAt": "2025-11-25T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-china-solar-grid-reacceleration-2025q4",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Installation and grid-investment trends can influence inverter/equipment demand within one or two quarters."
+  },
+  "changeHypothesis": {
+    "summary": "China solar installations and grid investment remained very strong and recovered after a mid-year policy transition, but installation volume did not translate uniformly into inverter/company profit, making the earnings bridge company-specific rather than sector-wide.",
+    "firstCredibleDate": "2025-11-25",
+    "valueChain": [
+      "solar/grid deployment",
+      "equipment demand",
+      "shipments/mix",
+      "company margins/profit"
+    ],
+    "persistenceReason": "Official NEA data showed very high cumulative solar additions and rising grid investment.",
+    "disconfirmingEvidence": [
+      "Solar overcapacity and price competition can separate volume growth from profit growth.",
+      "Q3 company results diverged materially across inverter suppliers.",
+      "Policy changes can pull demand forward or change project economics."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nea-power-20251125",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Official data showed strong solar capacity/additions and higher grid investment."
+    },
+    {
+      "id": "sungrow-q3-20251029",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "阳光电源 Q3 and YTD profit grew strongly."
+    },
+    {
+      "id": "ginlong-q3-20251015",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "锦浪科技 Q3 profit fell despite the same broad installation environment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "high solar/grid deployment",
+      "to": "inverter/equipment demand",
+      "mechanism": "New installations require inverters, storage/grid equipment and related systems.",
+      "evidenceRefs": [
+        "nea-power-20251125"
+      ],
+      "failureMode": "Policy transition slows projects or inventory/channel effects absorb demand.",
+      "lag": "same to following quarter"
+    },
+    {
+      "from": "equipment demand",
+      "to": "listed-company profit",
+      "mechanism": "Profit depends on product mix, overseas exposure, pricing and cost structure rather than installation volume alone.",
+      "evidenceRefs": [
+        "sungrow-q3-20251029",
+        "ginlong-q3-20251015"
+      ],
+      "failureMode": "Price competition and margin compression offset shipment growth.",
+      "lag": "one to two quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "inverter/storage/grid-equipment suppliers with pricing power"
+    ],
+    "secondOrderWinners": [
+      "electrical components"
+    ],
+    "losers": [
+      "overcapacity manufacturers without margin discipline"
+    ],
+    "substitutes": [
+      "different inverter/storage architectures"
+    ],
+    "bottlenecks": [
+      "grid connection",
+      "project economics",
+      "channel inventory"
+    ],
+    "falseThemeMatches": [
+      "solar-volume beneficiaries with no margin/earnings sensitivity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "verifiedExposure": "Strong Q3/YTD earnings and broad inverter/storage exposure.",
+      "evidenceRefs": [
+        "sungrow-q3-20251029"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong growth already visible.",
+        "favorable": "Storage/inverter mix sustains high margins.",
+        "adverse": "Expectations already reflect strength."
+      },
+      "principalRisks": [
+        "expectation saturation",
+        "competition",
+        "policy"
+      ]
+    },
+    {
+      "ticker": "300763.SZ",
+      "name": "锦浪科技",
+      "verifiedExposure": "Inverter exposure, but Q3 profit declined.",
+      "evidenceRefs": [
+        "ginlong-q3-20251015"
+      ],
+      "earningsSensitivity": {
+        "base": "Broad demand does not guarantee profit growth.",
+        "favorable": "Margins/revenue recover.",
+        "adverse": "Competition continues."
+      },
+      "principalRisks": [
+        "margin pressure",
+        "demand mix",
+        "competition"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Official deployment strength is real, but stock-level earnings transmission is too heterogeneous to select a company from this event alone."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Strong solar/storage activity was already visible; leading companies had already reported strong earnings.",
+    "thesisExpectation": "Deployment can remain strong, but no new differentiated company-level expectation gap is established from the official volume data alone.",
+    "measurableGap": "Opportunity-level evidence is insufficient to distinguish a stock winner.",
+    "evidenceRefs": [
+      "nea-power-20251125",
+      "sungrow-q3-20251029",
+      "ginlong-q3-20251015"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "not_applicable_no_selection",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "broad theme visible; company-specific gap not established.",
+    "constraints": [
+      "Do not infer alpha from installation volume alone."
+    ]
+  },
+  "bearCase": "Installations remain strong while sector margins and returns remain weak or highly dispersed.",
+  "invalidationConditions": [
+    {
+      "indicator": "Solar/grid deployment slows materially.",
+      "observationMethod": "Later official statistics.",
+      "threshold": "clear multi-month reversal"
+    },
+    {
+      "indicator": "Company profit dispersion remains high.",
+      "observationMethod": "Later filings.",
+      "threshold": "volume growth continues without consistent earnings conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay.",
+    "result": "not_clean",
+    "caveats": [
+      "Model memory leakage uncontrolled."
+    ]
+  },
+  "unknowns": [
+    "Segment-level margins",
+    "policy pull-forward effects",
+    "consensus saturation by company"
+  ],
+  "nextResearchActions": [
+    "Keep at Research hypothesis; require a separate company-specific catalyst before selection."
+  ]
+}
