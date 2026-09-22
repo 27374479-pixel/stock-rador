@@ -184,3 +184,14 @@ The first V3.2 test supports the promoted causal-horizon process. 伊戈尔 was 
 ## 2025-03 structural path confirmation
 
 深南电路 provides a second independent V3.2 structural-horizon confirmation after 伊戈尔. The selected thesis suffered about -10.9% 20-day excess and roughly -22.3% max drawdown before reaching +75.9% 120-day and +135.0% 250-day excess. This supports **causal-state monitoring over price-path monitoring** for structural theses. It does not justify ignoring drawdown universally and does not create a fixed stop-loss override.
+
+
+### X7 — Catalyst freshness / marginal information
+Origin: 2025-06 transpacific frontload miss.
+- What part of the signal is genuinely new versus a mechanism already discussed or anticipated?
+- When did informed forums, industry sources or company data first make the causal mechanism visible?
+- Has the stock already repriced during the anticipation phase even if the latest physical indicator looks dramatic?
+- Can the new information reach company realized revenue/profit before the event's causal half-life expires?
+- Is a low trailing/normalized valuation merely compensating for an earnings peak that the market expects to fade?
+
+Status: **experimental**. One consumed event-repricing window so far. Do not convert this into a momentum cutoff or a mechanical news-age threshold.
