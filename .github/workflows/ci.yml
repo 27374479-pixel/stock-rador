@@ -263,3 +263,22 @@ jobs:
             research/v21_2023_06_outcomes.json
             research/v21_2023_06_outcomes.md
           if-no-files-found: error
+
+
+  freeze-v22-2023-09:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/freeze-v22-window-2023-09.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: v22-2023-09-selection
+          path: |
+            research/v22_2023_09_selection.json
+            research/v22_2023_09_selection.md
+          if-no-files-found: error
