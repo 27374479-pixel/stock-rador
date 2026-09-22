@@ -86,9 +86,14 @@ function findBarByDate(bars, date) {
   return bars.find((bar) => bar.date === date);
 }
 
+function findBarIndexByDate(bars, date) {
+  return bars.findIndex((bar) => bar.date === date);
+}
+
 function backtestEvent(options) {
   const {
     bars,
+    executionBars = bars,
     signalDate,
     holdingTradingDays,
     fallbackLimitRate,
@@ -99,6 +104,7 @@ function backtestEvent(options) {
   } = options ?? {};
 
   assertBars(bars);
+  assertBars(executionBars, 'executionBars');
   if (!Number.isInteger(holdingTradingDays) || holdingTradingDays < 1) {
     throw new Error('holdingTradingDays must be a positive integer');
   }
@@ -118,7 +124,11 @@ function backtestEvent(options) {
     return { status: 'insufficient_data', reason: 'entryDelayBars runs past available data' };
   }
 
-  const entryExecution = executionCheck(bars, entryIndex, 'buy', fallbackLimitRate);
+  const executionEntryIndex = findBarIndexByDate(executionBars, entryBar.date);
+  if (executionEntryIndex < 1) {
+    return { status: 'insufficient_execution_data', reason: `missing execution bar for ${entryBar.date}` };
+  }
+  const entryExecution = executionCheck(executionBars, executionEntryIndex, 'buy', fallbackLimitRate);
   if (entryExecution.blocked) {
     return {
       status: 'blocked_entry',
@@ -139,7 +149,11 @@ function backtestEvent(options) {
     };
   }
 
-  const exitExecution = executionCheck(bars, exitIndex, 'sell', fallbackLimitRate);
+  const executionExitIndex = findBarIndexByDate(executionBars, exitBar.date);
+  if (executionExitIndex < 1) {
+    return { status: 'insufficient_execution_data', reason: `missing execution bar for ${exitBar.date}` };
+  }
+  const exitExecution = executionCheck(executionBars, executionExitIndex, 'sell', fallbackLimitRate);
   if (exitExecution.blocked) {
     return {
       status: 'blocked_exit',
@@ -190,7 +204,10 @@ function backtestEvent(options) {
       entryRule: 'first trading session strictly after signalDate, plus entryDelayBars, at open',
       exitRule: 'holdingTradingDays counts the entry session as day 1; exit at target close',
       blockedFillRule: 'no fill is assumed on zero-volume sessions, one-price limit-up buys, or one-price limit-down sells',
-      historicalLimitRule: 'limitRate must be supplied from point-in-time data; board/ST rules are not inferred from the current ticker'
+      historicalLimitRule: 'limitRate must be supplied from point-in-time data; board/ST rules are not inferred from the current ticker',
+      adjustedPriceRule: executionBars === bars
+        ? 'the same bar series was used for return and execution checks'
+        : 'returns use adjusted bars while execution blockers use separately supplied unadjusted bars aligned by date'
     }
   };
 }
