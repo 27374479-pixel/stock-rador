@@ -72,6 +72,15 @@ function validateResearchPacket(packet, options = {}) {
         if (!valuation || !valuation.marketCapOrEV || !valuation.bearCase || !valuation.baseCase || !valuation.upsideCase || !valuation.impliedExpectation) {
           throw new Error(`Candidate ${candidate.ticker} requires valuationBridge`);
         }
+        if (packet.schemaVersion === '3.2') {
+          const horizon = candidate.horizonBridge;
+          const allowed = new Set(['event-repricing','cyclical-multi-quarter','structural-multi-year']);
+          if (!horizon || !allowed.has(horizon.shockClass) || !horizon.expectedHalfLife ||
+              !Array.isArray(horizon.normalizationIndicators) || !horizon.normalizationIndicators.length ||
+              !horizon.expectedResearchHorizon || !horizon.whyHorizonMatches) {
+            throw new Error(`Candidate ${candidate.ticker} requires horizonBridge under V3.2`);
+          }
+        }
       }
     }
   }
