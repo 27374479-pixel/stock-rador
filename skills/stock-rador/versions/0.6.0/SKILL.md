@@ -184,6 +184,110 @@ credible alternatives from here?**
 
 Do not add fixed PE, growth, margin or FCF thresholds learned from historical winners.
 
+
+## V0.6 discovery-coverage contract
+
+V0.6 treats discovery as a separate measurable problem. A perfect verification/selection
+pipeline is still useless if it never sees the important economic change.
+
+### Source lanes
+
+Before research, freeze the actual information lanes covered by the run. Lanes describe
+economic information roles, not preferred brands or sectors:
+
+- `official_primary` — governments, regulators, exchanges and official statistics;
+- `company_first_party` — issuers, customers, suppliers and competitors;
+- `physical_industry` — prices, inventories, utilization, lead times, shipments and capacity;
+- `reputable_news` — attributed reporting useful for early discovery;
+- `specialist_trade` — trade publications and domain specialists;
+- `community_weak_signal` — forums/communities used for weak-signal discovery.
+
+A run may add lanes. Missing access is allowed only when explicitly declared. Coverage must
+never be implied from silence.
+
+### Origin independence
+
+Every raw source item gets an `originGroup`.
+
+Copies derived from the same filing, press release, anonymous source or syndicated report
+share one origin group. Ten reposts are still one origin.
+
+Popularity, mention count and repost count can affect *attention*, but they do not increase
+evidence independence.
+
+### Event clusters
+
+The discovery unit is an economic **event cluster**, not a headline.
+
+The AI groups source items that describe the same underlying state change and records:
+- `eventId`;
+- explicit change statement;
+- first provable availability time;
+- change type;
+- novelty: new / continuation / repeat / uncertain;
+- member source items;
+- independent origin groups;
+- affected value chain;
+- contradiction-search notes;
+- the next research question.
+
+Code verifies membership, timestamps and origin accounting. AI supplies semantic grouping.
+
+Every event cluster must receive exactly one screening decision before deep research.
+
+### Novelty is not alpha
+
+A new or unusually discussed event may deserve investigation, but novelty is not itself a
+buy signal.
+
+Ask:
+- what information changed versus the prior state?
+- is the apparent novelty only repeated coverage?
+- did the physical/economic variable change, or only the narrative?
+- is there an independent first-party/physical confirmation?
+
+Do not promote an event merely because its mention count increased.
+
+### Discovery funnel accounting
+
+Every v0.6 run preserves the full denominator:
+
+`source items → unique origin groups → event clusters → promoted hypotheses → memos →
+High-priority hypotheses → selected companies`
+
+Discovery precision and selection performance must be reported separately.
+
+### Post-outcome missed-opportunity audit
+
+After outcomes exist, run an independent missed-opportunity audit using a case-generation
+rule frozen before reveal.
+
+Each hindsight case is assigned one dominant stage:
+- `detected`
+- `source_universe_miss`
+- `retrieval_miss`
+- `dedup_clustering_miss`
+- `triage_miss`
+- `verification_miss`
+- `value_chain_mapping_miss`
+- `selection_gate_miss`
+- `execution_filtered`
+- `unforeseeable`
+- `not_valid_ex_ante_opportunity`
+
+A case counts as `detectableExAnte` only if pre-cutoff evidence could have supported a
+causal thesis without future knowledge.
+
+`diagnosticRecall = detected / detectableExAnte`
+
+This is a hindsight diagnostic, **not** alpha proof.
+
+The same-period missed cases may diagnose failure classes, but they may not be used to tune
+the reported Skill version and then claim improved recall on that same sample. Any change
+must be tested on a different holdout or future forward sample.
+
+See `DISCOVERY.md` for the full contract.
+
 ## Core separation of responsibilities
 
 **AI = researcher**
