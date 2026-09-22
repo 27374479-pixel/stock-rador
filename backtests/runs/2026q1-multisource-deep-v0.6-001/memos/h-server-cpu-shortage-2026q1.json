@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-02-06T23:59:59+08:00",
+  "researchReadyAt": "2026-02-06T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-server-cpu-shortage-2026q1",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A server-CPU shortage can affect order lead times quickly, but an A-share earnings beneficiary would need substitution or supply-chain share gains over multiple quarters."
+  },
+  "changeHypothesis": {
+    "summary": "Intel/AMD server-CPU lead times and pricing indicated a real bottleneck in China, but the frozen evidence did not establish a clean A-share beneficiary rather than customers harmed by higher component cost and delayed server deliveries.",
+    "firstCredibleDate": "2026-02-06",
+    "valueChain": [
+      "AI infrastructure demand",
+      "server CPU shortage",
+      "server OEM lead time/cost",
+      "possible domestic substitution",
+      "listed-company earnings"
+    ],
+    "persistenceReason": "Reported lead times of weeks to months imply more than a one-day shortage.",
+    "disconfirmingEvidence": [
+      "Only one independent origin supports the event in the frozen pack.",
+      "Direct beneficiaries are primarily foreign CPU vendors.",
+      "A-share server OEMs can be losers if CPU scarcity delays shipment."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-cpu-20260206",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "tf-cpu-20260206",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "AI infrastructure demand",
+      "to": "server CPU shortage",
+      "mechanism": "Demand exceeds available Intel/AMD server CPU supply.",
+      "evidenceRefs": [
+        "reuters-cpu-20260206"
+      ],
+      "failureMode": "Supply normalizes quickly.",
+      "lag": "weeks"
+    },
+    {
+      "from": "CPU shortage",
+      "to": "A-share earnings",
+      "mechanism": "Potential benefit requires verified domestic substitution or pricing power; otherwise OEMs face cost/delivery headwinds.",
+      "evidenceRefs": [
+        "reuters-cpu-20260206"
+      ],
+      "failureMode": "No credible substitution bridge exists.",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "CPU suppliers with available capacity"
+    ],
+    "secondOrderWinners": [
+      "qualified domestic substitutes if real"
+    ],
+    "losers": [
+      "server OEMs unable to secure CPUs"
+    ],
+    "substitutes": [
+      "domestic server CPUs"
+    ],
+    "bottlenecks": [
+      "CPU supply",
+      "qualification"
+    ],
+    "falseThemeMatches": [
+      "generic domestic-computing concepts without verified substitution"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company passed the selection gate at the cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Shortage headlines were fresh, but no company-level A-share expectation baseline was verified.",
+    "thesisExpectation": "The bottleneck matters only if it transfers share or margins to a verified substitute.",
+    "measurableGap": "No verified company-level gap.",
+    "evidenceRefs": [
+      "reuters-cpu-20260206"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No company passed exposure verification.",
+    "alreadyPricedAssessment": "not applicable",
+    "constraints": [
+      "single independent origin",
+      "no verified A-share earnings bridge"
+    ]
+  },
+  "bearCase": "The shortage simply delays downstream shipments and benefits incumbent foreign CPU vendors.",
+  "invalidationConditions": [
+    {
+      "indicator": "server CPU lead times",
+      "observationMethod": "supplier/customer updates",
+      "threshold": "normalization before substitution or pricing effects emerge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical selection results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "verified domestic substitution volumes",
+    "OEM inventory coverage",
+    "customer qualification timing"
+  ],
+  "nextResearchActions": [
+    "Seek first-party evidence from domestic CPU/server firms in a future run.",
+    "Keep No selection unless exposure is verified before outcome reveal."
+  ]
+}
