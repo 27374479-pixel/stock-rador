@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2025q4-multisource-deep-v0.6-002",
+  "evaluationMode": "historical_replay",
+  "softwareReplayOf": "2025q4-multisource-deep-v0.6-001",
+  "softwareChangeOnly": "Partial horizons are marked pending instead of aborting the entire evaluation; research artifacts are unchanged.",
+  "createdAt": "2026-09-22T22:05:00+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/0.6.0/SKILL.md",
+    "version": "0.6.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2025-10-01",
+    "endDate": "2025-12-31"
+  },
+  "screeningPath": "backtests/runs/2025q4-multisource-deep-v0.6-002/screening.json",
+  "implementationPaths": [
+    "scripts/backtest-core.cjs",
+    "scripts/backtest-core-v061.cjs",
+    "scripts/lock-skill-run.cjs",
+    "scripts/fetch-backtest-prices.cjs",
+    "scripts/evaluate-skill-run-v061.cjs",
+    "scripts/discovery-core.cjs",
+    "scripts/audit-discovery-recall.cjs"
+  ],
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/2025q4-multisource-deep-v0.6-002/source-pack.json",
+    "identityStressPath": "backtests/runs/2025q4-multisource-deep-v0.6-002/identity-stress.json",
+    "searchResultFutureLeakageObserved": true,
+    "validationClass": "exploratory_contaminated",
+    "notes": "Software-only replay of frozen Q4 deep research. Historical model/search leakage remains uncontrolled."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedHypothesisStates": [
+    "Research hypothesis",
+    "High-priority hypothesis"
+  ],
+  "trackedSelectionStates": [
+    "No selection",
+    "Research selection",
+    "High-priority selection"
+  ],
+  "primarySelectionStates": [
+    "High-priority selection"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120,
+      240
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "hypothesisMemoPaths": [
+    "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-data-center-electrification-orders-2025q4.json",
+    "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-critical-material-shortage-2025q4.json",
+    "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-china-solar-grid-reacceleration-2025q4.json"
+  ],
+  "selections": [
+    {
+      "memoPath": "backtests/runs/2025q4-multisource-deep-v0.6-001/memos/h-data-center-electrification-orders-2025q4.json",
+      "hypothesisId": "h-data-center-electrification-orders-2025q4",
+      "ticker": "002922.SZ",
+      "limitRate": 0.1
+    }
+  ],
+  "reportingPolicy": {
+    "primaryMetric": "primary_thesis_base_matched_control_excess",
+    "mustReportAllSelections": true,
+    "mustReportMatchedControls": true,
+    "mustReportBestControl": true,
+    "mustReportHypothesisAndSelectionStates": true,
+    "mustReportExpectationBurden": true,
+    "allowPendingUnmaturedHorizons": true,
+    "noSignalIsValid": true
+  },
+  "discoveryPolicy": {
+    "requiredLanes": [
+      "official_primary",
+      "company_first_party",
+      "physical_industry",
+      "reputable_news",
+      "specialist_trade",
+      "community_weak_signal"
+    ],
+    "minimumCoveredLanes": 4,
+    "screeningTarget": "event_cluster",
+    "postOutcomeMissAudit": {
+      "candidateUniverse": "A-share common stocks in the same frozen Stock Rador universe, excluding ST/N and non-executable names under repository rules.",
+      "candidateRule": "After the audit horizon, generate hindsight cases mechanically from the top 1% benchmark-relative 120-trading-day performers plus any stock with >=50% excess return, without hand-picking sectors or names.",
+      "causalEligibilityRule": "A hindsight case counts as detectableExAnte only if at least two pre-cutoff independent origins or one primary plus one independent corroborating source could have supported a causal economic thesis before the move.",
+      "samePeriodMayTuneSkill": false
+    }
+  }
+}
