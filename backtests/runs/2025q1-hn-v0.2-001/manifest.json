@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025q1-hn-v0.2-001",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-22T12:32:00.000Z",
+  "skill": {
+    "path": "skills/stock-rador/SKILL.md",
+    "version": "0.2.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2025-01-01",
+    "endDate": "2025-03-31"
+  },
+  "screeningPath": "backtests/runs/2025q1-hn-v0.2-001/screening.json",
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/2025q1-hn-v0.2-001/source-pack.json",
+    "notes": "Historical replay. Discovery was time-bounded and sector-agnostic, but model parameters may encode post-cutoff knowledge. Treat outcome as provisional until replicated on a new holdout and forward sample."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "eligibleMemoStates": [
+    "Research",
+    "High-priority research"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60
+    ],
+    "oneWayCostRate": 0.001
+  },
+  "selections": [
+    {
+      "memoPath": "backtests/runs/2025q1-hn-v0.2-001/memos/h-ai-optical-2025q1.json",
+      "hypothesisId": "h-ai-optical-2025q1",
+      "ticker": "300308.SZ",
+      "limitRate": 0.2
+    },
+    {
+      "memoPath": "backtests/runs/2025q1-hn-v0.2-001/memos/h-ai-optical-2025q1.json",
+      "hypothesisId": "h-ai-optical-2025q1",
+      "ticker": "300502.SZ",
+      "limitRate": 0.2
+    },
+    {
+      "memoPath": "backtests/runs/2025q1-hn-v0.2-001/memos/h-eu-storage-2025q1.json",
+      "hypothesisId": "h-eu-storage-2025q1",
+      "ticker": "300274.SZ",
+      "limitRate": 0.2
+    }
+  ],
+  "reportingPolicy": {
+    "primaryMetric": "60d_mean_excess_return",
+    "mustReportAllSelections": true,
+    "mustReportBlockedEntries": true,
+    "mustRetainFailures": true,
+    "interpretation": "Price results are outcomes, not causal proof. Qualitative thesis validation is scored separately."
+  }
+}
