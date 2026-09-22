@@ -3,21 +3,30 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 0.5.0
+## Current version: 0.6.0
 
-- [SKILL.md](versions/0.5.0/SKILL.md)
-- [EVALS.md](versions/0.5.0/EVALS.md)
-- [opportunity-memo.template.json](versions/0.5.0/opportunity-memo.template.json)
-- [backtest-manifest.template.json](versions/0.5.0/backtest-manifest.template.json)
+- [SKILL.md](versions/0.6.0/SKILL.md)
+- [EVALS.md](versions/0.6.0/EVALS.md)
+- [DISCOVERY.md](versions/0.6.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/0.6.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/0.6.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/0.6.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/0.6.0/missed-opportunity-audit.template.json)
 
-V0.5 separates:
-- opportunity/hypothesis quality;
-- stock-selection quality.
+V0.6 keeps the v0.5 two-gate opportunity/selection discipline and adds a separate discovery layer:
+- multi-source lane coverage;
+- origin-level de-duplication;
+- economic event clustering;
+- expectation-burden / breakeven checks;
+- pre-registered missed-opportunity auditing.
 
 A strong industry thesis is allowed to produce no actionable stock. High-priority company
 selection requires a pre-reveal cross-sectional edge versus frozen peers/near-misses.
 
 ## Earlier versions
+
+### 0.5.0
+Separated opportunity/hypothesis quality from stock-selection quality, added best-control comparison and forward-frozen source-pack locking.
 
 ### 0.4.0
 Added per-item screening decisions, matched controls, rank/percentile evaluation, identity
