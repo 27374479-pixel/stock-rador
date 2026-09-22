@@ -173,3 +173,167 @@ test('high-priority memo without matched controls fails v0.4 validation', () => 
 test('round-trip costs are multiplicative', () => {
   assert.equal(returnAfterCost(100, 110, 0.001), 1.1 * 0.999 / 1.001 - 1);
 });
+
+
+function manifestV5() {
+  return {
+    schemaVersion: '1.2',
+    runId: 'demo-v5',
+    evaluationMode: 'historical_replay',
+    createdAt: '2026-09-22T14:00:00.000Z',
+    skill: { path: 'skills/SKILL.md', version: '0.5.0' },
+    model: { name: 'test-model', reasoning: 'high' },
+    screeningPath: 'screening.json',
+    implementationPaths: ['impl.js'],
+    discoveryWindow: { startDate: '2024-01-01', endDate: '2024-12-31' },
+    contaminationControls: {
+      modelMemoryRisk: 'known_uncontrolled',
+      sourcePackPath: 'sources.json',
+      identityStressPath: 'identity.json'
+    },
+    benchmark: { ticker: '000300.SH', name: '沪深300' },
+    trackedHypothesisStates: ['Research hypothesis', 'High-priority hypothesis'],
+    trackedSelectionStates: ['No selection', 'Research selection', 'High-priority selection'],
+    primarySelectionStates: ['High-priority selection'],
+    outcomePolicy: {
+      entryRule: 'next_trading_day_open_after_cutoff_date',
+      holdingTradingDays: [2],
+      oneWayCostRate: 0.001,
+      matchedControlStatistic: 'equal_weight_mean'
+    },
+    selections: [{ memoPath: 'memo.json', hypothesisId: 'h1', ticker: '000001.SZ', limitRate: 0.10 }]
+  };
+}
+
+function memoV5(selectionState = 'High-priority selection') {
+  const primary = selectionState === 'High-priority selection';
+  return {
+    schemaVersion: '0.4',
+    skillVersion: '0.5.0',
+    cutoffAt: '2024-01-02T15:00:00.000+08:00',
+    researchReadyAt: '2024-01-02T14:00:00.000+08:00',
+    actionableAt: primary ? '2024-01-02T14:30:00.000+08:00' : null,
+    hypothesisId: 'h1',
+    hypothesisState: 'High-priority hypothesis',
+    selectionState,
+    expectedRealization: {
+      earliestTradingDays: 1,
+      baseTradingDays: 2,
+      latestTradingDays: 2,
+      rationale: 'test'
+    },
+    aShareCandidates: [{ ticker: '000001.SZ', name: 'Selected' }],
+    matchedControls: [
+      {
+        ticker: '000002.SZ',
+        name: 'Control A',
+        controlType: 'peer',
+        fairCounterfactualReason: 'same industry',
+        whySelectedCompanyShouldOutperform: 'stronger earnings sensitivity',
+        evidenceRefs: ['e1']
+      },
+      {
+        ticker: '000003.SZ',
+        name: 'Control B',
+        controlType: 'near_miss',
+        fairCounterfactualReason: 'same thesis',
+        whySelectedCompanyShouldOutperform: 'less saturated expectations',
+        evidenceRefs: ['e2']
+      }
+    ],
+    selectionComparison: {
+      selectedTicker: '000001.SZ',
+      pairwise: [
+        {
+          controlTicker: '000002.SZ',
+          selectedAdvantages: ['stronger earnings sensitivity'],
+          selectedDisadvantages: ['higher valuation'],
+          netEdge: primary ? 'selected' : 'mixed',
+          evidenceRefs: ['e1']
+        },
+        {
+          controlTicker: '000003.SZ',
+          selectedAdvantages: ['less saturated expectations'],
+          selectedDisadvantages: ['weaker balance sheet'],
+          netEdge: primary ? 'mixed' : 'mixed',
+          evidenceRefs: ['e2']
+        }
+      ],
+      selectionEdgeConclusion: primary ? 'credible' : 'mixed',
+      rationale: primary ? 'selected has a credible price-relative edge' : 'company ranking remains mixed'
+    }
+  };
+}
+
+function writeV5Run(root, memoValue) {
+  fs.mkdirSync(path.join(root, 'skills'));
+  fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
+  fs.writeFileSync(path.join(root, 'sources.json'), '{}');
+  fs.writeFileSync(path.join(root, 'screening.json'), JSON.stringify({
+    runId: 'demo-v5',
+    reviewItemCount: 1,
+    reviewDecisions: [{ itemId: 'x1', decision: 'promote', reasonCode: 'economic_change', rationale: 'test' }]
+  }));
+  fs.writeFileSync(path.join(root, 'identity.json'), JSON.stringify({
+    runId: 'demo-v5',
+    status: 'passed',
+    performedBeforeReveal: true,
+    method: 'masked test'
+  }));
+  fs.writeFileSync(path.join(root, 'impl.js'), 'implementation');
+  fs.writeFileSync(path.join(root, 'memo.json'), JSON.stringify(memoValue));
+  fs.writeFileSync(path.join(root, 'manifest.json'), JSON.stringify(manifestV5()));
+}
+
+test('v0.5 manifest accepts separate hypothesis and selection state machines', () => {
+  assert.deepEqual(validateManifest(manifestV5()), []);
+});
+
+test('v0.5 high-priority selection requires a credible pairwise edge and enters primary metric', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v5-'));
+  const item = memoV5('High-priority selection');
+  writeV5Run(root, item);
+  const lock = lockRun(path.join(root, 'manifest.json'), root);
+  assert.equal(lock.candidateCount, 1);
+
+  const evaluated = evaluateRun(manifestV5(), { 'memo.json': item }, prices());
+  const result = evaluated.results[0];
+  assert.equal(result.hypothesisState, 'High-priority hypothesis');
+  assert.equal(result.selectionState, 'High-priority selection');
+  assert.equal(result.isPrimarySignal, true);
+  assert.equal(result.thesisBaseOutcome.bestControlTicker, '000002.SZ');
+  assert.ok(result.thesisBaseOutcome.excessVsBestControl > 0);
+  assert.equal(result.thesisBaseOutcome.winsAllControls, true);
+  assert.equal(evaluated.aggregate.primaryThesisBase.winsAllControlsRate, 1);
+});
+
+test('v0.5 mixed company ranking stays research selection even when hypothesis is high-priority', () => {
+  const item = memoV5('Research selection');
+  const evaluated = evaluateRun(manifestV5(), { 'memo.json': item }, prices());
+  assert.equal(evaluated.results[0].hypothesisState, 'High-priority hypothesis');
+  assert.equal(evaluated.results[0].selectionState, 'Research selection');
+  assert.equal(evaluated.results[0].isPrimarySignal, false);
+  assert.equal(evaluated.aggregate.primaryThesisBase.count, 0);
+});
+
+test('v0.5 rejects high-priority selection when overall edge is mixed', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v5-mixed-'));
+  const item = memoV5('High-priority selection');
+  item.selectionComparison.selectionEdgeConclusion = 'mixed';
+  writeV5Run(root, item);
+  assert.throws(
+    () => lockRun(path.join(root, 'manifest.json'), root),
+    /High-priority selection requires clear or credible selection edge/
+  );
+});
+
+test('v0.5 rejects high-priority selection when a frozen control has the pairwise edge', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v5-control-'));
+  const item = memoV5('High-priority selection');
+  item.selectionComparison.pairwise[1].netEdge = 'control';
+  writeV5Run(root, item);
+  assert.throws(
+    () => lockRun(path.join(root, 'manifest.json'), root),
+    /cannot have control\/insufficient pairwise edge/
+  );
+});
