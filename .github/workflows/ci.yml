@@ -183,3 +183,20 @@ jobs:
             research/skill_v32_2025_06_outcomes.json
             research/skill_v32_2025_06_outcomes.md
           if-no-files-found: error
+
+
+  prefreeze-skill-v32-2025-09:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/prefreeze-skill-v32-window-2025-09.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skill-v32-2025-09-prefreeze
+          path: research/skill_v32_2025_09_prefreeze.json
+          if-no-files-found: error
