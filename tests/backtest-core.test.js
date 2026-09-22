@@ -201,6 +201,7 @@ function manifestV5() {
       oneWayCostRate: 0.001,
       matchedControlStatistic: 'equal_weight_mean'
     },
+    hypothesisMemoPaths: ['memo.json'],
     selections: [{ memoPath: 'memo.json', hypothesisId: 'h1', ticker: '000001.SZ', limitRate: 0.10 }]
   };
 }
@@ -336,4 +337,60 @@ test('v0.5 rejects high-priority selection when a frozen control has the pairwis
     () => lockRun(path.join(root, 'manifest.json'), root),
     /cannot have control\/insufficient pairwise edge/
   );
+});
+
+
+test('v0.5 locks high-priority hypothesis with no stock selection', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-v5-noselection-'));
+  const item = memoV5('Research selection');
+  item.selectionState = 'No selection';
+  item.actionableAt = null;
+  item.aShareCandidates = [];
+  item.matchedControls = [];
+  item.matchedControlException = null;
+  item.selectionComparison = {
+    selectedTicker: null,
+    pairwise: [],
+    selectionEdgeConclusion: 'insufficient',
+    rationale: 'Opportunity is strong, but no company has a defensible cross-sectional edge.'
+  };
+
+  const manifestItem = manifestV5();
+  manifestItem.selections = [];
+  manifestItem.hypothesisMemoPaths = ['memo.json'];
+
+  fs.mkdirSync(path.join(root, 'skills'));
+  fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
+  fs.writeFileSync(path.join(root, 'sources.json'), '{}');
+  fs.writeFileSync(path.join(root, 'screening.json'), JSON.stringify({
+    runId: 'demo-v5',
+    reviewItemCount: 1,
+    reviewDecisions: [{ itemId: 'x1', decision: 'promote', reasonCode: 'economic_change', rationale: 'test' }]
+  }));
+  fs.writeFileSync(path.join(root, 'identity.json'), JSON.stringify({
+    runId: 'demo-v5',
+    status: 'passed',
+    performedBeforeReveal: true,
+    method: 'masked test'
+  }));
+  fs.writeFileSync(path.join(root, 'impl.js'), 'implementation');
+  fs.writeFileSync(path.join(root, 'memo.json'), JSON.stringify(item));
+  fs.writeFileSync(path.join(root, 'manifest.json'), JSON.stringify(manifestItem));
+
+  const lock = lockRun(path.join(root, 'manifest.json'), root);
+  assert.equal(lock.candidateCount, 0);
+  assert.ok(lock.files.some((file) => file.role === 'memo' && file.path === 'memo.json'));
+
+  const evaluated = evaluateRun(manifestItem, { 'memo.json': item }, prices());
+  assert.equal(evaluated.hypothesisMemoSummary.count, 1);
+  assert.equal(evaluated.hypothesisMemoSummary.highPriorityHypothesisCount, 1);
+  assert.equal(evaluated.hypothesisMemoSummary.noSelectionCount, 1);
+  assert.equal(evaluated.results.length, 0);
+  assert.equal(evaluated.aggregate.primaryThesisBase.count, 0);
+});
+
+test('v0.5 manifest requires every selected memo to be included in hypothesisMemoPaths', () => {
+  const item = manifestV5();
+  item.hypothesisMemoPaths = [];
+  assert.ok(validateManifest(item).some((error) => error.includes('included in hypothesisMemoPaths')));
 });
