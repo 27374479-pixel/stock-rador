@@ -161,6 +161,75 @@ function validateIdentityStress(stress, manifest) {
   return errors;
 }
 
+function collectEvidenceRefs(value, refs = new Set()) {
+  if (Array.isArray(value)) {
+    for (const item of value) collectEvidenceRefs(item, refs);
+    return refs;
+  }
+  if (!value || typeof value !== 'object') return refs;
+  if (Array.isArray(value.evidenceRefs)) {
+    for (const id of value.evidenceRefs) {
+      if (typeof id === 'string' && id) refs.add(id);
+    }
+  }
+  for (const [key, child] of Object.entries(value)) {
+    if (key === 'evidenceRefs' || key === 'evidenceLedger') continue;
+    collectEvidenceRefs(child, refs);
+  }
+  return refs;
+}
+
+function validateMemoEvidenceRefs(memo, memoPath, sourcePack) {
+  const errors = [];
+  const reviewItems = Array.isArray(sourcePack?.reviewItems) ? sourcePack.reviewItems : [];
+  const evidenceDocuments = Array.isArray(sourcePack?.evidenceDocuments) ? sourcePack.evidenceDocuments : [];
+  const sources = new Map();
+
+  for (const item of reviewItems) {
+    const id = item?.itemId ?? item?.id;
+    if (!id) continue;
+    if (sources.has(id)) errors.push(`source pack duplicates evidence id ${id}`);
+    sources.set(id, { ...item, sourcePackRef: 'reviewItems' });
+  }
+  for (const item of evidenceDocuments) {
+    const id = item?.id ?? item?.itemId;
+    if (!id) continue;
+    if (sources.has(id)) errors.push(`source pack duplicates evidence id ${id}`);
+    sources.set(id, { ...item, sourcePackRef: 'evidenceDocuments' });
+  }
+
+  const ledger = Array.isArray(memo?.evidenceLedger) ? memo.evidenceLedger : [];
+  const ledgerIds = new Set();
+  for (const entry of ledger) {
+    if (typeof entry?.id !== 'string' || !entry.id) {
+      errors.push(`${memoPath} evidenceLedger entry requires id`);
+      continue;
+    }
+    if (ledgerIds.has(entry.id)) errors.push(`${memoPath} duplicates evidenceLedger id ${entry.id}`);
+    ledgerIds.add(entry.id);
+    const source = sources.get(entry.id);
+    if (!source) {
+      errors.push(`${memoPath} evidence ${entry.id} is missing from frozen source pack`);
+      continue;
+    }
+    if (entry.sourcePackRef && entry.sourcePackRef !== source.sourcePackRef) {
+      errors.push(`${memoPath} evidence ${entry.id} sourcePackRef should be ${source.sourcePackRef}`);
+    }
+    const available = source.availableAt ?? source.publishedAt ?? source.date;
+    if (available && memo?.cutoffAt && Date.parse(available) > Date.parse(memo.cutoffAt)) {
+      errors.push(`${memoPath} evidence ${entry.id} is post-cutoff (${available})`);
+    }
+  }
+
+  const nestedRefs = collectEvidenceRefs(memo);
+  for (const id of nestedRefs) {
+    if (!ledgerIds.has(id)) errors.push(`${memoPath} evidenceRef ${id} is not declared in evidenceLedger`);
+    if (!sources.has(id)) errors.push(`${memoPath} evidenceRef ${id} is missing from frozen source pack`);
+  }
+
+  return errors;
+}
+
 function validateOpportunityMemo(memo, memoPath, manifest) {
   const errors = [];
   if (manifest?.schemaVersion !== '1.2') return errors;
@@ -374,8 +443,10 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
     files.push({ role: 'implementation', path: implementationPath, sha256: sha256File(absoluteImplementation) });
   }
 
+  let sourcePack = null;
   if (manifest?.contaminationControls?.sourcePackPath) {
     const sourcePackPath = resolveInside(root, manifest.contaminationControls.sourcePackPath);
+    sourcePack = readJson(sourcePackPath);
     files.push({ role: 'source_pack', path: manifest.contaminationControls.sourcePackPath, sha256: sha256File(sourcePackPath) });
   }
   if (manifest.evaluationMode === 'historical_replay' && ['1.1', '1.2'].includes(manifest.schemaVersion)) {
@@ -394,7 +465,9 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
       const memoPath = resolveInside(root, memoRelativePath);
       const memo = readJson(memoPath);
       const memoErrors = validateOpportunityMemo(memo, memoRelativePath, manifest);
-      if (memoErrors.length) throw new Error(`invalid opportunity memo:\n- ${memoErrors.join('\n- ')}`);
+      const evidenceErrors = validateMemoEvidenceRefs(memo, memoRelativePath, sourcePack);
+      const allMemoErrors = [...memoErrors, ...evidenceErrors];
+      if (allMemoErrors.length) throw new Error(`invalid opportunity memo:\n- ${allMemoErrors.join('\n- ')}`);
       if (seenHypothesisIds.has(memo.hypothesisId)) throw new Error(`duplicate hypothesisId across memos: ${memo.hypothesisId}`);
       seenHypothesisIds.add(memo.hypothesisId);
       files.push({ role: 'memo', path: memoRelativePath, sha256: sha256File(memoPath) });
@@ -802,6 +875,7 @@ module.exports = {
   returnAfterCost,
   sha256File,
   validateManifest,
+  validateMemoEvidenceRefs,
   validateOpportunityMemo,
   validateScreening,
   validateIdentityStress,
