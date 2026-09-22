@@ -12,7 +12,8 @@ from pathlib import Path
 from openpyxl import load_workbook
 
 SSE_URL = "https://query.sse.com.cn/sseQuery/commonQuery.do"
-SZSE_URL = "https://www.szse.cn/api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1110&TABKEY=tab1&random=0.6935816432433362"
+SZSE_URL = "https://www.szse.cn/api/report/ShowReport/data"
+SZSE_XLSX_URL = "https://www.szse.cn/api/report/ShowReport?SHOWTYPE=xlsx&CATALOGID=1110&TABKEY=tab1&random=0.6935816432433362"
 
 UA = "Mozilla/5.0 stock-rador-audit-universe/0.6"
 MAIN_SH = ("600", "601", "603", "605")
@@ -139,6 +140,69 @@ def likely_name(value):
         return False
     return len(text) <= 40
 
+def _first_szse_table(payload):
+    if isinstance(payload, list) and payload and isinstance(payload[0], dict):
+        return payload[0]
+    if isinstance(payload, dict):
+        return payload
+    raise RuntimeError("unexpected SZSE JSON response format")
+
+def fetch_szse_a():
+    headers = {
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Referer": "https://www.szse.cn/market/product/stock/list/index.html",
+        "User-Agent": UA,
+    }
+    rows = []
+    seen = set()
+    page_no = 1
+    page_count = 1
+    max_attempts = 1
+    while page_no <= page_count:
+        params = {
+            "SHOWTYPE": "JSON",
+            "CATALOGID": "1110",
+            "TABKEY": "tab1",
+            "PAGENO": str(page_no),
+            "PAGESIZE": "100",
+            "random": f"{time.time():.6f}",
+        }
+        payload, attempts, _ = http_json(SZSE_URL, params, headers)
+        max_attempts = max(max_attempts, attempts)
+        table = _first_szse_table(payload)
+        metadata = table.get("metadata") or {}
+        try:
+            page_count = max(1, int(metadata.get("pagecount") or 1))
+        except (TypeError, ValueError):
+            page_count = 1
+        data = table.get("data") or []
+        if not isinstance(data, list):
+            raise RuntimeError(f"unexpected SZSE page {page_no} data shape")
+        if not data and page_no <= page_count:
+            raise RuntimeError(f"unexpected empty SZSE page {page_no}/{page_count}")
+        for row in data:
+            if not isinstance(row, dict):
+                continue
+            code = clean_text(row.get("agdm"))
+            name = re.sub(r"<[^>]+>", "", clean_text(row.get("agjc")))
+            if not re.fullmatch(r"\d{6}", code) or not name:
+                continue
+            if code in seen:
+                raise RuntimeError(f"duplicate SZSE code across pages: {code}")
+            seen.add(code)
+            rows.append({
+                "code": code,
+                "name": name,
+                "exchange": "SZ",
+                "marketCode": 0,
+                "board": board_for(code),
+                "szseBoard": clean_text(row.get("bk")),
+            })
+        page_no += 1
+    if len(rows) < 2000:
+        raise RuntimeError(f"unexpected SZSE JSON parsed count: {len(rows)}")
+    return rows, max_attempts, page_count
+
 def debug_workbook(xlsx_bytes, label):
     wb = load_workbook(io.BytesIO(xlsx_bytes), read_only=True, data_only=True)
     print(f"[debug] {label} sheets={wb.sheetnames}")
@@ -217,12 +281,20 @@ def main():
         raise RuntimeError(f"refusing to overwrite existing universe {output}")
 
     sse, sse_attempts, sse_query_url = fetch_sse_main()
-    szse_bytes, szse_attempts = http_bytes(SZSE_URL, "https://www.szse.cn/market/product/stock/list/index.html")
-
-    szse = extract_rows(szse_bytes, "SZ")
-    if len(szse) < 2000:
-        debug_workbook(szse_bytes, "SZSE")
-        raise RuntimeError(f"unexpected SZSE parsed count: {len(szse)}")
+    try:
+        szse, szse_attempts, szse_page_count = fetch_szse_a()
+        szse_source_url = SZSE_URL
+        szse_source_mode = "json_paged"
+    except Exception as json_error:
+        # Fall back to the official XLSX export only if the JSON report API fails.
+        szse_bytes, szse_attempts = http_bytes(SZSE_XLSX_URL, "https://www.szse.cn/market/product/stock/list/index.html")
+        szse = extract_rows(szse_bytes, "SZ")
+        szse_page_count = 1
+        szse_source_url = SZSE_XLSX_URL
+        szse_source_mode = "xlsx_fallback"
+        if len(szse) < 2000:
+            debug_workbook(szse_bytes, "SZSE")
+            raise RuntimeError(f"SZSE JSON failed ({json_error}); XLSX fallback parsed only {len(szse)} rows")
 
     all_items = sse + szse
     seen = set()
@@ -256,7 +328,7 @@ def main():
             "retrievedAt": now,
             "files": [
                 {"exchange": "SH", "url": sse_query_url, "parsedCount": len(sse), "attempts": sse_attempts},
-                {"exchange": "SZ", "url": SZSE_URL, "parsedCount": len(szse), "attempts": szse_attempts},
+                {"exchange": "SZ", "url": szse_source_url, "mode": szse_source_mode, "parsedCount": len(szse), "attempts": szse_attempts, "pageCount": szse_page_count},
             ],
         },
         "inclusionRule": {
