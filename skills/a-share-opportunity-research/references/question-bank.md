@@ -154,3 +154,23 @@ Origin: 2024-03 copper-concentrate squeeze.
 - Is a long holding period accidentally converting a correct short-lived signal into mediocre excess return?
 
 Status: **experimental**. One Skill V3 consumed window so far. This is a research question, not a new exit rule.
+
+
+### X5 — Reference-price basis reconciliation
+Origin: 2024-06 hog margin miss.
+- Is the external price indicator the same geography, grade, weight, transaction stage and timing basis as the company's realized ASP?
+- Does the company disclose its own realized price near the cutoff?
+- What historical basis/spread exists between the external indicator and company realization?
+- Can the external price move be captured by the company, or is it absorbed by traders/slaughterhouses/channels?
+
+Status: **promoted into V3.1 core process** because this is a universal measurement-validity requirement, not a fitted stock-selection threshold.
+
+### X6 — Point-in-time valuation / expectation bridge
+Origin: 2024-06 hog margin miss and earlier price-attractiveness ambiguity.
+- Convert the operating thesis into a rough sustainable earnings/cash-flow range using only cutoff-known inputs.
+- Use company-specific realized price, sustainable volume and normalized margin rather than a one-day peak spread.
+- Compare bear/base/upside earnings with current market cap / enterprise value.
+- Ask what earnings level and duration the current price appears to require.
+- If this bridge cannot be built with enough confidence, why is the stock more than Watch?
+
+Status: **promoted into V3.1 core process** as a universal answer to "is the stock actually cheap enough?", not as a numerical valuation threshold.
