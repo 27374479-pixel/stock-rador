@@ -13,12 +13,12 @@ This ledger prevents accidental reuse of viewed outcomes as untouched validation
 | 2024-12 fixed window | Skill V3.2 | consumed | transformer: 伊戈尔 Candidate; antimony/enterprise SSD: NO TRADE | 伊戈尔 excess +13.1% 20d, +14.4% 60d, -2.0% 120d, +76.3% 250d |
 | 2025-03 fixed window | Skill V3.2 | consumed | AI/server: 深南电路 Candidate; steel/cobalt: NO TRADE | 深南电路 excess -10.9% 20d, +0.4% 60d, +75.9% 120d, +135.0% 250d |
 | 2025-06 fixed window | Skill V3.2 | consumed | transpacific frontload: 中远海控 Candidate; rare-earth/PV: NO TRADE | 中远海控 excess -1.5% 20d, -14.1% 60d, -13.2% 120d, -30.2% 250d |
+| 2025-09 fixed window | Skill V3.2 | consumed | refrigerants: 三美股份 Candidate; Grasberg/soybean: NO TRADE | 三美 excess -6.9% 20d, -1.8% 60d, +17.0% 120d, -7.4% 250d |
 
 ## Current untouched queue
 
 The original 2022–2024 fixed-window validation queue is fully consumed. V3.2 remains frozen for a new extension set:
 
-- 2025-09-01 through 2025-09-14
 - 2025-12-01 through 2025-12-14
 
 These extension windows are retrospective and retain the same caveat about historical search visibility. No outcome may be opened before each selection lock is committed.
@@ -27,7 +27,7 @@ These extension windows are retrospective and retain the same caveat about histo
 
 Future windows must reject these tickers before scoring because their post-signal paths have already been inspected in a consumed set:
 
-`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH, 301211.SZ, 603019.SH, 000977.SZ, 002837.SZ, 301018.SZ, 002335.SZ, 300394.SZ, 603083.SH, 300870.SZ, 002851.SZ, 002364.SZ, 002518.SZ, 002463.SZ, 300045.SZ, 301308.SZ, 688525.SH, 001309.SZ, 603993.SH, 002714.SZ, 601600.SH, 002922.SZ, 002916.SZ, 601919.SH`
+`688676.SH, 601179.SH, 600089.SH, 002028.SZ, 300308.SZ, 300502.SZ, 002281.SZ, 300327.SZ, 688595.SH, 603986.SH, 603416.SH, 300124.SZ, 000893.SZ, 600096.SH, 000921.SZ, 000333.SZ, 002050.SZ, 002543.SZ, 603366.SH, 301211.SZ, 603019.SH, 000977.SZ, 002837.SZ, 301018.SZ, 002335.SZ, 300394.SZ, 603083.SH, 300870.SZ, 002851.SZ, 002364.SZ, 002518.SZ, 002463.SZ, 300045.SZ, 301308.SZ, 688525.SH, 001309.SZ, 603993.SH, 002714.SZ, 601600.SH, 002922.SZ, 002916.SZ, 601919.SH, 603379.SH`
 
 The quarantine is procedural, not a statement about those companies. It prevents known future paths from leaking into later historical selections.
 
@@ -92,3 +92,8 @@ The first skill-first window selected 洛阳钼业 on a newly escalated copper-c
 ## 2025-06 V3.2 event-freshness note
 
 中远海控 was selected for a predeclared 20–60 trading-day event-repricing thesis after a transpacific frontload/rate surge. It produced -1.5% 20-day and -14.1% 60-day excess, so the miss occurred inside the intended horizon and is not a holding-period classification error. The event was real, but the causal mechanism had been discussed weeks earlier, spot rates had already surged, and the stock had already rerated strongly. This creates an Experimental question around **catalyst freshness / marginal information**: distinguish a dramatic real-world print from information that is actually new to expectations. 金力永磁 remains unquarantined because its future was not opened.
+
+
+## 2025-09 V3.2 structural-regime vs surprise note
+
+三美股份 was selected as a structural refrigerant-quota thesis and produced +17.0% excess at 120 trading days but -7.4% at 250 days. Later company data showed the physical quota/price regime remained supportive while earnings growth decelerated materially by 2026H1. This creates a forward process requirement to distinguish **causal regime persistence** from **incremental earnings-surprise persistence** through locked re-underwriting checkpoints. 巨化股份 remains unquarantined because its post-signal path was not opened.
