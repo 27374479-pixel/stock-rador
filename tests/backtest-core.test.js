@@ -13,6 +13,7 @@ function manifest() {
     createdAt: '2026-09-22T12:00:00.000Z',
     skill: { path: 'skills/SKILL.md', version: '0.2.0' },
     model: { name: 'test-model', reasoning: 'high' },
+    screeningPath: 'screening.json',
     discoveryWindow: { startDate: '2024-01-01', endDate: '2024-12-31' },
     contaminationControls: { modelMemoryRisk: 'known_uncontrolled', sourcePackPath: 'sources.json' },
     benchmark: { ticker: '000300.SH', name: '沪深300' },
@@ -53,16 +54,18 @@ test('historical manifests require explicit contamination controls', () => {
   assert.ok(validateManifest(item).some((error) => error.includes('sourcePackPath')));
 });
 
-test('run lock hashes skill, source pack, manifest and memo and detects mutation', () => {
+test('run lock hashes screening, skill, source pack, manifest and memo and detects mutation', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'stock-rador-'));
   fs.mkdirSync(path.join(root, 'skills'));
   fs.writeFileSync(path.join(root, 'skills', 'SKILL.md'), 'skill');
   fs.writeFileSync(path.join(root, 'sources.json'), '{}');
+  fs.writeFileSync(path.join(root, 'screening.json'), '{}');
   fs.writeFileSync(path.join(root, 'memo.json'), JSON.stringify(memo()));
   fs.writeFileSync(path.join(root, 'manifest.json'), JSON.stringify(manifest()));
   const lock = lockRun(path.join(root, 'manifest.json'), root);
   assert.equal(lock.candidateCount, 1);
   assert.equal(verifyLock(lock, root).length, 0);
+  assert.ok(lock.files.some((file) => file.role === 'screening'));
   fs.appendFileSync(path.join(root, 'memo.json'), '\n');
   assert.ok(verifyLock(lock, root).some((item) => item.includes('memo.json')));
 });
