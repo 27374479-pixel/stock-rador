@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2025-12-31T23:59:59+08:00",
+  "researchReadyAt": "2025-12-01T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-critical-material-shortage-2025q4",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Critical-material shortages can reprice quickly, but company earnings transmission should appear within one or two quarters."
+  },
+  "changeHypothesis": {
+    "summary": "Germanium/rare-earth and related input shortages worsened in Q4 2025, but the obvious A-share upstream names did not show clean contemporaneous profit conversion, so the physical shortage is stronger than the investable mapping.",
+    "firstCredibleDate": "2025-10-20",
+    "valueChain": [
+      "export/trade restrictions and tight material availability",
+      "higher material scarcity/prices",
+      "upstream producer realization",
+      "company profit"
+    ],
+    "persistenceReason": "Reuters/LME Week reporting and two ifo survey readings independently showed worsening availability constraints across metals/electronics.",
+    "disconfirmingEvidence": [
+      "Downstream manufacturers can substitute, redesign or reduce demand.",
+      "A producer may have revenue exposure without incremental profit because of costs, mix or weak other metals.",
+      "Corporate structure/asset changes can dilute direct commodity exposure."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-lme-20251020",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Industry participants described germanium availability as extremely tight."
+    },
+    {
+      "id": "ifo-shortage-20251029",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "German electronics/optical manufacturers reported rising material bottlenecks."
+    },
+    {
+      "id": "ifo-shortage-20251201",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Material shortages broadened further by December."
+    },
+    {
+      "id": "yunnan-ge-q3-20251031",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "云南锗业 revenue rose sharply but Q3 profit was negative and YTD profit fell."
+    },
+    {
+      "id": "chihong-q3-20251025",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "驰宏锌锗 revenue rose but Q3 and YTD profit declined."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "critical-material shortage",
+      "to": "higher upstream realization",
+      "mechanism": "Scarcity can raise prices and bargaining power for qualified upstream suppliers.",
+      "evidenceRefs": [
+        "reuters-lme-20251020",
+        "ifo-shortage-20251029",
+        "ifo-shortage-20251201"
+      ],
+      "failureMode": "Substitution, policy relaxation or demand destruction limits price realization.",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "higher realization",
+      "to": "A-share earnings",
+      "mechanism": "Only companies with material, retained upstream exposure and cost discipline should benefit.",
+      "evidenceRefs": [
+        "yunnan-ge-q3-20251031",
+        "chihong-q3-20251025"
+      ],
+      "failureMode": "Other business weakness, costs or corporate structure overwhelm the commodity benefit.",
+      "lag": "one to two quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "upstream germanium/rare-earth producers with retained exposure"
+    ],
+    "secondOrderWinners": [
+      "recyclers/substitute-material suppliers"
+    ],
+    "losers": [
+      "electronics/optical manufacturers facing input scarcity"
+    ],
+    "substitutes": [
+      "material substitution",
+      "recycling",
+      "redesign"
+    ],
+    "bottlenecks": [
+      "export approvals",
+      "refining capacity",
+      "qualified high-purity material"
+    ],
+    "falseThemeMatches": [
+      "companies with minor germanium labels but immaterial profit exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002428.SZ",
+      "name": "云南锗业",
+      "verifiedExposure": "Direct germanium exposure but weak Q3/YTD profit conversion.",
+      "evidenceRefs": [
+        "yunnan-ge-q3-20251031"
+      ],
+      "earningsSensitivity": {
+        "base": "Revenue exposure exists but profit conversion is weak.",
+        "favorable": "Scarcity persists and realized prices finally expand margins.",
+        "adverse": "Costs/mix/operations continue to offset price strength."
+      },
+      "principalRisks": [
+        "weak profit conversion",
+        "operating costs",
+        "valuation/narrative risk"
+      ]
+    },
+    {
+      "ticker": "600497.SH",
+      "name": "驰宏锌锗",
+      "verifiedExposure": "Germanium exposure exists inside a broader lead/zinc business, but Q3/YTD profit fell.",
+      "evidenceRefs": [
+        "chihong-q3-20251025"
+      ],
+      "earningsSensitivity": {
+        "base": "Germanium is not dominant enough to overcome broader business weakness.",
+        "favorable": "Germanium economics become more material.",
+        "adverse": "Lead/zinc weakness and other operations dominate."
+      },
+      "principalRisks": [
+        "exposure dilution",
+        "other-metal cyclicality",
+        "corporate structure"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Physical shortage is clear, but no company has a sufficiently clean and material earnings bridge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The critical-material scarcity narrative was visible, but company-level earnings evidence was inconsistent.",
+    "thesisExpectation": "Upstream scarcity should eventually help the right producer, but the listed-company bridge is not yet proven.",
+    "measurableGap": "No auditable company-specific expectation gap is established.",
+    "evidenceRefs": [
+      "reuters-lme-20251020",
+      "yunnan-ge-q3-20251031",
+      "chihong-q3-20251025"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "not_applicable_no_selection",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No stock selected.",
+    "alreadyPricedAssessment": "not_applicable",
+    "constraints": [
+      "High-priority hypothesis does not imply an investable single-stock edge."
+    ]
+  },
+  "bearCase": "The shortage is real but listed upstream beneficiaries fail to monetize it.",
+  "invalidationConditions": [
+    {
+      "indicator": "Material availability normalizes.",
+      "observationMethod": "Later industry surveys/market reports.",
+      "threshold": "shortage indicators reverse materially"
+    },
+    {
+      "indicator": "Candidate-company profits remain disconnected from scarcity.",
+      "observationMethod": "Later filings.",
+      "threshold": "no meaningful profit/margin benefit despite persistent shortage"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay.",
+    "result": "not_clean",
+    "caveats": [
+      "Model memory leakage uncontrolled."
+    ]
+  },
+  "unknowns": [
+    "Exact realized germanium pricing by company",
+    "segment-level profit sensitivity",
+    "policy duration"
+  ],
+  "nextResearchActions": [
+    "Retain as opportunity-level watch; do not force a stock selection."
+  ]
+}
