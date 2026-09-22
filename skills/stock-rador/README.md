@@ -3,7 +3,27 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 0.8.0
+## Current version: 0.9.0
+
+- [SKILL.md](versions/0.9.0/SKILL.md)
+- [EVALS.md](versions/0.9.0/EVALS.md)
+- [DISCOVERY.md](versions/0.9.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/0.9.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/0.9.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/0.9.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/0.9.0/missed-opportunity-audit.template.json)
+
+V0.9 keeps the v0.8 timing/asymmetry gates and adds:
+- a mandatory **earnings-conversion bridge** so low valuation/backlog/low expectations cannot
+  qualify as revision headroom without a direct path to earnings;
+- two pre-reveal expression archetypes: **quality_revision** and
+  **turning_point_convexity**;
+- a strict survival / inflection / operating-leverage / working-capital gate for cyclical
+  turning-point candidates;
+- decision validity pinned to the pre-registered base horizon, after which a fresh
+  re-underwriting is required.
+
+## Previous current contract: 0.8.0
 
 - [SKILL.md](versions/0.8.0/SKILL.md)
 - [EVALS.md](versions/0.8.0/EVALS.md)
