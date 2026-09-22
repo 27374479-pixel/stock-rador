@@ -339,3 +339,20 @@ jobs:
             research/v22_2023_12_outcomes.json
             research/v22_2023_12_outcomes.md
           if-no-files-found: error
+
+
+  prefreeze-skill-v3-2024-03:
+    needs: test
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/prefreeze-skill-v3-window-2024-03.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: skill-v3-2024-03-prefreeze
+          path: research/skill_v3_2024_03_prefreeze.json
+          if-no-files-found: error
