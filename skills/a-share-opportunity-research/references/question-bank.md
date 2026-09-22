@@ -153,7 +153,7 @@ Origin: 2024-03 copper-concentrate squeeze.
 - Should the thesis be considered stale once the physical indicator normalizes, even if the company remains high quality?
 - Is a long holding period accidentally converting a correct short-lived signal into mediocre excess return?
 
-Status: **experimental**. One Skill V3 consumed window so far. This is a research question, not a new exit rule.
+Status: **promoted into V3.2 core process** after independent support from 2024-03 copper concentrate and 2024-09 alumina/bauxite windows. This remains a research-horizon requirement, not a fixed exit rule.
 
 
 ### X5 — Reference-price basis reconciliation
@@ -174,14 +174,3 @@ Origin: 2024-06 hog margin miss and earlier price-attractiveness ambiguity.
 - If this bridge cannot be built with enough confidence, why is the stock more than Watch?
 
 Status: **promoted into V3.1 core process** as a universal answer to "is the stock actually cheap enough?", not as a numerical valuation threshold.
-
-
-### X4 — Causal half-life / horizon decay
-Origin: 2024-03 copper-concentrate squeeze.
-- What is the expected half-life of the causal shock?
-- Which observable variable tells us the bottleneck is normalizing?
-- Is this a 20-day repricing event, a multi-quarter earnings bridge, or a multi-year architecture transition?
-- Should the thesis be re-underwritten when the original bottleneck has normalized even if the company remains high quality?
-- Does the expected holding horizon match the duration of the economic edge rather than a fixed backtest convention?
-
-Status: **experimental**. One Skill V3 consumed window so far.
