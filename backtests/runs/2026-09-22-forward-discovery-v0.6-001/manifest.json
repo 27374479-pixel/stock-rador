@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2026-09-22-forward-discovery-v0.6-001",
+  "evaluationMode": "forward",
+  "createdAt": "2026-09-22T21:39:46+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/0.6.0/SKILL.md",
+    "version": "0.6.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2026-08-01",
+    "endDate": "2026-09-22"
+  },
+  "screeningPath": "backtests/runs/2026-09-22-forward-discovery-v0.6-001/screening.json",
+  "implementationPaths": [
+    "scripts/backtest-core.cjs",
+    "scripts/lock-skill-run.cjs",
+    "scripts/discovery-core.cjs",
+    "scripts/audit-discovery-recall.cjs"
+  ],
+  "contaminationControls": {
+    "sourcePackPath": "backtests/runs/2026-09-22-forward-discovery-v0.6-001/source-pack.json",
+    "modelMemoryRisk": "not_applicable_to_future_outcome",
+    "notes": "Prospective discovery-only snapshot frozen before future missed-opportunity outcomes exist."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedHypothesisStates": [
+    "Research hypothesis",
+    "High-priority hypothesis"
+  ],
+  "trackedSelectionStates": [
+    "No selection",
+    "Research selection",
+    "High-priority selection"
+  ],
+  "primarySelectionStates": [
+    "High-priority selection"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "hypothesisMemoPaths": [],
+  "selections": [],
+  "reportingPolicy": {
+    "primaryMetric": "discovery_coverage_and_future_diagnostic_recall",
+    "mustReportAllSelections": true,
+    "mustReportMatchedControls": true,
+    "mustReportBestControl": true,
+    "mustReportHypothesisAndSelectionStates": true,
+    "mustReportExpectationBurden": true,
+    "noSignalIsValid": true
+  },
+  "discoveryPolicy": {
+    "requiredLanes": [
+      "official_primary",
+      "company_first_party",
+      "physical_industry",
+      "reputable_news",
+      "specialist_trade",
+      "community_weak_signal"
+    ],
+    "minimumCoveredLanes": 4,
+    "screeningTarget": "event_cluster",
+    "postOutcomeMissAudit": {
+      "candidateUniverse": "A-share common stocks in the frozen Stock Rador universe, excluding ST/N and non-executable names under repository rules.",
+      "candidateRule": "At 120 trading days after cutoff, generate cases mechanically from the top 1% benchmark-relative performers plus any stock with >=50% excess return; do not hand-pick sectors or names.",
+      "causalEligibilityRule": "Count as detectableExAnte only when public pre-cutoff information could support a causal economic thesis through at least two independent origins or one primary plus one independent corroborating origin.",
+      "samePeriodMayTuneSkill": false
+    }
+  }
+}

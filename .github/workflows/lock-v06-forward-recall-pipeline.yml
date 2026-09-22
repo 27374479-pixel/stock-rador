@@ -1,0 +1,44 @@
+name: lock-v06-forward-recall-pipeline
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.6-20260922
+    paths:
+      - .github/workflows/lock-v06-forward-recall-pipeline.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.6-20260922
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Assert future outcome artifacts do not exist
+        run: |
+          test ! -e backtests/runs/2026-09-22-forward-discovery-v0.6-001/120d-outcome-snapshot.json
+          test ! -e backtests/runs/2026-09-22-forward-discovery-v0.6-001/missed-opportunity-candidates.json
+          test ! -e backtests/runs/2026-09-22-forward-discovery-v0.6-001/missed-opportunities.json
+          test ! -e backtests/runs/2026-09-22-forward-discovery-v0.6-001/discovery-audit.json
+      - name: Lock prospective recall pipeline
+        run: |
+          node scripts/lock-recall-pipeline.cjs \
+            backtests/runs/2026-09-22-forward-discovery-v0.6-001/audit-universe-lock.json \
+            backtests/runs/2026-09-22-forward-discovery-v0.6-001/recall-pipeline-lock.json
+      - name: Commit recall pipeline lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2026-09-22-forward-discovery-v0.6-001/recall-pipeline-lock.json
+          git commit -m "audit: lock Sep 22 forward recall pipeline"
+          git pull --rebase origin ai-skill-v0.6-20260922
+          git push origin HEAD:ai-skill-v0.6-20260922

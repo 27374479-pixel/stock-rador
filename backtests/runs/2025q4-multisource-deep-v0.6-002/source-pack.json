@@ -1,0 +1,899 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2025q4-multisource-deep-v0.6-002",
+  "cutoffAt": "2025-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Derived from the already locked Q4 multi-source discovery pack, with additional pre-cutoff company/expectation evidence added for deep-research mechanics. Current-model memory/search leakage remains uncontrolled; this is diagnostic, not clean alpha validation.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official statistics/regulatory evidence closest to physical economic change.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on directly relevant Q4 2025 energy/industrial statistics; not an exhaustive agency crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier disclosures for orders, backlog, pricing and capacity.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on global companies surfaced by generic change searches; not every listed issuer was crawled."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Survey/market data on shortages, inventories, prices, utilization and lead times.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible survey data; many proprietary commodity/industry datasets remain unavailable."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting for early economic changes and cross-source confirmation.",
+      "coverageStatus": "partial",
+      "limitations": "Coverage concentrated on accessible Reuters historical reports."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Domain-specialist data for semiconductor/memory supply-demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce summaries; paywalled detail may be incomplete."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Weak-signal discovery from HN baseline, retained for direct comparison.",
+      "coverageStatus": "partial",
+      "limitations": "HN only; comments can be anecdotal, deleted, derivative or unverified."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "hn-memory-46144797",
+      "laneId": "community_weak_signal",
+      "sourceType": "community",
+      "contentKind": "commentary",
+      "title": "Average DRAM price in USD over last 18 months - shortage discussion",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=46144797",
+      "publishedAt": "2025-12-04T07:34:49Z",
+      "availableAt": "2025-12-04T07:34:49Z",
+      "originGroup": "hn-memory-thread-46142100",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Community discussion identified a visible DRAM shortage and rapidly rising prices."
+      ],
+      "entities": [
+        "DRAM"
+      ],
+      "observedChanges": [
+        "memory shortage",
+        "price increase"
+      ]
+    },
+    {
+      "itemId": "hn-gas-45762834",
+      "laneId": "community_weak_signal",
+      "sourceType": "community",
+      "contentKind": "commentary",
+      "title": "Gas-turbine backlog discussion",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=45762834",
+      "publishedAt": "2025-10-30T17:45:10Z",
+      "availableAt": "2025-10-30T17:45:10Z",
+      "originGroup": "hn-gas-thread-45759922",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Community discussion claimed structural supply-chain/labor constraints were limiting gas-turbine build capacity."
+      ],
+      "entities": [
+        "gas turbines"
+      ],
+      "observedChanges": [
+        "equipment backlog"
+      ]
+    },
+    {
+      "itemId": "hn-foundry-45816772",
+      "laneId": "community_weak_signal",
+      "sourceType": "community",
+      "contentKind": "commentary",
+      "title": "TSMC price-hike discussion",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=45816772",
+      "publishedAt": "2025-11-04T22:46:58Z",
+      "availableAt": "2025-11-04T22:46:58Z",
+      "originGroup": "hn-foundry-thread-45816217",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Community discussion reacted to reported 2026 CPU/GPU cost increases after TSMC price hikes."
+      ],
+      "entities": [
+        "TSMC",
+        "CPU",
+        "GPU"
+      ],
+      "observedChanges": [
+        "foundry pricing"
+      ]
+    },
+    {
+      "itemId": "hn-hdd-45928431",
+      "laneId": "community_weak_signal",
+      "sourceType": "community",
+      "contentKind": "commentary",
+      "title": "HDD backlog tied to AI storage discussion",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=45928431",
+      "publishedAt": "2025-11-14T16:27:47Z",
+      "availableAt": "2025-11-14T16:27:47Z",
+      "originGroup": "hn-hdd-thread-45926383",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Community discussion described HDD/NVMe pressure and backlog associated with AI data storage demand."
+      ],
+      "entities": [
+        "HDD",
+        "NVMe"
+      ],
+      "observedChanges": [
+        "storage backlog"
+      ]
+    },
+    {
+      "itemId": "hn-copper-46198780",
+      "laneId": "community_weak_signal",
+      "sourceType": "community",
+      "contentKind": "commentary",
+      "title": "Running on Empty: Copper - substitution discussion",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=46198780",
+      "publishedAt": "2025-12-08T22:53:05Z",
+      "availableAt": "2025-12-08T22:53:05Z",
+      "originGroup": "hn-copper-thread-46198177",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Community discussion treated copper scarcity/high prices as large enough to encourage substitution toward aluminum or alternative designs."
+      ],
+      "entities": [
+        "copper",
+        "aluminum"
+      ],
+      "observedChanges": [
+        "copper scarcity",
+        "substitution"
+      ]
+    },
+    {
+      "itemId": "hn-storage-46277160",
+      "laneId": "community_weak_signal",
+      "sourceType": "community",
+      "contentKind": "commentary",
+      "title": "Solar plus battery cost discussion",
+      "publisher": "Hacker News",
+      "url": "https://news.ycombinator.com/item?id=46277160",
+      "publishedAt": "2025-12-15T17:05:52Z",
+      "availableAt": "2025-12-15T17:05:52Z",
+      "originGroup": "hn-storage-thread-46256249",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Community discussion claimed falling battery costs were changing dispatchable solar/storage economics."
+      ],
+      "entities": [
+        "battery storage",
+        "solar"
+      ],
+      "observedChanges": [
+        "storage cost decline"
+      ]
+    },
+    {
+      "itemId": "skhynix-q3-20251029",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "SK hynix Announces 3Q25 Financial Results",
+      "publisher": "SK hynix",
+      "url": "https://news.skhynix.com/en/sk-hynix-announces-3q25-financial-results/",
+      "publishedAt": "2025-10-29T00:00:00+09:00",
+      "availableAt": "2025-10-29T00:00:00+09:00",
+      "originGroup": "skhynix-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue and operating profit reached records; DRAM/NAND prices rose and AI-server memory shipments increased strongly."
+      ],
+      "entities": [
+        "SK hynix",
+        "DRAM",
+        "NAND",
+        "DDR5"
+      ],
+      "observedChanges": [
+        "memory ASP increase",
+        "AI server memory demand"
+      ]
+    },
+    {
+      "itemId": "gev-q3-20251022",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "GE Vernova reports third quarter 2025 financial results",
+      "publisher": "GE Vernova",
+      "url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-third-quarter-2025-financial",
+      "publishedAt": "2025-10-22T00:00:00-04:00",
+      "availableAt": "2025-10-22T00:00:00-04:00",
+      "originGroup": "gev-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Orders rose 55% organically; gas-power backlog plus slot reservations increased from 55 to 62 GW; Electrification equipment backlog reached about $26B."
+      ],
+      "entities": [
+        "GE Vernova",
+        "gas turbines",
+        "grid equipment"
+      ],
+      "observedChanges": [
+        "gas backlog increase",
+        "electrification backlog increase"
+      ]
+    },
+    {
+      "itemId": "rrx-q3-20251029",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "Regal Rexnord Reports Strong Third Quarter 2025 Financial Results",
+      "publisher": "Regal Rexnord",
+      "url": "https://investors.regalrexnord.com/investors/ir-news/press-release-details/2025/REGAL-REXNORD-REPORTS-STRONG-THIRD-QUARTER-2025-FINANCIAL-RESULTS/default.aspx",
+      "publishedAt": "2025-10-29T00:00:00-05:00",
+      "availableAt": "2025-10-29T00:00:00-05:00",
+      "originGroup": "rrx-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Data-center project orders were $135M in Q3 plus another $60M in October; bid pipeline exceeded $1B and a new Texas assembly facility was planned for data-center demand."
+      ],
+      "entities": [
+        "Regal Rexnord",
+        "data centers"
+      ],
+      "observedChanges": [
+        "data-center equipment orders"
+      ]
+    },
+    {
+      "itemId": "ifo-shortage-20251029",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Chip Shortage in German Manufacturing Worsens",
+      "publisher": "ifo Institute",
+      "url": "https://www.ifo.de/en/facts/2025-10-29/chip-shortage-german-manufacturing-worsens",
+      "publishedAt": "2025-10-29T00:00:00+01:00",
+      "availableAt": "2025-10-29T00:00:00+01:00",
+      "originGroup": "ifo-business-survey-q4-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "10.4% of German electronic/optical manufacturers reported material bottlenecks in October versus 7.0% in July and 3.8% in April; rare-earth controls/trade restrictions were cited."
+      ],
+      "entities": [
+        "German manufacturing",
+        "rare earths",
+        "electronics"
+      ],
+      "observedChanges": [
+        "input shortage worsened"
+      ]
+    },
+    {
+      "itemId": "ifo-shortage-20251201",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Material Shortages in German Manufacturing Worsen",
+      "publisher": "ifo Institute",
+      "url": "https://www.ifo.de/en/facts/2025-12-01/material-shortages-german-manufacturing-worsen",
+      "publishedAt": "2025-12-01T00:00:00+01:00",
+      "availableAt": "2025-12-01T00:00:00+01:00",
+      "originGroup": "ifo-business-survey-q4-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Manufacturing shortages rose to 11.2%; automotive shortages reached 27.6%, electronic/optical 17.5%, and electrical equipment 16%."
+      ],
+      "entities": [
+        "German manufacturing",
+        "automotive",
+        "electronics"
+      ],
+      "observedChanges": [
+        "input shortage broadened"
+      ]
+    },
+    {
+      "itemId": "nea-power-20251125",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "国家能源局发布2025年1-10月份全国电力工业统计数据",
+      "publisher": "国家能源局",
+      "url": "https://www.nea.gov.cn/20251125/c08a5f9b4a54481696a432ecd6c70dd3/c.html",
+      "publishedAt": "2025-11-25T00:00:00+08:00",
+      "availableAt": "2025-11-25T00:00:00+08:00",
+      "originGroup": "nea-power-stats-20251125",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Solar capacity reached 1.14018 TW, +43.8% YoY; Jan-Oct new solar additions reached 252.87 GW; grid investment rose 7.2%."
+      ],
+      "entities": [
+        "China solar",
+        "grid investment"
+      ],
+      "observedChanges": [
+        "solar installation growth",
+        "grid investment growth"
+      ]
+    },
+    {
+      "itemId": "reuters-memory-20251203",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "The AI frenzy is driving a new global supply chain crisis",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/china/ai-frenzy-is-driving-new-global-supply-chain-crisis-2025-12-03/",
+      "publishedAt": "2025-12-03T00:00:00Z",
+      "availableAt": "2025-12-03T00:00:00Z",
+      "originGroup": "reuters-memory-20251203",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "AI demand and capacity prioritization caused severe memory shortages, low inventory and price increases across HBM, DRAM and consumer memory; some supply was sold out through 2026."
+      ],
+      "entities": [
+        "memory",
+        "HBM",
+        "DRAM"
+      ],
+      "observedChanges": [
+        "memory shortage",
+        "inventory low",
+        "price increase"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-20251030",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Copper rally could cool after surge to record high",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/us/copper-rally-could-cool-after-surge-record-high-2025-10-30/",
+      "publishedAt": "2025-10-30T00:00:00Z",
+      "availableAt": "2025-10-30T00:00:00Z",
+      "originGroup": "reuters-copper-20251030",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Copper reached a record near $11,200/t after supply disruptions and production cuts; forecasts showed possible 2026 deficit but demand-strength uncertainty remained."
+      ],
+      "entities": [
+        "copper",
+        "Glencore",
+        "Anglo American"
+      ],
+      "observedChanges": [
+        "record copper price",
+        "supply constraint"
+      ]
+    },
+    {
+      "itemId": "reuters-abb-20251016",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "ABB CEO very confident of demand for data centers powering AI",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/abb-ceo-very-confident-demand-data-centers-powering-ai-2025-10-16/",
+      "publishedAt": "2025-10-16T00:00:00Z",
+      "availableAt": "2025-10-16T00:00:00Z",
+      "originGroup": "reuters-abb-20251016",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "ABB reported double-digit growth in data-center electrification orders; data centers reached about 7% of revenue and construction capacity was identified as a constraint."
+      ],
+      "entities": [
+        "ABB",
+        "data centers",
+        "electrification"
+      ],
+      "observedChanges": [
+        "data-center electrification orders"
+      ]
+    },
+    {
+      "itemId": "reuters-lme-20251020",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Five key takeaways from London Metal Exchange Week",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/commodities/five-key-takeaways-london-metal-exchange-week-2025-10-20/",
+      "publishedAt": "2025-10-20T00:00:00Z",
+      "availableAt": "2025-10-20T00:00:00Z",
+      "originGroup": "reuters-lme-20251020",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Industry participants described germanium availability as extremely tight, with prices at multi-decade highs after export restrictions; copper and aluminum supply concerns also intensified."
+      ],
+      "entities": [
+        "germanium",
+        "rare earths",
+        "copper",
+        "aluminum"
+      ],
+      "observedChanges": [
+        "critical mineral shortage"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-20251015",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "DRAM Market Bulletin - Oct. 15, 2025",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP251015WZ",
+      "publishedAt": "2025-10-15T00:00:00+08:00",
+      "availableAt": "2025-10-15T00:00:00+08:00",
+      "originGroup": "trendforce-dram-q4-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DDR4 scarcity, DDR5 price increases and sellers withholding inventory indicated tightening supply and rising contract/spot pricing."
+      ],
+      "entities": [
+        "DDR4",
+        "DDR5",
+        "DRAM"
+      ],
+      "observedChanges": [
+        "DRAM price increase",
+        "inventory withholding"
+      ]
+    },
+    {
+      "itemId": "jinpan-q3-20251028",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "金盘科技2025年第三季度报告",
+      "publisher": "金盘科技",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11540519&stockid=688676",
+      "publishedAt": "2025-10-28T00:00:00+08:00",
+      "availableAt": "2025-10-28T00:00:00+08:00",
+      "originGroup": "jinpan-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue +8.38% YoY; attributable net profit +21.71%; first nine months net profit +20.27%."
+      ],
+      "entities": [
+        "金盘科技"
+      ],
+      "observedChanges": [
+        "earnings growth"
+      ]
+    },
+    {
+      "itemId": "jinpan-research-20251231",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "金盘科技：海外订单落地节奏恢复 AIDC大单再下一城",
+      "publisher": "东吴证券/新浪财经研报镜像",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/company/rptid/820549534711/index.phtml",
+      "publishedAt": "2025-12-31T00:00:00+08:00",
+      "availableAt": "2025-12-31T00:00:00+08:00",
+      "originGroup": "dw-jinpan-20251231",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "New overseas data-center contract about US$99M / RMB696M.",
+        "2025-2027 net-profit forecasts were approximately 7.8/10.4/13.2亿元.",
+        "Report reference valuation was about 53x/40x/32x PE for 2025-2027."
+      ],
+      "entities": [
+        "金盘科技",
+        "AIDC"
+      ],
+      "observedChanges": [
+        "large AIDC order",
+        "valuation"
+      ]
+    },
+    {
+      "itemId": "igor-research-20251231",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "伊戈尔：海外工厂规模化投产 数据中心业务快速成长",
+      "publisher": "华鑫证券/新浪财经研报镜像",
+      "url": "https://vip.stock.finance.sina.com.cn/q/go.php/vReport_Show/kind/lastest/rptid/820549906958/index.phtml",
+      "publishedAt": "2025-12-31T00:00:00+08:00",
+      "availableAt": "2025-12-31T00:00:00+08:00",
+      "originGroup": "hx-igor-20251231",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "2025 data-center-related orders grew more than 400% to a record high.",
+        "US Texas factory opened in October and Thailand factory entered production in December.",
+        "2025-2027 EPS forecasts 0.64/1.03/1.55; reference PE 47.6x/29.9x/19.7x."
+      ],
+      "entities": [
+        "伊戈尔",
+        "data centers"
+      ],
+      "observedChanges": [
+        "data-center order acceleration",
+        "overseas capacity"
+      ]
+    },
+    {
+      "itemId": "siyuan-q3-20251018",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "思源电气2025年三季度报告",
+      "publisher": "思源电气",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11519236",
+      "publishedAt": "2025-10-18T00:00:00+08:00",
+      "availableAt": "2025-10-18T00:00:00+08:00",
+      "originGroup": "siyuan-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue +25.68% YoY and attributable net profit +48.73%; first-nine-month profit +46.94%."
+      ],
+      "entities": [
+        "思源电气"
+      ],
+      "observedChanges": [
+        "earnings acceleration"
+      ]
+    },
+    {
+      "itemId": "siyuan-ir-20251110",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "思源电气2025年11月6日投资者关系活动记录表",
+      "publisher": "思源电气",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11834400&stockid=002028",
+      "publishedAt": "2025-11-10T00:00:00+08:00",
+      "availableAt": "2025-11-10T00:00:00+08:00",
+      "originGroup": "siyuan-ir-20251110",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Overseas order growth was slightly above the company average; transformer/high-voltage-switch capacity could support business growth."
+      ],
+      "entities": [
+        "思源电气"
+      ],
+      "observedChanges": [
+        "overseas order growth"
+      ]
+    },
+    {
+      "itemId": "siyuan-research-20251128",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "思源电气：公司北美业务有望迎来突破",
+      "publisher": "招商证券/新浪财经研报镜像",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/search/rptid/817644120262/index.phtml",
+      "publishedAt": "2025-11-28T00:00:00+08:00",
+      "availableAt": "2025-11-28T00:00:00+08:00",
+      "originGroup": "cms-siyuan-20251128",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Research expected North American AI data-center construction and high-voltage transformer scarcity to create order spillover opportunities for Siyuan."
+      ],
+      "entities": [
+        "思源电气",
+        "North America data centers"
+      ],
+      "observedChanges": [
+        "potential data-center order spillover"
+      ]
+    },
+    {
+      "itemId": "yunnan-ge-q3-20251031",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "云南锗业2025年第三季度报告",
+      "publisher": "云南锗业",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11575949&stockid=002428",
+      "publishedAt": "2025-10-31T00:00:00+08:00",
+      "availableAt": "2025-10-31T00:00:00+08:00",
+      "originGroup": "yunnan-ge-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue +74.19% YoY but attributable net profit was negative RMB4.0M; first-nine-month profit fell 38.43%."
+      ],
+      "entities": [
+        "云南锗业",
+        "germanium"
+      ],
+      "observedChanges": [
+        "revenue growth without profit conversion"
+      ]
+    },
+    {
+      "itemId": "chihong-q3-20251025",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "驰宏锌锗2025年第三季度报告",
+      "publisher": "驰宏锌锗",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11532413&stockid=600497",
+      "publishedAt": "2025-10-25T00:00:00+08:00",
+      "availableAt": "2025-10-25T00:00:00+08:00",
+      "originGroup": "chihong-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue +36.73% but attributable net profit -31.44%; first-nine-month profit -10.18%."
+      ],
+      "entities": [
+        "驰宏锌锗",
+        "germanium",
+        "zinc",
+        "lead"
+      ],
+      "observedChanges": [
+        "weak profit conversion"
+      ]
+    },
+    {
+      "itemId": "sungrow-q3-20251029",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "阳光电源2025年第三季度报告",
+      "publisher": "阳光电源",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11553665&stockid=300274",
+      "publishedAt": "2025-10-29T00:00:00+08:00",
+      "availableAt": "2025-10-29T00:00:00+08:00",
+      "originGroup": "sungrow-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue +20.83% and attributable net profit +57.04%; first-nine-month profit +56.34%; operating cash flow sharply improved."
+      ],
+      "entities": [
+        "阳光电源"
+      ],
+      "observedChanges": [
+        "earnings acceleration"
+      ]
+    },
+    {
+      "itemId": "ginlong-q3-20251015",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "锦浪科技2025年第三季度报告",
+      "publisher": "锦浪科技",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11510434",
+      "publishedAt": "2025-10-15T00:00:00+08:00",
+      "availableAt": "2025-10-15T00:00:00+08:00",
+      "originGroup": "ginlong-q3-2025",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 revenue +3.43% but attributable net profit -16.85%; first-nine-month profit +29.39%."
+      ],
+      "entities": [
+        "锦浪科技"
+      ],
+      "observedChanges": [
+        "mixed earnings transmission"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-memory-structural-tightness",
+      "statement": "Conventional and server memory supply tightened sharply in Q4 2025 as AI/CSP demand rose and suppliers prioritized higher-value capacity, driving broad DRAM/NAND pricing power.",
+      "changeType": "supply_demand_tightening",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-10-15T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-dram-20251015",
+        "skhynix-q3-20251029",
+        "reuters-memory-20251203",
+        "hn-memory-46144797"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-q4-2025",
+        "skhynix-q3-2025",
+        "reuters-memory-20251203",
+        "hn-memory-thread-46142100"
+      ],
+      "affectedValueChain": [
+        "DRAM/NAND suppliers",
+        "memory modules",
+        "servers",
+        "PC/smartphone OEMs"
+      ],
+      "contradictionSearchNotes": "Check whether price increases reflect temporary panic buying versus persistent capacity allocation and end demand.",
+      "researchQuestion": "Which A-share companies have material direct memory pricing exposure versus merely higher input costs?"
+    },
+    {
+      "eventId": "event-gas-grid-equipment-backlog",
+      "statement": "Power and electrification equipment backlogs accelerated, including gas-turbine contractual commitments and grid-equipment backlog, indicating multi-quarter equipment scarcity and demand.",
+      "changeType": "orders_backlog",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-10-22T00:00:00-04:00",
+      "memberItemIds": [
+        "gev-q3-20251022",
+        "hn-gas-45762834"
+      ],
+      "independentOriginGroups": [
+        "gev-q3-2025",
+        "hn-gas-thread-45759922"
+      ],
+      "affectedValueChain": [
+        "gas turbines",
+        "grid equipment",
+        "power conversion",
+        "transformers"
+      ],
+      "contradictionSearchNotes": "Separate gas-turbine-specific scarcity from broad grid equipment; avoid assuming all power-equipment suppliers benefit equally.",
+      "researchQuestion": "Which listed suppliers have verified product/geographic overlap with the constrained equipment categories?"
+    },
+    {
+      "eventId": "event-foundry-price-hike",
+      "statement": "Reported foundry price increases for 2026 may raise advanced-chip input costs and/or foundry pricing power.",
+      "changeType": "price_increase",
+      "noveltyAssessment": "uncertain",
+      "firstAvailableAt": "2025-11-04T22:46:58Z",
+      "memberItemIds": [
+        "hn-foundry-45816772"
+      ],
+      "independentOriginGroups": [
+        "hn-foundry-thread-45816217"
+      ],
+      "affectedValueChain": [
+        "foundry",
+        "fabless chips",
+        "CPU/GPU"
+      ],
+      "contradictionSearchNotes": "No independent first-party/industry confirmation is frozen in this pack.",
+      "researchQuestion": "Can the reported foundry price change be independently verified and mapped to A-share earnings?"
+    },
+    {
+      "eventId": "event-hdd-ai-backlog",
+      "statement": "AI-related data retention may be creating HDD/NVMe demand pressure and backlog.",
+      "changeType": "orders_backlog",
+      "noveltyAssessment": "uncertain",
+      "firstAvailableAt": "2025-11-14T16:27:47Z",
+      "memberItemIds": [
+        "hn-hdd-45928431"
+      ],
+      "independentOriginGroups": [
+        "hn-hdd-thread-45926383"
+      ],
+      "affectedValueChain": [
+        "HDD",
+        "enterprise storage",
+        "NAND/NVMe"
+      ],
+      "contradictionSearchNotes": "Only community evidence is frozen; verify with manufacturer shipments/backlog before mapping.",
+      "researchQuestion": "Is the storage-hardware backlog observable in first-party manufacturer results?"
+    },
+    {
+      "eventId": "event-copper-tightness",
+      "statement": "Copper prices reached record levels amid mine-supply constraints, while substitution risk increased as users considered aluminum and alternative designs.",
+      "changeType": "commodity_supply_tightness",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-10-30T00:00:00Z",
+      "memberItemIds": [
+        "reuters-copper-20251030",
+        "hn-copper-46198780"
+      ],
+      "independentOriginGroups": [
+        "reuters-copper-20251030",
+        "hn-copper-thread-46198177"
+      ],
+      "affectedValueChain": [
+        "copper miners",
+        "smelters",
+        "grid equipment",
+        "motors",
+        "transformers"
+      ],
+      "contradictionSearchNotes": "Demand-growth uncertainty and substitution can cap upside; separate upstream miners from processors hurt by higher input costs.",
+      "researchQuestion": "Which A-share copper exposures have upstream operating leverage not already fully reflected in expectations?"
+    },
+    {
+      "eventId": "event-storage-cost-economics",
+      "statement": "Community discussion claims falling battery costs are improving solar-plus-storage economics and grid flexibility.",
+      "changeType": "cost_decline",
+      "noveltyAssessment": "uncertain",
+      "firstAvailableAt": "2025-12-15T17:05:52Z",
+      "memberItemIds": [
+        "hn-storage-46277160"
+      ],
+      "independentOriginGroups": [
+        "hn-storage-thread-46256249"
+      ],
+      "affectedValueChain": [
+        "battery storage",
+        "solar",
+        "grid flexibility"
+      ],
+      "contradictionSearchNotes": "The frozen pack lacks a Q4 independent battery-cost dataset supporting the magnitude claim.",
+      "researchQuestion": "Is the cost decline independently measurable and material to storage project IRRs?"
+    },
+    {
+      "eventId": "event-data-center-electrification-orders",
+      "statement": "AI/data-center buildout translated into accelerating real orders for electrification, motion/power systems and grid equipment rather than remaining only a capex narrative.",
+      "changeType": "orders_acceleration",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-10-16T00:00:00Z",
+      "memberItemIds": [
+        "reuters-abb-20251016",
+        "gev-q3-20251022",
+        "rrx-q3-20251029"
+      ],
+      "independentOriginGroups": [
+        "reuters-abb-20251016",
+        "gev-q3-2025",
+        "rrx-q3-2025"
+      ],
+      "affectedValueChain": [
+        "switchgear",
+        "UPS/power conversion",
+        "motors",
+        "transformers",
+        "data-center electrical systems"
+      ],
+      "contradictionSearchNotes": "Need to distinguish broad industry order growth from specific A-share customer/product qualification and avoid double-counting generic AI-power beta.",
+      "researchQuestion": "Which A-share power-equipment firms show direct data-center orders/revenue with valuation not already saturated?"
+    },
+    {
+      "eventId": "event-critical-material-input-shortage",
+      "statement": "Rare-earth/germanium and semiconductor-related input shortages worsened across European electronics, electrical equipment and automotive manufacturing during Q4 2025.",
+      "changeType": "input_shortage",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-10-20T00:00:00Z",
+      "memberItemIds": [
+        "reuters-lme-20251020",
+        "ifo-shortage-20251029",
+        "ifo-shortage-20251201"
+      ],
+      "independentOriginGroups": [
+        "reuters-lme-20251020",
+        "ifo-business-survey-q4-2025"
+      ],
+      "affectedValueChain": [
+        "rare earths",
+        "germanium",
+        "electronics",
+        "automotive",
+        "electrical equipment"
+      ],
+      "contradictionSearchNotes": "Shortage can hurt downstream users while helping upstream processors; export policy and substitution can change the sign of exposure.",
+      "researchQuestion": "Are there A-share upstream suppliers with verified export/price leverage rather than downstream cost exposure?"
+    },
+    {
+      "eventId": "event-china-solar-installation-rebound",
+      "statement": "China solar additions remained extremely high and October installations recovered after a mid-year policy-driven slowdown, while grid investment also increased.",
+      "changeType": "deployment_reacceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-11-25T00:00:00+08:00",
+      "memberItemIds": [
+        "nea-power-20251125"
+      ],
+      "independentOriginGroups": [
+        "nea-power-stats-20251125"
+      ],
+      "affectedValueChain": [
+        "solar developers",
+        "inverters",
+        "grid equipment",
+        "storage"
+      ],
+      "contradictionSearchNotes": "High installations do not imply high module profitability; policy transition and overcapacity may keep upstream/downstream economics divergent.",
+      "researchQuestion": "Which parts of the solar/grid chain gain earnings rather than only shipment volume?"
+    }
+  ],
+  "softwareReplayOf": "2025q4-multisource-deep-v0.6-001"
+}

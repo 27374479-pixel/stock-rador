@@ -795,10 +795,19 @@ function evaluateRun(manifest, memosByPath, prices) {
       realization.latestTradingDays
     ])].sort((a, b) => a - b);
     const outcome = {};
+    const pendingHorizons = [];
 
     for (const holdingDays of horizons) {
       const exitBenchmark = benchmarkRows[entryBenchmarkIndex + holdingDays - 1];
-      if (!exitBenchmark) throw new Error(`benchmark lacks ${holdingDays}-day horizon after ${entryDate}`);
+      if (!exitBenchmark) {
+        pendingHorizons.push({
+          holdingDays,
+          status: 'pending',
+          reason: 'benchmark_horizon_not_yet_mature',
+          availableTradingDays: Math.max(0, benchmarkRows.length - entryBenchmarkIndex)
+        });
+        continue;
+      }
       const exitDate = exitBenchmark.date;
       const exit = adjusted.find((row) => row.date === exitDate);
       if (!exit) throw new Error(`${selection.ticker} lacks exit bar ${exitDate}`);
@@ -870,7 +879,8 @@ function evaluateRun(manifest, memosByPath, prices) {
       matchedControlException: memo.matchedControlException ?? null,
       execution,
       horizons: outcome,
-      thesisBaseOutcome: outcome[String(realization.baseTradingDays)]
+      pendingHorizons,
+      thesisBaseOutcome: outcome[String(realization.baseTradingDays)] ?? null
     });
   }
 
@@ -880,12 +890,13 @@ function evaluateRun(manifest, memosByPath, prices) {
   const primaryTickerLevel = Object.fromEntries(allHorizons.map((horizon) => [String(horizon), summarizeOutcomes(primaryResults, horizon)]));
   const hypothesisLevel = aggregateByHypothesis(results, allHorizons);
   const primaryHypothesisLevel = aggregateByHypothesis(primaryResults, allHorizons);
-  const primaryBaseExcess = primaryResults.map((result) => result.thesisBaseOutcome.excessReturn);
-  const primaryBaseNet = primaryResults.map((result) => result.thesisBaseOutcome.netReturn);
-  const primaryBaseMatched = primaryResults.map((result) => result.thesisBaseOutcome.matchedControlExcess).filter(Number.isFinite);
-  const primaryBaseBest = primaryResults.map((result) => result.thesisBaseOutcome.excessVsBestControl).filter(Number.isFinite);
-  const primaryBaseWinsAll = primaryResults.map((result) => result.thesisBaseOutcome.winsAllControls).filter((value) => typeof value === 'boolean');
-  const primaryBaseRanks = primaryResults.map((result) => result.thesisBaseOutcome.rankPercentile).filter(Number.isFinite);
+  const primaryBaseResults = primaryResults.filter((result) => result.thesisBaseOutcome);
+  const primaryBaseExcess = primaryBaseResults.map((result) => result.thesisBaseOutcome.excessReturn);
+  const primaryBaseNet = primaryBaseResults.map((result) => result.thesisBaseOutcome.netReturn);
+  const primaryBaseMatched = primaryBaseResults.map((result) => result.thesisBaseOutcome.matchedControlExcess).filter(Number.isFinite);
+  const primaryBaseBest = primaryBaseResults.map((result) => result.thesisBaseOutcome.excessVsBestControl).filter(Number.isFinite);
+  const primaryBaseWinsAll = primaryBaseResults.map((result) => result.thesisBaseOutcome.winsAllControls).filter((value) => typeof value === 'boolean');
+  const primaryBaseRanks = primaryBaseResults.map((result) => result.thesisBaseOutcome.rankPercentile).filter(Number.isFinite);
 
   return {
     hypothesisMemoSummary: summarizeHypothesisMemos(manifest, memosByPath),
@@ -896,12 +907,13 @@ function evaluateRun(manifest, memosByPath, prices) {
       primaryTickerLevel,
       primaryHypothesisLevel: primaryHypothesisLevel.aggregate,
       primaryThesisBase: {
-        count: primaryResults.length,
+        count: primaryBaseResults.length,
+        pendingBaseCount: primaryResults.length - primaryBaseResults.length,
         meanNetReturn: mean(primaryBaseNet),
         medianNetReturn: median(primaryBaseNet),
         meanExcessReturn: mean(primaryBaseExcess),
         medianExcessReturn: median(primaryBaseExcess),
-        excessHitRate: primaryResults.length ? primaryBaseExcess.filter((value) => value > 0).length / primaryResults.length : null,
+        excessHitRate: primaryBaseResults.length ? primaryBaseExcess.filter((value) => value > 0).length / primaryBaseResults.length : null,
         matchedControlCount: primaryBaseMatched.length,
         meanMatchedControlExcess: mean(primaryBaseMatched),
         medianMatchedControlExcess: median(primaryBaseMatched),

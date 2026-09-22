@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-22-forward-discovery-v0.6-001",
+  "lockedAt": "2026-09-22T14:36:37.246Z",
+  "prospective": true,
+  "auditUniverseTickerDigest": "e24393502faf23ef3233dd4418f571adafebe70514d55afdcec5810e5739aa87",
+  "candidateRule": {
+    "horizonTradingDays": 120,
+    "benchmarkTicker": "000300.SH",
+    "percentile": 0.01,
+    "absoluteExcessThreshold": 0.5,
+    "union": true,
+    "requireEveryFrozenTickerInSnapshot": true,
+    "samePeriodMayTuneSkill": false
+  },
+  "note": "Frozen before the 120-trading-day outcome exists. Any later code or schema mutation requires a new prospective pipeline version and cannot replace this lock.",
+  "files": [
+    {
+      "role": "audit_universe_lock",
+      "path": "backtests/runs/2026-09-22-forward-discovery-v0.6-001/audit-universe-lock.json",
+      "sha256": "34a913aacc1a934e9aad4eb4a9b1293a30a03d3041891e3833c54642e25496c4"
+    },
+    {
+      "role": "audit_universe_verifier",
+      "path": "scripts/audit-universe-lock-core.cjs",
+      "sha256": "ae151aedf604ee35a2d1facf04b33e2b8d8288cdbe667b309cf4d77b4eeb8645"
+    },
+    {
+      "role": "candidate_selector_core",
+      "path": "scripts/missed-opportunity-candidates-core.cjs",
+      "sha256": "bc1ad6ac17c39e782714dca5fc9a9e553a5a6372fa83da94a38e80d1cee2371a"
+    },
+    {
+      "role": "candidate_selector_cli",
+      "path": "scripts/generate-missed-opportunity-candidates-v062.cjs",
+      "sha256": "fa16e277b0cfe4e0a3d0ed983964f331c674fa39e57c42470ca6c2730925242c"
+    },
+    {
+      "role": "miss_audit_core",
+      "path": "scripts/discovery-core.cjs",
+      "sha256": "e1a1df0df83a853648e7856d5904bdfc6e0fcd8d3e5e9b33791ca1a90b44d3d7"
+    },
+    {
+      "role": "miss_audit_cli",
+      "path": "scripts/audit-discovery-recall.cjs",
+      "sha256": "2289c0b4abde74dc01b6a3a5bc2f9e4dda8ea160f25c2df9acb020b1a108024e"
+    },
+    {
+      "role": "outcome_snapshot_schema",
+      "path": "skills/stock-rador/versions/0.6.0/120d-outcome-snapshot.template.json",
+      "sha256": "d1c59814ef77122f82ec7d52cbe3098378b96e1a41a86144e4476af12940143b"
+    },
+    {
+      "role": "discovery_contract",
+      "path": "skills/stock-rador/versions/0.6.0/DISCOVERY.md",
+      "sha256": "fc0c30a2884914ed2ae6f3cf87aec5f0aa1b8ecd686bea22e9c509eb6652b052"
+    }
+  ]
+}

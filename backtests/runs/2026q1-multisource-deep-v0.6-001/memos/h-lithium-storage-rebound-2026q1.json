@@ -1,0 +1,258 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-03-28T23:59:59+08:00",
+  "researchReadyAt": "2026-03-28T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-lithium-storage-rebound-2026q1",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Storage-volume demand and battery pricing can affect quarterly revenue quickly, while lithium volatility and margin pass-through make the earnings outcome visible over one to two reporting cycles."
+  },
+  "changeHypothesis": {
+    "summary": "Energy-storage demand was strong enough to support battery-cell volumes and lithium economics, but the raw-material price direction was volatile and not a one-way miner thesis. Among battery makers, 亿纬锂能 showed materially faster storage revenue growth than 宁德时代 but much weaker storage margins, leaving a mixed selection edge.",
+    "firstCredibleDate": "2026-01-04",
+    "valueChain": [
+      "ESS demand",
+      "cell utilization/pricing",
+      "lithium input cost",
+      "battery revenue and gross margin",
+      "earnings"
+    ],
+    "persistenceReason": "Storage demand and restocking were independently reported and both major A-share battery makers disclosed material storage businesses.",
+    "disconfirmingEvidence": [
+      "Lithium prices reversed sharply in March amid weak EV demand.",
+      "Higher lithium prices can hurt battery margins.",
+      "CATL retained far higher storage gross margin than EVE."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-lithium-20260104",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "tf-battery-20260112",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "reuters-lithium-zimbabwe-20260226",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "reuters-lithium-20260303",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "catl-annual-20260310",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    },
+    {
+      "id": "eve-annual-20260328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Evidence used in the frozen causal/selection analysis."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "ESS demand",
+      "to": "storage-cell volume/pricing",
+      "mechanism": "Restocking and project deployment raise battery-cell utilization and demand.",
+      "evidenceRefs": [
+        "reuters-lithium-20260104",
+        "tf-battery-20260112"
+      ],
+      "failureMode": "project demand slows or overcapacity returns",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "cell demand plus lithium volatility",
+      "to": "battery-maker earnings",
+      "mechanism": "Volume growth helps revenue, but input-cost pass-through and mix determine gross-margin capture.",
+      "evidenceRefs": [
+        "catl-annual-20260310",
+        "eve-annual-20260328",
+        "reuters-lithium-20260303"
+      ],
+      "failureMode": "raw-material inflation outruns price pass-through",
+      "lag": "one to two quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "storage-cell makers with utilization and pricing power"
+    ],
+    "secondOrderWinners": [
+      "ESS integrators with secured low-cost cells"
+    ],
+    "losers": [
+      "battery makers unable to pass lithium costs"
+    ],
+    "substitutes": [
+      "alternative chemistries and stationary-storage technologies"
+    ],
+    "bottlenecks": [
+      "lithium supply in short shocks",
+      "cell capacity economics"
+    ],
+    "falseThemeMatches": [
+      "lithium miners treated as automatic winners from storage growth"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300014.SZ",
+      "name": "亿纬锂能",
+      "verifiedExposure": "2025 storage-battery revenue RMB 24.441bn, +28.45%, but storage gross margin was only 12.28% and fell 2.44pp.",
+      "evidenceRefs": [
+        "eve-annual-20260328"
+      ],
+      "earningsSensitivity": {
+        "base": "High storage volume growth with thin margin capture.",
+        "favorable": "Volume and cell pricing remain strong while lithium costs are passed through.",
+        "adverse": "Lithium volatility or competition compresses already-low storage margin."
+      },
+      "principalRisks": [
+        "margin compression",
+        "raw-material volatility",
+        "EV weakness"
+      ]
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "verifiedExposure": "2025 storage-system revenue RMB 62.440bn, +8.99%, gross margin 26.71%.",
+      "evidenceRefs": [
+        "catl-annual-20260310"
+      ],
+      "earningsSensitivity": {
+        "base": "Slower storage revenue growth but far stronger margin and scale.",
+        "favorable": "Storage demand growth plus high margin sustain profit quality.",
+        "adverse": "Scale makes incremental storage acceleration less material to group earnings."
+      },
+      "principalRisks": [
+        "expectation saturation",
+        "lower incremental storage sensitivity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Largest directly comparable A-share battery company with a disclosed storage-system segment.",
+      "whySelectedCompanyShouldOutperform": "亿纬锂能 had much faster 2025 storage revenue growth, giving it potentially greater incremental ESS sensitivity, though CATL had far stronger margins.",
+      "evidenceRefs": [
+        "eve-annual-20260328",
+        "catl-annual-20260310"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300014.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300750.SZ",
+        "selectedAdvantages": [
+          "storage revenue grew 28.45% versus CATL's 8.99%",
+          "storage is a more material incremental growth lever relative to EVE's smaller base"
+        ],
+        "selectedDisadvantages": [
+          "storage gross margin 12.28% versus CATL 26.71%",
+          "EVE storage margin fell 2.44pp, showing weaker value capture",
+          "exact cutoff valuations are not frozen"
+        ],
+        "evidenceRefs": [
+          "eve-annual-20260328",
+          "catl-annual-20260310"
+        ],
+        "switchCondition": "Prefer CATL if storage margin quality matters more than revenue acceleration or if EVE cannot pass through lithium/cell-cost volatility.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "EVE offers higher storage growth torque but CATL offers much better economics; this is not a clean high-priority edge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Storage growth was already known, while lithium price direction was visibly unstable.",
+    "thesisExpectation": "Battery makers with real storage volume growth can benefit even without a one-way lithium-price bet.",
+    "measurableGap": "EVE's faster storage growth is measurable, but whether it outweighs its much lower margin and market expectations is unresolved.",
+    "evidenceRefs": [
+      "reuters-lithium-20260303",
+      "eve-annual-20260328",
+      "catl-annual-20260310"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Segment growth/margin burden plus relative earnings sensitivity; avoid treating lithium price alone as valuation signal.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Both companies were established battery leaders and storage demand was public; EVE's faster storage growth alone is not sufficient.",
+    "thesisScenario": "EVE sustains >20% storage growth and improves/holds margin despite lithium volatility, producing greater incremental earnings sensitivity than CATL.",
+    "breakevenCondition": "EVE must translate its faster storage revenue growth into profit growth sufficient to offset the roughly 14pp storage gross-margin disadvantage versus CATL.",
+    "ordinaryScenarioFailure": "Storage volumes rise but low margins persist, making CATL the better economics despite slower segment growth.",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [
+      "eve-annual-20260328",
+      "catl-annual-20260310",
+      "reuters-lithium-20260303"
+    ],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Exact cutoff relative valuation is not frozen.",
+    "alreadyPricedAssessment": "mixed and unresolved",
+    "constraints": [
+      "Research selection only",
+      "commodity direction contradictory"
+    ]
+  },
+  "bearCase": "The storage boom is real but value accrues to the higher-margin incumbent rather than the faster-growing challenger; lithium volatility compresses cell margins.",
+  "invalidationConditions": [
+    {
+      "indicator": "EVE storage gross margin",
+      "observationMethod": "subsequent segment disclosure",
+      "threshold": "fails to stabilize/improve while storage revenue grows"
+    },
+    {
+      "indicator": "ESS demand growth",
+      "observationMethod": "industry shipment/project data",
+      "threshold": "clear slowdown inconsistent with continued utilization"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical selection results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "exact cutoff valuation",
+    "2026 storage contract pricing",
+    "raw-material pass-through lag"
+  ],
+  "nextResearchActions": [
+    "Freeze EVE versus CATL as a mixed Research selection.",
+    "Evaluate returns only after lock; separately inspect whether later fundamentals supported the margin-vs-growth thesis."
+  ]
+}

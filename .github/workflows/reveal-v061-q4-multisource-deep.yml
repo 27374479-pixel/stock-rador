@@ -1,0 +1,44 @@
+name: reveal-v061-q4-multisource-deep
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.6-20260922
+    paths:
+      - .github/workflows/reveal-v061-q4-multisource-deep.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.6-20260922
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Fetch frozen historical prices
+        run: |
+          node scripts/fetch-backtest-prices.cjs \
+            backtests/runs/2025q4-multisource-deep-v0.6-002/lock.json \
+            backtests/runs/2025q4-multisource-deep-v0.6-002/prices.json
+      - name: Evaluate matured horizons and preserve pending horizons
+        run: |
+          node scripts/evaluate-skill-run-v061.cjs \
+            backtests/runs/2025q4-multisource-deep-v0.6-002/lock.json \
+            backtests/runs/2025q4-multisource-deep-v0.6-002/prices.json \
+            backtests/runs/2025q4-multisource-deep-v0.6-002/outcome.json
+      - name: Commit diagnostic outcomes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025q4-multisource-deep-v0.6-002/prices.json
+          git add backtests/runs/2025q4-multisource-deep-v0.6-002/outcome.json
+          git commit -m "backtest: reveal v0.6.1 Q4 multi-source diagnostics"
+          git push origin HEAD:ai-skill-v0.6-20260922
