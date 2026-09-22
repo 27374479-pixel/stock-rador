@@ -13,7 +13,8 @@ const FUND={
  "300475.SZ":{sharesBn:0.463773767,profit9mBn:0.359337840},
  "300223.SZ":{sharesBn:0.481569911,profit9mBn:0.244305700},
  "688498.SH":{sharesBn:0.085947726,profit9mBn:0.105892793},
- "688313.SH":{sharesBn:0.458802328,profit9mBn:0.299717803}
+ "688313.SH":{sharesBn:0.458802328,profit9mBn:0.299717803},
+ "600362.SH":{sharesBn:3.462729405,profit9mBn:6.023392762}
 };
 function url(s,start,end,adj){return `https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=${s},day,${start},${end},500,${adj}`;}
 async function fetchJson(u){const r=await fetch(u,{headers:{'User-Agent':'Mozilla/5.0'},signal:AbortSignal.timeout(25000)});if(!r.ok)throw new Error(`HTTP ${r.status}: ${u}`);return r.json();}
