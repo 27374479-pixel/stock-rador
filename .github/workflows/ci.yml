@@ -18,14 +18,7 @@ jobs:
           node-version: '24'
       - run: npm test
 
-# Historical freeze/evaluation scripts are intentionally NOT replayed on every
-# push. Their artifacts are point-in-time experiment records, and rerunning
-# every consumed window creates noise and unnecessary external-data fetches.
-# The active untouched-window job is added temporarily when a new selection
-# or outcome is ready to execute, then replaced for the next stage.
-
-
-  prefreeze-skill-v3-2024-06:
+  evaluate-skill-v3-2024-06:
     needs: test
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -34,9 +27,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - run: node scripts/prefreeze-skill-v3-window-2024-06.cjs
+      - run: node scripts/evaluate-skill-v3-window-2024-06.cjs
       - uses: actions/upload-artifact@v4
         with:
-          name: skill-v3-2024-06-prefreeze
-          path: research/skill_v3_2024_06_prefreeze.json
+          name: skill-v3-2024-06-outcomes
+          path: |
+            research/skill_v3_2024_06_outcomes.json
+            research/skill_v3_2024_06_outcomes.md
           if-no-files-found: error
+
+# Historical freeze/evaluation scripts are intentionally not replayed on every
+# push. Their committed locks and workflow artifacts are point-in-time records.
+# Only the active untouched-window stage is attached to routine CI.
