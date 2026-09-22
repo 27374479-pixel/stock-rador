@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2026-09-22-forward-discovery-v0.6-001",
+  "cutoffAt": "2026-09-22T21:39:46+08:00",
+  "validationClass": "forward_frozen",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Government/regulator/official-statistics changes.",
+      "coverageStatus": "unavailable",
+      "limitations": "No general official-source crawl was completed before this cutoff; do not infer coverage."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier first-party disclosures.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on companies tied to discovered memory/copper changes; not a market-wide issuer crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Current prices, inventories and other physical/market observations.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce price/market data; many proprietary commodity datasets unavailable."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting for current cross-border supply/demand changes.",
+      "coverageStatus": "partial",
+      "limitations": "Coverage concentrated on accessible Reuters reports."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist semiconductor/memory supply-demand research.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce summaries."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Community/forum weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No forum crawl was completed before this forward cutoff."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-memory-20260916",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Smaller phone and laptop makers dig in for years of memory scarcity",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/retail-consumer/smaller-phone-laptop-makers-dig-years-memory-scarcity-2026-09-16/",
+      "publishedAt": "2026-09-16T00:00:00Z",
+      "availableAt": "2026-09-16T00:00:00Z",
+      "originGroup": "reuters-memory-20260916",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Device makers face acute DRAM scarcity and expect tight supply to persist into 2027-2028."
+      ],
+      "entities": [
+        "DRAM",
+        "device makers"
+      ],
+      "observedChanges": [
+        "memory scarcity"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-revenue-20260907",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "DRAM Industry Revenue Rises 59.5% QoQ in 2Q26 as Supply Expansion Continues to Lag Demand Growth",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20260907-13219.html",
+      "publishedAt": "2026-09-07T00:00:00+08:00",
+      "availableAt": "2026-09-07T00:00:00+08:00",
+      "originGroup": "trendforce-dram-202609",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DRAM industry revenue rose 59.5% QoQ; supplier inventories remained at historic lows and supply expansion lagged demand."
+      ],
+      "entities": [
+        "DRAM"
+      ],
+      "observedChanges": [
+        "low inventories",
+        "price/revenue acceleration"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-bulletin-20260916",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "DRAM Market Bulletin - Sep. 16, 2026",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP260916TA",
+      "publishedAt": "2026-09-16T00:00:00+08:00",
+      "availableAt": "2026-09-16T00:00:00+08:00",
+      "originGroup": "trendforce-dram-202609",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "AI infrastructure demand crowds out consumer DRAM; LTA lock-ins restrict smaller buyers and prices remain high."
+      ],
+      "entities": [
+        "DRAM",
+        "AI servers"
+      ],
+      "observedChanges": [
+        "capacity crowd-out",
+        "buyer allocation"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-price-20260922",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Price Trends",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/price/dram/dram_contract",
+      "publishedAt": "2026-09-22T11:00:00+08:00",
+      "availableAt": "2026-09-22T11:00:00+08:00",
+      "originGroup": "trendforce-price-20260922",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DDR5/DDR4 spot and module prices remained elevated; RDIMM weekly pricing showed strong increases while supplier quotes stayed firm."
+      ],
+      "entities": [
+        "DDR5",
+        "DDR4",
+        "RDIMM"
+      ],
+      "observedChanges": [
+        "elevated memory prices"
+      ]
+    },
+    {
+      "itemId": "giga-2026h1",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兆易创新2026年半年度报告",
+      "publisher": "兆易创新/巨潮资讯",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-08-19/1225480384.PDF",
+      "publishedAt": "2026-08-19T00:00:00+08:00",
+      "availableAt": "2026-08-19T00:00:00+08:00",
+      "originGroup": "giga-2026h1",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Storage revenue rose about 245%; niche DRAM/SLC NAND benefited from overseas legacy-capacity withdrawal and higher prices."
+      ],
+      "entities": [
+        "兆易创新",
+        "DRAM",
+        "SLC NAND"
+      ],
+      "observedChanges": [
+        "storage revenue acceleration",
+        "pricing benefit"
+      ]
+    },
+    {
+      "itemId": "dosilicon-2026h1",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "东芯股份2026年半年度报告",
+      "publisher": "东芯股份/巨潮资讯",
+      "url": "https://static.cninfo.com.cn/",
+      "publishedAt": "2026-08-29T00:00:00+08:00",
+      "availableAt": "2026-08-29T00:00:00+08:00",
+      "originGroup": "dosilicon-2026h1",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Revenue rose about 336%; company described structural niche-memory shortage and strong SLC NAND pricing."
+      ],
+      "entities": [
+        "东芯股份",
+        "SLC NAND"
+      ],
+      "observedChanges": [
+        "niche-memory shortage"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-record-20260909",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Anglo-Teck wait shows mining M&A's rising toll",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/commentary/breakingviews/anglo-teck-wait-shows-mining-mas-rising-toll-2026-09-09/",
+      "publishedAt": "2026-09-09T00:00:00Z",
+      "availableAt": "2026-09-09T00:00:00Z",
+      "originGroup": "reuters-copper-market-20260909",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Copper had surged to a record around $14,700/t, emphasizing supply scarcity and strategic asset value."
+      ],
+      "entities": [
+        "copper"
+      ],
+      "observedChanges": [
+        "record copper price"
+      ]
+    },
+    {
+      "itemId": "reuters-codelco-20260916",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Chile's state-owned miner Codelco says restructuring plan may be delayed until end of 2026",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/americas/chiles-state-owned-miner-codelco-says-restructuring-plan-may-be-delayed-until-2026-09-16/",
+      "publishedAt": "2026-09-16T00:00:00Z",
+      "availableAt": "2026-09-16T00:00:00Z",
+      "originGroup": "codelco-production-20260916",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Codelco's production goal was revised lower while output stagnation and costs remained challenging."
+      ],
+      "entities": [
+        "Codelco",
+        "copper"
+      ],
+      "observedChanges": [
+        "mine supply downgrade"
+      ]
+    },
+    {
+      "itemId": "reuters-drc-copper-20260907",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "US imports more Congo copper as consumer acceptance grows",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/africa/us-imports-more-congo-copper-consumer-acceptance-grows-2026-09-07/",
+      "publishedAt": "2026-09-07T00:00:00Z",
+      "availableAt": "2026-09-07T00:00:00Z",
+      "originGroup": "us-drc-imports-20260907",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "US DRC copper imports reached records and industrial-buyer acceptance broadened."
+      ],
+      "entities": [
+        "DRC copper",
+        "US imports"
+      ],
+      "observedChanges": [
+        "trade-flow broadening"
+      ]
+    },
+    {
+      "itemId": "cmoc-2026h1",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "洛阳钼业2026年半年度披露",
+      "publisher": "洛阳钼业/巨潮资讯",
+      "url": "https://static.cninfo.com.cn/",
+      "publishedAt": "2026-08-29T00:00:00+08:00",
+      "availableAt": "2026-08-29T00:00:00+08:00",
+      "originGroup": "cmoc-2026h1",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Copper output rose and earnings benefited from higher copper volume and prices; company has large DRC copper exposure."
+      ],
+      "entities": [
+        "洛阳钼业",
+        "DRC",
+        "copper"
+      ],
+      "observedChanges": [
+        "copper output/earnings growth"
+      ]
+    },
+    {
+      "itemId": "microchip-fy27q1-20260806",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "Microchip reports first quarter fiscal 2027 financial results",
+      "publisher": "Microchip Technology",
+      "url": "https://www.microchip.com/en-us/about/news-releases/financial/microchip-reports-first-quarter-fiscal-year-2027-financial-results",
+      "publishedAt": "2026-08-06T00:00:00Z",
+      "availableAt": "2026-08-06T00:00:00Z",
+      "originGroup": "microchip-fy27q1",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Sales improved sequentially/year-on-year and management described improving end demand/inventory normalization."
+      ],
+      "entities": [
+        "Microchip"
+      ],
+      "observedChanges": [
+        "mature-semiconductor recovery"
+      ]
+    },
+    {
+      "itemId": "specialist-mdi-tdi-20260918",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "Chinese MDI/TDI producers announce price increases",
+      "publisher": "Blooming / industry reporting",
+      "url": "https://www.blooming.com/",
+      "publishedAt": "2026-09-18T00:00:00+08:00",
+      "availableAt": "2026-09-18T00:00:00+08:00",
+      "originGroup": "mdi-tdi-industry-20260918",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Major producers announced price increases, while downstream purchasing remained cautious."
+      ],
+      "entities": [
+        "MDI",
+        "TDI"
+      ],
+      "observedChanges": [
+        "chemical price increases",
+        "weak downstream demand"
+      ]
+    },
+    {
+      "itemId": "reuters-oil-20260915",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Some physical oil cargoes top $130/barrel amid disruptions",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/energy/some-physical-oil-cargoes-top-130-barrel-nearing-aprils-record-saudi-disruptions-2026-09-15/",
+      "publishedAt": "2026-09-15T00:00:00Z",
+      "availableAt": "2026-09-15T00:00:00Z",
+      "originGroup": "reuters-oil-20260915",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Physical crude/product markets showed severe short-term tightness and large cargo premiums amid disruptions."
+      ],
+      "entities": [
+        "oil"
+      ],
+      "observedChanges": [
+        "physical-market tightness"
+      ]
+    },
+    {
+      "itemId": "reuters-power-20260921",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Southern Co unit signs deal with Google to add nuclear capacity",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/legal/litigation/southern-co-unit-signs-deal-with-google-add-nuclear-capacity-2026-09-21/",
+      "publishedAt": "2026-09-21T00:00:00Z",
+      "availableAt": "2026-09-21T00:00:00Z",
+      "originGroup": "reuters-power-20260921",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Data-center power demand is encouraging investment in additional round-the-clock nuclear capacity."
+      ],
+      "entities": [
+        "Google",
+        "nuclear",
+        "data centers"
+      ],
+      "observedChanges": [
+        "power-capacity investment"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-forward-memory-tightness",
+      "statement": "AI/server demand continues to crowd out conventional DRAM capacity, keeping inventories low and memory prices elevated while A-share niche-memory suppliers report major revenue/pricing benefits.",
+      "changeType": "supply_demand_tightening",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-08-19T00:00:00+08:00",
+      "memberItemIds": [
+        "giga-2026h1",
+        "dosilicon-2026h1",
+        "trendforce-dram-revenue-20260907",
+        "reuters-memory-20260916",
+        "trendforce-dram-bulletin-20260916",
+        "trendforce-dram-price-20260922"
+      ],
+      "independentOriginGroups": [
+        "giga-2026h1",
+        "dosilicon-2026h1",
+        "trendforce-dram-202609",
+        "reuters-memory-20260916",
+        "trendforce-price-20260922"
+      ],
+      "affectedValueChain": [
+        "DRAM/NAND suppliers",
+        "memory modules",
+        "servers",
+        "PC/smartphone OEMs"
+      ],
+      "contradictionSearchNotes": "Consumer demand is weakening in some segments; high prices may suppress device output and eventually reduce demand.",
+      "researchQuestion": "Which listed suppliers retain earnings upside after current shortage expectations and valuation are accounted for?"
+    },
+    {
+      "eventId": "event-forward-copper-tightness",
+      "statement": "Record copper prices, lower major-producer supply expectations and broader US acceptance of DRC copper reinforce a structurally tight upstream copper market.",
+      "changeType": "commodity_supply_tightness",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-09-07T00:00:00Z",
+      "memberItemIds": [
+        "reuters-drc-copper-20260907",
+        "reuters-copper-record-20260909",
+        "reuters-codelco-20260916",
+        "cmoc-2026h1"
+      ],
+      "independentOriginGroups": [
+        "us-drc-imports-20260907",
+        "reuters-copper-market-20260909",
+        "codelco-production-20260916",
+        "cmoc-2026h1"
+      ],
+      "affectedValueChain": [
+        "upstream copper miners",
+        "smelters",
+        "grid/EV/data-center equipment"
+      ],
+      "contradictionSearchNotes": "Record prices can induce substitution, demand destruction and supply response; company-level alpha may be mostly commodity beta.",
+      "researchQuestion": "Is there a listed upstream producer with a clear price-relative edge versus other copper miners?"
+    },
+    {
+      "eventId": "event-forward-mature-semi-recovery",
+      "statement": "Mature semiconductor demand/inventory conditions are improving, but the change is broad and less differentiated than the memory shortage.",
+      "changeType": "demand_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-08-06T00:00:00Z",
+      "memberItemIds": [
+        "microchip-fy27q1-20260806"
+      ],
+      "independentOriginGroups": [
+        "microchip-fy27q1"
+      ],
+      "affectedValueChain": [
+        "MCU",
+        "analog",
+        "mature-node foundry"
+      ],
+      "contradictionSearchNotes": "One company can reflect inventory normalization rather than broad end-demand acceleration.",
+      "researchQuestion": "Is the recovery independently visible across multiple suppliers/customers?"
+    },
+    {
+      "eventId": "event-forward-mdi-tdi-price-hike",
+      "statement": "MDI/TDI producers announced price increases, but downstream purchasing remained cautious.",
+      "changeType": "price_increase",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-09-18T00:00:00+08:00",
+      "memberItemIds": [
+        "specialist-mdi-tdi-20260918"
+      ],
+      "independentOriginGroups": [
+        "mdi-tdi-industry-20260918"
+      ],
+      "affectedValueChain": [
+        "polyurethane feedstocks",
+        "downstream foam/coatings"
+      ],
+      "contradictionSearchNotes": "Weak downstream demand may prevent list-price hikes from translating into realized margins.",
+      "researchQuestion": "Are realized prices/orders improving or is this supply discipline without demand?"
+    },
+    {
+      "eventId": "event-forward-oil-physical-tightness",
+      "statement": "Physical oil cargoes became extremely tight and expensive due mainly to logistics/geopolitical disruption.",
+      "changeType": "geopolitical_supply_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2026-09-15T00:00:00Z",
+      "memberItemIds": [
+        "reuters-oil-20260915"
+      ],
+      "independentOriginGroups": [
+        "reuters-oil-20260915"
+      ],
+      "affectedValueChain": [
+        "oil producers",
+        "refiners",
+        "shipping",
+        "energy-intensive industries"
+      ],
+      "contradictionSearchNotes": "Shock may reverse quickly if logistics normalize; company mapping risks becoming geopolitics beta.",
+      "researchQuestion": "Is there a durable company-level expectation gap independent of short-lived disruption?"
+    },
+    {
+      "eventId": "event-forward-power-capacity",
+      "statement": "AI/data-center load growth continues to create demand for firm power capacity, including nuclear expansion, but the narrative is already widely recognized.",
+      "changeType": "capex_demand",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2026-09-21T00:00:00Z",
+      "memberItemIds": [
+        "reuters-power-20260921"
+      ],
+      "independentOriginGroups": [
+        "reuters-power-20260921"
+      ],
+      "affectedValueChain": [
+        "nuclear",
+        "grid equipment",
+        "power generation"
+      ],
+      "contradictionSearchNotes": "Broad AI-power theme may already be saturated and company benefits depend on qualification/order evidence.",
+      "researchQuestion": "Is there any new company-specific order/earnings gap rather than generic theme confirmation?"
+    }
+  ]
+}
