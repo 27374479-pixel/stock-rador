@@ -119,3 +119,32 @@ Any revised rule must be tested on a different historical period or a new forwar
 Forward-frozen evidence remains the strongest validation.
 Grounded historical replay is useful for process testing.
 Contaminated historical replay is exploratory only.
+
+
+## Discovery-layer metrics
+
+V0.6 adds a separate discovery report. For each frozen run report:
+- source item count;
+- unique origin-group count;
+- event-cluster count;
+- lane coverage and limitations;
+- promoted-event count;
+- promoted-hypothesis count;
+- event-to-hypothesis conversion;
+- post-outcome diagnostic recall when the pre-registered audit becomes available.
+
+Do not infer recall from the performance of selected stocks.
+
+### Missed-opportunity audit discipline
+
+The case universe and outcome-based case rule must be frozen before reveal. The audit may
+classify misses but may not tune the same run.
+
+A missed case is only a valid discovery failure if it was `detectableExAnte`: there was
+sufficient pre-cutoff information to support a causal hypothesis without future outcomes.
+
+The audit output must be labeled
+`hindsight_diagnostic_not_alpha_validation`.
+
+A discovery change justified by this audit must be tested on a different holdout or a new
+forward sample.
