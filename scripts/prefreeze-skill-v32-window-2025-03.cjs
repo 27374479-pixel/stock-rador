@@ -11,6 +11,7 @@ validateResearchPacket(P,{quarantinedTickers:QUARANTINED});
 
 const FUND={
  "688008.SH":{sharesBn:1.142537710,profitMidBn:1.408},
+ "002916.SZ":{sharesBn:0.512877535,profit9mBn:1.488055071},
  "600019.SH":{sharesBn:21.986,profit9mBn:5.882}
 };
 function url(s,start,end,adj){return `https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=${s},day,${start},${end},500,${adj}`;}
@@ -29,6 +30,7 @@ async function main(){
    const marketCapBn=close*f.sharesBn;
    const valuation={actualClose:round(close,3),marketCapBn:round(marketCapBn,2)};
    if(c.ticker==='688008.SH') valuation.simple2024EarningsPE=round(marketCapBn/f.profitMidBn,2);
+   if(c.ticker==='002916.SZ') valuation.simpleAnnualized9mPE=round(marketCapBn/(f.profit9mBn*4/3),2);
    if(c.ticker==='600019.SH') valuation.simpleAnnualized9mPE=round(marketCapBn/(f.profit9mBn*4/3),2);
    c.preSignalPrice={maxFetchedDate:s.signalDate,prior20Return:round(trailing(qr,s.signalDate,20)),prior60Return:round(trailing(qr,s.signalDate,60)),prior180Return:round(trailing(qr,s.signalDate,180)),valuation};
  }
