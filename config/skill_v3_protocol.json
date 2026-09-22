@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "3.0",
+  "name": "skill-first-opportunity-research",
+  "effectiveFromWindow": "2024-03",
+  "frozenAt": "2026-09-22T07:20:00.000Z",
+  "architecture": {
+    "reasoningLayer": "skills/a-share-opportunity-research/SKILL.md",
+    "deterministicLayer": "timestamp/quarantine/selection-lock/backtest engine",
+    "fixedNumericScoreRequired": false
+  },
+  "decisions": ["Candidate", "Watch", "No Trade"],
+  "historicalSelectionRules": {
+    "outcomeDataUsed": false,
+    "selectionMustBeCommittedBeforeOutcomeFetch": true,
+    "watchFuturesRemainUnopened": true,
+    "quarantinedTickersForbidden": true,
+    "outcomeOrientedDiscoveryQueriesForbidden": true,
+    "candidateNeedsThreeThesisBreakers": true
+  },
+  "learningPolicy": {
+    "experimentalQuestionAfterOneConsumedWindowAllowed": true,
+    "hardRuleRequiresIndependentReplication": 2,
+    "thresholdOrWeightChangeRequiresVersionBump": true,
+    "consumedWindowMayNotBeRescoredAsFreshValidation": true
+  },
+  "nextUntouchedWindows": [
+    ["2024-03-01","2024-03-14"],
+    ["2024-06-01","2024-06-14"],
+    ["2024-09-01","2024-09-14"],
+    ["2024-12-01","2024-12-14"]
+  ]
+}
