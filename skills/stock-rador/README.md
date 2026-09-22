@@ -23,6 +23,17 @@ V0.6 keeps the v0.5 two-gate opportunity/selection discipline and adds a separat
 A strong industry thesis is allowed to produce no actionable stock. High-priority company
 selection requires a pre-reveal cross-sectional edge versus frozen peers/near-misses.
 
+### 0.6.1 evaluator
+
+V0.6.1 is an evaluation-software patch, not a new research Skill:
+- matured horizons are evaluated normally;
+- future/unmatured horizons are marked `pending`;
+- a not-yet-mature primary base horizon increments `pendingBaseCount`;
+- missing bars on horizons that should already be mature still fail closed.
+
+It exists as versioned files (`backtest-core-v061.cjs`,
+`evaluate-skill-run-v061.cjs`) so old frozen locks are not mutated.
+
 ## Earlier versions
 
 ### 0.5.0
