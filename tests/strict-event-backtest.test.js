@@ -120,8 +120,8 @@ test('benchmark return is aligned to the stock entry and exit dates', () => {
     sellCostRate: 0
   });
   assert.equal(result.status, 'executed');
-  assert.equal(result.netReturn, 0.1);
-  assert.equal(result.benchmarkReturn, 0.02);
+  assert.ok(Math.abs(result.netReturn - 0.10) < 1e-12);
+  assert.ok(Math.abs(result.benchmarkReturn - 0.02) < 1e-12);
   assert.ok(Math.abs(result.excessReturn - 0.08) < 1e-12);
 });
 
