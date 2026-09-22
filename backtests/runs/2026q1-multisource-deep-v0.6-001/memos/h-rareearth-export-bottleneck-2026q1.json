@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-03-25T23:59:59+08:00",
+  "researchReadyAt": "2026-03-25T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-rareearth-export-bottleneck-2026q1",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Export-control licensing and physical shortage can alter pricing/orders within months, but policy incidence across upstream/downstream firms is ambiguous."
+  },
+  "changeHypothesis": {
+    "summary": "China rare-earth export-control enforcement and non-China shortage risk were real, but the policy can support upstream scarcity while simultaneously hurting Chinese downstream exporters; the frozen pack does not verify a company with retained pricing power and clean earnings pass-through.",
+    "firstCredibleDate": "2026-02-26",
+    "valueChain": [
+      "export controls/licensing",
+      "rare-earth material availability",
+      "oxide/metal/magnet pricing",
+      "customer substitution/qualification",
+      "listed-company earnings"
+    ],
+    "persistenceReason": "Operational enforcement and external shortage exposure were independently reported.",
+    "disconfirmingEvidence": [
+      "Policy can change quickly.",
+      "Downstream Chinese exporters may lose shipments even if materials become scarce.",
+      "No company-specific pricing/volume bridge is frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-rareearth-20260226",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in the causal analysis."
+    },
+    {
+      "id": "reuters-rareearth-20260325",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in the causal analysis."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "export-control enforcement",
+      "to": "material scarcity outside China",
+      "mechanism": "Licensing/friction constrains accessible supply.",
+      "evidenceRefs": [
+        "reuters-rareearth-20260226",
+        "reuters-rareearth-20260325"
+      ],
+      "failureMode": "licensing loosens or alternative supply ramps",
+      "lag": "weeks to months"
+    },
+    {
+      "from": "scarcity",
+      "to": "A-share earnings",
+      "mechanism": "Requires a producer that retains domestic/upstream pricing power without losing export volumes; not established.",
+      "evidenceRefs": [
+        "reuters-rareearth-20260226"
+      ],
+      "failureMode": "export limits hurt volumes more than scarcity helps pricing",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "upstream producers with retained domestic pricing power"
+    ],
+    "secondOrderWinners": [
+      "non-China alternative suppliers"
+    ],
+    "losers": [
+      "export-dependent magnet/downstream firms facing licensing friction"
+    ],
+    "substitutes": [
+      "alternative materials and non-China projects"
+    ],
+    "bottlenecks": [
+      "licensing",
+      "qualified separation/magnet capacity"
+    ],
+    "falseThemeMatches": [
+      "rare-earth concept stocks without verified margin/volume benefit"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company passed the selection gate at the cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Export controls were visible but incidence across firms was unclear.",
+    "thesisExpectation": "Only upstream firms with verified retained pricing power should qualify.",
+    "measurableGap": "No verified company-level gap.",
+    "evidenceRefs": [
+      "reuters-rareearth-20260226",
+      "reuters-rareearth-20260325"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selected company.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "policy incidence ambiguous",
+      "company bridge missing"
+    ]
+  },
+  "bearCase": "Controls hurt Chinese downstream exporters or are relaxed before scarcity monetizes.",
+  "invalidationConditions": [
+    {
+      "indicator": "licensing/supply availability",
+      "observationMethod": "policy and customer supply updates",
+      "threshold": "material normalization"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "company-specific export mix",
+    "domestic vs export pricing",
+    "policy duration"
+  ],
+  "nextResearchActions": [
+    "Require company-level export/pricing evidence in another holdout.",
+    "Keep No selection here."
+  ]
+}
