@@ -65,14 +65,15 @@ async function main() {
   ]));
   const cutoffDates = manifest.selections.map((selection) => memoFiles[selection.memoPath]?.cutoffAt?.slice(0, 10));
   if (cutoffDates.some((date) => !/^\d{4}-\d{2}-\d{2}$/.test(date || ''))) throw new Error('invalid memo cutoff date');
+  const anchorDates = cutoffDates.length ? cutoffDates : [manifest.discoveryWindow.endDate];
 
-  const start = addDays(cutoffDates.sort()[0], -15);
+  const start = addDays([...anchorDates].sort()[0], -15);
   const memoHorizons = Object.values(memoFiles).flatMap((memo) => {
     const r = memo.expectedRealization;
     return r ? [r.earliestTradingDays, r.baseTradingDays, r.latestTradingDays] : [];
   });
   const maxTradingDays = Math.max(...manifest.outcomePolicy.holdingTradingDays, ...memoHorizons);
-  const end = addDays(cutoffDates.sort().at(-1), maxTradingDays * 2 + 45);
+  const end = addDays([...anchorDates].sort().at(-1), maxTradingDays * 2 + 45);
   const tickers = [...new Set([manifest.benchmark.ticker, ...manifest.selections.map((selection) => selection.ticker)])];
   const fetchedAt = new Date().toISOString();
   const series = {};
