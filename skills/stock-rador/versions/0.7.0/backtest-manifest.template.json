@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "replace-me",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-22T22:00:00+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/0.7.0/SKILL.md",
+    "version": "0.7.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2025-10-01",
+    "endDate": "2025-12-31"
+  },
+  "screeningPath": "backtests/runs/replace-me/screening.json",
+  "implementationPaths": [
+    "scripts/collect-hn-generic.cjs",
+    "scripts/backtest-core.cjs",
+    "scripts/lock-skill-run.cjs",
+    "scripts/fetch-backtest-prices.cjs",
+    "scripts/evaluate-skill-run.cjs",
+    "scripts/discovery-core.cjs",
+    "scripts/audit-discovery-recall.cjs"
+  ],
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/replace-me/source-pack.json",
+    "identityStressPath": "backtests/runs/replace-me/identity-stress.json",
+    "notes": "Historical runs remain provisional. Forward-frozen evidence is stronger."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedHypothesisStates": [
+    "Research hypothesis",
+    "High-priority hypothesis"
+  ],
+  "trackedSelectionStates": [
+    "No selection",
+    "Research selection",
+    "High-priority selection"
+  ],
+  "primarySelectionStates": [
+    "High-priority selection"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "hypothesisMemoPaths": [],
+  "selections": [],
+  "reportingPolicy": {
+    "primaryMetric": "primary_thesis_base_matched_control_excess",
+    "mustReportAllSelections": true,
+    "mustReportMatchedControls": true,
+    "mustReportBestControl": true,
+    "mustReportHypothesisAndSelectionStates": true,
+    "mustReportExpectationBurden": true,
+    "noSignalIsValid": true
+  },
+  "discoveryPolicy": {
+    "requiredLanes": [
+      "official_primary",
+      "company_first_party",
+      "physical_industry",
+      "reputable_news",
+      "specialist_trade",
+      "community_weak_signal"
+    ],
+    "minimumCoveredLanes": 4,
+    "screeningTarget": "event_cluster",
+    "postOutcomeMissAudit": {
+      "candidateUniverse": "Pre-register an objective outcome universe appropriate to the run before reveal.",
+      "candidateRule": "Pre-register the outcome threshold / ranking rule that will generate hindsight audit cases.",
+      "causalEligibilityRule": "A case counts as detectable only when pre-cutoff public evidence could support a causal thesis without future outcomes.",
+      "samePeriodMayTuneSkill": false
+    }
+  }
+}
