@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.6.0",
+  "cutoffAt": "2026-03-24T23:59:59+08:00",
+  "researchReadyAt": "2026-03-24T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-fertilizer-supply-shock-2026q1",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Physical fertilizer disruptions can reprice quickly, but producer earnings depend on feedstock, export policy and shock duration over subsequent months."
+  },
+  "changeHypothesis": {
+    "summary": "Hormuz disruption and Russian ammonium-nitrate export restrictions created a real global nitrogen-fertilizer supply shock, but the frozen evidence does not show that a specific A-share producer captures the global price spike after domestic feedstock/export-policy effects.",
+    "firstCredibleDate": "2026-03-18",
+    "valueChain": [
+      "gas/ammonia supply",
+      "nitrogen fertilizer production/export",
+      "global urea/ammonium-nitrate price",
+      "producer margin",
+      "A-share earnings"
+    ],
+    "persistenceReason": "Multiple independent disruptions affected production/logistics and Russian exports.",
+    "disconfirmingEvidence": [
+      "The shock is geopolitical and potentially short-lived.",
+      "High prices can reduce farmer application or induce substitution.",
+      "Chinese domestic pricing/export rules may block global price pass-through."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-fertilizer-20260318",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in the causal analysis."
+    },
+    {
+      "id": "reuters-fertilizer-20260320",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in the causal analysis."
+    },
+    {
+      "id": "reuters-fertilizer-russia-20260324",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in the causal analysis."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Hormuz/Russia disruption",
+      "to": "global nitrogen-fertilizer tightness",
+      "mechanism": "Production/logistics restrictions remove or delay export supply.",
+      "evidenceRefs": [
+        "reuters-fertilizer-20260318",
+        "reuters-fertilizer-russia-20260324"
+      ],
+      "failureMode": "routes reopen or restrictions expire",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "global price spike",
+      "to": "A-share producer earnings",
+      "mechanism": "Requires export access and favorable coal/gas/feedstock economics; not established in frozen company evidence.",
+      "evidenceRefs": [
+        "reuters-fertilizer-20260320"
+      ],
+      "failureMode": "domestic controls/feedstock costs prevent margin capture",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost nitrogen producers with export/pass-through ability"
+    ],
+    "secondOrderWinners": [
+      "fertilizer distributors with favorable inventory"
+    ],
+    "losers": [
+      "farmers and food chains facing higher input cost"
+    ],
+    "substitutes": [
+      "lower-cost fertilizer formulations and reduced application"
+    ],
+    "bottlenecks": [
+      "ammonia/urea supply",
+      "shipping routes"
+    ],
+    "falseThemeMatches": [
+      "fertilizer names without margin exposure to international pricing"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company passed the selection gate at the cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The price shock was public and visibly geopolitical.",
+    "thesisExpectation": "Only producers with proven pass-through/export economics deserve selection.",
+    "measurableGap": "No company-level pass-through gap was verified.",
+    "evidenceRefs": [
+      "reuters-fertilizer-20260318",
+      "reuters-fertilizer-russia-20260324"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No verified company-level economics in frozen pack.",
+    "alreadyPricedAssessment": "unknown",
+    "constraints": [
+      "geopolitical half-life",
+      "domestic/global basis mismatch"
+    ]
+  },
+  "bearCase": "The global spike reverses quickly or Chinese producers cannot monetize it.",
+  "invalidationConditions": [
+    {
+      "indicator": "Hormuz/export restrictions",
+      "observationMethod": "shipping and policy updates",
+      "threshold": "rapid normalization before producer margins reprice"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical identities and later outcomes may be present in current-model memory even though memo evidence is cutoff-bounded.",
+    "result": "not_clean",
+    "caveats": [
+      "Treat all historical results as diagnostic only."
+    ]
+  },
+  "unknowns": [
+    "Chinese export policy",
+    "coal/gas feedstock spread",
+    "company export mix"
+  ],
+  "nextResearchActions": [
+    "Add producer-specific feedstock/export evidence in a future holdout, not after seeing Q1 returns.",
+    "Keep No selection in this run."
+  ]
+}
