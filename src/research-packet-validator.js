@@ -64,6 +64,14 @@ function validateResearchPacket(packet, options = {}) {
           throw new Error(`Candidate ${candidate.ticker} requires an explicit earningsBridge`);
         }
         if (!candidate.priceExpectation) throw new Error(`Candidate ${candidate.ticker} requires priceExpectation`);
+        const basis = candidate.basisReconciliation;
+        if (!basis || !basis.externalIndicator || !basis.companyRealizedBasis || !basis.basisRisk) {
+          throw new Error(`Candidate ${candidate.ticker} requires basisReconciliation`);
+        }
+        const valuation = candidate.valuationBridge;
+        if (!valuation || !valuation.marketCapOrEV || !valuation.bearCase || !valuation.baseCase || !valuation.upsideCase || !valuation.impliedExpectation) {
+          throw new Error(`Candidate ${candidate.ticker} requires valuationBridge`);
+        }
       }
     }
   }
