@@ -107,6 +107,9 @@ function validateManifest(manifest) {
       manifest.outcomePolicy.matchedControlStatistic !== 'equal_weight_mean') {
     errors.push('outcomePolicy.matchedControlStatistic must be equal_weight_mean');
   }
+  if (manifest?.schemaVersion === '1.2' && !manifest?.contaminationControls?.sourcePackPath) {
+    errors.push('schemaVersion 1.2 requires contaminationControls.sourcePackPath for every evaluation mode');
+  }
   if (manifest?.evaluationMode === 'historical_replay') {
     if (!manifest?.contaminationControls?.modelMemoryRisk) errors.push('historical_replay requires contaminationControls.modelMemoryRisk');
     if (!manifest?.contaminationControls?.sourcePackPath) errors.push('historical_replay requires contaminationControls.sourcePackPath');
@@ -371,16 +374,16 @@ function lockRun(manifestPath, rootDir = process.cwd()) {
     files.push({ role: 'implementation', path: implementationPath, sha256: sha256File(absoluteImplementation) });
   }
 
-  if (manifest.evaluationMode === 'historical_replay') {
+  if (manifest?.contaminationControls?.sourcePackPath) {
     const sourcePackPath = resolveInside(root, manifest.contaminationControls.sourcePackPath);
     files.push({ role: 'source_pack', path: manifest.contaminationControls.sourcePackPath, sha256: sha256File(sourcePackPath) });
-    if (['1.1', '1.2'].includes(manifest.schemaVersion)) {
-      const identityStressPath = resolveInside(root, manifest.contaminationControls.identityStressPath);
-      const identityStress = readJson(identityStressPath);
-      const identityErrors = validateIdentityStress(identityStress, manifest);
-      if (identityErrors.length) throw new Error(`invalid identity stress:\n- ${identityErrors.join('\n- ')}`);
-      files.push({ role: 'identity_stress', path: manifest.contaminationControls.identityStressPath, sha256: sha256File(identityStressPath) });
-    }
+  }
+  if (manifest.evaluationMode === 'historical_replay' && ['1.1', '1.2'].includes(manifest.schemaVersion)) {
+    const identityStressPath = resolveInside(root, manifest.contaminationControls.identityStressPath);
+    const identityStress = readJson(identityStressPath);
+    const identityErrors = validateIdentityStress(identityStress, manifest);
+    if (identityErrors.length) throw new Error(`invalid identity stress:\n- ${identityErrors.join('\n- ')}`);
+    files.push({ role: 'identity_stress', path: manifest.contaminationControls.identityStressPath, sha256: sha256File(identityStressPath) });
   }
 
   const seenMemoPaths = new Set();
