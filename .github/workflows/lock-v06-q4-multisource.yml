@@ -1,0 +1,38 @@
+name: lock-v06-q4-multisource
+
+on:
+  push:
+    branches:
+      - ai-skill-v0.6-20260922
+    paths:
+      - .github/workflows/lock-v06-q4-multisource.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v0.6-20260922
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Run tests before discovery lock
+        run: npm test
+      - name: Lock Q4 multi-source discovery run
+        run: |
+          node scripts/lock-skill-run.cjs \
+            backtests/runs/2025q4-multisource-v0.6-001/manifest.json \
+            backtests/runs/2025q4-multisource-v0.6-001/lock.json
+      - name: Commit discovery lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025q4-multisource-v0.6-001/lock.json
+          git commit -m "backtest: lock v0.6 Q4 multi-source discovery"
+          git push origin HEAD:ai-skill-v0.6-20260922
