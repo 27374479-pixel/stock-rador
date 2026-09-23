@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-pc-dram-stabilization",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "PC DRAM stabilization could become a positive supplier earnings signal over quarters, but no direct frozen A-share supplier expression is available."
+  },
+  "changeHypothesis": {
+    "summary": "PC DRAM contract prices stabilized in August/September as OEM restocking helped normalize inventory.",
+    "firstCredibleDate": "2019-09-26",
+    "valueChain": [
+      "PC OEM restocking",
+      "PC DRAM inventory/price",
+      "supplier margin",
+      "earnings"
+    ],
+    "persistenceReason": "Supplier bit-growth discipline can support 2020 recovery.",
+    "disconfirmingEvidence": [
+      "Generic A-share memory names are not verified direct PC DRAM suppliers.",
+      "Theme price is already extremely hot."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-pc-stable-20190926",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-theme-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "PC restocking",
+      "to": "PC DRAM price stabilization",
+      "mechanism": "Inventory build reduces supplier stock pressure.",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926"
+      ],
+      "failureMode": "OEM restocking reverses",
+      "lag": "quarter"
+    },
+    {
+      "from": "PC DRAM pricing",
+      "to": "A-share earnings",
+      "mechanism": "Requires direct PC DRAM supplier exposure.",
+      "evidenceRefs": [
+        "regime-memory-theme-20190930"
+      ],
+      "failureMode": "no direct expression",
+      "lag": "unresolved"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "PC DRAM suppliers"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "PC OEM buyers if prices rise"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "inventory"
+    ],
+    "falseThemeMatches": [
+      "NOR/MCU companies labeled memory"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: preserve the positive physical signal but fail closed on listed-company mapping."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Generic memory theme is extremely rerated but not the same product exposure.",
+    "thesisExpectation": "Require direct PC DRAM revenue and margin sensitivity.",
+    "measurableGap": "No frozen expression.",
+    "evidenceRefs": [
+      "dram-pc-stable-20190926",
+      "regime-memory-theme-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "PC DRAM",
+    "geographicScope": "global",
+    "customerScope": "PC OEMs",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [
+      "h-2019q3-mobile-dram-weakness"
+    ],
+    "rationale": "PC DRAM has its own inventory/end-demand path.",
+    "evidenceRefs": [
+      "dram-pc-stable-20190926"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "contract-price stabilization and restocking",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "lower supplier inventory may support recovery",
+      "horizon": "next 1-2 quarters",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "low projected 2020 bit-output growth",
+      "horizon": "2020",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926"
+      ]
+    },
+    "conflictType": "aligned",
+    "resolutionRule": "Keep positive product signal but require direct equity mapping.",
+    "conclusion": "coherent"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No direct A-share supplier evidence is frozen.",
+    "evidenceRefs": [
+      "dram-pc-stable-20190926",
+      "regime-memory-theme-20190930"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "product_signal_positive_expression_missing",
+    "constraints": [
+      "no direct A-share PC DRAM supplier"
+    ]
+  },
+  "bearCase": "Generic memory momentum creates a false positive without earnings exposure.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct PC DRAM exposure",
+      "observationMethod": "company filing",
+      "threshold": "material realized supplier revenue"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection."
+  ]
+}
