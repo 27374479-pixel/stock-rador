@@ -74,6 +74,18 @@
       "sourcePackRef": "evidenceDocuments",
       "relation": "supports",
       "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "shanjin-annual-20250318",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen second gold-peer evidence."
+    },
+    {
+      "id": "shanjin-research-20250320",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen second gold-peer valuation/forecast evidence."
     }
   ],
   "causalChain": [
@@ -172,6 +184,25 @@
         "cost inflation",
         "gold reversal"
       ]
+    },
+    {
+      "ticker": "000975.SZ",
+      "name": "山金国际",
+      "verifiedExposure": "2024 mined gold 8.04t +14.69%, profit +52.57%, CFO +77.59%; 2025E profit forecast +52.68% at ~15.7x PE.",
+      "evidenceRefs": [
+        "shanjin-annual-20250318",
+        "shanjin-research-20250320"
+      ],
+      "earningsSensitivity": {
+        "base": "Low-cost, gold-focused producer with strong 2024 cash/profit growth.",
+        "favorable": "Record gold sustains high margins and 2025 earnings growth.",
+        "adverse": "Gold price reversal or production misses."
+      },
+      "principalRisks": [
+        "gold reversal",
+        "production execution",
+        "smaller scale"
+      ]
     }
   ],
   "matchedControls": [
@@ -184,6 +215,18 @@
       "evidenceRefs": [
         "zijin-gold-mix-20250316",
         "shandong-research-20250328"
+      ]
+    },
+    {
+      "ticker": "000975.SZ",
+      "name": "山金国际",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Gold-focused A-share miner with strong volume/cash growth and lower-cost operations.",
+      "whySelectedCompanyShouldOutperform": "紫金 has lower frozen forward valuation, larger scale and stronger planned gold-volume growth/diversification, while 山金国际 is the purer/lower-cost gold expression.",
+      "evidenceRefs": [
+        "zijin-gold-mix-20250316",
+        "shanjin-annual-20250318",
+        "shanjin-research-20250320"
       ]
     }
   ],
@@ -208,6 +251,25 @@
           "shandong-research-20250328"
         ],
         "switchCondition": "Prefer 山东黄金 if gold-specific earnings revisions clearly exceed 紫金's while its valuation premium compresses or 紫金's non-gold businesses deteriorate.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "000975.SZ",
+        "selectedAdvantages": [
+          "lower 2025E PE (~11-12x vs ~15.7x)",
+          "larger scale and diversified cash generation",
+          "planned gold output growth around 16-17%"
+        ],
+        "selectedDisadvantages": [
+          "山金国际 has purer gold exposure and very low mining cost",
+          "山金国际 2025E profit growth forecast is faster"
+        ],
+        "evidenceRefs": [
+          "zijin-gold-mix-20250316",
+          "shanjin-annual-20250318",
+          "shanjin-research-20250320"
+        ],
+        "switchCondition": "Prefer 山金国际 if its low-cost gold earnings revisions materially exceed 紫金 while the valuation gap closes.",
         "netEdge": "selected"
       }
     ],
@@ -261,7 +323,8 @@
       "rationale": "山东 has stronger pure-gold torque, but 紫金 has lower valuation and faster planned gold-volume growth.",
       "evidenceRefs": [
         "zijin-gold-mix-20250316",
-        "shandong-research-20250328"
+        "shandong-research-20250328",
+        "shanjin-research-20250320"
       ]
     },
     "baselineLag": {
@@ -352,7 +415,8 @@
       "evidenceRefs": [
         "zijin-research-20250123",
         "zijin-gold-mix-20250316",
-        "shandong-research-20250328"
+        "shandong-research-20250328",
+        "shanjin-research-20250320"
       ]
     },
     "catalystReachability": {
@@ -382,6 +446,21 @@
           "shandong-research-20250328"
         ],
         "switchCondition": "Switch if 山东's gold-specific revisions outrun its valuation premium or 紫金's non-gold operations weaken.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "000975.SZ",
+        "revisionAdvantage": "山金国际 has purer gold beta and strong forecast growth; 紫金 has larger planned gold-volume growth and more diversified growth engines.",
+        "valuationAdvantage": "紫金 ~11-12x versus 山金国际 ~15.7x 2025E.",
+        "qualityTradeoff": "Both pass quality; 山金国际 has low gold cost, 紫金 has much larger scale/diversification.",
+        "catalystAdvantage": "Both benefit immediately from record gold; 紫金 additionally has multiple mine/project volume catalysts.",
+        "downsideTradeoff": "Lower valuation and diversified metal exposure favor 紫金 if gold retraces.",
+        "evidenceRefs": [
+          "zijin-gold-mix-20250316",
+          "shanjin-annual-20250318",
+          "shanjin-research-20250320"
+        ],
+        "switchCondition": "Switch if 山金国际 delivers larger realized gold-margin revisions while its valuation premium compresses.",
         "netAsymmetry": "selected"
       }
     ],
