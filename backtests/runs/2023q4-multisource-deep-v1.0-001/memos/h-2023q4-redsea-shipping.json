@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.0.0",
+  "cutoffAt": "2023-12-31T23:59:59+08:00",
+  "researchReadyAt": "2023-12-31T22:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q4-redsea-shipping",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "If persistent, route diversions can affect freight rates and carrier earnings over weeks to quarters."
+  },
+  "changeHypothesis": {
+    "summary": "Red Sea attacks created a real container-shipping route/capacity shock in mid-December, but by quarter-end the shock was too new to establish durable freight-rate pass-through or a company earnings bridge.",
+    "firstCredibleDate": "2023-12-15",
+    "valueChain": [
+      "security disruption",
+      "rerouting",
+      "effective capacity",
+      "freight rates",
+      "carrier earnings"
+    ],
+    "persistenceReason": "Operational suspensions were real, but persistence was unresolved by Dec31.",
+    "disconfirmingEvidence": [
+      "Only about two weeks of pre-cutoff history.",
+      "中远海控 Q3 earnings were still collapsing from post-pandemic rate normalization.",
+      "No frozen company-level rate-to-profit bridge was available."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "maersk-redsea-20231215",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "cosco-q3-20231031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Red Sea security risk",
+      "to": "rerouting and longer voyages",
+      "mechanism": "Carrier service suspensions force longer routes and reduce effective vessel capacity.",
+      "evidenceRefs": [
+        "maersk-redsea-20231215"
+      ],
+      "failureMode": "security improves and normal routing resumes",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "capacity loss",
+      "to": "freight-rate increase",
+      "mechanism": "Longer voyage time can tighten effective slot supply.",
+      "evidenceRefs": [
+        "maersk-redsea-20231215"
+      ],
+      "failureMode": "excess fleet capacity absorbs rerouting",
+      "lag": "weeks"
+    },
+    {
+      "from": "freight rates",
+      "to": "A-share carrier earnings",
+      "mechanism": "Higher contract/spot rates would raise container-shipping revenue if sustained.",
+      "evidenceRefs": [
+        "cosco-q3-20231031"
+      ],
+      "failureMode": "rates fail to rise enough or costs absorb gains",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "container carriers if freight rates rise sustainably"
+    ],
+    "secondOrderWinners": [
+      "selected freight forwarders"
+    ],
+    "losers": [
+      "shippers/importers facing higher logistics cost"
+    ],
+    "substitutes": [
+      "air/rail/alternative routes"
+    ],
+    "bottlenecks": [
+      "Suez/Red Sea security and vessel availability"
+    ],
+    "falseThemeMatches": [
+      "shipping names without container-rate exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601919.SH",
+      "name": "中远海控",
+      "verifiedExposure": "Large container-shipping carrier, but pre-shock Q3 revenue/profit were still down sharply.",
+      "evidenceRefs": [
+        "cosco-q3-20231031"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit -83% YoY.",
+        "favorable": "persistent rerouting lifts freight rates.",
+        "adverse": "shock fades or fleet capacity absorbs it."
+      },
+      "principalRisks": [
+        "event half-life",
+        "rate pass-through",
+        "fuel/rerouting cost"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company selection: the event is real but no durable rate/earnings conversion was frozen by cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The disruption was new and operationally visible, but duration and freight-rate pass-through were unresolved.",
+    "thesisExpectation": "Persistent rerouting could tighten capacity and lift rates.",
+    "measurableGap": "No reliable company-level expectation gap can yet be measured.",
+    "evidenceRefs": [
+      "maersk-redsea-20231215",
+      "cosco-q3-20231031"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "too little event history",
+      "no realized earnings bridge"
+    ]
+  },
+  "bearCase": "Routes normalize before freight rates materially affect carrier earnings, leaving the apparent scarcity transient.",
+  "invalidationConditions": [
+    {
+      "indicator": "Red Sea routing",
+      "observationMethod": "carrier announcements",
+      "threshold": "normal service resumes"
+    },
+    {
+      "indicator": "freight rates",
+      "observationMethod": "spot/contract indices",
+      "threshold": "no sustained increase"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used before lock."
+    ]
+  },
+  "unknowns": [
+    "freight-rate persistence",
+    "cost pass-through"
+  ],
+  "nextResearchActions": [
+    "Keep Research hypothesis / No selection until rate persistence and direct company economics are visible."
+  ]
+}
