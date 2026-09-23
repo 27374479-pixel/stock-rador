@@ -1,0 +1,21 @@
+name: v1.1-ci
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.1-20260923
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Load v1.1 auditor
+        run: node -e "require('./scripts/backtest-core-v110.cjs')"
