@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2019-12-31T23:59:59+08:00",
+  "researchReadyAt": "2019-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q4-server-dram-turn",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Server DRAM pricing may turn within one to two quarters, but a direct A-share earnings expression must exist before selection."
+  },
+  "changeHypothesis": {
+    "summary": "TrendForce identified server DRAM as the first DRAM segment likely to return to price growth, but no frozen A-share company in the evidence pack had realized direct server-DRAM supplier earnings at cutoff.",
+    "firstCredibleDate": "2019-12-16",
+    "valueChain": [
+      "server demand/restocking",
+      "server DRAM contract price",
+      "DRAM supplier margins"
+    ],
+    "persistenceReason": "Inventory normalization can sustain a product-price recovery for quarters.",
+    "disconfirmingEvidence": [
+      "Broader DRAM recovery was uneven.",
+      "GigaDevice's DRAM was still future R&D/industrialization rather than realized supplier earnings.",
+      "Memory-theme equities were already heavily rerated."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-dram-20191111",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-dram-20191216",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-q3-20191030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20191231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "server DRAM restocking",
+      "to": "server DRAM price",
+      "mechanism": "Lower inventories and renewed buying support contract-price stabilization/upturn.",
+      "evidenceRefs": [
+        "trendforce-dram-20191111",
+        "trendforce-dram-20191216"
+      ],
+      "failureMode": "restocking stalls",
+      "lag": "quarter"
+    },
+    {
+      "from": "server DRAM price",
+      "to": "A-share earnings",
+      "mechanism": "Requires a listed company with realized server-DRAM supply exposure.",
+      "evidenceRefs": [
+        "giga-q3-20191030"
+      ],
+      "failureMode": "no direct listed expression",
+      "lag": "unresolved"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "server DRAM manufacturers"
+    ],
+    "secondOrderWinners": [
+      "server components"
+    ],
+    "losers": [
+      "server OEM buyers"
+    ],
+    "substitutes": [
+      "other memory suppliers"
+    ],
+    "bottlenecks": [
+      "DRAM inventory"
+    ],
+    "falseThemeMatches": [
+      "generic semiconductor names without realized server-DRAM revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Realized Flash/MCU business but DRAM project still prospective at cutoff.",
+      "evidenceRefs": [
+        "giga-q3-20191030"
+      ],
+      "earningsSensitivity": {
+        "base": "No realized server-DRAM earnings bridge.",
+        "favorable": "Future DRAM R&D succeeds.",
+        "adverse": "Mapping remains prospective, not current earnings."
+      },
+      "principalRisks": [
+        "mapping error",
+        "theme absorption"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: preserve the server-DRAM physical signal but do not force a generic semiconductor expression."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Memory-theme equities were already extremely strong despite lack of a clean direct A-share server-DRAM expression.",
+    "thesisExpectation": "Select only if direct server-DRAM revenue/earnings is verified.",
+    "measurableGap": "Direct listed expression is missing.",
+    "evidenceRefs": [
+      "trendforce-dram-20191216",
+      "giga-q3-20191030",
+      "regime-memory-20191231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "theme_hot_mapping_missing",
+    "constraints": [
+      "no direct realized A-share server-DRAM supplier",
+      "extreme theme rerating"
+    ]
+  },
+  "bearCase": "Generic semiconductor momentum falsely validates a server-DRAM thesis with no earnings linkage.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct server-DRAM earnings exposure",
+      "observationMethod": "company filing",
+      "threshold": "material verified realized revenue"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; keep separate from the NOR Flash hypothesis."
+  ]
+}
