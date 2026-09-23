@@ -3,7 +3,24 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 0.9.0
+## Current version: 1.0.0
+
+- [SKILL.md](versions/1.0.0/SKILL.md)
+- [EVALS.md](versions/1.0.0/EVALS.md)
+- [DISCOVERY.md](versions/1.0.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/1.0.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/1.0.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/1.0.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/1.0.0/missed-opportunity-audit.template.json)
+
+V1.0 keeps all v0.9 expectation, conversion, timing, asymmetry and convexity gates.
+It adds one narrow **company-engine timing override** for quality_revision candidates whose
+earnings engine is already realized and durable but is temporarily masked by a neutral/adverse
+broad-sector price regime. The override requires expectation room, clear cross-sectional
+asymmetry, no company-fundamental explanation for the price weakness, a structural/multi-quarter
+company engine, and a catalyst/falsifier inside the base horizon.
+
+## Previous current contract: 0.9.0
 
 - [SKILL.md](versions/0.9.0/SKILL.md)
 - [EVALS.md](versions/0.9.0/EVALS.md)
