@@ -1,0 +1,188 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-11-25T23:59:59+08:00",
+  "researchReadyAt": "2020-11-25T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q4-dram-weakness",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "If the DRAM downcycle persists, pricing pressure should reach supplier earnings over one to two quarters."
+  },
+  "changeHypothesis": {
+    "summary": "DRAM demand and contract prices remained weak even while China manufacturing broadly recovered. The short-term equity rebound did not have enough independent company-level earnings evidence to justify fighting the negative physical signal.",
+    "firstCredibleDate": "2020-11-11",
+    "valueChain": [
+      "client inventory",
+      "DRAM demand",
+      "contract price",
+      "memory supplier margin",
+      "earnings"
+    ],
+    "persistenceReason": "Excess inventory and weakening demand can persist across procurement cycles.",
+    "disconfirmingEvidence": [
+      "Memory equities had a short 20d rebound.",
+      "Only one specialist origin is frozen for the DRAM physical signal.",
+      "No company-specific counter-engine was verified before cutoff."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-dram-20201111",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-dram-20201125",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-dram-20201125",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "high client inventory/weaker demand",
+      "to": "lower DRAM contract prices",
+      "mechanism": "Buyers reduce procurement while supplier inventory rises.",
+      "evidenceRefs": [
+        "tf-dram-20201111",
+        "tf-dram-20201125"
+      ],
+      "failureMode": "unexpected demand rebound or production cuts",
+      "lag": "quarters"
+    },
+    {
+      "from": "lower prices",
+      "to": "listed memory earnings",
+      "mechanism": "Lower ASP pressures gross margin unless a company has a differentiated product/volume engine.",
+      "evidenceRefs": [
+        "tf-dram-20201125"
+      ],
+      "failureMode": "company mix offsets DRAM weakness",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "OEMs if memory input costs fall"
+    ],
+    "losers": [
+      "DRAM suppliers without differentiated growth"
+    ],
+    "substitutes": [
+      "other memory generations/products"
+    ],
+    "bottlenecks": [
+      "inventory normalization"
+    ],
+    "falseThemeMatches": [
+      "semiconductor names rallying despite worsening DRAM physical data"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Broad memory/MCU exposure, but no frozen company-specific counter-engine is sufficient to override DRAM weakness.",
+      "evidenceRefs": [
+        "regime-dram-20201125"
+      ],
+      "earningsSensitivity": {
+        "base": "unresolved company-specific DRAM sensitivity.",
+        "favorable": "MCU/other products offset.",
+        "adverse": "DRAM weakness dominates."
+      },
+      "principalRisks": [
+        "industry downcycle"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Memory/ISSI exposure but no independent earnings bridge frozen here.",
+      "evidenceRefs": [
+        "regime-dram-20201125"
+      ],
+      "earningsSensitivity": {
+        "base": "unresolved.",
+        "favorable": "non-DRAM demand offsets.",
+        "adverse": "memory ASP declines."
+      },
+      "principalRisks": [
+        "mapping uncertainty"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No stock selection: negative physical pricing evidence is stronger than the short-term equity rebound."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Memory stocks had rebounded over 20d despite a weak 60d breadth and falling DRAM pricing.",
+    "thesisExpectation": "Physical weakness should be respected unless company-specific earnings evidence contradicts it.",
+    "measurableGap": "No sufficiently audited positive company engine exists.",
+    "evidenceRefs": [
+      "tf-dram-20201125",
+      "regime-dram-20201125"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "short rebound conflicts with physical downcycle",
+    "constraints": [
+      "negative industry data",
+      "company evidence insufficient"
+    ]
+  },
+  "bearCase": "The physical DRAM decline persists and short-term semiconductor equity strength proves narrative-driven rather than earnings-driven.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM contract prices/inventory",
+      "observationMethod": "industry data",
+      "threshold": "prices stabilize and inventory normalizes with verified company profit acceleration"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "candidate-specific DRAM revenue shares"
+  ],
+  "nextResearchActions": [
+    "No selection until direct company differentiation is verified."
+  ]
+}
