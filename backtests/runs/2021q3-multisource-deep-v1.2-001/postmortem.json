@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2021q3-multisource-deep-v1.2-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "shipping_cosco_peak_path_block_correct",
+      "frozenDecision": "中远海控 Research selection; not High-priority because record H1 profit and freight rates were already accompanied by a frozen 2022/23 profit-decline path and strong prior rerating.",
+      "base20d": {
+        "selectedReturn": -0.2520756036561741,
+        "benchmarkReturn": 0.01283953803471194,
+        "benchmarkExcess": -0.26491514169088604,
+        "selectedRank": 3
+      },
+      "base60d": {
+        "selectedReturn": -0.23283886506708396,
+        "benchmarkReturn": 0.010712449710595262,
+        "benchmarkExcess": -0.24355131477767922,
+        "matchedControlExcess": -0.12645445418596096,
+        "bestControlTicker": "601872.SH",
+        "bestControlReturn": 0.019657342037999292,
+        "selectedRank": 3
+      },
+      "failureClass": null,
+      "label": "peak_cycle_decline_correctly_blocked",
+      "generalLesson": "Record current earnings and a low-looking spot multiple are not enough when the contemporaneous market baseline already expects the next two years of profit to decline. V1.2 correctly treated the full path as more important than the headline H1 growth rate."
+    },
+    {
+      "case": "coal_shenhua_extreme_rerating_research_preserved",
+      "frozenDecision": "中国神华 Research selection; not High-priority because the coal basket had undergone an extreme 20/60d rerating and outer-year incremental path advantage was unresolved.",
+      "base20d": {
+        "selectedReturn": -0.20479050582531289,
+        "benchmarkReturn": 0.0044382100930771,
+        "benchmarkExcess": -0.20922871591838998,
+        "matchedControlExcess": 0.13842575359807652,
+        "selectedRank": 1
+      },
+      "base60d": {
+        "selectedReturn": 0.04963897814321139,
+        "benchmarkReturn": 0.010318170989180642,
+        "benchmarkExcess": 0.039320807154030746,
+        "matchedControlExcess": 0.29832725401151355,
+        "bestControlTicker": "600188.SH",
+        "bestControlReturn": -0.18556886338650802,
+        "selectedRank": 1
+      },
+      "later120d": {
+        "selectedReturn": 0.7331248243760005,
+        "benchmarkReturn": -0.1509402186860761,
+        "benchmarkExcess": 0.8840650430620766,
+        "matchedControlExcess": 0.33052017660448274,
+        "selectedRank": 1
+      },
+      "failureClass": null,
+      "label": "research_only_after_extreme_rerating_remains_defensible",
+      "interpretation": "The selection suffered a severe immediate drawdown, then recovered to modest 60d alpha and later produced very large 120d alpha. The later horizon includes a materially changed 2022 energy/geopolitical regime and must not rewrite the pre-registered 60d entry decision.",
+      "generalLesson": "A durable low-valuation company can remain worth tracking after an extreme rerating, but Research status is useful when entry timing is poor. Later new information should trigger fresh re-underwriting rather than retroactively promote the old decision."
+    },
+    {
+      "case": "autochip_no_selection_fail_closed",
+      "frozenDecision": "Auto-chip shortage hypothesis / No selection because company-specific shortage-to-profit attribution was not sufficiently auditable and leading candidates were late_reversal.",
+      "failureClass": null,
+      "label": "theme_mapping_and_absorption_correctly_fail_closed",
+      "generalLesson": "A real physical bottleneck does not justify choosing a semiconductor stock unless economic exposure and incremental earnings are directly attributable."
+    },
+    {
+      "case": "dram_no_selection_fail_closed",
+      "frozenDecision": "DRAM downcycle / No selection because forward physical pricing turned negative and no differentiated long beneficiary was verified.",
+      "failureClass": null,
+      "label": "forward_physical_downturn_overrides_stale_trailing_strength",
+      "generalLesson": "Strong trailing semiconductor earnings should not override an explicit forward industry price deterioration unless a company-specific offset is verified."
+    }
+  ],
+  "crossWindowExpectationPathCheck": {
+    "confirmedStrengths": [
+      {
+        "case": "2021Q3 中远海控",
+        "pattern": "spectacular current profit + explicit 2022/23 decline path",
+        "result": "Research downgrade correctly avoided a large base-horizon loss."
+      },
+      {
+        "case": "2022Q1 藏格矿业",
+        "pattern": "scarcity step-up already embedded + late_reversal + flat outer path",
+        "result": "Research downgrade protected against poor immediate entry."
+      },
+      {
+        "case": "2021Q4 华能国际",
+        "pattern": "large turnaround already embedded + prior rerating",
+        "result": "Research downgrade correctly avoided severe loss."
+      }
+    ],
+    "durableCashYieldQuestion": {
+      "priorCase": "2022Q1 中国神华",
+      "newSameCompanyObservation": "2021Q3 中国神华 retained strong relative resilience at 60d and later rallied strongly, but entered after an extreme sector rerating and suffered a severe 20d drawdown.",
+      "repeatedIndependentCrossCompanyCase": false,
+      "interpretation": "This strengthens the case that Shenhua has durable economic quality, but it is still the same company and not a clean cross-company repetition of the cash/yield false-negative class. It does not justify a generic v1.3 override."
+    }
+  },
+  "decision": {
+    "keepV12Immutable": true,
+    "createV13Now": false,
+    "reason": "V1.2 again correctly blocked a peak-profit shipping trap and preserved Shenhua as Research through an extremely absorbed coal regime. The durable-cash/yield omission has still not repeated independently across companies/industries.",
+    "nextAction": "Run unchanged V1.2 on another untouched historical window, preferably with a different economic mix. Continue looking for independent recurrence before versioning any durability/cash-distribution extension."
+  },
+  "prohibitedUses": [
+    "Do not use Shenhua 120d performance to rewrite the pre-registered 60d decision.",
+    "Do not create a generic low-PE/high-dividend override.",
+    "Do not weaken the expectation-path gate because one durable company survives an extreme rerating.",
+    "Do not promote auto-chip or DRAM themes without audited company-level earnings attribution."
+  ]
+}
