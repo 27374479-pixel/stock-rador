@@ -1,0 +1,537 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-05-21T23:59:59+08:00",
+  "researchReadyAt": "2021-05-21T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q2-autochip-star",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Automotive IGBT qualification and vehicle-platform ramps are multi-quarter, but valuation already embeds a strong multi-year growth path."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "The auto-chip shortage was persistent and 斯达半导 had verified automotive IGBT exposure plus Q1 revenue/profit acceleration. The stock was an early-turn candidate, but the frozen 2021-23 baseline already assumed strong auto/industrial IGBT expansion and carried roughly 104x/70x/52x PE.",
+    "firstCredibleDate": "2021-04-28",
+    "valueChain": [
+      "auto chip shortage",
+      "IGBT demand/qualification",
+      "vehicle platform volume",
+      "module revenue",
+      "profit"
+    ],
+    "persistenceReason": "Automotive qualification cycles and electrification make high-quality IGBT demand multi-year.",
+    "disconfirmingEvidence": [
+      "The forecast already embeds rapid 2021-23 earnings growth.",
+      "Forward multiples remain very high across the whole path.",
+      "The shortage can lift orders while foundry/input costs also rise."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-autochip-20210521",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-autochip-20210128",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-autochip-20210521",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "star-q1-20210428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "star-path-20210428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "silan-q1-20210429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "will-q1-20210423",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "auto semiconductor shortage",
+      "to": "qualified IGBT demand",
+      "mechanism": "Long automotive qualification cycles make qualified supply hard to replace.",
+      "evidenceRefs": [
+        "tf-autochip-20210128",
+        "reuters-autochip-20210521"
+      ],
+      "failureMode": "OEM production cuts reduce realized module demand",
+      "lag": "quarters"
+    },
+    {
+      "from": "qualified demand",
+      "to": "斯达 earnings",
+      "mechanism": "Existing vehicle-platform wins and secured wafer supply convert scarcity into higher module revenue/profit.",
+      "evidenceRefs": [
+        "star-q1-20210428",
+        "star-path-20210428"
+      ],
+      "failureMode": "wafer costs or allocation constraints offset sales growth",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings growth",
+      "to": "alpha",
+      "mechanism": "Alpha requires growth above an already-premium baseline, not merely delivery of consensus.",
+      "evidenceRefs": [
+        "star-path-20210428",
+        "regime-autochip-20210521"
+      ],
+      "failureMode": "excellent execution is fully capitalized",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified automotive IGBT/power-semiconductor suppliers"
+    ],
+    "secondOrderWinners": [
+      "foundries/packaging with auto-qualified capacity"
+    ],
+    "losers": [
+      "OEMs constrained by chip shortage"
+    ],
+    "substitutes": [
+      "alternative qualified suppliers/SIC"
+    ],
+    "bottlenecks": [
+      "wafer capacity",
+      "automotive qualification"
+    ],
+    "falseThemeMatches": [
+      "general semiconductor names without material auto power exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603290.SH",
+      "name": "斯达半导",
+      "verifiedExposure": "Q1 revenue +136%, profit +177%, with explicit automotive IGBT platform wins.",
+      "evidenceRefs": [
+        "star-q1-20210428",
+        "star-path-20210428"
+      ],
+      "earningsSensitivity": {
+        "base": "2021-23 profit RMB307/460/614m.",
+        "favorable": "vehicle-platform share and wafer allocation exceed baseline.",
+        "adverse": "valuation compresses or supply costs offset growth."
+      },
+      "principalRisks": [
+        "premium valuation",
+        "foundry costs",
+        "customer concentration"
+      ]
+    },
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "verifiedExposure": "Broad power/IDM exposure and explosive low-base Q1 earnings growth.",
+      "evidenceRefs": [
+        "silan-q1-20210429"
+      ],
+      "earningsSensitivity": {
+        "base": "strong recovery but broader product mix.",
+        "favorable": "IDM capacity captures shortage.",
+        "adverse": "low-base growth normalizes."
+      },
+      "principalRisks": [
+        "broader exposure",
+        "sustained-strength pricing"
+      ]
+    },
+    {
+      "ticker": "603501.SH",
+      "name": "韦尔股份",
+      "verifiedExposure": "CIS/analog platform with strong Q1 earnings; auto CIS is only part of the broader business.",
+      "evidenceRefs": [
+        "will-q1-20210423"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit +134%.",
+        "favorable": "auto CIS ramps.",
+        "adverse": "smartphone/CIS normalization."
+      },
+      "principalRisks": [
+        "late_reversal",
+        "non-auto exposure"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Power-semiconductor supplier benefiting from the same capacity shortage.",
+      "whySelectedCompanyShouldOutperform": "斯达 has cleaner automotive IGBT exposure and platform-level visibility, while 士兰微's Q1 surge comes from a broader low-base recovery.",
+      "evidenceRefs": [
+        "star-path-20210428",
+        "silan-q1-20210429"
+      ]
+    },
+    {
+      "ticker": "603501.SH",
+      "name": "韦尔股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large domestic semiconductor platform with automotive exposure.",
+      "whySelectedCompanyShouldOutperform": "斯达's earnings mechanism is more directly tied to automotive power semiconductors and the shortage.",
+      "evidenceRefs": [
+        "star-path-20210428",
+        "will-q1-20210423"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603290.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600460.SH",
+        "selectedAdvantages": [
+          "cleaner auto-IGBT mapping",
+          "vehicle-platform qualification evidence"
+        ],
+        "selectedDisadvantages": [
+          "士兰微 has IDM capacity advantages and stronger current momentum"
+        ],
+        "evidenceRefs": [
+          "star-path-20210428",
+          "silan-q1-20210429",
+          "regime-autochip-20210521"
+        ],
+        "switchCondition": "Prefer 士兰微 if its auto-specific revenue/profit path becomes more directly auditable at lower burden.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "603501.SH",
+        "selectedAdvantages": [
+          "more direct auto power scarcity exposure"
+        ],
+        "selectedDisadvantages": [
+          "韦尔 has larger scale and diversified CIS growth"
+        ],
+        "evidenceRefs": [
+          "star-path-20210428",
+          "will-q1-20210423"
+        ],
+        "switchCondition": "Prefer 韦尔 if auto CIS becomes the dominant incremental earnings driver and its path burden falls.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "斯达 is the clearest company expression, but the full-path valuation burden is too high for High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The Apr28 baseline already expected 2021-23 profit RMB307/460/614m, implying roughly 104x/70x/52x PE. The stock had begun an early-turn but had not de-rated to a low-expectation level.",
+    "thesisExpectation": "Auto IGBT shortage and platform wins could sustain faster-than-consensus growth.",
+    "measurableGap": "The required gap is whether vehicle-platform share/volume is materially above an already-aggressive baseline.",
+    "evidenceRefs": [
+      "star-path-20210428",
+      "regime-autochip-20210521"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year earnings path and forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021-23 profit RMB307/460/614m; PE ~103.9x/69.5x/52.0x.",
+    "thesisScenario": "Auto IGBT share and platform volumes drive earnings materially above the baseline for multiple years.",
+    "breakevenCondition": "Growth must stay materially above consensus and margins hold despite foundry-cost pressure.",
+    "ordinaryScenarioFailure": "Q1 strength continues but only meets the published path; multiple compression offsets earnings growth.",
+    "catalystOrTimingBridge": "Vehicle-platform shipments and H1 earnings can test the thesis within 60 trading days.",
+    "evidenceRefs": [
+      "star-path-20210428",
+      "star-q1-20210428"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q1 revenue/profit and industry shortage are both strong.",
+      "evidenceRefs": [
+        "star-q1-20210428",
+        "reuters-autochip-20210521"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q1 profit +177% and cash flow turned positive.",
+      "evidenceRefs": [
+        "star-q1-20210428"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Peers also benefit, but 斯达 has cleaner auto-IGBT mapping.",
+      "evidenceRefs": [
+        "star-path-20210428",
+        "silan-q1-20210429",
+        "will-q1-20210423"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The Apr28 forecast is extremely recent and explicitly includes auto/IGBT growth.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Early-turn price state but very high multi-year forward PE.",
+      "evidenceRefs": [
+        "regime-autochip-20210521",
+        "star-path-20210428"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight auto-chip basket versus CSI300",
+      "lookback20Excess": 0.12869924036798755,
+      "lookback60Excess": 0.13208585337316484,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-autochip-20210521"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Auto-chip shortage and company Q1 growth are accelerating.",
+      "evidenceRefs": [
+        "reuters-autochip-20210521",
+        "star-q1-20210428"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Multiple domestic semiconductor peers show strong Q1 earnings.",
+      "evidenceRefs": [
+        "star-q1-20210428",
+        "silan-q1-20210429",
+        "will-q1-20210423"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Automotive qualification and foundry constraints are slow-moving.",
+      "evidenceRefs": [
+        "tf-autochip-20210128"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Selected price path is early-turn, not fully sustained-strength, but valuation burden is high.",
+      "evidenceRefs": [
+        "regime-autochip-20210521",
+        "star-path-20210428"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Sector/company timing is favorable, but expectation burden is the blocking issue."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603290.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong Q1 earnings/cash and direct product exposure.",
+      "evidenceRefs": [
+        "star-q1-20210428"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Platform wins can exceed estimates, but baseline already assumes large growth.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Even 2023 PE remains above 50x in the frozen baseline.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 earnings and auto platform volume are within base horizon.",
+      "evidenceRefs": [
+        "star-q1-20210428"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Business quality is strong but high valuation leaves little room for merely meeting expectations.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600460.SH",
+        "revisionAdvantage": "斯达 has cleaner auto-specific path.",
+        "valuationAdvantage": "No clear valuation advantage; both can be expensive during shortage.",
+        "qualityTradeoff": "斯达 direct platform evidence vs 士兰 IDM breadth.",
+        "catalystAdvantage": "Auto platform shipments are directly observable.",
+        "downsideTradeoff": "士兰 diversified IDM may have better downside support.",
+        "evidenceRefs": [
+          "star-path-20210428",
+          "silan-q1-20210429"
+        ],
+        "switchCondition": "Switch if 士兰 auto-specific path becomes clearer at lower burden.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "603501.SH",
+        "revisionAdvantage": "斯达 direct auto-IGBT exposure is cleaner.",
+        "valuationAdvantage": "No clean low-burden edge.",
+        "qualityTradeoff": "韦尔 larger scale;斯达 purer scarcity mapping.",
+        "catalystAdvantage": "IGBT auto wins are more direct to the shortage.",
+        "downsideTradeoff": "韦尔 diversification reduces single-theme dependence.",
+        "evidenceRefs": [
+          "star-path-20210428",
+          "will-q1-20210423"
+        ],
+        "switchCondition": "Switch if auto CIS drives a better normalized path.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "market_share",
+    "driverChange": "Automotive IGBT platform wins and secured wafer allocation expanded into a severe supply shortage.",
+    "earningsMechanism": "Qualified share gains and constrained supply support revenue/profit growth.",
+    "nextObservableMetric": "H1 auto/new-energy revenue, gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "star-q1-20210428",
+      "star-path-20210428"
+    ],
+    "failureCondition": "Revenue grows but profit merely tracks or undershoots the already-high baseline."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021 profit RMB307m.",
+      "nextPeriod": "2022 profit RMB460m.",
+      "laterPeriod": "2023 profit RMB614m.",
+      "rationale": "The Apr28 baseline already prices large automotive/IGBT growth and expanding applications.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q1 beat supports near-term upside.",
+      "nextPeriodChange": "Auto platform share could push 2022 above baseline, but no independent evidence quantifies a large gap.",
+      "laterPeriodChange": "Long-run electrification supports 2023+, but the published path already compounds strongly.",
+      "mechanism": "Scarcity and qualification make growth durable, yet the expectation path is already aggressive.",
+      "evidenceRefs": [
+        "star-q1-20210428",
+        "star-path-20210428",
+        "tf-autochip-20210128"
+      ]
+    },
+    "pathShape": "ordinary_growth_compounder",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The company is executing well, but incremental path advantage beyond the very recent forecast is not sufficiently measured.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "A >50x 2023 PE requires several years of exceptional execution.",
+      "evidenceRefs": [
+        "star-path-20210428"
+      ]
+    },
+    "falsifier": "Updated 2022-23 forecasts fail to rise materially after H1 despite continued auto-chip scarcity.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: early-turn ordinary growth compounder with excellent business evidence but high multi-year expectation duration.",
+    "alreadyPricedAssessment": "large growth path already capitalized",
+    "constraints": [
+      "high forward PE",
+      "recent forecast already reflects auto IGBT growth"
+    ]
+  },
+  "bearCase": "The shortage remains real and the company grows fast, but growth only matches consensus and the multiple compresses.",
+  "invalidationConditions": [
+    {
+      "indicator": "2022-23 earnings path",
+      "observationMethod": "updated forecasts",
+      "threshold": "no material uplift"
+    },
+    {
+      "indicator": "auto/new-energy margins",
+      "observationMethod": "H1 report",
+      "threshold": "margin dilution offsets share gains"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "auto platform revenue share by model",
+    "normalized long-run IGBT multiple"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; do not convert early-turn plus high growth into High-priority without path upside beyond consensus."
+  ]
+}
