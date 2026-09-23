@@ -3,7 +3,30 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 1.2.0
+## Current version: 1.3.0
+
+- [SKILL.md](versions/1.3.0/SKILL.md)
+- [EVALS.md](versions/1.3.0/EVALS.md)
+- [DISCOVERY.md](versions/1.3.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/1.3.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/1.3.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/1.3.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/1.3.0/missed-opportunity-audit.template.json)
+
+V1.3 keeps all V1.2 valuation, expectation-path, timing, earnings-conversion and
+future-leakage gates, but changes the selection objective from **peer-best** to
+**opportunity-first / acceptable-expression**.
+
+- freeze 1-3 acceptable listed expressions per opportunity;
+- at most one expression may be marked preferred;
+- a High-priority expression may be good-enough without beating every frozen peer;
+- clearly inferior / insufficient expressions are still rejected;
+- peer rank and best-control return remain secondary diagnostics;
+- opportunity-level benchmark excess becomes the primary evaluation lens;
+- every selected name is labeled as ordinary growth, cyclical-growth hybrid,
+  deep-cycle turnaround, durable-cash-yield or other before reveal.
+
+## Previous current contract: 1.2.0
 
 - [SKILL.md](versions/1.2.0/SKILL.md)
 - [EVALS.md](versions/1.2.0/EVALS.md)
