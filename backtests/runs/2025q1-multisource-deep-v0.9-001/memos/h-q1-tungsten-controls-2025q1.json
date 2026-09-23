@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-03-04T15:30:00+08:00",
+  "researchReadyAt": "2025-03-04T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q1-tungsten-controls-2025q1",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Export controls may affect pricing within months, but company earnings require realized price/volume transmission."
+  },
+  "changeHypothesis": {
+    "summary": "China's February strategic-metal export controls raised tungsten supply-security optionality, but by March 4 the A-share tungsten basket was adverse over both 20 and 60 days and no 2025 post-control company earnings conversion was observable. 2024 results cannot prove a February 2025 policy-to-profit bridge.",
+    "firstCredibleDate": "2025-02-04",
+    "valueChain": [
+      "export licensing",
+      "global tungsten availability",
+      "tungsten price",
+      "miner/material margins",
+      "earnings"
+    ],
+    "persistenceReason": "China has dominant global tungsten supply and controls can persist beyond a single month.",
+    "disconfirmingEvidence": [
+      "Licensing is not a complete export ban.",
+      "Downstream/export exposure can offset upstream pricing benefit.",
+      "All frozen basket names lagged CSI300 on both lookbacks."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-metals-20250204",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "reuters-tungsten-20250219",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-tungsten-20250304",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "xiamen-2024-fast-20250122",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "zhangyuan-2024-fast-20250304",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "export licensing",
+      "to": "tungsten scarcity/pricing",
+      "mechanism": "Restrictions can reduce accessible export supply from a dominant producer.",
+      "evidenceRefs": [
+        "reuters-metals-20250204",
+        "reuters-tungsten-20250219"
+      ],
+      "failureMode": "licenses flow normally or non-China supply offsets",
+      "lag": "weeks to months"
+    },
+    {
+      "from": "pricing",
+      "to": "A-share earnings",
+      "mechanism": "Requires a post-policy realized price/mix or volume effect; pre-policy 2024 profit cannot establish this bridge.",
+      "evidenceRefs": [
+        "xiamen-2024-fast-20250122",
+        "zhangyuan-2024-fast-20250304"
+      ],
+      "failureMode": "export volume loss or downstream weakness offsets pricing",
+      "lag": "quarters"
+    },
+    {
+      "from": "policy thesis",
+      "to": "selection alpha",
+      "mechanism": "Requires favorable market regime and direct conversion.",
+      "evidenceRefs": [
+        "regime-tungsten-20250304"
+      ],
+      "failureMode": "policy narrative remains unmonetized",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "upstream tungsten producers with retained pricing power"
+    ],
+    "secondOrderWinners": [
+      "high-value carbide/material firms if costs pass through"
+    ],
+    "losers": [
+      "export-dependent downstream users"
+    ],
+    "substitutes": [
+      "recycling/non-China projects"
+    ],
+    "bottlenecks": [
+      "export licenses",
+      "ore supply"
+    ],
+    "falseThemeMatches": [
+      "tungsten names without post-control profit sensitivity"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Adverse timing plus a proxy-only post-policy earnings bridge blocks selection."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Export controls were public but tungsten equities had not confirmed the thesis; the basket lagged CSI300 over both 20 and 60 days.",
+    "thesisExpectation": "Only a later realized tungsten price/margin response could convert the policy thesis into a stock opportunity.",
+    "measurableGap": "Policy signal is real; company earnings signal is not yet observable.",
+    "evidenceRefs": [
+      "regime-tungsten-20250304",
+      "reuters-metals-20250204"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "market confirmation absent",
+    "constraints": [
+      "adverse timing",
+      "conversion proxy-only"
+    ]
+  },
+  "bearCase": "Licensing has limited physical impact or reduced export volumes offset any price increase.",
+  "invalidationConditions": [
+    {
+      "indicator": "tungsten prices/export flows",
+      "observationMethod": "subsequent physical/policy data",
+      "threshold": "no scarcity/price response"
+    },
+    {
+      "indicator": "company margins/profit",
+      "observationMethod": "next financial report",
+      "threshold": "no post-policy conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used for selection."
+    ]
+  },
+  "unknowns": [
+    "license throughput",
+    "company export mix",
+    "post-policy price realization"
+  ],
+  "nextResearchActions": [
+    "Keep No selection.",
+    "Only reconsider at a new cutoff with realized price/margin evidence and improved timing."
+  ]
+}
