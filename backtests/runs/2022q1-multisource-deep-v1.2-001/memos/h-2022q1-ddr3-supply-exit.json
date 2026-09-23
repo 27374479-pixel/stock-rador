@@ -1,0 +1,186 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2022-03-07T23:59:59+08:00",
+  "researchReadyAt": "2022-03-07T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q1-ddr3-supply-exit",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Legacy-supply exits can affect pricing over one or more quarters if listed-company exposure is material."
+  },
+  "changeHypothesis": {
+    "summary": "TrendForce identified a niche DDR3 supply-exit mechanism that could lift Q2 prices, but the frozen discovery evidence was single-origin and did not verify material DDR3 revenue/profit exposure for any A-share candidate by Mar7.",
+    "firstCredibleDate": "2022-03-07",
+    "valueChain": [
+      "major supplier DDR3 exits",
+      "legacy memory supply",
+      "DDR3 price",
+      "listed-company memory revenue/profit"
+    ],
+    "persistenceReason": "Capacity migration can be structural, but company-level incidence must be verified.",
+    "disconfirmingEvidence": [
+      "Only one independent specialist origin at discovery.",
+      "The broader memory basket remained weak over 60d.",
+      "No pre-Mar7 company filing froze a direct DDR3-to-profit bridge."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-ddr3-20220307",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-ddr3-20220307",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "major supplier DDR3 exits",
+      "to": "legacy DDR3 scarcity",
+      "mechanism": "Capacity migrates to newer generations while networking/industrial demand persists.",
+      "evidenceRefs": [
+        "tf-ddr3-20220307"
+      ],
+      "failureMode": "demand weakens or smaller suppliers fill the gap",
+      "lag": "quarters"
+    },
+    {
+      "from": "DDR3 scarcity",
+      "to": "A-share earnings",
+      "mechanism": "Only verified material DDR3 revenue and pricing power can convert the signal.",
+      "evidenceRefs": [
+        "tf-ddr3-20220307"
+      ],
+      "failureMode": "listed-company exposure is immaterial or costs offset pricing",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "verified legacy DDR3 suppliers"
+    ],
+    "secondOrderWinners": [
+      "networking/industrial component suppliers if availability improves"
+    ],
+    "losers": [
+      "OEMs facing higher legacy-memory prices"
+    ],
+    "substitutes": [
+      "DDR4/DDR5 or alternative suppliers"
+    ],
+    "bottlenecks": [
+      "legacy-node capacity"
+    ],
+    "falseThemeMatches": [
+      "broad semiconductor names without DDR3 revenue exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Memory/ISSI exposure is plausible, but no frozen Mar7 company evidence establishes material DDR3 earnings conversion.",
+      "evidenceRefs": [
+        "tf-ddr3-20220307",
+        "regime-ddr3-20220307"
+      ],
+      "earningsSensitivity": {
+        "base": "unverified at cutoff",
+        "favorable": "verified DDR3 pricing contributes materially.",
+        "adverse": "exposure is small or broader memory weakens."
+      },
+      "principalRisks": [
+        "single-origin discovery",
+        "unverified exposure"
+      ]
+    },
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Broad memory/MCU exposure but no frozen Mar7 DDR3-specific earnings bridge.",
+      "evidenceRefs": [
+        "tf-ddr3-20220307",
+        "regime-ddr3-20220307"
+      ],
+      "earningsSensitivity": {
+        "base": "unverified at cutoff",
+        "favorable": "legacy memory tightness helps mix.",
+        "adverse": "no material DDR3 exposure."
+      },
+      "principalRisks": [
+        "mapping error"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company selection because economic exposure and earnings conversion are not sufficiently verified."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The niche DDR3 price signal was public, while the broader memory group had materially underperformed over 60d.",
+    "thesisExpectation": "Legacy supplier exits could create niche pricing power.",
+    "measurableGap": "No reliable company-level expectation or earnings path can be frozen.",
+    "evidenceRefs": [
+      "tf-ddr3-20220307",
+      "regime-ddr3-20220307"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "unresolved company mapping",
+    "constraints": [
+      "single-origin discovery",
+      "no verified company bridge"
+    ]
+  },
+  "bearCase": "DDR3 pricing rises but the listed candidates either have immaterial exposure or broader semiconductor weakness dominates.",
+  "invalidationConditions": [
+    {
+      "indicator": "DDR3-specific company exposure",
+      "observationMethod": "subsequent filings/IR",
+      "threshold": "no material revenue/profit sensitivity"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "candidate DDR3 revenue share",
+    "customer/product mix"
+  ],
+  "nextResearchActions": [
+    "Require verified company-level DDR3 exposure before any selection."
+  ]
+}
