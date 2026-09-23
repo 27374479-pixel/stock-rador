@@ -1,0 +1,533 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-03-26T23:59:59+08:00",
+  "researchReadyAt": "2021-03-26T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q1-rareearth-shenghe",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Rare-earth price/volume can flow into earnings quickly, but the 60d rerating and supply response make the base horizon an expectation-absorption test."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Rare-earth prices surged on magnet demand and Myanmar/inspection risks, but domestic quotas were raised sharply and high prices encouraged new supply. 盛和 had already published a high-growth 2021-22 earnings path and the stock had moved from a huge 60d rerating into 20d relative weakness.",
+    "firstCredibleDate": "2021-01-29",
+    "valueChain": [
+      "EV/wind magnet demand",
+      "rare-earth scarcity",
+      "rare-earth price",
+      "producer/trader volume and margin",
+      "earnings"
+    ],
+    "persistenceReason": "Demand growth is structural, but supply quotas and global projects can shorten the scarcity premium.",
+    "disconfirmingEvidence": [
+      "H1 rare-earth quotas were raised about 27%.",
+      "The stock was late_reversal after very large 60d outperformance.",
+      "The Feb forecast already expected 2021 profit to nearly quadruple from 2020E."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-rareearth-quota-20210219",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-rareearth-projects-20210302",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-rareearth-20210326",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-rareearth-20210326",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenghe-preannounce-20210129",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenghe-path-20210218",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "magnet demand/supply risk",
+      "to": "rare-earth prices",
+      "mechanism": "EV/wind demand plus Myanmar/inspection risks tighten near-term supply.",
+      "evidenceRefs": [
+        "reuters-rareearth-20210326"
+      ],
+      "failureMode": "quota/new supply overwhelms demand",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "rare-earth prices/volume",
+      "to": "盛和 earnings",
+      "mechanism": "Higher rare-earth prices and business scale lift revenue/profit.",
+      "evidenceRefs": [
+        "shenghe-preannounce-20210129",
+        "shenghe-path-20210218"
+      ],
+      "failureMode": "price normalization or inventory effects compress margins",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings path",
+      "to": "equity alpha",
+      "mechanism": "Alpha requires upside beyond a baseline already forecasting very large 2021-22 profit growth after a major stock rerating.",
+      "evidenceRefs": [
+        "shenghe-path-20210218",
+        "regime-rareearth-20210326"
+      ],
+      "failureMode": "good earnings merely confirm an already-capitalized scarcity cycle",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "rare-earth resource/processors with inventory and volume leverage"
+    ],
+    "secondOrderWinners": [
+      "NdFeB magnet producers able to pass through raw material costs"
+    ],
+    "losers": [
+      "downstream users unable to pass through high rare-earth costs"
+    ],
+    "substitutes": [
+      "alternative supply and magnet efficiency"
+    ],
+    "bottlenecks": [
+      "Myanmar feedstock",
+      "quota policy"
+    ],
+    "falseThemeMatches": [
+      "rare-earth theme names without earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600392.SH",
+      "name": "盛和资源",
+      "verifiedExposure": "2020 profit preannouncement improved sharply and a Feb forecast expected major 2021-22 earnings growth.",
+      "evidenceRefs": [
+        "shenghe-preannounce-20210129",
+        "shenghe-path-20210218"
+      ],
+      "earningsSensitivity": {
+        "base": "2021E/2022E profit RMB1.079/1.501bn.",
+        "favorable": "rare-earth prices and volume stay above the already-high baseline.",
+        "adverse": "quota/supply response normalizes prices."
+      },
+      "principalRisks": [
+        "late-reversal entry",
+        "commodity duration",
+        "inventory/price normalization"
+      ]
+    },
+    {
+      "ticker": "600111.SH",
+      "name": "北方稀土",
+      "verifiedExposure": "Largest light-rare-earth quota recipient and direct beneficiary of high PrNd prices.",
+      "evidenceRefs": [
+        "reuters-rareearth-quota-20210219",
+        "regime-rareearth-20210326"
+      ],
+      "earningsSensitivity": {
+        "base": "large upstream exposure",
+        "favorable": "prices stay high",
+        "adverse": "quota growth caps pricing"
+      },
+      "principalRisks": [
+        "policy supply response"
+      ]
+    },
+    {
+      "ticker": "000831.SZ",
+      "name": "五矿稀土",
+      "verifiedExposure": "Heavy/medium rare-earth quota exposure.",
+      "evidenceRefs": [
+        "reuters-rareearth-quota-20210219",
+        "regime-rareearth-20210326"
+      ],
+      "earningsSensitivity": {
+        "base": "rare-earth price beta",
+        "favorable": "heavy rare-earth scarcity persists",
+        "adverse": "supply response"
+      },
+      "principalRisks": [
+        "commodity duration"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600111.SH",
+      "name": "北方稀土",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed rare-earth producer exposed to the same price surge.",
+      "whySelectedCompanyShouldOutperform": "盛和 had an explicit contemporaneous earnings path and global resource/trading exposure, while 北方稀土 also benefited from higher quotas that could dilute price scarcity.",
+      "evidenceRefs": [
+        "shenghe-path-20210218",
+        "reuters-rareearth-quota-20210219",
+        "regime-rareearth-20210326"
+      ]
+    },
+    {
+      "ticker": "000831.SZ",
+      "name": "五矿稀土",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed rare-earth producer exposed to the same supply/pricing cycle.",
+      "whySelectedCompanyShouldOutperform": "盛和's frozen 2021-22 growth path is more explicit, though all peers share late-cycle price risk.",
+      "evidenceRefs": [
+        "shenghe-path-20210218",
+        "regime-rareearth-20210326"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600392.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600111.SH",
+        "selectedAdvantages": [
+          "explicit 2021-22 forecast path",
+          "broader resource/trading exposure"
+        ],
+        "selectedDisadvantages": [
+          "北方稀土 has dominant light-rare-earth quota/resource scale"
+        ],
+        "evidenceRefs": [
+          "shenghe-path-20210218",
+          "reuters-rareearth-quota-20210219"
+        ],
+        "switchCondition": "Prefer 北方 if its quota/cost advantage produces a clearly better normalized multi-year path after price normalization.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "000831.SZ",
+        "selectedAdvantages": [
+          "stronger frozen forecast visibility"
+        ],
+        "selectedDisadvantages": [
+          "五矿 may have purer heavy-rare-earth scarcity torque"
+        ],
+        "evidenceRefs": [
+          "shenghe-path-20210218",
+          "regime-rareearth-20210326"
+        ],
+        "switchCondition": "Prefer 五矿 if heavy-rare-earth earnings durability is independently verified.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "盛和 is a research representative, not a clear cross-sectional winner after the rerating."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Feb forecast already expected 2021 profit RMB1.079bn (+279.5%) and 2022 RMB1.501bn (+39.1%), at roughly 37x/27x PE; by Mar26 the stock had huge 60d outperformance but 20d relative weakness.",
+    "thesisExpectation": "Rare-earth prices might remain elevated enough to exceed the already-strong 2021-22 path.",
+    "measurableGap": "The gap is outer-path durability after supply quotas rise, not whether Q1 pricing is high.",
+    "evidenceRefs": [
+      "shenghe-path-20210218",
+      "regime-rareearth-20210326",
+      "reuters-rareearth-quota-20210219"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year earnings path plus price-regime absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2020E/2021E/2022E profit RMB284m/1.079bn/1.501bn, PE ~141x/37x/27x at Feb report reference.",
+    "thesisScenario": "Scarcity stays tighter than the baseline despite quota and project supply responses.",
+    "breakevenCondition": "2022 normalized profit must remain materially above the already-high forecast after prices cool.",
+    "ordinaryScenarioFailure": "2021 is excellent but 2022 growth merely follows the published path while the prior rerating unwinds.",
+    "catalystOrTimingBridge": "Q1/H1 pricing, volume and forecast revisions can test persistence.",
+    "evidenceRefs": [
+      "shenghe-path-20210218",
+      "reuters-rareearth-quota-20210219",
+      "regime-rareearth-20210326"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Rare-earth prices and 2020 profit expectations accelerated.",
+      "evidenceRefs": [
+        "reuters-rareearth-20210326",
+        "shenghe-preannounce-20210129"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "2020 profit preannouncement improved sharply, but the 2021 price surge had not yet entered reported 2021 earnings.",
+      "evidenceRefs": [
+        "shenghe-preannounce-20210129"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "All rare-earth peers had strong 60d rerating and then 20d weakness.",
+      "evidenceRefs": [
+        "regime-rareearth-20210326"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The Feb18 forecast is recent and explicitly captures the rare-earth upcycle.",
+      "evidenceRefs": [
+        "shenghe-path-20210218"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Use frozen late-reversal 20/60d relative state plus forecast PE/path.",
+      "evidenceRefs": [
+        "regime-rareearth-20210326",
+        "shenghe-path-20210218"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight rare-earth basket versus CSI300",
+      "lookback20Excess": -0.09492866393518921,
+      "lookback60Excess": 0.5658908182356374,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-rareearth-20210326"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Demand and near-term supply risks remain strong, but supply response is rising.",
+      "evidenceRefs": [
+        "reuters-rareearth-20210326",
+        "reuters-rareearth-quota-20210219"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Price surge benefits multiple upstream rare-earth names, though magnitude differs.",
+      "evidenceRefs": [
+        "shenghe-preannounce-20210129",
+        "regime-rareearth-20210326"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "EV/magnet demand is structural but scarcity premium can mean-revert as supply expands.",
+      "evidenceRefs": [
+        "reuters-rareearth-projects-20210302"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "All three names had very large 60d relative rerating and negative 20d relative returns.",
+      "evidenceRefs": [
+        "regime-rareearth-20210326"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical fundamentals remain strong, but entry timing is late-reversal/absorbed."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600392.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "2020 profit recovered materially and the company had a credible 2021-22 growth forecast.",
+      "evidenceRefs": [
+        "shenghe-preannounce-20210129",
+        "shenghe-path-20210218"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Prices may beat, but the baseline already assumes a massive 2021 step-up.",
+      "evidenceRefs": [
+        "shenghe-path-20210218"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "2021E PE was still around the high-30s after a large rerating.",
+      "evidenceRefs": [
+        "shenghe-path-20210218"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q1/H1 results and rare-earth prices arrive inside base horizon.",
+      "evidenceRefs": [
+        "reuters-rareearth-20210326"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Supply-quota expansion and late-reversal price state create downside.",
+      "evidenceRefs": [
+        "reuters-rareearth-quota-20210219",
+        "regime-rareearth-20210326"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600111.SH",
+        "revisionAdvantage": "No decisive edge; both benefit from price.",
+        "valuationAdvantage": "No clean normalized advantage.",
+        "qualityTradeoff": "盛和 path is explicit;北方 has resource/quota scale.",
+        "catalystAdvantage": "Both update through rare-earth prices/results.",
+        "downsideTradeoff": "Both exposed to supply response.",
+        "evidenceRefs": [
+          "shenghe-path-20210218",
+          "reuters-rareearth-quota-20210219"
+        ],
+        "switchCondition": "Switch to 北方 if normalized path/cost advantage becomes clear.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "000831.SZ",
+        "revisionAdvantage": "盛和 has better frozen forecast detail.",
+        "valuationAdvantage": "Unresolved peer-normalized valuation.",
+        "qualityTradeoff": "五矿 may have heavier scarcity beta.",
+        "catalystAdvantage": "Both price-sensitive.",
+        "downsideTradeoff": "Both late-reversal.",
+        "evidenceRefs": [
+          "shenghe-path-20210218",
+          "regime-rareearth-20210326"
+        ],
+        "switchCondition": "Switch if 五矿's heavy-rare-earth path is verified.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Rare-earth prices rose sharply through Q1.",
+    "earningsMechanism": "Higher product prices and volumes can lift producer/trader gross profit.",
+    "nextObservableMetric": "Q1/H1 rare-earth product volume, gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "reuters-rareearth-20210326",
+      "shenghe-path-20210218"
+    ],
+    "failureCondition": "Price or margin normalizes enough that the already-high 2021-22 path is not revised upward."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021E profit RMB1.079bn after a very large cyclical step-up.",
+      "nextPeriod": "2022E profit RMB1.501bn, +39.1%.",
+      "laterPeriod": "Beyond 2022 not frozen; supply-response risk increases.",
+      "rationale": "The Feb18 forecast already capitalizes a new rare-earth demand cycle.",
+      "evidenceRefs": [
+        "shenghe-path-20210218"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q1 price surge can lift 2021 above baseline.",
+      "nextPeriodChange": "No clean pre-cutoff proof shows 2022 stays materially above forecast after quota/supply growth.",
+      "laterPeriodChange": "Long-run magnet demand is strong, but scarcity-margin persistence is uncertain.",
+      "mechanism": "Near-term price upside is clearer than durable outer-year path improvement.",
+      "evidenceRefs": [
+        "reuters-rareearth-20210326",
+        "reuters-rareearth-quota-20210219",
+        "reuters-rareearth-projects-20210302"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term upside exists, but full-path advantage beyond an already-aggressive baseline is not clear.",
+      "evidenceRefs": [
+        "shenghe-path-20210218",
+        "reuters-rareearth-quota-20210219"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Price surge has already driven a major equity rerating while quotas/new supply rise.",
+      "evidenceRefs": [
+        "regime-rareearth-20210326",
+        "reuters-rareearth-quota-20210219"
+      ]
+    },
+    "falsifier": "2022 earnings expectations fail to rise materially above the Feb baseline even if 2021 profit is strong.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: cyclical-growth hybrid with strong physical pricing but a late-reversal equity state and aggressive earnings baseline.",
+    "alreadyPricedAssessment": "substantial scarcity rerating already absorbed",
+    "constraints": [
+      "late_reversal",
+      "quota expansion",
+      "outer-path uncertainty"
+    ]
+  },
+  "bearCase": "The price surge is near a cyclical peak; 2021 earnings are strong but supply response compresses 2022 margins and equity multiples.",
+  "invalidationConditions": [
+    {
+      "indicator": "2022 earnings path",
+      "observationMethod": "updated forecasts",
+      "threshold": "no material upward revision"
+    },
+    {
+      "indicator": "rare-earth price/supply",
+      "observationMethod": "industry data",
+      "threshold": "quota/new supply normalizes pricing"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "normalized rare-earth margin",
+    "peer-specific inventory exposure"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; do not chase the late-reversal scarcity narrative."
+  ]
+}
