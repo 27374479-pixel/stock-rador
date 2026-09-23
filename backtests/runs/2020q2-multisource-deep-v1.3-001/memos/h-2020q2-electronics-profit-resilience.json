@@ -1,0 +1,463 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "researchReadyAt": "2020-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q2-electronics-profit-resilience",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Exceptional Q1 electronics earnings and favorable price breadth can continue over 60d, but very high forward multiples require proof that growth duration exceeds the already-premium baseline."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "603986.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "GigaDevice had exceptional realized growth and favorable price confirmation, but ~109x 2020E PE plus weakening server-DRAM duration make expectation fit only mixed.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "electronics-weekly-20200628",
+        "regime-electronics-20200630",
+        "trendforce-server-dram-20200522"
+      ]
+    },
+    {
+      "ticker": "603501.SH",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Will Semi also had exceptional realized earnings and strong relative price, but high forward valuation embeds substantial growth duration.",
+      "evidenceRefs": [
+        "will-q1-20200424",
+        "electronics-weekly-20200628",
+        "regime-electronics-20200630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Electronics manufacturing profits and two leading chip names showed extraordinary realized Q1 growth. The company engines are real, but the market already assigns very high forward multiples and the server-DRAM physical cycle was losing duration, so company growth must not be conflated with a generic memory upcycle.",
+    "firstCredibleDate": "2020-04-24",
+    "valueChain": [
+      "semiconductor demand/product cycles",
+      "company revenue/mix",
+      "profit growth",
+      "long-duration valuation"
+    ],
+    "persistenceReason": "Domestic semiconductor substitution and product growth can persist, but the frozen evidence does not prove that premium growth exceeds an already-high multi-year baseline.",
+    "disconfirmingEvidence": [
+      "Giga 2020E PE ~109x and Will ~79x.",
+      "Both names had already outperformed CSI300 strongly over 60d.",
+      "Server-DRAM expected 2H price upside had been revised down."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-industrial-profits-20200629",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-q1-20200429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "will-q1-20200424",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "electronics-weekly-20200628",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "memory-research-20200312",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-server-dram-20200522",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-electronics-20200630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "company product demand/mix",
+      "to": "revenue and profit",
+      "mechanism": "Strong semiconductor product demand and acquired/product portfolio growth convert into high revenue/profit growth.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "will-q1-20200424"
+      ],
+      "failureMode": "growth normalizes sharply",
+      "lag": "quarters"
+    },
+    {
+      "from": "profit growth",
+      "to": "equity alpha",
+      "mechanism": "Premium-growth equities outperform only if multi-year earnings duration beats the already-high valuation baseline.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628",
+        "regime-electronics-20200630"
+      ],
+      "failureMode": "earnings meet forecasts but multiple compresses",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "semiconductor designers with realized product growth"
+    ],
+    "secondOrderWinners": [
+      "foundry/packaging partners"
+    ],
+    "losers": [
+      "undifferentiated chip names"
+    ],
+    "substitutes": [
+      "imported semiconductors"
+    ],
+    "bottlenecks": [
+      "product qualification and wafer supply"
+    ],
+    "falseThemeMatches": [
+      "memory/semiconductor names without direct company growth evidence"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Memory/MCU designer with exceptional Q1 growth.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "electronics-weekly-20200628"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E/21E EPS 2.25/2.99, PE ~109x/82x.",
+        "favorable": "Company-specific growth lasts longer than the premium baseline.",
+        "adverse": "Memory/product cycle slows and valuation compresses."
+      },
+      "principalRisks": [
+        "premium valuation",
+        "cash-flow weakness"
+      ]
+    },
+    {
+      "ticker": "603501.SH",
+      "name": "韦尔股份",
+      "verifiedExposure": "Image-sensor/semiconductor leader with exceptional Q1 growth.",
+      "evidenceRefs": [
+        "will-q1-20200424",
+        "electronics-weekly-20200628"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E/21E EPS 2.62/3.67, PE ~79x/56x.",
+        "favorable": "Integration/product growth beats forecasts.",
+        "adverse": "Growth normalizes into premium valuation."
+      },
+      "principalRisks": [
+        "premium valuation"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "Two independently acceptable premium-growth expressions are frozen as the opportunity basket; no additional peer is forced solely to create a ranking contest.",
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Giga is preferred for the discovery link to memory/electronics, but both expressions are retained because exact peer-best ranking is not the objective."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Exceptional Q1 growth was public and both stocks had already rerated; late-June forward PE was roughly 109x for Giga and 79x for Will.",
+    "thesisExpectation": "Alpha requires growth duration and earnings revisions beyond those premium baselines, not merely another strong quarter.",
+    "measurableGap": "Company engines are real, but incremental duration room is not proven enough for Primary.",
+    "evidenceRefs": [
+      "giga-q1-20200429",
+      "will-q1-20200424",
+      "electronics-weekly-20200628",
+      "regime-electronics-20200630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year earnings-duration versus premium forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Giga 2020E/21E EPS 2.25/2.99 at ~109x/82x; Will 2.62/3.67 at ~79x/56x.",
+    "thesisScenario": "Product growth and domestic substitution continue to drive earnings materially above the published 2021 path.",
+    "breakevenCondition": "Future earnings revisions must outrun multiple compression implied by premium valuation.",
+    "ordinaryScenarioFailure": "Companies grow strongly but merely meet the already-premium baseline.",
+    "catalystOrTimingBridge": "H1/Q3 earnings and product updates lie within the base horizon.",
+    "evidenceRefs": [
+      "giga-q1-20200429",
+      "will-q1-20200424",
+      "electronics-weekly-20200628",
+      "regime-electronics-20200630"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Electronics manufacturing profits and both company Q1 results showed exceptional growth.",
+      "evidenceRefs": [
+        "nbs-industrial-profits-20200629",
+        "giga-q1-20200429",
+        "will-q1-20200424"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Giga and Will already converted demand into triple-digit profit growth.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "will-q1-20200424"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Both frozen electronics names had positive 20d and 60d benchmark excess.",
+      "evidenceRefs": [
+        "regime-electronics-20200630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The late-June forecasts are current and already price strong 2020-21 growth rather than lagging it.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Both price and valuation had already rerated materially.",
+      "evidenceRefs": [
+        "regime-electronics-20200630",
+        "electronics-weekly-20200628"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.08265770049403265,
+      "lookback60Excess": 0.15962614279779275,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-electronics-20200630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Company-specific earnings and sector profit resilience remain strong.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "will-q1-20200424",
+        "nbs-industrial-profits-20200629"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both frozen leaders have strong published earnings paths.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "structural",
+      "rationale": "Domestic semiconductor/product growth can be structural, though individual product cycles vary.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Premium multiples and material 60d outperformance indicate substantial expectation absorption.",
+      "evidenceRefs": [
+        "regime-electronics-20200630",
+        "electronics-weekly-20200628"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamentals and price are favorable, but late-cycle/expectation burden prevents Primary status."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603986.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Both companies were profitable with exceptional Q1 earnings growth.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "will-q1-20200424"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Strong Q1 can support further estimate revisions, but much growth is already forecast.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "electronics-weekly-20200628"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Forward valuation is very demanding.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1/Q3 results and product updates are frequent.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "will-q1-20200424"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong company quality is offset by large multiple-compression risk.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628",
+        "regime-electronics-20200630"
+      ]
+    },
+    "pairwise": [],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Company-specific semiconductor product demand/mix produced exceptional Q1 revenue/profit growth.",
+    "earningsMechanism": "Higher product volume/mix and operating leverage directly raise earnings; conversion is already realized.",
+    "nextObservableMetric": "H1/Q3 revenue, gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "giga-q1-20200429",
+      "will-q1-20200424"
+    ],
+    "failureCondition": "Growth slows toward the frozen baseline without further estimate upgrades."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q1 growth was already exceptional.",
+      "nextPeriod": "2020-21 forecasts embed strong EPS growth.",
+      "laterPeriod": "Premium PE implicitly requires continued multi-year growth beyond the explicit forecast.",
+      "rationale": "Current forecasts and price already encode a substantial growth story.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628",
+        "giga-q1-20200429",
+        "will-q1-20200424"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "H1 can remain above expectations if Q1 momentum persists.",
+      "nextPeriodChange": "2021 EPS can exceed 2.99/3.67 if product share and demand remain exceptional.",
+      "laterPeriodChange": "No independent frozen evidence yet proves enough 2022+ growth to justify the premium duration.",
+      "mechanism": "The research question is growth-duration underestimation, not current-quarter direction.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628",
+        "regime-electronics-20200630"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term strength is clear, but incremental outer-year advantage beyond the premium baseline is not.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "will-q1-20200424",
+        "electronics-weekly-20200628"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "High forward multiples require sustained exceptional growth over multiple years.",
+      "evidenceRefs": [
+        "electronics-weekly-20200628"
+      ]
+    },
+    "falsifier": "Earnings estimates fail to rise materially above the frozen 2020-21 path while valuation remains premium.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: outstanding company growth but demanding duration assumptions and substantial prior rerating.",
+    "alreadyPricedAssessment": "high_growth_partly_capitalized",
+    "constraints": [
+      "very high forward PE",
+      "strong prior relative returns"
+    ]
+  },
+  "bearCase": "Strong current growth is real but already priced; multiple compression offsets earnings growth.",
+  "invalidationConditions": [
+    {
+      "indicator": "earnings revisions",
+      "observationMethod": "H1/Q3 and published forecasts",
+      "threshold": "no material upward revision"
+    },
+    {
+      "indicator": "product growth",
+      "observationMethod": "revenue/margin trends",
+      "threshold": "clear deceleration"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze Giga and Will as Research expressions; use outcome to diagnose whether V1.3 is systematically too conservative on premium growth, without tuning on this same period."
+  ]
+}
