@@ -1,0 +1,585 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2025q1-multisource-v0.9-001",
+  "cutoffAt": "2025-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2025Q1 cutoff are retained.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China PMI/PPI data available during 2025Q1.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS macro series relevant to surfaced events."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "First-party hyperscaler/AI/power-equipment demand and listed-company operating evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on major sources surfaced by event discovery, not a complete issuer crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable gold prices and semiconductor/battery pricing/supply conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible Reuters/TrendForce evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on gold and strategic-metal policy/physical effects.",
+      "coverageStatus": "partial",
+      "limitations": "Concentrated on Reuters historical reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist AI optical, memory and battery demand/pricing evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce reports."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl is used; unavailable is declared explicitly."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "tf-optical-20250205",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "DeepSeek's Low-Cost AI Model to Spur Demand for Optical Communication",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20250205-12461.html",
+      "publishedAt": "2025-02-05T00:00:00+08:00",
+      "availableAt": "2025-02-05T00:00:00+08:00",
+      "originGroup": "trendforce-optical-20250205",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce projected worldwide shipments of 400G+ optical transceivers to exceed 31.9m units in 2025, +56.5% YoY, with 800G/1.6T demand supported by AI data centers and inference expansion."
+      ],
+      "entities": [
+        "optical transceivers",
+        "800G",
+        "1.6T",
+        "AI data centers"
+      ],
+      "observedChanges": [
+        "high-speed optical demand forecast accelerates"
+      ]
+    },
+    {
+      "itemId": "nvidia-q4fy25-20250226",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "NVIDIA Q4 FY2025 results",
+      "publisher": "NVIDIA",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-fourth-quarter-and-fiscal-2025",
+      "publishedAt": "2025-02-26T00:00:00-08:00",
+      "availableAt": "2025-02-26T00:00:00-08:00",
+      "originGroup": "nvidia-q4fy25",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Quarterly data-center revenue reached $35.6bn, +93% YoY and +16% QoQ; management described Blackwell demand as very strong."
+      ],
+      "entities": [
+        "NVIDIA",
+        "Blackwell",
+        "data center"
+      ],
+      "observedChanges": [
+        "AI compute demand remains exceptionally strong"
+      ]
+    },
+    {
+      "itemId": "microsoft-fy25q2-20250129",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "Microsoft FY25 Q2 results",
+      "publisher": "Microsoft",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2025-q2/press-release-webcast",
+      "publishedAt": "2025-01-29T00:00:00-08:00",
+      "availableAt": "2025-01-29T00:00:00-08:00",
+      "originGroup": "microsoft-fy25q2",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Azure/cloud growth remained strong; AI services grew rapidly and management said demand continued to exceed available capacity while capex stayed aligned to cloud/AI demand."
+      ],
+      "entities": [
+        "Microsoft",
+        "Azure",
+        "AI infrastructure"
+      ],
+      "observedChanges": [
+        "AI capacity remains constrained",
+        "cloud/AI capex remains high"
+      ]
+    },
+    {
+      "itemId": "meta-q4-20250129",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "Meta Q4 2024 results",
+      "publisher": "Meta",
+      "url": "https://investor.atmeta.com/investor-news/press-release-details/2025/Meta-Reports-Fourth-Quarter-and-Full-Year-2024-Results/",
+      "publishedAt": "2025-01-29T00:00:00-08:00",
+      "availableAt": "2025-01-29T00:00:00-08:00",
+      "originGroup": "meta-q4-2024",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Meta guided 2025 capex to $60-65bn, driven by increased investment supporting generative AI and core infrastructure."
+      ],
+      "entities": [
+        "Meta",
+        "AI infrastructure",
+        "data centers"
+      ],
+      "observedChanges": [
+        "hyperscaler AI capex accelerates"
+      ]
+    },
+    {
+      "itemId": "gev-q4-20250122",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "GE Vernova Q4/FY2024 results",
+      "publisher": "GE Vernova",
+      "url": "https://www.gevernova.com/news/press-releases/ge-vernova-reports-fourth-quarter-full-year-2024",
+      "publishedAt": "2025-01-22T00:00:00-05:00",
+      "availableAt": "2025-01-22T00:00:00-05:00",
+      "originGroup": "gev-q4-2024",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q4 orders were a record $13.2bn +22% organically; Electrification Q4 orders +122% organically, driven by grid equipment/services; equipment backlog grew at better margins."
+      ],
+      "entities": [
+        "GE Vernova",
+        "Electrification",
+        "grid"
+      ],
+      "observedChanges": [
+        "power/electrification orders accelerate",
+        "backlog margins improve"
+      ]
+    },
+    {
+      "itemId": "abb-q4-20250227",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "ABB Q4 2024 results",
+      "publisher": "ABB",
+      "url": "https://www.abb.com/global/en/news/123065/q4-2024-results",
+      "publishedAt": "2025-02-27T00:00:00+01:00",
+      "availableAt": "2025-02-27T00:00:00+01:00",
+      "originGroup": "abb-q4-2024",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q4 comparable orders grew 7%, led by very strong Electrification growth and particularly high data-center/utilities demand."
+      ],
+      "entities": [
+        "ABB",
+        "Electrification",
+        "data centers",
+        "utilities"
+      ],
+      "observedChanges": [
+        "electrification/data-center demand remains strong"
+      ]
+    },
+    {
+      "itemId": "reuters-gold-20250331",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Gold hits record high, on track for best quarter since 1986",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/commodities/trade-war-woes-propel-gold-record-highs-2025-03-31/",
+      "publishedAt": "2025-03-31T00:00:00Z",
+      "availableAt": "2025-03-31T00:00:00Z",
+      "originGroup": "reuters-gold-record-20250331",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Spot gold hit a record above $3,100/oz and gained more than 18% in Q1, supported by trade-war/geopolitical worries, central-bank purchases and ETF demand."
+      ],
+      "entities": [
+        "gold",
+        "central banks",
+        "ETFs"
+      ],
+      "observedChanges": [
+        "gold price reaches record",
+        "Q1 price trend accelerates"
+      ]
+    },
+    {
+      "itemId": "reuters-metals-20250204",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China expands critical mineral export controls",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/world/china/china-expands-critical-mineral-export-controls-after-us-imposes-tariffs-2025-02-04/",
+      "publishedAt": "2025-02-04T00:00:00Z",
+      "availableAt": "2025-02-04T00:00:00Z",
+      "originGroup": "reuters-critical-metals-20250204",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China imposed export licensing restrictions on tungsten, tellurium, bismuth, indium and molybdenum products after new US tariffs."
+      ],
+      "entities": [
+        "tungsten",
+        "tellurium",
+        "bismuth",
+        "indium",
+        "molybdenum"
+      ],
+      "observedChanges": [
+        "strategic-metal export controls broaden"
+      ]
+    },
+    {
+      "itemId": "reuters-tungsten-20250219",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "A tungsten-tipped answer to the West's critical metals dilemma",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/markets/commodities/tungsten-tipped-answer-wests-critical-metals-dilemma-andy-home-2025-02-19/",
+      "publishedAt": "2025-02-19T00:00:00Z",
+      "availableAt": "2025-02-19T00:00:00Z",
+      "originGroup": "reuters-tungsten-20250219",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China accounted for the majority of global tungsten production and new export restrictions increased supply-security concerns, while non-China projects sought to restart/expand."
+      ],
+      "entities": [
+        "tungsten",
+        "supply security"
+      ],
+      "observedChanges": [
+        "tungsten scarcity optionality rises"
+      ]
+    },
+    {
+      "itemId": "tf-battery-20250113",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "LiB Cell Prices Expected to Stabilize in 1Q25",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20250113-12442.html",
+      "publishedAt": "2025-01-13T00:00:00+08:00",
+      "availableAt": "2025-01-13T00:00:00+08:00",
+      "originGroup": "trendforce-battery-20250113",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "After a long 2024 decline, EV/ESS battery prices showed signs of stabilizing as suppliers sought price increases and 2025 demand was expected to grow."
+      ],
+      "entities": [
+        "EV batteries",
+        "ESS batteries",
+        "LFP"
+      ],
+      "observedChanges": [
+        "battery price decline slows",
+        "demand outlook improves"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20250325",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Downstream Inventory Reduction Eases DRAM Price Decline in 2Q25",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20250325-12528.html",
+      "publishedAt": "2025-03-25T00:00:00+08:00",
+      "availableAt": "2025-03-25T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20250325",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Conventional DRAM remained in decline but inventory correction was easing; HBM3e shipments were expected to lift blended DRAM pricing in Q2."
+      ],
+      "entities": [
+        "DRAM",
+        "HBM"
+      ],
+      "observedChanges": [
+        "conventional memory remains weak",
+        "HBM/conventional divergence persists"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20250128",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Purchasing Managers' Index for January 2025",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202502/t20250210_1958651.html",
+      "publishedAt": "2025-01-28T09:30:00+08:00",
+      "availableAt": "2025-01-28T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202501",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "January manufacturing PMI fell to 49.1 and new orders to 49.2."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing contracts in January"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20250301",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年2月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/zwfwck/sjfb/202503/t20250301_1958837.html",
+      "publishedAt": "2025-03-01T09:30:00+08:00",
+      "availableAt": "2025-03-01T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202502",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "February PMI rose to 50.2; production 52.5 and new orders 51.1 returned to expansion."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing returns to expansion"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20250331",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年3月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202503/t20250331_1959176.html",
+      "publishedAt": "2025-03-31T09:30:00+08:00",
+      "availableAt": "2025-03-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202503",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "March PMI rose further to 50.5; production 52.6 and new orders 51.8."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing expansion broadens"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20250309",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2025年2月份工业生产者出厂价格",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202503/t20250309_1958914.html",
+      "publishedAt": "2025-03-09T09:30:00+08:00",
+      "availableAt": "2025-03-09T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202502",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "February PPI fell 2.2% YoY; non-ferrous material/wire purchase prices rose 11.1% YoY while broad producer prices remained deflationary."
+      ],
+      "entities": [
+        "China PPI",
+        "non-ferrous metals"
+      ],
+      "observedChanges": [
+        "broad producer deflation persists",
+        "non-ferrous inputs diverge upward"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-q1-ai-optical-acceleration",
+      "statement": "AI infrastructure demand remained capacity-constrained and high-speed optical demand accelerated: hyperscalers guided heavy AI capex, NVIDIA data-center revenue surged, and specialist research projected 400G+ optical-transceiver shipments +56.5% in 2025.",
+      "changeType": "ai_infrastructure_and_optical_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-01-29T00:00:00-08:00",
+      "memberItemIds": [
+        "microsoft-fy25q2-20250129",
+        "meta-q4-20250129",
+        "tf-optical-20250205",
+        "nvidia-q4fy25-20250226"
+      ],
+      "independentOriginGroups": [
+        "microsoft-fy25q2",
+        "meta-q4-2024",
+        "trendforce-optical-20250205",
+        "nvidia-q4fy25"
+      ],
+      "affectedValueChain": [
+        "800G/1.6T optical modules",
+        "lasers/DSPs",
+        "AI servers",
+        "data-center networking"
+      ],
+      "contradictionSearchNotes": "DeepSeek initially triggered fears of lower compute demand; company-level evidence must distinguish structural optical demand from theme rerating and verify realized earnings.",
+      "researchQuestion": "Which A-share optical supplier already converts high-speed demand into earnings and still has favorable timing/asymmetry?"
+    },
+    {
+      "eventId": "event-q1-power-backlog",
+      "statement": "Global electrification/power-equipment demand accelerated into 2025: GE Vernova posted record Q4 orders and +122% Electrification order growth, while ABB reported very strong Electrification demand from data centers/utilities.",
+      "changeType": "orders_backlog_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-01-22T00:00:00-05:00",
+      "memberItemIds": [
+        "gev-q4-20250122",
+        "abb-q4-20250227"
+      ],
+      "independentOriginGroups": [
+        "gev-q4-2024",
+        "abb-q4-2024"
+      ],
+      "affectedValueChain": [
+        "transformers",
+        "switchgear",
+        "HVDC",
+        "grid equipment",
+        "data-center power"
+      ],
+      "contradictionSearchNotes": "Theme already recognized; A-share selection requires pre-cutoff company conversion evidence and favorable timing.",
+      "researchQuestion": "Did any A-share supplier have an already-realized earnings bridge before March 31, or should this remain a hypothesis only?"
+    },
+    {
+      "eventId": "event-q1-gold-record",
+      "statement": "Gold reached successive record highs and finished Q1 up more than 18%, supported by trade/geopolitical risk, central-bank purchases and investment demand.",
+      "changeType": "commodity_price_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-03-31T00:00:00Z",
+      "memberItemIds": [
+        "reuters-gold-20250331"
+      ],
+      "independentOriginGroups": [
+        "reuters-gold-record-20250331"
+      ],
+      "affectedValueChain": [
+        "gold miners",
+        "smelters",
+        "jewelry/investment channels"
+      ],
+      "contradictionSearchNotes": "Gold price signal is direct but late in the quarter; company production growth/costs and price absorption must determine selection.",
+      "researchQuestion": "Which A-share gold producer combines direct price/volume conversion with the best frozen valuation/timing?"
+    },
+    {
+      "eventId": "event-q1-critical-metals-controls",
+      "statement": "China broadened export controls to tungsten and four other strategic metals, increasing global supply-security pressure and potential pricing power for upstream producers.",
+      "changeType": "policy_to_supply_security",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-02-04T00:00:00Z",
+      "memberItemIds": [
+        "reuters-metals-20250204",
+        "reuters-tungsten-20250219"
+      ],
+      "independentOriginGroups": [
+        "reuters-critical-metals-20250204",
+        "reuters-tungsten-20250219"
+      ],
+      "affectedValueChain": [
+        "tungsten mining",
+        "hard alloys",
+        "defense/industrial users",
+        "non-China replacement supply"
+      ],
+      "contradictionSearchNotes": "Licensing is not an outright export ban and can hurt downstream/export volumes; company earnings bridge must be explicit.",
+      "researchQuestion": "Does an A-share tungsten producer have realized price/mix earnings conversion rather than policy optionality alone?"
+    },
+    {
+      "eventId": "event-q1-battery-price-stabilization",
+      "statement": "Battery-cell price declines began stabilizing after a prolonged 2024 downcycle as suppliers sought price increases and 2025 EV/ESS demand was expected to grow.",
+      "changeType": "price_decline_stabilization",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-01-13T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-battery-20250113"
+      ],
+      "independentOriginGroups": [
+        "trendforce-battery-20250113"
+      ],
+      "affectedValueChain": [
+        "EV cells",
+        "ESS cells",
+        "battery materials"
+      ],
+      "contradictionSearchNotes": "This is a forecast/early stabilization signal rather than a strong realized earnings change.",
+      "researchQuestion": "Is there enough realized company evidence to promote, or should this remain weak context?"
+    },
+    {
+      "eventId": "event-q1-memory-divergence",
+      "statement": "Conventional DRAM remained weak while HBM shipments/mix were expected to support blended pricing, creating a technology/product-mix divergence rather than a broad memory upcycle.",
+      "changeType": "product_mix_divergence",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-03-25T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20250325"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20250325"
+      ],
+      "affectedValueChain": [
+        "HBM suppliers",
+        "conventional DRAM",
+        "AI servers"
+      ],
+      "contradictionSearchNotes": "Most A-share memory suppliers had limited direct HBM exposure, making theme mapping risky.",
+      "researchQuestion": "Is there a clean A-share earnings beneficiary or mainly a foreign-supplier/HBM story?"
+    },
+    {
+      "eventId": "event-q1-manufacturing-recovery",
+      "statement": "China manufacturing PMI recovered from 49.1 in January to 50.2 in February and 50.5 in March, with production and new orders returning to expansion.",
+      "changeType": "macro_demand_recovery",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-01-28T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20250128",
+        "nbs-pmi-20250301",
+        "nbs-pmi-20250331"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202501",
+        "nbs-pmi-202502",
+        "nbs-pmi-202503"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing"
+      ],
+      "contradictionSearchNotes": "Broad macro improvement does not define a narrow stock-level beneficiary.",
+      "researchQuestion": "Use as timing/context rather than standalone long thesis?"
+    },
+    {
+      "eventId": "event-q1-producer-deflation",
+      "statement": "Producer prices remained deflationary in February even as non-ferrous input prices rose sharply.",
+      "changeType": "broad_deflation_with_nonferrous_divergence",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-03-09T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-ppi-20250309"
+      ],
+      "independentOriginGroups": [
+        "nbs-ppi-202502"
+      ],
+      "affectedValueChain": [
+        "manufacturing",
+        "non-ferrous materials"
+      ],
+      "contradictionSearchNotes": "Broad PPI weakness is a margin/context signal, not a standalone opportunity.",
+      "researchQuestion": "Use only as contradiction context."
+    }
+  ]
+}
