@@ -1,0 +1,501 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2023-09-11T23:59:59+08:00",
+  "researchReadyAt": "2023-09-11T20:30:00+08:00",
+  "actionableAt": "2023-09-11T20:30:00+08:00",
+  "hypothesisId": "h-2023q3-auto-export-byd",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Export/scale/mix improvements and vehicle profitability should remain visible over one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "sector_confirmed",
+  "changeHypothesis": {
+    "summary": "China auto/NEV exports accelerated while BYD had already converted scale, mix and cost advantages into sharply higher Q2/H1 revenue, profit and cash flow. Unlike peers with weak profit conversion, BYD entered the cutoff with an early-turn price state rather than a completed 60d rerating.",
+    "firstCredibleDate": "2023-08-29",
+    "valueChain": [
+      "NEV demand/export growth",
+      "vehicle scale and mix",
+      "procurement/raw-material leverage",
+      "gross margin/unit profit",
+      "earnings revisions"
+    ],
+    "persistenceReason": "Official export growth plus H1/Q2 company results show multi-quarter scale/export momentum rather than a one-month sales spike.",
+    "disconfirmingEvidence": [
+      "Industry price competition remains intense.",
+      "2023E PE around 27x is not statistically cheap.",
+      "Exports were still a minority of unit volume."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "miit-auto-20230911",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-auto-20230911",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "byd-h1-20230829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "byd-research-20230829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "saic-h1-20230831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "gwm-h1-20230831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "NEV/export demand and scale",
+      "to": "BYD vehicle volume/mix",
+      "mechanism": "Higher domestic scale plus overseas/high-end mix expands revenue base and procurement leverage.",
+      "evidenceRefs": [
+        "miit-auto-20230911",
+        "byd-research-20230829"
+      ],
+      "failureMode": "price war overwhelms volume and mix",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "volume/mix",
+      "to": "profit/cash flow",
+      "mechanism": "Q2 already showed faster profit than revenue growth, higher unit economics and strong operating cash flow.",
+      "evidenceRefs": [
+        "byd-h1-20230829",
+        "byd-research-20230829"
+      ],
+      "failureMode": "discounting or expenses reverse margin gains",
+      "lag": "realized"
+    },
+    {
+      "from": "realized engine",
+      "to": "selection alpha",
+      "mechanism": "Forward valuation requires continued growth but is supported by already-realized profitability unlike matched peers.",
+      "evidenceRefs": [
+        "byd-research-20230829",
+        "regime-auto-20230911"
+      ],
+      "failureMode": "earnings growth slows toward peers while valuation stays premium",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "NEV OEMs converting scale/export into margin"
+    ],
+    "secondOrderWinners": [
+      "qualified components/batteries"
+    ],
+    "losers": [
+      "OEMs gaining volume through uneconomic price cuts"
+    ],
+    "substitutes": [
+      "ICE/hybrid competitors"
+    ],
+    "bottlenecks": [
+      "overseas channels/capacity",
+      "brand/product cadence"
+    ],
+    "falseThemeMatches": [
+      "high-volume OEMs without profit/cash conversion"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "H1/Q2 vehicle-scale and export growth already translated to much faster profit and cash-flow growth.",
+      "evidenceRefs": [
+        "byd-h1-20230829",
+        "byd-research-20230829"
+      ],
+      "earningsSensitivity": {
+        "base": "2023-25 profit forecast RMB25.08/32.61/41.01bn.",
+        "favorable": "exports/high-end mix and scale sustain unit-profit improvement.",
+        "adverse": "price war compresses margins and earnings revisions."
+      },
+      "principalRisks": [
+        "price competition",
+        "overseas execution",
+        "premium valuation"
+      ]
+    },
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "verifiedExposure": "Large OEM/exporter, but H1 core profit conversion was weak.",
+      "evidenceRefs": [
+        "saic-h1-20230831"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit +2.5% and扣非 -7.2%.",
+        "favorable": "JV/new-energy recovery improves mix.",
+        "adverse": "legacy/JV weakness persists."
+      },
+      "principalRisks": [
+        "transition",
+        "weak core profit"
+      ]
+    },
+    {
+      "ticker": "601633.SH",
+      "name": "长城汽车",
+      "verifiedExposure": "NEV/export transition exposure but H1 profit/cash conversion deteriorated.",
+      "evidenceRefs": [
+        "gwm-h1-20230831"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit -75.7%.",
+        "favorable": "new models/export recover margins.",
+        "adverse": "selling/R&D costs remain heavy."
+      },
+      "principalRisks": [
+        "profitability",
+        "cash flow",
+        "transition"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed OEM exposed to the same domestic/export auto cycle.",
+      "whySelectedCompanyShouldOutperform": "BYD had dramatically stronger revenue/profit growth and explicit NEV/export scale while SAIC core profit declined.",
+      "evidenceRefs": [
+        "byd-h1-20230829",
+        "saic-h1-20230831"
+      ]
+    },
+    {
+      "ticker": "601633.SH",
+      "name": "长城汽车",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Independent Chinese OEM with NEV/export growth exposure.",
+      "whySelectedCompanyShouldOutperform": "BYD already converted growth into profit/cash flow while Great Wall's H1 profit and CFO deteriorated.",
+      "evidenceRefs": [
+        "byd-h1-20230829",
+        "gwm-h1-20230831"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002594.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600104.SH",
+        "selectedAdvantages": [
+          "far faster H1/Q2 revenue and profit growth",
+          "stronger NEV/export exposure",
+          "realized scale economics"
+        ],
+        "selectedDisadvantages": [
+          "higher valuation than mature SAIC"
+        ],
+        "evidenceRefs": [
+          "byd-h1-20230829",
+          "byd-research-20230829",
+          "saic-h1-20230831"
+        ],
+        "switchCondition": "Prefer SAIC if its core/JV earnings inflect faster while BYD margin growth stalls and the valuation gap remains wide.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601633.SH",
+        "selectedAdvantages": [
+          "profit +205% vs -76%",
+          "positive/strong operating cash flow",
+          "better gross/unit-profit trajectory"
+        ],
+        "selectedDisadvantages": [
+          "Great Wall could have higher recovery beta from depressed earnings"
+        ],
+        "evidenceRefs": [
+          "byd-h1-20230829",
+          "byd-research-20230829",
+          "gwm-h1-20230831"
+        ],
+        "switchCondition": "Prefer Great Wall only after new-model/export growth produces realized margin/profit/cash recovery.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "BYD has the clearest realized earnings engine and peer-relative conversion, not merely the highest volume growth."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Aug28 reference price RMB235.53 implied roughly 27x 2023E and 21x 2024E PE. The auto basket was favorable, but BYD itself remained -5.0pp versus CSI300 over 60d and only recently turned positive over 20d.",
+    "thesisExpectation": "Sustained export/high-end mix and scale economics keep profit revisions above the already-strong H1 baseline.",
+    "measurableGap": "The company has realized earnings growth far above matched peers while its own 60d relative price has not yet completed the same rerating.",
+    "evidenceRefs": [
+      "byd-research-20230829",
+      "regime-auto-20230911"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus realized Q2 unit-economics / earnings conversion versus matched OEMs.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2023-25 forecast profit RMB25.08/32.61/41.01bn; Aug28 PE about 27x/21x/17x.",
+    "thesisScenario": "Export/high-end mix and scale sustain high profit growth through the next reporting cycle.",
+    "breakevenCondition": "Earnings must continue to grow materially faster than mature/transition peers; no large multiple expansion is required.",
+    "ordinaryScenarioFailure": "Volume remains strong but discounting/expenses normalize profit growth toward the market baseline.",
+    "catalystOrTimingBridge": "Monthly sales/export and Q3 earnings can validate/falsify scale economics inside 60 trading days.",
+    "evidenceRefs": [
+      "byd-research-20230829",
+      "miit-auto-20230911",
+      "regime-auto-20230911"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official exports and BYD Q2 revenue/profit accelerated simultaneously.",
+      "evidenceRefs": [
+        "miit-auto-20230911",
+        "byd-research-20230829"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "H1/Q2 profit and operating cash flow already accelerated far faster than revenue.",
+      "evidenceRefs": [
+        "byd-h1-20230829",
+        "byd-research-20230829"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "SAIC core profit and Great Wall profit/cash conversion were materially weaker.",
+      "evidenceRefs": [
+        "saic-h1-20230831",
+        "gwm-h1-20230831"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The frozen forecast incorporates H1 but continued exports/high-end scale can still produce upward revisions.",
+      "evidenceRefs": [
+        "byd-research-20230829",
+        "miit-auto-20230911"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use frozen 20/60d BYD relative path and forward valuation.",
+      "evidenceRefs": [
+        "regime-auto-20230911",
+        "byd-research-20230829"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen auto basket versus CSI300",
+      "lookback20Excess": 0.04100892495011902,
+      "lookback60Excess": 0.0757840044382622,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-auto-20230911"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Official exports/NEV sales and BYD Q2 profit/mix accelerated.",
+      "evidenceRefs": [
+        "miit-auto-20230911",
+        "byd-research-20230829"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "BYD converts strongly while SAIC/Great Wall earnings are much weaker; opportunity is company-specific within a growing sector.",
+      "evidenceRefs": [
+        "byd-h1-20230829",
+        "saic-h1-20230831",
+        "gwm-h1-20230831"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Export/channel buildout, NEV penetration and product/scale economics span multiple quarters.",
+      "evidenceRefs": [
+        "miit-auto-20230911",
+        "byd-research-20230829"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Sector basket is positive, but BYD's own 60d relative return remains negative and only the 20d window has turned positive.",
+      "evidenceRefs": [
+        "regime-auto-20230911"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Sector timing and company fundamentals are aligned without a completed BYD 60d rerating."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002594.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit,扣非 and operating cash-flow growth clear quality.",
+      "evidenceRefs": [
+        "byd-h1-20230829"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Q2 profit/scale and exports are materially stronger than peers and can sustain revisions.",
+      "evidenceRefs": [
+        "byd-research-20230829",
+        "miit-auto-20230911"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "27x/21x 2023/24E is a meaningful premium but does not require an extreme scenario given realized >100% Q2 profit growth and projected earnings growth.",
+      "evidenceRefs": [
+        "byd-research-20230829"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales/export and Q3 earnings arrive inside base horizon.",
+      "evidenceRefs": [
+        "miit-auto-20230911",
+        "byd-research-20230829"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Realized scale economics and cash flow provide a buffer, though price-war risk remains.",
+      "evidenceRefs": [
+        "byd-h1-20230829"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600104.SH",
+        "revisionAdvantage": "BYD has much stronger realized profit/export growth.",
+        "valuationAdvantage": "SAIC may be cheaper, but its core earnings trend is weaker; BYD's premium is supported by conversion.",
+        "qualityTradeoff": "BYD has stronger growth and cash conversion.",
+        "catalystAdvantage": "BYD monthly NEV/export data directly update the thesis.",
+        "downsideTradeoff": "BYD has valuation risk; SAIC has structural transition risk.",
+        "evidenceRefs": [
+          "byd-h1-20230829",
+          "byd-research-20230829",
+          "saic-h1-20230831"
+        ],
+        "switchCondition": "Switch if SAIC core earnings inflect and BYD unit margins decelerate.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601633.SH",
+        "revisionAdvantage": "BYD earnings acceleration is realized while Great Wall recovery remains prospective.",
+        "valuationAdvantage": "Great Wall may have recovery optionality but lacks current profit/cash support.",
+        "qualityTradeoff": "BYD clearly stronger.",
+        "catalystAdvantage": "BYD export/high-end volume is already scaling.",
+        "downsideTradeoff": "Great Wall carries much higher earnings/cash-flow execution risk.",
+        "evidenceRefs": [
+          "byd-h1-20230829",
+          "gwm-h1-20230831"
+        ],
+        "switchCondition": "Switch after Great Wall realizes a margin/cash inflection with superior valuation headroom.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Q2 vehicle volume, exports and higher-end product mix expanded while scale/raw-material economics improved.",
+    "earningsMechanism": "Higher scale/mix and lower unit cost produced profit growth far above revenue growth and strong operating cash flow.",
+    "nextObservableMetric": "monthly export/NEV sales, Q3 vehicle margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "byd-h1-20230829",
+      "byd-research-20230829"
+    ],
+    "failureCondition": "sales remain strong but Q3 margin/unit profit or cash conversion materially decelerates."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority through normal sector-confirmed route; no override is needed because the auto basket is already favorable.",
+    "alreadyPricedAssessment": "partly priced but BYD remains an early-turn rather than a completed 60d rerating",
+    "constraints": [
+      "price competition",
+      "forward multiple"
+    ]
+  },
+  "bearCase": "Industry volume/export growth persists but price competition compresses unit economics, causing earnings to converge toward weaker peers.",
+  "invalidationConditions": [
+    {
+      "indicator": "unit economics/margin",
+      "observationMethod": "Q3 filing",
+      "threshold": "material margin/unit-profit deterioration"
+    },
+    {
+      "indicator": "export/NEV scale",
+      "observationMethod": "monthly official/company sales",
+      "threshold": "growth stalls while inventory/discounts rise"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact peer-normalized forward valuation",
+    "future price-war intensity"
+  ],
+  "nextResearchActions": [
+    "Freeze as High-priority sector-confirmed selection.",
+    "Do not promote/demote after reveal."
+  ]
+}
