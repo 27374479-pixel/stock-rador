@@ -1,0 +1,562 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-06-30T15:30:00+08:00",
+  "researchReadyAt": "2025-06-30T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q2-ddr4-eol-memory-2025q2",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "DDR4 price/supply resets can affect one to two reporting cycles; 60d is the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "changeHypothesis": {
+    "summary": "By late Q2, DDR4 moved from tariff-driven restocking toward a more structural EOL/capacity-shortage mechanism. 兆易创新 was the strongest current-quality A-share expression, but the June physical price surge had not yet been directly converted into reported company earnings and the 60-day opportunity regime remained weak.",
+    "firstCredibleDate": "2025-06-05",
+    "valueChain": [
+      "DDR4 EOL/capacity cuts",
+      "legacy-memory shortage",
+      "contract-price increase",
+      "supplier ASP/mix",
+      "earnings revisions"
+    ],
+    "persistenceReason": "Repeated June specialist evidence showed supply reductions and large DDR4 contract-price increases.",
+    "disconfirmingEvidence": [
+      "All physical supply evidence comes from one specialist origin.",
+      "Q1 company profit growth was only mid-teens and predated the June price surge.",
+      "60d basket excess was negative and only one of four names beat CSI300."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-ddr4-20250605",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tf-ddr4-20250625",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tf-ddr4-20250630",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-memory-20250630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "giga-q1-20250430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "junzheng-q1-20250429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "longsys-q1-20250430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "demingli-q1-20250430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "demingli-research-20250430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "DDR4 EOL/capacity cuts",
+      "to": "legacy-memory shortage",
+      "mechanism": "Major suppliers reduce legacy output while server/CSP and industrial demand continue to procure.",
+      "evidenceRefs": [
+        "tf-ddr4-20250605",
+        "tf-ddr4-20250625",
+        "tf-ddr4-20250630"
+      ],
+      "failureMode": "front-loaded procurement fades or suppliers restore legacy capacity",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "shortage",
+      "to": "兆易创新 earnings",
+      "mechanism": "Higher legacy-memory ASP/mix can lift earnings if product exposure and wafer economics transmit the price reset.",
+      "evidenceRefs": [
+        "giga-q1-20250430"
+      ],
+      "failureMode": "the June price spike does not materially affect the company's mix or input costs offset ASP gains",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "earnings conversion",
+      "to": "selection alpha",
+      "mechanism": "The stock needs a direct earnings conversion beyond already-improving industry prices and must outperform peers after valuation/timing.",
+      "evidenceRefs": [
+        "regime-memory-20250630"
+      ],
+      "failureMode": "industry price moves without company-level earnings reset",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "memory suppliers with direct DDR4 pricing power"
+    ],
+    "secondOrderWinners": [
+      "modules/channels with favorable inventory"
+    ],
+    "losers": [
+      "OEMs facing higher memory BOM"
+    ],
+    "substitutes": [
+      "newer memory generations and alternative suppliers"
+    ],
+    "bottlenecks": [
+      "legacy wafer allocation"
+    ],
+    "falseThemeMatches": [
+      "storage assemblers whose inventory/cost exposure overwhelms price upside"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Memory is a core product line and Q1 remained profitable/growing before the June shortage intensified.",
+      "evidenceRefs": [
+        "giga-q1-20250430"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +17.3%, profit +14.6%.",
+        "favorable": "June DDR4 price reset improves H2 ASP/mix and earnings revisions.",
+        "adverse": "price increase fails to transmit or valuation compresses."
+      },
+      "principalRisks": [
+        "conversion not yet realized",
+        "valuation",
+        "single-origin physical evidence"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Memory represented the majority of 2024 revenue, but DDR4/LPDDR4 share was still small and Q1 profit fell.",
+      "evidenceRefs": [
+        "junzheng-q1-20250429"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit -15.3%.",
+        "favorable": "new-process DDR4/LPDDR4 raises mix later in 2025.",
+        "adverse": "product qualification delays."
+      },
+      "principalRisks": [
+        "small current DDR4 mix",
+        "profit decline"
+      ]
+    },
+    {
+      "ticker": "301308.SZ",
+      "name": "江波龙",
+      "verifiedExposure": "Large storage revenue base and analyst expectations for a significant 2025 recovery.",
+      "evidenceRefs": [
+        "longsys-q1-20250430"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 loss.",
+        "favorable": "inventory and product margins recover sharply with memory pricing.",
+        "adverse": "consumer pricing pressure/inventory losses persist."
+      },
+      "principalRisks": [
+        "loss-making Q1",
+        "inventory volatility"
+      ]
+    },
+    {
+      "ticker": "001309.SZ",
+      "name": "德明利",
+      "verifiedExposure": "High storage revenue growth but Q1 remained loss-making with heavy cash burn.",
+      "evidenceRefs": [
+        "demingli-q1-20250430"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 loss despite +54% revenue.",
+        "favorable": "gross margin inflects with storage prices.",
+        "adverse": "inventory/cash risk dominates."
+      },
+      "principalRisks": [
+        "cash burn",
+        "inventory",
+        "loss-making"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct memory-design peer with DRAM exposure.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 had positive Q1 profit growth while 北京君正 profit declined and current DDR4/LPDDR4 exposure was still small.",
+      "evidenceRefs": [
+        "giga-q1-20250430",
+        "junzheng-q1-20250429"
+      ]
+    },
+    {
+      "ticker": "301308.SZ",
+      "name": "江波龙",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large A-share storage supplier exposed to the same memory cycle.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 had materially better current earnings quality; 江波龙's recovery remained forecast rather than realized.",
+      "evidenceRefs": [
+        "giga-q1-20250430",
+        "longsys-q1-20250430"
+      ]
+    },
+    {
+      "ticker": "001309.SZ",
+      "name": "德明利",
+      "controlType": "peer",
+      "fairCounterfactualReason": "High-beta storage supplier exposed to the same price cycle.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 was profitable/cash-generative while 德明利 remained loss-making with negative cash flow.",
+      "evidenceRefs": [
+        "giga-q1-20250430",
+        "demingli-q1-20250430"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "selectedAdvantages": [
+          "better Q1 profit trend",
+          "cleaner current earnings quality"
+        ],
+        "selectedDisadvantages": [
+          "北京君正 may have larger later product-mix torque"
+        ],
+        "evidenceRefs": [
+          "giga-q1-20250430",
+          "junzheng-q1-20250429"
+        ],
+        "switchCondition": "Switch if 北京君正's new-process DDR4/LPDDR4 starts contributing materially before 兆易创新 shows H2 earnings conversion.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "301308.SZ",
+        "selectedAdvantages": [
+          "profitable current earnings",
+          "less reliance on inventory/margin rebound"
+        ],
+        "selectedDisadvantages": [
+          "江波龙 may have much larger cyclical operating leverage if margins turn"
+        ],
+        "evidenceRefs": [
+          "giga-q1-20250430",
+          "longsys-q1-20250430"
+        ],
+        "switchCondition": "Switch only after 江波龙 shows realized margin/profit inflection rather than consensus recovery.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "001309.SZ",
+        "selectedAdvantages": [
+          "positive earnings and stronger cash quality"
+        ],
+        "selectedDisadvantages": [
+          "德明利 has greater revenue/turning-point torque"
+        ],
+        "evidenceRefs": [
+          "giga-q1-20250430",
+          "demingli-q1-20250430"
+        ],
+        "switchCondition": "Switch only after 德明利's gross-margin and cash-flow inflection is visible.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "兆易创新 is the best current-quality expression, but timing and the missing direct H2 conversion bridge prevent High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The June DDR4 shortage was increasingly visible, but the frozen company results still reflected pre-shortage Q1 economics.",
+    "thesisExpectation": "H2 earnings should accelerate if the large DDR4 price reset transmits to product mix/margins.",
+    "measurableGap": "Industry evidence is ahead of company financial evidence; this is precisely a proxy-to-realization gap.",
+    "evidenceRefs": [
+      "tf-ddr4-20250630",
+      "giga-q1-20250430"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Relative earnings quality plus H2 price/mix bridge versus memory peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Q1 profit growth was only 14.6%, while June industry prices accelerated materially.",
+    "thesisScenario": "H2 ASP/mix lifts earnings revisions beyond Q1 run-rate.",
+    "breakevenCondition": "The June industry price reset must produce a measurable company margin/profit acceleration.",
+    "ordinaryScenarioFailure": "DDR4 prices rise but company earnings do not accelerate enough to overcome valuation/market expectations.",
+    "catalystOrTimingBridge": "Q3 reporting and product-price/margin updates should expose whether the June shortage converted.",
+    "evidenceRefs": [
+      "giga-q1-20250430",
+      "tf-ddr4-20250630"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "DDR4 price/supply conditions accelerated sharply in June.",
+      "evidenceRefs": [
+        "tf-ddr4-20250605",
+        "tf-ddr4-20250630"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "The company was already profitable/growing, but the June shortage had not yet appeared in a reporting period.",
+      "evidenceRefs": [
+        "giga-q1-20250430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Peers either had profit declines or losses at the cutoff.",
+      "evidenceRefs": [
+        "junzheng-q1-20250429",
+        "longsys-q1-20250430",
+        "demingli-q1-20250430"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "Q1 earnings predated the June industry price reset and may lag the new physical conditions.",
+      "evidenceRefs": [
+        "giga-q1-20250430",
+        "tf-ddr4-20250630"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use deterministic 20/60d opportunity-basket regime and peer relative performance.",
+      "evidenceRefs": [
+        "regime-memory-20250630"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen memory basket versus CSI300",
+      "lookback20Excess": 0.11728491887362469,
+      "lookback60Excess": -0.03680457011289945,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 0.25,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-memory-20250630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "June DDR4 contract/spot prices and supply tightness accelerated.",
+      "evidenceRefs": [
+        "tf-ddr4-20250605",
+        "tf-ddr4-20250630"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Current company earnings were mixed: 兆易创新 positive, 北京君正 down, 江波龙/德明利 loss-making despite recovery expectations.",
+      "evidenceRefs": [
+        "giga-q1-20250430",
+        "junzheng-q1-20250429",
+        "longsys-q1-20250430",
+        "demingli-q1-20250430"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "EOL/capacity reductions are more persistent than a one-off tariff restock.",
+      "evidenceRefs": [
+        "tf-ddr4-20250605",
+        "tf-ddr4-20250625"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "20d breadth turned strong, but 60d breadth remained weak rather than universally crowded.",
+      "evidenceRefs": [
+        "regime-memory-20250630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical impulse is strong, but the 60d price/revision regime has not confirmed a broad turn."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603986.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Positive earnings and operating cash flow clear the quality floor.",
+      "evidenceRefs": [
+        "giga-q1-20250430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "June physical price acceleration may create H2 revision room beyond Q1 run-rate.",
+      "evidenceRefs": [
+        "tf-ddr4-20250630",
+        "giga-q1-20250430"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "The company carries a quality premium and no clean cheap-valuation anchor is frozen at cutoff.",
+      "evidenceRefs": [
+        "regime-memory-20250630"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q3 earnings/margin updates lie inside the 60d base horizon.",
+      "evidenceRefs": [
+        "tf-ddr4-20250630"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "If price transmission disappoints, quality alone may not protect against valuation compression.",
+      "evidenceRefs": [
+        "giga-q1-20250430"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "revisionAdvantage": "兆易创新 starts from better current earnings while both can benefit from higher memory pricing.",
+        "valuationAdvantage": "No decisive absolute valuation advantage is frozen.",
+        "qualityTradeoff": "兆易创新 stronger current quality.",
+        "catalystAdvantage": "兆易创新 does not require a product-node transition before earnings can improve.",
+        "downsideTradeoff": "北京君正 has lower current profit momentum; both carry semiconductor-cycle risk.",
+        "evidenceRefs": [
+          "giga-q1-20250430",
+          "junzheng-q1-20250429"
+        ],
+        "switchCondition": "Switch if 北京君正 new-process products show realized revenue/margin contribution first.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "301308.SZ",
+        "revisionAdvantage": "江波龙 has more possible convexity but recovery is not yet realized.",
+        "valuationAdvantage": "PE-based comparison is unreliable while Q1 is loss-making.",
+        "qualityTradeoff": "兆易创新 clearly stronger.",
+        "catalystAdvantage": "兆易创新 needs margin acceleration; 江波龙 first needs a full profit inflection.",
+        "downsideTradeoff": "江波龙 inventory/margin risk is larger.",
+        "evidenceRefs": [
+          "giga-q1-20250430",
+          "longsys-q1-20250430"
+        ],
+        "switchCondition": "Switch after a realized gross-margin/profit inflection at 江波龙.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "001309.SZ",
+        "revisionAdvantage": "德明利 has large operating leverage but no realized profitability.",
+        "valuationAdvantage": "Not meaningful while loss-making.",
+        "qualityTradeoff": "兆易创新 clearly stronger.",
+        "catalystAdvantage": "兆易创新 has a shorter path from industry pricing to profit.",
+        "downsideTradeoff": "德明利 cash/inventory tail risk is much higher.",
+        "evidenceRefs": [
+          "giga-q1-20250430",
+          "demingli-q1-20250430"
+        ],
+        "switchCondition": "Switch only after 德明利 survival/cash and margin inflection are visible.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "DDR4 contract/spot prices rose sharply in June as EOL supply cuts tightened the market.",
+    "earningsMechanism": "Higher legacy-memory ASP/mix should lift gross profit if the company's product exposure transmits the market price reset.",
+    "nextObservableMetric": "H2 memory segment gross margin and quarterly profit growth",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "tf-ddr4-20250630",
+      "giga-q1-20250430"
+    ],
+    "failureCondition": "H2 margin/profit does not accelerate despite higher industry DDR4 prices."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only because timing is neutral and the earnings conversion bridge is still proxy-only.",
+    "alreadyPricedAssessment": "partially reflected but not broadly confirmed",
+    "constraints": [
+      "neutral 60d regime",
+      "conversion not realized"
+    ]
+  },
+  "bearCase": "The industry shortage is real but does not map strongly enough to 兆易创新's mix/margins, while higher expectations compress the multiple.",
+  "invalidationConditions": [
+    {
+      "indicator": "H2 memory gross margin/profit",
+      "observationMethod": "next financial report",
+      "threshold": "no acceleration versus Q1 despite industry price increase"
+    },
+    {
+      "indicator": "memory opportunity breadth",
+      "observationMethod": "fresh pre-cutoff regime snapshot",
+      "threshold": "20d turn fails and 60d remains weak/reverses"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before outcome reveal."
+    ]
+  },
+  "unknowns": [
+    "exact DDR4 revenue mix at cutoff",
+    "incremental gross margin from June price reset"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection.",
+    "Evaluate against all three controls after lock; do not promote from outcome."
+  ]
+}
