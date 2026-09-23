@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2023-09-07T23:59:59+08:00",
+  "researchReadyAt": "2023-09-07T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q3-huawei-domestic-chip",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Domestic-substitution orders could affect equipment/foundry/supply-chain earnings over multiple quarters, but no clean listed-company bridge is frozen."
+  },
+  "changeHypothesis": {
+    "summary": "Mate60/TechInsights confirmed a real domestic advanced-chip capability step, but representative A-share equipment/MEMS/packaging candidates had weak or negative H1 earnings. The news created immediate price moves without a verified company earnings bridge.",
+    "firstCredibleDate": "2023-08-30",
+    "valueChain": [
+      "domestic advanced process",
+      "foundry/equipment/components",
+      "qualification/orders",
+      "revenue/profit"
+    ],
+    "persistenceReason": "Technical capability is durable, but listed-company incidence is uncertain.",
+    "disconfirmingEvidence": [
+      "长川 H1 profit -91.7% and CFO deeply negative.",
+      "赛微 and 通富 were loss-making.",
+      "Stock reactions differed widely before any new earnings disclosure."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-huawei-20230830",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-huawei-20230907",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-huawei-20230907",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "changchuan-h1-20230829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "saiwei-h1-20230825",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tongfu-h1-20230831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "domestic advanced-chip breakthrough",
+      "to": "domestic semiconductor demand",
+      "mechanism": "Successful advanced domestic silicon can support local equipment/component qualification.",
+      "evidenceRefs": [
+        "reuters-huawei-20230830",
+        "reuters-huawei-20230907"
+      ],
+      "failureMode": "production scale/yield remains limited",
+      "lag": "quarters"
+    },
+    {
+      "from": "domestic demand",
+      "to": "listed supplier earnings",
+      "mechanism": "Only actual qualified orders/utilization can convert the theme to profits.",
+      "evidenceRefs": [
+        "changchuan-h1-20230829",
+        "saiwei-h1-20230825",
+        "tongfu-h1-20230831"
+      ],
+      "failureMode": "theme exposure is indirect or customer orders lag",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "suppliers with verified advanced-process orders"
+    ],
+    "secondOrderWinners": [
+      "testing/packaging/components"
+    ],
+    "losers": [
+      "foreign suppliers displaced"
+    ],
+    "substitutes": [
+      "alternative domestic/foreign supply"
+    ],
+    "bottlenecks": [
+      "yield",
+      "equipment qualification",
+      "volume"
+    ],
+    "falseThemeMatches": [
+      "semiconductor-theme stocks without realized customer/earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300604.SZ",
+      "name": "长川科技",
+      "verifiedExposure": "Semiconductor test equipment exposure, but H1 earnings collapsed.",
+      "evidenceRefs": [
+        "changchuan-h1-20230829"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit -91.65%.",
+        "favorable": "domestic equipment orders eventually recover.",
+        "adverse": "industry capex remains weak."
+      },
+      "principalRisks": [
+        "weak earnings",
+        "cash burn"
+      ]
+    },
+    {
+      "ticker": "300456.SZ",
+      "name": "赛微电子",
+      "verifiedExposure": "Domestic MEMS/foundry capability but H1 attributable loss.",
+      "evidenceRefs": [
+        "saiwei-h1-20230825"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 loss.",
+        "favorable": "capacity/customer ramp.",
+        "adverse": "utilization remains weak."
+      },
+      "principalRisks": [
+        "losses",
+        "theme mapping uncertainty"
+      ]
+    },
+    {
+      "ticker": "002156.SZ",
+      "name": "通富微电",
+      "verifiedExposure": "Advanced packaging exposure, but H1 loss and weaker CFO.",
+      "evidenceRefs": [
+        "tongfu-h1-20230831"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 loss RMB188m.",
+        "favorable": "AI/domestic orders lift utilization.",
+        "adverse": "utilization/margins stay weak."
+      },
+      "principalRisks": [
+        "losses",
+        "working capital"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen candidate combines verified Mate60-specific earnings conversion, quality and expectation room."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Semiconductor shares reacted immediately to the Mate60 launch/teardown, but listed-company H1 earnings still reflected the downcycle.",
+    "thesisExpectation": "Domestic substitution may create future orders.",
+    "measurableGap": "No measurable company-level earnings gap is frozen yet.",
+    "evidenceRefs": [
+      "reuters-huawei-20230830",
+      "reuters-huawei-20230907",
+      "regime-huawei-20230907"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: technical breakthrough is real, but company economics are not.",
+    "alreadyPricedAssessment": "headline-driven rerating without verified earnings",
+    "constraints": [
+      "weak H1 earnings",
+      "indirect mapping"
+    ]
+  },
+  "bearCase": "The technical breakthrough is real but benefits private/unlisted/foundry entities more than the selected A-share theme stocks.",
+  "invalidationConditions": [
+    {
+      "indicator": "listed-company orders/profit",
+      "observationMethod": "future filings",
+      "threshold": "no realized recovery despite domestic substitution narrative"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "Mate60 supplier attribution",
+    "advanced-process order economics"
+  ],
+  "nextResearchActions": [
+    "Keep opportunity hypothesis, but require direct customer/order/profit evidence before selecting a stock."
+  ]
+}
