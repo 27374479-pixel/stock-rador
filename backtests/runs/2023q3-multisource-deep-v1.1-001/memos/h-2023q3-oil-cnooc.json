@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2023-09-29T23:59:59+08:00",
+  "researchReadyAt": "2023-09-29T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q3-oil-cnooc",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Higher crude prices can flow into upstream realized pricing quickly, but Q3 commodity/equity rerating raises absorption risk."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Saudi/Russian cuts tightened crude supply and pushed Brent above $90. 中国海油 had strong volume/cost resilience and low frozen forward PE, but crude and upstream equities had already rerated strongly by quarter-end, making the latest bullish headlines potentially confirmation rather than incremental information.",
+    "firstCredibleDate": "2023-09-05",
+    "valueChain": [
+      "OPEC+/Russia supply cuts",
+      "Brent realized price",
+      "upstream revenue/cash flow",
+      "earnings/dividend"
+    ],
+    "persistenceReason": "Cuts were extended through year-end, but the price response was already large by Sep29.",
+    "disconfirmingEvidence": [
+      "Brent had already risen roughly 30% in Q3.",
+      "中国海油 was sustained_strength over both 20d and 60d relative windows.",
+      "H1 profit was still down YoY before the new price spike."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-oil-20230905",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-oil-20230929",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-oil-20230929",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cnooc-h1-research-20230818",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cnooc-valuation-20230818",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "petrochina-h1-20230831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sinopec-h1-20230828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "supply cuts",
+      "to": "higher crude price",
+      "mechanism": "Saudi/Russia supply restraint reduces global availability.",
+      "evidenceRefs": [
+        "reuters-oil-20230905",
+        "reuters-oil-20230929"
+      ],
+      "failureMode": "cuts reverse or demand weakens",
+      "lag": "days-weeks"
+    },
+    {
+      "from": "higher crude",
+      "to": "CNOOC earnings",
+      "mechanism": "Upstream realized prices rise while volume/cost control provides operating leverage.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "cnooc-valuation-20230818"
+      ],
+      "failureMode": "oil reverses or costs/production disappoint",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings bridge",
+      "to": "stock alpha",
+      "mechanism": "Low PE/dividend can support valuation, but only if the Q3 rerating has not already absorbed the higher oil baseline.",
+      "evidenceRefs": [
+        "regime-oil-20230929",
+        "cnooc-valuation-20230818"
+      ],
+      "failureMode": "sell-the-news/mean reversion after prior rerating",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost upstream oil producers"
+    ],
+    "secondOrderWinners": [
+      "oilfield services if capex rises"
+    ],
+    "losers": [
+      "airlines/refiners with unhedged input pressure"
+    ],
+    "substitutes": [
+      "gas/renewables"
+    ],
+    "bottlenecks": [
+      "OPEC+ policy/geopolitics"
+    ],
+    "falseThemeMatches": [
+      "integrated refiners whose downstream margins offset upstream gains"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600938.SH",
+      "name": "中国海油",
+      "verifiedExposure": "Pure upstream exposure with H1 production +8.86% and strong cost resilience.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "cnooc-valuation-20230818"
+      ],
+      "earningsSensitivity": {
+        "base": "2023E profit RMB124.824bn at ~7x frozen report PE.",
+        "favorable": "$90 oil lifts realized price and cash flow.",
+        "adverse": "oil reverses after Q3 rerating."
+      },
+      "principalRisks": [
+        "commodity reversal",
+        "expectation absorption"
+      ]
+    },
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "verifiedExposure": "Large upstream plus integrated downstream; H1 profit +4.5%.",
+      "evidenceRefs": [
+        "petrochina-h1-20230831"
+      ],
+      "earningsSensitivity": {
+        "base": "upstream resilient despite lower oil.",
+        "favorable": "higher crude lifts upstream.",
+        "adverse": "integrated effects offset."
+      },
+      "principalRisks": [
+        "less pure exposure"
+      ]
+    },
+    {
+      "ticker": "600028.SH",
+      "name": "中国石化",
+      "verifiedExposure": "Integrated refiner/petrochemical with less clean upstream sensitivity.",
+      "evidenceRefs": [
+        "sinopec-h1-20230828"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit -20.1%.",
+        "favorable": "upstream improves.",
+        "adverse": "higher feedstock hurts refining/chemicals."
+      },
+      "principalRisks": [
+        "value-chain offset"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large A-share upstream/integrated producer benefiting from the same crude move.",
+      "whySelectedCompanyShouldOutperform": "CNOOC has purer upstream sensitivity, stronger production growth and low forward valuation.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "cnooc-valuation-20230818",
+        "petrochina-h1-20230831"
+      ]
+    },
+    {
+      "ticker": "600028.SH",
+      "name": "中国石化",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Integrated oil major exposed to the same crude price but with refining/chemical offsets.",
+      "whySelectedCompanyShouldOutperform": "CNOOC's upstream purity gives a cleaner positive price-to-earnings bridge.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "sinopec-h1-20230828"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600938.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601857.SH",
+        "selectedAdvantages": [
+          "purer upstream beta",
+          "higher production growth",
+          "low frozen forward PE"
+        ],
+        "selectedDisadvantages": [
+          "both stocks already rerated; PetroChina H1 profit was still growing"
+        ],
+        "evidenceRefs": [
+          "cnooc-h1-research-20230818",
+          "cnooc-valuation-20230818",
+          "petrochina-h1-20230831",
+          "regime-oil-20230929"
+        ],
+        "switchCondition": "Prefer PetroChina if integrated earnings revisions exceed CNOOC while valuation remains comparable.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "600028.SH",
+        "selectedAdvantages": [
+          "cleaner upstream price sensitivity",
+          "stronger H1 earnings resilience"
+        ],
+        "selectedDisadvantages": [
+          "Sinopec can benefit from downstream margin conditions if crude falls"
+        ],
+        "evidenceRefs": [
+          "cnooc-h1-research-20230818",
+          "sinopec-h1-20230828"
+        ],
+        "switchCondition": "Prefer Sinopec if crude declines and refining/chemical margins become the dominant earnings driver.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "Company choice is clear, but absolute timing/expectation absorption is not clean enough for High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The cut extension and $90 oil were public; oil had risen roughly 30% in Q3 and CNOOC had outperformed CSI300 by ~22.6pp over 60d and ~15.9pp over 20d.",
+    "thesisExpectation": "Year-end cuts keep oil high enough to lift CNOOC's realized price and earnings.",
+    "measurableGap": "Forward valuation remains low, but the latest supply news arrives after a substantial commodity/equity rerating, so incremental expectation room is uncertain.",
+    "evidenceRefs": [
+      "reuters-oil-20230929",
+      "regime-oil-20230929",
+      "cnooc-valuation-20230818"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE/dividend plus oil-price sensitivity adjusted for prior Q3 rerating.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Aug18 report: 2023E profit RMB124.824bn, ~7.03x PE; by Sep29 crude and upstream equities had materially rerated.",
+    "thesisScenario": "$90-ish oil persists through year-end and lifts earnings/dividends above the frozen forecast.",
+    "breakevenCondition": "Incremental earnings revisions must exceed the expectation already embedded by the Q3 commodity and equity rally.",
+    "ordinaryScenarioFailure": "Oil stays high but merely confirms the now-consensus tight-supply narrative, leading to flat/de-rating equity returns.",
+    "catalystOrTimingBridge": "Q3/Q4 realized oil prices and earnings can verify the bridge.",
+    "evidenceRefs": [
+      "cnooc-valuation-20230818",
+      "regime-oil-20230929",
+      "reuters-oil-20230929"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Crude supply/pricing tightened sharply after H1.",
+      "evidenceRefs": [
+        "reuters-oil-20230905",
+        "reuters-oil-20230929"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "H1 confirms volume/cost resilience, but the new $90 oil environment is not yet in reported earnings.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "CNOOC has cleaner upstream sensitivity than integrated peers.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "petrochina-h1-20230831",
+        "sinopec-h1-20230828"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Aug18 forecast predates the September oil spike.",
+      "evidenceRefs": [
+        "cnooc-valuation-20230818",
+        "reuters-oil-20230905"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Q3 oil + roughly 30% plus CNOOC sustained 20/60d benchmark-relative strength.",
+      "evidenceRefs": [
+        "reuters-oil-20230929",
+        "regime-oil-20230929"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen oil-major basket versus CSI300",
+      "lookback20Excess": 0.09957241864782762,
+      "lookback60Excess": 0.10968610742917846,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-oil-20230929"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Cuts were extended through year-end and crude supply stayed tight.",
+      "evidenceRefs": [
+        "reuters-oil-20230905",
+        "reuters-oil-20230929"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Upstream benefits while integrated downstream effects differ across peers.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "petrochina-h1-20230831",
+        "sinopec-h1-20230828"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Supply cuts were explicitly extended through year-end.",
+      "evidenceRefs": [
+        "reuters-oil-20230905"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The commodity and pure-upstream stock had already rerated substantially before cutoff.",
+      "evidenceRefs": [
+        "reuters-oil-20230929",
+        "regime-oil-20230929"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical supply remains favorable, but prior price absorption materially worsens entry timing."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600938.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Large positive profit/cash generation, production growth and low-cost upstream operations.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "September crude price is above the H1 realized price and can lift forecasts.",
+      "evidenceRefs": [
+        "cnooc-h1-research-20230818",
+        "reuters-oil-20230905"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Frozen Aug report forward PE around 7x leaves valuation support despite later rerating.",
+      "evidenceRefs": [
+        "cnooc-valuation-20230818"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q3/Q4 realized pricing and earnings updates are inside the base horizon.",
+      "evidenceRefs": [
+        "reuters-oil-20230905"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low valuation helps, but oil/equity mean reversion after a large Q3 rally is material.",
+      "evidenceRefs": [
+        "regime-oil-20230929",
+        "cnooc-valuation-20230818"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601857.SH",
+        "revisionAdvantage": "CNOOC has purer upstream sensitivity and faster production growth.",
+        "valuationAdvantage": "CNOOC frozen valuation is low; no decisive advantage after later rerating.",
+        "qualityTradeoff": "Both pass; PetroChina H1 profit growth was positive.",
+        "catalystAdvantage": "CNOOC realized price has cleaner oil sensitivity.",
+        "downsideTradeoff": "Both face commodity reversal; CNOOC is purer beta.",
+        "evidenceRefs": [
+          "cnooc-h1-research-20230818",
+          "petrochina-h1-20230831",
+          "regime-oil-20230929"
+        ],
+        "switchCondition": "Switch if PetroChina earnings revisions accelerate more while CNOOC oil beta is fully absorbed.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "600028.SH",
+        "revisionAdvantage": "CNOOC is a cleaner beneficiary of higher crude.",
+        "valuationAdvantage": "Integrated Sinopec has different valuation/earnings drivers.",
+        "qualityTradeoff": "CNOOC H1 resilience stronger.",
+        "catalystAdvantage": "Oil-price pass-through more direct.",
+        "downsideTradeoff": "Sinopec has downstream hedge if crude falls.",
+        "evidenceRefs": [
+          "cnooc-h1-research-20230818",
+          "sinopec-h1-20230828"
+        ],
+        "switchCondition": "Switch if crude falls and downstream margins improve.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Brent rose above $90 after supply cuts were extended, well above CNOOC's H1 realized price.",
+    "earningsMechanism": "Higher realized crude price on growing production should lift upstream revenue/cash profit.",
+    "nextObservableMetric": "Q3/Q4 realized oil price, upstream profit and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "reuters-oil-20230905",
+      "cnooc-h1-research-20230818"
+    ],
+    "failureCondition": "Oil price/realized price falls back or earnings revisions fail despite higher benchmark crude."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: company/sector quality is strong, but sustained strength and a large prior commodity rerating make the latest good news potentially already absorbed.",
+    "alreadyPricedAssessment": "high absorption risk",
+    "constraints": [
+      "sustained_strength",
+      "oil Q3 rerating",
+      "new earnings bridge not yet reported"
+    ]
+  },
+  "bearCase": "The September supply-cut news is peak consensus; oil mean-reverts and upstream multiples compress even if H2 profits remain solid.",
+  "invalidationConditions": [
+    {
+      "indicator": "crude/realized price",
+      "observationMethod": "market/company reporting",
+      "threshold": "material reversal from Q3 spike"
+    },
+    {
+      "indicator": "earnings revisions",
+      "observationMethod": "Q3/Q4 reports",
+      "threshold": "no uplift versus pre-spike forecast"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "Sep29 exact forward consensus distribution",
+    "hedging/tax sensitivity"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; do not chase the positive headline after sustained rerating."
+  ]
+}
