@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023q3-multisource-deep-v1.1-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "auto_byd_sector_confirmed",
+      "frozenDecision": "比亚迪 High-priority sector_confirmed selection over 上汽集团/长城汽车",
+      "base60d": {
+        "selectedReturn": -0.21927206671236088,
+        "benchmarkReturn": -0.08966535877566517,
+        "benchmarkExcess": -0.1296067079366957,
+        "matchedControlExcess": -0.1783161136397799,
+        "bestControlTicker": "601633.SH",
+        "bestControlReturn": -0.014611585274166505,
+        "excessVsBestControl": -0.20466048143819437,
+        "selectedRank": 3
+      },
+      "postOutcomeFundamentalDiagnosis": "The operating engine did not fail. BYD Q3 revenue still grew 38.49% YoY, attributable profit 82.16% YoY, and YTD attributable profit 129.47%. The stock nevertheless de-rated sharply and underperformed lower-growth frozen peers.",
+      "failureClass": "expectation_duration_and_quality_premium_misread",
+      "rootCause": "The Skill treated extraordinary realized growth plus an early-turn price state as sufficient evidence of expectation room. It under-modeled how much multi-year growth, margin resilience and competitive leadership were already embedded in a 27x/21x 2023E/2024E valuation and broad analyst optimism. Absolute earnings acceleration was real, but incremental surprise versus the market's required duration was not large enough to support the premium.",
+      "generalLesson": "A strong company and a correct earnings bridge are not sufficient. Expectation burden must ask what duration/intensity of superior growth the current premium already requires versus cheaper controls. A temporary 60d de-rating/early-turn does not prove expectations are low."
+    },
+    {
+      "case": "oil_cnooc_research_absorption_warning",
+      "frozenDecision": "中国海油 Research selection because sustained 20d/60d strength and a ~30% Q3 oil rerating were treated as high expectation-absorption risk",
+      "base60d": {
+        "selectedReturn": 0.05821710496098875,
+        "benchmarkReturn": -0.06736197753151041,
+        "benchmarkExcess": 0.12557908249249916,
+        "matchedControlExcess": 0.15865281596984737,
+        "bestControlTicker": "600028.SH",
+        "bestControlReturn": -0.08432287622388845,
+        "excessVsBestControl": 0.1425399811848772,
+        "selectedRank": 1
+      },
+      "postOutcomeFundamentalDiagnosis": "CNOOC remained operationally resilient: Q3 production rose about 7% YoY and unit cost control stayed strong. The low frozen forward valuation and persistent production/cash-generation engine allowed further outperformance despite prior price strength.",
+      "failureClass": "price_strength_overweighted_vs_valuation_duration",
+      "rootCause": "The Skill correctly recognized price absorption risk but over-weighted the fact that both crude and the stock had already rerated. Sustained strength can remain investable when valuation burden is still low and the earnings/cash-flow duration is long enough.",
+      "generalLesson": "Already-rerated is not synonymous with fully-priced. Price-path direction must be integrated with valuation burden and the duration of the earnings engine; it should not become a standalone veto on the normal sector-confirmed route."
+    },
+    {
+      "case": "memory_gigadevice_research_only",
+      "frozenDecision": "兆易创新 Research selection because memory bottoming remained proxy-only under an adverse basket",
+      "base60d": {
+        "selectedReturn": -0.005697829339392668,
+        "benchmarkReturn": -0.07833740417210244,
+        "benchmarkExcess": 0.07263957483270977,
+        "matchedControlExcess": 0.07673015234983804,
+        "bestControlTicker": "300223.SZ",
+        "bestControlReturn": -0.08242798168923071,
+        "excessVsBestControl": 0.07673015234983804,
+        "selectedRank": 1
+      },
+      "postOutcomeFundamentalDiagnosis": "Q3 attributable profit was still down 82.71% YoY even though operating cash flow improved, confirming that the cycle bottoming had not yet become a clean earnings inflection.",
+      "failureClass": null,
+      "label": "proxy_conversion_correctly_demoted",
+      "generalLesson": "Relative-price resilience is not enough to upgrade a cyclical bottoming call before the earnings bridge becomes realized or quantitatively reliable."
+    },
+    {
+      "case": "huawei_semiconductor_no_selection",
+      "frozenDecision": "High-priority technology hypothesis / No selection because the Mate60 breakthrough lacked a clean listed-company earnings bridge",
+      "failureClass": null,
+      "label": "theme_without_earnings_bridge_correctly_blocked",
+      "generalLesson": "Large technology/policy headlines should not create a stock selection unless exposure and earnings conversion are independently verified."
+    }
+  ],
+  "crossWindowExpectationAbsorptionCheck": {
+    "priorCases": [
+      {
+        "case": "2023Q4 中际旭创",
+        "state": "early_turn",
+        "outcome": "High-priority success",
+        "interpretation": "Realized engine plus reasonable burden and clear peer edge; broad 60d de-rating had not consumed the company engine."
+      },
+      {
+        "case": "2023Q2 华电国际",
+        "state": "late_reversal",
+        "outcome": "High-priority failure",
+        "interpretation": "Longer-window rerating had already occurred and short-window reversal signaled absorption/reversal."
+      }
+    ],
+    "newCases": [
+      {
+        "case": "2023Q3 比亚迪",
+        "state": "early_turn",
+        "outcome": "High-priority failure",
+        "interpretation": "Early-turn is not sufficient by itself; premium valuation can already encode long-duration superior growth even after a recent de-rating."
+      },
+      {
+        "case": "2023Q3 中国海油",
+        "state": "sustained_strength",
+        "outcome": "Research-only but strong subsequent outperformance",
+        "interpretation": "Sustained strength is not necessarily exhausted when valuation remains low and the earnings engine is durable."
+      }
+    ],
+    "interpretation": "Price-path direction is useful but incomplete. The remaining question is expectation duration/intensity: how much future superior earnings persistence is already required by valuation and consensus versus controls."
+  },
+  "prohibitedUses": [
+    "Do not alter v1.1 using this same 2023Q3 run.",
+    "Do not convert early_turn or sustained_strength into universal buy/sell labels.",
+    "Do not learn a fixed PE, growth, momentum or return threshold from BYD/CNOOC.",
+    "Any future expectation-duration rule requires repetition in another independent holdout before versioning."
+  ],
+  "nextValidation": {
+    "keepV11Immutable": true,
+    "proposedAction": "Run at least one more independent holdout with v1.1 unchanged, explicitly recording valuation/consensus duration burden in postmortem.",
+    "candidateWindow": "2022Q4",
+    "versionChangeNow": false
+  }
+}
