@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2022q1-multisource-deep-v1.2-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "resource_shenhua_path_gate_false_negative",
+      "frozenDecision": "中国神华 Research selection; not High-priority because v1.2 judged the contemporaneous 2022→2023→2024 earnings path already substantially embedded, with high duration/price-absorption risk.",
+      "base60d": {
+        "selectedReturn": 0.26653090655531186,
+        "benchmarkReturn": 0.07639433836137988,
+        "benchmarkExcess": 0.190136568193932,
+        "matchedControlExcess": 0.26160843286347535,
+        "bestControlTicker": "600188.SH",
+        "bestControlReturn": 0.014922252059866858,
+        "excessVsBestControl": 0.251608654495445,
+        "selectedRank": 1
+      },
+      "later120d": {
+        "selectedReturn": 0.3560405427397497,
+        "benchmarkReturn": -0.04747096036659204,
+        "benchmarkExcess": 0.40351150310634176,
+        "bestControlTicker": "600188.SH",
+        "bestControlReturn": 0.5922618299132061,
+        "selectedRank": 2
+      },
+      "failureClass": "durability_cash_yield_path_underweighted",
+      "rootCause": "V1.2 treated lack of a clear 2023-24 EPS uplift versus the frozen forecast as evidence against High-priority path room. In this case the contemporaneous path was already stable rather than peak-declining, valuation was low, the annual contract-price mechanism improved earnings durability, and high cash distribution/yield could create equity value without requiring large further EPS revisions.",
+      "generalLesson": "Expectation-path analysis should not assume alpha requires rising outer-year EPS forecasts. A stable, durable earnings floor plus cash-distribution realization can be an economically distinct path advantage. This is a recall false negative, but one case is insufficient to change V1.2."
+    },
+    {
+      "case": "potash_zangge_path_gate_correct_block",
+      "frozenDecision": "藏格矿业 Research selection; not High-priority because the new shortage mainly extended near-term scarcity, the frozen 2022-24 path was already high and nearly flat, and price state was late_reversal.",
+      "base20d": {
+        "selectedReturn": -0.406609875653715,
+        "benchmarkReturn": -0.10217765299230186,
+        "benchmarkExcess": -0.3044322226614131,
+        "selectedRank": 3
+      },
+      "base60d": {
+        "selectedReturn": 0.00043941892763488255,
+        "benchmarkReturn": 0.03428985636857029,
+        "benchmarkExcess": -0.03385043744093541,
+        "matchedControlExcess": 0.00940974529678773,
+        "bestControlTicker": "000893.SZ",
+        "bestControlReturn": 0.04591434210710443,
+        "selectedRank": 2
+      },
+      "failureClass": null,
+      "label": "path_absorption_and_late_reversal_correctly_blocked",
+      "generalLesson": "A real physical shortage and strong current profit can still be a poor immediate entry when the baseline already capitalizes the scarcity step-up and the selected stock has moved into late-reversal. The later 120d recovery must not rewrite the pre-registered 60d decision."
+    },
+    {
+      "case": "ddr3_no_selection_fail_closed",
+      "frozenDecision": "DDR3 supply-exit hypothesis / No selection because company-specific DDR3 revenue and earnings conversion were not verified by cutoff.",
+      "failureClass": null,
+      "label": "unverified_exposure_correctly_no_selection",
+      "generalLesson": "A plausible niche supply story should remain unselected when listed-company economic exposure is not auditable. No post-outcome ticker result should be inferred for a No-selection hypothesis."
+    }
+  ],
+  "crossWindowExpectationPathCheck": {
+    "confirmedStrengths": [
+      {
+        "case": "2022Q1 藏格矿业",
+        "pattern": "near-term scarcity already embedded + late_reversal",
+        "baseOutcome": "Research downgrade protected against a poor 60d entry."
+      },
+      {
+        "case": "2022Q2 通威股份",
+        "pattern": "low current-year PE but explicit next-year profit decline",
+        "baseOutcome": "V1.2 development evidence correctly motivated full-path analysis."
+      }
+    ],
+    "newOpenQuestion": [
+      {
+        "case": "2022Q1 中国神华",
+        "pattern": "outer-year EPS path is stable rather than accelerating, but low valuation + durable contract economics + cash distribution produced strong 60d alpha",
+        "baseOutcome": "Research-only false negative."
+      }
+    ],
+    "interpretation": "V1.2 improves peak-cycle and premium-duration discipline, but may underweight a different form of path advantage: durable normalized earnings plus cash/yield realization. This is not yet repeated enough to justify V1.3."
+  },
+  "decision": {
+    "keepV12Immutable": true,
+    "createV13Now": false,
+    "reason": "The Shenhua false negative identifies a plausible generic omission, but it is one cross-window case. Changing the Skill now would risk overfitting.",
+    "nextAction": "Run unchanged V1.2 on a new untouched window with a different economic mix. Explicitly observe whether durable earnings/cash-distribution paths recur as false negatives without using 2022Q1 to alter the gate."
+  },
+  "prohibitedUses": [
+    "Do not alter V1.2 from this same-period 2022Q1 outcome.",
+    "Do not create a generic high-dividend or low-PE override.",
+    "Do not use 120d Yankuang outperformance to invalidate the pre-registered 60d Shenhua result.",
+    "Do not infer that flat outer-year EPS forecasts are automatically attractive.",
+    "Only consider a durability/cash-distribution extension after independent cross-company evidence."
+  ]
+}
