@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2020q1-gold-20200331",
+  "cutoffDate": "2020-03-31",
+  "fetchedAt": "2026-09-23T14:39:33.942Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "600547.SH",
+    "601899.SH"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2020-03-03",
+      "endDate": "2020-03-31",
+      "return": -0.09903797270345316
+    },
+    "60": {
+      "startDate": "2019-12-27",
+      "endDate": "2020-03-31",
+      "return": -0.08350758199217811
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "600547.SH",
+        "startDate": "2020-03-03",
+        "endDate": "2020-03-31",
+        "return": -0.006466603607240162,
+        "benchmarkReturn": -0.09903797270345316,
+        "excessReturn": 0.092571369096213
+      },
+      {
+        "ticker": "601899.SH",
+        "startDate": "2020-03-03",
+        "endDate": "2020-03-31",
+        "return": -0.11663479923518161,
+        "benchmarkReturn": -0.09903797270345316,
+        "excessReturn": -0.01759682653172845
+      }
+    ],
+    "60": [
+      {
+        "ticker": "600547.SH",
+        "startDate": "2019-12-27",
+        "endDate": "2020-03-31",
+        "return": 0.06094749551257439,
+        "benchmarkReturn": -0.08350758199217811,
+        "excessReturn": 0.1444550775047525
+      },
+      {
+        "ticker": "601899.SH",
+        "startDate": "2019-12-27",
+        "endDate": "2020-03-31",
+        "return": -0.14285714285714302,
+        "benchmarkReturn": -0.08350758199217811,
+        "excessReturn": -0.0593495608649649
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": 0.037487271282242274,
+    "lookback60Excess": 0.0425527583198938,
+    "positiveBreadth20": 0.5,
+    "positiveBreadth60": 0.5
+  },
+  "conclusion": "favorable",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2019-10-03,2020-03-31,300,hfq",
+    "600547.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600547,day,2019-10-03,2020-03-31,300,hfq",
+    "601899.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601899,day,2019-10-03,2020-03-31,300,hfq"
+  }
+}
