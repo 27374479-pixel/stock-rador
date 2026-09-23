@@ -1,0 +1,541 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-06-16T23:59:59+08:00",
+  "researchReadyAt": "2021-06-16T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q2-metals-zijin",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Project-volume ramp can continue for multiple quarters even if commodity prices cool, but the sector price regime is already adverse."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Copper and industrial metals had reached record highs, then Chinese policy intervention pushed the sector into an adverse price regime. 紫金 differs from a pure price-beta miner because a multi-year copper/gold production ramp was already visible, but current entry timing remained poor enough to block High-priority.",
+    "firstCredibleDate": "2021-03-22",
+    "valueChain": [
+      "new mine commissioning",
+      "copper/gold volume",
+      "commodity price",
+      "mine margin",
+      "earnings"
+    ],
+    "persistenceReason": "Kamoa-Kakula, Serbia and Tibet project ramps are multi-year physical volume drivers independent of a single copper-price spike.",
+    "disconfirmingEvidence": [
+      "Chinese reserve releases and anti-speculation policy capped the commodity rerating.",
+      "Metals basket and 紫金 were negative versus CSI300 over 20d/60d.",
+      "The frozen baseline already projected very strong 2021-23 earnings growth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-copper-20210510",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-metals-crackdown-20210520",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "nbs-ppi-20210609",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "spg-reserve-metals-20210616",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-metals-20210616",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zijin-q1-20210417",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zijin-path-20210322",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zijin-projects-20210323",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "mine commissioning",
+      "to": "copper/gold production",
+      "mechanism": "Large projects entering production lift physical output regardless of short-term market multiples.",
+      "evidenceRefs": [
+        "zijin-projects-20210323"
+      ],
+      "failureMode": "project delays or operating disruption",
+      "lag": "quarters-years"
+    },
+    {
+      "from": "volume plus price",
+      "to": "earnings",
+      "mechanism": "Higher physical output on strong copper/gold prices expands absolute profit.",
+      "evidenceRefs": [
+        "zijin-q1-20210417",
+        "zijin-path-20210322"
+      ],
+      "failureMode": "commodity prices fall faster than volume grows",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings path",
+      "to": "equity alpha",
+      "mechanism": "Alpha requires structural volume growth to offset an adverse commodity-policy regime and beat an already-high forecast path.",
+      "evidenceRefs": [
+        "regime-metals-20210616",
+        "zijin-path-20210322"
+      ],
+      "failureMode": "policy/price compression dominates volume ramp",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost miners with funded volume growth"
+    ],
+    "secondOrderWinners": [
+      "mine services/infrastructure"
+    ],
+    "losers": [
+      "high-cost smelters/downstream users if raw materials stay high"
+    ],
+    "substitutes": [
+      "recycling/substitution"
+    ],
+    "bottlenecks": [
+      "project execution",
+      "commodity policy"
+    ],
+    "falseThemeMatches": [
+      "metal producers whose earnings rely only on peak spot prices"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601899.SH",
+      "name": "紫金矿业",
+      "verifiedExposure": "Q1 profit +141% with a pre-announced multi-year copper/gold project ramp.",
+      "evidenceRefs": [
+        "zijin-q1-20210417",
+        "zijin-projects-20210323"
+      ],
+      "earningsSensitivity": {
+        "base": "2021-23 profit forecast RMB12.822/21.630/28.279bn.",
+        "favorable": "volume ramp offsets copper-price normalization.",
+        "adverse": "policy-driven metal-price decline overwhelms volume."
+      },
+      "principalRisks": [
+        "commodity reversal",
+        "overseas execution"
+      ]
+    },
+    {
+      "ticker": "000630.SZ",
+      "name": "铜陵有色",
+      "verifiedExposure": "Copper-cycle exposure but with less frozen structural volume evidence.",
+      "evidenceRefs": [
+        "regime-metals-20210616"
+      ],
+      "earningsSensitivity": {
+        "base": "more commodity-linked",
+        "favorable": "copper stays high",
+        "adverse": "price crackdown continues"
+      },
+      "principalRisks": [
+        "commodity beta"
+      ]
+    },
+    {
+      "ticker": "601600.SH",
+      "name": "中国铝业",
+      "verifiedExposure": "Aluminum-cycle exposure with policy/energy sensitivities distinct from 紫金.",
+      "evidenceRefs": [
+        "regime-metals-20210616"
+      ],
+      "earningsSensitivity": {
+        "base": "aluminum-cycle beta",
+        "favorable": "tight supply",
+        "adverse": "policy releases/price caps"
+      },
+      "principalRisks": [
+        "policy",
+        "energy costs"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "000630.SZ",
+      "name": "铜陵有色",
+      "controlType": "peer",
+      "fairCounterfactualReason": "A-share copper producer exposed to the same commodity cycle.",
+      "whySelectedCompanyShouldOutperform": "紫金 has a clearer multi-year mine-volume growth path, reducing dependence on spot copper staying at peak levels.",
+      "evidenceRefs": [
+        "zijin-projects-20210323",
+        "regime-metals-20210616"
+      ]
+    },
+    {
+      "ticker": "601600.SH",
+      "name": "中国铝业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large A-share base-metals producer under the same policy crackdown.",
+      "whySelectedCompanyShouldOutperform": "紫金's copper/gold project ramp provides structural volume growth beyond a pure commodity price trade.",
+      "evidenceRefs": [
+        "zijin-path-20210322",
+        "regime-metals-20210616"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601899.SH",
+    "pairwise": [
+      {
+        "controlTicker": "000630.SZ",
+        "selectedAdvantages": [
+          "multi-year copper/gold volume ramp",
+          "Q1 profit already accelerated"
+        ],
+        "selectedDisadvantages": [
+          "both remain commodity-sensitive"
+        ],
+        "evidenceRefs": [
+          "zijin-q1-20210417",
+          "zijin-projects-20210323",
+          "regime-metals-20210616"
+        ],
+        "switchCondition": "Prefer 铜陵 only if a lower-burden normalized path becomes clearly superior.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601600.SH",
+        "selectedAdvantages": [
+          "more diversified growth projects",
+          "less dependence on one metal"
+        ],
+        "selectedDisadvantages": [
+          "中国铝业 may have greater near-term operating leverage if aluminum tightness persists"
+        ],
+        "evidenceRefs": [
+          "zijin-path-20210322",
+          "regime-metals-20210616"
+        ],
+        "switchCondition": "Prefer 中国铝业 if aluminum economics remain strong while 紫金 project ramp disappoints.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Company expression is stronger than peers, but adverse absolute timing prevents High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The Mar22 baseline already forecast 2021-23 profit +97%/+69%/+31%, while the stock subsequently de-rated into the June policy crackdown.",
+    "thesisExpectation": "Project volumes could sustain earnings growth even with lower metal prices.",
+    "measurableGap": "The key question is whether volume growth can beat a very strong baseline while the commodity regime is adverse.",
+    "evidenceRefs": [
+      "zijin-path-20210322",
+      "regime-metals-20210616"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year project-volume path plus normalized commodity assumptions.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021-23 profit RMB12.822/21.630/28.279bn, PE about 21.5x/12.8x/9.8x at the March reference.",
+    "thesisScenario": "Mine commissioning lifts 2022-23 earnings beyond the already-high baseline despite lower metals prices.",
+    "breakevenCondition": "Incremental project volumes must more than offset policy-driven copper/aluminum normalization.",
+    "ordinaryScenarioFailure": "Projects ramp broadly as expected but copper prices fall, leaving earnings near the published baseline and the stock without a new rerating catalyst.",
+    "catalystOrTimingBridge": "Q2/H1 project production and updated forecasts can test the path within 60 trading days.",
+    "evidenceRefs": [
+      "zijin-path-20210322",
+      "zijin-projects-20210323",
+      "regime-metals-20210616"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q1 profit and planned project ramp were strong.",
+      "evidenceRefs": [
+        "zijin-q1-20210417",
+        "zijin-projects-20210323"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q1 attributable profit +141% YoY.",
+      "evidenceRefs": [
+        "zijin-q1-20210417"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "紫金 has clearer structural volume growth than the frozen metals controls.",
+      "evidenceRefs": [
+        "zijin-projects-20210323",
+        "regime-metals-20210616"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "mixed",
+      "rationale": "The March forecast already incorporated the main project ramp.",
+      "evidenceRefs": [
+        "zijin-path-20210322"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Stock de-rated with the broader commodity-policy reversal.",
+      "evidenceRefs": [
+        "regime-metals-20210616"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight metals basket versus CSI300",
+      "lookback20Excess": -0.11893973662914943,
+      "lookback60Excess": -0.01326904167295162,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-metals-20210616"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Company volume projects remain intact even as commodity prices are being capped.",
+      "evidenceRefs": [
+        "zijin-projects-20210323",
+        "spg-reserve-metals-20210616"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Upstream physical profits are high but policy is pushing against the entire price complex.",
+      "evidenceRefs": [
+        "nbs-ppi-20210609",
+        "spg-reserve-metals-20210616"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Mine projects are multi-year, while commodity price policy can affect shorter-cycle margins.",
+      "evidenceRefs": [
+        "zijin-projects-20210323"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Spot commodities were peak-like but 紫金 equity had already de-rated.",
+      "evidenceRefs": [
+        "reuters-copper-20210510",
+        "regime-metals-20210616"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Structural company growth is credible but broad metals timing is adverse."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601899.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong Q1 earnings and funded world-class projects.",
+      "evidenceRefs": [
+        "zijin-q1-20210417",
+        "zijin-projects-20210323"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Project volume can still beat if commissioning runs ahead, but baseline is already strong.",
+      "evidenceRefs": [
+        "zijin-path-20210322"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Forward multiples compress rapidly across the forecast path, but remain commodity-sensitive.",
+      "evidenceRefs": [
+        "zijin-path-20210322"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 production and project updates fall within 60 trading days.",
+      "evidenceRefs": [
+        "zijin-projects-20210323"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Volume growth helps but cannot fully protect against copper-price/policy downside.",
+      "evidenceRefs": [
+        "regime-metals-20210616",
+        "spg-reserve-metals-20210616"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "000630.SZ",
+        "revisionAdvantage": "紫金 has a better frozen structural-volume path.",
+        "valuationAdvantage": "No clean normalized peer path is frozen.",
+        "qualityTradeoff": "紫金 project quality stronger.",
+        "catalystAdvantage": "Multiple mines entering production.",
+        "downsideTradeoff": "Both remain copper-price sensitive.",
+        "evidenceRefs": [
+          "zijin-projects-20210323",
+          "regime-metals-20210616"
+        ],
+        "switchCondition": "Switch if 铜陵 develops superior durable volume/valuation evidence.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601600.SH",
+        "revisionAdvantage": "紫金 has clearer project-led earnings compounding.",
+        "valuationAdvantage": "Not decisive without comparable normalized aluminum path.",
+        "qualityTradeoff": "Different metal mix.",
+        "catalystAdvantage": "Near-term mine commissioning is explicit.",
+        "downsideTradeoff": "Policy risk affects both.",
+        "evidenceRefs": [
+          "zijin-path-20210322",
+          "regime-metals-20210616"
+        ],
+        "switchCondition": "Switch if aluminum profitability remains durable and project execution lags.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Multiple major copper/gold projects were entering production during 2021-22.",
+    "earningsMechanism": "Higher physical production expands earnings even if commodity prices normalize from peaks.",
+    "nextObservableMetric": "H1 mine output, project commissioning and updated 2022-23 profit forecasts",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "zijin-projects-20210323",
+      "zijin-path-20210322"
+    ],
+    "failureCondition": "Project volumes fail to ramp or copper-price decline more than offsets new output."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021 profit RMB12.822bn, +97.0%.",
+      "nextPeriod": "2022 profit RMB21.630bn, +68.7%.",
+      "laterPeriod": "2023 profit RMB28.279bn, +30.7%.",
+      "rationale": "The baseline already incorporates a large multi-year project ramp and supportive metals prices.",
+      "evidenceRefs": [
+        "zijin-path-20210322"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q1 strength and commissioning can support 2021 above plan.",
+      "nextPeriodChange": "Project ramp could raise 2022 volumes, but the baseline already expects major growth.",
+      "laterPeriodChange": "Long-life copper/gold assets can support 2023+ earnings, but incremental upside beyond the forecast is not yet clear.",
+      "mechanism": "Structural volume growth is real, but v1.2 requires a path advantage beyond a baseline that already captures it.",
+      "evidenceRefs": [
+        "zijin-q1-20210417",
+        "zijin-projects-20210323"
+      ]
+    },
+    "pathShape": "ordinary_growth_compounder",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The business path is strong, but much of it is already embedded in the frozen forecast and commodity policy is adverse.",
+      "evidenceRefs": [
+        "zijin-path-20210322",
+        "spg-reserve-metals-20210616"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Volume is durable, but forecast earnings still depend materially on commodity prices.",
+      "evidenceRefs": [
+        "zijin-path-20210322"
+      ]
+    },
+    "falsifier": "H1 project output or updated 2022-23 earnings fail to exceed the frozen baseline after accounting for weaker metals prices.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: this is a cyclical-growth hybrid, not a pure dividend or pure spot-price trade; structural volume quality is real but broad timing is adverse.",
+    "alreadyPricedAssessment": "partially de-rated but baseline already ambitious",
+    "constraints": [
+      "commodity-policy regime",
+      "baseline already captures project ramp"
+    ]
+  },
+  "bearCase": "Copper/gold prices normalize enough that strong project volumes merely deliver the already-known forecast path.",
+  "invalidationConditions": [
+    {
+      "indicator": "project production",
+      "observationMethod": "H1 production/project update",
+      "threshold": "ramp materially below plan"
+    },
+    {
+      "indicator": "2022-23 earnings path",
+      "observationMethod": "updated forecasts",
+      "threshold": "no incremental uplift after weaker commodity prices"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "normalized commodity assumptions",
+    "peer forward path comparability"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; do not use de-rating alone to override adverse sector timing."
+  ]
+}
