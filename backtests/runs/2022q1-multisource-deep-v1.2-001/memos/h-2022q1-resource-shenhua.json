@@ -1,0 +1,529 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2022-03-27T23:59:59+08:00",
+  "researchReadyAt": "2022-03-27T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q1-resource-shenhua",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Coal price and long-contract economics can affect one to two reporting cycles, but the forward path is already partly embedded in published forecasts."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Russia-related energy disruption and already-strong Chinese mining profits reinforced the upstream resource profit pool. 中国神华 had durable long-contract pricing and high dividend support, but the stock had already rerated strongly and the contemporaneous forecast already embedded a 2022 profit step-up followed by near-flat 2023-24 growth.",
+    "firstCredibleDate": "2022-03-04",
+    "valueChain": [
+      "global energy disruption",
+      "coal/oil price",
+      "domestic long-contract coal pricing",
+      "mining margin",
+      "earnings/dividend"
+    ],
+    "persistenceReason": "The long-contract coal pricing mechanism is multi-quarter, but the war-related spike is not automatically permanent.",
+    "disconfirmingEvidence": [
+      "中国神华 outperformed CSI300 by ~28.9pp over 20d and ~56.5pp over 60d.",
+      "The Mar27 forecast already raised 2022-24 profit expectations.",
+      "Forecast growth decelerated from +18.2% in 2022 to +3.1%/+1.4% thereafter."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-profit-20220327",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-oil-20220304",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-oil-20220308",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-resource-20220327",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenhua-research-20220327",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "energy supply shock and higher coal pricing",
+      "to": "upstream mining margin",
+      "mechanism": "Higher selling prices and elevated long-contract benchmarks expand coal earnings faster than costs.",
+      "evidenceRefs": [
+        "nbs-profit-20220327",
+        "shenhua-research-20220327"
+      ],
+      "failureMode": "coal-price controls/demand weakness compress realized prices",
+      "lag": "quarters"
+    },
+    {
+      "from": "mining margin",
+      "to": "中国神华 profit/dividend",
+      "mechanism": "High coal-sales exposure and long-contract pricing support profit and cash distributions.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ],
+      "failureMode": "power-segment fuel costs or lower coal volume offset mining gains",
+      "lag": "quarters"
+    },
+    {
+      "from": "higher profit",
+      "to": "equity alpha",
+      "mechanism": "Low PE/high yield can support price only if the forward profit path improves beyond the already-raised baseline.",
+      "evidenceRefs": [
+        "shenhua-research-20220327",
+        "regime-resource-20220327"
+      ],
+      "failureMode": "spot/near-term earnings merely confirm a path already capitalized",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost coal miners with contract-pricing leverage"
+    ],
+    "secondOrderWinners": [
+      "rail/port assets linked to coal volumes"
+    ],
+    "losers": [
+      "power generators and industrial users facing higher fuel/input costs"
+    ],
+    "substitutes": [
+      "oil/gas/renewables where economically feasible"
+    ],
+    "bottlenecks": [
+      "policy price controls",
+      "transport capacity"
+    ],
+    "falseThemeMatches": [
+      "resource names whose current profits depend on a one-off spot spike"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601088.SH",
+      "name": "中国神华",
+      "verifiedExposure": "Integrated coal producer with strong 2021 profit, raised long-contract pricing and high payout.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ],
+      "earningsSensitivity": {
+        "base": "2022-24 forecast profit RMB59.41/61.27/62.12bn.",
+        "favorable": "higher contract/spot prices lift 2022 earnings and dividends above baseline.",
+        "adverse": "coal normalization leaves 2023-24 close to already-flat baseline."
+      },
+      "principalRisks": [
+        "expectation absorption",
+        "policy price controls",
+        "power-segment cost pressure"
+      ]
+    },
+    {
+      "ticker": "600188.SH",
+      "name": "兖矿能源",
+      "verifiedExposure": "High-beta coal producer in the same resource windfall.",
+      "evidenceRefs": [
+        "nbs-profit-20220327",
+        "regime-resource-20220327"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong coal-price sensitivity but no equally complete frozen forward path is available in this memo.",
+        "favorable": "spot coal stays high.",
+        "adverse": "high-beta earnings normalize."
+      },
+      "principalRisks": [
+        "higher cyclicality",
+        "baseline uncertainty"
+      ]
+    },
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "verifiedExposure": "Large oil/gas producer directly exposed to the energy shock.",
+      "evidenceRefs": [
+        "reuters-oil-20220304",
+        "regime-resource-20220327"
+      ],
+      "earningsSensitivity": {
+        "base": "Oil shock supports upstream but integrated downstream effects differ.",
+        "favorable": "oil stays structurally higher.",
+        "adverse": "crude normalizes or refining offsets upstream."
+      },
+      "principalRisks": [
+        "integrated exposure",
+        "oil reversal"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600188.SH",
+      "name": "兖矿能源",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Higher-beta coal producer exposed to the same upstream profit windfall.",
+      "whySelectedCompanyShouldOutperform": "神华 has stronger contract-pricing stability, diversified cash flow and a contemporaneous multi-year forecast;兖矿 offers more torque but greater duration risk.",
+      "evidenceRefs": [
+        "nbs-profit-20220327",
+        "shenhua-research-20220327",
+        "regime-resource-20220327"
+      ]
+    },
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large upstream resource producer exposed to the same geopolitical energy shock.",
+      "whySelectedCompanyShouldOutperform": "神华's domestic long-contract mechanism and payout case are more directly frozen; PetroChina has different integrated oil economics.",
+      "evidenceRefs": [
+        "reuters-oil-20220304",
+        "shenhua-research-20220327",
+        "regime-resource-20220327"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601088.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600188.SH",
+        "selectedAdvantages": [
+          "higher earnings stability",
+          "high payout",
+          "explicit 2022-24 baseline"
+        ],
+        "selectedDisadvantages": [
+          "兖矿 has greater earnings torque and stronger 60d momentum"
+        ],
+        "evidenceRefs": [
+          "shenhua-research-20220327",
+          "regime-resource-20220327"
+        ],
+        "switchCondition": "Prefer 兖矿 if a frozen multi-year path shows superior post-2022 earnings durability rather than only higher spot torque.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "601857.SH",
+        "selectedAdvantages": [
+          "clean domestic coal-contract mechanism",
+          "high dividend visibility"
+        ],
+        "selectedDisadvantages": [
+          "PetroChina has direct oil-shock upside and less coal-policy exposure"
+        ],
+        "evidenceRefs": [
+          "reuters-oil-20220304",
+          "shenhua-research-20220327",
+          "regime-resource-20220327"
+        ],
+        "switchCondition": "Prefer PetroChina if upstream oil revisions improve the full multi-year path after accounting for downstream offsets.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "神华 is a high-quality representative, but the selected-vs-control path advantage is not clear enough for High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The Mar27 report already expected 2022 profit +18.2% and then only +3.1%/+1.4% in 2023-24, at roughly 9x PE. The stock had strongly outperformed over both 20d and 60d.",
+    "thesisExpectation": "The energy shock and higher long-contract pricing could keep coal earnings/dividends higher for longer than the published baseline.",
+    "measurableGap": "The missing proof is not 2022 profit strength; it is whether 2023-24 earnings should be materially above an already-raised and nearly-flat baseline.",
+    "evidenceRefs": [
+      "shenhua-research-20220327",
+      "regime-resource-20220327"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward multi-year PE/dividend path rather than current-year PE alone.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2022-24 profit RMB59.41/61.27/62.12bn, PE ~9.1x/8.8x/8.7x.",
+    "thesisScenario": "War/contract-price conditions raise not only 2022 profit but also the 2023-24 normalized earnings path.",
+    "breakevenCondition": "Post-2022 earnings must stay materially above the frozen near-flat baseline after normalization.",
+    "ordinaryScenarioFailure": "2022 remains excellent but 2023-24 follow the already-expected low-growth path while valuation/yield merely hold steady.",
+    "catalystOrTimingBridge": "Q1/Q2 realized coal price and updated multi-year forecasts can test path durability.",
+    "evidenceRefs": [
+      "shenhua-research-20220327",
+      "regime-resource-20220327"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official Jan-Feb mining profits and the geopolitical energy shock both show upstream acceleration.",
+      "evidenceRefs": [
+        "nbs-profit-20220327",
+        "reuters-oil-20220304"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "2021 company results and contract-price mechanics are strong, but the new March shock is not yet in reported 2022 earnings.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "The whole resource basket is strong; there is no clean selected-company revision monopoly.",
+      "evidenceRefs": [
+        "regime-resource-20220327",
+        "nbs-profit-20220327"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "mixed",
+      "rationale": "The forecast is contemporaneous and already incorporates higher contract pricing, so only part of the geopolitical shock may be missing.",
+      "evidenceRefs": [
+        "shenhua-research-20220327",
+        "reuters-oil-20220308"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Use frozen 20/60d benchmark-relative returns and the contemporaneous forecast path.",
+      "evidenceRefs": [
+        "regime-resource-20220327",
+        "shenhua-research-20220327"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen resource basket versus CSI300",
+      "lookback20Excess": 0.2368130782049793,
+      "lookback60Excess": 0.5532337163152041,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-resource-20220327"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "War/shunning of Russian barrels and official extraction profits show accelerating resource earnings.",
+      "evidenceRefs": [
+        "reuters-oil-20220304",
+        "nbs-profit-20220327"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Resource extraction profits were broadly strong and the selected company forecast was raised.",
+      "evidenceRefs": [
+        "nbs-profit-20220327",
+        "shenhua-research-20220327"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Domestic long-contract pricing is multi-quarter even if war-driven spot prices are less durable.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The resource basket and Shenhua had already sharply outperformed by cutoff.",
+      "evidenceRefs": [
+        "regime-resource-20220327"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamentals are strong but entry is late-cycle/absorbed enough to block High-priority."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601088.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "High profit, contract-price stability and dividend support.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "2022 can beat, but 2023-24 incremental revision room is not demonstrated.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "~9x forward PE and high dividend provide valuation support.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Q1/Q2 realized pricing and updated forecasts are within the base horizon.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low PE/dividend help, but substantial prior rerating limits asymmetry.",
+      "evidenceRefs": [
+        "shenhua-research-20220327",
+        "regime-resource-20220327"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600188.SH",
+        "revisionAdvantage": "神华 has more stable contract-price economics;兖矿 may have higher spot torque.",
+        "valuationAdvantage": "No complete frozen cross-company path advantage.",
+        "qualityTradeoff": "神华 quality/dividend stronger;兖矿 cyclicality higher.",
+        "catalystAdvantage": "Both update through realized coal pricing.",
+        "downsideTradeoff": "神华 has more stability but less torque.",
+        "evidenceRefs": [
+          "shenhua-research-20220327",
+          "regime-resource-20220327"
+        ],
+        "switchCondition": "Switch if兖矿 shows superior durable 2023-24 path.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "601857.SH",
+        "revisionAdvantage": "Coal contract path is clearer for神华.",
+        "valuationAdvantage": "No clean frozen normalized comparison.",
+        "qualityTradeoff": "Different integrated commodity exposure.",
+        "catalystAdvantage": "Both can benefit from 2022 energy shock.",
+        "downsideTradeoff": "神华 dividend helps but coal policy risk remains.",
+        "evidenceRefs": [
+          "reuters-oil-20220304",
+          "shenhua-research-20220327"
+        ],
+        "switchCondition": "Switch if PetroChina's multi-year upstream path improves more.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Higher long-contract/market coal pricing and broad resource profit acceleration.",
+    "earningsMechanism": "Higher realized coal prices expand mining profit and support dividends.",
+    "nextObservableMetric": "2022 Q1/Q2 realized coal price, mining margin and updated profit forecasts",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "nbs-profit-20220327",
+      "shenhua-research-20220327"
+    ],
+    "failureCondition": "Only 2022 profit rises while 2023-24 normalized earnings remain at the frozen baseline."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2022 profit RMB59.41bn, +18.2% YoY.",
+      "nextPeriod": "2023 profit RMB61.27bn, +3.1% YoY.",
+      "laterPeriod": "2024 profit RMB62.12bn, +1.4% YoY.",
+      "rationale": "Contemporaneous Mar27 forecast already captures higher contract pricing and a persistent high-profit coal environment.",
+      "evidenceRefs": [
+        "shenhua-research-20220327"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "The geopolitical energy shock can lift 2022 realized pricing and profit above the frozen forecast.",
+      "nextPeriodChange": "No strong pre-cutoff evidence proves 2023 earnings should be materially above the already-raised baseline.",
+      "laterPeriodChange": "No strong pre-cutoff evidence proves 2024 normalized earnings exceed the near-flat published path.",
+      "mechanism": "The thesis is strongest in the current/near term; durable path improvement beyond 2022 is not yet established.",
+      "evidenceRefs": [
+        "reuters-oil-20220304",
+        "reuters-oil-20220308",
+        "shenhua-research-20220327"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term upside is credible, but next/later path improvement is not independently established.",
+      "evidenceRefs": [
+        "shenhua-research-20220327",
+        "reuters-oil-20220308"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The stock already rerated strongly and the valuation case depends on high coal profitability persisting beyond the obvious 2022 shock.",
+      "evidenceRefs": [
+        "regime-resource-20220327",
+        "shenhua-research-20220327"
+      ]
+    },
+    "falsifier": "Updated 2023-24 profit expectations fail to rise materially above the frozen Mar27 path even if 2022 earnings remain strong.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: low PE/high yield is attractive, but v1.2 does not treat point valuation as sufficient when the forward path is already nearly flat and the stock has rerated.",
+    "alreadyPricedAssessment": "substantial prior absorption",
+    "constraints": [
+      "high late-cycle risk",
+      "no proven next/later path improvement"
+    ]
+  },
+  "bearCase": "2022 is a peak-ish profit year; later earnings merely match the already-flat baseline while the stock de-rates after a strong rally.",
+  "invalidationConditions": [
+    {
+      "indicator": "2023-24 earnings path",
+      "observationMethod": "updated forecasts/filings",
+      "threshold": "no material uplift versus frozen baseline"
+    },
+    {
+      "indicator": "coal price/contract economics",
+      "observationMethod": "company/industry reports",
+      "threshold": "realized pricing normalizes faster than expected"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "full cross-company normalized path",
+    "war duration"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research only under v1.2 expectation-path gate."
+  ]
+}
