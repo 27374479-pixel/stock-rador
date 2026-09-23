@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2020q2-multisource-deep-v1.3-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "evaluatorVersion": "1.3.1-opportunity-first-interior-suspension-safe",
+  "infrastructurePatch": {
+    "researchContractChanged": false,
+    "selectionChanged": false,
+    "note": "One interior suspension day in 山东黄金 required an evaluator-only compatibility patch; entry date, scheduled exit dates, horizons, selections and frozen memos were unchanged."
+  },
+  "baseHorizonTradingDays": 60,
+  "primaryResult": {
+    "hypothesisId": "h-2020q2-heavy-truck-boom",
+    "ticker": "000951.SZ",
+    "state": "High-priority selection",
+    "netReturn": 0.16670257549580914,
+    "benchmarkExcess": 0.0557128903084938,
+    "matchedControlTicker": "000338.SZ",
+    "matchedControlReturn": 0.12828482939946295,
+    "excessVsControl": 0.038417746096346184,
+    "label": "primary_direction_and_expression_success",
+    "interpretation": "The frozen heavy-truck opportunity worked at the pre-registered 60d base horizon. The selected expression was positive, beat CSI300 and also beat the frozen Weichai peer; peer-best status remains secondary."
+  },
+  "horizonDiscipline": {
+    "twentyDay": {
+      "netReturn": 0.19265736261695965,
+      "benchmarkExcess": 0.09784448635636678
+    },
+    "sixtyDay": {
+      "netReturn": 0.16670257549580914,
+      "benchmarkExcess": 0.0557128903084938
+    },
+    "oneTwentyDay": {
+      "netReturn": 0.026316311225071276,
+      "benchmarkExcess": -0.17367218526635853
+    },
+    "interpretation": "The same trade that was valid at 20d/60d materially decayed by 120d. This supports the existing decision-validity/re-underwriting rule: later performance must not retroactively rewrite the pre-registered base decision, and a cyclical thesis must not be extended automatically."
+  },
+  "researchDiagnostics": [
+    {
+      "hypothesisId": "h-2020q2-construction-machinery",
+      "frozenState": "Research selection",
+      "frozenExpressions": [
+        "600031.SH",
+        "000157.SZ"
+      ],
+      "base60d": {
+        "basketNetReturn": 0.26881528370892105,
+        "basketBenchmarkExcess": 0.15782559852160571
+      },
+      "expression60d": [
+        {
+          "ticker": "600031.SH",
+          "netReturn": 0.3136494062396711,
+          "benchmarkExcess": 0.20265972105235575
+        },
+        {
+          "ticker": "000157.SZ",
+          "netReturn": 0.22398116117817102,
+          "benchmarkExcess": 0.11299147599085568
+        }
+      ],
+      "label": "research_false_negative_adverse_price_regime",
+      "interpretation": "Both frozen acceptable expressions worked strongly even though the pre-cutoff opportunity basket was adverse. The economic bridge, low valuation and near-term catalysts were already present; the timing gate was the main blocker. This is a candidate general failure class, not permission to remove the timing gate."
+    },
+    {
+      "hypothesisId": "h-2020q2-pv-company-engine-vs-pricing",
+      "frozenState": "Research selection",
+      "frozenExpression": "601012.SH",
+      "base60d": {
+        "netReturn": 0.7038530054680898,
+        "benchmarkExcess": 0.5928633202807745
+      },
+      "matchedControl": {
+        "ticker": "600438.SH",
+        "netReturn": 0.3245160918359642,
+        "selectedExcessVsControl": 0.3793369136321256
+      },
+      "label": "research_false_negative_company_engine_expectation_gap",
+      "interpretation": "LONGi's realized company engine dominated the weak upstream physical signal and still had major upside despite strong prior rerating. However the frozen pack lacked a clean multi-period expectation baseline, so this is partly a retrieval/underwriting gap rather than proof that high-absorption growth should generally be promoted."
+    },
+    {
+      "hypothesisId": "h-2020q2-electronics-profit-resilience",
+      "frozenState": "Research selection",
+      "frozenExpressions": [
+        "603986.SH",
+        "603501.SH"
+      ],
+      "base60d": {
+        "basketNetReturn": -0.1681297971058609,
+        "basketBenchmarkExcess": -0.27911948229317624
+      },
+      "expression60d": [
+        {
+          "ticker": "603986.SH",
+          "netReturn": -0.2490588136907298,
+          "benchmarkExcess": -0.36004849887804513
+        },
+        {
+          "ticker": "603501.SH",
+          "netReturn": -0.087200780520992,
+          "benchmarkExcess": -0.19819046570830734
+        }
+      ],
+      "label": "correct_block_premium_duration_absorption",
+      "interpretation": "Exceptional current earnings and favorable price breadth were not enough. Very high forward multiples, strong prior rerating and insufficient incremental outer-year path room were legitimate blockers. This is an important counterexample to broadly loosening the growth-duration gate."
+    },
+    {
+      "hypothesisId": "h-2020q2-gold-monetary-regime",
+      "frozenState": "Research selection",
+      "frozenExpression": "600547.SH",
+      "base60d": {
+        "netReturn": -0.025195564381874314,
+        "benchmarkExcess": -0.13618524956918965
+      },
+      "matchedControl": {
+        "ticker": "601899.SH",
+        "netReturn": 0.40274725274725287,
+        "selectedExcessVsControl": -0.4279428171291272
+      },
+      "label": "correct_block_and_weak_expression",
+      "interpretation": "The earnings bridge was real, but high valuation and commodity expectation absorption mattered. The frozen selected expression was materially weak at the base horizon while the diversified control did much better. This is not a harmless peer-ranking miss because the selected expression itself had negative benchmark-relative performance."
+    },
+    {
+      "hypothesisId": "h-2020q2-dram-duration-warning",
+      "frozenState": "No selection",
+      "label": "fail_closed_mapping_discipline",
+      "interpretation": "The Skill did not force an A-share server-DRAM expression from a generic semiconductor narrative. GigaDevice was kept in a separate company-growth hypothesis instead of being double-counted as DRAM beta; this preserves causal mapping discipline."
+    }
+  ],
+  "researchRecallSummary": {
+    "evaluatedResearchHypotheses": 4,
+    "positiveBenchmarkRelativeAtBase": 2,
+    "negativeBenchmarkRelativeAtBase": 2,
+    "directionHitRate": 0.5,
+    "interpretation": "Research contains both major missed opportunities and major avoided mistakes. Raising recall by mechanically promoting Research would degrade precision."
+  },
+  "crossWindowImplications": {
+    "repeatedObservation": "2020Q4 already showed Research-level shipping and NEV directions that later beat the benchmark; 2020Q2 now adds construction machinery and LONGi as strong Research winners.",
+    "counterEvidence": "2020Q2 electronics and gold show that conservative gates also prevented poor base-horizon entries.",
+    "currentFailureClasses": [
+      "possible timing false negatives when a direct earnings bridge, valuation room and near catalyst exist before relative-price confirmation",
+      "possible retrieval/expectation-path incompleteness for realized structural company engines whose sector-level physical signal is mixed",
+      "premium-duration and already-priced warnings remain necessary"
+    ]
+  },
+  "decision": {
+    "keepV13Immutable": true,
+    "createV14Now": false,
+    "reason": "The recall problem is now repeated, but the same window supplies equally strong counterexamples to indiscriminate loosening. The next version must discriminate early under-reflected inflections from already-priced premium growth rather than simply lower thresholds.",
+    "nextAction": "Run unchanged V1.3 on the next untouched 2020Q1 historical window. Pre-register diagnostics that separate (a) direct/quantified earnings bridge, (b) valuation slack, (c) price-regime confirmation, (d) expectation-baseline completeness and (e) catalyst reachability. Only a repeated cross-window pattern should justify V1.4."
+  },
+  "prohibitedUses": [
+    "Do not promote all Research selections because construction machinery and LONGi later worked.",
+    "Do not remove premium-duration or expectation-absorption gates; electronics is a direct counterexample.",
+    "Do not rewrite the 60d heavy-truck success using its weak 120d result.",
+    "Do not change the frozen 2020Q2 memos, selections or horizons after seeing outcomes.",
+    "Do not treat this contaminated historical replay as clean alpha validation."
+  ]
+}
