@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2022q1-multisource-v1.2-001",
+  "cutoffAt": "2022-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2022Q1 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China industrial-profit and PMI evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS series relevant to Q1 value-chain changes."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company evidence is deferred to deep research."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable memory-product supply/pricing evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce product-level supply data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on oil, fertilizer, nickel and lockdown shocks.",
+      "coverageStatus": "partial",
+      "limitations": "Uses Reuters and Reuters syndicated copies available for historical retrieval."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist semiconductor supply-chain evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on TrendForce."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "nbs-profit-20220327",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年1—2月份全国规模以上工业企业利润增长5.0%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901416.html",
+      "publishedAt": "2022-03-27T09:30:00+08:00",
+      "availableAt": "2022-03-27T09:30:00+08:00",
+      "originGroup": "nbs-profit-20220102",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Feb mining profits +132% YoY; oil/gas extraction +156.7%; coal mining +155.3%, while manufacturing profit -4.2% and power/heat profit -49.1%."
+      ],
+      "entities": [
+        "oil and gas",
+        "coal",
+        "industrial profits"
+      ],
+      "observedChanges": [
+        "upstream resource profit windfall",
+        "downstream margin pressure"
+      ]
+    },
+    {
+      "itemId": "reuters-oil-20220304",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Oil surges to multi-year highs as Russian supply shortfall looms",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/oil-rebounds-as-escalating-ukraine-conflict-raises-supply-concerns-2777737",
+      "publishedAt": "2022-03-04T05:11:00Z",
+      "availableAt": "2022-03-04T05:11:00Z",
+      "originGroup": "reuters-oil-20220304",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Brent rose 21% in one week as buyers shunned Russian crude after the invasion, creating a large physical/financial supply shock."
+      ],
+      "entities": [
+        "Brent",
+        "Russia",
+        "oil supply"
+      ],
+      "observedChanges": [
+        "oil supply tightens sharply",
+        "crude rerates rapidly"
+      ]
+    },
+    {
+      "itemId": "reuters-oil-20220308",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Oil surges as U.S. bans Russian crude, Britain to phase out purchases",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/oil-seesaws-near-14year-highs-as-us-weighs-russia-oil-embargo-2779825",
+      "publishedAt": "2022-03-08T06:05:00Z",
+      "availableAt": "2022-03-08T06:05:00Z",
+      "originGroup": "reuters-oil-20220308",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Oil prices were more than 30% above pre-invasion levels as U.S./UK restrictions increased expected Russian supply disruption."
+      ],
+      "entities": [
+        "oil",
+        "Russia sanctions",
+        "Brent"
+      ],
+      "observedChanges": [
+        "energy shock persists",
+        "expectation absorption risk rises"
+      ]
+    },
+    {
+      "itemId": "reuters-potash-20220316",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Nutrien to increase potash production amid Eastern Europe supply worries",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/nutrien-to-increase-potash-production-amid-eastern-europe-supply-worries-2786328",
+      "publishedAt": "2022-03-16T21:56:00Z",
+      "availableAt": "2022-03-16T21:56:00Z",
+      "originGroup": "reuters-potash-20220316",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Russia and Belarus supply uncertainty pushed global potash prices sharply higher; Nutrien planned additional output to offset disrupted supply."
+      ],
+      "entities": [
+        "potash",
+        "Russia",
+        "Belarus",
+        "fertilizer"
+      ],
+      "observedChanges": [
+        "global potash supply tightens",
+        "fertilizer prices surge"
+      ]
+    },
+    {
+      "itemId": "reuters-fertilizer-20220323",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "As sanctions bite Russia, fertilizer shortage imperils world food supply",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/as-sanctions-bite-russia-fertilizer-shortage-imperils-world-food-supply-2790075",
+      "publishedAt": "2022-03-23T18:29:00Z",
+      "availableAt": "2022-03-23T18:29:00Z",
+      "originGroup": "reuters-fertilizer-20220323",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Russia/Belarus accounted for over 40% of global potash exports and significant nitrogen/phosphate exports; sanctions/shipping disruption drove fertilizer prices high enough to change planting and input decisions."
+      ],
+      "entities": [
+        "potash",
+        "fertilizer",
+        "Russia",
+        "Belarus",
+        "agriculture"
+      ],
+      "observedChanges": [
+        "fertilizer shortage becomes physical",
+        "crop-input affordability deteriorates"
+      ]
+    },
+    {
+      "itemId": "tf-ddr3-20220307",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DDR3 Consumer DRAM Prices Expected to Rise by 0-5% in 2Q22 Due to Rapidly Shrinking Supply",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20220307-11150.html",
+      "publishedAt": "2022-03-07T00:00:00+08:00",
+      "availableAt": "2022-03-07T00:00:00+08:00",
+      "originGroup": "trendforce-ddr3-20220307",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Major suppliers were accelerating DDR3 production exits while networking-chip supply and demand improved; TrendForce expected DDR3 prices to rise in Q2 despite broader DRAM transition to DDR5."
+      ],
+      "entities": [
+        "DDR3",
+        "DRAM",
+        "networking",
+        "supplier exit"
+      ],
+      "observedChanges": [
+        "legacy DRAM supply contracts",
+        "niche pricing power improves"
+      ]
+    },
+    {
+      "itemId": "tf-neon-20220215",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "Ukrainian-Russian Conflict Affects Semiconductor Gas Supply and May Cause Rise in Chip Production Costs",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20220215-11119.html",
+      "publishedAt": "2022-02-15T00:00:00+08:00",
+      "availableAt": "2022-02-15T00:00:00+08:00",
+      "originGroup": "trendforce-neon-20220215",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Ukraine represented a large share of global neon capacity, but semiconductor fabs had inventories/alternative supply and TrendForce did not expect short-term production stoppages; cost risk was more credible than immediate volume shortage."
+      ],
+      "entities": [
+        "neon",
+        "semiconductors",
+        "DUV"
+      ],
+      "observedChanges": [
+        "semiconductor gas cost risk rises",
+        "short-term production impact limited"
+      ]
+    },
+    {
+      "itemId": "reuters-nickel-20220308",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "LME forced to halt nickel trading after prices top $100,000",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/lme-suspends-nickel-trading-for-the-day-after-prices-see-record-run-2780021",
+      "publishedAt": "2022-03-08T12:22:00Z",
+      "availableAt": "2022-03-08T12:22:00Z",
+      "originGroup": "reuters-nickel-20220308",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Nickel more than doubled to above $100,000/t amid Russian supply concerns and a short squeeze; LME halted trading and cancelled trades."
+      ],
+      "entities": [
+        "nickel",
+        "LME",
+        "Russia",
+        "Tsingshan"
+      ],
+      "observedChanges": [
+        "nickel price becomes disorderly",
+        "market microstructure dominates spot signal"
+      ]
+    },
+    {
+      "itemId": "reuters-shanghai-20220328",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Tesla to suspend Shanghai production as city locks down",
+      "publisher": "Reuters via Investing.com Japan",
+      "url": "https://jp.investing.com/news/coronavirus/article-499494",
+      "publishedAt": "2022-03-28T16:36:00+08:00",
+      "availableAt": "2022-03-28T16:36:00+08:00",
+      "originGroup": "reuters-shanghai-lockdown-20220328",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Shanghai lockdown measures forced Tesla to suspend production and disrupted local industrial operations."
+      ],
+      "entities": [
+        "Shanghai",
+        "Tesla",
+        "lockdown",
+        "auto supply chain"
+      ],
+      "observedChanges": [
+        "manufacturing hub disruption becomes physical"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20220331",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年3月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202203/t20220331_1829214.html",
+      "publishedAt": "2022-03-31T09:30:00+08:00",
+      "availableAt": "2022-03-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202203",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "March manufacturing PMI fell to 49.5; production 49.5 and new orders 48.8. Input-price index rose to 66.1 amid geopolitical commodity inflation, while supplier delivery time fell to 46.5."
+      ],
+      "entities": [
+        "China PMI",
+        "input prices",
+        "supply chains"
+      ],
+      "observedChanges": [
+        "manufacturing contracts",
+        "input inflation spikes",
+        "delivery times worsen"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2022q1-energy-resource-windfall",
+      "statement": "Russia's invasion and sanctions/shunning of Russian barrels drove a rapid oil supply shock while official Chinese data already showed oil/gas and coal extraction profits more than doubling, creating a realized upstream profit transfer with substantial price-absorption risk.",
+      "changeType": "geopolitical_supply_shock_plus_realized_profit",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-03-04T05:11:00Z",
+      "memberItemIds": [
+        "reuters-oil-20220304",
+        "reuters-oil-20220308",
+        "nbs-profit-20220327"
+      ],
+      "independentOriginGroups": [
+        "reuters-oil-20220304",
+        "reuters-oil-20220308",
+        "nbs-profit-20220102"
+      ],
+      "affectedValueChain": [
+        "oil/gas producers",
+        "coal miners",
+        "refiners",
+        "power generators",
+        "transport"
+      ],
+      "contradictionSearchNotes": "Current upstream profits are real but commodity prices rerated extremely quickly. Deep research must freeze the full earnings path and distinguish durable low-cost economics from peak-price extrapolation.",
+      "researchQuestion": "Which A-share upstream producer had incremental near/next/later earnings-path room after the March commodity rerating?"
+    },
+    {
+      "eventId": "event-2022q1-fertilizer-potash-shortage",
+      "statement": "Russia/Belarus supply disruption turned already-high fertilizer prices into a global physical shortage, especially potash, creating a potential scarcity profit pool but also a classic peak-price duration question.",
+      "changeType": "geopolitical_input_shortage",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-03-16T21:56:00Z",
+      "memberItemIds": [
+        "reuters-potash-20220316",
+        "reuters-fertilizer-20220323"
+      ],
+      "independentOriginGroups": [
+        "reuters-potash-20220316",
+        "reuters-fertilizer-20220323"
+      ],
+      "affectedValueChain": [
+        "potash producers",
+        "fertilizer manufacturers",
+        "farmers",
+        "food prices"
+      ],
+      "contradictionSearchNotes": "High fertilizer prices can boost producers while destroying downstream demand and encouraging new supply. Company selection must compare the frozen earnings path, not spot price alone.",
+      "researchQuestion": "Did any A-share potash/fertilizer producer have a durable cost/supply advantage that improved the full earnings path beyond the already-high price baseline?"
+    },
+    {
+      "eventId": "event-2022q1-ddr3-supply-exit",
+      "statement": "Legacy DDR3 supply was shrinking as major memory suppliers migrated capacity toward newer generations, while networking demand improved, creating a narrow structural pricing opportunity inside an otherwise mixed memory market.",
+      "changeType": "structural_legacy_supply_exit",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-03-07T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-ddr3-20220307"
+      ],
+      "independentOriginGroups": [
+        "trendforce-ddr3-20220307"
+      ],
+      "affectedValueChain": [
+        "legacy DRAM suppliers",
+        "networking electronics",
+        "industrial/auto memory"
+      ],
+      "contradictionSearchNotes": "The signal is niche and single-origin. Deep research must verify listed-company DDR3 revenue exposure and whether earnings conversion is material enough to matter.",
+      "researchQuestion": "Which A-share memory company had verified DDR3 exposure, direct price-to-profit conversion and expectation-path room?"
+    },
+    {
+      "eventId": "event-2022q1-nickel-disorder",
+      "statement": "Nickel prices briefly exceeded $100,000/t and LME suspended/cancelled trades, but the move was heavily driven by short covering and market disorder rather than a clean, investable physical-price signal.",
+      "changeType": "market_dislocation",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-03-08T12:22:00Z",
+      "memberItemIds": [
+        "reuters-nickel-20220308"
+      ],
+      "independentOriginGroups": [
+        "reuters-nickel-20220308"
+      ],
+      "affectedValueChain": [
+        "nickel producers",
+        "stainless steel",
+        "battery cathodes",
+        "EVs"
+      ],
+      "contradictionSearchNotes": "A disorderly squeeze cannot be treated as sustainable realized-price evidence. Company hedges/short exposure can invert apparent beneficiaries.",
+      "researchQuestion": "Reject generic nickel-long mapping unless company economics are independently verified after the market disorder."
+    },
+    {
+      "eventId": "event-2022q1-semiconductor-gas-risk",
+      "statement": "Ukraine neon supply risk could raise semiconductor production costs, but specialist evidence explicitly indicated fab inventories and alternative supply should prevent near-term production stoppages.",
+      "changeType": "input_cost_risk_without_near_term_volume_break",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-02-15T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-neon-20220215"
+      ],
+      "independentOriginGroups": [
+        "trendforce-neon-20220215"
+      ],
+      "affectedValueChain": [
+        "foundries",
+        "memory fabs",
+        "semiconductor gases"
+      ],
+      "contradictionSearchNotes": "Headline supply exposure is large but near-term operating incidence is explicitly limited.",
+      "researchQuestion": "Use as semiconductor cost-risk context rather than a standalone long opportunity."
+    },
+    {
+      "eventId": "event-2022q1-lockdown-manufacturing-shock",
+      "statement": "Late-March Shanghai restrictions created real auto/manufacturing disruption while official PMI fell below 50, input costs surged and delivery times worsened.",
+      "changeType": "domestic_supply_chain_contraction",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-03-28T16:36:00+08:00",
+      "memberItemIds": [
+        "reuters-shanghai-20220328",
+        "nbs-pmi-20220331"
+      ],
+      "independentOriginGroups": [
+        "reuters-shanghai-lockdown-20220328",
+        "nbs-pmi-202203"
+      ],
+      "affectedValueChain": [
+        "autos",
+        "electronics",
+        "logistics",
+        "broad manufacturing"
+      ],
+      "contradictionSearchNotes": "This is primarily a negative timing/regime shock and may dominate optimistic company extrapolations.",
+      "researchQuestion": "Use as contradiction and timing context, not a standalone long selection."
+    }
+  ]
+}
