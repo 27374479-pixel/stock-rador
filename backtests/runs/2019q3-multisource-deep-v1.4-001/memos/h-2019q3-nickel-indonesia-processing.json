@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-nickel-indonesia-processing",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Local Indonesian processing can benefit structurally, but frozen projects were still under construction and could not convert the Jan 2020 ban into base-horizon earnings."
+  },
+  "changeHypothesis": {
+    "summary": "The export ban favors local Indonesian processing, and 盛屯 had committed to a 34kt high-matte project, but the project was still prospective at cutoff.",
+    "firstCredibleDate": "2019-08-09",
+    "valueChain": [
+      "local ore retention",
+      "Indonesian smelting/refining",
+      "project commissioning",
+      "earnings"
+    ],
+    "persistenceReason": "Domestic-processing policy can be structural if plants are completed.",
+    "disconfirmingEvidence": [
+      "Project construction/approvals/financing remain ahead; no realized production or earnings at cutoff.",
+      "Frozen theme price was neutral."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nickel-ban-20190902",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shengtun-nickel-20190809",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-nickel-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "export ban",
+      "to": "local-processing advantage",
+      "mechanism": "Ore remains available inside Indonesia while exports stop.",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ],
+      "failureMode": "policy changes or ore economics deteriorate",
+      "lag": "months"
+    },
+    {
+      "from": "local advantage",
+      "to": "盛屯 earnings",
+      "mechanism": "Requires completion and ramp of the planned 34kt high-matte project.",
+      "evidenceRefs": [
+        "shengtun-nickel-20190809"
+      ],
+      "failureMode": "construction/financing delays",
+      "lag": "quarters beyond base"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "operational Indonesian processors"
+    ],
+    "secondOrderWinners": [
+      "battery/stainless supply chain"
+    ],
+    "losers": [
+      "offshore ore importers"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "capex",
+      "commissioning"
+    ],
+    "falseThemeMatches": [
+      "projects not yet producing treated as current earnings"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600711.SH",
+      "name": "盛屯矿业",
+      "verifiedExposure": "35.75% economic interest in planned Indonesian 34kt high-matte project through project structure.",
+      "evidenceRefs": [
+        "shengtun-nickel-20190809"
+      ],
+      "earningsSensitivity": {
+        "base": "Construction-stage project, no current output.",
+        "favorable": "Successful commissioning captures local ore advantage.",
+        "adverse": "Delays/financing/price prevent earnings inside thesis horizon."
+      },
+      "principalRisks": [
+        "prospective project"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: strong structural mapping but earnings conversion lies beyond the 60d thesis horizon."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Nickel theme was not broadly confirmed; project value is long-dated.",
+    "thesisExpectation": "Wait for construction/commissioning milestones and an earnings bridge.",
+    "measurableGap": "No realized earnings within base horizon.",
+    "evidenceRefs": [
+      "shengtun-nickel-20190809",
+      "regime-nickel-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "Indonesian domestic nickel processing",
+    "geographicScope": "Indonesia",
+    "customerScope": "stainless/battery nickel consumers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [
+      "h-2019q3-nickel-ex-indonesia-scarcity"
+    ],
+    "rationale": "This child isolates local-processing economics from ex-Indonesia scarcity.",
+    "evidenceRefs": [
+      "nickel-ban-20190902",
+      "shengtun-nickel-20190809"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "policy improves project NPV but no production exists",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "nickel-ban-20190902",
+        "shengtun-nickel-20190809"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "construction progresses but base-horizon earnings remain absent",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "shengtun-nickel-20190809"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "local-processing policy advantage if plant commissions",
+      "horizon": "2020+",
+      "evidenceRefs": [
+        "shengtun-nickel-20190809",
+        "nickel-ban-20190902"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not let long-term project NPV substitute for base-horizon earnings conversion.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "mixed",
+    "divergence": "none",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Company has a real project but no realized nickel production yet.",
+    "evidenceRefs": [
+      "shengtun-nickel-20190809",
+      "regime-nickel-20190930"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "structural_project_not_base_horizon",
+    "constraints": [
+      "construction stage",
+      "financing/approval",
+      "long lag"
+    ]
+  },
+  "bearCase": "Policy is favorable but project delays make the stock a concept trade rather than earnings trade.",
+  "invalidationConditions": [
+    {
+      "indicator": "project commissioning",
+      "observationMethod": "company disclosure",
+      "threshold": "material production and earnings visible inside horizon"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection until commissioning/earnings become reachable."
+  ]
+}
