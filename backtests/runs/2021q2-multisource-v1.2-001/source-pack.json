@@ -1,0 +1,464 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2021q2-multisource-v1.2-001",
+  "cutoffAt": "2021-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2021Q2 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official hog-price, PPI, auto and PMI evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses NDRC/NBS/CAAM pre-cutoff releases."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to prevent company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable commodity and component scarcity conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses public metals and auto-chip market evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Cross-check metals policy and chip-supply shocks.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters is accessed through syndicated copies where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist commodity/semiconductor evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses S&P Global/TrendForce when available."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "ndrc-hog-20210616",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家发展改革委发布生猪价格过度下跌三级预警",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202106/t20210616_1283300.html",
+      "publishedAt": "2021-06-16T00:00:00+08:00",
+      "availableAt": "2021-06-16T00:00:00+08:00",
+      "originGroup": "ndrc-hog-20210616",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Hog prices had fallen enough for the hog-to-grain ratio to enter the level-3 excessive-decline warning zone; NDRC cited concentrated heavy-hog selling, frozen-pork imports and weak seasonal demand."
+      ],
+      "entities": [
+        "hog prices",
+        "pork",
+        "feed"
+      ],
+      "observedChanges": [
+        "hog profitability collapses",
+        "official cycle warning begins"
+      ]
+    },
+    {
+      "itemId": "ndrc-hog-20210628",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "猪粮比价进入过度下跌一级预警区间",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202106/t20210628_1284337.html",
+      "publishedAt": "2021-06-28T00:00:00+08:00",
+      "availableAt": "2021-06-28T00:00:00+08:00",
+      "originGroup": "ndrc-hog-20210628",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "June 21-25 average hog-to-grain ratio fell to 4.90:1, triggering the highest excessive-decline warning and planned central/local pork reserve purchases."
+      ],
+      "entities": [
+        "hog prices",
+        "pork reserves"
+      ],
+      "observedChanges": [
+        "hog cycle reaches severe loss zone",
+        "policy floor intervention begins"
+      ]
+    },
+    {
+      "itemId": "reuters-hog-20210628",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China to buy pork for state reserves to support prices",
+      "publisher": "Reuters syndicated",
+      "url": "https://www.thepigsite.com/news/2021/06/china-to-buy-pork-for-state-reserves-to-support-prices",
+      "publishedAt": "2021-06-28T00:00:00Z",
+      "availableAt": "2021-06-28T00:00:00Z",
+      "originGroup": "reuters-hog-20210628",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Live hog prices had plunged about 65% from the start of 2021 to early June; the reserve-purchase plan followed a severe profitability collapse, while spot prices had begun rebounding from a June 21 low."
+      ],
+      "entities": [
+        "hog prices",
+        "pig farmers",
+        "state reserves"
+      ],
+      "observedChanges": [
+        "deep cyclical loss confirmed",
+        "first rebound signal appears"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-20210510",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Copper hits record high on demand hope, tight supply",
+      "publisher": "Reuters syndicated",
+      "url": "https://www.marketscreener.com/news/latest/Copper-hits-record-high-on-demand-hope-tight-supply-33206386/",
+      "publishedAt": "2021-05-10T02:56:00Z",
+      "availableAt": "2021-05-10T02:56:00Z",
+      "originGroup": "reuters-copper-20210510",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Copper hit record highs in London and Shanghai after more than 30% YTD gains, supported by recovery/green-demand expectations and tight concentrate supply."
+      ],
+      "entities": [
+        "copper",
+        "aluminum",
+        "industrial metals"
+      ],
+      "observedChanges": [
+        "industrial metal prices reach records",
+        "scarcity narrative peaks"
+      ]
+    },
+    {
+      "itemId": "reuters-metals-crackdown-20210520",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China's industrial commodities slide after Beijing warns of market crackdown",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/chinas-industrial-commodities-slide-after-beijing-warns-of-market-crackdown-2511636",
+      "publishedAt": "2021-05-20T14:04:00+08:00",
+      "availableAt": "2021-05-20T14:04:00+08:00",
+      "originGroup": "reuters-metals-crackdown-20210520",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Iron ore, coking coal and steel fell more than 5% after China announced measures to curb soaring raw-material prices and speculation."
+      ],
+      "entities": [
+        "copper",
+        "steel",
+        "coal",
+        "commodity policy"
+      ],
+      "observedChanges": [
+        "policy pushes against commodity rerating",
+        "peak-price risk rises"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20210609",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年5月份工业生产者出厂价格同比上涨9.0%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901121.html",
+      "publishedAt": "2021-06-09T09:30:00+08:00",
+      "availableAt": "2021-06-09T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202105",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May PPI +9.0% YoY/+1.6% MoM; mining producer prices +36.4%, non-ferrous input prices +28.0% YoY and ferrous inputs +26.8%, confirming a broad upstream profit/input-cost shock."
+      ],
+      "entities": [
+        "PPI",
+        "metals",
+        "raw materials"
+      ],
+      "observedChanges": [
+        "upstream inflation accelerates sharply"
+      ]
+    },
+    {
+      "itemId": "spg-reserve-metals-20210616",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "China confirms metal stocks release from state reserves",
+      "publisher": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/061621-china-confirms-metal-stocks-release-from-state-reserves",
+      "publishedAt": "2021-06-16T10:48:00Z",
+      "availableAt": "2021-06-16T10:48:00Z",
+      "originGroup": "spg-metals-reserve-20210616",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China confirmed releases of copper, aluminum and zinc from state reserves to downstream processors to stabilize supply and prices; futures had already begun trending lower."
+      ],
+      "entities": [
+        "copper",
+        "aluminum",
+        "zinc",
+        "state reserves"
+      ],
+      "observedChanges": [
+        "physical policy supply response begins",
+        "commodity price upside constrained"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20210510",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Sales of New Energy Vehicles in April 2021",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/54/id/1648.html",
+      "publishedAt": "2021-05-10T00:00:00+08:00",
+      "availableAt": "2021-05-10T00:00:00+08:00",
+      "originGroup": "caam-nev-202104",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "April NEV sales reached 206k, +180.3% YoY; Jan-Apr NEV sales 732k, +249.2% YoY."
+      ],
+      "entities": [
+        "NEVs",
+        "BEVs",
+        "PHEVs"
+      ],
+      "observedChanges": [
+        "NEV demand accelerates dramatically"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20210611",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Production of New Energy Vehicles in May 2021",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/53/id/1637.html",
+      "publishedAt": "2021-06-11T00:00:00+08:00",
+      "availableAt": "2021-06-11T00:00:00+08:00",
+      "originGroup": "caam-nev-202105",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May NEV production reached 217k, +151.7% YoY; Jan-May production 967k, +224% YoY."
+      ],
+      "entities": [
+        "NEVs",
+        "EV production"
+      ],
+      "observedChanges": [
+        "NEV scale remains structurally high"
+      ]
+    },
+    {
+      "itemId": "reuters-autochip-20210521",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Nissan, Suzuki Motor to curtail production in June due to chip shortage",
+      "publisher": "Reuters via Nippon.com",
+      "url": "https://www.nippon.com/en/news/reu20210521KCN2D21B5/",
+      "publishedAt": "2021-05-21T00:00:00Z",
+      "availableAt": "2021-05-21T00:00:00Z",
+      "originGroup": "reuters-autochip-20210521",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Nissan and Suzuki planned June production curtailments because semiconductor shortages were still constraining vehicle output; Mitsubishi also planned production reductions."
+      ],
+      "entities": [
+        "automotive semiconductors",
+        "Nissan",
+        "Suzuki"
+      ],
+      "observedChanges": [
+        "auto-chip bottleneck persists into Q2"
+      ]
+    },
+    {
+      "itemId": "tf-autochip-20210128",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "12-inch Fab Capacities for Automotive Semiconductor Undergo Most Severe Shortage",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20210128-10660.html",
+      "publishedAt": "2021-01-28T00:00:00+08:00",
+      "availableAt": "2021-01-28T00:00:00+08:00",
+      "originGroup": "trendforce-autochip-20210128",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Automotive MCU/CIS and several 8-inch power/analog products faced severe foundry-capacity shortages; auto IC qualification makes supply switching slow."
+      ],
+      "entities": [
+        "auto MCU",
+        "CIS",
+        "power semiconductors",
+        "foundry"
+      ],
+      "observedChanges": [
+        "automotive semiconductor supply is structurally constrained"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20210601",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Purchasing Managers Index for May 2021",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202106/t20210601_1818052.html",
+      "publishedAt": "2021-06-01T09:00:00+08:00",
+      "availableAt": "2021-06-01T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202105",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May manufacturing PMI 51.0 remained expansionary but new-orders growth slowed; supplier delivery time fell to 47.6, showing supply constraints."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing demand"
+      ],
+      "observedChanges": [
+        "manufacturing remains expanding but demand momentum slows",
+        "supply delivery worsens"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2021q2-hog-collapse",
+      "statement": "Hog economics deteriorated from a high-price cycle into severe losses by late June, with the hog-to-grain ratio falling below 5:1 and triggering the highest official warning plus reserve-purchase intervention; spot hog prices had just begun a rebound from the June low.",
+      "changeType": "deep_cycle_loss_with_policy_floor",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-06-16T00:00:00+08:00",
+      "memberItemIds": [
+        "ndrc-hog-20210616",
+        "ndrc-hog-20210628",
+        "reuters-hog-20210628"
+      ],
+      "independentOriginGroups": [
+        "ndrc-hog-20210616",
+        "ndrc-hog-20210628",
+        "reuters-hog-20210628"
+      ],
+      "affectedValueChain": [
+        "hog breeders",
+        "feed",
+        "pork processors",
+        "consumers"
+      ],
+      "contradictionSearchNotes": "A reserve purchase can create a short rebound without restoring breeder profitability. Turning-point candidates need survival, cost and forward supply evidence.",
+      "researchQuestion": "Is any listed breeder at a genuine earnings trough with survival and operating-leverage evidence, or is this too early to bottom-fish?"
+    },
+    {
+      "eventId": "event-2021q2-industrial-metals-peak",
+      "statement": "Copper and other industrial commodities reached record highs amid tight supply and global recovery, but Chinese authorities then escalated anti-speculation measures and confirmed releases of copper/aluminum/zinc reserves, creating a classic high-profit-versus-policy/peak-duration conflict.",
+      "changeType": "commodity_superprofit_with_policy_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-05-10T02:56:00Z",
+      "memberItemIds": [
+        "reuters-copper-20210510",
+        "reuters-metals-crackdown-20210520",
+        "nbs-ppi-20210609",
+        "spg-reserve-metals-20210616"
+      ],
+      "independentOriginGroups": [
+        "reuters-copper-20210510",
+        "reuters-metals-crackdown-20210520",
+        "nbs-ppi-202105",
+        "spg-metals-reserve-20210616"
+      ],
+      "affectedValueChain": [
+        "copper miners",
+        "aluminum producers",
+        "smelters",
+        "downstream manufacturers"
+      ],
+      "contradictionSearchNotes": "Spot profits may be spectacular while policy explicitly attempts to cap the price path. V1.2 must distinguish durable low-cost supply advantage from peak price extrapolation.",
+      "researchQuestion": "Does any A-share metals producer retain a superior normalized earnings path after policy intervention, or should peak profits be treated as already absorbed?"
+    },
+    {
+      "eventId": "event-2021q2-nev-acceleration",
+      "statement": "China NEV sales/production continued growing at triple-digit rates through April-May, indicating a structural scale-up despite broader auto and component constraints.",
+      "changeType": "structural_volume_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-05-10T00:00:00+08:00",
+      "memberItemIds": [
+        "caam-nev-20210510",
+        "caam-nev-20210611"
+      ],
+      "independentOriginGroups": [
+        "caam-nev-202104",
+        "caam-nev-202105"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "batteries",
+        "power semiconductors",
+        "components"
+      ],
+      "contradictionSearchNotes": "Volume growth alone does not prove profit conversion and high-growth expectations may already be capitalized. Deep research must freeze the multi-year earnings path.",
+      "researchQuestion": "Which A-share NEV company converted structural volume growth into an incremental future earnings path rather than merely confirming already-premium expectations?"
+    },
+    {
+      "eventId": "event-2021q2-auto-chip-shortage",
+      "statement": "Automotive semiconductor scarcity remained severe enough to force production curtailments, while long qualification cycles and full foundry utilization made the bottleneck difficult to resolve quickly.",
+      "changeType": "component_supply_bottleneck",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-05-21T00:00:00Z",
+      "memberItemIds": [
+        "reuters-autochip-20210521",
+        "tf-autochip-20210128"
+      ],
+      "independentOriginGroups": [
+        "reuters-autochip-20210521",
+        "trendforce-autochip-20210128"
+      ],
+      "affectedValueChain": [
+        "auto chip suppliers",
+        "foundries",
+        "OEMs",
+        "power semiconductors"
+      ],
+      "contradictionSearchNotes": "Shortage hurts OEM volumes and may benefit qualified suppliers, but listed-company automotive revenue exposure must be directly auditable.",
+      "researchQuestion": "Can any A-share chip supplier prove material auto-specific scarcity-to-profit conversion before cutoff?"
+    },
+    {
+      "eventId": "event-2021q2-manufacturing-expansion-slowing",
+      "statement": "May manufacturing remained in expansion but new-order momentum slowed and supplier delivery times worsened, indicating strong activity with mounting input/supply constraints.",
+      "changeType": "macro_expansion_with_supply_pressure",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-06-01T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20210601",
+        "nbs-ppi-20210609"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202105",
+        "nbs-ppi-202105"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "raw materials",
+        "downstream users"
+      ],
+      "contradictionSearchNotes": "Useful as context across metals/auto/chips, not a direct stock thesis.",
+      "researchQuestion": "Use as cross-thesis input-cost and demand context."
+    }
+  ]
+}
