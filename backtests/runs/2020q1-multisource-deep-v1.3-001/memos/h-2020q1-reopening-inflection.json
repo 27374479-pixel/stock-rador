@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-reopening-inflection",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A reopening inflection may propagate through industrial earnings over one to two quarters, but broad PMI rebound is insufficient on its own."
+  },
+  "changeHypothesis": {
+    "summary": "March PMI rebounded from shutdown lows, but Jan-Feb industrial profits remained deeply negative and NBS explicitly cautioned that activity was not normalized.",
+    "firstCredibleDate": "2020-03-27",
+    "valueChain": [
+      "reopening",
+      "production/orders",
+      "sector revenue",
+      "earnings"
+    ],
+    "persistenceReason": "Domestic reopening can continue, but global demand and low-base effects make the aggregate signal noisy.",
+    "disconfirmingEvidence": [
+      "Industrial profits were still down 38.3%.",
+      "No narrow company earnings bridge was frozen by March 31."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-profit-20200327",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "nbs-pmi-20200331",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "reopening",
+      "to": "industrial activity",
+      "mechanism": "Factories resume production after February shutdown.",
+      "evidenceRefs": [
+        "nbs-pmi-20200331"
+      ],
+      "failureMode": "global demand collapse offsets domestic reopening",
+      "lag": "weeks"
+    },
+    {
+      "from": "activity",
+      "to": "earnings",
+      "mechanism": "Only if orders/margins recover does PMI translate into profit.",
+      "evidenceRefs": [
+        "nbs-profit-20200327"
+      ],
+      "failureMode": "low-base PMI rebound without earnings recovery",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "narrow sectors with verified orders"
+    ],
+    "losers": [
+      "industries with persistent demand shock"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "external demand",
+      "orders"
+    ],
+    "falseThemeMatches": [
+      "broad cyclicals selected solely because PMI >50"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: discovery signal remains macro context until a narrow earnings bridge is independently verified."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The reopening headline was visible, but profit data remained severely negative.",
+    "thesisExpectation": "Require sector/company evidence beyond low-base PMI normalization.",
+    "measurableGap": "No narrow expression is frozen.",
+    "evidenceRefs": [
+      "nbs-profit-20200327",
+      "nbs-pmi-20200331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "insufficient_company_mapping",
+    "constraints": [
+      "low-base distortion",
+      "global demand uncertainty"
+    ]
+  },
+  "bearCase": "A broad reopening trade buys cyclicals before end demand and earnings recover.",
+  "invalidationConditions": [
+    {
+      "indicator": "sector orders/profits",
+      "observationMethod": "industry/company data",
+      "threshold": "narrow sector shows sustained recovery"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; search future windows for narrow physical/earnings confirmation."
+  ]
+}
