@@ -1,0 +1,114 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2022q2-multisource-deep-v1.1-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "coal_yankuang_derated_low_burden_override",
+      "frozenDecision": "兖矿能源 High-priority company_engine_override over 陕西煤业/中国神华",
+      "base60d": {
+        "selectedReturn": 0.558853735184841,
+        "benchmarkReturn": -0.11473963327615933,
+        "benchmarkExcess": 0.6735933684610004,
+        "matchedControlExcess": 0.4038577456602581,
+        "bestControlTicker": "601225.SH",
+        "bestControlReturn": 0.25464988524553345,
+        "excessVsBestControl": 0.3042038499393076,
+        "selectedRank": 1
+      },
+      "postOutcomeFundamentalDiagnosis": "The frozen earnings engine persisted. H1 revenue was RMB100.285bn (+53.39% YoY), attributable profit RMB18.037bn (+198.54%),扣非 profit +193.82%, and operating cash flow RMB13.398bn (+418.30%).",
+      "failureClass": null,
+      "label": "derated_low_burden_realized_engine_success",
+      "generalLesson": "A de-rated price can represent genuine expectation room when realized earnings remain strong, valuation already assumes normalization rather than perpetual growth, and the selected stock has superior peer-relative torque."
+    },
+    {
+      "case": "pv_tongwei_sustained_strength_low_burden",
+      "frozenDecision": "通威股份 High-priority sector_confirmed over 特变电工/隆基绿能",
+      "base60d": {
+        "selectedReturn": -0.1365096207727875,
+        "benchmarkReturn": -0.11473963327615933,
+        "benchmarkExcess": -0.021769987496628174,
+        "matchedControlExcess": 0.04854317645613587,
+        "bestControlTicker": "600089.SH",
+        "bestControlReturn": -0.14068712779886205,
+        "excessVsBestControl": 0.004177507026074556,
+        "selectedRank": 1
+      },
+      "later120d": {
+        "selectedReturn": -0.3296497520066517,
+        "benchmarkExcess": -0.1915408153077065,
+        "selectedRank": 3
+      },
+      "postOutcomeFundamentalDiagnosis": "The earnings bridge did not fail: Q3 single-quarter revenue rose 107.30% YoY and profit 219.12%; YTD profit rose 265.54% and operating cash flow 710.90%. At the pre-registered 60d base horizon the selected stock still ranked first and beat the matched peer basket, but it failed absolute/index alpha.",
+      "failureClass": "stock_expression_right_opportunity_repricing_wrong",
+      "generalLesson": "Low forward PE and explicit future normalization can make sustained strength rational, but they do not immunize an entire cyclical/high-growth opportunity from broad multiple or terminal-value repricing. Separate stock-expression quality from opportunity-level absolute return."
+    },
+    {
+      "case": "auto_changan_research_absorption_warning",
+      "frozenDecision": "长安汽车 Research selection because reopening/tax-cut earnings were not yet reported and the stock was sustained_strength",
+      "base60d": {
+        "selectedReturn": 0.2456377703014474,
+        "benchmarkReturn": -0.04073229927094313,
+        "benchmarkExcess": 0.28637006957239053,
+        "matchedControlExcess": 0.3399159059588933,
+        "bestControlTicker": "600104.SH",
+        "bestControlReturn": -0.09427813565744592,
+        "excessVsBestControl": 0.3399159059588933,
+        "selectedRank": 1
+      },
+      "postOutcomeFundamentalDiagnosis": "The forward bridge subsequently became real: H1 attributable profit rose 238.74% and扣非 profit 319.07%, although operating cash flow remained down 66.93%. The stock continued strongly through the 60d base horizon despite an already-large pre-cutoff rerating.",
+      "failureClass": "sustained_strength_absorption_overweighted_when_valuation_and_new_catalyst_remain_open",
+      "generalLesson": "A prior rerating should reduce conviction, not automatically dominate a low valuation plus fresh multi-quarter catalyst. The missing variable is what future earnings duration/intensity is already embedded, not merely whether the stock has risen."
+    }
+  ],
+  "crossWindowExpectationFramework": {
+    "evidence": [
+      {
+        "case": "2023Q3 比亚迪",
+        "pattern": "premium growth, early_turn, operating engine right, stock failed",
+        "interpretation": "high duration/intensity already embedded"
+      },
+      {
+        "case": "2022Q3 比亚迪",
+        "pattern": "premium growth, de_rated, operating engine right, stock failed",
+        "interpretation": "de-rating did not erase long-duration premium"
+      },
+      {
+        "case": "2023Q3 中国海油",
+        "pattern": "sustained_strength, low burden, durable engine, Research but stock outperformed",
+        "interpretation": "already-rerated was not fully priced"
+      },
+      {
+        "case": "2022Q2 兖矿能源",
+        "pattern": "de_rated, ~7x forward PE, realized cyclical earnings, High-priority success",
+        "interpretation": "low burden plus realized duration created real room"
+      },
+      {
+        "case": "2022Q2 通威股份",
+        "pattern": "sustained_strength, ~13x PE with 2023 profit already forecast lower, stock-expression rank #1 but index alpha failed",
+        "interpretation": "valuation burden was moderate, yet opportunity-level repricing still mattered"
+      },
+      {
+        "case": "2022Q2 长安汽车",
+        "pattern": "sustained_strength, low-double-digit PE, fresh reopening/tax catalyst, Research but strong base-horizon outperformance",
+        "interpretation": "price absorption was over-weighted versus open catalyst duration"
+      }
+    ],
+    "interpretation": "Cross-company evidence now supports a generic expectation-duration/intensity dimension: price path alone is insufficient. The same strong price state can mean exhaustion when valuation requires long superior growth, or remain investable when valuation already discounts normalization and catalysts still extend earnings. However the exact auditable gate is not yet defined without risking hindsight thresholds."
+  },
+  "decision": {
+    "keepV11Immutable": true,
+    "createV12Now": false,
+    "reason": "The expectation-duration/intensity concept now has cross-company support, but a generic version should not be created until its pre-reveal evidence contract can be defined without fixed PE/growth thresholds or hindsight scoring.",
+    "nextAction": "Continue V1.1 unchanged on another independent window while drafting, but not activating, a qualitative expectation-duration evidence schema. Version only after the schema can be tested without using the development windows to choose thresholds."
+  },
+  "prohibitedUses": [
+    "Do not alter V1.1 from this 2022Q2 run.",
+    "Do not infer that sustained_strength is bullish or bearish by itself.",
+    "Do not learn fixed PE/PEG/growth/return thresholds from 兖矿、通威、长安 or BYD.",
+    "Do not use 120d Tongwei weakness to overwrite the pre-registered 60d stock-expression result.",
+    "Do not promote proxy-only catalysts merely because 长安 later rose."
+  ]
+}
