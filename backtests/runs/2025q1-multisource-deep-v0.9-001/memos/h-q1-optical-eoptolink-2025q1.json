@@ -1,0 +1,464 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-02-28T15:30:00+08:00",
+  "researchReadyAt": "2025-02-28T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q1-optical-eoptolink-2025q1",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "800G/1.6T demand and hyperscaler capex should affect shipment/mix and earnings over one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "changeHypothesis": {
+    "summary": "Hyperscaler AI capex, GPU demand and specialist optical forecasts all pointed to rapidly expanding high-speed optical demand. 新易盛 had already converted the demand into an exceptional 2024 profit acceleration and carried a lower frozen 2025E valuation than 中际旭创. However, by the Feb28 cutoff the optical A-share basket was in an adverse 20/60d relative-price regime, so unchanged v0.9 cannot promote it beyond Research.",
+    "firstCredibleDate": "2025-01-29",
+    "valueChain": [
+      "AI/hyperscaler capex",
+      "GPU/ASIC clusters",
+      "400G/800G/1.6T optical demand",
+      "high-speed module shipments/mix",
+      "gross margin/profit"
+    ],
+    "persistenceReason": "Independent Microsoft, Meta, NVIDIA and TrendForce evidence all supported continued AI infrastructure and optical demand.",
+    "disconfirmingEvidence": [
+      "DeepSeek efficiency fears and market de-rating had pushed leading optical stocks sharply lower.",
+      "The selected company's 2024 forecast included some positive interest/FX contribution.",
+      "The broad optical basket had negative 20d and 60d benchmark-relative returns."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "microsoft-fy25q2-20250129",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "meta-q4-20250129",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tf-optical-20250205",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "nvidia-q4fy25-20250226",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-optical-20250228",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "eoptolink-forecast-20250120",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "eoptolink-research-20250121",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "innolight-fast-20250228",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "innolight-research-20250226",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "AI infrastructure capex",
+      "to": "high-speed optical demand",
+      "mechanism": "Larger accelerator clusters require more high-bandwidth interconnect, while 800G/1.6T upgrades raise module content.",
+      "evidenceRefs": [
+        "microsoft-fy25q2-20250129",
+        "meta-q4-20250129",
+        "nvidia-q4fy25-20250226",
+        "tf-optical-20250205"
+      ],
+      "failureMode": "hyperscaler capex slows or architecture reduces pluggable optical intensity",
+      "lag": "quarters"
+    },
+    {
+      "from": "high-speed optical demand",
+      "to": "新易盛 earnings",
+      "mechanism": "Higher 800G/1.6T shipments and mix raise revenue and profit; 2024 earnings had already accelerated sharply from this mechanism.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120",
+        "eoptolink-research-20250121"
+      ],
+      "failureMode": "competition/ASP erosion, supply constraints or customer concentration offsets volume/mix",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "earnings engine",
+      "to": "stock alpha",
+      "mechanism": "Company-specific conversion and valuation must overcome the adverse sector price regime.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121",
+        "regime-optical-20250228"
+      ],
+      "failureMode": "sector de-rating persists despite earnings growth",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "high-speed optical module suppliers with hyperscaler exposure"
+    ],
+    "secondOrderWinners": [
+      "lasers/DSP/silicon photonics suppliers"
+    ],
+    "losers": [
+      "legacy low-speed optical vendors"
+    ],
+    "substitutes": [
+      "copper/AEC or alternative optical architectures in some links"
+    ],
+    "bottlenecks": [
+      "high-speed optical components",
+      "capacity/yield"
+    ],
+    "falseThemeMatches": [
+      "optical names without material 800G/1.6T revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300502.SZ",
+      "name": "新易盛",
+      "verifiedExposure": "2024 profit forecast +306.8%-343.1%, driven by compute investment and fast-growing high-speed product demand; Q4 profit also accelerated sequentially.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120",
+        "eoptolink-research-20250121"
+      ],
+      "earningsSensitivity": {
+        "base": "2025E profit RMB6.24bn on Jan21 report.",
+        "favorable": "800G becomes the main product and 1.6T begins volume contribution.",
+        "adverse": "AI capex/optical intensity or ASP/margin disappoints."
+      },
+      "principalRisks": [
+        "sector de-rating",
+        "customer concentration",
+        "competition"
+      ]
+    },
+    {
+      "ticker": "300308.SZ",
+      "name": "中际旭创",
+      "verifiedExposure": "2024 revenue +122.6%, profit +137.9%, explicitly driven by 800G/400G high-end modules and strong compute-infrastructure capex.",
+      "evidenceRefs": [
+        "innolight-fast-20250228",
+        "innolight-research-20250226"
+      ],
+      "earningsSensitivity": {
+        "base": "High growth already realized; Feb26 report valued target at 27x 2025E.",
+        "favorable": "800G share and 1.6T ramp accelerate.",
+        "adverse": "valuation/sector de-rating or supply constraints offset growth."
+      },
+      "principalRisks": [
+        "higher frozen valuation",
+        "supply chain",
+        "sector de-rating"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300308.SZ",
+      "name": "中际旭创",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Leading A-share high-speed optical module peer exposed to the same hyperscaler/800G/1.6T cycle.",
+      "whySelectedCompanyShouldOutperform": "新易盛 had much faster 2024 profit growth, continued sequential Q4 acceleration and a substantially lower frozen 2025E valuation reference.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120",
+        "eoptolink-research-20250121",
+        "innolight-fast-20250228",
+        "innolight-research-20250226"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300502.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300308.SZ",
+        "selectedAdvantages": [
+          "2024 profit +307%-343% versus 中际 +138%",
+          "Q4 profit accelerated 48%-80% sequentially",
+          "frozen Jan21 2025E PE about 14.5x versus 中际 Feb26 target framework 27x 2025E"
+        ],
+        "selectedDisadvantages": [
+          "中际 has larger revenue scale and a fully reported 2024 performance express by cutoff",
+          "新易盛 2024 forecast includes positive FX/interest contribution"
+        ],
+        "evidenceRefs": [
+          "eoptolink-forecast-20250120",
+          "eoptolink-research-20250121",
+          "innolight-fast-20250228",
+          "innolight-research-20250226"
+        ],
+        "switchCondition": "Prefer 中际 if its 800G/1.6T shipment revisions materially exceed 新易盛 while the valuation gap closes.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "新易盛 has the stronger frozen revision/valuation asymmetry, but the opportunity timing gate remains adverse."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Both leaders had already disclosed very strong 2024 results/forecasts. 新易盛's Jan21 report forecast 2025 profit RMB6.24bn at 14.5x PE, while the whole optical basket had sharply underperformed over the previous 20 days.",
+    "thesisExpectation": "The market de-rating underestimates continued 800G/1.6T shipment/mix growth supported by hyperscaler AI capex.",
+    "measurableGap": "Company earnings and valuation imply headroom, but sector price action is directly contradicting the thesis at the cutoff.",
+    "evidenceRefs": [
+      "eoptolink-research-20250121",
+      "regime-optical-20250228"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus realized high-speed-product earnings conversion versus a direct optical peer.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2025E profit RMB6.24bn and 14.5x PE on Jan21 reference; 2024 profit already >4x prior year.",
+    "thesisScenario": "800G/1.6T mix sustains earnings growth materially above the frozen 2025 baseline without requiring multiple expansion.",
+    "breakevenCondition": "High-speed module shipment/mix must continue to lift profit while the sector de-rating stabilizes.",
+    "ordinaryScenarioFailure": "Company meets earnings expectations but adverse sector regime persists, producing little price alpha.",
+    "catalystOrTimingBridge": "Quarterly shipment/margin results inside 20-60d can verify whether company-specific strength overcomes the sector regime.",
+    "evidenceRefs": [
+      "eoptolink-research-20250121",
+      "regime-optical-20250228"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "2024/Q4 profit accelerated dramatically and external AI/optical demand remained strong.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120",
+        "eoptolink-research-20250121",
+        "tf-optical-20250205"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "The high-speed-product demand had already converted into multi-fold profit growth.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "新易盛 showed faster profit acceleration and lower frozen forward valuation than 中际.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121",
+        "innolight-fast-20250228",
+        "innolight-research-20250226"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Independent Feb AI-capex/optical-demand evidence strengthened after the Jan21 company forecast.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121",
+        "tf-optical-20250205",
+        "nvidia-q4fy25-20250226"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Use deterministic sector relative-return snapshot; the issue is de-rating rather than positive absorption.",
+      "evidenceRefs": [
+        "regime-optical-20250228"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen optical basket versus CSI300",
+      "lookback20Excess": -0.17312429865397516,
+      "lookback60Excess": -0.027931368117346755,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-optical-20250228"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Hyperscaler capex, NVIDIA data-center demand and optical shipment forecasts all remained strong.",
+      "evidenceRefs": [
+        "microsoft-fy25q2-20250129",
+        "meta-q4-20250129",
+        "nvidia-q4fy25-20250226",
+        "tf-optical-20250205"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both 新易盛 and 中际 reported/forecast exceptional 2024 earnings growth from high-speed modules.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120",
+        "innolight-fast-20250228"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Hyperscaler capex and 800G/1.6T deployment are multi-quarter infrastructure cycles.",
+      "evidenceRefs": [
+        "meta-q4-20250129",
+        "tf-optical-20250205"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "The basket had already de-rated sharply rather than displaying crowded positive momentum.",
+      "evidenceRefs": [
+        "regime-optical-20250228"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Fundamentals and revisions are strong, but unchanged v0.9 treats the broad negative price regime as a High-priority blocker."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "300502.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Exceptional profit growth and repeated quarterly acceleration clear the quality floor.",
+      "evidenceRefs": [
+        "eoptolink-forecast-20250120",
+        "eoptolink-research-20250121"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "External AI/optical evidence strengthened while the stock/sector de-rated; the Jan21 forecast may lag continuing 800G/1.6T demand.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121",
+        "nvidia-q4fy25-20250226",
+        "tf-optical-20250205"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Frozen Jan21 reference implied about 14.5x 2025E PE despite very high growth.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q1 shipment/margin/earnings data lie inside the base horizon.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low frozen forward valuation provides some cushion, though sector de-rating remains a real risk.",
+      "evidenceRefs": [
+        "eoptolink-research-20250121",
+        "regime-optical-20250228"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300308.SZ",
+        "revisionAdvantage": "新易盛 had faster 2024/Q4 profit acceleration and similar structural demand exposure.",
+        "valuationAdvantage": "~14.5x versus 中际's 27x 2025E target framework.",
+        "qualityTradeoff": "Both pass quality; 中际 has larger scale, 新易盛 faster growth.",
+        "catalystAdvantage": "Both share 800G/1.6T demand; 新易盛's Q4 sequential acceleration gives greater revision headroom.",
+        "downsideTradeoff": "新易盛's lower frozen valuation is more forgiving.",
+        "evidenceRefs": [
+          "eoptolink-research-20250121",
+          "innolight-fast-20250228",
+          "innolight-research-20250226"
+        ],
+        "switchCondition": "Switch if 中际 shows materially stronger realized shipment/margin revisions or its valuation premium collapses.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "High-speed 800G products increased rapidly in 2024 and 800G/1.6T demand was expected to expand further in 2025.",
+    "earningsMechanism": "Higher high-speed-product shipments and mix raise revenue and profit; this mechanism already drove multi-fold 2024/Q4 earnings growth.",
+    "nextObservableMetric": "Q1 2025 high-speed-product shipment/mix, gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "eoptolink-forecast-20250120",
+      "eoptolink-research-20250121"
+    ],
+    "failureCondition": "Q1 high-speed shipment/mix or profit growth materially decelerates despite AI capex."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only because v0.9 timing is adverse despite a strong realized earnings engine and attractive pairwise asymmetry.",
+    "alreadyPricedAssessment": "negative absorption/de-rating rather than crowded pricing",
+    "constraints": [
+      "adverse 20/60d sector regime"
+    ]
+  },
+  "bearCase": "The market correctly anticipates a slowdown, architecture change, customer concentration issue or price competition not yet visible in 2024 results.",
+  "invalidationConditions": [
+    {
+      "indicator": "Q1 high-speed shipment/mix and profit",
+      "observationMethod": "next quarterly filing",
+      "threshold": "material deceleration inconsistent with the frozen 2025 bridge"
+    },
+    {
+      "indicator": "optical opportunity price regime",
+      "observationMethod": "fresh deterministic snapshot",
+      "threshold": "remains broadly adverse after new earnings evidence"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Do not promote from post-cutoff outcome."
+    ]
+  },
+  "unknowns": [
+    "customer-level order concentration",
+    "exact 1.6T revenue contribution at cutoff"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection under unchanged v0.9.",
+    "Use this holdout to test whether broad timing is too coarse for a realized idiosyncratic earnings engine."
+  ]
+}
