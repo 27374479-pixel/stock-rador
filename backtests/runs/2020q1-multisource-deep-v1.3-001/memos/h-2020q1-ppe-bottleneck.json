@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-ppe-bottleneck",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Emergency PPE shortages can move earnings quickly, but durability and price absorption must be resolved before any equity selection."
+  },
+  "changeHypothesis": {
+    "summary": "PPE and meltblown-material shortages were unquestionably real, yet listed expressions ranged from immaterial exposure to extreme prior rerating. The bottleneck itself is not enough to create a sound entry.",
+    "firstCredibleDate": "2020-03-02",
+    "valueChain": [
+      "PPE shortage",
+      "meltblown material",
+      "mask production",
+      "listed-company earnings"
+    ],
+    "persistenceReason": "Shortage can persist for weeks, but emergency capacity additions and eventual epidemic normalization can compress scarcity profits rapidly.",
+    "disconfirmingEvidence": [
+      "道恩 had already risen more than 300% from early February.",
+      "Company disclosures said meltblown-material revenue was not a high share of total revenue.",
+      "Shanghai Petrochemical capacity was direct but likely small relative to the parent business."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "who-ppe-20200303",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shanghai-meltblown-20200302",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "dawn-firstparty-20200214",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "dawn-warning-20200309",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "dawn-valuation-20200308",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-ppe-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "PPE shortage",
+      "to": "meltblown material demand",
+      "mechanism": "Mask output requires meltblown material and special polypropylene feedstock.",
+      "evidenceRefs": [
+        "who-ppe-20200303",
+        "shanghai-meltblown-20200302"
+      ],
+      "failureMode": "capacity expansion removes bottleneck",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "material demand",
+      "to": "listed-company earnings",
+      "mechanism": "Only material revenue share and sustainable pricing can create meaningful earnings.",
+      "evidenceRefs": [
+        "dawn-warning-20200309",
+        "dawn-valuation-20200308"
+      ],
+      "failureMode": "revenue share is too small or product pricing is constrained",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "meltblown material producers"
+    ],
+    "secondOrderWinners": [
+      "mask manufacturers"
+    ],
+    "losers": [
+      "PPE users paying spot scarcity"
+    ],
+    "substitutes": [
+      "new emergency capacity"
+    ],
+    "bottlenecks": [
+      "material capacity"
+    ],
+    "falseThemeMatches": [
+      "mask concepts without material revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002838.SZ",
+      "name": "道恩股份",
+      "verifiedExposure": "Direct meltblown polypropylene exposure, but earnings materiality and valuation were already problematic.",
+      "evidenceRefs": [
+        "dawn-firstparty-20200214",
+        "dawn-warning-20200309",
+        "dawn-valuation-20200308"
+      ],
+      "earningsSensitivity": {
+        "base": "Direct product demand is real but revenue share historically modest.",
+        "favorable": "Temporary shortage boosts orders.",
+        "adverse": "Capacity expansion/normalization collapses scarcity economics."
+      },
+      "principalRisks": [
+        "extreme prior rerating",
+        "~129x PE by Mar6",
+        "temporary shortage"
+      ]
+    },
+    {
+      "ticker": "600688.SH",
+      "name": "上海石化",
+      "verifiedExposure": "Direct emergency meltblown-material capacity but contribution to a large integrated petrochemical company is unproven.",
+      "evidenceRefs": [
+        "shanghai-meltblown-20200302"
+      ],
+      "earningsSensitivity": {
+        "base": "Capacity increased, but earnings materiality is unknown.",
+        "favorable": "Emergency output gains scale.",
+        "adverse": "Contribution remains immaterial to group earnings."
+      },
+      "principalRisks": [
+        "materiality uncertainty"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Do not select: one expression is extremely absorbed and the other lacks demonstrated earnings materiality."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PPE basket +137.5pp 60d excess; 道恩 alone +265pp excess and around 129x PE by early March.",
+    "thesisExpectation": "Real shortage is not enough unless listed-company earnings materiality and duration are both measurable.",
+    "measurableGap": "No candidate combines under-reflected price, material earnings exposure and durable scarcity.",
+    "evidenceRefs": [
+      "regime-ppe-20200331",
+      "dawn-valuation-20200308",
+      "dawn-warning-20200309"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "extreme_absorption_or_unproven_materiality",
+    "constraints": [
+      "extreme rerating",
+      "rapid capacity response",
+      "temporary demand"
+    ]
+  },
+  "bearCase": "Scarcity headlines peak just as new capacity arrives; concept equities de-rate before earnings can justify prices.",
+  "invalidationConditions": [
+    {
+      "indicator": "meltblown contribution",
+      "observationMethod": "company quarterly disclosure",
+      "threshold": "material sustainable earnings contribution plus normalized valuation"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a canonical 'real bottleneck does not equal buyable equity' case."
+  ]
+}
