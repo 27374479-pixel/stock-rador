@@ -1,0 +1,510 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-12-23T23:59:59+08:00",
+  "researchReadyAt": "2022-12-23T21:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q4-pv-deye",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Falling PV input prices and strong storage/microinverter demand can affect one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "PV upstream prices reversed sharply lower while leading downstream inverter/storage companies already had strong Q3 earnings. 德业 had the strongest profit/cash acceleration and was deeply de-rated, but 锦浪/阳光 also had strong engines and comparable/lower forward valuation, so no clear cross-sectional asymmetry exists.",
+    "firstCredibleDate": "2022-12-23",
+    "valueChain": [
+      "polysilicon/wafer price decline",
+      "lower system cost",
+      "PV/storage demand",
+      "inverter/storage shipments",
+      "profit"
+    ],
+    "persistenceReason": "New upstream capacity and demand economics can support lower system cost across multiple quarters.",
+    "disconfirmingEvidence": [
+      "All three PV candidates are heavily de-rated, suggesting sector-level risk may be broader than input costs.",
+      "德业 2023E PE ~35x is not obviously cheaper than 锦浪/阳光.",
+      "European household storage demand/FX could normalize."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-pv-20221223",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pv-20221223",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sungrow-q3-20221027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "ginlong-q3-20221027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "ginlong-research-20221028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "deye-q3-20221029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "deye-valuation-20221220",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "deye-research-20221031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "lower polysilicon/wafer prices",
+      "to": "lower PV system cost",
+      "mechanism": "Cheaper upstream components improve downstream installation economics.",
+      "evidenceRefs": [
+        "tf-pv-20221223"
+      ],
+      "failureMode": "price cuts reflect collapsing end demand rather than supply normalization",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "PV/storage demand",
+      "to": "inverter/storage earnings",
+      "mechanism": "Higher shipments and strong product mix drive revenue/margin; Deye/Ginlong already showed this in Q3.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "ginlong-q3-20221027",
+        "sungrow-q3-20221027"
+      ],
+      "failureMode": "Europe/storage demand or margins normalize sharply",
+      "lag": "realized"
+    },
+    {
+      "from": "de-rating",
+      "to": "potential alpha",
+      "mechanism": "If company earnings continue while the sector is deeply de-rated, expectations may be too low.",
+      "evidenceRefs": [
+        "regime-pv-20221223"
+      ],
+      "failureMode": "de-rating correctly anticipates demand/competition collapse",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "inverter/storage suppliers with strong demand and limited inventory-price loss"
+    ],
+    "secondOrderWinners": [
+      "downstream developers/installers"
+    ],
+    "losers": [
+      "upstream polysilicon/wafer producers"
+    ],
+    "substitutes": [
+      "other inverter/storage brands"
+    ],
+    "bottlenecks": [
+      "IGBT/components",
+      "overseas demand/channel inventory"
+    ],
+    "falseThemeMatches": [
+      "downstream names with weak cash/margin conversion"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "605117.SH",
+      "name": "德业股份",
+      "verifiedExposure": "Q3 storage/microinverter growth with profit +171%, YTD CFO +187%.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "deye-research-20221031"
+      ],
+      "earningsSensitivity": {
+        "base": "Dec20 2023E PE ~35.3x.",
+        "favorable": "storage/microinverter growth and lower system cost sustain >forecast earnings.",
+        "adverse": "European demand or premium multiple compresses."
+      },
+      "principalRisks": [
+        "premium valuation",
+        "overseas demand"
+      ]
+    },
+    {
+      "ticker": "300763.SZ",
+      "name": "锦浪科技",
+      "verifiedExposure": "Q3 revenue +103%, profit +144%, CFO +70%, storage orders strong.",
+      "evidenceRefs": [
+        "ginlong-q3-20221027",
+        "ginlong-research-20221028"
+      ],
+      "earningsSensitivity": {
+        "base": "Oct report 2023E PE ~30x before further de-rating.",
+        "favorable": "storage volume scales.",
+        "adverse": "channel/inventory or competition."
+      },
+      "principalRisks": [
+        "high growth expectations",
+        "channel"
+      ]
+    },
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "verifiedExposure": "Q3 profit +55% and storage/inverter scale leadership.",
+      "evidenceRefs": [
+        "sungrow-q3-20221027"
+      ],
+      "earningsSensitivity": {
+        "base": "Oct report 2023E PE ~37x.",
+        "favorable": "storage and system cost improve.",
+        "adverse": "cash conversion/competition."
+      },
+      "principalRisks": [
+        "negative YTD CFO",
+        "scale execution"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300763.SZ",
+      "name": "锦浪科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "High-growth inverter/storage peer exposed to the same PV input-cost reset.",
+      "whySelectedCompanyShouldOutperform": "德业 has faster Q3 profit and stronger CFO/margin expansion, but 锦浪 has lower forward valuation and strong growth.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "deye-valuation-20221220",
+        "ginlong-q3-20221027",
+        "ginlong-research-20221028"
+      ]
+    },
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Global inverter/storage leader exposed to the same downstream demand benefit.",
+      "whySelectedCompanyShouldOutperform": "德业 has much faster current profit/cash growth, while 阳光 has scale/brand advantages.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "sungrow-q3-20221027"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "605117.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300763.SZ",
+        "selectedAdvantages": [
+          "faster Q3 profit growth",
+          "higher CFO growth",
+          "higher storage/microinverter margins"
+        ],
+        "selectedDisadvantages": [
+          "锦浪 frozen 2023E valuation was lower and its expected growth remained very high"
+        ],
+        "evidenceRefs": [
+          "deye-q3-20221029",
+          "deye-valuation-20221220",
+          "ginlong-q3-20221027",
+          "ginlong-research-20221028"
+        ],
+        "switchCondition": "Prefer 锦浪 if valuation-adjusted earnings growth remains superior and cash conversion stays strong.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "300274.SZ",
+        "selectedAdvantages": [
+          "faster profit/cash acceleration"
+        ],
+        "selectedDisadvantages": [
+          "阳光 has larger scale, broader product mix and established global channels"
+        ],
+        "evidenceRefs": [
+          "deye-q3-20221029",
+          "sungrow-q3-20221027"
+        ],
+        "switchCondition": "Prefer 阳光 if its storage earnings revisions accelerate at lower effective valuation.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Deye is a strong research representative, but the group contains multiple credible de-rated engines; no clear asymmetry supports High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The whole downstream basket was sharply de-rated: 20d excess around -20.9pp and 60d -25.9pp. Deye Dec20 2023E PE ~35.3x, while peers also had strong growth and comparable/lower forward multiples.",
+    "thesisExpectation": "Lower PV system costs plus storage/microinverter demand sustain high earnings growth.",
+    "measurableGap": "There is sector-level de-rating, but not a clear company-specific expectation gap versus peers.",
+    "evidenceRefs": [
+      "regime-pv-20221223",
+      "deye-valuation-20221220",
+      "ginlong-research-20221028",
+      "sungrow-q3-20221027"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE versus realized growth/cash conversion across inverter/storage peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Deye Dec20 2023E PE ~35.3x; Ginlong Oct 2023E PE ~30x; Sungrow Oct 2023E PE ~37x.",
+    "thesisScenario": "Deye storage/microinverter growth remains above peer forecasts as input costs fall.",
+    "breakevenCondition": "Deye must sustain clearly superior revisions to justify a valuation not lower than Ginlong.",
+    "ordinaryScenarioFailure": "All three benefit from lower costs, leaving no selected-company alpha despite sector rebound.",
+    "catalystOrTimingBridge": "Q4/early-2023 shipments/margins/results within base horizon.",
+    "evidenceRefs": [
+      "deye-valuation-20221220",
+      "ginlong-research-20221028",
+      "sungrow-q3-20221027"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q3 Deye/Ginlong/Sungrow earnings improved and PV upstream costs began falling.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "ginlong-q3-20221027",
+        "sungrow-q3-20221027",
+        "tf-pv-20221223"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Deye Q3 profit +171% and CFO +187% YTD.",
+      "evidenceRefs": [
+        "deye-q3-20221029"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Multiple peers also have strong realized conversion.",
+      "evidenceRefs": [
+        "ginlong-q3-20221027",
+        "sungrow-q3-20221027"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Input-cost collapse is newer than Q3 forecasts, but demand effects are uncertain.",
+      "evidenceRefs": [
+        "tf-pv-20221223",
+        "deye-valuation-20221220"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "All frozen PV downstream names are deeply de-rated.",
+      "evidenceRefs": [
+        "regime-pv-20221223"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen PV downstream basket vs CSI300",
+      "lookback20Excess": -0.20928719299254486,
+      "lookback60Excess": -0.2590076490921137,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-pv-20221223"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Company earnings remain strong while upstream input deflation improves downstream economics.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "tf-pv-20221223"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "All three peers showed strong Q3 profit growth or positive forecasts.",
+      "evidenceRefs": [
+        "deye-q3-20221029",
+        "ginlong-q3-20221027",
+        "sungrow-q3-20221027"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Upstream capacity release and lower system cost can persist into 2023.",
+      "evidenceRefs": [
+        "tf-pv-20221223"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "Basket is deeply de-rated rather than crowded.",
+      "evidenceRefs": [
+        "regime-pv-20221223"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Fundamentals and price are divergent, but no single company has enough peer asymmetry to use the override."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "605117.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit, margin and cash conversion.",
+      "evidenceRefs": [
+        "deye-q3-20221029"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Storage/microinverter growth plus lower system cost can sustain revisions.",
+      "evidenceRefs": [
+        "deye-research-20221031",
+        "tf-pv-20221223"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Dec20 2023E PE ~35x is not clearly cheaper than strong peers.",
+      "evidenceRefs": [
+        "deye-valuation-20221220",
+        "ginlong-research-20221028",
+        "sungrow-q3-20221027"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q4/early-2023 shipments and results lie inside base horizon.",
+      "evidenceRefs": [
+        "deye-research-20221031"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Deep de-rating and strong cash conversion help, though valuation/growth expectations remain meaningful.",
+      "evidenceRefs": [
+        "regime-pv-20221223",
+        "deye-q3-20221029"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300763.SZ",
+        "revisionAdvantage": "Deye has faster current profit/CFO, but Ginlong also has strong storage growth.",
+        "valuationAdvantage": "Ginlong has lower frozen forward PE.",
+        "qualityTradeoff": "Both pass; Deye cash growth is stronger.",
+        "catalystAdvantage": "Both benefit from storage and lower PV costs.",
+        "downsideTradeoff": "Both are de-rated; Ginlong's lower valuation offsets Deye's stronger current quality.",
+        "evidenceRefs": [
+          "deye-q3-20221029",
+          "deye-valuation-20221220",
+          "ginlong-q3-20221027",
+          "ginlong-research-20221028"
+        ],
+        "switchCondition": "Switch if Ginlong maintains comparable cash conversion and lower burden.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "300274.SZ",
+        "revisionAdvantage": "Deye current profit growth is faster.",
+        "valuationAdvantage": "Valuations are both growth-premium and not decisively separated.",
+        "qualityTradeoff": "Sungrow has much larger scale; Deye stronger current growth/cash.",
+        "catalystAdvantage": "Both benefit from storage/PV economics.",
+        "downsideTradeoff": "Sungrow scale vs Deye de-rating/cash creates a balanced tradeoff.",
+        "evidenceRefs": [
+          "deye-q3-20221029",
+          "sungrow-q3-20221027"
+        ],
+        "switchCondition": "Switch if Sungrow storage revision growth accelerates or Deye European demand weakens.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Storage/microinverter shipments and margins already accelerated; falling upstream PV costs improve end-market economics.",
+    "earningsMechanism": "Higher storage/microinverter mix and volume lift revenue/margin; lower PV system costs can support downstream demand.",
+    "nextObservableMetric": "Q4 storage/microinverter shipments, gross margin and CFO",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "deye-q3-20221029",
+      "deye-research-20221031"
+    ],
+    "failureCondition": "Storage/microinverter shipment or margin growth slows materially despite lower system costs."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: de-rated and strong, but cross-sectional asymmetry is mixed and forward valuation is not uniquely cheap.",
+    "alreadyPricedAssessment": "de-rated at sector level; company differentiation unresolved",
+    "constraints": [
+      "peer competition",
+      "valuation",
+      "overseas demand"
+    ]
+  },
+  "bearCase": "PV/input-cost relief is real but industry competition/channel inventories cause all inverter peers to de-rate together.",
+  "invalidationConditions": [
+    {
+      "indicator": "storage/microinverter growth",
+      "observationMethod": "Q4/next report",
+      "threshold": "shipment/margin/CFO decelerates materially"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "cutoff-specific Ginlong/Sungrow consensus revisions after Dec price decline",
+    "European channel inventory"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research only; no High-priority because selected-vs-peer asymmetry is mixed."
+  ]
+}
