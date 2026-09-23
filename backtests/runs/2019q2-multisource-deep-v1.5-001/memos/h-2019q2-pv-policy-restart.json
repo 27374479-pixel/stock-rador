@@ -1,0 +1,640 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "researchReadyAt": "2019-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q2-pv-policy-restart",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Concrete project lists and 2019 construction rules can affect shipments/orders over the next one to two quarters; 60d is the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601012.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Q1 revenue +64.6%, profit +12.5%,扣非 +17.8% and operating cash flow turned strongly positive; June forecast implied about 19x 2019E PE, but sector price regime was neutral.",
+      "evidenceRefs": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530",
+        "longi-q1-20190430",
+        "pv-industry-20190630",
+        "regime-pv-20190630"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Q1 revenue +18.1%, profit +53.4%; cutoff forecast around 16x 2019E PE with polysilicon/cell cost advantages, though upstream pricing/capacity risks differ from Longi.",
+      "evidenceRefs": [
+        "tongwei-research-20190418",
+        "nea-pv-build-20190530",
+        "regime-pv-20190630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "After earlier PV policy uncertainty, parity-project lists and formal 2019 construction rules made the domestic project pipeline executable while leading companies already showed strong Q1 company engines.",
+    "firstCredibleDate": "2019-05-20",
+    "valueChain": [
+      "project policy reset",
+      "project/installation demand",
+      "wafer/cell/module shipments",
+      "company earnings/cash flow"
+    ],
+    "persistenceReason": "Domestic project restart plus overseas demand and cost reductions can persist across quarters.",
+    "disconfirmingEvidence": [
+      "PV basket underperformed CSI300 in the final 20d.",
+      "Different PV segments face different pricing/capacity pressure.",
+      "Policy restart may already be anticipated by the market."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nea-pv-parity-20190520",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "nea-pv-build-20190530",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "longi-q1-20190430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "pv-industry-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tongwei-research-20190418",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sunshine-q1-20190429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pv-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "2019 PV project restart",
+      "to": "project/installation demand",
+      "mechanism": "Parity and competitive-project frameworks convert policy uncertainty into an executable pipeline.",
+      "evidenceRefs": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530"
+      ],
+      "failureMode": "project connections/financing or bidding economics disappoint",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "project demand/company cost advantage",
+      "to": "earnings",
+      "mechanism": "Higher wafer/cell/module volumes plus cost reductions support leading-company revenue/margins.",
+      "evidenceRefs": [
+        "longi-q1-20190430",
+        "tongwei-research-20190418"
+      ],
+      "failureMode": "price declines/overcapacity offset volume",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost wafer/module producers",
+      "efficient cell/polysilicon producers"
+    ],
+    "secondOrderWinners": [
+      "inverters",
+      "EPC"
+    ],
+    "losers": [
+      "high-cost capacity"
+    ],
+    "substitutes": [
+      "other renewable generation"
+    ],
+    "bottlenecks": [
+      "grid connection",
+      "competitive bid economics"
+    ],
+    "falseThemeMatches": [
+      "PV names without cost/volume earnings conversion"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "Direct mono-wafer/module exposure with strong Q1 volume/cash conversion.",
+      "evidenceRefs": [
+        "longi-q1-20190430",
+        "pv-industry-20190630"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +64.6%, profit +12.5%; 2019E EPS 1.21 at ~19x PE.",
+        "favorable": "Domestic project restart plus overseas demand/cost reductions drive revisions.",
+        "adverse": "Price competition/overcapacity offsets volume."
+      },
+      "principalRisks": [
+        "sector pricing",
+        "policy execution"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Direct polysilicon/cell plus agriculture earnings; strong Q1 PV-driven profit growth.",
+      "evidenceRefs": [
+        "tongwei-research-20190418"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit +53.4%; 2019E EPS 0.85 at ~16x PE.",
+        "favorable": "New low-cost capacity and project demand sustain growth.",
+        "adverse": "Polysilicon/cell prices compress faster than costs."
+      },
+      "principalRisks": [
+        "upstream overcapacity",
+        "commodity pricing"
+      ]
+    },
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "verifiedExposure": "Inverter/project exposure.",
+      "evidenceRefs": [
+        "sunshine-q1-20190429"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +30.1% but profit -15.6%.",
+        "favorable": "Installations lift inverter/EPC earnings.",
+        "adverse": "Margin/project pressure persists."
+      },
+      "principalRisks": [
+        "weak Q1 profit"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Downstream inverter/project expression exposed to the same project restart.",
+      "whySelectedCompanyShouldOutperform": "Longi has stronger frozen realized earnings/cash-flow conversion and a cleaner cost/volume engine.",
+      "evidenceRefs": [
+        "sunshine-q1-20190429",
+        "regime-pv-20190630"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601012.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300274.SZ",
+        "selectedAdvantages": [
+          "Q1 revenue/扣非 profit growth and cash-flow turn",
+          "explicit cost/volume engine",
+          "moderate forward valuation"
+        ],
+        "selectedDisadvantages": [
+          "wafer/module pricing risk"
+        ],
+        "evidenceRefs": [
+          "longi-q1-20190430",
+          "pv-industry-20190630",
+          "sunshine-q1-20190429"
+        ],
+        "switchCondition": "Prefer Sungrow if inverter/project margins and earnings revisions become clearly stronger with better expectation room.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Longi and Tongwei are acceptable company-engine expressions, but neutral broad timing keeps the policy restart at Research rather than Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PV basket was neutral: positive 60d but all names underperformed CSI300 over the final 20d. Longi/Tongwei forward valuations were moderate relative to Q1 growth.",
+    "thesisExpectation": "Policy restart plus realized company cost/volume engines can keep earnings revisions positive despite sector-level price weakness.",
+    "measurableGap": "Company fundamentals are stronger than the final-20d sector price signal, but broad confirmation is incomplete.",
+    "evidenceRefs": [
+      "regime-pv-20190630",
+      "longi-q1-20190430",
+      "pv-industry-20190630",
+      "tongwei-research-20190418"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward EPS/PE and realized Q1 cash earnings versus neutral sector price regime and product-level pricing risk.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Longi 2019E EPS 1.21 at ~19.1x PE; Tongwei 2019E EPS 0.85 at ~16x PE in cutoff-valid research.",
+    "thesisScenario": "Policy/project restart and company cost advantages produce revisions above these moderate baselines.",
+    "breakevenCondition": "Volume/cost improvement must offset ongoing module/polysilicon price pressure.",
+    "ordinaryScenarioFailure": "Policy restart occurs but sector pricing pressure absorbs the incremental volume.",
+    "catalystOrTimingBridge": "Project allocation, shipments and interim earnings are observable within 60d.",
+    "evidenceRefs": [
+      "regime-pv-20190630",
+      "longi-q1-20190430",
+      "pv-industry-20190630",
+      "tongwei-research-20190418"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Concrete project lists/rules improve domestic demand visibility.",
+      "evidenceRefs": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Longi and Tongwei already showed strong Q1 operating/profit conversion.",
+      "evidenceRefs": [
+        "longi-q1-20190430",
+        "tongwei-research-20190418"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "60d relative strength remained positive in Longi/Tongwei but final20 breadth was negative.",
+      "evidenceRefs": [
+        "regime-pv-20190630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Cutoff research provides quantified 2019-21 earnings paths.",
+      "evidenceRefs": [
+        "pv-industry-20190630",
+        "tongwei-research-20190418"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Sector had rerated over 60d but de-rated in the final 20d.",
+      "evidenceRefs": [
+        "regime-pv-20190630"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": -0.08130758913954801,
+      "lookback60Excess": 0.04418418394727086,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-pv-20190630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Policy uncertainty resolved into executable projects while leading companies grew.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530",
+        "longi-q1-20190430",
+        "tongwei-research-20190418"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both leading frozen expressions have positive earnings paths.",
+      "evidenceRefs": [
+        "pv-industry-20190630",
+        "tongwei-research-20190418"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Domestic/overseas installations and cost reductions span multiple quarters.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530",
+        "pv-industry-20190630"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Final20 de-rating reduces chase risk, but sector pricing remains uncertain.",
+      "evidenceRefs": [
+        "regime-pv-20190630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Company engines are strong, but broad price confirmation remains neutral."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601012.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Longi has realized Q1 growth and positive operating cash flow.",
+      "evidenceRefs": [
+        "longi-q1-20190430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Policy restart and cost/volume advantages can support revisions.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530",
+        "pv-industry-20190630"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Cutoff forward PE near 19x is not extreme relative to realized volume growth.",
+      "evidenceRefs": [
+        "pv-industry-20190630"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Project allocations, shipments and interim earnings are near-term.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Cost leadership and positive cash flow support downside containment, while sector pricing remains a risk.",
+      "evidenceRefs": [
+        "longi-q1-20190430"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300274.SZ",
+        "revisionAdvantage": "Longi has stronger realized profit/cash-flow evidence and explicit cost leadership.",
+        "valuationAdvantage": "Longi's forward valuation is moderate relative to growth; no extreme premium is required.",
+        "qualityTradeoff": "Sungrow Q1 profit declined despite revenue growth.",
+        "catalystAdvantage": "Both benefit from project restart; Longi has stronger frozen company conversion.",
+        "downsideTradeoff": "Longi remains exposed to wafer/module pricing, while Sungrow has project/EPC risk.",
+        "switchCondition": "Switch if inverter/project earnings revisions materially surpass Longi's.",
+        "evidenceRefs": [
+          "longi-q1-20190430",
+          "sunshine-q1-20190429",
+          "pv-industry-20190630"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "2019 project lists/construction rules improve installation visibility while leaders already show volume growth.",
+    "earningsMechanism": "More shipments plus cost reductions support revenue, margins and cash flow.",
+    "nextObservableMetric": "project allocations, wafer/module/cell shipments, interim profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "nea-pv-build-20190530",
+      "longi-q1-20190430",
+      "tongwei-research-20190418"
+    ],
+    "failureCondition": "Project restart fails to offset pricing/overcapacity pressure."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Longi Q1 revenue +64.6%, profit +12.5%; Tongwei Q1 profit +53.4%.",
+      "nextPeriod": "Longi 2019/20 EPS 1.21/1.63; Tongwei 0.85/1.03.",
+      "laterPeriod": "Longi 2021 EPS 2.04; Tongwei 1.17.",
+      "rationale": "Cutoff forecasts already assume continued company growth at moderate multiples.",
+      "evidenceRefs": [
+        "pv-industry-20190630",
+        "tongwei-research-20190418"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Policy restart improves shipment visibility.",
+      "nextPeriodChange": "Cost leadership and overseas/domestic volume can lift 2019-20 estimates.",
+      "laterPeriodChange": "Long-run returns require continuing technology/cost leadership rather than policy alone.",
+      "mechanism": "Company engine can outperform sector beta even with mixed product prices.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530",
+        "longi-q1-20190430",
+        "tongwei-research-20190418"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Policy restart adds a fresh demand layer to already-strong company engines.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530",
+        "longi-q1-20190430"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Structural cost/technology advantages can persist but sector cycles remain material.",
+      "evidenceRefs": [
+        "pv-industry-20190630"
+      ]
+    },
+    "falsifier": "Shipments/earnings fail to exceed the frozen baseline after policy restart.",
+    "overallConclusion": "credible_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "PV project restart with separate wafer/module, polysilicon/cell, and inverter economics",
+    "geographicScope": "China projects plus company overseas demand",
+    "customerScope": "PV project developers/EPC and downstream module/cell buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo preserves different segment economics through expression-specific earnings bridges rather than assuming equal sector benefit.",
+    "evidenceRefs": [
+      "nea-pv-build-20190530",
+      "longi-q1-20190430",
+      "tongwei-research-20190418"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "company growth is strong but final20 sector prices de-rated",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "longi-q1-20190430",
+        "regime-pv-20190630"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "project restart plus realized cost/volume engines",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "nea-pv-build-20190530",
+        "pv-industry-20190630",
+        "tongwei-research-20190418"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "grid parity and technology/cost leadership",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "nea-pv-parity-20190520",
+        "pv-industry-20190630"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not let short-term sector de-rating erase verified company engines; keep Research until broad timing or company-specific override criteria strengthen.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Longi/Tongwei Q1 engines were strong while the sector's final20 price signal was weak.",
+    "evidenceRefs": [
+      "longi-q1-20190430",
+      "tongwei-research-20190418",
+      "regime-pv-20190630"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "May project rules are new incremental demand-policy evidence.",
+      "evidenceRefs": [
+        "nea-pv-build-20190530"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Leading companies already show Q1 earnings/cash-flow conversion.",
+      "evidenceRefs": [
+        "longi-q1-20190430",
+        "tongwei-research-20190418"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Cutoff forecasts remain positive.",
+      "evidenceRefs": [
+        "pv-industry-20190630",
+        "tongwei-research-20190418"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Grid parity/cost leadership provide multi-quarter duration.",
+      "evidenceRefs": [
+        "nea-pv-parity-20190520",
+        "pv-industry-20190630"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Policy restart fails to generate shipment/earnings revisions.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "601012.SH",
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Longi is preferred for company-engine evidence and moderate expectation burden, not for sector purity.",
+    "earningsQualityComparison": "Tongwei also passes; Sungrow Q1 profit decline weakens its current conversion.",
+    "downsideComparison": "Cost leadership and cash flow are co-equal with direct exposure.",
+    "evidenceRefs": [
+      "longi-q1-20190430",
+      "tongwei-research-20190418",
+      "sunshine-q1-20190429"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong realized company engines and reasonable forward valuations, but neutral sector timing prevents normal High-priority promotion.",
+    "alreadyPricedAssessment": "company_engines_strong_sector_timing_neutral",
+    "constraints": [
+      "sector price pressure",
+      "neutral broad timing",
+      "different segment economics"
+    ]
+  },
+  "bearCase": "PV policy restarts projects but price competition/overcapacity absorbs the volume benefit before estimates rise.",
+  "invalidationConditions": [
+    {
+      "indicator": "shipments/project pipeline",
+      "observationMethod": "industry/company data",
+      "threshold": "no pickup after policy restart"
+    },
+    {
+      "indicator": "company margins/cash flow",
+      "observationMethod": "interim results",
+      "threshold": "cost leadership fails to offset price declines"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze Longi/Tongwei as Research expressions; do not force base-horizon route because this is not a finite-expiry thesis."
+  ]
+}
