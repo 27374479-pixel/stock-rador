@@ -1,0 +1,495 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-10-31T23:59:59+08:00",
+  "researchReadyAt": "2022-10-31T20:30:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q4-chip-naura",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Domestic equipment orders and localization can affect one to two reporting cycles, but Q4 entry timing is complicated by prior rerating."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "US controls strengthened the domestic semiconductor-equipment substitution case, and 北方华创 had already converted localization demand into very strong Q3 revenue/profit. However, the stock had already outperformed materially over 60d and then turned weak over 20d, while forward valuation remained high.",
+    "firstCredibleDate": "2022-10-07",
+    "valueChain": [
+      "US equipment restrictions",
+      "domestic fab localization",
+      "domestic equipment orders",
+      "revenue/profit"
+    ],
+    "persistenceReason": "Export restrictions are structural and customer localization needs are multi-quarter.",
+    "disconfirmingEvidence": [
+      "北方华创 price state is late_reversal.",
+      "2023E PE was still roughly mid-30s to high-40s depending frozen forecast date.",
+      "Customer fab capex can be disrupted by the same restrictions."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-chip-controls-20221007",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-chip-controls-20221008",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-chip-response-20221013",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-chip-20221031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "naura-q3-20221029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "naura-valuation-20221012",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "changchuan-q3-20221028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "pncs-q3-20221029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "US equipment restrictions",
+      "to": "domestic localization demand",
+      "mechanism": "Restricted imported equipment increases strategic demand for qualified domestic tools.",
+      "evidenceRefs": [
+        "reuters-chip-controls-20221007",
+        "tf-chip-controls-20221008"
+      ],
+      "failureMode": "fab capex pauses faster than localization orders grow",
+      "lag": "quarters"
+    },
+    {
+      "from": "localization demand",
+      "to": "北方华创 earnings",
+      "mechanism": "Q3 revenue/profit already accelerated sharply under strong downstream orders.",
+      "evidenceRefs": [
+        "naura-q3-20221029"
+      ],
+      "failureMode": "order conversion slows or customer capex is delayed",
+      "lag": "realized"
+    },
+    {
+      "from": "earnings engine",
+      "to": "stock alpha",
+      "mechanism": "Further alpha requires new revisions beyond what the prior 60d rerating already embedded.",
+      "evidenceRefs": [
+        "naura-valuation-20221012",
+        "regime-chip-20221031"
+      ],
+      "failureMode": "good earnings merely confirm already-priced localization",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified domestic semiconductor-equipment suppliers"
+    ],
+    "secondOrderWinners": [
+      "parts/service suppliers"
+    ],
+    "losers": [
+      "foreign equipment vendors restricted from China"
+    ],
+    "substitutes": [
+      "alternative domestic/import-permitted tools"
+    ],
+    "bottlenecks": [
+      "qualification/yield/customer capex"
+    ],
+    "falseThemeMatches": [
+      "semiconductor-theme names without actual equipment orders"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002371.SZ",
+      "name": "北方华创",
+      "verifiedExposure": "Q3 revenue +78%, profit +168% with broad semiconductor-equipment product exposure.",
+      "evidenceRefs": [
+        "naura-q3-20221029"
+      ],
+      "earningsSensitivity": {
+        "base": "2023E profit RMB3.438bn in Oct12 report.",
+        "favorable": "localization orders continue above forecast.",
+        "adverse": "restrictions slow fab capex or valuation compresses."
+      },
+      "principalRisks": [
+        "late reversal",
+        "high valuation",
+        "capex timing"
+      ]
+    },
+    {
+      "ticker": "300604.SZ",
+      "name": "长川科技",
+      "verifiedExposure": "Semiconductor test equipment with YTD profit +151%.",
+      "evidenceRefs": [
+        "changchuan-q3-20221028"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit +101%.",
+        "favorable": "test demand/localization continues.",
+        "adverse": "cycle/capex weakens."
+      },
+      "principalRisks": [
+        "smaller scale",
+        "sustained-strength pricing"
+      ]
+    },
+    {
+      "ticker": "603690.SH",
+      "name": "至纯科技",
+      "verifiedExposure": "High-purity systems and semiconductor equipment; Q3 revenue/profit both >100%.",
+      "evidenceRefs": [
+        "pncs-q3-20221029"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 strong but YTD attributable profit still -13.6% and CFO negative.",
+        "favorable": "equipment mix continues.",
+        "adverse": "cash conversion weak."
+      },
+      "principalRisks": [
+        "negative CFO",
+        "mixed YTD profit"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300604.SZ",
+      "name": "长川科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Domestic semiconductor test-equipment peer benefiting from localization.",
+      "whySelectedCompanyShouldOutperform": "北方华创 has broader product coverage and stronger profit scale, but both were strongly rerated.",
+      "evidenceRefs": [
+        "naura-q3-20221029",
+        "changchuan-q3-20221028"
+      ]
+    },
+    {
+      "ticker": "603690.SH",
+      "name": "至纯科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Domestic semiconductor equipment/high-purity systems peer.",
+      "whySelectedCompanyShouldOutperform": "北方华创 has cleaner attributable-profit and cash-quality evidence; 至纯 YTD attributable profit and CFO are weaker.",
+      "evidenceRefs": [
+        "naura-q3-20221029",
+        "pncs-q3-20221029"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002371.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300604.SZ",
+        "selectedAdvantages": [
+          "broader platform",
+          "larger realized earnings scale"
+        ],
+        "selectedDisadvantages": [
+          "长川 also has strong realized growth and stronger recent 20d relative price"
+        ],
+        "evidenceRefs": [
+          "naura-q3-20221029",
+          "changchuan-q3-20221028",
+          "regime-chip-20221031"
+        ],
+        "switchCondition": "Prefer 长川 if its realized order/profit revisions remain faster at lower expectation burden.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "603690.SH",
+        "selectedAdvantages": [
+          "cleaner YTD attributable profit",
+          "stronger balance/cash quality"
+        ],
+        "selectedDisadvantages": [
+          "至纯 Q3 growth is also strong and may have lower expectation burden"
+        ],
+        "evidenceRefs": [
+          "naura-q3-20221029",
+          "pncs-q3-20221029"
+        ],
+        "switchCondition": "Prefer 至纯 if cash conversion improves and valuation/revisions become superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "北方华创 is the quality representative, but the prior rerating and strong peer conversion prevent a clear High-priority asymmetry."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Localization and strong Q3 earnings were public. Oct12 reference implied ~34.7x 2023E PE; by Oct31 the stock had +20.7pp 60d benchmark excess but -0.26pp 20d excess, a late_reversal.",
+    "thesisExpectation": "Structural localization can sustain order/earnings growth.",
+    "measurableGap": "The company engine is strong, but incremental upside beyond already-priced localization is not clean.",
+    "evidenceRefs": [
+      "naura-valuation-20221012",
+      "regime-chip-20221031"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus incremental localization revisions versus domestic equipment peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Oct12 forecast 2023E profit RMB3.438bn at ~34.66x PE; Q3 growth already exceeded 100%.",
+    "thesisScenario": "Restrictions create additional domestic orders above the already-raised earnings baseline.",
+    "breakevenCondition": "New localization revisions must exceed premium already embedded by prior 60d rerating.",
+    "ordinaryScenarioFailure": "Q3 strength and policy merely confirm the existing localization consensus and multiple compresses.",
+    "catalystOrTimingBridge": "New orders/Q4 results within 60d.",
+    "evidenceRefs": [
+      "naura-valuation-20221012",
+      "regime-chip-20221031",
+      "naura-q3-20221029"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q3 revenue/profit and localization policy impulse were strong.",
+      "evidenceRefs": [
+        "naura-q3-20221029",
+        "reuters-chip-controls-20221007"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q3 profit +167.7% directly confirms earnings conversion.",
+      "evidenceRefs": [
+        "naura-q3-20221029"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Peers also have strong Q3 conversion.",
+      "evidenceRefs": [
+        "changchuan-q3-20221028",
+        "pncs-q3-20221029"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "mixed",
+      "rationale": "Forecasts were already raised around the strong Q3 preannouncement.",
+      "evidenceRefs": [
+        "naura-valuation-20221012"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "60d rerating followed by 20d relative reversal.",
+      "evidenceRefs": [
+        "regime-chip-20221031"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen chip-equipment basket vs CSI300",
+      "lookback20Excess": 0.036455385959449305,
+      "lookback60Excess": 0.2501685991693868,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-chip-20221031"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Localization pressure is structural.",
+      "evidenceRefs": [
+        "reuters-chip-controls-20221007",
+        "tf-chip-controls-20221008"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Multiple equipment peers reported strong Q3 growth.",
+      "evidenceRefs": [
+        "naura-q3-20221029",
+        "changchuan-q3-20221028",
+        "pncs-q3-20221029"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "structural",
+      "rationale": "Export controls/localization are multi-year forces.",
+      "evidenceRefs": [
+        "reuters-chip-response-20221013"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "60d equipment rerating is large and 北方华创 has shifted to late_reversal.",
+      "evidenceRefs": [
+        "regime-chip-20221031"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamentals are excellent but timing is impaired by expectation absorption."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002371.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong earnings scale and Q3 profitability clear quality.",
+      "evidenceRefs": [
+        "naura-q3-20221029"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Structural localization can sustain orders, but much is already known.",
+      "evidenceRefs": [
+        "reuters-chip-response-20221013",
+        "naura-q3-20221029"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "2023E PE remained premium even before the late-October results.",
+      "evidenceRefs": [
+        "naura-valuation-20221012"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q4 orders/results are inside base horizon.",
+      "evidenceRefs": [
+        "naura-q3-20221029"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong fundamentals help, but late-reversal and premium valuation create de-rating risk.",
+      "evidenceRefs": [
+        "regime-chip-20221031",
+        "naura-valuation-20221012"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300604.SZ",
+        "revisionAdvantage": "Both have strong localization growth; no decisive revision edge.",
+        "valuationAdvantage": "No clean selected valuation edge frozen.",
+        "qualityTradeoff": "北方 larger/broader; 长川 faster YTD growth.",
+        "catalystAdvantage": "Both benefit from localization orders.",
+        "downsideTradeoff": "Both carry prior-rerating risk.",
+        "evidenceRefs": [
+          "naura-q3-20221029",
+          "changchuan-q3-20221028",
+          "regime-chip-20221031"
+        ],
+        "switchCondition": "Switch if 长川 sustains faster revisions at lower burden.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "603690.SH",
+        "revisionAdvantage": "北方 has cleaner broad-equipment order scale.",
+        "valuationAdvantage": "No decisive frozen valuation edge.",
+        "qualityTradeoff": "北方 cleaner YTD attributable profit and cash profile.",
+        "catalystAdvantage": "Both have localization demand.",
+        "downsideTradeoff": "至纯 negative CFO adds risk.",
+        "evidenceRefs": [
+          "naura-q3-20221029",
+          "pncs-q3-20221029"
+        ],
+        "switchCondition": "Switch if 至纯 cash conversion normalizes and revisions remain faster.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "order_backlog",
+    "driverChange": "Domestic semiconductor-equipment demand/orders already drove Q3 revenue/profit acceleration.",
+    "earningsMechanism": "Higher qualified equipment shipments raise revenue and operating profit.",
+    "nextObservableMetric": "Q4 equipment revenue/profit and order commentary",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "naura-q3-20221029"
+    ],
+    "failureCondition": "Q4 orders/revenue/profit decelerate materially despite localization narrative."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only because premium valuation and late-reversal expectation absorption offset strong fundamentals.",
+    "alreadyPricedAssessment": "high absorption risk",
+    "constraints": [
+      "late_reversal",
+      "premium valuation",
+      "strong peer revisions"
+    ]
+  },
+  "bearCase": "Localization remains structurally bullish, but the stock de-rates because Q3/policy already captured the expected revisions.",
+  "invalidationConditions": [
+    {
+      "indicator": "incremental order/revision growth",
+      "observationMethod": "Q4 update",
+      "threshold": "no new acceleration beyond Q3 baseline"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "point-in-time full consensus dispersion",
+    "customer capex timing"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; do not upgrade on the policy headline after late reversal."
+  ]
+}
