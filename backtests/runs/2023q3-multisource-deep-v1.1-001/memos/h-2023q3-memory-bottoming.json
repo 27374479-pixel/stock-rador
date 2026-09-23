@@ -1,0 +1,429 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2023-08-31T23:59:59+08:00",
+  "researchReadyAt": "2023-08-31T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q3-memory-bottoming",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Production cuts may first stabilize prices, then enter company margins over one to two quarters."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "DRAM declines narrowed and supplier production cuts were working, but NAND remained oversupplied and representative A-share memory companies still reported steep H1 profit declines. 兆易创新 had the strongest quality floor among core peers but no fresh realized earnings bridge.",
+    "firstCredibleDate": "2023-07-05",
+    "valueChain": [
+      "production cuts",
+      "price stabilization",
+      "inventory normalization",
+      "gross margin/profit"
+    ],
+    "persistenceReason": "Supplier discipline can last multiple quarters, but demand visibility remained conditional.",
+    "disconfirmingEvidence": [
+      "Memory basket remained adverse through Aug31.",
+      "兆易 H1 profit -78%; 北京君正 -56.5%.",
+      "NAND oversupply and inventory remained material."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-dram-20230705",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-nand-20230706",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-memory-outlook-20230830",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20230831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-h1-20230829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "junzheng-h1-20230831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "supplier cuts",
+      "to": "less-negative memory pricing",
+      "mechanism": "Lower production slows inventory accumulation and narrows ASP declines.",
+      "evidenceRefs": [
+        "tf-dram-20230705",
+        "tf-memory-outlook-20230830"
+      ],
+      "failureMode": "demand remains too weak or cuts reverse",
+      "lag": "quarters"
+    },
+    {
+      "from": "pricing stabilization",
+      "to": "company margin/profit",
+      "mechanism": "Stable/higher ASP can improve gross margin after inventory effects normalize.",
+      "evidenceRefs": [
+        "giga-h1-20230829",
+        "junzheng-h1-20230831"
+      ],
+      "failureMode": "inventory/product mix delays conversion",
+      "lag": "quarters"
+    },
+    {
+      "from": "profit inflection",
+      "to": "stock alpha",
+      "mechanism": "Selection requires realized or quantitative profit bridge; only proxy evidence exists at cutoff.",
+      "evidenceRefs": [
+        "regime-memory-20230831"
+      ],
+      "failureMode": "stocks remain de-rated because earnings inflection fails",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "memory suppliers when pricing turns"
+    ],
+    "secondOrderWinners": [
+      "storage/module suppliers with favorable inventory"
+    ],
+    "losers": [
+      "OEMs if memory costs recover"
+    ],
+    "substitutes": [
+      "alternative generations/vendors"
+    ],
+    "bottlenecks": [
+      "inventory normalization"
+    ],
+    "falseThemeMatches": [
+      "memory names without margin recovery"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Core memory/MCU supplier with positive earnings and improving CFO despite cycle pressure.",
+      "evidenceRefs": [
+        "giga-h1-20230829"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit -78%.",
+        "favorable": "price stabilization drives H2 margin recovery.",
+        "adverse": "demand/inventory weakness persists."
+      },
+      "principalRisks": [
+        "no realized inflection",
+        "adverse sector regime"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "DRAM/memory exposure; H1 profit -56.5%.",
+      "evidenceRefs": [
+        "junzheng-h1-20230831"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit still deeply down.",
+        "favorable": "memory margins recover.",
+        "adverse": "industrial/auto demand remains weak."
+      },
+      "principalRisks": [
+        "slow recovery"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct listed memory peer in the same downcycle.",
+      "whySelectedCompanyShouldOutperform": "兆易 had somewhat stronger cash/profit quality and broader product base; neither had realized the new bottoming signal.",
+      "evidenceRefs": [
+        "giga-h1-20230829",
+        "junzheng-h1-20230831"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "selectedAdvantages": [
+          "stronger cash-flow improvement",
+          "broader product base"
+        ],
+        "selectedDisadvantages": [
+          "both H1 profits sharply down; no clear earnings inflection"
+        ],
+        "evidenceRefs": [
+          "giga-h1-20230829",
+          "junzheng-h1-20230831"
+        ],
+        "switchCondition": "Prefer 北京君正 if its memory gross margin/profit turns first at comparable expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "兆易 is the research representative, not a High-priority selection; cross-sectional edge remains incomplete."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Memory stocks remained benchmark-relative weak; industry evidence showed less-negative prices rather than a full contract-price reversal.",
+    "thesisExpectation": "Production cuts eventually cause H2/Q4 margin recovery.",
+    "measurableGap": "The possible cycle inflection is ahead of reported earnings, but there is no direct proof yet.",
+    "evidenceRefs": [
+      "tf-dram-20230705",
+      "tf-memory-outlook-20230830",
+      "regime-memory-20230831"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cycle-normalized earnings / margin-recovery bridge.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "H1 earnings remained depressed; stocks were de-rated versus CSI300.",
+    "thesisScenario": "Q3/Q4 pricing stabilization produces sequential margin/profit improvement.",
+    "breakevenCondition": "Profit must inflect before the base horizon; merely smaller price declines are insufficient.",
+    "ordinaryScenarioFailure": "Memory pricing bottoms but company margins/profits remain weak due inventory/product mix.",
+    "catalystOrTimingBridge": "Q3 earnings and Q4 contract-price updates.",
+    "evidenceRefs": [
+      "giga-h1-20230829",
+      "tf-dram-20230705",
+      "regime-memory-20230831"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "DRAM decline narrowed under production cuts.",
+      "evidenceRefs": [
+        "tf-dram-20230705",
+        "tf-memory-outlook-20230830"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "insufficient",
+      "rationale": "H1 profits remained deeply negative YoY and did not confirm the new cycle turn.",
+      "evidenceRefs": [
+        "giga-h1-20230829",
+        "junzheng-h1-20230831"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Both main peers remain weak; no clear winner.",
+      "evidenceRefs": [
+        "giga-h1-20230829",
+        "junzheng-h1-20230831"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "H1 reporting predates part of the Q3 stabilization.",
+      "evidenceRefs": [
+        "giga-h1-20230829",
+        "tf-memory-outlook-20230830"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Memory basket and selected names remain de-rated.",
+      "evidenceRefs": [
+        "regime-memory-20230831"
+      ]
+    },
+    "unresolvedReason": "measurement_gap_only",
+    "conclusion": "insufficient"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen memory basket versus CSI300",
+      "lookback20Excess": -0.03704269308224639,
+      "lookback60Excess": -0.08898611635000225,
+      "positiveBreadth20": 0.25,
+      "positiveBreadth60": 0.25,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-memory-20230831"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Production cuts persist, but demand recovery remains uncertain.",
+      "evidenceRefs": [
+        "tf-dram-20230705",
+        "tf-memory-outlook-20230830"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "No broad company earnings turn is visible.",
+      "evidenceRefs": [
+        "giga-h1-20230829",
+        "junzheng-h1-20230831"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Inventory and production normalization are multi-quarter processes.",
+      "evidenceRefs": [
+        "tf-memory-outlook-20230830"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "The basket remains de-rated rather than crowded.",
+      "evidenceRefs": [
+        "regime-memory-20230831"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Potential fundamental bottoming has not yet translated into favorable price/earnings timing."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603986.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Still profitable with improved operating cash flow despite the severe cycle.",
+      "evidenceRefs": [
+        "giga-h1-20230829"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "A cycle turn from depressed H1 earnings could create large revisions if margins recover.",
+      "evidenceRefs": [
+        "tf-dram-20230705",
+        "giga-h1-20230829"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No clean normalized earnings valuation is frozen.",
+      "evidenceRefs": [
+        "giga-h1-20230829"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q3 results and Q4 contract pricing are inside the base window.",
+      "evidenceRefs": [
+        "tf-memory-outlook-20230830"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "De-rating helps, but earnings inflection is not realized.",
+      "evidenceRefs": [
+        "regime-memory-20230831",
+        "giga-h1-20230829"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "revisionAdvantage": "Neither has a realized inflection; 兆易 has a somewhat stronger quality floor.",
+        "valuationAdvantage": "Unresolved normalized valuation.",
+        "qualityTradeoff": "Both profitable but sharply down; 兆易 cash flow improved more.",
+        "catalystAdvantage": "Both depend on Q3/Q4 memory recovery.",
+        "downsideTradeoff": "Both face adverse sector timing.",
+        "evidenceRefs": [
+          "giga-h1-20230829",
+          "junzheng-h1-20230831",
+          "regime-memory-20230831"
+        ],
+        "switchCondition": "Switch to the first peer that realizes margin/profit inflection at acceptable burden.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "DRAM ASP decline narrowed under supplier production cuts; full broad price increase was not yet established.",
+    "earningsMechanism": "Less-negative/higher ASP should lift margin after inventory normalization.",
+    "nextObservableMetric": "Q3 gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "tf-dram-20230705",
+      "giga-h1-20230829"
+    ],
+    "failureCondition": "Q3 margin/profit does not improve sequentially."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: de-rated price offers optionality, but the company earnings bridge is still proxy-only.",
+    "alreadyPricedAssessment": "not crowded, but not yet validated",
+    "constraints": [
+      "adverse basket",
+      "no realized earnings turn"
+    ]
+  },
+  "bearCase": "Production cuts only slow the decline; end-demand and inventory prevent a profitable cycle turn.",
+  "invalidationConditions": [
+    {
+      "indicator": "memory margin/profit",
+      "observationMethod": "Q3 filing",
+      "threshold": "no sequential improvement"
+    },
+    {
+      "indicator": "contract prices",
+      "observationMethod": "industry updates",
+      "threshold": "declines reaccelerate"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "cycle-normalized margin",
+    "inventory cost basis"
+  ],
+  "nextResearchActions": [
+    "Freeze Research selection only; require realized earnings turn for future upgrade."
+  ]
+}
