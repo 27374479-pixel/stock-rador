@@ -1,0 +1,408 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-gold-liquidity-reset",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The transition from forced liquidation to monetary easing can affect miner equities quickly; 60d tests whether the reset overcomes a very demanding valuation."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600547.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Pure gold exposure and favorable monetary regime are clear, but the frozen March report still forecast 2020 EPS below 2019E and about 75x 2020E PE, so the path is expectation-heavy.",
+      "evidenceRefs": [
+        "reuters-gold-20200313",
+        "reuters-gold-20200324",
+        "shandong-gold-research-20200317",
+        "regime-gold-20200331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Gold shifted from crisis liquidation back toward monetary-stimulus support after extraordinary Fed action. Shandong Gold offers direct exposure, but the frozen valuation/path implies the macro reset may already be expensive.",
+    "firstCredibleDate": "2020-03-24",
+    "valueChain": [
+      "monetary easing/liquidity",
+      "gold price",
+      "miner realized price",
+      "earnings"
+    ],
+    "persistenceReason": "Monetary easing can persist for quarters, but crisis liquidity and valuation can cause violent two-way equity moves.",
+    "disconfirmingEvidence": [
+      "March 17 report forecast 2020E EPS 0.42 versus 2019E 0.50.",
+      "2020E PE was about 75x.",
+      "Gold-equity breadth was only 50%."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-gold-20200313",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-gold-20200324",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shandong-gold-research-20200317",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-gold-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "monetary easing",
+      "to": "gold price",
+      "mechanism": "Lower real rates and liquidity support increase gold's monetary appeal.",
+      "evidenceRefs": [
+        "reuters-gold-20200324",
+        "shandong-gold-research-20200317"
+      ],
+      "failureMode": "liquidity stress or real-rate rise overwhelms easing",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "gold price",
+      "to": "miner earnings",
+      "mechanism": "Higher realized gold price expands mine margins.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ],
+      "failureMode": "production/costs offset price",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "gold miners"
+    ],
+    "secondOrderWinners": [
+      "precious-metal refiners"
+    ],
+    "losers": [
+      "gold consumers"
+    ],
+    "substitutes": [
+      "cash/Treasuries"
+    ],
+    "bottlenecks": [
+      "mine output"
+    ],
+    "falseThemeMatches": [
+      "non-mining gold concepts"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600547.SH",
+      "name": "山东黄金",
+      "verifiedExposure": "Pure listed gold-mining exposure.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E EPS 0.42 vs 2019E 0.50 at ~75x PE.",
+        "favorable": "Gold strength forces earnings revisions above the frozen cautious baseline.",
+        "adverse": "Gold/liquidity reverses or multiple compresses."
+      },
+      "principalRisks": [
+        "very high valuation",
+        "unstable crisis liquidity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601899.SH",
+      "name": "紫金矿业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed gold/copper miner exposed to the same macro regime.",
+      "whySelectedCompanyShouldOutperform": "Shandong has cleaner pure-gold exposure, but Zijin has diversified commodity exposure and may carry lower valuation burden.",
+      "evidenceRefs": [
+        "regime-gold-20200331"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600547.SH",
+    "pairwise": [],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Direct exposure is clean, but valuation/path room is weak enough that this remains only borderline Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Gold equities were modestly benchmark-relative favorable, but Shandong traded at about 75x 2020E PE and the frozen report did not forecast 2020 EPS growth.",
+    "thesisExpectation": "If extraordinary easing shifts the gold path sharply upward, the cautious frozen earnings baseline could be revised.",
+    "measurableGap": "Macro direction may improve faster than the company forecast, but the valuation leaves little margin for error.",
+    "evidenceRefs": [
+      "shandong-gold-research-20200317",
+      "reuters-gold-20200324",
+      "regime-gold-20200331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Gold-price scenario versus miner EPS path and premium forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2020E EPS 0.42 versus 2019E 0.50; 2020E PE ~75x and 2021E ~60x.",
+    "thesisScenario": "Gold rises enough under monetary easing to turn the frozen 2020 earnings decline into positive revisions.",
+    "breakevenCondition": "Gold-price upside must be large enough to overcome a very high equity multiple.",
+    "ordinaryScenarioFailure": "Gold merely stabilizes and the miner remains expensive with no earnings upgrade.",
+    "catalystOrTimingBridge": "Gold price and policy/liquidity regime are observable immediately; company earnings follow over Q1/H1.",
+    "evidenceRefs": [
+      "shandong-gold-research-20200317",
+      "reuters-gold-20200324",
+      "regime-gold-20200331"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Fed support reversed part of the forced-liquidation stress in gold.",
+      "evidenceRefs": [
+        "reuters-gold-20200313",
+        "reuters-gold-20200324"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "insufficient",
+      "rationale": "No cutoff-date 2020 quarterly earnings confirmation was yet available; the frozen report projected lower 2020 EPS.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Gold basket was favorable by rule but only 50% of names beat the benchmark.",
+      "evidenceRefs": [
+        "regime-gold-20200331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The March 17 report gave an explicit multi-period EPS/PE baseline.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Premium valuation already embeds substantial gold optimism.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.037487271282242274,
+      "lookback60Excess": 0.0425527583198938,
+      "positiveBreadth20": 0.5,
+      "positiveBreadth60": 0.5,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-gold-20200331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "turning",
+      "rationale": "Macro regime shifted from liquidation toward easing support.",
+      "evidenceRefs": [
+        "reuters-gold-20200313",
+        "reuters-gold-20200324"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "insufficient",
+      "rationale": "No pre-cutoff company earnings revision confirmed the macro reset.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Monetary easing can persist, but crisis liquidity is unstable.",
+      "evidenceRefs": [
+        "reuters-gold-20200324"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Forward valuation was already very demanding.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Macro reset is real, but company-path and valuation evidence are not strong enough for Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600547.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Shandong offers direct gold exposure and resource quality.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "A macro reset could improve earnings, but the frozen path still showed 2020 EPS down.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "About 75x 2020E PE leaves little slack.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Gold and policy regime update immediately.",
+      "evidenceRefs": [
+        "reuters-gold-20200324"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Direct exposure is clean but premium valuation magnifies reversal risk.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "pairwise": [],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Gold moved from forced liquidation toward monetary-easing support.",
+    "earningsMechanism": "Higher realized gold prices can expand miner margins and earnings.",
+    "nextObservableMetric": "gold price and Q1/H1 miner profit",
+    "realizationWindowTradingDays": 60,
+    "status": "directionally_bridged",
+    "evidenceRefs": [
+      "reuters-gold-20200324",
+      "shandong-gold-research-20200317"
+    ],
+    "failureCondition": "Gold stabilizes without enough upside to revise the frozen 2020 EPS path."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Crisis liquidation had created extreme volatility.",
+      "nextPeriod": "2020E EPS 0.42 versus 2019E 0.50.",
+      "laterPeriod": "2021E EPS 0.53.",
+      "rationale": "The March 17 report gives a cautious but expensive earnings path.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Fed easing can stabilize and lift gold.",
+      "nextPeriodChange": "2020 EPS may revise upward if gold stays above the report's assumptions.",
+      "laterPeriodChange": "2021 benefits only if monetary support persists.",
+      "mechanism": "The only incremental edge is a faster gold-price reset than the frozen earnings model assumes.",
+      "evidenceRefs": [
+        "reuters-gold-20200324",
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "pathShape": "turning_point",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Macro direction improved, but company earnings advantage is not yet realized.",
+      "evidenceRefs": [
+        "reuters-gold-20200324",
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The valuation requires favorable gold conditions to persist.",
+      "evidenceRefs": [
+        "shandong-gold-research-20200317"
+      ]
+    },
+    "falsifier": "Gold does not sustain enough upside to turn the frozen 2020 EPS decline into revisions.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Borderline Research only: clean macro exposure, but very high valuation and no realized 2020 earnings confirmation.",
+    "alreadyPricedAssessment": "high",
+    "constraints": [
+      "~75x 2020E PE",
+      "no pre-cutoff 2020 earnings confirmation",
+      "crisis liquidity volatility"
+    ]
+  },
+  "bearCase": "The Fed stabilizes markets, but gold/miner multiples normalize before earnings estimates catch up.",
+  "invalidationConditions": [
+    {
+      "indicator": "gold price/real yields",
+      "observationMethod": "market data",
+      "threshold": "renewed sustained reversal"
+    },
+    {
+      "indicator": "earnings path",
+      "observationMethod": "company results/forecasts",
+      "threshold": "2020 EPS remains below 2019 without revisions"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze Shandong Gold as borderline Research only; do not treat monetary easing as automatic miner alpha."
+  ]
+}
