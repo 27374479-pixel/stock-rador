@@ -215,11 +215,11 @@ test('v1.1 rejects override when price weakness is attributed to company fundame
   assert.ok(errors.some((x) => x.includes('requires price weakness attributed away from company fundamentals')));
 });
 
-test('v1.1 mechanically checks company-price dislocation labels', () => {
+test('v1.1 mechanically rejects legacy company-price dislocation labels', () => {
   const m = overrideMemo();
   m.companyEngineTimingOverrideTest.companyPriceDislocation.conclusion = 'not_dislocated';
   const errors = validateOpportunityMemo(m, 'memo.json', manifest());
-  assert.ok(errors.some((x) => x.includes('companyPriceDislocation conclusion is inconsistent')));
+  assert.ok(errors.some((x) => x.includes('companyPriceDislocation.conclusion is invalid')));
 });
 
 test('v1.1 sector-confirmed path still fails closed under adverse broad timing', () => {
