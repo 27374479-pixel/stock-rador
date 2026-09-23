@@ -1,0 +1,576 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-pork-scarcity-acceleration",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "August pork-price acceleration should flow into Q3/Q4 producer earnings rapidly, but supply restoration and ASF create duration risk."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002714.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "H1 sales +22.6%, revenue +29.9%, low unit cost, and Q2 had already returned to profitability as hog prices rose. Final-20d equity reset creates room but Q3 profit was not yet reported.",
+      "evidenceRefs": [
+        "nbs-pork-20190910",
+        "muyuan-h1-20190826",
+        "regime-pork-20190930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Pork scarcity accelerated sharply while Muyuan had already moved from Q1 losses back to Q2 profitability with low costs and growing volume. Equity prices then reset over the final 20d.",
+    "firstCredibleDate": "2019-08-26",
+    "valueChain": [
+      "ASF supply loss",
+      "pork/hog price",
+      "low-cost producer margin",
+      "earnings"
+    ],
+    "persistenceReason": "Biological supply restoration takes multiple quarters, but very high prices incentivize capacity rebuilding.",
+    "disconfirmingEvidence": [
+      "Every frozen pork equity underperformed CSI300 over the final 20d.",
+      "Scarcity was increasingly visible and policy/supply responses could accelerate.",
+      "Q3 earnings confirmation was not yet available by cutoff."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-pork-20190910",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "muyuan-h1-20190826",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pork-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "hog scarcity",
+      "to": "realized hog price",
+      "mechanism": "ASF-related supply loss lifts producer selling prices.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ],
+      "failureMode": "effective supply recovers quickly",
+      "lag": "immediate"
+    },
+    {
+      "from": "higher price plus low cost",
+      "to": "Muyuan earnings",
+      "mechanism": "Rising ASP on growing volumes moves low-cost production from loss to profit.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ],
+      "failureMode": "ASF reduces saleable volume or costs rise sharply",
+      "lag": "current/next quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost hog producers"
+    ],
+    "secondOrderWinners": [
+      "feed/vaccine suppliers"
+    ],
+    "losers": [
+      "processors/consumers"
+    ],
+    "substitutes": [
+      "poultry"
+    ],
+    "bottlenecks": [
+      "biosecurity",
+      "breeding stock"
+    ],
+    "falseThemeMatches": [
+      "agriculture names without hog production"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002714.SZ",
+      "name": "牧原股份",
+      "verifiedExposure": "Direct low-cost hog producer.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 sales +22.6%, revenue +29.9%, Q2 returned to profit.",
+        "favorable": "August price acceleration expands Q3/Q4 margin.",
+        "adverse": "ASF volume loss or faster supply recovery offsets price."
+      },
+      "principalRisks": [
+        "ASF",
+        "commodity cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300498.SZ",
+      "name": "温氏股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large hog producer exposed to the same price cycle.",
+      "whySelectedCompanyShouldOutperform": "Muyuan's low-cost/direct H1 volume and Q2 profit transition are explicitly frozen.",
+      "evidenceRefs": [
+        "regime-pork-20190930"
+      ]
+    },
+    {
+      "ticker": "000876.SZ",
+      "name": "新希望",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Diversified agriculture/hog expansion expression.",
+      "whySelectedCompanyShouldOutperform": "Muyuan offers a cleaner already-operating hog earnings bridge.",
+      "evidenceRefs": [
+        "regime-pork-20190930"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002714.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300498.SZ",
+        "selectedAdvantages": [
+          "low-cost direct hog model",
+          "H1 sales growth and Q2 profit transition"
+        ],
+        "selectedDisadvantages": [
+          "single-cycle exposure"
+        ],
+        "evidenceRefs": [
+          "muyuan-h1-20190826",
+          "regime-pork-20190930"
+        ],
+        "switchCondition": "Prefer Wens if pre-cutoff cost/volume and valuation evidence are stronger.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "000876.SZ",
+        "selectedAdvantages": [
+          "cleaner direct hog earnings bridge"
+        ],
+        "selectedDisadvantages": [
+          "New Hope diversification may cushion normalization"
+        ],
+        "evidenceRefs": [
+          "muyuan-h1-20190826",
+          "regime-pork-20190930"
+        ],
+        "switchCondition": "Prefer New Hope if diversified earnings plus hog expansion show superior verified path.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Muyuan is a sound low-cost expression after a short-term equity reset, but Q3 earnings and cycle duration are not strong enough for Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Pork basket retained +4.9pp 60d excess but lost 11.45pp versus CSI300 over the final 20d while pork prices accelerated sharply.",
+    "thesisExpectation": "The equity reset may be over-discounting near-term margin expansion if biological supply recovery remains slow.",
+    "measurableGap": "Physical price acceleration and Q2 profit inflection are stronger than final-20d equity performance.",
+    "evidenceRefs": [
+      "nbs-pork-20190910",
+      "muyuan-h1-20190826",
+      "regime-pork-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Realized H1/Q2 operating transition and physical hog-price acceleration versus equity reset and cycle duration.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "H1 revenue +29.9%, Q2 returned to profitability; no clean pre-cutoff multi-year consensus baseline is frozen.",
+    "thesisScenario": "August hog-price acceleration persists long enough to deliver strong Q3/Q4 profits before supply normalization.",
+    "breakevenCondition": "Rising ASP must overcome ASF volume/cost effects through at least the next reporting cycle.",
+    "ordinaryScenarioFailure": "Equity weakness correctly anticipates faster supply/volume normalization.",
+    "catalystOrTimingBridge": "Monthly hog sales/ASP and Q3 results are inside the base horizon.",
+    "evidenceRefs": [
+      "nbs-pork-20190910",
+      "muyuan-h1-20190826",
+      "regime-pork-20190930"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "August pork prices accelerated sharply.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Muyuan H1 volume/revenue grew and Q2 moved back into profit.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "60d was still positive but every frozen pork name underperformed over the final 20d.",
+      "evidenceRefs": [
+        "regime-pork-20190930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "H1/Q2 operating transition provides a current baseline.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Final-20d de-rating reduced prior cycle absorption.",
+      "evidenceRefs": [
+        "regime-pork-20190930"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": -0.11448410843948996,
+      "lookback60Excess": 0.04920039607659734,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-pork-20190930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Physical pork prices accelerated and company had returned to Q2 profit.",
+      "evidenceRefs": [
+        "nbs-pork-20190910",
+        "muyuan-h1-20190826"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Muyuan company engine improved, but broad producer revision evidence is incomplete.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Biological supply restoration requires time.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Scarcity prices are visible and capacity response will eventually cap duration.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Strong near-term engine but neutral price regime, incomplete valuation baseline and late-cycle risk keep Research."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002714.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Muyuan retained low cost while sales/revenue grew through ASF.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Price acceleration can lift Q3/Q4 earnings materially.",
+      "evidenceRefs": [
+        "nbs-pork-20190910",
+        "muyuan-h1-20190826"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Final-20d sector de-rating indicates some expectation reset, though no precise PE baseline is frozen.",
+      "evidenceRefs": [
+        "regime-pork-20190930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly ASP/volume and Q3 earnings are near-term.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low cost supports survival, but ASF/commodity reversal remains material.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300498.SZ",
+        "revisionAdvantage": "Muyuan H1 sales growth and Q2 profit transition are explicitly frozen.",
+        "valuationAdvantage": "No precise valuation advantage; recent relative reset supports some room.",
+        "qualityTradeoff": "Muyuan's low-cost model is directly described; Wens may have diversification benefits.",
+        "catalystAdvantage": "Hog ASP/volume maps directly to Muyuan.",
+        "downsideTradeoff": "Disease/commodity risk remains high for all producers.",
+        "switchCondition": "Switch if Wens cost/volume/valuation evidence is superior.",
+        "evidenceRefs": [
+          "muyuan-h1-20190826",
+          "regime-pork-20190930"
+        ],
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "000876.SZ",
+        "revisionAdvantage": "Muyuan already showed Q2 profit transition.",
+        "valuationAdvantage": "No clean advantage established.",
+        "qualityTradeoff": "New Hope is more diversified; Muyuan has cleaner hog operating leverage.",
+        "catalystAdvantage": "Pork price maps more directly to Muyuan.",
+        "downsideTradeoff": "Diversification can cushion normalization.",
+        "switchCondition": "Switch if New Hope shows superior verified hog/other earnings path.",
+        "evidenceRefs": [
+          "muyuan-h1-20190826",
+          "regime-pork-20190930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "August pork prices +46.7% YoY and +23.1% MoM.",
+    "earningsMechanism": "Higher ASP on growing low-cost volume expands producer margin.",
+    "nextObservableMetric": "monthly hog ASP/volume and Q3 profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "nbs-pork-20190910",
+      "muyuan-h1-20190826"
+    ],
+    "failureCondition": "ASP/volume/cost fail to produce a larger Q3 profit."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Q1 loss shifted to Q2 profitability; H1 volume/revenue grew.",
+      "nextPeriod": "August price acceleration should lift Q3/Q4 margin if saleable volume survives.",
+      "laterPeriod": "High prices drive breeding/supply restoration and eventual margin normalization.",
+      "rationale": "Use realized H1/Q2 transition rather than later Q3 results.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q3 margin expands rapidly.",
+      "nextPeriodChange": "Low-cost scale monetizes scarcity through Q4.",
+      "laterPeriodChange": "Cycle eventually normalizes; no perpetual scarcity assumption.",
+      "mechanism": "Near-term earnings acceleration can coexist with negative long-term cycle duration.",
+      "evidenceRefs": [
+        "nbs-pork-20190910",
+        "muyuan-h1-20190826"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Physical price acceleration after Q2 profit return creates base-horizon earnings room.",
+      "evidenceRefs": [
+        "nbs-pork-20190910",
+        "muyuan-h1-20190826"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Supply restoration makes the cycle finite.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "falsifier": "Monthly ASP or saleable volume deteriorates before Q3/Q4 earnings conversion.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "commercial hog production and pork-price scarcity",
+    "geographicScope": "China hog market",
+    "customerScope": "hog/pork buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Near-term scarcity and later supply normalization are different horizons of the same biological cycle and are represented explicitly in the horizon matrix.",
+    "evidenceRefs": [
+      "nbs-pork-20190910",
+      "muyuan-h1-20190826"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "pork-price acceleration and Q2 company return to profit",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "nbs-pork-20190910",
+        "muyuan-h1-20190826"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "Q3/Q4 low-cost margin conversion",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "structural": {
+      "direction": "negative",
+      "driver": "high margins induce breeding/supply restoration and eventual normalization",
+      "horizon": "multi-quarter beyond base",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep near/base-horizon earnings opportunity separate from later biological mean reversion; do not average them into neutral.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Physical scarcity and Muyuan's Q2 operating transition align, despite recent equity weakness.",
+    "evidenceRefs": [
+      "nbs-pork-20190910",
+      "muyuan-h1-20190826",
+      "regime-pork-20190930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "August physical price acceleration is fresh evidence.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Q2 had returned to profitability.",
+      "evidenceRefs": [
+        "muyuan-h1-20190826"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Physical price acceleration implies near-term earnings revision potential.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Near-term scarcity persists but long-term supply response is negative.",
+      "evidenceRefs": [
+        "nbs-pork-20190910"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Hog price/volume fails before Q3 earnings.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002714.SZ",
+    "purestTicker": "002714.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preference rests on low-cost operating evidence and Q2 profit transition, not pure hog exposure alone.",
+    "earningsQualityComparison": "Muyuan has direct H1 sales/revenue and Q2 profit evidence.",
+    "downsideComparison": "Pure hog exposure increases cycle risk; low cost partially contains it.",
+    "evidenceRefs": [
+      "muyuan-h1-20190826",
+      "regime-pork-20190930"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong physical/company inflection after an equity reset, but no clean valuation baseline and high cycle-duration risk.",
+    "alreadyPricedAssessment": "recent_reset_after_visible_cycle",
+    "constraints": [
+      "ASF",
+      "finite scarcity cycle",
+      "valuation baseline incomplete"
+    ]
+  },
+  "bearCase": "High prices coincide with falling saleable volume or fast supply restoration, so equity weakness correctly anticipates earnings normalization.",
+  "invalidationConditions": [
+    {
+      "indicator": "monthly hog ASP/volume",
+      "observationMethod": "company sales data",
+      "threshold": "price or volume reverses materially"
+    },
+    {
+      "indicator": "Q3 profit",
+      "observationMethod": "quarterly filing",
+      "threshold": "fails to convert higher ASP into earnings"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Research only; preserve near-term versus structural horizon conflict explicitly."
+  ]
+}
