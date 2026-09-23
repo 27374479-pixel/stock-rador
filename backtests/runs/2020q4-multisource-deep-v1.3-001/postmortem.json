@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2020q4-multisource-deep-v1.3-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "primaryOpportunityResult": {
+    "hypothesisId": "h-2020q4-industrial-metals-recovery",
+    "frozenExpressions": [
+      "601899.SH",
+      "600362.SH"
+    ],
+    "base60d": {
+      "basketNetReturn": 0.2295599460874267,
+      "benchmarkReturn": 0.07787424468027226,
+      "basketExcessReturn": 0.15168570140715443,
+      "directionCaptured": true,
+      "positiveBasket": true
+    },
+    "expressionDiagnostics": [
+      {
+        "ticker": "601899.SH",
+        "netReturn": 0.2553607809513323,
+        "benchmarkExcess": 0.17748653627106004,
+        "selectedRank": 1
+      },
+      {
+        "ticker": "600362.SH",
+        "netReturn": 0.20375911122352108,
+        "benchmarkExcess": 0.12588486654324882,
+        "selectedRank": 1
+      }
+    ],
+    "label": "opportunity_right_multiple_acceptable_expressions",
+    "interpretation": "The first independent V1.3 holdout supports the opportunity-first objective: both frozen acceptable expressions produced positive 60d benchmark excess, so exact ex-ante peer ranking was unnecessary for capturing the direction."
+  },
+  "researchOpportunityDiagnostics": [
+    {
+      "hypothesisId": "h-2020q4-container-freight-boom",
+      "frozenState": "Research selection",
+      "base60d": {
+        "netReturn": 0.16983016983017007,
+        "benchmarkExcess": 0.1317973247490658
+      },
+      "label": "research_direction_right_primary_blocked_by_duration_risk",
+      "interpretation": "The direction worked at 60d despite peak-duration concerns. Same-period success may not relax the expectation-path gate; repeat evidence is required."
+    },
+    {
+      "hypothesisId": "h-2020q4-nev-acceleration",
+      "frozenState": "Research selection",
+      "base60d": {
+        "basketNetReturn": 0.1183950793213372,
+        "basketBenchmarkExcess": 0.08843320082348682,
+        "tickerCount": 2
+      },
+      "label": "research_direction_right_premium_growth_blocked",
+      "interpretation": "The NEV direction was right and the research basket beat the benchmark, but the frozen valuation/duration concerns remain legitimate. Do not promote from this same-period outcome."
+    },
+    {
+      "hypothesisId": "h-2020q4-dram-weakness",
+      "frozenState": "No selection",
+      "label": "negative_physical_cycle_fail_closed",
+      "interpretation": "No selected ticker was forced against weak DRAM physical evidence."
+    }
+  ],
+  "frameworkCheck": {
+    "opportunityFirst": {
+      "passed": true,
+      "evidence": "Primary metals basket captured the opportunity with two independently acceptable expressions; exact peer-best identification was not required."
+    },
+    "avoidWrongExpression": {
+      "passed": true,
+      "evidence": "中国铝业/铜陵有色 remained controls rather than being promoted solely because metals were strong; DRAM remained No selection."
+    },
+    "captureMoreOpportunities": {
+      "status": "promising_but_not_yet_versionable",
+      "evidence": "Both Research-level shipping and NEV hypotheses also produced positive 60d benchmark excess.",
+      "nextQuestion": "Does V1.3 repeatedly identify correct Research directions that remain non-actionable because Primary gates are too conservative?"
+    },
+    "archetypeDiscipline": {
+      "note": "Cyclical shipping and metals were evaluated on normalized earnings-path duration; premium NEV was evaluated on long-duration growth expectations. Durable-cash-yield logic was not needed in this window."
+    }
+  },
+  "decision": {
+    "keepV13Immutable": true,
+    "createV14Now": false,
+    "reason": "The first independent V1.3 holdout validates the opportunity-first/acceptable-expression structure, but one window is insufficient to loosen Primary gates for Research opportunities.",
+    "nextAction": "Run unchanged V1.3 on another untouched historical window. Track opportunity-level hit rate, Research-direction recall, and wrong-expression rate separately."
+  },
+  "prohibitedUses": [
+    "Do not promote shipping or NEV to High-priority using this same-period outcome.",
+    "Do not remove expectation-path or duration-risk gates because Research selections later worked.",
+    "Do not restore exact peer-best ranking as the primary success definition.",
+    "Do not use 120d outcomes to rewrite the pre-registered 60d decision."
+  ],
+  "infrastructureNote": {
+    "historicalAdjustment": "2020Q4 replay required versioned hfq regime and outcome-price fetchers because long-history qfq levels can become non-positive after later large distributions.",
+    "researchContractUnchanged": true
+  }
+}
