@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2020q2-multisource-deep-v1.3-001",
+  "patchVersion": "1.3.1",
+  "createdAfterLock": true,
+  "researchContractChanged": false,
+  "selectionChanged": false,
+  "reason": "The locked v1.3 evaluator rejected 山东黄金 because one interior suspended/non-trading stock day produced 119 stock bars inside a valid 120 benchmark-trading-day horizon.",
+  "semantics": "Keep exact frozen entry and scheduled exit dates. Permit missing interior stock bars caused by suspension; do not forward-fill. Return still uses entry open and scheduled-exit close; benchmark still uses the frozen market calendar. Drawdown uses observable traded closes only.",
+  "prohibited": [
+    "No memo changes",
+    "No selection changes",
+    "No horizon changes",
+    "No price substitution or forward fill"
+  ]
+}
