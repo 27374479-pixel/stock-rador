@@ -1,0 +1,223 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-dram-product-divergence",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "PC and mobile DRAM were moving in different directions; the parent memory signal is not economically coherent enough to map to equities."
+  },
+  "changeHypothesis": {
+    "summary": "PC DRAM stabilized while mobile DRAM remained in a 10-15% contract-price decline. V1.4 requires separate product-market hypotheses rather than a generic memory average.",
+    "firstCredibleDate": "2019-09-26",
+    "valueChain": [
+      "PC/mobile end demand",
+      "product-specific DRAM inventory/prices",
+      "supplier mix",
+      "earnings"
+    ],
+    "persistenceReason": "Different end markets can sustain divergent inventory cycles.",
+    "disconfirmingEvidence": [
+      "Generic memory-theme equities had already rerated ~64pp over 60d, which can obscure the product mismatch."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-pc-stable-20190926",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "dram-mobile-weak-20190730",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-theme-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "PC restocking",
+      "to": "PC DRAM stabilization",
+      "mechanism": "OEM inventory building normalizes supplier stocks.",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926"
+      ],
+      "failureMode": "PC demand weakens",
+      "lag": "quarter"
+    },
+    {
+      "from": "weak smartphones/inventory",
+      "to": "mobile DRAM decline",
+      "mechanism": "Weak device demand and high stocks pressure mobile contracts.",
+      "evidenceRefs": [
+        "dram-mobile-weak-20190730"
+      ],
+      "failureMode": "mobile demand unexpectedly rebounds",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "PC-DRAM suppliers if directly exposed"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "mobile-DRAM suppliers if concentrated"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "inventory"
+    ],
+    "falseThemeMatches": [
+      "generic memory-theme A-shares used to represent both products"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Generic memory-theme/Flash company, not a frozen direct PC/mobile DRAM supplier at cutoff.",
+      "evidenceRefs": [
+        "regime-memory-theme-20190930"
+      ],
+      "earningsSensitivity": {
+        "base": "Theme proxy only.",
+        "favorable": "Unrelated Flash/MCU strength can drive stock.",
+        "adverse": "DRAM product mapping is false."
+      },
+      "principalRisks": [
+        "mapping error"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Split required: the parent is not selectable and generic semiconductor price strength cannot resolve product divergence."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Generic memory-theme basket had extreme +63.9pp 60d excess, making proxy substitution especially dangerous.",
+    "thesisExpectation": "Create separate PC and mobile DRAM child hypotheses.",
+    "measurableGap": "Parent has contradictory product signals.",
+    "evidenceRefs": [
+      "dram-pc-stable-20190926",
+      "dram-mobile-weak-20190730",
+      "regime-memory-theme-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "PC DRAM versus mobile DRAM",
+    "geographicScope": "global memory market",
+    "customerScope": "PC OEMs versus smartphone OEMs",
+    "decompositionNeeded": true,
+    "siblingHypothesisIds": [
+      "h-2019q3-pc-dram-stabilization",
+      "h-2019q3-mobile-dram-weakness"
+    ],
+    "rationale": "Product prices, inventory and end demand point in materially different directions.",
+    "evidenceRefs": [
+      "dram-pc-stable-20190926",
+      "dram-mobile-weak-20190730"
+    ],
+    "conclusion": "split_required"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "PC stabilizing while mobile remains weak",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926",
+        "dram-mobile-weak-20190730"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "supplier earnings depend on product mix and inventory normalization",
+      "horizon": "next 1-2 quarters",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926",
+        "dram-mobile-weak-20190730"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "supplier bit-growth discipline versus end-demand mix",
+      "horizon": "2020+",
+      "evidenceRefs": [
+        "dram-pc-stable-20190926"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Split by product/customer market before any company mapping.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "Generic memory-theme stock strength is not a direct DRAM product signal.",
+    "evidenceRefs": [
+      "regime-memory-theme-20190930"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "generic_theme_extremely_hot",
+    "constraints": [
+      "product mismatch",
+      "no direct mapping"
+    ]
+  },
+  "bearCase": "A generic semiconductor proxy rises on unrelated Flash/MCU factors and is misread as validation of PC DRAM.",
+  "invalidationConditions": [
+    {
+      "indicator": "product-specific exposure",
+      "observationMethod": "company filing",
+      "threshold": "must be verified separately"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Evaluate PC and mobile DRAM as separate children."
+  ]
+}
