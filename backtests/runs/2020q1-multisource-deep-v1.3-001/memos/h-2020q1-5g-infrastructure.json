@@ -1,0 +1,429 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-5g-infrastructure",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "5G policy acceleration and operator capex should appear in orders and earnings over the next one to two reporting cycles; 60d is the pre-registered base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000063.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "borderline",
+      "rationale": "Direct telecom-equipment exposure, strong 2019 operator-network growth and cash flow, but the theme had already rerated materially and 2020 valuation still required continued 5G execution.",
+      "evidenceRefs": [
+        "miit-5g-20200324",
+        "zte-2019-20200328",
+        "zte-research-20200331",
+        "regime-5g-20200331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Official policy explicitly accelerated 5G buildout just as ZTE's 2019 operator-network revenue and cash flow had recovered strongly. The unresolved issue is whether a widely followed 5G narrative still leaves enough incremental earnings room.",
+    "firstCredibleDate": "2020-03-24",
+    "valueChain": [
+      "5G policy/capex",
+      "operator equipment orders",
+      "ZTE operator-network revenue",
+      "profit/cash flow"
+    ],
+    "persistenceReason": "Carrier 5G rollout is multi-quarter, but global COVID supply/demand risk can disturb deployment.",
+    "disconfirmingEvidence": [
+      "The 5G basket had already outperformed CSI300 strongly over 60d.",
+      "ZTE itself had underperformed the benchmark over the final 20d.",
+      "The March 31 forecast already embedded multi-year EPS growth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "miit-5g-20200324",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-server-20200210",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zte-2019-20200328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zte-research-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-5g-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "accelerated 5G capex",
+      "to": "telecom equipment orders",
+      "mechanism": "Operators deploy radio/core/network equipment as policy and capex accelerate.",
+      "evidenceRefs": [
+        "miit-5g-20200324"
+      ],
+      "failureMode": "operator capex is delayed",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "equipment orders",
+      "to": "ZTE earnings",
+      "mechanism": "Operator-network revenue is the company's largest directly exposed segment and had already grown strongly in 2019.",
+      "evidenceRefs": [
+        "zte-2019-20200328",
+        "zte-research-20200331"
+      ],
+      "failureMode": "margin/supply-chain pressure offsets volume",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "telecom equipment vendors"
+    ],
+    "secondOrderWinners": [
+      "optical components",
+      "network servers"
+    ],
+    "losers": [
+      "legacy-only equipment"
+    ],
+    "substitutes": [
+      "alternative vendors"
+    ],
+    "bottlenecks": [
+      "operator capex",
+      "supply chain"
+    ],
+    "falseThemeMatches": [
+      "5G concept stocks without material operator-network revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000063.SZ",
+      "name": "中兴通讯",
+      "verifiedExposure": "Direct operator-network and 5G equipment exposure.",
+      "evidenceRefs": [
+        "zte-2019-20200328",
+        "zte-research-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "2020/21/22 EPS 1.30/1.74/2.35.",
+        "favorable": "5G rollout drives revisions above the frozen path.",
+        "adverse": "Global deployment/supply disruption prevents forecast delivery."
+      },
+      "principalRisks": [
+        "theme already widely owned",
+        "global COVID execution risk"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600498.SH",
+      "name": "烽火通信",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct telecom-network peer in the same 5G buildout.",
+      "whySelectedCompanyShouldOutperform": "ZTE has stronger frozen first-party earnings/cash-flow evidence and a quantified current earnings path.",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    },
+    {
+      "ticker": "002281.SZ",
+      "name": "光迅科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Optical-component expression exposed to the same 5G capex cycle.",
+      "whySelectedCompanyShouldOutperform": "ZTE provides a more direct operator-network earnings bridge in the frozen pack.",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000063.SZ",
+    "pairwise": [],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "ZTE is a sound direct expression, but exact peer ranking is not required; prior rerating and execution risk keep it at Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The 5G basket had +25.8pp 60d benchmark excess; March 31 research forecast strong EPS growth and used 40x 2020 PE as a valuation anchor.",
+    "thesisExpectation": "Policy acceleration can generate estimate upgrades if domestic deployment converts faster than the already-positive baseline.",
+    "measurableGap": "Real earnings/cash-flow recovery exists, but the opportunity is not clearly under-owned enough for Primary.",
+    "evidenceRefs": [
+      "regime-5g-20200331",
+      "zte-research-20200331",
+      "zte-2019-20200328"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward EPS path versus 5G-cycle valuation and prior relative-price absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2020/21/22 EPS 1.30/1.74/2.35; research used 40x 2020 PE for target valuation.",
+    "thesisScenario": "Domestic 5G orders and operator-network margins drive estimates above the frozen path.",
+    "breakevenCondition": "Earnings upgrades must offset a theme that already rerated strongly in Q1.",
+    "ordinaryScenarioFailure": "5G rollout proceeds but merely meets the widely anticipated earnings path.",
+    "catalystOrTimingBridge": "Operator tenders, order wins and Q1/H1 results are near-term observable catalysts.",
+    "evidenceRefs": [
+      "regime-5g-20200331",
+      "zte-research-20200331",
+      "zte-2019-20200328"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official policy accelerated 5G and ZTE's operator network had already grown 16.7% in 2019.",
+      "evidenceRefs": [
+        "miit-5g-20200324",
+        "zte-2019-20200328"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "2019 revenue/profit/cash flow had recovered materially before the cutoff.",
+      "evidenceRefs": [
+        "zte-2019-20200328"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "The 5G basket was favorable but ZTE's final 20d relative performance was weak.",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "A current March 31 forecast quantified a strong 2020-22 EPS path.",
+      "evidenceRefs": [
+        "zte-research-20200331"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Theme-level 60d excess was substantial even after a late-March ZTE correction.",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.031184893235421136,
+      "lookback60Excess": 0.25758466560068294,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Policy and operator-network growth support continuing capex momentum.",
+      "evidenceRefs": [
+        "miit-5g-20200324",
+        "zte-2019-20200328"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "March 31 research retained strong multi-year growth despite modest estimate cuts.",
+      "evidenceRefs": [
+        "zte-research-20200331"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Carrier 5G buildout is a multi-quarter program.",
+      "evidenceRefs": [
+        "miit-5g-20200324"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The theme had already delivered large 60d benchmark-relative returns.",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamentals are constructive, but expectation absorption prevents Primary status."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000063.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "ZTE had strong cash-flow recovery and direct operator-network exposure.",
+      "evidenceRefs": [
+        "zte-2019-20200328"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Forecast EPS grows strongly through 2022.",
+      "evidenceRefs": [
+        "zte-research-20200331"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "The valuation framework still required a premium multiple after a large theme rerating.",
+      "evidenceRefs": [
+        "zte-research-20200331",
+        "regime-5g-20200331"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "5G tenders/orders and quarterly results are reachable within 60d.",
+      "evidenceRefs": [
+        "miit-5g-20200324"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Large scale and cash-flow recovery help, but global COVID/supply risks remain.",
+      "evidenceRefs": [
+        "zte-2019-20200328",
+        "zte-research-20200331"
+      ]
+    },
+    "pairwise": [],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Official 5G acceleration plus strong 2019 operator-network growth.",
+    "earningsMechanism": "More operator capex translates into telecom-equipment orders, revenue and operating leverage.",
+    "nextObservableMetric": "operator-network orders/revenue and Q1/H1 earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "miit-5g-20200324",
+      "zte-2019-20200328",
+      "zte-research-20200331"
+    ],
+    "failureCondition": "5G deployment or margins fail to produce estimate upgrades above the frozen path."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2019 operator-network revenue +16.7% and cash flow recovered.",
+      "nextPeriod": "2020E EPS 1.30.",
+      "laterPeriod": "2021E/22E EPS 1.74/2.35.",
+      "rationale": "March 31 report provides a current multi-period baseline.",
+      "evidenceRefs": [
+        "zte-research-20200331",
+        "zte-2019-20200328"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Accelerated domestic 5G orders can support near-term earnings.",
+      "nextPeriodChange": "2020 estimates can rise if deployment beats the already-strong baseline.",
+      "laterPeriodChange": "Multi-year rollout can sustain 2021-22 growth, but this is already partly expected.",
+      "mechanism": "Incremental alpha requires deployment speed/margins to exceed a visible 5G consensus.",
+      "evidenceRefs": [
+        "miit-5g-20200324",
+        "zte-research-20200331"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The direction is strong but much of the multi-year path is already explicit in forecasts.",
+      "evidenceRefs": [
+        "zte-research-20200331"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "5G is multi-year, but theme rerating creates absorption risk.",
+      "evidenceRefs": [
+        "regime-5g-20200331"
+      ]
+    },
+    "falsifier": "Orders and EPS estimates do not rise beyond 1.30/1.74/2.35 as rollout proceeds.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: direct 5G earnings bridge, but large prior rerating and a visible bullish consensus path.",
+    "alreadyPricedAssessment": "partially_absorbed",
+    "constraints": [
+      "large 60d theme rerating",
+      "global COVID supply/demand uncertainty"
+    ]
+  },
+  "bearCase": "5G remains a real structural trend but the stock merely delivers already-expected growth while valuation compresses.",
+  "invalidationConditions": [
+    {
+      "indicator": "5G operator orders",
+      "observationMethod": "operator tender/company updates",
+      "threshold": "material delay or weak conversion"
+    },
+    {
+      "indicator": "EPS path",
+      "observationMethod": "quarterly results/updated forecasts",
+      "threshold": "no upward revision beyond frozen path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze ZTE as Research; do not promote solely on policy headlines."
+  ]
+}
