@@ -1,0 +1,596 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.0.0",
+  "cutoffAt": "2023-11-23T15:30:00+08:00",
+  "researchReadyAt": "2023-11-23T15:10:00+08:00",
+  "actionableAt": "2023-11-23T15:10:00+08:00",
+  "hypothesisId": "h-2023q4-ai-optical-innolight",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "800G order/mix conversion and hyperscaler AI capex should be visible in one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "company_engine_override",
+  "changeHypothesis": {
+    "summary": "Global AI infrastructure demand remained exceptional, but broad A-share optical price timing was only neutral. 中际旭创 was different from the broad basket: Q3 revenue and profit accelerated sharply as 800G/400G orders and shipments increased, with a lower frozen 2024E PE than the weaker-converting peer 新易盛.",
+    "firstCredibleDate": "2023-10-23",
+    "valueChain": [
+      "hyperscaler AI capex",
+      "GPU clusters",
+      "400G/800G optical demand",
+      "high-speed module mix",
+      "gross margin/profit"
+    ],
+    "persistenceReason": "NVIDIA and TrendForce independently showed multi-quarter AI infrastructure demand while company Q3 results already converted the same mechanism.",
+    "disconfirmingEvidence": [
+      "Broad optical 60d relative regime remained weak.",
+      "US restrictions constrained China-specific AI GPU demand.",
+      "Optical pricing/competition could compress margins."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-ai-20231017",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "nvidia-q3fy24-20231121",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tf-nvidia-20231123",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-ai-20231123",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "innolight-q3-20231023",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "innolight-research-20231023",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "innolight-research-20231029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "eoptolink-q3-20231021",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "eoptolink-research-2023",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "accelink-q3-20231028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "hyperscaler AI capex",
+      "to": "400G/800G optical demand",
+      "mechanism": "Larger accelerated-computing clusters require higher-bandwidth interconnect.",
+      "evidenceRefs": [
+        "nvidia-q3fy24-20231121",
+        "tf-ai-20231017"
+      ],
+      "failureMode": "AI capex slows or architecture shifts away from pluggable optics",
+      "lag": "quarters"
+    },
+    {
+      "from": "high-speed optical demand",
+      "to": "中际旭创 earnings",
+      "mechanism": "Q3 800G/400G orders and shipments already raised revenue mix and profit/margin.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "innolight-research-20231023",
+        "innolight-research-20231029"
+      ],
+      "failureMode": "orders fail to sustain or ASP/margin compression offsets volume",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "realized earnings engine",
+      "to": "stock alpha",
+      "mechanism": "At about 18x frozen 2024E PE, continued high-speed mix conversion can lift earnings without requiring broad-sector rerating.",
+      "evidenceRefs": [
+        "innolight-research-20231023",
+        "regime-ai-20231123"
+      ],
+      "failureMode": "company-specific earnings decelerate while sector remains weak",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "global high-speed optical module suppliers with qualified hyperscaler exposure"
+    ],
+    "secondOrderWinners": [
+      "optical chips/components"
+    ],
+    "losers": [
+      "legacy telecom-only suppliers if mix shifts"
+    ],
+    "substitutes": [
+      "copper/alternative interconnect for short reach"
+    ],
+    "bottlenecks": [
+      "high-speed optical qualification and component supply"
+    ],
+    "falseThemeMatches": [
+      "domestic AI concepts without realized global customer shipments"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300308.SZ",
+      "name": "中际旭创",
+      "verifiedExposure": "Q3 high-speed optical orders/shipments already drove revenue/profit acceleration.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "innolight-research-20231023"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit +89.45% YoY; 2024E profit about RMB4.207bn at ~18x PE.",
+        "favorable": "800G mix and AI orders remain strong.",
+        "adverse": "AI capex, price or margin weakens."
+      },
+      "principalRisks": [
+        "AI capex slowdown",
+        "trade restrictions",
+        "optical competition"
+      ]
+    },
+    {
+      "ticker": "300502.SZ",
+      "name": "新易盛",
+      "verifiedExposure": "High-speed optical capability but Q3/YTD profit still declined.",
+      "evidenceRefs": [
+        "eoptolink-q3-20231021",
+        "eoptolink-research-2023"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit -53%; 2024E PE ~29x on frozen report.",
+        "favorable": "800G customer ramp drives recovery.",
+        "adverse": "ramp delayed."
+      },
+      "principalRisks": [
+        "conversion not yet realized",
+        "higher forward PE"
+      ]
+    },
+    {
+      "ticker": "002281.SZ",
+      "name": "光迅科技",
+      "verifiedExposure": "Optical supplier, but Q3 revenue/profit remained down year over year.",
+      "evidenceRefs": [
+        "accelink-q3-20231028"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit -3.09%, YTD -15.8%.",
+        "favorable": "AI/data-center mix improves.",
+        "adverse": "telecom weakness persists."
+      },
+      "principalRisks": [
+        "slower AI mix",
+        "domestic capex dependence"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300502.SZ",
+      "name": "新易盛",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct A-share high-speed optical peer exposed to the same AI demand cycle.",
+      "whySelectedCompanyShouldOutperform": "中际旭创 had already converted AI orders into Q3 profit growth and carried a lower frozen 2024E PE, while 新易盛 remained in earnings decline.",
+      "evidenceRefs": [
+        "innolight-research-20231023",
+        "eoptolink-q3-20231021",
+        "eoptolink-research-2023"
+      ]
+    },
+    {
+      "ticker": "002281.SZ",
+      "name": "光迅科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed optical-module peer with data-center and telecom exposure.",
+      "whySelectedCompanyShouldOutperform": "中际旭创 had much stronger realized AI/high-speed mix and Q3 profit acceleration.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "accelink-q3-20231028"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300308.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300502.SZ",
+        "selectedAdvantages": [
+          "Q3 profit +89% versus -53%",
+          "800G/400G shipment conversion already realized",
+          "~18x versus ~29x 2024E PE"
+        ],
+        "selectedDisadvantages": [
+          "新易盛 had stronger recent 20d price momentum"
+        ],
+        "evidenceRefs": [
+          "innolight-research-20231023",
+          "eoptolink-q3-20231021",
+          "eoptolink-research-2023",
+          "regime-ai-20231123"
+        ],
+        "switchCondition": "Switch if 新易盛 shows realized high-speed shipment/margin acceleration while its valuation premium closes.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "002281.SZ",
+        "selectedAdvantages": [
+          "material Q3 revenue/profit acceleration",
+          "direct global AI customer mix",
+          "clear 800G revenue contribution"
+        ],
+        "selectedDisadvantages": [
+          "光迅科技 may benefit more from a later domestic AI capex recovery"
+        ],
+        "evidenceRefs": [
+          "innolight-q3-20231023",
+          "innolight-research-20231029",
+          "accelink-q3-20231028"
+        ],
+        "switchCondition": "Switch if 光迅科技's high-speed data-center mix begins driving faster realized profit growth at a lower burden.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "Selected company has both realized company-engine evidence and materially better frozen earnings/valuation asymmetry."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "AI optical stocks had partially recovered over 20d but the basket still lagged the benchmark over 60d. 中际旭创's Oct23 forecast implied about 18x 2024E PE despite Q3 profit almost doubling.",
+    "thesisExpectation": "Continued 800G/400G order and mix conversion sustains high earnings growth even if the broad optical basket remains weak.",
+    "measurableGap": "Company fundamentals accelerated faster than its 60d relative price and faster than direct peers.",
+    "evidenceRefs": [
+      "regime-ai-20231123",
+      "innolight-research-20231023"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus realized 800G shipment/mix conversion versus optical peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2024E profit RMB4.207bn at roughly 18x PE; broad 60d optical regime still negative.",
+    "thesisScenario": "800G/400G order and mix momentum persists into Q4/Q1, sustaining earnings revisions above the frozen baseline.",
+    "breakevenCondition": "High-speed mix must maintain profit growth without multiple expansion; the selected company must retain its peer conversion advantage.",
+    "ordinaryScenarioFailure": "AI demand remains good but price/margin competition causes earnings to merely meet the baseline while the broad sector de-rates.",
+    "catalystOrTimingBridge": "Q4/Q1 shipment, gross-margin and profit updates lie inside the 60d base horizon.",
+    "evidenceRefs": [
+      "innolight-research-20231023",
+      "innolight-research-20231029",
+      "regime-ai-20231123"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "NVIDIA data-center revenue and 中际旭创 Q3 high-speed shipments/profit accelerated sharply.",
+      "evidenceRefs": [
+        "nvidia-q3fy24-20231121",
+        "innolight-q3-20231023"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q3 profit +89.45% YoY and +87.48% QoQ directly confirms earnings conversion.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "innolight-research-20231023"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "新易盛 and 光迅科技 Q3 profits declined while 中际 accelerated.",
+      "evidenceRefs": [
+        "eoptolink-q3-20231021",
+        "accelink-q3-20231028",
+        "innolight-q3-20231023"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The frozen 2024 earnings baseline may lag continued hyperscaler/800G demand confirmed after the Q3 report.",
+      "evidenceRefs": [
+        "innolight-research-20231023",
+        "nvidia-q3fy24-20231121",
+        "tf-nvidia-20231123"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use frozen company/basket 20/60d excess returns plus forward PE.",
+      "evidenceRefs": [
+        "regime-ai-20231123",
+        "innolight-research-20231023"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen AI optical basket versus CSI300",
+      "lookback20Excess": 0.13087751273336132,
+      "lookback60Excess": -0.039430033754921344,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-ai-20231123"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "AI data-center revenue and high-speed optical demand were accelerating.",
+      "evidenceRefs": [
+        "nvidia-q3fy24-20231121",
+        "tf-ai-20231017",
+        "innolight-q3-20231023"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "中际旭创 showed strong realized acceleration while 新易盛/光迅科技 still reported declining profits.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "eoptolink-q3-20231021",
+        "accelink-q3-20231028"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Hyperscaler AI capex and 800G deployment were multi-quarter infrastructure cycles.",
+      "evidenceRefs": [
+        "tf-ai-20231017",
+        "nvidia-q3fy24-20231121"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "20d rebound had started but 60d relative performance remained weak, limiting crowding.",
+      "evidenceRefs": [
+        "regime-ai-20231123"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Company fundamentals are strong but broad optical timing is not yet fully favorable."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "300308.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit growth and positive operating cash flow clear quality.",
+      "evidenceRefs": [
+        "innolight-q3-20231023"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Q3 acceleration plus external AI demand strength create further revision room beyond the frozen baseline.",
+      "evidenceRefs": [
+        "innolight-research-20231023",
+        "nvidia-q3fy24-20231121"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "About 18x 2024E PE was lower than 新易盛's roughly 29x despite stronger realized earnings conversion.",
+      "evidenceRefs": [
+        "innolight-research-20231023",
+        "eoptolink-research-2023"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q4/Q1 high-speed shipment/margin updates lie within the base horizon.",
+      "evidenceRefs": [
+        "innolight-research-20231023"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Realized earnings growth and lower peer-relative forward valuation reduce dependence on sector rerating.",
+      "evidenceRefs": [
+        "innolight-research-20231023",
+        "regime-ai-20231123"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300502.SZ",
+        "revisionAdvantage": "中际 already has realized Q3 AI shipment/profit acceleration while 新易盛 remains forecast-led.",
+        "valuationAdvantage": "~18x versus ~29x 2024E PE.",
+        "qualityTradeoff": "中际 stronger current profit conversion; both are high-speed optical suppliers.",
+        "catalystAdvantage": "中际's existing 800G mix can continue converting immediately.",
+        "downsideTradeoff": "Lower forward PE and stronger current earnings favor 中际.",
+        "evidenceRefs": [
+          "innolight-research-20231023",
+          "eoptolink-q3-20231021",
+          "eoptolink-research-2023"
+        ],
+        "switchCondition": "Switch if 新易盛 realizes faster high-speed profit growth and closes the valuation gap.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "002281.SZ",
+        "revisionAdvantage": "中际 Q3 profit acceleration is already visible; 光迅 Q3 remains down.",
+        "valuationAdvantage": "No equally strong low-burden earnings-growth case is frozen for 光迅.",
+        "qualityTradeoff": "中际 has stronger current earnings momentum.",
+        "catalystAdvantage": "Global 800G orders are already monetized by 中际.",
+        "downsideTradeoff": "光迅 carries slower mix-transition risk.",
+        "evidenceRefs": [
+          "innolight-q3-20231023",
+          "accelink-q3-20231028"
+        ],
+        "switchCondition": "Switch if 光迅's data-center mix produces stronger realized earnings at lower valuation.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "800G and 400G orders/shipments increased sharply in Q3 and 800G revenue contribution became the largest product contribution.",
+    "earningsMechanism": "Higher high-speed module volume and mix raised revenue and profit margins, already visible in Q3 profit acceleration.",
+    "nextObservableMetric": "Q4/Q1 high-speed shipments, gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "innolight-q3-20231023",
+      "innolight-research-20231029"
+    ],
+    "failureCondition": "High-speed shipments/mix or profit growth materially decelerates despite continued AI capex."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overrideMode": "fundamental_price_divergence",
+    "realizedEngine": {
+      "conclusion": "clear",
+      "rationale": "Q3 revenue/profit acceleration was already realized and directly attributed to high-speed AI optical shipments.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "innolight-research-20231023"
+      ]
+    },
+    "independentFundamentalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "NVIDIA and TrendForce independently confirmed exceptional/multi-quarter AI infrastructure demand.",
+      "evidenceRefs": [
+        "nvidia-q3fy24-20231121",
+        "tf-ai-20231017",
+        "tf-nvidia-20231123"
+      ]
+    },
+    "engineHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "CSP AI server investment and 800G deployment extend across multiple procurement/reporting cycles.",
+      "evidenceRefs": [
+        "tf-ai-20231017",
+        "nvidia-q3fy24-20231121"
+      ]
+    },
+    "fundamentalPriceDivergence": {
+      "conclusion": "clear",
+      "rationale": "Company Q3 fundamentals accelerated while its frozen 60d benchmark-relative return remained -14.34pp.",
+      "evidenceRefs": [
+        "innolight-q3-20231023",
+        "regime-ai-20231123"
+      ]
+    },
+    "nextCatalystWithinBase": {
+      "conclusion": "clear",
+      "rationale": "Q4/Q1 shipment/margin/profit updates are observable within 60 trading days.",
+      "evidenceRefs": [
+        "innolight-research-20231023"
+      ]
+    },
+    "priceWeaknessAttribution": {
+      "conclusion": "non_company_fundamental",
+      "rationale": "The 60d weakness coexisted with sharply improving company revenue/profit and strong global end-market demand, consistent with broader sector de-rating rather than company deterioration.",
+      "evidenceRefs": [
+        "regime-ai-20231123",
+        "innolight-q3-20231023",
+        "nvidia-q3fy24-20231121"
+      ]
+    },
+    "companyPriceDislocation": {
+      "selected20Excess": 0.08142714678048524,
+      "selected60Excess": -0.14341519277668047,
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "regime-ai-20231123"
+      ]
+    },
+    "falsifier": "Q4/Q1 high-speed shipment/margin/profit growth decelerates materially, or peer conversion overtakes 中际 before the base horizon.",
+    "evidenceRefs": [
+      "innolight-q3-20231023",
+      "nvidia-q3fy24-20231121",
+      "regime-ai-20231123"
+    ],
+    "overallConclusion": "clear_override"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority only through the strict v1.0 company-engine override; broad optical timing itself is neutral.",
+    "alreadyPricedAssessment": "partially priced over 20d but still de-rated over 60d",
+    "constraints": [
+      "broad sector timing neutral",
+      "trade restrictions",
+      "AI capex concentration"
+    ]
+  },
+  "bearCase": "AI demand remains strong but optical ASP/margin competition or customer mix causes 中际 earnings to decelerate despite the sector narrative.",
+  "invalidationConditions": [
+    {
+      "indicator": "high-speed module earnings conversion",
+      "observationMethod": "next quarterly report",
+      "threshold": "revenue/profit/margin materially decelerates"
+    },
+    {
+      "indicator": "peer relative conversion",
+      "observationMethod": "matched-control earnings updates",
+      "threshold": "a frozen peer develops superior realized revision/valuation asymmetry"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact customer concentration",
+    "Q4 optical ASP trajectory"
+  ],
+  "nextResearchActions": [
+    "Freeze High-priority through company-engine override.",
+    "Do not alter route after outcome reveal."
+  ]
+}
