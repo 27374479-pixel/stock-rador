@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q3-multisource-deep-v1.4-001",
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "baseHorizonTradingDays": 60,
+  "primaryResult": {
+    "hypothesisId": "h-2019q3-machinery-reacceleration",
+    "frozenExpressions": [
+      "600031.SH",
+      "601100.SH"
+    ],
+    "basket60d": {
+      "netReturn": 0.21817596468396672,
+      "benchmarkReturn": 0.0688840645369102,
+      "benchmarkExcess": 0.1492919001470565
+    },
+    "expression60d": [
+      {
+        "ticker": "600031.SH",
+        "netReturn": 0.16016698020368603,
+        "benchmarkExcess": 0.09128291566677582,
+        "excessVsBestControl": 0.05541571023504854
+      },
+      {
+        "ticker": "601100.SH",
+        "netReturn": 0.2761849491642474,
+        "benchmarkExcess": 0.2073008846273372,
+        "excessVsBestControl": 0.17143367919560992
+      }
+    ],
+    "assessment": "opportunity_right_multiple_acceptable_expressions",
+    "interpretation": "The opportunity-first Primary contract worked on the first V1.4 window. Both acceptable expressions were positive, benchmark-relative winners and beat the frozen peer control at the pre-registered 60d horizon."
+  },
+  "researchDiagnostics": [
+    {
+      "hypothesisId": "h-2019q3-etc-buildout",
+      "expressions": [
+        {
+          "ticker": "002869.SZ",
+          "netReturn60d": 0.10802064829368585,
+          "benchmarkExcess60d": 0.039136583756775645,
+          "excessVsBestControl60d": 0.07433589729049905
+        },
+        {
+          "ticker": "300552.SZ",
+          "netReturn60d": 0.8207898923163264,
+          "benchmarkExcess60d": 0.7519058277794162,
+          "excessVsBestControl60d": 0.7871051413131396
+        }
+      ],
+      "frozenBlockers": [
+        "short_lived event half-life",
+        "high late-cycle risk",
+        "tight expectation burden",
+        "mixed expectation path because post-2019 hardware duration was weak"
+      ],
+      "assessment": "research_false_negative_base_horizon_convexity",
+      "interpretation": "The long-duration caution was valid, but the base-horizon order-to-earnings bridge was already realized/explicit and produced large 60d excess. A finite structural half-life does not necessarily imply poor 20-60d opportunity quality when realization occurs well before expiry."
+    },
+    {
+      "hypothesisId": "h-2019q3-cobalt-mutanda-exit",
+      "expressions": [
+        {
+          "ticker": "603799.SH",
+          "netReturn60d": 0.48216700256888934,
+          "benchmarkExcess60d": 0.41328293803197913,
+          "excessVsBestControl60d": 0.21292927853868382
+        }
+      ],
+      "frozenBlockers": [
+        "high absorption/late-cycle risk after supply-shock rerating",
+        "tight expectation burden",
+        "high duration risk because near-term inventories conflicted with later supply exit"
+      ],
+      "assessment": "research_false_negative_horizon_separated_supply_shock",
+      "interpretation": "V1.4 correctly separated near-term inventory uncertainty from the medium-term mine-supply exit, but the promotion gate still over-weighted duration/absorption relative to an already-specified supply catalyst inside the base horizon."
+    },
+    {
+      "hypothesisId": "h-2019q3-pork-scarcity-acceleration",
+      "expressions": [
+        {
+          "ticker": "002714.SZ",
+          "netReturn60d": 0.1519397695103959,
+          "benchmarkExcess60d": 0.08305570497348569,
+          "excessVsBestControl60d": 0.06376105700847057
+        }
+      ],
+      "frozenBlockers": [
+        "high late-cycle risk",
+        "high duration risk",
+        "mixed path because eventual supply restoration was expected"
+      ],
+      "assessment": "research_direction_right_with_finite_cycle_duration",
+      "interpretation": "The stock still produced positive base-horizon excess and beat both frozen controls. Long-run normalization risk was real, but it should be separated from whether a strong realized margin engine remains investable over the pre-registered base horizon."
+    }
+  ],
+  "v14SpecificAssessment": {
+    "hypothesisDecomposition": {
+      "result": "passed_process_test",
+      "evidence": [
+        "Generic DRAM was explicitly split into PC stabilization and mobile weakness rather than averaged into one memory call.",
+        "Nickel export-ban evidence was split into ex-Indonesia scarcity and Indonesia-processing hypotheses rather than treating opposite economic exposures as one basket.",
+        "Selected opportunities were required to be well-scoped before selection."
+      ],
+      "interpretation": "The V1.4 decomposition contract behaved as intended and prevented broad-theme substitution."
+    },
+    "evidenceHorizonMatrix": {
+      "result": "useful_but_promotion_interaction_too_conservative",
+      "interpretation": "The matrix successfully preserved near/base/structural disagreement, but existing V1.3 promotion gates still let adverse structural duration veto opportunities whose earnings realization window was materially shorter than the structural expiry."
+    },
+    "leaderDivergence": {
+      "result": "no_new_failure_in_this_window",
+      "interpretation": "The main selected 2019Q3 cases did not require a sector-negative/leader-positive override, so this component remains unproven rather than disproven."
+    },
+    "highAbsorptionContinuation": {
+      "result": "diagnostically_useful_not_yet_a_promotion_route",
+      "interpretation": "The test distinguished fresh earnings/order/supply evidence from narrative repetition, but V1.4 intentionally did not let it override existing High-priority gates."
+    }
+  },
+  "baseHorizonSummary": {
+    "frozenSelectionTickerCount": 6,
+    "allSelection60dPositiveReturnRate": 1,
+    "allSelection60dBenchmarkExcessHitRate": 1,
+    "allSelection60dMatchedControlHitRate": 1,
+    "allSelection60dWinsAllFrozenControlsRate": 1,
+    "meanSelection60dNetReturn": 0.3332115403428718,
+    "meanSelection60dBenchmarkExcess": 0.2643274758059616
+  },
+  "failureClassDiagnosis": {
+    "dominant": "horizon_mismatch_between_realization_and_duration_gate",
+    "description": "The current gates partly answer 'is this a durable multi-quarter structural compounder?' even when the memo's explicit decision validity/base horizon is 60 trading days and the earnings catalyst can realize before a known finite-cycle expiry.",
+    "secondary": [
+      "high absorption is still treated too close to a veto even when new incremental operating evidence is arriving",
+      "finite-cycle normalization risk is not explicitly separated from base-horizon earnings convexity"
+    ],
+    "notSupported": [
+      "Do not infer that all high-momentum or high-valuation names should be promoted.",
+      "Do not infer that event half-life is irrelevant.",
+      "Do not infer that 120d continuation should validate a 60d decision.",
+      "Do not retroactively promote the frozen 2019Q3 Research selections."
+    ]
+  },
+  "nextVersionDecision": {
+    "keepV14Immutable": true,
+    "createV15Candidate": true,
+    "reason": "2019Q3 is the first independent window after V1.4 freeze. It validates the decomposition mechanics and exposes a distinct promotion failure: base-horizon realizable opportunities can be blocked by longer-horizon duration/late-cycle rules even when the earnings bridge, acceptable expression and catalyst are already explicit.",
+    "proposedV15Mechanism": "base_horizon_convexity_route",
+    "requirementsToExplore": [
+      "Base-horizon catalyst/earnings conversion must be realized or quantitatively bridged and occur materially before the known structural expiry/normalization window.",
+      "Acceptable expression must pass balance-sheet/survival, direct exposure and downside checks.",
+      "The thesis must have an explicit near/base-horizon expectation gap; long-run normalization may be adverse but cannot be hidden.",
+      "High absorption requires fresh incremental information after the prior rerating, not confirmation-only narrative.",
+      "A hard re-underwriting/expiry rule must prevent carrying the short-horizon thesis beyond its frozen validity.",
+      "This route must not weaken the normal route for long-duration compounders."
+    ],
+    "validationPolicy": "Build V1.5 from this failure class, then freeze it before testing on a different untouched historical window. 2019Q3 cannot validate V1.5."
+  },
+  "noSelectionPolicy": {
+    "currentAssessment": "not_yet_audited_for_returns",
+    "interpretation": "Nickel and DRAM no-selection children were created specifically because direct product/geography expressions were missing or not base-horizon realized. Do not label these misses by substituting generic theme stocks after reveal; any outcome audit must preserve the frozen child-hypothesis mapping."
+  },
+  "compatibilityNote": {
+    "type": "suspension_carry_forward_for_path_accounting_only",
+    "ticker": "603799.SH",
+    "date": "2019-12-31",
+    "returnEndpointsChanged": false,
+    "selectionAndHorizonChanges": false
+  },
+  "prohibitedUses": [
+    "Do not present this contaminated historical replay as clean alpha validation.",
+    "Do not tune V1.4 in place after reveal.",
+    "Do not use the spectacular 300552.SZ result to create a named-stock or sector-specific exception.",
+    "Do not replace product/geography-specific no-selection hypotheses with hindsight theme proxies."
+  ]
+}
