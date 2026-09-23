@@ -1,0 +1,522 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2022-03-23T23:59:59+08:00",
+  "researchReadyAt": "2022-03-23T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q1-potash-zangge",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Potash/lithium scarcity can affect producer earnings quickly, but the contemporaneous forecast already embeds a large 2022 step-up."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Russia/Belarus supply disruption made the global potash shortage more acute. 藏格 had low-cost potash and lithium economics with strong 2021 earnings, but the Mar13 forecast already embedded the sanctions/high-price regime and projected only modest growth after the 2022 step-up. The stock also entered a late-reversal price state.",
+    "firstCredibleDate": "2022-03-16",
+    "valueChain": [
+      "Russia/Belarus export disruption",
+      "potash scarcity",
+      "potash selling price",
+      "low-cost producer margin",
+      "earnings"
+    ],
+    "persistenceReason": "Supply disruption can last multiple quarters, but demand destruction/new supply and already-high prices limit duration certainty.",
+    "disconfirmingEvidence": [
+      "The Mar13 forecast already cited Belarus/Russia supply risk and high potash/lithium prices.",
+      "2022-24 profit path was RMB4.775/5.080/5.160bn, meaning most step-up was already in 2022.",
+      "The stock was late_reversal: 20d underperformed while 60d still outperformed."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-potash-20220316",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-fertilizer-20220323",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-potash-20220323",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zangge-research-20220313",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Russia/Belarus supply disruption",
+      "to": "global potash prices",
+      "mechanism": "A large share of global exports becomes uncertain, tightening supply.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "reuters-fertilizer-20220323"
+      ],
+      "failureMode": "alternative supply/demand destruction closes the gap",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "higher potash/lithium prices",
+      "to": "藏格 earnings",
+      "mechanism": "Low production costs create high incremental margins at elevated selling prices.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ],
+      "failureMode": "prices normalize or volume/project execution disappoints",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings step-up",
+      "to": "equity alpha",
+      "mechanism": "Alpha requires scarcity to improve the post-2022 path beyond an already-high baseline, not only sustain current prices.",
+      "evidenceRefs": [
+        "zangge-research-20220313",
+        "regime-potash-20220323"
+      ],
+      "failureMode": "2022 super-profit is already capitalized and later growth remains flat",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost potash producers"
+    ],
+    "secondOrderWinners": [
+      "fertilizer producers with secured inputs"
+    ],
+    "losers": [
+      "farmers/downstream consumers facing high fertilizer prices"
+    ],
+    "substitutes": [
+      "alternative fertilizer application/supply sources"
+    ],
+    "bottlenecks": [
+      "export logistics",
+      "new mine ramp"
+    ],
+    "falseThemeMatches": [
+      "fertilizer names without low-cost potash exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000408.SZ",
+      "name": "藏格矿业",
+      "verifiedExposure": "Low-cost potash plus lithium; 2021 profit and prices already accelerated.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ],
+      "earningsSensitivity": {
+        "base": "2022-24 profit forecast RMB4.775/5.080/5.160bn.",
+        "favorable": "potash/lithium prices stay higher longer than baseline.",
+        "adverse": "prices normalize and post-2022 growth flattens."
+      },
+      "principalRisks": [
+        "peak-price duration",
+        "late-reversal price state"
+      ]
+    },
+    {
+      "ticker": "000792.SZ",
+      "name": "盐湖股份",
+      "verifiedExposure": "Large domestic potash producer in the same scarcity cycle.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "regime-potash-20220323"
+      ],
+      "earningsSensitivity": {
+        "base": "Large scale but no equally clean frozen path in this memo.",
+        "favorable": "domestic potash scarcity supports pricing.",
+        "adverse": "cycle normalizes."
+      },
+      "principalRisks": [
+        "path uncertainty"
+      ]
+    },
+    {
+      "ticker": "000893.SZ",
+      "name": "亚钾国际",
+      "verifiedExposure": "Pure-play potash exposure with strong 20/60d price strength.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "regime-potash-20220323"
+      ],
+      "earningsSensitivity": {
+        "base": "Purer potash beta but contemporaneous multi-year forecast not frozen here.",
+        "favorable": "global shortage persists.",
+        "adverse": "supply response/demand destruction."
+      },
+      "principalRisks": [
+        "already-rerated price",
+        "ramp execution"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "000792.SZ",
+      "name": "盐湖股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large domestic potash producer exposed to the same shortage.",
+      "whySelectedCompanyShouldOutperform": "藏格 has an explicit low-cost potash/lithium path and contemporaneous forecast;盐湖 scale is larger but the frozen path is less comparable.",
+      "evidenceRefs": [
+        "zangge-research-20220313",
+        "regime-potash-20220323"
+      ]
+    },
+    {
+      "ticker": "000893.SZ",
+      "name": "亚钾国际",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Potash-focused producer exposed to the same global shortage.",
+      "whySelectedCompanyShouldOutperform": "藏格 has lower-cost diversified potash/lithium evidence;亚钾 had stronger price momentum and potentially purer potash beta.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "zangge-research-20220313",
+        "regime-potash-20220323"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000408.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "000792.SZ",
+        "selectedAdvantages": [
+          "explicit low-cost path",
+          "lithium optionality"
+        ],
+        "selectedDisadvantages": [
+          "盐湖 has greater potash scale"
+        ],
+        "evidenceRefs": [
+          "zangge-research-20220313",
+          "regime-potash-20220323"
+        ],
+        "switchCondition": "Prefer 盐湖 if a frozen forward path shows stronger durable post-2022 earnings at lower burden.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "000893.SZ",
+        "selectedAdvantages": [
+          "more diversified low-cost earnings",
+          "published multi-year path"
+        ],
+        "selectedDisadvantages": [
+          "亚钾 has purer potash scarcity exposure and much stronger recent price action"
+        ],
+        "evidenceRefs": [
+          "zangge-research-20220313",
+          "regime-potash-20220323"
+        ],
+        "switchCondition": "Prefer 亚钾 if its expanded capacity creates a clearly superior next/later earnings path.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The company is a credible research expression, but peer/path asymmetry is not clear enough for High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The Mar13 report already incorporated Belarus/Russia supply uncertainty, high potash prices and high lithium prices, forecasting RMB4.775/5.080/5.160bn profit for 2022-24. The stock had moved into a late-reversal state by Mar23.",
+    "thesisExpectation": "Further fertilizer shortages could keep prices elevated and extend the super-profit period.",
+    "measurableGap": "The key gap is whether 2023-24 profit should rise materially above the already-high, nearly-flat baseline.",
+    "evidenceRefs": [
+      "zangge-research-20220313",
+      "reuters-fertilizer-20220323",
+      "regime-potash-20220323"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year earnings path rather than current scarcity multiples.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2022-24 profit RMB4.775/5.080/5.160bn; PE ~14.34x/13.48x/13.27x.",
+    "thesisScenario": "The shortage keeps prices high enough to raise 2023-24 earnings, not only 2022.",
+    "breakevenCondition": "The post-2022 profit path must move materially above the frozen near-flat baseline.",
+    "ordinaryScenarioFailure": "2022 remains excellent but later profit growth is only low single digit as already forecast.",
+    "catalystOrTimingBridge": "2022 Q1/H1 realized prices and updated 2023-24 forecasts can test path extension.",
+    "evidenceRefs": [
+      "zangge-research-20220313",
+      "reuters-fertilizer-20220323"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Global potash shortage became more acute after the Russia/Belarus disruption.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "2021 potash/lithium revenue and profit already accelerated sharply.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "All potash names share the shortage but price states and frozen path evidence differ.",
+      "evidenceRefs": [
+        "regime-potash-20220323",
+        "reuters-potash-20220316"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The Mar13 forecast is very recent and already references the Russia/Belarus supply risk, so baseline lag is limited.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare the late-reversal price state with the contemporaneous multi-year forecast.",
+      "evidenceRefs": [
+        "regime-potash-20220323",
+        "zangge-research-20220313"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen potash basket versus CSI300",
+      "lookback20Excess": 0.005062673629901353,
+      "lookback60Excess": 0.1745953075495862,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-potash-20220323"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Global potash/fertilizer shortage and pricing pressure accelerated.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Producer earnings benefit, but downstream demand destruction and differing project ramps limit broad certainty.",
+      "evidenceRefs": [
+        "zangge-research-20220313",
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Russia/Belarus export disruption can last multiple quarters.",
+      "evidenceRefs": [
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The selected stock is already in late_reversal and the forecast already capitalizes high prices.",
+      "evidenceRefs": [
+        "regime-potash-20220323",
+        "zangge-research-20220313"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical shortage is real but timing/expectation absorption blocks High-priority."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000408.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong realized 2021 profit and low-cost potash/lithium operations.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Near-term upside exists, but 2023-24 path improvement beyond the new baseline is not shown.",
+      "evidenceRefs": [
+        "zangge-research-20220313",
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Forward PE is moderate, but point PE alone is not enough under v1.2.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Q1/H1 price and earnings updates can test persistence.",
+      "evidenceRefs": [
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low cost helps, but late-reversal and peak-price risk remain.",
+      "evidenceRefs": [
+        "regime-potash-20220323",
+        "zangge-research-20220313"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "000792.SZ",
+        "revisionAdvantage": "藏格 has an explicit contemporaneous path;盐湖 scale may provide equal or better torque.",
+        "valuationAdvantage": "No clean frozen peer path comparison.",
+        "qualityTradeoff": "Both are low-cost resource producers.",
+        "catalystAdvantage": "Both benefit from potash pricing.",
+        "downsideTradeoff": "Selected stock has lithium diversification but late-reversal risk.",
+        "evidenceRefs": [
+          "zangge-research-20220313",
+          "regime-potash-20220323"
+        ],
+        "switchCondition": "Switch if 盐湖 shows superior durable post-2022 path.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "000893.SZ",
+        "revisionAdvantage": "藏格 has realized diversified earnings;亚钾 may have expansion torque.",
+        "valuationAdvantage": "No clean frozen comparison.",
+        "qualityTradeoff": "亚钾 is purer potash;藏格 has lithium/copper optionality.",
+        "catalystAdvantage": "Both benefit from shortage.",
+        "downsideTradeoff": "亚钾 already has stronger momentum; selected stock is late_reversal.",
+        "evidenceRefs": [
+          "reuters-potash-20220316",
+          "zangge-research-20220313",
+          "regime-potash-20220323"
+        ],
+        "switchCondition": "Switch if 亚钾 capacity ramp creates better later-period earnings.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Global potash prices and lithium prices rose sharply under supply constraints.",
+    "earningsMechanism": "Low unit costs translate higher selling prices into outsized producer margins.",
+    "nextObservableMetric": "2022 Q1/H1 potash/lithium selling prices and profit forecasts",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "zangge-research-20220313",
+      "reuters-potash-20220316"
+    ],
+    "failureCondition": "Only 2022 profit rises while 2023-24 forecasts remain near the frozen baseline."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2022 profit RMB4.775bn after the large scarcity-driven step-up.",
+      "nextPeriod": "2023 profit RMB5.080bn, only modestly above 2022.",
+      "laterPeriod": "2024 profit RMB5.160bn, essentially flat versus 2023.",
+      "rationale": "The Mar13 forecast already includes high potash/lithium prices and Russia/Belarus supply uncertainty.",
+      "evidenceRefs": [
+        "zangge-research-20220313"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "The Mar16-23 shortage evidence can keep 2022 prices/profit stronger for longer.",
+      "nextPeriodChange": "No clean pre-cutoff proof shows 2023 profit should materially exceed the already-high baseline.",
+      "laterPeriodChange": "No clean proof shows 2024 normalized earnings are structurally above the nearly-flat published path.",
+      "mechanism": "The incremental news mainly extends near-term scarcity; it does not yet re-shape the entire earnings path.",
+      "evidenceRefs": [
+        "reuters-potash-20220316",
+        "reuters-fertilizer-20220323",
+        "zangge-research-20220313"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term path may improve, but next/later-period advantage is unproven.",
+      "evidenceRefs": [
+        "zangge-research-20220313",
+        "reuters-fertilizer-20220323"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The thesis depends on elevated potash/lithium pricing persisting beyond an already-high 2022 baseline while the stock is late_reversal.",
+      "evidenceRefs": [
+        "regime-potash-20220323",
+        "zangge-research-20220313"
+      ]
+    },
+    "falsifier": "2023-24 forecasts fail to rise materially above the frozen Mar13 path despite strong 2022 earnings.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: physical scarcity is strong, but v1.2 requires a better full-path thesis than '2022 remains excellent'.",
+    "alreadyPricedAssessment": "near-term scarcity largely recognized",
+    "constraints": [
+      "late_reversal",
+      "recent baseline already includes shortage",
+      "post-2022 path flat"
+    ]
+  },
+  "bearCase": "The market is already capitalizing the scarcity super-profit; later earnings flatten as supply responds or demand is rationed.",
+  "invalidationConditions": [
+    {
+      "indicator": "2023-24 earnings path",
+      "observationMethod": "updated forecasts",
+      "threshold": "no material uplift from frozen path"
+    },
+    {
+      "indicator": "potash pricing/demand",
+      "observationMethod": "industry/company data",
+      "threshold": "demand destruction or new supply normalizes prices"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "peer-normalized full earnings paths",
+    "duration of sanctions/logistics disruption"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research only under v1.2 expectation-path gate."
+  ]
+}
