@@ -1,0 +1,264 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-nickel-export-ban",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The policy shock starts Jan 2020, but earnings effects differ by geography/business model; parent aggregate must be split before any selection."
+  },
+  "changeHypothesis": {
+    "summary": "Indonesia's earlier export ban simultaneously tightens ore available outside Indonesia and advantages processing located inside Indonesia. Treating all nickel-linked A-shares as one opportunity would mix opposite causal exposures.",
+    "firstCredibleDate": "2019-09-02",
+    "valueChain": [
+      "export ban",
+      "ex-Indonesia ore scarcity / Indonesia processing advantage",
+      "nickel economics",
+      "company earnings"
+    ],
+    "persistenceReason": "The policy is scheduled to persist, but impact depends on asset geography and project readiness.",
+    "disconfirmingEvidence": [
+      "Frozen nickel basket was only neutral.",
+      "Most candidate Indonesian projects were still under construction, not realized earnings."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nickel-ban-20190902",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shengtun-nickel-20190809",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-nickel-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Indonesia export ban",
+      "to": "ex-Indonesia ore availability",
+      "mechanism": "Ore exports cease from Jan 2020.",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ],
+      "failureMode": "other countries/scrap substitute",
+      "lag": "months"
+    },
+    {
+      "from": "Indonesia export ban",
+      "to": "domestic Indonesian processing",
+      "mechanism": "Ore is redirected toward local smelting/refining.",
+      "evidenceRefs": [
+        "nickel-ban-20190902",
+        "shengtun-nickel-20190809"
+      ],
+      "failureMode": "projects are not built/financed in time",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "non-Indonesian nickel resource owners",
+      "operational Indonesian processors"
+    ],
+    "secondOrderWinners": [
+      "stainless/battery nickel chains"
+    ],
+    "losers": [
+      "ore import-dependent processors outside Indonesia"
+    ],
+    "substitutes": [
+      "Philippine ore",
+      "scrap"
+    ],
+    "bottlenecks": [
+      "project construction",
+      "ore logistics"
+    ],
+    "falseThemeMatches": [
+      "any company labeled nickel without the correct geography"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600711.SH",
+      "name": "盛屯矿业",
+      "verifiedExposure": "Prospective Indonesian high-matte project, not operational at cutoff.",
+      "evidenceRefs": [
+        "shengtun-nickel-20190809"
+      ],
+      "earningsSensitivity": {
+        "base": "Project under construction.",
+        "favorable": "Ban improves future local-processing economics.",
+        "adverse": "Construction/financing delays mean no base-horizon earnings."
+      },
+      "principalRisks": [
+        "prospective not realized"
+      ]
+    },
+    {
+      "ticker": "002340.SZ",
+      "name": "格林美",
+      "verifiedExposure": "Indonesian battery-nickel project under development; realized exposure not frozen in this pack.",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ],
+      "earningsSensitivity": {
+        "base": "Future project thesis only.",
+        "favorable": "Policy increases local resource advantage.",
+        "adverse": "No current earnings bridge."
+      },
+      "principalRisks": [
+        "mapping timing"
+      ]
+    },
+    {
+      "ticker": "300208.SZ",
+      "name": "青岛中程",
+      "verifiedExposure": "Indonesia industrial exposure but exact nickel earnings sensitivity not cleanly frozen.",
+      "evidenceRefs": [
+        "regime-nickel-20190930"
+      ],
+      "earningsSensitivity": {
+        "base": "Mapping uncertain.",
+        "favorable": "Existing Indonesian footprint could benefit.",
+        "adverse": "Concept exposure lacks audited incremental earnings bridge."
+      },
+      "principalRisks": [
+        "mapping uncertainty"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Split required: the same ban creates opposite geographic mechanisms. No stock may be selected from this aggregate parent."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Nickel-theme basket was roughly benchmark-like over 60d despite the policy shock; one name dominated relative strength.",
+    "thesisExpectation": "Evaluate ex-Indonesia scarcity and Indonesia-local-processing as separate hypotheses.",
+    "measurableGap": "Aggregate nickel label is causally invalid.",
+    "evidenceRefs": [
+      "nickel-ban-20190902",
+      "regime-nickel-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "nickel ore scarcity and downstream processing",
+    "geographicScope": "ex-Indonesia ore markets versus Indonesian domestic processing",
+    "customerScope": "stainless/battery processors and ore buyers",
+    "decompositionNeeded": true,
+    "siblingHypothesisIds": [
+      "h-2019q3-nickel-ex-indonesia-scarcity",
+      "h-2019q3-nickel-indonesia-processing"
+    ],
+    "rationale": "Export policy makes geography causal: miners and local processors face different economics.",
+    "evidenceRefs": [
+      "nickel-ban-20190902",
+      "shengtun-nickel-20190809"
+    ],
+    "conclusion": "split_required"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "policy announcement reprices expectations before implementation",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "nickel-ban-20190902",
+        "regime-nickel-20190930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "Jan 2020 ore restriction benefits/hurts different geographies",
+      "horizon": "next quarters",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "Indonesian downstream industrialization versus global ore substitution",
+      "horizon": "multi-year",
+      "evidenceRefs": [
+        "nickel-ban-20190902",
+        "shengtun-nickel-20190809"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Split by asset geography and realized project status before applying any earnings gate.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "Aggregate theme price does not identify which geographic business model benefits.",
+    "evidenceRefs": [
+      "regime-nickel-20190930",
+      "nickel-ban-20190902"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "aggregate_signal_not_actionable",
+    "constraints": [
+      "opposite geographic effects",
+      "project timing"
+    ]
+  },
+  "bearCase": "A generic nickel trade buys a company on the wrong side of the export-ban mechanism.",
+  "invalidationConditions": [
+    {
+      "indicator": "asset geography/project status",
+      "observationMethod": "company filing",
+      "threshold": "must be resolved before any selection"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Analyze the two sibling hypotheses separately."
+  ]
+}
