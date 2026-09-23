@@ -1,0 +1,108 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q4-multisource-deep-v1.3-001",
+  "label": "post_outcome_no_selection_miss_audit",
+  "samePeriodMayTuneSkill": false,
+  "diagnosticOnly": true,
+  "lockVerified": true,
+  "lockRunId": "2019q4-multisource-deep-v1.3-001",
+  "cutoffDate": "2019-12-31",
+  "entryDate": "2020-01-02",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "baskets": [
+    {
+      "basketId": "broad-nev",
+      "label": "Broad NEV frozen candidate basket",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "300750.SZ",
+        "002594.SZ"
+      ],
+      "tickerResults": [
+        {
+          "ticker": "300750.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2020-02-06",
+              "netReturn": 0.5807090294011825,
+              "benchmarkReturn": -0.0537615101847696,
+              "excessReturn": 0.6344705395859521
+            },
+            "60": {
+              "exitDate": "2020-04-02",
+              "netReturn": 0.15037226355133804,
+              "benchmarkReturn": -0.09385759520545456,
+              "excessReturn": 0.2442298587567926
+            },
+            "120": {
+              "exitDate": "2020-07-03",
+              "netReturn": 0.5614651947649936,
+              "benchmarkReturn": 0.07236706419013195,
+              "excessReturn": 0.4890981305748616
+            }
+          }
+        },
+        {
+          "ticker": "002594.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2020-02-06",
+              "netReturn": 0.2660239205581587,
+              "benchmarkReturn": -0.0537615101847696,
+              "excessReturn": 0.3197854307429283
+            },
+            "60": {
+              "exitDate": "2020-04-02",
+              "netReturn": 0.1806509345065792,
+              "benchmarkReturn": -0.09385759520545456,
+              "excessReturn": 0.27450852971203377
+            },
+            "120": {
+              "exitDate": "2020-07-03",
+              "netReturn": 0.6477396755003173,
+              "benchmarkReturn": 0.07236706419013195,
+              "excessReturn": 0.5753726113101854
+            }
+          }
+        }
+      ],
+      "horizons": {
+        "20": {
+          "count": 2,
+          "meanNetReturn": 0.4233664749796706,
+          "benchmarkReturn": -0.0537615101847696,
+          "meanExcessReturn": 0.4771279851644402,
+          "positiveExcessBreadth": 1
+        },
+        "60": {
+          "count": 2,
+          "meanNetReturn": 0.16551159902895862,
+          "benchmarkReturn": -0.09385759520545456,
+          "meanExcessReturn": 0.2593691942344132,
+          "positiveExcessBreadth": 1
+        },
+        "120": {
+          "count": 2,
+          "meanNetReturn": 0.6046024351326554,
+          "benchmarkReturn": 0.07236706419013195,
+          "meanExcessReturn": 0.5322353709425235,
+          "positiveExcessBreadth": 1
+        }
+      }
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2019q4-server-dram-turn",
+      "reason": "No direct A-share server-DRAM earnings expression was frozen before reveal; generic semiconductor or server proxies would be hindsight substitution."
+    }
+  ]
+}
