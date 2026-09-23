@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-06-27T15:30:00+08:00",
+  "researchReadyAt": "2025-06-27T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q2-solar-valuechain-sungrow-2025q2",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "PV rush and inverter/storage delivery can affect one to two reporting cycles, but Q3 post-rush demand is a material reversal risk."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "changeHypothesis": {
+    "summary": "The Q2 PV installation rush did not make module manufacturers attractive because overcapacity kept manufacturing losses severe. 阳光电源 offered a cleaner value-chain expression: Q1 revenue/profit/cash flow accelerated sharply and storage/inverter economics were profitable at a low forward valuation. However, the frozen solar basket was still neutral because 60d relative performance and breadth remained weak.",
+    "firstCredibleDate": "2025-06-09",
+    "valueChain": [
+      "PV/storage installation activity",
+      "inverter/storage-system shipments",
+      "mix/gross margin",
+      "earnings"
+    ],
+    "persistenceReason": "Project activity was unusually strong and Sungrow had already demonstrated profitable inverter/storage conversion.",
+    "disconfirmingEvidence": [
+      "TrendForce expected installation demand to weaken after the rush.",
+      "The 60d basket regime was negative with 0% positive breadth.",
+      "Solar manufacturing overcapacity and price pressure remained severe."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-pv-20250327",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "reuters-solar-20250609",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "nea-solar-20250627",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-solar-20250627",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "sungrow-q1-20250426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "sungrow-research-20250427",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "ginlong-q1-20250425",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "longi-q1-20250430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "front-loaded PV/storage projects",
+      "to": "inverter/storage shipments",
+      "mechanism": "More installations require inverters/power electronics and storage systems even when module manufacturing margins are weak.",
+      "evidenceRefs": [
+        "nea-solar-20250627",
+        "sungrow-q1-20250426"
+      ],
+      "failureMode": "rush ends abruptly and Q3 installations collapse",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "shipments/mix",
+      "to": "阳光电源 earnings",
+      "mechanism": "Profitable inverter/storage systems convert shipment growth into revenue/profit/cash rather than commodity-module losses.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "sungrow-research-20250427"
+      ],
+      "failureMode": "storage/inverter pricing or overseas mix weakens",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "earnings quality",
+      "to": "stock alpha",
+      "mechanism": "Low forward valuation and stronger conversion must overcome a still-neutral sector timing regime.",
+      "evidenceRefs": [
+        "sungrow-research-20250427",
+        "regime-solar-20250627"
+      ],
+      "failureMode": "post-rush sector de-rating dominates company quality",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "profitable inverter/storage-system suppliers"
+    ],
+    "secondOrderWinners": [
+      "grid-connection equipment and project services"
+    ],
+    "losers": [
+      "commodity module/wafer capacity below cost"
+    ],
+    "substitutes": [
+      "alternative inverter/storage suppliers"
+    ],
+    "bottlenecks": [
+      "grid connection",
+      "project economics"
+    ],
+    "falseThemeMatches": [
+      "module manufacturers whose installation volume does not translate into profit"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "verifiedExposure": "Q1 revenue +50.9%, profit +82.5%,扣非 +76.5%, CFO strongly positive; analyst 2025E PE about 9x.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "sungrow-research-20250427"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong profitable inverter/storage growth.",
+        "favorable": "Q2 rush and storage growth sustain earnings above baseline.",
+        "adverse": "post-rush slowdown overwhelms."
+      },
+      "principalRisks": [
+        "post-rush demand",
+        "global pricing"
+      ]
+    },
+    {
+      "ticker": "300763.SZ",
+      "name": "锦浪科技",
+      "verifiedExposure": "Q1 profit rebounded sharply and CFO improved, but absolute scale/diversification was smaller.",
+      "evidenceRefs": [
+        "ginlong-q1-20250425"
+      ],
+      "earningsSensitivity": {
+        "base": "turnaround from a low base.",
+        "favorable": "inverter recovery persists.",
+        "adverse": "Q1 rebound is low-base/temporary."
+      },
+      "principalRisks": [
+        "smaller scale",
+        "higher valuation"
+      ]
+    },
+    {
+      "ticker": "601012.SH",
+      "name": "隆基绿能",
+      "verifiedExposure": "Large PV manufacturing exposure but Q1 remained deeply loss-making with negative CFO.",
+      "evidenceRefs": [
+        "longi-q1-20250430"
+      ],
+      "earningsSensitivity": {
+        "base": "manufacturing losses persist.",
+        "favorable": "industry pricing reform restores margins.",
+        "adverse": "overcapacity persists."
+      },
+      "principalRisks": [
+        "loss-making manufacturing",
+        "overcapacity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300763.SZ",
+      "name": "锦浪科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "A-share inverter peer exposed to the same installation rush.",
+      "whySelectedCompanyShouldOutperform": "阳光电源 combined stronger absolute profit/cash conversion, broader storage growth and a lower frozen valuation burden.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "sungrow-research-20250427",
+        "ginlong-q1-20250425"
+      ]
+    },
+    {
+      "ticker": "601012.SH",
+      "name": "隆基绿能",
+      "controlType": "value_chain_control",
+      "fairCounterfactualReason": "Large PV manufacturer exposed to the same installation volume but suffering the margin side of the value chain.",
+      "whySelectedCompanyShouldOutperform": "阳光电源 was profitable and cash-generative while 隆基 remained loss-making, directly testing value-chain mapping.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "longi-q1-20250430"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300274.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "300763.SZ",
+        "selectedAdvantages": [
+          "larger and stronger Q1 profit/cash conversion",
+          "broader storage/inverter exposure",
+          "lower frozen forward PE"
+        ],
+        "selectedDisadvantages": [
+          "锦浪 has greater percentage rebound torque from a smaller base"
+        ],
+        "evidenceRefs": [
+          "sungrow-q1-20250426",
+          "sungrow-research-20250427",
+          "ginlong-q1-20250425"
+        ],
+        "switchCondition": "Switch if 锦浪 sustains the Q1 margin/profit rebound with a materially better valuation/revision profile.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601012.SH",
+        "selectedAdvantages": [
+          "profitable earnings conversion",
+          "positive CFO",
+          "not exposed to the same commodity-module loss economics"
+        ],
+        "selectedDisadvantages": [
+          "隆基 has more direct module-volume sensitivity if manufacturing margins turn"
+        ],
+        "evidenceRefs": [
+          "sungrow-q1-20250426",
+          "longi-q1-20250430"
+        ],
+        "switchCondition": "Switch only after module gross margins/profit turn positive before the cutoff.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "阳光电源 is the cleanest profitable expression of installation/storage growth, but sector timing remains neutral."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Q1 was already above expectations and 2025E PE was about 9x on the frozen analyst reference, while the sector's 20d regime had improved but 60d breadth remained 0%.",
+    "thesisExpectation": "Profitable inverter/storage growth can continue even as commodity module manufacturing remains loss-making.",
+    "measurableGap": "Company earnings/valuation look favorable, but the sector timing signal has not completed a durable turn.",
+    "evidenceRefs": [
+      "sungrow-research-20250427",
+      "regime-solar-20250627"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus realized profit/cash conversion versus inverter/module controls.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2025E profit about RMB13.2bn at roughly 9x PE on Apr25 reference.",
+    "thesisScenario": "Storage/inverter growth sustains earnings above the frozen 2025 baseline despite post-rush PV normalization.",
+    "breakevenCondition": "Profitable power-electronics/storage growth must offset any Q3 domestic installation slowdown; no multiple expansion is required.",
+    "ordinaryScenarioFailure": "The installation rush reverses sharply and storage/inverter momentum slows, leaving the low valuation justified.",
+    "catalystOrTimingBridge": "Q2/Q3 shipment and earnings data can verify whether profitable conversion persists inside the base horizon.",
+    "evidenceRefs": [
+      "sungrow-q1-20250426",
+      "sungrow-research-20250427",
+      "regime-solar-20250627"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q1 revenue/profit/cash accelerated strongly while project activity surged.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "nea-solar-20250627"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "The company already converted demand into strong profit and positive cash flow.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "锦浪 was smaller/more rebound-dependent and 隆基 remained loss-making.",
+      "evidenceRefs": [
+        "ginlong-q1-20250425",
+        "longi-q1-20250430"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Q1 was above expectations, leaving some revision headroom if Q2 profitable conversion persists.",
+      "evidenceRefs": [
+        "sungrow-research-20250427"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use deterministic 20/60d solar basket regime and frozen forward valuation.",
+      "evidenceRefs": [
+        "regime-solar-20250627",
+        "sungrow-research-20250427"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen solar basket versus CSI300",
+      "lookback20Excess": 0.03919346966029321,
+      "lookback60Excess": -0.09221588306246269,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-solar-20250627"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Q2 project activity remained very strong, but industry evidence explicitly warned of a post-rush slowdown.",
+      "evidenceRefs": [
+        "tf-pv-20250327",
+        "nea-solar-20250627"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Power-electronics names were profitable/rebounding while module manufacturing remained deeply loss-making.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "ginlong-q1-20250425",
+        "longi-q1-20250430"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "short_lived",
+      "rationale": "The installation rush was explicitly front-loaded around policy timing, even though storage demand may persist separately.",
+      "evidenceRefs": [
+        "tf-pv-20250327"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "20d relative performance improved after a weak 60d trend, indicating a possible turn but not a confirmed durable regime.",
+      "evidenceRefs": [
+        "regime-solar-20250627"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Company fundamentals are strong but the event itself is front-loaded and the 60d sector regime remains weak."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "300274.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit, cash flow and scale clear the quality floor.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Q1 beat expectations and low valuation leaves room if storage/inverter growth persists.",
+      "evidenceRefs": [
+        "sungrow-research-20250427"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Frozen analyst reference implied roughly 9x 2025E PE.",
+      "evidenceRefs": [
+        "sungrow-research-20250427"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q2/Q3 shipment and earnings updates lie within the base horizon.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low valuation and already-realized profit/cash provide a better floor than loss-making module exposure.",
+      "evidenceRefs": [
+        "sungrow-q1-20250426",
+        "longi-q1-20250430"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300763.SZ",
+        "revisionAdvantage": "阳光 has broader and more scalable storage/inverter growth; 锦浪's Q1 rebound starts from a depressed base.",
+        "valuationAdvantage": "Frozen forward valuation is materially lower for 阳光.",
+        "qualityTradeoff": "Both profitable, but 阳光 has stronger absolute cash/profit quality.",
+        "catalystAdvantage": "Both share installation demand; 阳光 also has storage growth.",
+        "downsideTradeoff": "Lower valuation and broader business mix favor 阳光.",
+        "evidenceRefs": [
+          "sungrow-research-20250427",
+          "ginlong-q1-20250425"
+        ],
+        "switchCondition": "Switch if 锦浪 demonstrates sustained margin/profit recovery at a lower relative burden.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601012.SH",
+        "revisionAdvantage": "阳光 has realized profitable growth while 隆基 requires a manufacturing-margin turn.",
+        "valuationAdvantage": "PE-based valuation is meaningful and low for 阳光; 隆基 remains loss-making.",
+        "qualityTradeoff": "阳光 clearly stronger.",
+        "catalystAdvantage": "阳光 can monetize installations immediately through profitable equipment/storage.",
+        "downsideTradeoff": "隆基 carries loss/overcapacity tail risk.",
+        "evidenceRefs": [
+          "sungrow-q1-20250426",
+          "longi-q1-20250430"
+        ],
+        "switchCondition": "Switch only after 隆基's gross margin and operating profit turn positive.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Q1 inverter/storage demand converted into sharply higher revenue/profit/cash while Q2 project activity remained elevated.",
+    "earningsMechanism": "Higher profitable inverter/storage shipments and favorable mix lift revenue, gross profit and cash earnings without relying on commodity-module margins.",
+    "nextObservableMetric": "Q2/Q3 inverter/storage shipment, gross margin, operating profit and cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "sungrow-q1-20250426",
+      "sungrow-research-20250427",
+      "nea-solar-20250627"
+    ],
+    "failureCondition": "post-rush slowdown causes shipment/profit growth to fall materially below the frozen 2025 baseline."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong company conversion and valuation, but the event is front-loaded and sector timing is neutral.",
+    "alreadyPricedAssessment": "not expensive, but timing unconfirmed",
+    "constraints": [
+      "neutral regime",
+      "short-lived installation rush"
+    ]
+  },
+  "bearCase": "The Q2 rush ends abruptly and sector de-rating overwhelms the company's low valuation/strong Q1 results.",
+  "invalidationConditions": [
+    {
+      "indicator": "inverter/storage profit conversion",
+      "observationMethod": "next quarterly report",
+      "threshold": "profit/cash growth fails to persist"
+    },
+    {
+      "indicator": "solar opportunity regime",
+      "observationMethod": "fresh deterministic snapshot",
+      "threshold": "20d turn reverses and 60d remains adverse"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact Q2 domestic/overseas shipment mix",
+    "how much Q1 upside was one-off project timing"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection.",
+    "Evaluate against 锦浪 and 隆基 after lock; do not promote from outcome."
+  ]
+}
