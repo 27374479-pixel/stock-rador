@@ -1,0 +1,396 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2019q3-multisource-v1.4-001",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2019Q3 replay built in September 2026 with current model/search weights. Only pre-cutoff documents are retained; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official prices/demand/policy evidence.",
+      "coverageStatus": "partial",
+      "limitations": "NBS and public policy/implementation data; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/miner first-party operating evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Glencore Mutanda closure evidence; listed-company mapping deferred to deep stage."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable product prices/shipments/inventory.",
+      "coverageStatus": "partial",
+      "limitations": "DRAM and construction-equipment indicators."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on policy/supply changes.",
+      "coverageStatus": "partial",
+      "limitations": "Selected reputable contemporaneous reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist commodity/technology market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected cobalt/DRAM specialist sources."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Community/forum weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "nbs-pork-20190910",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2019年8月份居民消费价格同比上涨2.8%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/201909/t20190911_1768101.html",
+      "publishedAt": "2019-09-10T09:30:00+08:00",
+      "availableAt": "2019-09-10T09:30:00+08:00",
+      "originGroup": "nbs-cpi-201908",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August pork prices rose 46.7% YoY and 23.1% MoM, showing an accelerating hog-supply scarcity regime."
+      ],
+      "entities": [
+        "pork",
+        "hog supply",
+        "CPI"
+      ],
+      "observedChanges": [
+        "pork scarcity sharply accelerates"
+      ]
+    },
+    {
+      "itemId": "glencore-mutanda-20190807",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "Glencore 2019 Half-Year Report",
+      "publisher": "Glencore",
+      "url": "https://www.glencore.com/.rest/api/v1/documents/e7fa4ed992b119d589a9501a82c41ee6/GLEN-2019-Half-Year-Report-.pdf",
+      "publishedAt": "2019-08-07T00:00:00Z",
+      "availableAt": "2019-08-07T00:00:00Z",
+      "originGroup": "glencore-h1-2019",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Glencore decided to place Mutanda on temporary care and maintenance by year end because weak/oversupplied cobalt conditions had made the operation uneconomic."
+      ],
+      "entities": [
+        "Mutanda",
+        "cobalt",
+        "Glencore"
+      ],
+      "observedChanges": [
+        "major cobalt supply is scheduled to exit by year end"
+      ]
+    },
+    {
+      "itemId": "fastmarkets-cobalt-20190820",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "China’s skepticism of Mutanda closure characteristic of short-term procurement strategy",
+      "publisher": "Fastmarkets",
+      "url": "https://www.fastmarkets.com/insights/focus-chinas-skepticism-of-mutanda-closure-characteristic-of-short-term-procurement-strategy/",
+      "publishedAt": "2019-08-20T00:00:00Z",
+      "availableAt": "2019-08-20T00:00:00Z",
+      "originGroup": "fastmarkets-mutanda-20190820",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Cobalt prices had risen more than 25% after the Mutanda closure announcement; Mutanda was expected to produce about 25kt in 2019 before suspension, while buyers still questioned near-term tightness because inventories/other projects remained."
+      ],
+      "entities": [
+        "cobalt",
+        "Mutanda",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "supply-shock expectations reprice cobalt",
+        "near-term physical tightness remains contested"
+      ]
+    },
+    {
+      "itemId": "nickel-ban-20190902",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Indonesia to ban export of nickel ore by January",
+      "publisher": "Reuters via Arab News",
+      "url": "https://www.arabnews.com/business/indonesia-to-ban-export-of-nickel-ore-by-january-1548746",
+      "publishedAt": "2019-09-02T21:41:00+07:00",
+      "availableAt": "2019-09-02T21:41:00+07:00",
+      "originGroup": "reuters-indonesia-nickel-20190902",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Indonesia would stop all nickel ore exports from Jan 1, 2020, two years earlier than previously planned, applying to all grades and standing contracts."
+      ],
+      "entities": [
+        "Indonesia",
+        "nickel ore",
+        "stainless steel",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "future global nickel ore availability tightens abruptly",
+        "domestic Indonesian processing gains policy support"
+      ]
+    },
+    {
+      "itemId": "dram-pc-stable-20190926",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "PC DRAM Contract Prices Stabilized in August and Will Likely Remain Steady in September",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190926-10189.html",
+      "publishedAt": "2019-09-26T00:00:00+08:00",
+      "availableAt": "2019-09-26T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20190926",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "PC DRAM contract prices stabilized in August/September as OEM inventory building helped supplier inventories normalize; 2020 supplier bit-output growth was projected to be the lowest in a decade."
+      ],
+      "entities": [
+        "PC DRAM",
+        "inventory",
+        "memory capex"
+      ],
+      "observedChanges": [
+        "PC DRAM shifts from decline toward stability"
+      ]
+    },
+    {
+      "itemId": "dram-mobile-weak-20190730",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Mobile DRAM Prices to Continue Declining by Over 10% in 3Q19",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190730-10167.html",
+      "publishedAt": "2019-07-30T00:00:00+08:00",
+      "availableAt": "2019-07-30T00:00:00+08:00",
+      "originGroup": "trendforce-mobile-dram-20190730",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Mobile DRAM contract prices were still expected to decline 10-15% in 3Q because smartphone demand was weak and inventories remained elevated; Japan-Korea material tensions were not expected to materially constrain shipments."
+      ],
+      "entities": [
+        "mobile DRAM",
+        "smartphones",
+        "inventory"
+      ],
+      "observedChanges": [
+        "mobile DRAM remains in downcycle despite supply headlines"
+      ]
+    },
+    {
+      "itemId": "excavator-20190912",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "2019年8月挖掘机、装载机数据快报",
+      "publisher": "中国工程机械工业协会数据转载",
+      "url": "https://www.10100.com/article/12324852",
+      "publishedAt": "2019-09-12T00:00:00+08:00",
+      "availableAt": "2019-09-12T00:00:00+08:00",
+      "originGroup": "ccma-excavator-201908",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August excavator sales were 13,843 units, +19.5% YoY; domestic +14.4%, exports +53.6%; Jan-Aug total +14.4%."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery"
+      ],
+      "observedChanges": [
+        "equipment demand reaccelerates with strong export breadth"
+      ]
+    },
+    {
+      "itemId": "etc-progress-20190923",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "取消高速公路省界收费站重点工作进展情况通报（9月12日至18日）",
+      "publisher": "中国交通运输协会转载中国交通新闻网/交通运输部工作总指挥部",
+      "url": "https://www.cctaw.cn/shuju/3094.html",
+      "publishedAt": "2019-09-23T10:01:22+08:00",
+      "availableAt": "2019-09-23T10:01:22+08:00",
+      "originGroup": "mot-etc-progress-20190918",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "By Sep 18 nationwide ETC users reached 130.52m; 2019 new users were 53.96m, +70.48% from year-end, and weekly issuance reached 103.19% of task."
+      ],
+      "entities": [
+        "ETC",
+        "toll stations",
+        "road electronics"
+      ],
+      "observedChanges": [
+        "mandated ETC deployment and user issuance accelerate rapidly"
+      ]
+    },
+    {
+      "itemId": "etc-jilin-tender-20190903",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "filing",
+      "title": "吉林省高速公路集团取消省界收费站工程通信专线招标",
+      "publisher": "吉林省交通运输厅",
+      "url": "https://jtyst.jl.gov.cn/zw_133208/zbxx/zbggjgjnrxxgs/201909/t20190903_6050988.html",
+      "publishedAt": "2019-09-03T08:00:00+08:00",
+      "availableAt": "2019-09-03T08:00:00+08:00",
+      "originGroup": "jilin-etc-tender-20190903",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Official provincial implementation required communication links and system construction under the national project to cancel provincial toll stations, confirming real capex rather than only user-registration targets."
+      ],
+      "entities": [
+        "ETC",
+        "toll system",
+        "communications"
+      ],
+      "observedChanges": [
+        "ETC policy converts into equipment/communications procurement"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2019q3-cobalt-mutanda-exit",
+      "statement": "The world's largest cobalt mine was scheduled to suspend production by year end, removing a material share of global supply and causing cobalt prices to rebound, while near-term tightness remained debated.",
+      "changeType": "commodity_supply_exit",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-08-07T00:00:00Z",
+      "memberItemIds": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820"
+      ],
+      "independentOriginGroups": [
+        "glencore-h1-2019",
+        "fastmarkets-mutanda-20190820"
+      ],
+      "affectedValueChain": [
+        "cobalt miners",
+        "cobalt refiners",
+        "battery cathode materials"
+      ],
+      "contradictionSearchNotes": "The closure changes future supply, but current inventories and other projects may delay physical tightness; separate immediate price reaction from medium-term earnings conversion.",
+      "researchQuestion": "Which A-share cobalt exposures have direct realized cobalt earnings and sufficient duration/valuation room after the supply-shock rerating?"
+    },
+    {
+      "eventId": "event-2019q3-nickel-export-ban",
+      "statement": "Indonesia accelerated a universal nickel ore export ban to Jan 1, 2020, creating a policy-driven future supply shock with different effects on non-Indonesian miners, Indonesian processors and stainless/battery users.",
+      "changeType": "commodity_export_policy_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-09-02T21:41:00+07:00",
+      "memberItemIds": [
+        "nickel-ban-20190902"
+      ],
+      "independentOriginGroups": [
+        "reuters-indonesia-nickel-20190902"
+      ],
+      "affectedValueChain": [
+        "nickel miners",
+        "nickel smelters",
+        "stainless steel",
+        "battery materials"
+      ],
+      "contradictionSearchNotes": "Do not merge miners and Indonesian downstream processors: the same ban can help one geography/business model and hurt another.",
+      "researchQuestion": "Is there a clean A-share expression of global nickel scarcity or Indonesian downstream advantage without mapping opposite exposures together?"
+    },
+    {
+      "eventId": "event-2019q3-pork-scarcity-acceleration",
+      "statement": "Pork scarcity accelerated sharply in August, with prices +46.7% YoY and +23.1% MoM, implying a large near-term producer margin pool but an increasingly visible cycle.",
+      "changeType": "commodity_scarcity_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-09-10T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pork-20190910"
+      ],
+      "independentOriginGroups": [
+        "nbs-cpi-201908"
+      ],
+      "affectedValueChain": [
+        "hog producers",
+        "feed",
+        "meat processors",
+        "consumers"
+      ],
+      "contradictionSearchNotes": "High prices accelerate breeding/supply restoration; distinguish current earnings from medium-term normalization.",
+      "researchQuestion": "Which producers have sufficient surviving volume/cost advantage to convert scarcity prices into earnings before the cycle normalizes?"
+    },
+    {
+      "eventId": "event-2019q3-etc-buildout",
+      "statement": "A nationwide policy deadline was converting into rapid ETC user issuance and real toll-system/communications construction, creating a short-duration but measurable hardware/system deployment cycle.",
+      "changeType": "mandated_infrastructure_buildout",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-09-03T08:00:00+08:00",
+      "memberItemIds": [
+        "etc-jilin-tender-20190903",
+        "etc-progress-20190923"
+      ],
+      "independentOriginGroups": [
+        "jilin-etc-tender-20190903",
+        "mot-etc-progress-20190918"
+      ],
+      "affectedValueChain": [
+        "ETC OBU/RSU suppliers",
+        "toll-system integrators",
+        "road communications"
+      ],
+      "contradictionSearchNotes": "The deadline is explicit and may make this a rapidly saturating one-off capex cycle. Deep research must test order conversion and whether price already reflects the finite deployment peak.",
+      "researchQuestion": "Can listed ETC suppliers still convert the mandated 2019 buildout into under-reflected earnings, or is the one-off cycle already fully priced?"
+    },
+    {
+      "eventId": "event-2019q3-machinery-reacceleration",
+      "statement": "August excavator demand reaccelerated to +19.5% YoY with exports +53.6%, extending a strong machinery cycle with broad physical confirmation.",
+      "changeType": "physical_volume_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-09-12T00:00:00+08:00",
+      "memberItemIds": [
+        "excavator-20190912"
+      ],
+      "independentOriginGroups": [
+        "ccma-excavator-201908"
+      ],
+      "affectedValueChain": [
+        "excavator OEMs",
+        "hydraulics",
+        "machinery components"
+      ],
+      "contradictionSearchNotes": "The cycle is already mature; separate industry volume continuation from company-specific share/margin engines and late-cycle valuation.",
+      "researchQuestion": "Do leading machinery companies still have incremental earnings/share room after a multi-year upcycle?"
+    },
+    {
+      "eventId": "event-2019q3-dram-product-divergence",
+      "statement": "DRAM evidence was no longer one-directional: PC DRAM contract prices stabilized by August/September, while mobile DRAM remained in a material downcycle. Product-market decomposition is mandatory before any company mapping.",
+      "changeType": "product_cycle_divergence",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-07-30T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-mobile-weak-20190730",
+        "dram-pc-stable-20190926"
+      ],
+      "independentOriginGroups": [
+        "trendforce-mobile-dram-20190730",
+        "trendforce-dram-20190926"
+      ],
+      "affectedValueChain": [
+        "PC DRAM",
+        "mobile DRAM",
+        "memory suppliers",
+        "PC/smartphone OEMs"
+      ],
+      "contradictionSearchNotes": "Do not average PC stabilization and mobile weakness into generic 'memory'. Split by product and realized company exposure.",
+      "researchQuestion": "Are there separate investable A-share hypotheses for PC-memory stabilization versus still-weak mobile memory, or should both fail closed for lack of direct exposure?"
+    }
+  ]
+}
