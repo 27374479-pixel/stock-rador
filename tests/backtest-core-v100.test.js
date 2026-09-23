@@ -156,6 +156,11 @@ function overrideMemo() {
       rationale: 'the next quarterly report lies inside the base horizon',
       evidenceRefs: ['e1']
     },
+    engineHalfLife: {
+      conclusion: 'multi_quarter',
+      rationale: 'the selected company engine persists beyond the weak broad-sector event window',
+      evidenceRefs: ['e1', 'e2']
+    },
     priceWeaknessAttribution: {
       conclusion: 'non_company_fundamental',
       rationale: 'weakness is consistent with broad sector de-rating rather than deterioration in selected-company KPIs',
@@ -237,4 +242,28 @@ test('v1.0 research_only route cannot be High-priority', () => {
   m.timingRoute = 'research_only';
   const errors = validateOpportunityMemo(m, 'memo.json', manifest());
   assert.ok(errors.some((x) => x.includes('cannot use research_only timingRoute')));
+});
+
+test('v1.0 override can survive a short-lived broad event when the company engine is multi-quarter', () => {
+  const m = overrideMemo();
+  m.opportunityTimingTest.eventHalfLife = {
+    conclusion: 'short_lived',
+    rationale: 'broad sector event is front-loaded',
+    evidenceRefs: ['e1']
+  };
+  assert.deepEqual(validateOpportunityMemo(m, 'memo.json', manifest()), []);
+});
+
+test('v1.0 override rejects a short-lived company engine', () => {
+  const m = overrideMemo();
+  m.companyEngineTimingOverrideTest.engineHalfLife.conclusion = 'short_lived';
+  const errors = validateOpportunityMemo(m, 'memo.json', manifest());
+  assert.ok(errors.some((x) => x.includes('requires structural or multi-quarter company-engine half-life')));
+});
+
+test('v1.0 override requires clear, not merely credible, cross-sectional asymmetry', () => {
+  const m = overrideMemo();
+  m.crossSectionalAsymmetryTest.overallConclusion = 'credible_asymmetry';
+  const errors = validateOpportunityMemo(m, 'memo.json', manifest());
+  assert.ok(errors.some((x) => x.includes('requires clear asymmetry')));
 });
