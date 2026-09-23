@@ -1,0 +1,248 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-06-28T23:59:59+08:00",
+  "researchReadyAt": "2021-06-28T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q2-hog-collapse",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "equityReturnArchetype": "deep_cycle_turnaround",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Hog cycle recovery, if real, requires price/cost/supply normalization over multiple months rather than a one-week policy bounce."
+  },
+  "changeHypothesis": {
+    "summary": "Hog prices collapsed into industry-wide losses and triggered the highest official warning plus reserve purchases. The recent 20d price stabilization was not enough to establish an earnings bottom because even low-cost 牧原's Q1-reported economics were already stale relative to June spot prices.",
+    "firstCredibleDate": "2021-06-16",
+    "valueChain": [
+      "hog supply",
+      "hog price",
+      "breeder cost",
+      "profitability",
+      "capacity exit"
+    ],
+    "persistenceReason": "A genuine trough requires sustained below-cost pressure and capacity exit, not only reserve purchases.",
+    "disconfirmingEvidence": [
+      "June hog prices were below 牧原's then-reported full cost.",
+      "Q1 profit remained a stale high-price-cycle artifact.",
+      "All major breeder stocks were still deeply weak over 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "ndrc-hog-20210616",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "ndrc-hog-20210628",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-hog-20210628",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-hog-20210628",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "muyuan-q1-20210430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "muyuan-cost-20210621",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "below-cost hog prices",
+      "to": "breeder losses/capacity exit",
+      "mechanism": "Persistent prices below full cost pressure weak operators and eventually reduce supply.",
+      "evidenceRefs": [
+        "ndrc-hog-20210628",
+        "muyuan-cost-20210621"
+      ],
+      "failureMode": "support/rebound arrives before meaningful capacity exit",
+      "lag": "months"
+    },
+    {
+      "from": "capacity exit",
+      "to": "hog-price recovery",
+      "mechanism": "Lower future supply can reset the cycle after a lag.",
+      "evidenceRefs": [
+        "ndrc-hog-20210616",
+        "reuters-hog-20210628"
+      ],
+      "failureMode": "large producers keep expanding and delay supply contraction",
+      "lag": "quarters"
+    },
+    {
+      "from": "price recovery",
+      "to": "listed breeder earnings",
+      "mechanism": "Only a sustained hog-price recovery above company cost can restore margins.",
+      "evidenceRefs": [
+        "muyuan-cost-20210621"
+      ],
+      "failureMode": "cost inflation or continued oversupply prevents margin repair",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "lowest-cost breeders after a verified cycle trough"
+    ],
+    "secondOrderWinners": [
+      "feed suppliers after herd stabilization"
+    ],
+    "losers": [
+      "high-cost leveraged breeders during the loss phase"
+    ],
+    "substitutes": [
+      "poultry/other proteins"
+    ],
+    "bottlenecks": [
+      "capacity exit timing",
+      "feed costs"
+    ],
+    "falseThemeMatches": [
+      "breeders chosen only because share prices already fell"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002714.SZ",
+      "name": "牧原股份",
+      "verifiedExposure": "Lowest-cost large breeder, but June prices had fallen below the then-reported cost line.",
+      "evidenceRefs": [
+        "muyuan-q1-20210430",
+        "muyuan-cost-20210621"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit RMB6.963bn reflects pre-collapse pricing.",
+        "favorable": "cost falls and hog price recovers sustainably.",
+        "adverse": "loss phase deepens before supply exits."
+      },
+      "principalRisks": [
+        "premature bottom call",
+        "cycle duration",
+        "feed/cost pressure"
+      ]
+    },
+    {
+      "ticker": "002157.SZ",
+      "name": "正邦科技",
+      "verifiedExposure": "Large breeder exposed to the same hog cycle.",
+      "evidenceRefs": [
+        "regime-hog-20210628"
+      ],
+      "earningsSensitivity": {
+        "base": "cycle-sensitive",
+        "favorable": "fast price recovery",
+        "adverse": "higher cost/leverage magnifies losses"
+      },
+      "principalRisks": [
+        "survival/working capital"
+      ]
+    },
+    {
+      "ticker": "000876.SZ",
+      "name": "新希望",
+      "verifiedExposure": "Large integrated agribusiness with breeder exposure.",
+      "evidenceRefs": [
+        "regime-hog-20210628"
+      ],
+      "earningsSensitivity": {
+        "base": "diversified but cycle-exposed",
+        "favorable": "hog recovery",
+        "adverse": "breeding losses offset diversification"
+      },
+      "principalRisks": [
+        "cycle exposure",
+        "cost pressure"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company has a realized or quantitatively bridged earnings trough by cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Breeder equities had de-rated sharply over 60d, but recent stabilization coincided with policy reserve support rather than verified margin recovery.",
+    "thesisExpectation": "A true trough would require capacity exit and a durable hog-price/cost reset.",
+    "measurableGap": "The missing variable is realized future supply contraction and company margin inflection.",
+    "evidenceRefs": [
+      "regime-hog-20210628",
+      "ndrc-hog-20210628",
+      "muyuan-cost-20210621"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: share-price de-rating and policy support are not substitutes for an earnings trough.",
+    "alreadyPricedAssessment": "de-rated but economically unverified",
+    "constraints": [
+      "below-cost spot economics",
+      "no supply-exit proof"
+    ]
+  },
+  "bearCase": "The apparent price bottom is only a policy bounce; large-producer expansion keeps supply high and losses deepen.",
+  "invalidationConditions": [
+    {
+      "indicator": "hog price vs full cost",
+      "observationMethod": "industry/company data",
+      "threshold": "no sustained recovery above cost"
+    },
+    {
+      "indicator": "breeding capacity",
+      "observationMethod": "herd/capacity data",
+      "threshold": "no meaningful contraction"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used before lock."
+    ]
+  },
+  "unknowns": [
+    "future sow capacity exit",
+    "company-specific liquidity stress"
+  ],
+  "nextResearchActions": [
+    "Keep No selection until survival, capacity exit and realized margin inflection are auditable."
+  ]
+}
