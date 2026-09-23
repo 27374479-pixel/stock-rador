@@ -1,0 +1,614 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": "2019-09-30T15:00:00+08:00",
+  "hypothesisId": "h-2019q3-machinery-reacceleration",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "August industry acceleration plus realized H1 company earnings should remain testable in monthly sales and the next reporting cycle; 60d is the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "sector_confirmed",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600031.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "clear",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "H1 revenue +54.3%, profit +99.1%, operating cash flow +22.1% with industry August sales +19.5%; price strength is broad but not disconnected from realized earnings.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "sany-research-20190901",
+        "excavator-20190912",
+        "regime-machinery-20190930"
+      ]
+    },
+    {
+      "ticker": "601100.SH",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "H1 profit +44.7% and direct hydraulic exposure; 2020E PE about 17.5x with a quantified 2019-21 earnings path.",
+      "evidenceRefs": [
+        "hengli-h1-20190827",
+        "hengli-research-20190827",
+        "regime-machinery-20190930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Excavator demand reaccelerated in August while leading OEM/component companies had already converted the multi-year cycle into much faster revenue, profit and cash flow.",
+    "firstCredibleDate": "2019-08-27",
+    "valueChain": [
+      "infrastructure/replacement/export demand",
+      "excavator unit sales",
+      "OEM/component shipments and share",
+      "earnings/cash flow"
+    ],
+    "persistenceReason": "Replacement, exports and share/localization gains can persist for several quarters even if headline industry growth moderates.",
+    "disconfirmingEvidence": [
+      "The industry cycle was already mature.",
+      "The basket had already outperformed CSI300 by 16.5pp over 60d.",
+      "Macro demand remained uneven."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "excavator-20190912",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sany-h1-20190830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sany-research-20190901",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "hengli-h1-20190827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "hengli-research-20190827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-machinery-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "excavator volume acceleration",
+      "to": "OEM/component sales",
+      "mechanism": "Higher domestic/export equipment demand raises shipments for leading OEMs and hydraulic suppliers.",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "sany-h1-20190830",
+        "hengli-h1-20190827"
+      ],
+      "failureMode": "industry orders reverse",
+      "lag": "weeks to months"
+    },
+    {
+      "from": "shipments/share",
+      "to": "earnings/cash flow",
+      "mechanism": "Scale, margin improvement and localized components turn volume into profit and cash.",
+      "evidenceRefs": [
+        "sany-research-20190901",
+        "hengli-h1-20190827"
+      ],
+      "failureMode": "price/credit pressure offsets volume",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "excavator OEMs",
+      "hydraulic components"
+    ],
+    "secondOrderWinners": [
+      "equipment suppliers"
+    ],
+    "losers": [
+      "share-losing OEMs"
+    ],
+    "substitutes": [
+      "used equipment"
+    ],
+    "bottlenecks": [
+      "project demand",
+      "credit quality"
+    ],
+    "falseThemeMatches": [
+      "industrial names without equipment earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600031.SH",
+      "name": "三一重工",
+      "verifiedExposure": "Leading direct construction-machinery OEM.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "sany-research-20190901"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 revenue +54%, profit +99%, cash flow +22%.",
+        "favorable": "August demand plus share/margin gains sustain revisions.",
+        "adverse": "Mature cycle rolls over."
+      },
+      "principalRisks": [
+        "macro cyclicality"
+      ]
+    },
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "verifiedExposure": "Direct hydraulic-cylinder/pump/valve supplier.",
+      "evidenceRefs": [
+        "hengli-h1-20190827",
+        "hengli-research-20190827"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit +44.7%; 2020E EPS 1.64.",
+        "favorable": "Localization/share gains exceed industry.",
+        "adverse": "Premium de-rates as cycle slows."
+      },
+      "principalRisks": [
+        "valuation premium",
+        "cycle maturity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "000157.SZ",
+      "name": "中联重科",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct machinery peer exposed to the same cycle.",
+      "whySelectedCompanyShouldOutperform": "Sany has stronger frozen H1 revenue/profit/cash-flow acceleration and broader direct evidence.",
+      "evidenceRefs": [
+        "regime-machinery-20190930"
+      ]
+    }
+  ],
+  "matchedControlException": "Opportunity-first freeze includes two acceptable direct expressions and one broad OEM control.",
+  "selectionComparison": {
+    "selectedTicker": "600031.SH",
+    "pairwise": [
+      {
+        "controlTicker": "000157.SZ",
+        "selectedAdvantages": [
+          "H1 profit +99%",
+          "cash flow +22%",
+          "broad product/share engine"
+        ],
+        "selectedDisadvantages": [
+          "cycle already mature"
+        ],
+        "evidenceRefs": [
+          "sany-h1-20190830",
+          "sany-research-20190901",
+          "regime-machinery-20190930"
+        ],
+        "switchCondition": "Prefer Zhonglian if pre-cutoff revisions, valuation and balance-sheet evidence are independently superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "The opportunity is broad enough that Sany and Hengli are both acceptable; Sany is preferred for the clearest realized earnings/cash-flow evidence."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Machinery basket had +16.54pp 60d excess with 100% breadth; fundamentals had also accelerated sharply rather than merely narrative rerating.",
+    "thesisExpectation": "Continued physical demand plus company share/margin gains can sustain earnings above a simple mature-cycle normalization.",
+    "measurableGap": "Realized company earnings acceleration remains larger than the degree of broad relative-price rerating.",
+    "evidenceRefs": [
+      "regime-machinery-20190930",
+      "sany-h1-20190830",
+      "hengli-research-20190827"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Realized H1 earnings/cash flow and published forward EPS versus broad relative-price absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Sany H1 profit nearly doubled; Hengli 2019/20/21 EPS 1.37/1.64/1.92 with 2020E PE ~17.5x.",
+    "thesisScenario": "Industry reacceleration and share/localization gains sustain revisions into the next quarters.",
+    "breakevenCondition": "Company earnings must remain above a mature-cycle run rate; no heroic multi-year industry growth is required.",
+    "ordinaryScenarioFailure": "August sales prove a late pulse and earnings normalize abruptly.",
+    "catalystOrTimingBridge": "Monthly machinery sales and Q3 results are inside the base horizon.",
+    "evidenceRefs": [
+      "regime-machinery-20190930",
+      "sany-h1-20190830",
+      "hengli-research-20190827"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "August excavator sales +19.5% with exports +53.6%.",
+      "evidenceRefs": [
+        "excavator-20190912"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Sany and Hengli had strong realized H1 profit/cash-flow conversion.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "hengli-h1-20190827"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "All three frozen machinery names beat CSI300 on both lookbacks.",
+      "evidenceRefs": [
+        "regime-machinery-20190930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "H1 results plus Hengli forward forecasts provide an auditable earnings baseline.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "hengli-research-20190827"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Price strength is broad and meaningful but supported by realized earnings.",
+      "evidenceRefs": [
+        "regime-machinery-20190930"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.08684533716309255,
+      "lookback60Excess": 0.16543656642111895,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-machinery-20190930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "August physical volume and H1 company earnings accelerated.",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "sany-h1-20190830",
+        "hengli-h1-20190827"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both leading expressions have positive realized/published earnings paths.",
+      "evidenceRefs": [
+        "sany-research-20190901",
+        "hengli-research-20190827"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Replacement/export/share drivers can persist across multiple quarters.",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "hengli-research-20190827"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Cycle maturity matters but realized earnings and valuation do not require a peak-cycle assumption.",
+      "evidenceRefs": [
+        "regime-machinery-20190930",
+        "hengli-research-20190827"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Physical demand, earnings conversion, breadth and expectation room align."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600031.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Both expressions show realized profit/cash-flow strength.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "hengli-h1-20190827"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Physical acceleration plus share/localization create revision headroom.",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "sany-research-20190901"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Hengli has a quantified moderate forward multiple and Sany's earnings acceleration exceeds its broad rerating.",
+      "evidenceRefs": [
+        "hengli-research-20190827",
+        "regime-machinery-20190930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales and Q3 results are near-term.",
+      "evidenceRefs": [
+        "excavator-20190912"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Cash-flow quality and two acceptable expressions reduce single-name thesis fragility.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "hengli-h1-20190827"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "000157.SZ",
+        "revisionAdvantage": "Sany has stronger frozen H1 profit/cash-flow acceleration.",
+        "valuationAdvantage": "No extreme valuation burden is required by the thesis.",
+        "qualityTradeoff": "Sany's realized operating/cash evidence is clearer in the frozen pack.",
+        "catalystAdvantage": "Excavator demand maps directly to Sany's core products.",
+        "downsideTradeoff": "All are cyclical; Sany has stronger frozen earnings quality.",
+        "switchCondition": "Switch if Zhonglian shows superior verified revisions/valuation before reveal.",
+        "evidenceRefs": [
+          "sany-h1-20190830",
+          "regime-machinery-20190930"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "August excavator sales +19.5% YoY with export breadth.",
+    "earningsMechanism": "Higher shipments plus share/margin gains lift OEM/component revenue and profit.",
+    "nextObservableMetric": "monthly excavator sales, Q3 revenue/profit/cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "excavator-20190912",
+      "sany-h1-20190830",
+      "hengli-h1-20190827"
+    ],
+    "failureCondition": "Industry sales and company earnings decelerate materially before Q3 results."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "H1 Sany revenue +54%, profit +99%; Hengli profit +44.7%.",
+      "nextPeriod": "Hengli 2020E EPS 1.64; Sany H1 run-rate implies strong full-year earnings if demand holds.",
+      "laterPeriod": "Share/localization rather than perpetual industry acceleration must carry later growth.",
+      "rationale": "Use realized H1 run rate and published component forecast, not hindsight.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "hengli-research-20190827"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "August volume acceleration supports Q3 order conversion.",
+      "nextPeriodChange": "Share/margin gains can keep earnings above normalized industry growth.",
+      "laterPeriodChange": "Longer duration rests on competitive position/localization.",
+      "mechanism": "Company-specific share/margin engine extends a still-positive physical cycle.",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "sany-research-20190901",
+        "hengli-h1-20190827"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "clear",
+      "rationale": "Realized company acceleration plus fresh August volume leaves path room.",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "sany-h1-20190830"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Mature industry cycle limits duration but thesis does not require extreme continuation.",
+      "evidenceRefs": [
+        "regime-machinery-20190930"
+      ]
+    },
+    "falsifier": "Monthly sales or Q3 earnings fail to sustain the H1 operating engine.",
+    "overallConclusion": "clear_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "construction machinery OEMs and hydraulic components tied to excavator demand",
+    "geographicScope": "China demand plus explicitly observed exports",
+    "customerScope": "construction/infrastructure equipment buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "OEM and hydraulic-component expressions share the same physical demand chain; company share differences are handled in expression adequacy rather than a different product cycle.",
+    "evidenceRefs": [
+      "excavator-20190912",
+      "sany-h1-20190830",
+      "hengli-h1-20190827"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "August excavator sales and H1 company operating momentum",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "excavator-20190912",
+        "sany-h1-20190830"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "earnings/cash-flow conversion and share/localization",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "sany-research-20190901",
+        "hengli-h1-20190827"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "leading OEM share and hydraulic localization/export growth",
+      "horizon": "several quarters",
+      "evidenceRefs": [
+        "sany-research-20190901",
+        "hengli-research-20190827"
+      ]
+    },
+    "conflictType": "aligned",
+    "resolutionRule": "Treat mature-cycle risk as duration constraint without averaging away realized company/share gains.",
+    "conclusion": "coherent"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Physical sector demand and leading-company earnings point in the same direction.",
+    "evidenceRefs": [
+      "excavator-20190912",
+      "sany-h1-20190830",
+      "hengli-h1-20190827"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "August sales reaccelerated after H1 results, adding fresh physical evidence.",
+      "evidenceRefs": [
+        "excavator-20190912"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "H1 profit/cash flow were already strongly realized.",
+      "evidenceRefs": [
+        "sany-h1-20190830",
+        "hengli-h1-20190827"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "H1 and published forecasts support continued positive revisions.",
+      "evidenceRefs": [
+        "sany-research-20190901",
+        "hengli-research-20190827"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Share/localization/export drivers can outlast a single monthly volume print.",
+      "evidenceRefs": [
+        "hengli-research-20190827",
+        "excavator-20190912"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Fresh monthly demand or company earnings evidence stops improving.",
+    "conclusion": "credible_continuation"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600031.SH",
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preference is based on realized earnings/cash flow, not thematic purity.",
+    "earningsQualityComparison": "Sany and Hengli both have direct realized earnings bridges.",
+    "downsideComparison": "Two acceptable expressions and cash-flow quality matter more than conceptual purity.",
+    "evidenceRefs": [
+      "sany-h1-20190830",
+      "hengli-h1-20190827",
+      "regime-machinery-20190930"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Primary: realized earnings acceleration plus fresh physical confirmation and moderate, broad absorption.",
+    "alreadyPricedAssessment": "partially_absorbed_not_exhausted",
+    "constraints": [
+      "mature machinery cycle",
+      "macro sensitivity"
+    ]
+  },
+  "bearCase": "August reacceleration is the last pulse of a mature cycle and Q3/Q4 orders slow.",
+  "invalidationConditions": [
+    {
+      "indicator": "monthly excavator sales",
+      "observationMethod": "industry data",
+      "threshold": "sustained reversal"
+    },
+    {
+      "indicator": "company earnings/cash flow",
+      "observationMethod": "Q3 filings",
+      "threshold": "material deceleration from H1 run rate"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze Sany and Hengli as acceptable Primary expressions."
+  ]
+}
