@@ -1,0 +1,456 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2023q4-multisource-v1.0-001",
+  "cutoffAt": "2023-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by 2023Q4 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China macro and export-control evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS and MOFCOM sources relevant to surfaced events."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "First-party AI infrastructure and shipping disruption evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NVIDIA and Maersk for surfaced Q4 events."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable memory pricing/supply conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Cross-check public economic/industry changes.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters retrieval is incomplete; first-party/official sources are preferred where available."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist semiconductor/memory demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on TrendForce."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "tf-dram-20231013",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Q4 DRAM Contract Prices Set to Rise, with Estimated Quarterly Increase of 3-8%",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20231013-11880.html",
+      "publishedAt": "2023-10-13T00:00:00+08:00",
+      "availableAt": "2023-10-13T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q4-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q4 DRAM contract prices were expected to rise 3-8% after supplier production cuts; persistence depended on disciplined supply cuts and actual demand recovery."
+      ],
+      "entities": [
+        "DRAM",
+        "DDR4",
+        "DDR5",
+        "Samsung"
+      ],
+      "observedChanges": [
+        "DRAM pricing turns upward",
+        "production cuts tighten supply"
+      ]
+    },
+    {
+      "itemId": "tf-mobile-memory-20231026",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Q4 Mobile DRAM and NAND Flash Contract Prices Forecast to Rise",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20231026-11897.html",
+      "publishedAt": "2023-10-26T00:00:00+08:00",
+      "availableAt": "2023-10-26T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q4-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q4 mobile DRAM prices were forecast +13-18% QoQ and eMMC/UFS +10-15%; Samsung cuts, Micron price increases and Huawei Mate 60-driven handset demand supported the reset; upward trend could continue into 1Q24."
+      ],
+      "entities": [
+        "mobile DRAM",
+        "NAND",
+        "Huawei Mate 60",
+        "Samsung",
+        "Micron"
+      ],
+      "observedChanges": [
+        "mobile memory price reset accelerates",
+        "smartphone restocking improves demand"
+      ]
+    },
+    {
+      "itemId": "tf-ai-20231017",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "TrendForce 2024: Riding the Wave of Revolutionary Tech Trends",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20231017-11886.html",
+      "publishedAt": "2023-10-17T00:00:00+08:00",
+      "availableAt": "2023-10-17T00:00:00+08:00",
+      "originGroup": "trendforce-ai-server-2024-outlook",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "AI server shipments were expected to grow 38% in 2024; CSPs were increasing AI investment; HBM revenue was projected to rise sharply with next-generation products."
+      ],
+      "entities": [
+        "AI servers",
+        "CSP",
+        "HBM",
+        "GPU"
+      ],
+      "observedChanges": [
+        "AI infrastructure demand remains structurally strong",
+        "HBM demand accelerates"
+      ]
+    },
+    {
+      "itemId": "nvidia-q3fy24-20231121",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "NVIDIA Announces Financial Results for Third Quarter Fiscal 2024",
+      "publisher": "NVIDIA",
+      "url": "https://investor.nvidia.com/news/press-release-details/2023/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2024/default.aspx",
+      "publishedAt": "2023-11-21T00:00:00-08:00",
+      "availableAt": "2023-11-21T00:00:00-08:00",
+      "originGroup": "nvidia-q3fy24-results",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Data-center revenue reached $14.51bn, +279% YoY and +41% QoQ, with management describing a platform shift toward accelerated computing and generative AI."
+      ],
+      "entities": [
+        "NVIDIA",
+        "data center",
+        "AI accelerators"
+      ],
+      "observedChanges": [
+        "AI data-center revenue accelerates",
+        "end-market demand remains extraordinary"
+      ]
+    },
+    {
+      "itemId": "tf-nvidia-20231123",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "NVIDIA Experiences Strong Cloud AI Demand but Faces Challenges in China",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20231123-11925.html",
+      "publishedAt": "2023-11-23T00:00:00+08:00",
+      "availableAt": "2023-11-23T00:00:00+08:00",
+      "originGroup": "trendforce-nvidia-q4-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "North American CSP demand remained strong, but US restrictions created a China-specific demand constraint; China cloud adoption of compliant GPUs was still early."
+      ],
+      "entities": [
+        "NVIDIA",
+        "CSP",
+        "AI servers",
+        "China"
+      ],
+      "observedChanges": [
+        "global AI demand strong",
+        "China demand transmission constrained"
+      ]
+    },
+    {
+      "itemId": "mofcom-graphite-20231020",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "商务部 海关总署公告2023年第39号 关于优化调整石墨物项临时出口管制措施的公告",
+      "publisher": "商务部/海关总署",
+      "url": "https://interview.mofcom.gov.cn/mofcom_interview/front/swfgk/article?id=20231003447368",
+      "publishedAt": "2023-10-20T10:00:00+08:00",
+      "availableAt": "2023-10-20T10:00:00+08:00",
+      "originGroup": "mofcom-graphite-control-20231020",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "High-purity/high-strength/high-density artificial graphite and natural flake graphite products would require export licences from 2023-12-01."
+      ],
+      "entities": [
+        "graphite",
+        "battery materials",
+        "export controls"
+      ],
+      "observedChanges": [
+        "graphite export licensing tightens"
+      ]
+    },
+    {
+      "itemId": "mofcom-graphite-20231130",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "商务部例行发布：石墨出口管制将于12月1日实施",
+      "publisher": "商务部",
+      "url": "https://exportcontrol.mofcom.gov.cn/article/gndt/202312/927.html",
+      "publishedAt": "2023-11-30T00:00:00+08:00",
+      "availableAt": "2023-11-30T00:00:00+08:00",
+      "originGroup": "mofcom-graphite-control-20231130",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MOFCOM said the graphite control regime would take effect Dec 1 and that no enterprise applications had yet been received at the time of the Nov 30 briefing."
+      ],
+      "entities": [
+        "graphite",
+        "export licences"
+      ],
+      "observedChanges": [
+        "policy enters implementation",
+        "physical incidence still unobserved"
+      ]
+    },
+    {
+      "itemId": "maersk-redsea-20231215",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "Maersk operations through Red Sea / Gulf of Aden",
+      "publisher": "A.P. Moller - Maersk",
+      "url": "https://www.maersk.com/ja-jp/news/articles/2023/12/15/maersk-operations-through-red-sea-gulf-of-aden",
+      "publishedAt": "2023-12-15T00:00:00Z",
+      "availableAt": "2023-12-15T00:00:00Z",
+      "originGroup": "maersk-redsea-20231215",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Maersk began service suspensions/rerouting around the Red Sea as vessel-security risks escalated in mid-December, creating longer routes and potential freight-capacity disruption."
+      ],
+      "entities": [
+        "Red Sea",
+        "container shipping",
+        "Maersk",
+        "Suez"
+      ],
+      "observedChanges": [
+        "major carrier suspends/reroutes services",
+        "shipping distance/capacity shock begins"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20231031",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年10月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202310/t20231031_1944037.html",
+      "publishedAt": "2023-10-31T09:30:00+08:00",
+      "availableAt": "2023-10-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202310",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "October manufacturing PMI fell to 49.5 with new orders 49.5."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing returns to contraction"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20231130",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年11月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202311/t20231130_1945018.html",
+      "publishedAt": "2023-11-30T09:30:00+08:00",
+      "availableAt": "2023-11-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202311",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November manufacturing PMI was 49.4 and new orders 49.4."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing demand remains weak"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20231231",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年12月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202312/t20231231_1946106.html",
+      "publishedAt": "2023-12-31T09:30:00+08:00",
+      "availableAt": "2023-12-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202312",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "December manufacturing PMI fell to 49.0 and new orders to 48.7."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "broad manufacturing demand weakens further"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20231209",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年11月份工业生产者出厂价格同比下降3.0%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202312/t20231209_1945395.html",
+      "publishedAt": "2023-12-09T09:30:00+08:00",
+      "availableAt": "2023-12-09T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202311",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November PPI fell 3.0% YoY and 0.3% MoM; broad producer deflation persisted."
+      ],
+      "entities": [
+        "China PPI"
+      ],
+      "observedChanges": [
+        "producer deflation persists"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2023q4-memory-price-reversal",
+      "statement": "Memory moved from prolonged decline into an industry-wide pricing rebound in Q4 2023 as supplier production cuts combined with handset/server restocking; mobile DRAM/NAND price increases accelerated materially.",
+      "changeType": "cyclical_price_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-10-13T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20231013",
+        "tf-mobile-memory-20231026"
+      ],
+      "independentOriginGroups": [
+        "trendforce-memory-q4-2023"
+      ],
+      "affectedValueChain": [
+        "DRAM/NAND suppliers",
+        "memory designers",
+        "storage modules",
+        "smartphone/server OEMs"
+      ],
+      "contradictionSearchNotes": "Physical evidence is strong but concentrated in one specialist origin; company-level realized conversion is mandatory.",
+      "researchQuestion": "Which A-share memory exposure had a direct realized/quantitative earnings bridge from the Q4 price reversal rather than inventory speculation?"
+    },
+    {
+      "eventId": "event-2023q4-ai-infra-acceleration",
+      "statement": "AI infrastructure demand remained structurally strong into Q4 2023: NVIDIA data-center revenue accelerated sharply and TrendForce expected 2024 AI-server growth to remain high, while China-specific restrictions created heterogeneous exposure.",
+      "changeType": "structural_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2023-10-17T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-ai-20231017",
+        "nvidia-q3fy24-20231121",
+        "tf-nvidia-20231123"
+      ],
+      "independentOriginGroups": [
+        "trendforce-ai-server-2024-outlook",
+        "nvidia-q3fy24-results",
+        "trendforce-nvidia-q4-2023"
+      ],
+      "affectedValueChain": [
+        "AI accelerators",
+        "HBM",
+        "high-speed optical",
+        "servers",
+        "power/cooling"
+      ],
+      "contradictionSearchNotes": "Global demand is strong, but China GPU restrictions mean generic domestic AI exposure may not convert. Deep research must isolate companies with realized export/global-customer engines.",
+      "researchQuestion": "Which A-share AI infrastructure supplier had already converted global AI capex into revenue/profit and retained expectation room?"
+    },
+    {
+      "eventId": "event-2023q4-graphite-export-control",
+      "statement": "China tightened export licensing for high-sensitivity natural/artificial graphite from Dec 1, creating policy scarcity optionality but without pre-cutoff evidence that licences were broadly denied or that listed-company earnings improved.",
+      "changeType": "policy_supply_control",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-10-20T10:00:00+08:00",
+      "memberItemIds": [
+        "mofcom-graphite-20231020",
+        "mofcom-graphite-20231130"
+      ],
+      "independentOriginGroups": [
+        "mofcom-graphite-control-20231020",
+        "mofcom-graphite-control-20231130"
+      ],
+      "affectedValueChain": [
+        "graphite miners/processors",
+        "anode materials",
+        "battery producers"
+      ],
+      "contradictionSearchNotes": "Policy was real, but MOFCOM itself said applications had not yet been received before implementation; physical/earnings incidence is unresolved.",
+      "researchQuestion": "Is there any realized company earnings bridge, or is this only policy optionality?"
+    },
+    {
+      "eventId": "event-2023q4-redsea-shipping-shock",
+      "statement": "Mid-December Red Sea security incidents caused major carriers to suspend/reroute services, increasing sailing distance and tightening effective container capacity, but the shock was very new and its persistence was uncertain by quarter-end.",
+      "changeType": "geopolitical_logistics_disruption",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-12-15T00:00:00Z",
+      "memberItemIds": [
+        "maersk-redsea-20231215"
+      ],
+      "independentOriginGroups": [
+        "maersk-redsea-20231215"
+      ],
+      "affectedValueChain": [
+        "container shipping",
+        "freight forwarders",
+        "exporters/importers"
+      ],
+      "contradictionSearchNotes": "Single first-party origin at discovery and only two weeks of history before cutoff; persistence and rate pass-through must be independently verified before stock selection.",
+      "researchQuestion": "Did the disruption create a measurable, durable freight-rate earnings bridge for any A-share carrier by Dec 31?"
+    },
+    {
+      "eventId": "event-2023q4-broad-manufacturing-weakness",
+      "statement": "China manufacturing demand weakened through Q4 while producer deflation persisted, creating a negative broad-demand backdrop even as selected technology cycles improved.",
+      "changeType": "macro_demand_weakness",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2023-10-31T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20231031",
+        "nbs-pmi-20231130",
+        "nbs-pmi-20231231",
+        "nbs-ppi-20231209"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202310",
+        "nbs-pmi-202311",
+        "nbs-pmi-202312",
+        "nbs-ppi-202311"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "consumer/industrial demand"
+      ],
+      "contradictionSearchNotes": "Useful as a regime/contradiction filter but not a narrow long beneficiary.",
+      "researchQuestion": "Use as context rather than standalone stock-selection thesis."
+    }
+  ]
+}
