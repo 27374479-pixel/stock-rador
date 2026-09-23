@@ -1,0 +1,547 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-09-27T23:59:59+08:00",
+  "researchReadyAt": "2021-09-27T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q3-coal-shenhua",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Coal scarcity can raise miner earnings quickly, but by Sep27 the entire basket had already undergone an extreme rerating."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "China's power crunch and record coal prices shifted the profit pool sharply toward coal miners. 中国神华 had a low-cost, stable earnings path and low forward PE, but by Sep27 the stock had already outperformed CSI300 by ~54pp over 20d and ~79pp over 60d, while higher-beta peers had rerated even more. The new scarcity news therefore arrived after a major price move.",
+    "firstCredibleDate": "2021-09-27",
+    "valueChain": [
+      "coal scarcity",
+      "coal selling prices",
+      "mining margins",
+      "power-generator losses",
+      "miner earnings/cash"
+    ],
+    "persistenceReason": "Coal supply constraints can persist, but policy intervention and generator distress can cap prices.",
+    "disconfirmingEvidence": [
+      "神华 20/60d relative gains were already extreme.",
+      "兖矿 60d excess exceeded +557pp, showing sector-wide speculation/absorption.",
+      "The Aug29 forecast already expected 2021/22/23 profit RMB49.7/50.3/50.7bn with only low outer-year growth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-power-20210927",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-power-explainer-20210927",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-coal-20210927",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenhua-h1-20210828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenhua-forecast-20210829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "yankuang-h1-20210828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shaanxi-h1-20210831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "coal scarcity/power crunch",
+      "to": "coal price and miner margin",
+      "mechanism": "Tight supply raises realized coal prices while capped electricity tariffs squeeze generators.",
+      "evidenceRefs": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927"
+      ],
+      "failureMode": "policy caps prices or supply normalizes",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "coal price",
+      "to": "神华 earnings",
+      "mechanism": "Large coal-sales exposure and integrated logistics convert higher prices/volumes into mining profit.",
+      "evidenceRefs": [
+        "shenhua-h1-20210828",
+        "shenhua-forecast-20210829"
+      ],
+      "failureMode": "price controls or power-segment losses offset mining gains",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings/cash",
+      "to": "equity alpha",
+      "mechanism": "Stable low-PE earnings can create value, but only if not already consumed by the extreme Q3 rerating.",
+      "evidenceRefs": [
+        "regime-coal-20210927",
+        "shenhua-forecast-20210829"
+      ],
+      "failureMode": "good earnings merely confirm the scarcity narrative after the stock move",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost coal miners"
+    ],
+    "secondOrderWinners": [
+      "coal logistics/rail assets"
+    ],
+    "losers": [
+      "thermal generators with capped tariffs",
+      "industrial users facing rationing"
+    ],
+    "substitutes": [
+      "gas/renewables/imported coal"
+    ],
+    "bottlenecks": [
+      "domestic mine capacity",
+      "transport",
+      "policy"
+    ],
+    "falseThemeMatches": [
+      "power generators mistaken as beneficiaries of electricity scarcity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601088.SH",
+      "name": "中国神华",
+      "verifiedExposure": "H1 revenue +37.1%, profit +26%, stable low-cost integrated coal exposure.",
+      "evidenceRefs": [
+        "shenhua-h1-20210828",
+        "shenhua-forecast-20210829"
+      ],
+      "earningsSensitivity": {
+        "base": "2021/22/23 profit RMB49.7/50.3/50.7bn.",
+        "favorable": "scarcity lifts realized coal earnings above the flat outer-year path.",
+        "adverse": "price controls normalize the super-profit."
+      },
+      "principalRisks": [
+        "extreme expectation absorption",
+        "policy intervention"
+      ]
+    },
+    {
+      "ticker": "600188.SH",
+      "name": "兖矿能源",
+      "verifiedExposure": "High-beta coal producer with H1扣非 profit +104%.",
+      "evidenceRefs": [
+        "yankuang-h1-20210828"
+      ],
+      "earningsSensitivity": {
+        "base": "High spot sensitivity.",
+        "favorable": "scarcity persists.",
+        "adverse": "policy/price reversal."
+      },
+      "principalRisks": [
+        "extreme 60d rerating",
+        "high cyclicality"
+      ]
+    },
+    {
+      "ticker": "601225.SH",
+      "name": "陕西煤业",
+      "verifiedExposure": "Coal producer with H1 revenue +87% and profit +66%.",
+      "evidenceRefs": [
+        "shaanxi-h1-20210831"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong coal price leverage.",
+        "favorable": "prices/volume stay elevated.",
+        "adverse": "normalization."
+      },
+      "principalRisks": [
+        "sector-wide crowding"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600188.SH",
+      "name": "兖矿能源",
+      "controlType": "peer",
+      "fairCounterfactualReason": "High-beta coal producer benefiting from the same scarcity.",
+      "whySelectedCompanyShouldOutperform": "神华 has a much more stable multi-year earnings path and lower dependence on an extreme spot-price continuation;兖矿 has far greater torque but also far more absorbed expectations.",
+      "evidenceRefs": [
+        "shenhua-forecast-20210829",
+        "yankuang-h1-20210828",
+        "regime-coal-20210927"
+      ]
+    },
+    {
+      "ticker": "601225.SH",
+      "name": "陕西煤业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed coal peer with realized H1 profit growth.",
+      "whySelectedCompanyShouldOutperform": "神华 has an explicit low-PE stable path and integrated logistics, while 陕煤 has stronger pure mining leverage but no cleaner frozen path advantage.",
+      "evidenceRefs": [
+        "shenhua-forecast-20210829",
+        "shaanxi-h1-20210831"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601088.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600188.SH",
+        "selectedAdvantages": [
+          "more stable normalized path",
+          "far less dependence on spot-price continuation"
+        ],
+        "selectedDisadvantages": [
+          "兖矿 has dramatically higher scarcity torque"
+        ],
+        "evidenceRefs": [
+          "shenhua-forecast-20210829",
+          "yankuang-h1-20210828",
+          "regime-coal-20210927"
+        ],
+        "switchCondition": "Prefer兖矿 only if post-spike forecasts demonstrate durable outer-year earnings rather than peak spot profits.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "601225.SH",
+        "selectedAdvantages": [
+          "explicit stable forecast path",
+          "integrated quality"
+        ],
+        "selectedDisadvantages": [
+          "陕煤 has stronger pure mining earnings acceleration"
+        ],
+        "evidenceRefs": [
+          "shenhua-forecast-20210829",
+          "shaanxi-h1-20210831"
+        ],
+        "switchCondition": "Prefer陕煤 if multi-year normalized earnings prove more durable at lower burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "神华 is the quality representative, but the sector's extreme rerating destroys a clean entry asymmetry."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Power rationing and coal scarcity were headline news; all frozen coal names had strongly outperformed, with 神华 +54pp 20d/+79pp 60d and 兖矿 +558pp 60d versus CSI300.",
+    "thesisExpectation": "Scarcity keeps coal earnings above the already-stable Aug baseline for longer.",
+    "measurableGap": "The missing evidence is whether later normalized earnings rise enough to offset the extraordinary price rerating and likely policy response.",
+    "evidenceRefs": [
+      "regime-coal-20210927",
+      "shenhua-forecast-20210829",
+      "reuters-power-explainer-20210927"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year normalized profit/PE path adjusted for extreme prior rerating.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021/22/23 profit RMB49.7/50.3/50.7bn; PE ~7.3x/7.2x/7.1x before the late-September rerating completed.",
+    "thesisScenario": "Scarcity lifts 2022-23 normalized earnings materially above the flat baseline despite policy response.",
+    "breakevenCondition": "Outer-year earnings must rise enough to compensate for a stock already sharply repriced.",
+    "ordinaryScenarioFailure": "Coal earnings stay strong but price controls and normalization leave the stable baseline broadly intact.",
+    "catalystOrTimingBridge": "Q3/Q4 realized prices and policy response test durability.",
+    "evidenceRefs": [
+      "shenhua-forecast-20210829",
+      "reuters-power-20210927",
+      "regime-coal-20210927"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Physical power/coal shortage and miner earnings strength are explicit.",
+      "evidenceRefs": [
+        "reuters-power-20210927",
+        "shenhua-h1-20210828"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "H1 profit and Q2 sequential growth confirm strong coal economics.",
+      "evidenceRefs": [
+        "shenhua-h1-20210828"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "All coal peers showed strong earnings/price confirmation.",
+      "evidenceRefs": [
+        "yankuang-h1-20210828",
+        "shaanxi-h1-20210831",
+        "regime-coal-20210927"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Aug29 baseline predates the late-September acute power crunch, so some earnings revision may remain.",
+      "evidenceRefs": [
+        "shenhua-forecast-20210829",
+        "reuters-power-20210927"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Use the extreme 20/60d peer rerating and contemporaneous stable path.",
+      "evidenceRefs": [
+        "regime-coal-20210927",
+        "shenhua-forecast-20210829"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen coal basket versus CSI300",
+      "lookback20Excess": 0.7638975208273711,
+      "lookback60Excess": 2.470499621157073,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-coal-20210927"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Power crunch and coal scarcity intensified into late September.",
+      "evidenceRefs": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Major miners had strong H1 earnings and scarcity supported further revisions.",
+      "evidenceRefs": [
+        "shenhua-h1-20210828",
+        "yankuang-h1-20210828",
+        "shaanxi-h1-20210831"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Coal supply/investment constraints are not fixed instantly, though policy can cap price.",
+      "evidenceRefs": [
+        "reuters-power-explainer-20210927"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Every frozen coal name had already rerated dramatically before cutoff.",
+      "evidenceRefs": [
+        "regime-coal-20210927"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamentals are exceptional but price absorption is too extreme for a High-priority entry."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601088.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Large stable profit and integrated coal/logistics quality.",
+      "evidenceRefs": [
+        "shenhua-h1-20210828"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Late-September scarcity can raise near-term estimates beyond Aug baseline.",
+      "evidenceRefs": [
+        "shenhua-forecast-20210829",
+        "reuters-power-20210927"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Frozen Aug forward PE was ~7x, though subsequent rerating reduces slack.",
+      "evidenceRefs": [
+        "shenhua-forecast-20210829",
+        "regime-coal-20210927"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q3/Q4 realized coal prices and policy actions are inside 60d.",
+      "evidenceRefs": [
+        "reuters-power-20210927"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low normalized valuation helps, but extreme sector rerating/policy risk create downside.",
+      "evidenceRefs": [
+        "regime-coal-20210927",
+        "shenhua-forecast-20210829"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600188.SH",
+        "revisionAdvantage": "神华 has a more stable baseline;兖矿 higher torque.",
+        "valuationAdvantage": "Frozen Shenhua baseline is low-PE but both rerated sharply.",
+        "qualityTradeoff": "神华 more stable;兖矿 more cyclical.",
+        "catalystAdvantage": "Both benefit from coal scarcity.",
+        "downsideTradeoff": "兖矿 has much larger reversal risk after >5x 60d excess.",
+        "evidenceRefs": [
+          "shenhua-forecast-20210829",
+          "yankuang-h1-20210828",
+          "regime-coal-20210927"
+        ],
+        "switchCondition": "Switch if兖矿 shows durable multi-year path at acceptable post-rerating burden.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "601225.SH",
+        "revisionAdvantage": "Both benefit; no clean selected revision monopoly.",
+        "valuationAdvantage": "No decisive frozen peer path edge.",
+        "qualityTradeoff": "神华 integrated quality vs陕煤 pure mining torque.",
+        "catalystAdvantage": "Same scarcity catalyst.",
+        "downsideTradeoff": "Sector-wide absorption dominates.",
+        "evidenceRefs": [
+          "shenhua-forecast-20210829",
+          "shaanxi-h1-20210831",
+          "regime-coal-20210927"
+        ],
+        "switchCondition": "Switch if陕煤 outer-year path proves superior at lower burden.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Coal scarcity and power crunch pushed realized prices/margins sharply higher for miners.",
+    "earningsMechanism": "Higher coal selling prices expand mining profit; H1 already showed strong conversion.",
+    "nextObservableMetric": "Q3 realized coal price, mining profit and updated 2022-23 forecasts",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "shenhua-h1-20210828",
+      "reuters-power-20210927"
+    ],
+    "failureCondition": "Policy response caps prices and outer-year forecasts do not improve enough to justify the prior rerating."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021 profit RMB49.7bn, +26.9%.",
+      "nextPeriod": "2022 profit RMB50.3bn, +1.2%.",
+      "laterPeriod": "2023 profit RMB50.7bn, +0.7%.",
+      "rationale": "Aug29 baseline already reflects strong coal economics but assumes a stable normalized plateau.",
+      "evidenceRefs": [
+        "shenhua-forecast-20210829"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Late-September scarcity can lift 2021/Q4 profit above the baseline.",
+      "nextPeriodChange": "A durable opportunity would require 2022 normalized profit materially above RMB50.3bn after policy intervention.",
+      "laterPeriodChange": "2023 would need a higher structural earnings floor than the flat RMB50.7bn baseline.",
+      "mechanism": "Persistent supply constraints would have to raise the normalized coal-price floor, not merely produce a temporary September spike.",
+      "evidenceRefs": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927",
+        "shenhua-forecast-20210829"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term upside is likely, but extreme price absorption and likely policy response leave outer-year advantage unresolved.",
+      "evidenceRefs": [
+        "regime-coal-20210927",
+        "shenhua-forecast-20210829"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The sector had already rerated extraordinarily before the late-September signal.",
+      "evidenceRefs": [
+        "regime-coal-20210927"
+      ]
+    },
+    "falsifier": "Updated 2022-23 forecasts fail to rise materially above the Aug29 stable path after coal-price policy response.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: stable low-PE path is attractive, but entry occurs after an extreme sector rerating, unlike the earlier 2022Q1 Shenhua setup.",
+    "alreadyPricedAssessment": "extreme absorption",
+    "constraints": [
+      "extreme 20/60d rerating",
+      "policy intervention risk",
+      "mixed peer edge"
+    ]
+  },
+  "bearCase": "Late-September scarcity is the blow-off phase; policy caps coal prices and the stock mean-reverts despite still-strong earnings.",
+  "invalidationConditions": [
+    {
+      "indicator": "normalized 2022-23 earnings path",
+      "observationMethod": "updated forecasts/filings",
+      "threshold": "fails to improve materially versus Aug29 baseline"
+    },
+    {
+      "indicator": "coal policy/pricing",
+      "observationMethod": "official actions",
+      "threshold": "price intervention removes scarcity rent"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "late-September policy response magnitude",
+    "post-rerating normalized yield"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research only; do not use low PE to override extreme expectation absorption."
+  ]
+}
