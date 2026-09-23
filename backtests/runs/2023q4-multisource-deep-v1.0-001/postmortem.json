@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023q4-multisource-deep-v1.0-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "ai_optical_innolight_company_engine_override",
+      "frozenDecision": "中际旭创 High-priority selection via v1.0 company_engine_override over 新易盛/光迅科技",
+      "base60d": {
+        "selectedReturn": 0.545805573324444,
+        "benchmarkReturn": -0.030132138794882968,
+        "benchmarkExcess": 0.575937712119327,
+        "matchedControlExcess": 0.3535572538242881,
+        "bestControlTicker": "300502.SZ",
+        "bestControlReturn": 0.3930270177125086,
+        "excessVsBestControl": 0.15277855561193543,
+        "selectedRank": 1
+      },
+      "later120d": {
+        "selectedReturn": 0.7508633702225931,
+        "bestControlTicker": "300502.SZ",
+        "bestControlReturn": 1.05994271314372,
+        "excessVsBestControl": -0.30907934292112693
+      },
+      "failureClass": null,
+      "label": "company_engine_override_right",
+      "generalLesson": "A neutral broad-sector regime need not veto a High-priority selection when the selected company already has realized, independently confirmed, multi-quarter earnings conversion plus clear peer-relative valuation/revision asymmetry. The pre-registered 60d decision succeeded; later 120d peer reranking is a separate re-underwriting problem."
+    },
+    {
+      "case": "memory_price_reversal_without_company_conversion",
+      "frozenDecision": "兆易创新 Research selection despite favorable memory-sector timing",
+      "base60d": {
+        "selectedReturn": -0.3295986956946183,
+        "benchmarkReturn": -0.09114583333333337,
+        "benchmarkExcess": -0.23845286236128493,
+        "matchedControlExcess": -0.05153799221241245,
+        "bestControlTicker": "001309.SZ",
+        "bestControlReturn": -0.26448559912805036,
+        "excessVsBestControl": -0.06511309656656794,
+        "selectedRank": 4
+      },
+      "failureClass": null,
+      "label": "sector_timing_without_company_conversion_correctly_demoted",
+      "generalLesson": "Favorable sector price timing is not enough when the company earnings bridge remains proxy-only and cross-sectional asymmetry is mixed. V0.9/V1.0 direct-conversion discipline prevented an erroneous High-priority promotion."
+    },
+    {
+      "case": "redsea_shipping_no_selection",
+      "frozenDecision": "Research hypothesis / No selection because the event was too new and no durable freight-rate-to-earnings bridge was frozen",
+      "failureClass": null,
+      "label": "no_selection_preserved",
+      "generalLesson": "A dramatic physical event is not automatically an investable signal. The Skill can retain the event while refusing a stock expression until persistence and earnings transmission are measurable."
+    }
+  ],
+  "convergenceAssessment": {
+    "unchangedV10Rules": true,
+    "positiveEvidence": [
+      "company-engine override succeeded on a holdout not used in its design",
+      "direct-conversion gate correctly demoted a favorable-timing memory sector with weak company earnings",
+      "event-level discovery remained industry-agnostic across AI, memory, shipping and policy controls"
+    ],
+    "remainingUncertainty": [
+      "one successful v1.0 override is insufficient for validation",
+      "historical replay remains contaminated by current model/search knowledge",
+      "need another independent window and forward-frozen evidence"
+    ]
+  },
+  "prohibitedUses": [
+    "Do not loosen or tighten v1.0 using this 2023Q4 outcome.",
+    "Do not claim production alpha validation from one historical override success.",
+    "Do not change the 60d base horizon because the 120d best peer later changed."
+  ],
+  "nextValidation": {
+    "keepSkillUnchanged": true,
+    "proposedHoldout": "2023Q2 or 2023Q3",
+    "requirement": "Use a different economic opportunity mix; do not target AI/optical or memory specifically."
+  }
+}
