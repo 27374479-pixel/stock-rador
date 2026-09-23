@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-02-28T15:30:00+08:00",
+  "researchReadyAt": "2025-02-28T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q1-power-backlog-2025q1",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 40,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Power-equipment backlog is multi-quarter, but a stock requires company-level conversion and favorable timing."
+  },
+  "changeHypothesis": {
+    "summary": "GE Vernova and ABB confirmed strong global power/electrification orders and data-center/grid demand. However, before the Q1 cutoff the frozen A-share power basket was only neutral, with just one of three names beating CSI300 over both lookbacks, and no candidate had a sufficiently direct pre-cutoff 2025 earnings-conversion bridge.",
+    "firstCredibleDate": "2025-01-22",
+    "valueChain": [
+      "grid/data-center capex",
+      "equipment orders/backlog",
+      "delivery/utilization",
+      "A-share supplier earnings"
+    ],
+    "persistenceReason": "Two independent first-party global suppliers reported strong/accelerating Electrification orders and backlog.",
+    "disconfirmingEvidence": [
+      "A-share opportunity timing was not favorable.",
+      "The strongest global evidence was not yet matched by fresh 2025 A-share quarterly earnings data before cutoff.",
+      "Theme recognition was already high."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "gev-q4-20250122",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "abb-q4-20250227",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-power-20250228",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "grid/data-center capex",
+      "to": "power-equipment backlog",
+      "mechanism": "Large AI/grid projects require transformers, switchgear and related electrical equipment.",
+      "evidenceRefs": [
+        "gev-q4-20250122",
+        "abb-q4-20250227"
+      ],
+      "failureMode": "capex or project timelines slow",
+      "lag": "quarters"
+    },
+    {
+      "from": "global backlog",
+      "to": "A-share earnings",
+      "mechanism": "Requires verified supplier qualification, profitable order conversion and delivery.",
+      "evidenceRefs": [
+        "gev-q4-20250122",
+        "abb-q4-20250227"
+      ],
+      "failureMode": "domestic pricing/mix or timing prevents profit conversion",
+      "lag": "one to four quarters"
+    },
+    {
+      "from": "industry thesis",
+      "to": "stock selection",
+      "mechanism": "V0.9 requires direct earnings conversion plus favorable timing before High-priority selection.",
+      "evidenceRefs": [
+        "regime-power-20250228"
+      ],
+      "failureMode": "good global theme but weak local-stock timing",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified transformer/switchgear/grid suppliers"
+    ],
+    "secondOrderWinners": [
+      "electrical components/materials"
+    ],
+    "losers": [
+      "developers facing long lead times"
+    ],
+    "substitutes": [
+      "alternative qualified suppliers"
+    ],
+    "bottlenecks": [
+      "transformer/switchgear capacity",
+      "qualification"
+    ],
+    "falseThemeMatches": [
+      "generic power concepts without order/profit exposure"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company passes both direct conversion and favorable timing at this cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Global order/backlog evidence was strong, but the A-share basket had mixed/weak relative price action.",
+    "thesisExpectation": "The structural opportunity may remain attractive, but company-level realized conversion is required at a later cutoff.",
+    "measurableGap": "Opportunity evidence is ahead of company-selection evidence.",
+    "evidenceRefs": [
+      "gev-q4-20250122",
+      "abb-q4-20250227",
+      "regime-power-20250228"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No stock selection.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "neutral timing",
+      "company conversion evidence missing"
+    ]
+  },
+  "bearCase": "Global backlog persists but A-share suppliers fail to translate it into superior margins/earnings.",
+  "invalidationConditions": [
+    {
+      "indicator": "global order/backlog",
+      "observationMethod": "supplier quarterly results",
+      "threshold": "material deceleration"
+    },
+    {
+      "indicator": "A-share conversion",
+      "observationMethod": "company filings",
+      "threshold": "no direct order-to-profit conversion emerges"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used for selection."
+    ]
+  },
+  "unknowns": [
+    "A-share order backlog by company",
+    "delivery margins",
+    "2025 quarterly conversion"
+  ],
+  "nextResearchActions": [
+    "Keep High-priority hypothesis / No selection.",
+    "Re-underwrite at a later fresh cutoff."
+  ]
+}
