@@ -1,0 +1,578 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-06-27T23:59:59+08:00",
+  "researchReadyAt": "2022-06-27T20:30:00+08:00",
+  "actionableAt": "2022-06-27T20:30:00+08:00",
+  "hypothesisId": "h-2022q2-resource-windfall-yankuang",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Elevated coal earnings and valuation support should be testable over one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "company_engine_override",
+  "changeHypothesis": {
+    "summary": "Official industry data showed coal profits still up ~175% through May. 兖矿 Q1 profit nearly tripled and frozen 2022E/2023E PE was only ~7.3x/~6.1x, yet the stock was de-rated versus CSI300 over both 20d and 60d while the broader coal basket had become neutral.",
+    "firstCredibleDate": "2022-04-30",
+    "valueChain": [
+      "high coal prices",
+      "coal sales/margins",
+      "cash earnings",
+      "dividend/valuation"
+    ],
+    "persistenceReason": "Industry profit windfall persisted from Jan-Apr into Jan-May and consensus forecasts still assumed elevated 2022-24 coal profitability.",
+    "disconfirmingEvidence": [
+      "Coal is cyclical and spot earnings may be near peak.",
+      "Reported Q1 CFO was weaker before adjusting finance-company effects.",
+      "Peers such as 陕煤 remained stronger in price, so company-specific de-rating requires scrutiny."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-profit-20220527",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "nbs-profit-20220627",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-coal-20220627",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "yankuang-q1-20220430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shenhua-q1-20220428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shaanxi-q1-20220428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "coal-valuation-20220612",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "high coal price/profit pool",
+      "to": "兖矿 operating earnings",
+      "mechanism": "Higher coal selling prices and strong industry margins expand mining profit.",
+      "evidenceRefs": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627",
+        "yankuang-q1-20220430"
+      ],
+      "failureMode": "coal prices normalize sharply",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings persistence",
+      "to": "valuation/dividend support",
+      "mechanism": "At ~7x 2022E PE, even partial normalization can leave substantial cash-earnings support.",
+      "evidenceRefs": [
+        "coal-valuation-20220612"
+      ],
+      "failureMode": "market correctly sees earnings as a very short-lived peak",
+      "lag": "20-120 trading days"
+    },
+    {
+      "from": "de-rated price",
+      "to": "alpha",
+      "mechanism": "If current earnings duration is longer than the de-rated price implies, revisions/dividends can close the gap.",
+      "evidenceRefs": [
+        "regime-coal-20220627"
+      ],
+      "failureMode": "company-specific risk explains the de-rating",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost coal producers"
+    ],
+    "secondOrderWinners": [
+      "rail/logistics with volume"
+    ],
+    "losers": [
+      "thermal power/industrial users"
+    ],
+    "substitutes": [
+      "gas/renewables/imports"
+    ],
+    "bottlenecks": [
+      "mine capacity/policy"
+    ],
+    "falseThemeMatches": [
+      "high-cost miners dependent on spot peak"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600188.SH",
+      "name": "兖矿能源",
+      "verifiedExposure": "Q1 profit +196.6% and扣非 +199.9%; low frozen forward PE and direct coal-price exposure.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430",
+        "coal-valuation-20220612"
+      ],
+      "earningsSensitivity": {
+        "base": "2022E/23E PE ~7.34x/6.12x.",
+        "favorable": "coal profitability persists longer than de-rating implies.",
+        "adverse": "coal-price normalization collapses earnings."
+      },
+      "principalRisks": [
+        "commodity reversal",
+        "cash-flow presentation",
+        "cyclicality"
+      ]
+    },
+    {
+      "ticker": "601225.SH",
+      "name": "陕西煤业",
+      "verifiedExposure": "Q1 profit +68.8%,扣非 +97.6%, CFO +36.6%; strong coal exposure.",
+      "evidenceRefs": [
+        "shaanxi-q1-20220428",
+        "coal-valuation-20220612"
+      ],
+      "earningsSensitivity": {
+        "base": "2022E/23E PE ~8.04x/6.89x.",
+        "favorable": "coal profits persist.",
+        "adverse": "pricing normalizes."
+      },
+      "principalRisks": [
+        "already strong price",
+        "cycle"
+      ]
+    },
+    {
+      "ticker": "601088.SH",
+      "name": "中国神华",
+      "verifiedExposure": "Q1 profit +63.3%, CFO +45%; integrated coal/power and strong cash quality.",
+      "evidenceRefs": [
+        "shenhua-q1-20220428",
+        "coal-valuation-20220612"
+      ],
+      "earningsSensitivity": {
+        "base": "2022E/23E PE ~10.12x/8.86x.",
+        "favorable": "coal and power profits persist.",
+        "adverse": "coal price normalizes."
+      },
+      "principalRisks": [
+        "late_reversal price state",
+        "lower earnings torque"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601225.SH",
+      "name": "陕西煤业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Low-cost listed coal producer benefiting from the same industry profit windfall.",
+      "whySelectedCompanyShouldOutperform": "兖矿 had much faster Q1 profit growth, lower frozen forward PE and a de-rated price state, while 陕煤 remained sustained_strength.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430",
+        "shaanxi-q1-20220428",
+        "coal-valuation-20220612",
+        "regime-coal-20220627"
+      ]
+    },
+    {
+      "ticker": "601088.SH",
+      "name": "中国神华",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large integrated coal producer with stronger cash quality and lower cyclicality.",
+      "whySelectedCompanyShouldOutperform": "兖矿 had higher earnings torque and lower frozen PE; 神华 was already late_reversal after a strong 60d rerating.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430",
+        "shenhua-q1-20220428",
+        "coal-valuation-20220612",
+        "regime-coal-20220627"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600188.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601225.SH",
+        "selectedAdvantages": [
+          "Q1 profit growth ~197% vs ~69%",
+          "lower 2022E/23E PE",
+          "de_rated rather than sustained_strength"
+        ],
+        "selectedDisadvantages": [
+          "陕煤 has cleaner reported CFO and lower company-specific uncertainty"
+        ],
+        "evidenceRefs": [
+          "yankuang-q1-20220430",
+          "shaanxi-q1-20220428",
+          "coal-valuation-20220612",
+          "regime-coal-20220627"
+        ],
+        "switchCondition": "Prefer 陕煤 if 兖矿 cash conversion weakens or coal-price sensitivity proves less durable.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601088.SH",
+        "selectedAdvantages": [
+          "higher Q1 earnings torque",
+          "lower frozen forward PE",
+          "de-rated price state"
+        ],
+        "selectedDisadvantages": [
+          "神华 has superior cash quality/diversification"
+        ],
+        "evidenceRefs": [
+          "yankuang-q1-20220430",
+          "shenhua-q1-20220428",
+          "coal-valuation-20220612",
+          "regime-coal-20220627"
+        ],
+        "switchCondition": "Prefer 神华 if coal normalizes rapidly and quality/dividend resilience becomes more valuable than torque.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "兖矿 offers the strongest frozen combination of earnings torque, low valuation and unabsorbed relative price among the three coal producers."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Coal industry profits were still extraordinarily high, but the basket had cooled. 兖矿 lagged CSI300 by ~16.1pp over 20d and ~4.8pp over 60d despite Q1 profit nearly tripling; 2022E PE was ~7.3x.",
+    "thesisExpectation": "Coal profitability persists long enough that the market's de-rating over-discounts normalization.",
+    "measurableGap": "The selected stock has stronger realized profit growth and lower PE than controls while its relative price is weaker.",
+    "evidenceRefs": [
+      "nbs-profit-20220627",
+      "regime-coal-20220627",
+      "coal-valuation-20220612",
+      "yankuang-q1-20220430"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus normalized coal-profit duration versus peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2022E/23E PE ~7.34x/6.12x; consensus forecasts already assume slower growth after 2022 rather than perpetual acceleration.",
+    "thesisScenario": "Coal prices/profits remain elevated enough through H2 that earnings/dividends exceed the de-rated price implication.",
+    "breakevenCondition": "A large part of Q1 profit must persist; no rerating to growth multiples is required.",
+    "ordinaryScenarioFailure": "Coal prices mean-revert rapidly and the low PE proves a classic peak-earnings trap.",
+    "catalystOrTimingBridge": "H1 earnings, coal prices and dividends inside 60 trading days.",
+    "evidenceRefs": [
+      "coal-valuation-20220612",
+      "nbs-profit-20220627",
+      "regime-coal-20220627"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official coal-industry profits remained +174.7% through May after +199% through April.",
+      "evidenceRefs": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "兖矿 Q1 profit/扣非 nearly tripled.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Peers also showed large Q1 profit gains, confirming a real industry profit pool rather than one-company accounting noise.",
+      "evidenceRefs": [
+        "shenhua-q1-20220428",
+        "shaanxi-q1-20220428"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "June forecasts already include elevated 2022 earnings but may still understate duration if coal profitability persists.",
+      "evidenceRefs": [
+        "coal-valuation-20220612",
+        "nbs-profit-20220627"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Selected stock is de-rated on both 20d and 60d relative windows while valuation is low.",
+      "evidenceRefs": [
+        "regime-coal-20220627",
+        "coal-valuation-20220612"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen coal basket versus CSI300",
+      "lookback20Excess": -0.11953890560984419,
+      "lookback60Excess": 0.2763685093229173,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-coal-20220627"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Industry profit windfall persisted through sequential official releases.",
+      "evidenceRefs": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "兖矿、陕煤、神华 all reported strong Q1 profit growth.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430",
+        "shaanxi-q1-20220428",
+        "shenhua-q1-20220428"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Official Jan-Apr/Jan-May data and June 2022-24 forecasts imply more than a one-quarter profit event.",
+      "evidenceRefs": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627",
+        "coal-valuation-20220612"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "The sector had a strong prior 60d rerating, but the selected stock had already de-rated and peer price states diverged.",
+      "evidenceRefs": [
+        "regime-coal-20220627"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Broad coal timing is mixed, so High-priority requires the strict company-engine override."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600188.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Large positive earnings and low leverage-to-earnings burden clear the quality floor; CFO presentation is a monitored caveat.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Profit growth and official sector earnings remain far above the normalization implied by selected-stock de-rating.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430",
+        "nbs-profit-20220627",
+        "regime-coal-20220627"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "~7.3x 2022E and ~6.1x 2023E PE provide a large valuation cushion relative to peers.",
+      "evidenceRefs": [
+        "coal-valuation-20220612"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 earnings and coal price/profit data lie inside base horizon.",
+      "evidenceRefs": [
+        "coal-valuation-20220612"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low valuation reduces dependence on continued multiple expansion, though commodity reversal remains material.",
+      "evidenceRefs": [
+        "coal-valuation-20220612"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601225.SH",
+        "revisionAdvantage": "兖矿 has much higher current profit growth.",
+        "valuationAdvantage": "兖矿 lower frozen PE.",
+        "qualityTradeoff": "陕煤 cleaner CFO; both strongly profitable.",
+        "catalystAdvantage": "Both exposed to coal profits; 兖矿 has more torque.",
+        "downsideTradeoff": "兖矿 more cyclical; 陕煤 more stable.",
+        "evidenceRefs": [
+          "yankuang-q1-20220430",
+          "shaanxi-q1-20220428",
+          "coal-valuation-20220612",
+          "regime-coal-20220627"
+        ],
+        "switchCondition": "Switch if cash conversion or coal-price persistence weakens enough to erase torque/valuation edge.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601088.SH",
+        "revisionAdvantage": "兖矿 higher Q1 torque.",
+        "valuationAdvantage": "兖矿 materially lower frozen PE.",
+        "qualityTradeoff": "神华 superior diversification/cash quality.",
+        "catalystAdvantage": "兖矿 more direct torque to coal profitability.",
+        "downsideTradeoff": "神华 more resilient in normalization.",
+        "evidenceRefs": [
+          "yankuang-q1-20220430",
+          "shenhua-q1-20220428",
+          "coal-valuation-20220612",
+          "regime-coal-20220627"
+        ],
+        "switchCondition": "Switch if normalization accelerates and resilience dominates torque.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Coal selling prices/profit pool remained elevated through May.",
+    "earningsMechanism": "Higher coal prices directly expanded mining margins and Q1 attributable/扣非 profit.",
+    "nextObservableMetric": "H1 coal selling price, attributable profit and cash earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "yankuang-q1-20220430",
+      "nbs-profit-20220627"
+    ],
+    "failureCondition": "H1 profit/cash earnings collapse as coal prices normalize."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overrideMode": "fundamental_price_divergence",
+    "realizedEngine": {
+      "conclusion": "clear",
+      "rationale": "Q1 profit/扣非 nearly tripled while industry profit remained exceptionally high.",
+      "evidenceRefs": [
+        "yankuang-q1-20220430",
+        "nbs-profit-20220627"
+      ]
+    },
+    "independentFundamentalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "NBS industry profits and two listed peers independently confirm the coal profit windfall.",
+      "evidenceRefs": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627",
+        "shaanxi-q1-20220428",
+        "shenhua-q1-20220428"
+      ]
+    },
+    "engineHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Official Jan-Apr and Jan-May persistence plus 2022-24 consensus forecasts support a multi-quarter, though cyclical, earnings window.",
+      "evidenceRefs": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627",
+        "coal-valuation-20220612"
+      ]
+    },
+    "fundamentalPriceDivergence": {
+      "conclusion": "clear",
+      "rationale": "Selected stock de-rated versus CSI300 over both 20d and 60d while realized/industry profits remained very strong.",
+      "evidenceRefs": [
+        "regime-coal-20220627",
+        "yankuang-q1-20220430",
+        "nbs-profit-20220627"
+      ]
+    },
+    "nextCatalystWithinBase": {
+      "conclusion": "clear",
+      "rationale": "H1 earnings and subsequent coal-profit data occur inside 60 trading days.",
+      "evidenceRefs": [
+        "coal-valuation-20220612"
+      ]
+    },
+    "priceWeaknessAttribution": {
+      "conclusion": "non_company_fundamental",
+      "rationale": "Strong company/industry profits and low forward PE conflict with the de-rated price; the broader coal basket was undergoing rotation/normalization rather than evidence of selected-company operating deterioration.",
+      "evidenceRefs": [
+        "regime-coal-20220627",
+        "yankuang-q1-20220430",
+        "nbs-profit-20220627"
+      ]
+    },
+    "companyPriceDislocation": {
+      "selected20Excess": -0.16127274806717007,
+      "selected60Excess": -0.04764893247369151,
+      "conclusion": "de_rated",
+      "evidenceRefs": [
+        "regime-coal-20220627"
+      ]
+    },
+    "falsifier": "H1 coal-price/profit or cash conversion deteriorates materially, or a frozen control develops superior valuation-adjusted realized earnings.",
+    "evidenceRefs": [
+      "yankuang-q1-20220430",
+      "coal-valuation-20220612",
+      "regime-coal-20220627",
+      "nbs-profit-20220627"
+    ],
+    "overallConclusion": "clear_override"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority through strict company-engine override; low PE and already-normalizing consensus reduce duration burden.",
+    "alreadyPricedAssessment": "selected company de-rated despite realized earnings",
+    "constraints": [
+      "commodity cycle",
+      "cash-flow caveat"
+    ]
+  },
+  "bearCase": "The low PE is entirely peak-cycle optical: coal prices collapse faster than consensus and earnings normalize before dividends/revisions can support the stock.",
+  "invalidationConditions": [
+    {
+      "indicator": "coal profit/cash earnings",
+      "observationMethod": "H1 filing/industry data",
+      "threshold": "material sequential collapse"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "normalized mid-cycle coal price",
+    "finance-company cash-flow presentation"
+  ],
+  "nextResearchActions": [
+    "Freeze High-priority override; no post-reveal threshold changes."
+  ]
+}
