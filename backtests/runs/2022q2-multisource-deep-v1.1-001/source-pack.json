@@ -1,0 +1,596 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2022q2-multisource-deep-v1.1-001",
+  "cutoffAt": "2022-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2022Q2 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official auto-policy, auto-production, industrial-profit and PMI evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on MOF/STA, MIIT and NBS releases relevant to surfaced Q2 changes."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company evidence is deferred to deep research."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable polysilicon/PV supply-price evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses EnergyTrend/China Silicon public market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on Shanghai reopening and supply-chain normalization.",
+      "coverageStatus": "partial",
+      "limitations": "Uses Reuters syndicated copies."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist PV supply-demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on EnergyTrend/TrendForce."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "tax-auto-20220531",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于减征部分乘用车车辆购置税的公告",
+      "publisher": "财政部/国家税务总局",
+      "url": "https://tianjin.chinatax.gov.cn/11200000000/0300/030004/03000418/20220601115624612.shtml",
+      "publishedAt": "2022-05-31T12:07:00+08:00",
+      "availableAt": "2022-05-31T12:07:00+08:00",
+      "originGroup": "mof-sta-auto-tax-20220531",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "From June through December 2022, eligible passenger cars up to RMB300k and 2.0L received a 50% vehicle-purchase-tax reduction."
+      ],
+      "entities": [
+        "passenger cars",
+        "purchase tax"
+      ],
+      "observedChanges": [
+        "auto-consumption stimulus introduced"
+      ]
+    },
+    {
+      "itemId": "reuters-shanghai-20220530",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Shanghai city to lift lockdown restrictions on June 1",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/shanghai-city-to-lift-lockdown-restrictions-on-june-1-2831554",
+      "publishedAt": "2022-05-30T18:22:00+08:00",
+      "availableAt": "2022-05-30T18:22:00+08:00",
+      "originGroup": "reuters-shanghai-reopening-20220530",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Shanghai announced the end of its two-month lockdown from June 1, restoring mobility, public transport and business activity."
+      ],
+      "entities": [
+        "Shanghai",
+        "reopening",
+        "manufacturing"
+      ],
+      "observedChanges": [
+        "major manufacturing hub reopens",
+        "supply-chain normalization begins"
+      ]
+    },
+    {
+      "itemId": "miit-auto-20220610",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年5月汽车工业经济运行情况",
+      "publisher": "工业和信息化部",
+      "url": "https://www.miit.gov.cn/jgsj/zbys/gzdt/art/2022/art_17978c78c8964420b27cf2d8a956044c.html",
+      "publishedAt": "2022-06-10T17:05:00+08:00",
+      "availableAt": "2022-06-10T17:05:00+08:00",
+      "originGroup": "miit-auto-202205",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May auto output/sales rebounded 59.7%/57.6% MoM as supply chains resumed; NEV production and sales both rose about 1.1x YoY."
+      ],
+      "entities": [
+        "autos",
+        "NEVs",
+        "supply chain"
+      ],
+      "observedChanges": [
+        "auto production recovers sharply",
+        "NEV growth remains strong"
+      ]
+    },
+    {
+      "itemId": "nbs-profit-20220527",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年1—4月份全国规模以上工业企业利润增长3.5%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901477.html",
+      "publishedAt": "2022-05-27T09:30:00+08:00",
+      "availableAt": "2022-05-27T09:30:00+08:00",
+      "originGroup": "nbs-profit-202204",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Apr coal-mining profits +199% YoY and oil/gas extraction profits +138%; power/heat production profits -33% and auto manufacturing -33.4%."
+      ],
+      "entities": [
+        "coal mining",
+        "oil and gas",
+        "power",
+        "autos"
+      ],
+      "observedChanges": [
+        "upstream resource profit windfall",
+        "downstream power/auto margin pressure"
+      ]
+    },
+    {
+      "itemId": "nbs-profit-20220627",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年1—5月份全国规模以上工业企业利润增长1.0%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901499.html",
+      "publishedAt": "2022-06-27T09:30:00+08:00",
+      "availableAt": "2022-06-27T09:30:00+08:00",
+      "originGroup": "nbs-profit-202205",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-May coal-mining profits +174.7% YoY and oil/gas extraction +135%; manufacturing profits -10.8%, power/heat -26.9%, auto manufacturing -37.5%."
+      ],
+      "entities": [
+        "coal mining",
+        "oil and gas",
+        "manufacturing"
+      ],
+      "observedChanges": [
+        "resource windfall persists",
+        "downstream divergence persists"
+      ]
+    },
+    {
+      "itemId": "energytrend-pv-20220609",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "M6 Cells Surge in Prices Due to Structural Shortages as Industry Chain Maintains High Utilization",
+      "publisher": "EnergyTrend/TrendForce",
+      "url": "https://www.energytrend.com/pricequotes/20220609-28964.html",
+      "publishedAt": "2022-06-09T18:32:00+08:00",
+      "availableAt": "2022-06-09T18:32:00+08:00",
+      "originGroup": "energytrend-pv-20220609",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Polysilicon remained around RMB267/kg with excess demand; June orders were largely booked and constrained supply was expected to support further price increases. Leading PV cells ran at high utilization."
+      ],
+      "entities": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules"
+      ],
+      "observedChanges": [
+        "polysilicon supply remains tight",
+        "PV chain utilization high"
+      ]
+    },
+    {
+      "itemId": "siliconchina-pv-20220627",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Polysilicon Supply Remains Tight as Facility Maintenance Plans Have Expanded",
+      "publisher": "Silicon China via EnergyTrend",
+      "url": "https://www.energytrend.com/news/20220627-29139.html",
+      "publishedAt": "2022-06-27T09:30:00+08:00",
+      "availableAt": "2022-06-27T09:30:00+08:00",
+      "originGroup": "silicon-china-20220622",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chinese polysilicon prices rose again; top suppliers were fully booked/overbooked, June output was expected -5% MoM and maintenance could prolong undersupply into Q3."
+      ],
+      "entities": [
+        "polysilicon",
+        "PV supply"
+      ],
+      "observedChanges": [
+        "PV upstream shortage persists",
+        "polysilicon prices continue rising"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-202204",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Purchasing Managers Index for April 2022",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202205/t20220506_1830262.html",
+      "publishedAt": "2022-05-06T13:44:00+08:00",
+      "availableAt": "2022-05-06T13:44:00+08:00",
+      "originGroup": "nbs-pmi-202204",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "April manufacturing PMI fell to 47.4; production 44.4 and new orders 42.6 amid lockdown and supply-chain disruption."
+      ],
+      "entities": [
+        "China PMI"
+      ],
+      "observedChanges": [
+        "manufacturing contracts sharply"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-202205",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Purchasing Managers Index for May 2022",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202206/t20220601_1857846.html",
+      "publishedAt": "2022-06-02T10:05:00+08:00",
+      "availableAt": "2022-06-02T10:05:00+08:00",
+      "originGroup": "nbs-pmi-202205",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May manufacturing PMI recovered to 49.6 but remained below 50; production and new orders were still contractionary."
+      ],
+      "entities": [
+        "China PMI"
+      ],
+      "observedChanges": [
+        "manufacturing begins recovery but remains weak"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-202206",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年6月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901501.html",
+      "publishedAt": "2022-06-30T09:30:00+08:00",
+      "availableAt": "2022-06-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202206",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "June manufacturing PMI returned to 50.2 with production 52.8 and new orders 50.4, confirming partial post-lockdown recovery."
+      ],
+      "entities": [
+        "China PMI"
+      ],
+      "observedChanges": [
+        "manufacturing returns to expansion"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2022q2-auto-reopening-stimulus",
+      "statement": "Shanghai reopening, supply-chain normalization and a nationwide purchase-tax cut combined with sharply improving May auto production and still-rapid NEV demand, creating a policy-plus-operating recovery in autos.",
+      "changeType": "reopening_plus_policy_demand_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-05-30T18:22:00+08:00",
+      "memberItemIds": [
+        "reuters-shanghai-20220530",
+        "tax-auto-20220531",
+        "miit-auto-20220610"
+      ],
+      "independentOriginGroups": [
+        "reuters-shanghai-reopening-20220530",
+        "mof-sta-auto-tax-20220531",
+        "miit-auto-202205"
+      ],
+      "affectedValueChain": [
+        "OEMs",
+        "components",
+        "dealers",
+        "batteries"
+      ],
+      "contradictionSearchNotes": "Policy and production recovery are real, but Jan-May auto-industry profits were still deeply negative. Company-level margin/cash conversion is mandatory.",
+      "researchQuestion": "Which A-share automaker or component supplier had a realized earnings bridge from reopening/stimulus with acceptable expectation burden?"
+    },
+    {
+      "eventId": "event-2022q2-upstream-resource-windfall",
+      "statement": "Coal and oil/gas extraction profits more than doubled year on year through April-May while downstream power, refining and manufacturing profits deteriorated, creating a clear commodity value-chain profit transfer.",
+      "changeType": "commodity_price_profit_transfer",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2022-05-27T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-profit-20220527",
+        "nbs-profit-20220627"
+      ],
+      "independentOriginGroups": [
+        "nbs-profit-202204",
+        "nbs-profit-202205"
+      ],
+      "affectedValueChain": [
+        "coal miners",
+        "oil/gas producers",
+        "power generators",
+        "refiners",
+        "industrial users"
+      ],
+      "contradictionSearchNotes": "The earnings windfall may already be priced after the commodity rally. Deep research must compare duration/valuation and avoid treating high spot profits as permanent.",
+      "researchQuestion": "Which listed resource producer had durable low-cost earnings and valuation room rather than peak-cycle profit extrapolation?"
+    },
+    {
+      "eventId": "event-2022q2-pv-polysilicon-shortage",
+      "statement": "PV demand remained strong while polysilicon supply was constrained, suppliers were fully booked and prices kept rising into late June, creating a direct upstream scarcity profit pool but cost pressure downstream.",
+      "changeType": "structural_input_shortage",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2022-06-09T18:32:00+08:00",
+      "memberItemIds": [
+        "energytrend-pv-20220609",
+        "siliconchina-pv-20220627"
+      ],
+      "independentOriginGroups": [
+        "energytrend-pv-20220609",
+        "silicon-china-20220622"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules",
+        "inverters"
+      ],
+      "contradictionSearchNotes": "High upstream prices can generate extraordinary producer profits but may be peak-cycle; downstream margins differ. Selection needs realized earnings plus expectation-duration discipline.",
+      "researchQuestion": "Is the best A-share expression an upstream scarcity producer or a downstream beneficiary, and is the profit duration under-reflected?"
+    },
+    {
+      "eventId": "event-2022q2-macro-reopening-recovery",
+      "statement": "Manufacturing PMI collapsed to 47.4 in April, recovered to 49.6 in May and returned to 50.2 in June as lockdowns eased, showing real recovery but from a severe disruption.",
+      "changeType": "macro_recovery_from_lockdown",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-05-06T13:44:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-202204",
+        "nbs-pmi-202205",
+        "nbs-pmi-202206"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202204",
+        "nbs-pmi-202205",
+        "nbs-pmi-202206"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "services",
+        "logistics"
+      ],
+      "contradictionSearchNotes": "Useful timing context but too broad to create a stock thesis.",
+      "researchQuestion": "Use as regime context and contradiction evidence only."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-auto-20220610",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff auto price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2022q2-multisource-v1.1-001/regime/auto-20220610.snapshot.json",
+      "publishedAt": "2022-06-10T15:00:00+08:00",
+      "availableAt": "2022-06-10T15:00:00+08:00",
+      "normalizedClaims": [
+        "Auto basket 20d excess +21.50pp and 60d +23.10pp; breadth 100%/66.7%; favorable. 长安 20d excess +28.00pp and 60d +45.81pp: sustained_strength."
+      ]
+    },
+    {
+      "id": "regime-coal-20220627",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff coal price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2022q2-multisource-v1.1-001/regime/coal-20220627.snapshot.json",
+      "publishedAt": "2022-06-27T15:00:00+08:00",
+      "availableAt": "2022-06-27T15:00:00+08:00",
+      "normalizedClaims": [
+        "Coal basket 20d excess -11.95pp and 60d +27.64pp; breadth 33.3%/66.7%; neutral. 兖矿 20d excess -16.13pp and 60d -4.76pp: de_rated. 神华 late_reversal; 陕煤 sustained_strength."
+      ]
+    },
+    {
+      "id": "regime-pv-20220627",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff PV-upstream price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2022q2-multisource-v1.1-001/regime/pv-upstream-20220627.snapshot.json",
+      "publishedAt": "2022-06-27T15:00:00+08:00",
+      "availableAt": "2022-06-27T15:00:00+08:00",
+      "normalizedClaims": [
+        "PV-upstream basket 20d excess +17.13pp and 60d +30.82pp; breadth 100%/100%; favorable. 通威 20d excess +23.41pp and 60d +40.43pp: sustained_strength."
+      ]
+    },
+    {
+      "id": "changan-q1-20220429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "长安汽车：2022年一季度报告",
+      "publisher": "长安汽车",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8142487&stockid=000625",
+      "publishedAt": "2022-04-29T00:00:00+08:00",
+      "availableAt": "2022-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB34.576bn +7.96%; attributable profit RMB4.536bn +431.45%;扣非 RMB2.270bn +215.24%; CFO RMB0.769bn -89.37%."
+      ]
+    },
+    {
+      "id": "changan-research-20220510",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "长安汽车：疫情影响4月产销，C385+LUMIN值得期待",
+      "publisher": "东吴证券 via 东方财富",
+      "url": "https://data.eastmoney.com/report/info/AP202205101564652642.html",
+      "publishedAt": "2022-05-10T00:00:00+08:00",
+      "availableAt": "2022-05-10T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2022-24 profit RMB7.631/7.925/9.049bn, implying PE about 11.38x/10.96x/9.60x at the report price; April volumes were hit hard by lockdowns but new models were approaching launch."
+      ]
+    },
+    {
+      "id": "changan-calendar-20220610",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "长安汽车个股日历：2022-06-10发布5月复工复产研报",
+      "publisher": "东方财富",
+      "url": "https://data.eastmoney.com/stockcalendar/000625.html",
+      "publishedAt": "2022-06-10T00:00:00+08:00",
+      "availableAt": "2022-06-10T00:00:00+08:00",
+      "normalizedClaims": [
+        "A June 10 research update explicitly tracked May production recovery; the stock had already undergone a large 20d/60d rerating by that date."
+      ]
+    },
+    {
+      "id": "saic-q1-20220430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "上汽集团：2022年第一季度报告",
+      "publisher": "上汽集团",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?stockid=600104&id=8170950",
+      "publishedAt": "2022-04-30T00:00:00+08:00",
+      "availableAt": "2022-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue -4.14%; attributable profit -19.44%;扣非 -20.36%; operating cash flow RMB-9.143bn."
+      ]
+    },
+    {
+      "id": "shenhua-q1-20220428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中国神华：2022年第一季度报告",
+      "publisher": "中国神华",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8111750&stockid=601088",
+      "publishedAt": "2022-04-28T00:00:00+08:00",
+      "availableAt": "2022-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB83.902bn +24.1%; attributable profit RMB18.957bn +63.3%;扣非 +60.7%; CFO RMB28.436bn +45.0%. Company attributed profit growth mainly to higher coal selling prices and stronger coal-segment profit."
+      ]
+    },
+    {
+      "id": "shaanxi-q1-20220428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "陕西煤业：2022年第一季度报告",
+      "publisher": "陕西煤业",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8106170&stockid=601225",
+      "publishedAt": "2022-04-28T00:00:00+08:00",
+      "availableAt": "2022-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB39.569bn +13.50%; attributable profit RMB5.694bn +68.79%;扣非 +97.59%; CFO RMB6.203bn +36.63%."
+      ]
+    },
+    {
+      "id": "yankuang-q1-20220430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兖矿能源：2022年第一季度报告",
+      "publisher": "兖矿能源",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8170144&stockid=600188",
+      "publishedAt": "2022-04-30T00:00:00+08:00",
+      "availableAt": "2022-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB41.201bn +32.67%; attributable profit RMB6.677bn +196.64%;扣非 +199.94%. Reported CFO RMB1.332bn -57.82%, while company disclosures noted finance-company deposit effects on cash-flow presentation."
+      ]
+    },
+    {
+      "id": "coal-valuation-20220612",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "煤炭开采行业周报：能源周期久，煤炭涨势长",
+      "publisher": "信达证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202206131571819518_1.pdf",
+      "publishedAt": "2022-06-12T00:00:00+08:00",
+      "availableAt": "2022-06-12T00:00:00+08:00",
+      "normalizedClaims": [
+        "At Jun10/12 reference prices, 2022E/2023E PE: 兖矿能源 7.34x/6.12x, 陕西煤业 8.04x/6.89x, 中国神华 10.12x/8.86x. Forecasts assumed multi-year elevated coal profitability rather than one-quarter-only earnings."
+      ]
+    },
+    {
+      "id": "tongwei-q1-20220426",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "通威股份：2022年第一季度报告",
+      "publisher": "通威股份",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8065035&stockid=600438",
+      "publishedAt": "2022-04-26T00:00:00+08:00",
+      "availableAt": "2022-04-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB24.685bn +132.49%; attributable profit RMB5.194bn +513.01%;扣非 +544.95%; CFO RMB3.249bn +92.78%."
+      ]
+    },
+    {
+      "id": "tongwei-research-20220620",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "通威股份深度报告：光伏全产业布局维持高景气，硅料扩产顺利抢占先机",
+      "publisher": "研究机构 via 东方财富",
+      "url": "https://data.eastmoney.com/report/info/AP202206201573432540.html",
+      "publishedAt": "2022-06-20T00:00:00+08:00",
+      "availableAt": "2022-06-20T00:00:00+08:00",
+      "normalizedClaims": [
+        "At Jun9 price RMB50.83, forecasts for 2022-24 profit were RMB17.7/16.1/18.9bn, implying PE 12.94x/14.26x/12.11x. The forecast explicitly assumed 2023 profit would decline about 9% from 2022, so valuation did not require perpetual peak earnings growth."
+      ]
+    },
+    {
+      "id": "tbea-q1-20220423",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "特变电工：2022年第一季度报告",
+      "publisher": "特变电工",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8045037&stockid=600089",
+      "publishedAt": "2022-04-23T00:00:00+08:00",
+      "availableAt": "2022-04-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB17.100bn +81.19%; attributable profit RMB3.122bn +47.28%;扣非 profit increased roughly 506%; CFO increased more than sixfold."
+      ]
+    },
+    {
+      "id": "tbea-research-20220613",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "特变电工研报：硅料新产能即将投运，能源与电网装备业务也向好",
+      "publisher": "招商证券 via 每日经济新闻",
+      "url": "https://www.nbd.com.cn/articles/2022-06-13/2320582.html",
+      "publishedAt": "2022-06-13T23:34:04+08:00",
+      "availableAt": "2022-06-13T23:34:04+08:00",
+      "normalizedClaims": [
+        "2022/23 attributable-profit forecasts raised to RMB9.5/10.5bn; new polysilicon capacity, coal, generation and grid-equipment businesses were all expected to contribute. Target price RMB29-31."
+      ]
+    },
+    {
+      "id": "longi-q1-20220428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "隆基绿能：2022年第一季度报告",
+      "publisher": "隆基绿能",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8105658&stockid=601012",
+      "publishedAt": "2022-04-28T00:00:00+08:00",
+      "availableAt": "2022-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB18.595bn +17.29%; attributable profit RMB2.664bn +6.46%;扣非 +9.36%; CFO RMB-0.309bn."
+      ]
+    }
+  ]
+}
