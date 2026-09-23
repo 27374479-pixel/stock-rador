@@ -1,0 +1,35 @@
+name: snapshot-v130-2020q4-metals-actionable
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.3-20260923
+    paths:
+      - .github/workflows/snapshot-v130-2020q4-metals-actionable.yml
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.3-20260923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Freeze actionable metals regime
+        run: node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201130.json backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201130.snapshot.json
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201130.snapshot.json
+          git commit -m "backtest: freeze v1.3 2020Q4 metals actionable regime"
+          git pull --rebase origin ai-skill-v1.3-20260923
+          git push origin HEAD:ai-skill-v1.3-20260923
