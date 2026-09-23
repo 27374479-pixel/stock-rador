@@ -3,7 +3,23 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 1.1.0
+## Current version: 1.2.0
+
+- [SKILL.md](versions/1.2.0/SKILL.md)
+- [EVALS.md](versions/1.2.0/EVALS.md)
+- [DISCOVERY.md](versions/1.2.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/1.2.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/1.2.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/1.2.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/1.2.0/missed-opportunity-audit.template.json)
+
+V1.2 keeps the complete V1.1 framework and adds one generic **expectation-path / duration gate**.
+Every selected company freezes the market's near / next / later earnings path and the thesis
+path. High-priority requires clear/credible incremental path improvement and low/moderate
+duration risk. Point PE, current-quarter strength, de-rating or short-term cycle persistence
+cannot substitute for a better future earnings path.
+
+## Previous current contract: 1.1.0
 
 - [SKILL.md](versions/1.1.0/SKILL.md)
 - [EVALS.md](versions/1.1.0/EVALS.md)
