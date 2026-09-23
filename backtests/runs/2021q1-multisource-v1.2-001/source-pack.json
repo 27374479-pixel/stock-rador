@@ -1,0 +1,364 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2021q1-multisource-v1.2-001",
+  "cutoffAt": "2021-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2021Q1 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official manufacturing-cycle context.",
+      "coverageStatus": "partial",
+      "limitations": "Uses NBS March PMI released on 2021-03-31."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to prevent company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable PV upstream price/supply conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses InfoLink/pv magazine market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Rare-earth and automotive-chip supply shocks.",
+      "coverageStatus": "partial",
+      "limitations": "Uses Reuters or Reuters syndicated historical reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "PV supply-chain spot pricing and industry structure.",
+      "coverageStatus": "partial",
+      "limitations": "Uses InfoLink/pv magazine specialist sources."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Historical community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No reliable historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-rareearth-quota-20210219",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China hikes half-year rare earth output quotas to record level",
+      "publisher": "Reuters via MarketScreener",
+      "url": "https://www.marketscreener.com/quote/stock/XIAMEN-TUNGSTEN-CO-LTD-6497594/news/China-hikes-half-year-rare-earth-output-quotas-to-record-level-32480827/",
+      "publishedAt": "2021-02-19T08:57:00-05:00",
+      "availableAt": "2021-02-19T08:57:00-05:00",
+      "originGroup": "reuters-rareearth-quota-20210219",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China raised H1 rare-earth mining quotas 27.2% YoY and smelting/separation quotas 27.6% to record levels, a supply response that could ease shortage pressure even as demand remained strong."
+      ],
+      "entities": [
+        "rare earths",
+        "PrNd",
+        "output quotas"
+      ],
+      "observedChanges": [
+        "rare-earth supply quotas rise sharply",
+        "policy supply response offsets scarcity"
+      ]
+    },
+    {
+      "itemId": "reuters-rareearth-20210326",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China rare earths extend surge on worries over Myanmar supply, inspection threat",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/china-rare-earths-extend-surge-on-worries-over-myanmar-supply-inspection-threat-2458294",
+      "publishedAt": "2021-03-26T07:24:00-04:00",
+      "availableAt": "2021-03-26T07:24:00-04:00",
+      "originGroup": "reuters-rareearth-20210326",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China rare-earth price index had risen more than 40% from Oct 2020 to end-Jan and another 25% afterward; Myanmar supply concerns and domestic inspections added momentum while magnet-input prices approached decade highs."
+      ],
+      "entities": [
+        "rare earths",
+        "Myanmar",
+        "PrNd",
+        "magnets"
+      ],
+      "observedChanges": [
+        "rare-earth prices surge",
+        "supply-risk narrative intensifies"
+      ]
+    },
+    {
+      "itemId": "reuters-rareearth-projects-20210302",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "Miners gear up global rare earth projects as prices surge",
+      "publisher": "Reuters via MarketScreener",
+      "url": "https://www.marketscreener.com/news/latest/Factbox-Miners-gear-up-global-rare-earth-projects-as-prices-surge-32578654/",
+      "publishedAt": "2021-03-02T09:56:00-05:00",
+      "availableAt": "2021-03-02T09:56:00-05:00",
+      "originGroup": "reuters-rareearth-projects-20210302",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Rising rare-earth prices were encouraging global mine projects and diversification efforts, highlighting that high prices can induce a medium-term supply response."
+      ],
+      "entities": [
+        "rare earths",
+        "global mine projects"
+      ],
+      "observedChanges": [
+        "high prices stimulate new supply"
+      ]
+    },
+    {
+      "itemId": "pvmag-polysilicon-20210303",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "Solar module prices rose by up to 15% in China",
+      "publisher": "pv magazine",
+      "url": "https://www.pv-magazine.com/2021/03/03/solar-modules-prices-rose-by-up-to-15-in-china-jinkos-vice-president-says/",
+      "publishedAt": "2021-03-03T00:00:00Z",
+      "availableAt": "2021-03-03T00:00:00Z",
+      "originGroup": "pvmag-polysilicon-20210303",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chinese module prices rose 10-15% as shortages of polysilicon, glass, silver and frames pushed costs higher; industry commentary expected raw-material pressure to last months until new capacity ramped."
+      ],
+      "entities": [
+        "polysilicon",
+        "PV modules",
+        "glass",
+        "silver"
+      ],
+      "observedChanges": [
+        "PV upstream shortages lift prices",
+        "downstream module margins face pressure"
+      ]
+    },
+    {
+      "itemId": "infolink-polysilicon-20210310",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Cell prices not going up as module production further reduced",
+      "publisher": "InfoLink",
+      "url": "https://www.infolink-group.com/energy-article/pv-spot-price-20210310",
+      "publishedAt": "2021-03-10T00:00:00+08:00",
+      "availableAt": "2021-03-10T00:00:00+08:00",
+      "originGroup": "infolink-pv-q1-2021",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Mono-grade polysilicon traded mostly above RMB110/kg with almost no inventory available; prices had risen about 25% from pre-Lunar-New-Year levels."
+      ],
+      "entities": [
+        "polysilicon",
+        "wafers",
+        "PV cells"
+      ],
+      "observedChanges": [
+        "polysilicon inventory tightens",
+        "spot prices rise rapidly"
+      ]
+    },
+    {
+      "itemId": "infolink-polysilicon-20210317",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Cell profits continue shrinking as upstream price increases show no sign of stopping",
+      "publisher": "InfoLink",
+      "url": "https://www.infolink-group.com/energy-article/pv-spot-price-20210317",
+      "publishedAt": "2021-03-17T00:00:00+08:00",
+      "availableAt": "2021-03-17T00:00:00+08:00",
+      "originGroup": "infolink-pv-q1-2021",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Polysilicon traded around RMB115-120/kg, another ~5% WoW increase, with insufficient inventory; downstream cell/module profits were being squeezed by upstream inflation."
+      ],
+      "entities": [
+        "polysilicon",
+        "cells",
+        "modules"
+      ],
+      "observedChanges": [
+        "upstream PV pricing power strengthens",
+        "downstream margin compression worsens"
+      ]
+    },
+    {
+      "itemId": "pvmag-polysilicon-20210326",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Chinese PV Industry Brief: Polysilicon prices keep rising",
+      "publisher": "pv magazine",
+      "url": "https://www.pv-magazine.com/2021/03/26/chinese-pv-industry-brief-polysilicon-prices-keep-rising/",
+      "publishedAt": "2021-03-26T00:00:00Z",
+      "availableAt": "2021-03-26T00:00:00Z",
+      "originGroup": "pvmag-polysilicon-20210326",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Polysilicon reached about RMB124/kg and major product categories were up roughly 45% year-to-date; downstream cell pricing was already responding differently, showing value-chain divergence."
+      ],
+      "entities": [
+        "polysilicon",
+        "PV cells",
+        "PV modules"
+      ],
+      "observedChanges": [
+        "polysilicon Q1 price surge reaches extreme levels",
+        "value-chain divergence widens"
+      ]
+    },
+    {
+      "itemId": "reuters-autochip-20210108",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Chip shortage forces Ford, Toyota, Nissan, FCA to cut vehicle production",
+      "publisher": "Reuters",
+      "url": "https://www.reuters.com/business/autos-transportation/chip-shortage-forces-ford-toyota-nissan-fca-cut-vehicle-production-2021-01-08/",
+      "publishedAt": "2021-01-08T00:00:00Z",
+      "availableAt": "2021-01-08T00:00:00Z",
+      "originGroup": "reuters-autochip-20210108",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Global semiconductor shortages forced several major automakers to cut January production after auto demand recovered faster than expected and foundry capacity was strained."
+      ],
+      "entities": [
+        "automotive semiconductors",
+        "Ford",
+        "Toyota",
+        "Nissan",
+        "FCA"
+      ],
+      "observedChanges": [
+        "auto-chip shortage becomes a physical production bottleneck"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20210331",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年3月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901037.html",
+      "publishedAt": "2021-03-31T09:00:00+08:00",
+      "availableAt": "2021-03-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202103",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "March manufacturing PMI rose to 51.9; production 53.9 and new orders 53.6, showing broad post-holiday recovery."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing"
+      ],
+      "observedChanges": [
+        "manufacturing activity accelerates broadly"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2021q1-rareearth-surge",
+      "statement": "Rare-earth prices surged into near-decade highs on EV/magnet demand, Myanmar supply risk and inspections, while China simultaneously raised output quotas sharply and high prices encouraged new global projects. This creates a clean scarcity-versus-supply-response expectation-path test.",
+      "changeType": "scarcity_price_surge_with_supply_response",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-02-19T08:57:00-05:00",
+      "memberItemIds": [
+        "reuters-rareearth-quota-20210219",
+        "reuters-rareearth-projects-20210302",
+        "reuters-rareearth-20210326"
+      ],
+      "independentOriginGroups": [
+        "reuters-rareearth-quota-20210219",
+        "reuters-rareearth-projects-20210302",
+        "reuters-rareearth-20210326"
+      ],
+      "affectedValueChain": [
+        "rare-earth miners",
+        "smelters/separators",
+        "NdFeB magnet makers",
+        "EV/wind downstream"
+      ],
+      "contradictionSearchNotes": "Price momentum is powerful, but domestic quota expansion and global project response can shorten the super-profit duration. Deep research must freeze both company cost/volume and the multi-year earnings path.",
+      "researchQuestion": "Which A-share rare-earth expression, if any, has durable volume/cost economics beyond a temporary PrNd price spike?"
+    },
+    {
+      "eventId": "event-2021q1-polysilicon-shortage",
+      "statement": "Polysilicon shortages drove Q1 prices up roughly 25-45% and squeezed downstream cell/module economics; the value chain had a clear profit-pool shift toward upstream producers, but capacity expansion would eventually normalize scarcity.",
+      "changeType": "upstream_input_scarcity_with_value_chain_divergence",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-03-03T00:00:00Z",
+      "memberItemIds": [
+        "pvmag-polysilicon-20210303",
+        "infolink-polysilicon-20210310",
+        "infolink-polysilicon-20210317",
+        "pvmag-polysilicon-20210326"
+      ],
+      "independentOriginGroups": [
+        "pvmag-polysilicon-20210303",
+        "infolink-pv-q1-2021",
+        "pvmag-polysilicon-20210326"
+      ],
+      "affectedValueChain": [
+        "polysilicon producers",
+        "wafer makers",
+        "cell/module manufacturers",
+        "PV developers"
+      ],
+      "contradictionSearchNotes": "Spot scarcity is real, but downstream pain and future capacity ramp mean current polysilicon prices cannot be extrapolated indefinitely. V1.2 should distinguish upstream durable cost/volume advantage from peak spot profits.",
+      "researchQuestion": "Did any A-share polysilicon producer have enough structural cost/capacity advantage to justify a better outer-year path rather than only a Q1 price windfall?"
+    },
+    {
+      "eventId": "event-2021q1-auto-chip-shortage",
+      "statement": "Automotive semiconductor scarcity became a global production bottleneck in January, forcing multiple OEMs to cut output. This is an early-stage physical shortage before the later 2021 equity rerating.",
+      "changeType": "component_supply_bottleneck_early_stage",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-01-08T00:00:00Z",
+      "memberItemIds": [
+        "reuters-autochip-20210108"
+      ],
+      "independentOriginGroups": [
+        "reuters-autochip-20210108"
+      ],
+      "affectedValueChain": [
+        "automotive MCU/power/CIS suppliers",
+        "foundries",
+        "automakers"
+      ],
+      "contradictionSearchNotes": "The shortage is real but company attribution can be wrong. Deep research must verify material auto-specific exposure and earnings conversion before selecting a stock.",
+      "researchQuestion": "Was there an A-share semiconductor supplier with auditable auto-specific earnings leverage before the later Q2/Q3 rerating?"
+    },
+    {
+      "eventId": "event-2021q1-manufacturing-recovery",
+      "statement": "March manufacturing PMI rose to 51.9 with strong production and new orders, confirming broad post-holiday economic expansion.",
+      "changeType": "broad_macro_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-03-31T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20210331"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202103"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "industrial inputs",
+        "exporters"
+      ],
+      "contradictionSearchNotes": "Useful macro context, too broad for direct stock selection.",
+      "researchQuestion": "Use as regime context for commodity and semiconductor theses."
+    }
+  ]
+}
