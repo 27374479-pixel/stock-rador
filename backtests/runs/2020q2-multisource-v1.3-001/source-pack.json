@@ -1,0 +1,370 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2020q2-multisource-v1.3-001",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2020Q2 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official macro, industrial-profit and vehicle-market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS and CAAM releases available by 2020-06-30."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier disclosures.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable server-memory and commodity/industrial demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce and attributed market reporting only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting useful for macro/commodity state changes.",
+      "coverageStatus": "partial",
+      "limitations": "Reuters historical reporting accessible through syndication."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist PV and semiconductor supply-chain evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Accessible TrendForce/EnergyTrend pages; some paid detail unavailable."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "nbs-pmi-20200630",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2020年6月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900766.html",
+      "publishedAt": "2020-06-30T09:00:00+08:00",
+      "availableAt": "2020-06-30T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202006",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "June manufacturing PMI was 50.9; production 53.9 and new orders 51.4, confirming continued domestic manufacturing recovery while new export orders remained below 50."
+      ],
+      "entities": [
+        "China manufacturing",
+        "PMI",
+        "new orders",
+        "exports"
+      ],
+      "observedChanges": [
+        "domestic manufacturing recovery persists",
+        "external demand still weak"
+      ]
+    },
+    {
+      "itemId": "nbs-industrial-profits-20200629",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Industrial Profits decreased 19.3 percent in the First Five Months of 2020",
+      "publisher": "National Bureau of Statistics of China",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202006/t20200629_1770889.html",
+      "publishedAt": "2020-06-29T09:30:00+08:00",
+      "availableAt": "2020-06-29T09:30:00+08:00",
+      "originGroup": "nbs-industrial-profits-202005",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May industrial profits rose 6.0% YoY after falling in April; Jan-May electronics manufacturing profits rose 34.7% and special-purpose machinery rose 16.6%, while autos, metals and chemicals remained down sharply."
+      ],
+      "entities": [
+        "industrial profits",
+        "electronics manufacturing",
+        "special-purpose machinery",
+        "autos",
+        "metals"
+      ],
+      "observedChanges": [
+        "industrial profit cycle turns positive in May",
+        "electronics and special-purpose machinery show relative profit strength"
+      ]
+    },
+    {
+      "itemId": "caam-auto-202005",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Brief analysis on the economic operation of automobile industry in May 2020",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/44/id/1305.html",
+      "publishedAt": "2020-06-11T00:00:00+08:00",
+      "availableAt": "2020-06-11T00:00:00+08:00",
+      "originGroup": "caam-auto-202005",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May auto sales rose 14.5% YoY; commercial vehicles rose 48.0%; heavy-truck sales reached 179k, up 65.6% YoY and a May record. NEV sales were still down 23.5% YoY."
+      ],
+      "entities": [
+        "commercial vehicles",
+        "heavy trucks",
+        "passenger vehicles",
+        "NEV"
+      ],
+      "observedChanges": [
+        "commercial-vehicle demand surges to record levels",
+        "NEV recovery remains incomplete"
+      ]
+    },
+    {
+      "itemId": "trendforce-server-dram-20200522",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Server DRAM Prices Will Not Rise as Much as Projected Earlier for 2H20 Due to Shifts in Market Dynamics",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP200522ZQ",
+      "publishedAt": "2020-05-22T00:00:00+08:00",
+      "availableAt": "2020-05-22T00:00:00+08:00",
+      "originGroup": "trendforce-server-dram-20200522",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Server DRAM remained in an upcycle, but TrendForce reduced its prior 2H20 price-rise expectations as pandemic-driven supply-chain uncertainty and shifting procurement dynamics increased."
+      ],
+      "entities": [
+        "server DRAM",
+        "cloud demand",
+        "server supply chain"
+      ],
+      "observedChanges": [
+        "memory upcycle remains positive but expected duration/magnitude weakens"
+      ]
+    },
+    {
+      "itemId": "energytrend-pv-20200630",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "EnergyTrend: The Price Report of PV Industry Supply Chain (June 29)",
+      "publisher": "EnergyTrend / TrendForce",
+      "url": "https://www.energytrend.com/news/20200630-18476.html",
+      "publishedAt": "2020-06-30T21:00:00+08:00",
+      "availableAt": "2020-06-30T21:00:00+08:00",
+      "originGroup": "energytrend-pv-20200629",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chinese mono and multi polysilicon prices declined again in late June while wafer prices were broadly stable, indicating that upstream scarcity/pricing power had not yet emerged."
+      ],
+      "entities": [
+        "polysilicon",
+        "wafers",
+        "PV supply chain"
+      ],
+      "observedChanges": [
+        "PV upstream pricing remains weak",
+        "no confirmed upstream scarcity by quarter-end"
+      ]
+    },
+    {
+      "itemId": "reuters-gold-20200624",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Gold shines as coronavirus surge unnerves investors",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/coronavirus/asian-stocks-under-pressure-after-spike-in-coronavirus-cases-2210453",
+      "publishedAt": "2020-06-24T00:00:00Z",
+      "availableAt": "2020-06-24T00:00:00Z",
+      "originGroup": "reuters-gold-20200624",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Gold reached its highest level in nearly eight years as renewed coronavirus concerns increased safe-haven demand, showing a strong monetary/defensive regime but also substantial prior price appreciation."
+      ],
+      "entities": [
+        "gold",
+        "COVID-19",
+        "safe-haven demand"
+      ],
+      "observedChanges": [
+        "gold reaches multi-year high",
+        "expectation-absorption risk increases"
+      ]
+    },
+    {
+      "itemId": "reuters-ironore-20200618",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Iron ore volatile as Brazil supply worries ease, but China demand hopes offer support",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://au.investing.com/news/commodities-news/iron-ore-volatile-as-brazil-supply-worries-ease-but-china-demand-hopes-offer-support-2140661",
+      "publishedAt": "2020-06-18T00:00:00Z",
+      "availableAt": "2020-06-18T00:00:00Z",
+      "originGroup": "reuters-ironore-20200618",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Iron ore remained supported around elevated levels by resilient Chinese demand even as Brazilian supply concerns eased."
+      ],
+      "entities": [
+        "iron ore",
+        "China steel demand",
+        "Brazil supply"
+      ],
+      "observedChanges": [
+        "infrastructure-linked raw-material demand remains strong"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2020q2-heavy-truck-boom",
+      "statement": "China commercial-vehicle demand rebounded far faster than passenger vehicles, with May heavy-truck and light-truck sales reaching record levels.",
+      "changeType": "policy_infrastructure_volume_boom",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-06-11T00:00:00+08:00",
+      "memberItemIds": [
+        "caam-auto-202005"
+      ],
+      "independentOriginGroups": [
+        "caam-auto-202005"
+      ],
+      "affectedValueChain": [
+        "heavy-truck OEMs",
+        "engines",
+        "drivetrain",
+        "construction/logistics equipment"
+      ],
+      "contradictionSearchNotes": "The surge may partly reflect deferred demand, infrastructure stimulus and emissions-policy replacement. Deep research must test duration and company-level profit conversion.",
+      "researchQuestion": "Which A-share truck/value-chain expressions had direct volume-to-profit conversion and reasonable expectation burden by late Q2?"
+    },
+    {
+      "eventId": "event-2020q2-industrial-profit-inflection",
+      "statement": "Industrial profits turned positive year on year in May, with electronics and special-purpose machinery already showing strong cumulative profit growth despite broad-economy weakness.",
+      "changeType": "earnings_breadth_inflection",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-06-29T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-industrial-profits-20200629"
+      ],
+      "independentOriginGroups": [
+        "nbs-industrial-profits-202005"
+      ],
+      "affectedValueChain": [
+        "electronics manufacturing",
+        "automation/special machinery",
+        "industrial recovery"
+      ],
+      "contradictionSearchNotes": "Sector aggregates are too broad for direct stock selection. Deep research must identify specific operating variables and avoid equating category strength with every listed company.",
+      "researchQuestion": "Are there narrow listed expressions where the observed profit resilience is tied to a measurable company engine rather than broad beta?"
+    },
+    {
+      "eventId": "event-2020q2-server-dram-upcycle-matures",
+      "statement": "Server DRAM remained in a positive pricing cycle, but by late May the expected 2H20 price upside was being revised down as procurement and supply-chain dynamics weakened.",
+      "changeType": "cyclical_positive_to_plateau",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-05-22T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-server-dram-20200522"
+      ],
+      "independentOriginGroups": [
+        "trendforce-server-dram-20200522"
+      ],
+      "affectedValueChain": [
+        "server DRAM",
+        "memory suppliers",
+        "cloud/server hardware"
+      ],
+      "contradictionSearchNotes": "The physical cycle is still positive, so the key test is whether the market already capitalized it and whether the next-period path is weakening.",
+      "researchQuestion": "Should memory-related expressions remain actionable, or has the known Q2 strength already become a duration/expectation trap?"
+    },
+    {
+      "eventId": "event-2020q2-pv-pricing-weak",
+      "statement": "Late-Q2 PV upstream prices remained weak, with polysilicon still declining and no confirmed scarcity signal.",
+      "changeType": "weak_physical_pricing",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-06-30T21:00:00+08:00",
+      "memberItemIds": [
+        "energytrend-pv-20200630"
+      ],
+      "independentOriginGroups": [
+        "energytrend-pv-20200629"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules"
+      ],
+      "contradictionSearchNotes": "Structural solar demand may still be attractive, but the quarter-end physical pricing signal does not support an upstream scarcity thesis.",
+      "researchQuestion": "Should PV remain research-only until demand/pricing inflects, and are any company-specific engines strong enough to override weak upstream pricing?"
+    },
+    {
+      "eventId": "event-2020q2-gold-multiyear-high",
+      "statement": "Gold reached a near eight-year high as pandemic risk and safe-haven demand intensified, creating strong miner cash-flow leverage but also rising expectation-absorption risk.",
+      "changeType": "macro_monetary_asset_rerating",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-06-24T00:00:00Z",
+      "memberItemIds": [
+        "reuters-gold-20200624"
+      ],
+      "independentOriginGroups": [
+        "reuters-gold-20200624"
+      ],
+      "affectedValueChain": [
+        "gold miners",
+        "precious-metals refiners"
+      ],
+      "contradictionSearchNotes": "Deep research must distinguish still-underreflected earnings leverage from simply chasing a commodity already near a multi-year high.",
+      "researchQuestion": "Did any A-share gold producer still offer acceptable normalized earnings-path room after the Q2 rerating?"
+    },
+    {
+      "eventId": "event-2020q2-infrastructure-material-demand",
+      "statement": "China infrastructure/construction demand supported iron ore and steel activity even as broader manufacturing and external demand remained uneven.",
+      "changeType": "policy_supported_cyclical_demand",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-06-18T00:00:00Z",
+      "memberItemIds": [
+        "reuters-ironore-20200618",
+        "nbs-pmi-20200630"
+      ],
+      "independentOriginGroups": [
+        "reuters-ironore-20200618",
+        "nbs-pmi-202006"
+      ],
+      "affectedValueChain": [
+        "iron ore",
+        "steel",
+        "construction machinery",
+        "infrastructure materials"
+      ],
+      "contradictionSearchNotes": "Strength may be stimulus-driven and concentrated in construction. Deep research must avoid extrapolating it to all industrial cyclicals.",
+      "researchQuestion": "Which listed expressions, if any, had direct earnings exposure to the infrastructure demand impulse without excessive cycle/valuation risk?"
+    },
+    {
+      "eventId": "event-2020q2-broad-manufacturing-recovery",
+      "statement": "China manufacturing production and new orders remained in expansion by June, while export orders were still weak.",
+      "changeType": "broad_macro_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-06-30T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20200630"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202006"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "domestic demand",
+        "exports"
+      ],
+      "contradictionSearchNotes": "Use as context and timing evidence only; too broad for direct stock selection.",
+      "researchQuestion": "Context only; do not map directly to a stock."
+    }
+  ]
+}
