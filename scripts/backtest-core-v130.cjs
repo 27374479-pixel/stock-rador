@@ -433,7 +433,7 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
     }
   }
 
-  if (manifest?.skill?.version === '1.2.0' && memo?.selectionState !== 'No selection') {
+  if (['1.2.0', '1.3.0'].includes(manifest?.skill?.version) && memo?.selectionState !== 'No selection') {
     const primary = manifest.primarySelectionStates.includes(memo.selectionState);
     const pathTest = memo?.expectationPathTest;
 
