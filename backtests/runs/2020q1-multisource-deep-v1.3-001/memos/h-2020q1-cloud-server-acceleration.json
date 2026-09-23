@@ -1,0 +1,462 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-cloud-server-acceleration",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Server demand, cloud capex and company earnings should become visible over 20-60 trading days; 60d is the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000977.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Direct server leader; March 13 research already linked Q4 server recovery, cloud/WFH and 5G demand to a 2020E profit path of +41.7%, though valuation and prior rerating were substantial.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313",
+        "regime-server-20200331"
+      ]
+    },
+    {
+      "ticker": "603019.SH",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "2019 profit +37.9%, cash flow +402.9%, higher-margin domestic CPU servers entering volume production; acceptable alternative without requiring peer-best ranking.",
+      "evidenceRefs": [
+        "sugon-2019-20200328",
+        "sugon-research-20200329",
+        "regime-server-20200331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Remote work/cloud demand and a recovering global server cycle strengthened while both leading A-share server vendors already had improving company earnings. The key tension is strong physical/company evidence versus meaningful prior rerating.",
+    "firstCredibleDate": "2020-02-10",
+    "valueChain": [
+      "telework/cloud/5G traffic",
+      "server capex",
+      "server vendor shipments/mix",
+      "earnings"
+    ],
+    "persistenceReason": "Cloud and server capex can persist across several quarters, but pandemic demand and prior rerating may shorten incremental alpha.",
+    "disconfirmingEvidence": [
+      "Both server stocks had +35-38pp 60d excess by cutoff.",
+      "The server basket was negative versus CSI300 over the final 20d.",
+      "Inspur was already around 44.6x 2020E PE in the March 13 report."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-server-20200210",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-dram-20200310",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "inspur-research-20200313",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sugon-2019-20200328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sugon-research-20200329",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-server-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "cloud/WFH/5G demand",
+      "to": "server capex and shipments",
+      "mechanism": "Cloud providers and telecom operators expand compute capacity as online traffic and 5G infrastructure grow.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313"
+      ],
+      "failureMode": "capex is deferred by global recession",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "server shipments/mix",
+      "to": "vendor earnings",
+      "mechanism": "Higher shipments plus AI/high-end/domestic CPU mix support revenue and margins.",
+      "evidenceRefs": [
+        "inspur-research-20200313",
+        "sugon-2019-20200328",
+        "sugon-research-20200329"
+      ],
+      "failureMode": "supply constraints or price competition erase operating leverage",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "server vendors"
+    ],
+    "secondOrderWinners": [
+      "memory",
+      "CPU",
+      "networking"
+    ],
+    "losers": [
+      "offline-only IT demand"
+    ],
+    "substitutes": [
+      "cloud outsourcing"
+    ],
+    "bottlenecks": [
+      "CPU/memory supply",
+      "capex budgets"
+    ],
+    "falseThemeMatches": [
+      "generic hardware names without server/cloud revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000977.SZ",
+      "name": "浪潮信息",
+      "verifiedExposure": "Direct server vendor with leading China/global share.",
+      "evidenceRefs": [
+        "inspur-research-20200313"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E revenue +27.8%, net profit +41.7%, EPS 0.98.",
+        "favorable": "Cloud/WFH demand drives higher revisions.",
+        "adverse": "Global recession or supply constraints weaken capex."
+      },
+      "principalRisks": [
+        "44.6x 2020E PE at report price",
+        "large prior rerating"
+      ]
+    },
+    {
+      "ticker": "603019.SH",
+      "name": "中科曙光",
+      "verifiedExposure": "High-end/domestic CPU server and cloud infrastructure exposure.",
+      "evidenceRefs": [
+        "sugon-2019-20200328",
+        "sugon-research-20200329"
+      ],
+      "earningsSensitivity": {
+        "base": "2019 profit +37.9%; 2020/21 EPS 1.26/1.44.",
+        "favorable": "Domestic CPU server ramp accelerates.",
+        "adverse": "Entity-list/supply risks or capex weakness delay growth."
+      },
+      "principalRisks": [
+        "supply-chain risk",
+        "theme rerating"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "Two acceptable direct expressions are frozen as the opportunity set; exact peer ranking is intentionally secondary.",
+  "selectionComparison": {
+    "selectedTicker": "000977.SZ",
+    "pairwise": [],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Inspur is preferred for the clearest frozen cloud/server demand bridge; Sugon remains acceptable. Neither must be the future peer winner."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Both server names had already produced roughly +35-38pp 60d excess, while the final 20d showed a broad correction. Inspur's March report implied 44.6x 2020E PE with strong growth.",
+    "thesisExpectation": "A genuine server-demand acceleration can still create estimate upgrades if WFH/cloud capex persists beyond the visible Q4 recovery.",
+    "measurableGap": "Company and physical evidence are stronger than in broad 5G, but expectation absorption remains meaningful.",
+    "evidenceRefs": [
+      "inspur-research-20200313",
+      "sugon-research-20200329",
+      "regime-server-20200331",
+      "trendforce-server-20200210"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward earnings-duration versus premium server valuation and prior relative-price absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Inspur 2020E net profit +41.7%, EPS 0.98 at ~44.6x PE; Sugon 2020/21 EPS 1.26/1.44.",
+    "thesisScenario": "Cloud/WFH and 5G capex drive revisions above those already-strong paths.",
+    "breakevenCondition": "Demand persistence and margin mix must generate new revisions after the Q1 rerating.",
+    "ordinaryScenarioFailure": "Server demand improves but only enough to justify existing forecasts; multiples compress.",
+    "catalystOrTimingBridge": "Cloud capex, server shipments and Q1/H1 results are observable inside 60d.",
+    "evidenceRefs": [
+      "inspur-research-20200313",
+      "sugon-research-20200329",
+      "regime-server-20200331",
+      "trendforce-server-20200210"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Physical server/cloud demand strengthened despite the epidemic.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Sugon already showed strong 2019 profit/cash-flow growth; Inspur forecasts reflected strong server recovery.",
+      "evidenceRefs": [
+        "sugon-2019-20200328",
+        "sugon-research-20200329",
+        "inspur-research-20200313"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "60d relative performance was very strong but both names underperformed over the final 20d.",
+      "evidenceRefs": [
+        "regime-server-20200331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Both companies had current quantified earnings paths available by cutoff.",
+      "evidenceRefs": [
+        "inspur-research-20200313",
+        "sugon-research-20200329"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Both names had +35-38pp 60d excess and premium valuations.",
+      "evidenceRefs": [
+        "regime-server-20200331",
+        "inspur-research-20200313"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": -0.03245543356887004,
+      "lookback60Excess": 0.36559856738499974,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-server-20200331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Server physical demand, cloud/WFH traffic and domestic server mix were strengthening.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313",
+        "sugon-research-20200329"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both direct server expressions carried strong earnings-growth expectations.",
+      "evidenceRefs": [
+        "inspur-research-20200313",
+        "sugon-research-20200329"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Cloud/server capex can persist across several quarters.",
+      "evidenceRefs": [
+        "trendforce-server-20200210"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "60d price rerating was already large even after the final 20d correction.",
+      "evidenceRefs": [
+        "regime-server-20200331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "A very strong earnings bridge is offset by prior rerating and premium expectations, so Research rather than Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000977.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Both vendors were profitable with improving earnings quality/cash-flow evidence.",
+      "evidenceRefs": [
+        "sugon-2019-20200328",
+        "inspur-research-20200313"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Demand acceleration can support further revisions beyond a strong baseline.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Inspur's forward PE was high and both names had materially rerated.",
+      "evidenceRefs": [
+        "inspur-research-20200313",
+        "regime-server-20200331"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Server shipments, cloud capex and earnings updates are near-term observable.",
+      "evidenceRefs": [
+        "trendforce-server-20200210"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Real company earnings support exists, but valuation and global recession create drawdown risk.",
+      "evidenceRefs": [
+        "sugon-2019-20200328",
+        "regime-server-20200331"
+      ]
+    },
+    "pairwise": [],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Server/cloud demand and Q4 global server shipments strengthened into early 2020.",
+    "earningsMechanism": "Higher server shipments plus high-end/AI/domestic CPU mix lift vendor revenue and margins.",
+    "nextObservableMetric": "server shipments, revenue, gross margin and Q1/H1 profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "trendforce-server-20200210",
+      "inspur-research-20200313",
+      "sugon-research-20200329"
+    ],
+    "failureCondition": "Cloud/server capex does not produce estimate revisions above the frozen paths."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Server market Q4 recovery and WFH/cloud demand were already visible.",
+      "nextPeriod": "Inspur 2020E profit +41.7%; Sugon 2020E EPS 1.26.",
+      "laterPeriod": "Inspur 2021E EPS 1.33; Sugon 2021E EPS 1.44.",
+      "rationale": "Current reports quantify a high-growth 2020-21 baseline.",
+      "evidenceRefs": [
+        "inspur-research-20200313",
+        "sugon-research-20200329"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "WFH/cloud traffic can keep server orders stronger than pre-COVID assumptions.",
+      "nextPeriodChange": "2020 estimates can rise further if capex persists.",
+      "laterPeriodChange": "Structural cloud/5G demand supports continuation, but much growth is already in valuation.",
+      "mechanism": "The incremental thesis is duration and magnitude of the server capex rebound beyond already-bullish forecasts.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Physical demand evidence is stronger than a generic theme and can drive revisions.",
+      "evidenceRefs": [
+        "trendforce-server-20200210",
+        "inspur-research-20200313"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Premium valuation and large prior rerating require persistence beyond a strong baseline.",
+      "evidenceRefs": [
+        "regime-server-20200331",
+        "inspur-research-20200313"
+      ]
+    },
+    "falsifier": "Q1/H1 results or cloud capex fail to exceed the already-strong 2020 growth baseline.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: among the strongest physical-to-earnings bridges in the window, but expectations and 60d rerating are already elevated.",
+    "alreadyPricedAssessment": "substantial_but_recent_reset",
+    "constraints": [
+      "premium valuation",
+      "large 60d rerating",
+      "global recession/supply risk"
+    ]
+  },
+  "bearCase": "The server thesis is correct but already priced; final-20d weakness becomes a deeper multiple reset as global capex slows.",
+  "invalidationConditions": [
+    {
+      "indicator": "server/cloud capex",
+      "observationMethod": "industry/company updates",
+      "threshold": "clear slowdown after Q1"
+    },
+    {
+      "indicator": "earnings revisions",
+      "observationMethod": "Q1/H1 and forecasts",
+      "threshold": "no upward revisions beyond frozen paths"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze both direct server expressions as Research; use outcome to test whether V1.3 over-penalizes a high-quality early reset."
+  ]
+}
