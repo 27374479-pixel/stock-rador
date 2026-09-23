@@ -1,0 +1,632 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2020q2-multisource-deep-v1.3-001",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Deep 2020Q2 company-mapping replay built in September 2026 using current model/search weights. Only evidence available by the simulated cutoff is retained; historical model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official macro, industrial-profit and vehicle-market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS and CAAM releases available by 2020-06-30."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier disclosures.",
+      "coverageStatus": "partial",
+      "limitations": "Q1 2020 issuer filings and contemporaneous company evidence for shortlisted expressions; no exhaustive issuer universe crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable server-memory and commodity/industrial demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce and attributed market reporting only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting useful for macro/commodity state changes.",
+      "coverageStatus": "partial",
+      "limitations": "Reuters historical reporting accessible through syndication."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist PV and semiconductor supply-chain evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Accessible TrendForce/EnergyTrend pages; some paid detail unavailable."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "nbs-pmi-20200630",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2020年6月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900766.html",
+      "publishedAt": "2020-06-30T09:00:00+08:00",
+      "availableAt": "2020-06-30T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202006",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "June manufacturing PMI was 50.9; production 53.9 and new orders 51.4, confirming continued domestic manufacturing recovery while new export orders remained below 50."
+      ],
+      "entities": [
+        "China manufacturing",
+        "PMI",
+        "new orders",
+        "exports"
+      ],
+      "observedChanges": [
+        "domestic manufacturing recovery persists",
+        "external demand still weak"
+      ]
+    },
+    {
+      "itemId": "nbs-industrial-profits-20200629",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Industrial Profits decreased 19.3 percent in the First Five Months of 2020",
+      "publisher": "National Bureau of Statistics of China",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202006/t20200629_1770889.html",
+      "publishedAt": "2020-06-29T09:30:00+08:00",
+      "availableAt": "2020-06-29T09:30:00+08:00",
+      "originGroup": "nbs-industrial-profits-202005",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May industrial profits rose 6.0% YoY after falling in April; Jan-May electronics manufacturing profits rose 34.7% and special-purpose machinery rose 16.6%, while autos, metals and chemicals remained down sharply."
+      ],
+      "entities": [
+        "industrial profits",
+        "electronics manufacturing",
+        "special-purpose machinery",
+        "autos",
+        "metals"
+      ],
+      "observedChanges": [
+        "industrial profit cycle turns positive in May",
+        "electronics and special-purpose machinery show relative profit strength"
+      ]
+    },
+    {
+      "itemId": "caam-auto-202005",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Brief analysis on the economic operation of automobile industry in May 2020",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/44/id/1305.html",
+      "publishedAt": "2020-06-11T00:00:00+08:00",
+      "availableAt": "2020-06-11T00:00:00+08:00",
+      "originGroup": "caam-auto-202005",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May auto sales rose 14.5% YoY; commercial vehicles rose 48.0%; heavy-truck sales reached 179k, up 65.6% YoY and a May record. NEV sales were still down 23.5% YoY."
+      ],
+      "entities": [
+        "commercial vehicles",
+        "heavy trucks",
+        "passenger vehicles",
+        "NEV"
+      ],
+      "observedChanges": [
+        "commercial-vehicle demand surges to record levels",
+        "NEV recovery remains incomplete"
+      ]
+    },
+    {
+      "itemId": "trendforce-server-dram-20200522",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Server DRAM Prices Will Not Rise as Much as Projected Earlier for 2H20 Due to Shifts in Market Dynamics",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP200522ZQ",
+      "publishedAt": "2020-05-22T00:00:00+08:00",
+      "availableAt": "2020-05-22T00:00:00+08:00",
+      "originGroup": "trendforce-server-dram-20200522",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Server DRAM remained in an upcycle, but TrendForce reduced its prior 2H20 price-rise expectations as pandemic-driven supply-chain uncertainty and shifting procurement dynamics increased."
+      ],
+      "entities": [
+        "server DRAM",
+        "cloud demand",
+        "server supply chain"
+      ],
+      "observedChanges": [
+        "memory upcycle remains positive but expected duration/magnitude weakens"
+      ]
+    },
+    {
+      "itemId": "energytrend-pv-20200630",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "EnergyTrend: The Price Report of PV Industry Supply Chain (June 29)",
+      "publisher": "EnergyTrend / TrendForce",
+      "url": "https://www.energytrend.com/news/20200630-18476.html",
+      "publishedAt": "2020-06-30T21:00:00+08:00",
+      "availableAt": "2020-06-30T21:00:00+08:00",
+      "originGroup": "energytrend-pv-20200629",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chinese mono and multi polysilicon prices declined again in late June while wafer prices were broadly stable, indicating that upstream scarcity/pricing power had not yet emerged."
+      ],
+      "entities": [
+        "polysilicon",
+        "wafers",
+        "PV supply chain"
+      ],
+      "observedChanges": [
+        "PV upstream pricing remains weak",
+        "no confirmed upstream scarcity by quarter-end"
+      ]
+    },
+    {
+      "itemId": "reuters-gold-20200624",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Gold shines as coronavirus surge unnerves investors",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/coronavirus/asian-stocks-under-pressure-after-spike-in-coronavirus-cases-2210453",
+      "publishedAt": "2020-06-24T00:00:00Z",
+      "availableAt": "2020-06-24T00:00:00Z",
+      "originGroup": "reuters-gold-20200624",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Gold reached its highest level in nearly eight years as renewed coronavirus concerns increased safe-haven demand, showing a strong monetary/defensive regime but also substantial prior price appreciation."
+      ],
+      "entities": [
+        "gold",
+        "COVID-19",
+        "safe-haven demand"
+      ],
+      "observedChanges": [
+        "gold reaches multi-year high",
+        "expectation-absorption risk increases"
+      ]
+    },
+    {
+      "itemId": "reuters-ironore-20200618",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Iron ore volatile as Brazil supply worries ease, but China demand hopes offer support",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://au.investing.com/news/commodities-news/iron-ore-volatile-as-brazil-supply-worries-ease-but-china-demand-hopes-offer-support-2140661",
+      "publishedAt": "2020-06-18T00:00:00Z",
+      "availableAt": "2020-06-18T00:00:00Z",
+      "originGroup": "reuters-ironore-20200618",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Iron ore remained supported around elevated levels by resilient Chinese demand even as Brazilian supply concerns eased."
+      ],
+      "entities": [
+        "iron ore",
+        "China steel demand",
+        "Brazil supply"
+      ],
+      "observedChanges": [
+        "infrastructure-linked raw-material demand remains strong"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2020q2-heavy-truck-boom",
+      "statement": "China commercial-vehicle demand rebounded far faster than passenger vehicles, with May heavy-truck and light-truck sales reaching record levels.",
+      "changeType": "policy_infrastructure_volume_boom",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-06-11T00:00:00+08:00",
+      "memberItemIds": [
+        "caam-auto-202005"
+      ],
+      "independentOriginGroups": [
+        "caam-auto-202005"
+      ],
+      "affectedValueChain": [
+        "heavy-truck OEMs",
+        "engines",
+        "drivetrain",
+        "construction/logistics equipment"
+      ],
+      "contradictionSearchNotes": "The surge may partly reflect deferred demand, infrastructure stimulus and emissions-policy replacement. Deep research must test duration and company-level profit conversion.",
+      "researchQuestion": "Which A-share truck/value-chain expressions had direct volume-to-profit conversion and reasonable expectation burden by late Q2?"
+    },
+    {
+      "eventId": "event-2020q2-industrial-profit-inflection",
+      "statement": "Industrial profits turned positive year on year in May, with electronics and special-purpose machinery already showing strong cumulative profit growth despite broad-economy weakness.",
+      "changeType": "earnings_breadth_inflection",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-06-29T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-industrial-profits-20200629"
+      ],
+      "independentOriginGroups": [
+        "nbs-industrial-profits-202005"
+      ],
+      "affectedValueChain": [
+        "electronics manufacturing",
+        "automation/special machinery",
+        "industrial recovery"
+      ],
+      "contradictionSearchNotes": "Sector aggregates are too broad for direct stock selection. Deep research must identify specific operating variables and avoid equating category strength with every listed company.",
+      "researchQuestion": "Are there narrow listed expressions where the observed profit resilience is tied to a measurable company engine rather than broad beta?"
+    },
+    {
+      "eventId": "event-2020q2-server-dram-upcycle-matures",
+      "statement": "Server DRAM remained in a positive pricing cycle, but by late May the expected 2H20 price upside was being revised down as procurement and supply-chain dynamics weakened.",
+      "changeType": "cyclical_positive_to_plateau",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-05-22T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-server-dram-20200522"
+      ],
+      "independentOriginGroups": [
+        "trendforce-server-dram-20200522"
+      ],
+      "affectedValueChain": [
+        "server DRAM",
+        "memory suppliers",
+        "cloud/server hardware"
+      ],
+      "contradictionSearchNotes": "The physical cycle is still positive, so the key test is whether the market already capitalized it and whether the next-period path is weakening.",
+      "researchQuestion": "Should memory-related expressions remain actionable, or has the known Q2 strength already become a duration/expectation trap?"
+    },
+    {
+      "eventId": "event-2020q2-pv-pricing-weak",
+      "statement": "Late-Q2 PV upstream prices remained weak, with polysilicon still declining and no confirmed scarcity signal.",
+      "changeType": "weak_physical_pricing",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-06-30T21:00:00+08:00",
+      "memberItemIds": [
+        "energytrend-pv-20200630"
+      ],
+      "independentOriginGroups": [
+        "energytrend-pv-20200629"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules"
+      ],
+      "contradictionSearchNotes": "Structural solar demand may still be attractive, but the quarter-end physical pricing signal does not support an upstream scarcity thesis.",
+      "researchQuestion": "Should PV remain research-only until demand/pricing inflects, and are any company-specific engines strong enough to override weak upstream pricing?"
+    },
+    {
+      "eventId": "event-2020q2-gold-multiyear-high",
+      "statement": "Gold reached a near eight-year high as pandemic risk and safe-haven demand intensified, creating strong miner cash-flow leverage but also rising expectation-absorption risk.",
+      "changeType": "macro_monetary_asset_rerating",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-06-24T00:00:00Z",
+      "memberItemIds": [
+        "reuters-gold-20200624"
+      ],
+      "independentOriginGroups": [
+        "reuters-gold-20200624"
+      ],
+      "affectedValueChain": [
+        "gold miners",
+        "precious-metals refiners"
+      ],
+      "contradictionSearchNotes": "Deep research must distinguish still-underreflected earnings leverage from simply chasing a commodity already near a multi-year high.",
+      "researchQuestion": "Did any A-share gold producer still offer acceptable normalized earnings-path room after the Q2 rerating?"
+    },
+    {
+      "eventId": "event-2020q2-infrastructure-material-demand",
+      "statement": "China infrastructure/construction demand supported iron ore and steel activity even as broader manufacturing and external demand remained uneven.",
+      "changeType": "policy_supported_cyclical_demand",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-06-18T00:00:00Z",
+      "memberItemIds": [
+        "reuters-ironore-20200618",
+        "nbs-pmi-20200630"
+      ],
+      "independentOriginGroups": [
+        "reuters-ironore-20200618",
+        "nbs-pmi-202006"
+      ],
+      "affectedValueChain": [
+        "iron ore",
+        "steel",
+        "construction machinery",
+        "infrastructure materials"
+      ],
+      "contradictionSearchNotes": "Strength may be stimulus-driven and concentrated in construction. Deep research must avoid extrapolating it to all industrial cyclicals.",
+      "researchQuestion": "Which listed expressions, if any, had direct earnings exposure to the infrastructure demand impulse without excessive cycle/valuation risk?"
+    },
+    {
+      "eventId": "event-2020q2-broad-manufacturing-recovery",
+      "statement": "China manufacturing production and new orders remained in expansion by June, while export orders were still weak.",
+      "changeType": "broad_macro_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-06-30T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20200630"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202006"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "domestic demand",
+        "exports"
+      ],
+      "contradictionSearchNotes": "Use as context and timing evidence only; too broad for direct stock selection.",
+      "researchQuestion": "Context only; do not map directly to a stock."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-truck-20200630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff heavy-truck price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2020q2-multisource-deep-v1.3-001/regime/truck-20200630.snapshot.json",
+      "publishedAt": "2020-06-30T15:00:00+08:00",
+      "availableAt": "2020-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Truck basket 20d excess +6.11pp and 60d +19.03pp; breadth 50%/50%; favorable. 中国重汽 itself was +15.29pp 20d and +39.24pp 60d excess, while 潍柴动力 slightly lagged the benchmark."
+      ]
+    },
+    {
+      "id": "regime-construction-20200630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff construction-machinery price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2020q2-multisource-deep-v1.3-001/regime/construction-20200630.snapshot.json",
+      "publishedAt": "2020-06-30T15:00:00+08:00",
+      "availableAt": "2020-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Construction basket 20d excess -6.22pp and 60d -7.28pp; breadth 0%/0%; adverse despite improving industry expectations."
+      ]
+    },
+    {
+      "id": "regime-gold-20200630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff gold-equity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2020q2-multisource-deep-v1.3-001/regime/gold-20200630.snapshot.json",
+      "publishedAt": "2020-06-30T15:00:00+08:00",
+      "availableAt": "2020-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Gold basket 20d excess -1.73pp and 60d -2.30pp; breadth 50%/50%; neutral. 山东黄金 underperformed CSI300 over both lookbacks while 紫金 modestly outperformed."
+      ]
+    },
+    {
+      "id": "regime-electronics-20200630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff electronics price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2020q2-multisource-deep-v1.3-001/regime/electronics-20200630.snapshot.json",
+      "publishedAt": "2020-06-30T15:00:00+08:00",
+      "availableAt": "2020-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Electronics basket 20d excess +8.27pp and 60d +15.96pp; breadth 100%/100%; favorable. Both 兆易创新 and 韦尔股份 had already materially outperformed."
+      ]
+    },
+    {
+      "id": "regime-pv-20200630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff PV price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2020q2-multisource-deep-v1.3-001/regime/pv-20200630.snapshot.json",
+      "publishedAt": "2020-06-30T15:00:00+08:00",
+      "availableAt": "2020-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "PV basket 20d excess +18.26pp and 60d +43.94pp; breadth 100%/100%; favorable. 通威 and 隆基 had already sharply rerated while polysilicon pricing remained weak."
+      ]
+    },
+    {
+      "id": "sinotruk-q1-20200430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中国重汽2020年第一季度报告",
+      "publisher": "中国重汽",
+      "url": "https://static.cninfo.com.cn/finalpage/2020-04-30/1207680581.PDF",
+      "publishedAt": "2020-04-30T00:00:00+08:00",
+      "availableAt": "2020-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB8.21bn -28.76% YoY, attributable profit RMB263m -15.46%, but operating cash flow turned to +RMB770m from -RMB236m. Q1 predates the record May heavy-truck boom."
+      ]
+    },
+    {
+      "id": "weichai-q1-20200430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "潍柴动力2020年第一季度报告",
+      "publisher": "潍柴动力",
+      "url": "https://static.cninfo.com.cn/finalpage/2020-04-30/1207680976.PDF",
+      "publishedAt": "2020-04-30T00:00:00+08:00",
+      "availableAt": "2020-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB39.0bn -13.74%, attributable profit RMB2.06bn -20.34%, operating cash flow -RMB9.50bn. Direct truck/powertrain exposure exists but Q1 company conversion was weaker than the later industry boom."
+      ]
+    },
+    {
+      "id": "auto-weekly-20200628",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "汽车行业周报：新版双积分政策落地，助力节能与新能源汽车产业发展",
+      "publisher": "新时代证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202006291388149228_1.pdf",
+      "publishedAt": "2020-06-28T00:00:00+08:00",
+      "availableAt": "2020-06-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Heavy-truck beneficiaries were 中国重汽 and 潍柴动力. At June 24 prices, 2020E/2021E EPS for 中国重汽 were 2.16/2.32 with PE 13.33x/12.37x; 潍柴动力 EPS 1.24/1.35 with PE 10.94x/10.04x."
+      ]
+    },
+    {
+      "id": "sany-q1-20200429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "三一重工2020年第一季度报告",
+      "publisher": "三一重工",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6174291&stockid=600031",
+      "publishedAt": "2020-04-29T00:00:00+08:00",
+      "availableAt": "2020-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue -18.92%, attributable profit -31.90% and operating cash flow negative, so the post-lockdown machinery recovery had not yet entered reported company earnings."
+      ]
+    },
+    {
+      "id": "zoomlion-q1-20200430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中联重科2020年第一季度报告",
+      "publisher": "中联重科",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6200469&stockid=000157",
+      "publishedAt": "2020-04-30T00:00:00+08:00",
+      "availableAt": "2020-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +0.55%, attributable profit +2.39%,扣非 +6.06%; operating cash flow remained positive but fell sharply year on year."
+      ]
+    },
+    {
+      "id": "sany-research-20200623",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "三一重工：上调EPS，四个维度深入解读当前投资价值",
+      "publisher": "东吴证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202006271387730882_1.pdf",
+      "publishedAt": "2020-06-23T00:00:00+08:00",
+      "availableAt": "2020-06-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2020/21/22 profit RMB14.429/16.621/17.659bn, +28.8%/+15.2%/+6.2%, at PE about 10.87x/9.44x/8.89x; thesis emphasized extended replacement demand, share gains and operating leverage."
+      ]
+    },
+    {
+      "id": "machinery-strategy-20200624",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "机械设备行业2020年下半年投资策略：踏准周期，把握成长",
+      "publisher": "行业研究",
+      "url": "https://www.bj-xinghe.com/wp-content/uploads/2020/08/20200624-%E6%9C%BA%E6%A2%B0%E8%AE%BE%E5%A4%87%E8%A1%8C%E4%B8%9A2020%E5%B9%B4%E4%B8%8B%E5%8D%8A%E5%B9%B4%E6%8A%95%E8%B5%84%E7%AD%96%E7%95%A5%EF%BC%9A%E8%B8%8F%E5%87%86%E5%91%A8%E6%9C%9F%EF%BC%8C%E6%8A%8A%E6%8F%A1%E6%88%90%E9%95%BF.pdf",
+      "publishedAt": "2020-06-24T00:00:00+08:00",
+      "availableAt": "2020-06-24T00:00:00+08:00",
+      "normalizedClaims": [
+        "At June 23 prices, 中联重科 2020E/21E EPS 0.72/0.84 and PE 8.71x/7.46x; 三一 1.60/1.75 and PE 11.52x/10.53x, showing low point valuation despite the adverse relative-price regime."
+      ]
+    },
+    {
+      "id": "shandong-q1-20200429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "山东黄金2020年第一季度报告",
+      "publisher": "山东黄金",
+      "url": "https://static.cninfo.com.cn/finalpage/2020-04-29/1207668119.PDF",
+      "publishedAt": "2020-04-29T00:00:00+08:00",
+      "availableAt": "2020-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +28.70%, attributable profit +57.94%,扣非 +59.03% and operating cash flow +1.30%, directly confirming gold-price-to-profit conversion."
+      ]
+    },
+    {
+      "id": "shandong-research-20200510",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "山东黄金全资收购TMAC，持续稳固黄金龙头地位",
+      "publisher": "太平洋证券",
+      "url": "https://finance.sina.com.cn/stock/stockzmt/2020-05-10/doc-iirczymk0914831.shtml",
+      "publishedAt": "2020-05-10T00:00:00+08:00",
+      "availableAt": "2020-05-10T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2020/21/22 profit RMB1.667/2.152/2.418bn, EPS 0.54/0.69/0.78 and PE about 68.1x/52.8x/47.0x; report argued Q1 strength made 2020 forecast conservative but valuation burden was already high."
+      ]
+    },
+    {
+      "id": "giga-q1-20200429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兆易创新2020年第一季度报告",
+      "publisher": "兆易创新",
+      "url": "https://static.cninfo.com.cn/finalpage/2020-04-29/1207671734.PDF",
+      "publishedAt": "2020-04-29T00:00:00+08:00",
+      "availableAt": "2020-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +76.51%, attributable profit +323.24%,扣非 +369.14%, while operating cash flow was negative. Strong company growth was real but not equivalent to direct server-DRAM exposure."
+      ]
+    },
+    {
+      "id": "will-q1-20200424",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "韦尔股份2020年第一季度报告",
+      "publisher": "韦尔股份",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6097111&stockid=603501",
+      "publishedAt": "2020-04-24T00:00:00+08:00",
+      "availableAt": "2020-04-24T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +44.21%, attributable profit +800.03%,扣非 +1530.8%; another direct electronics growth control with very strong realized earnings."
+      ]
+    },
+    {
+      "id": "electronics-weekly-20200628",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "电子行业周报重点公司盈利预测",
+      "publisher": "行业研究",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202006281388058839_1.pdf",
+      "publishedAt": "2020-06-28T00:00:00+08:00",
+      "availableAt": "2020-06-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "At late-June prices, 兆易创新 2020E/21E EPS 2.25/2.99 with PE about 109x/82x; 韦尔股份 2020E/21E EPS 2.62/3.67 with PE about 79x/56x. Strong growth already carried high duration expectations."
+      ]
+    },
+    {
+      "id": "memory-research-20200312",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "存储器价格迎上升周期，本土企业获得良机",
+      "publisher": "国元证券",
+      "url": "https://www.scribd.com/document/818886849/",
+      "publishedAt": "2020-03-12T00:00:00+08:00",
+      "availableAt": "2020-03-12T00:00:00+08:00",
+      "normalizedClaims": [
+        "Before Q2, the market narrative already expected a 2020 memory price upcycle and highlighted 兆易创新, with 2020E PE around 92x. The later May downgrade of server-DRAM price expectations therefore matters for expectation duration."
+      ]
+    },
+    {
+      "id": "tongwei-q1-20200421",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "通威股份2020年第一季度报告",
+      "publisher": "通威股份",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6067746&stockid=600438",
+      "publishedAt": "2020-04-21T00:00:00+08:00",
+      "availableAt": "2020-04-21T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +26.85% but attributable profit -29.79% and扣非 -33.39%; weak upstream pricing had not converted into stronger profit for this upstream-integrated expression."
+      ]
+    },
+    {
+      "id": "longi-q1-20200423",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "隆基股份2020年第一季度报告",
+      "publisher": "隆基股份",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6087538&stockid=601012",
+      "publishedAt": "2020-04-23T00:00:00+08:00",
+      "availableAt": "2020-04-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +50.60%, attributable profit +204.92%,扣非 +195.39%, while operating cash flow was negative. The company engine was very strong despite weak upstream polysilicon pricing."
+      ]
+    }
+  ]
+}
