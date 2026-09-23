@@ -1,0 +1,618 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-cobalt-mutanda-exit",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Mutanda closure changes 2020 supply while cobalt prices had already rebounded; 60d tests whether the future supply shock begins to repair miner/refiner earnings before the market fully prices it."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "603799.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Direct cobalt products with output +18% and sales +37%; H1 profit -98% and high 2019E PE show the current trough is severe, while the frozen forecast assumes a large 2020 recovery.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820",
+        "huayou-research-20190902",
+        "regime-cobalt-20190930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Mutanda's scheduled year-end closure created a credible medium-term cobalt supply reset. Huayou had direct cobalt volume growth but H1 earnings were still depressed by low prices/inventory write-downs, creating a deliberate timing conflict.",
+    "firstCredibleDate": "2019-08-07",
+    "valueChain": [
+      "Mutanda supply exit",
+      "cobalt price/inventory",
+      "cobalt producer/refiner margin",
+      "earnings recovery"
+    ],
+    "persistenceReason": "A major mine shutdown can change 2020 supply for multiple quarters, but inventories and other projects can delay spot tightness.",
+    "disconfirmingEvidence": [
+      "Cobalt prices had already risen >25% after the closure announcement.",
+      "Huayou H1 profit fell 98%.",
+      "2019E PE near 69x versus a much lower 2020E multiple requires a sharp earnings rebound."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "glencore-mutanda-20190807",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "fastmarkets-cobalt-20190820",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "huayou-research-20190902",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cmoc-h1-20190828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-cobalt-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Mutanda closure",
+      "to": "cobalt supply balance",
+      "mechanism": "Removal of a major mine reduces future primary supply.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820"
+      ],
+      "failureMode": "inventories/other projects offset the closure",
+      "lag": "months"
+    },
+    {
+      "from": "tighter supply/higher cobalt price",
+      "to": "Huayou earnings",
+      "mechanism": "Direct cobalt product sales/margins recover as realized prices rise and inventory write-down pressure fades.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ],
+      "failureMode": "price rebound fades or inventory/cost burden persists",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "cobalt producers/refiners"
+    ],
+    "secondOrderWinners": [
+      "battery-material suppliers with upstream cobalt exposure"
+    ],
+    "losers": [
+      "cobalt buyers"
+    ],
+    "substitutes": [
+      "lower-cobalt chemistries"
+    ],
+    "bottlenecks": [
+      "inventory overhang",
+      "new mine supply"
+    ],
+    "falseThemeMatches": [
+      "battery-material names without direct cobalt price sensitivity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603799.SH",
+      "name": "华友钴业",
+      "verifiedExposure": "Direct cobalt products plus battery materials and copper/nickel projects.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit -98%; 2019/20/21 EPS 0.36/1.04/3.15.",
+        "favorable": "Cobalt price recovery and volume turn inventory trough into 2020 earnings rebound.",
+        "adverse": "Inventories/new supply keep cobalt weak and leverage amplifies downside."
+      },
+      "principalRisks": [
+        "earnings trough",
+        "high leverage/pledge",
+        "commodity volatility"
+      ]
+    },
+    {
+      "ticker": "603993.SH",
+      "name": "洛阳钼业",
+      "verifiedExposure": "Direct TFM copper-cobalt exposure but diversified commodity portfolio.",
+      "evidenceRefs": [
+        "cmoc-h1-20190828"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 copper-cobalt profit contribution weak and DRC revenue -47%.",
+        "favorable": "Higher cobalt prices improve TFM economics.",
+        "adverse": "Diversification dilutes cobalt torque and current DRC economics stay weak."
+      },
+      "principalRisks": [
+        "weak current cobalt economics"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300618.SZ",
+      "name": "寒锐钴业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "More cobalt-pure producer/refiner with the same supply-shock sensitivity.",
+      "whySelectedCompanyShouldOutperform": "Huayou has larger verified cobalt volumes/customer integration and a quantified multi-year recovery path.",
+      "evidenceRefs": [
+        "regime-cobalt-20190930"
+      ]
+    },
+    {
+      "ticker": "603993.SH",
+      "name": "洛阳钼业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Diversified direct cobalt miner via TFM.",
+      "whySelectedCompanyShouldOutperform": "Huayou has greater cobalt earnings torque, but CMOC offers diversification/downside support.",
+      "evidenceRefs": [
+        "cmoc-h1-20190828",
+        "regime-cobalt-20190930"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603799.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300618.SZ",
+        "selectedAdvantages": [
+          "verified cobalt output/sales growth",
+          "explicit 2020-21 recovery path"
+        ],
+        "selectedDisadvantages": [
+          "leverage and inventory-write-down burden"
+        ],
+        "evidenceRefs": [
+          "huayou-research-20190902",
+          "regime-cobalt-20190930"
+        ],
+        "switchCondition": "Prefer Hanrui if its balance sheet and realized cobalt margin recovery become clearly superior.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "603993.SH",
+        "selectedAdvantages": [
+          "higher cobalt torque and volume-growth evidence"
+        ],
+        "selectedDisadvantages": [
+          "CMOC has stronger diversification and lower single-metal dependence"
+        ],
+        "evidenceRefs": [
+          "huayou-research-20190902",
+          "cmoc-h1-20190828",
+          "regime-cobalt-20190930"
+        ],
+        "switchCondition": "Prefer CMOC if diversified TFM earnings recover with materially lower expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Huayou is the clearest recovery expression, but current earnings quality and timing remain too weak for Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Cobalt basket had +15.4pp 60d excess; cobalt prices had already jumped >25% after Mutanda news, and Huayou's published 2020 forecast already assumed a major recovery.",
+    "thesisExpectation": "The mine closure can still improve 2020 pricing/earnings if inventory clears, but near-term earnings have not yet confirmed.",
+    "measurableGap": "Medium-term supply reset is credible while current company earnings remain trough-like.",
+    "evidenceRefs": [
+      "fastmarkets-cobalt-20190820",
+      "huayou-research-20190902",
+      "regime-cobalt-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cobalt supply/price recovery versus explicit 2019-21 EPS path and recent commodity/equity rerating.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Huayou forecast EPS 0.36/1.04/3.15 for 2019/20/21, PE ~69.3x/24.1x/7.9x at Aug 30 price.",
+    "thesisScenario": "Mutanda exit tightens 2020 supply enough to deliver or beat the sharp earnings recovery path.",
+    "breakevenCondition": "Cobalt price/margin recovery must occur fast enough to justify a transition from trough 2019 earnings to much higher 2020 earnings.",
+    "ordinaryScenarioFailure": "The supply story is correct but inventory delays the earnings turn beyond the base horizon.",
+    "catalystOrTimingBridge": "Cobalt prices/inventory and Q3/Q4 margins are observable, but the mine closure itself is only effective at year-end.",
+    "evidenceRefs": [
+      "fastmarkets-cobalt-20190820",
+      "huayou-research-20190902",
+      "regime-cobalt-20190930"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Mutanda closure changes medium-term supply; prices already responded.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Volumes rose but H1 profit collapsed under price/write-down pressure.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Cobalt basket was positive but not uniform because CMOC lagged.",
+      "evidenceRefs": [
+        "regime-cobalt-20190930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Sep 2 report quantified a sharp 2020-21 recovery path.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Commodity and direct cobalt equities had already rerated after Mutanda.",
+      "evidenceRefs": [
+        "fastmarkets-cobalt-20190820",
+        "regime-cobalt-20190930"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.05719879192966674,
+      "lookback60Excess": 0.15403974768115425,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-cobalt-20190930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Future supply tightness improved materially after Mutanda closure.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Huayou forecast embeds recovery, but realized company breadth remains weak.",
+      "evidenceRefs": [
+        "huayou-research-20190902",
+        "cmoc-h1-20190828"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Mine closure can affect the 2020 supply balance across quarters.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Prices and direct cobalt names already reacted sharply before realized earnings turned.",
+      "evidenceRefs": [
+        "fastmarkets-cobalt-20190820",
+        "regime-cobalt-20190930"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Medium-term supply impulse is real, but current earnings confirmation and absorption are insufficient for Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603799.SH",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "Huayou has scale/customer integration but H1 profit and balance-sheet pressure are material.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Supply reset can create a large earnings revision from a depressed base.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "2019E multiple is extreme and 2020E still depends on rapid recovery.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Cobalt price/inventory are observable, but full closure occurs at year-end.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Diversified copper/nickel projects help but commodity/leverage risk remains high.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300618.SZ",
+        "revisionAdvantage": "Huayou has larger frozen volume/customer and quantified forecast evidence.",
+        "valuationAdvantage": "No clean advantage; both direct cobalt names are rebound-sensitive.",
+        "qualityTradeoff": "Huayou is larger and integrated; Hanrui is purer but H1 loss was severe.",
+        "catalystAdvantage": "Both map directly to cobalt price.",
+        "downsideTradeoff": "Huayou diversification helps but leverage/pledge is material.",
+        "switchCondition": "Switch if Hanrui demonstrates stronger realized margin recovery and safer balance sheet.",
+        "evidenceRefs": [
+          "huayou-research-20190902",
+          "regime-cobalt-20190930"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "603993.SH",
+        "revisionAdvantage": "Huayou has more cobalt torque and explicit recovery forecast.",
+        "valuationAdvantage": "CMOC may carry lower purity/expectation burden; no clear Huayou advantage.",
+        "qualityTradeoff": "CMOC is diversified; Huayou has stronger cobalt operating leverage.",
+        "catalystAdvantage": "Mutanda/cobalt price maps more directly to Huayou earnings.",
+        "downsideTradeoff": "CMOC diversification better contains cobalt-specific downside.",
+        "switchCondition": "Switch if TFM earnings recover with better valuation/downside evidence.",
+        "evidenceRefs": [
+          "huayou-research-20190902",
+          "cmoc-h1-20190828",
+          "regime-cobalt-20190930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Cobalt price rebounded after a major future supply exit was announced.",
+    "earningsMechanism": "Higher realized cobalt price and lower write-down pressure can restore direct cobalt-product margins.",
+    "nextObservableMetric": "cobalt realized price, inventory write-downs, Q3/Q4 cobalt gross margin",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "fastmarkets-cobalt-20190820",
+      "huayou-research-20190902"
+    ],
+    "failureCondition": "Cobalt prices/margins fail to recover before year-end closure."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "H1 profit -98% despite cobalt volume growth.",
+      "nextPeriod": "2020E EPS 1.04 versus 2019E 0.36.",
+      "laterPeriod": "2021E EPS 3.15 requires a much tighter cobalt market and capacity ramp.",
+      "rationale": "Current report explicitly prices a large cyclical earnings recovery.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Price rebound reduces further inventory/margin damage.",
+      "nextPeriodChange": "Mutanda closure improves 2020 realized cobalt economics.",
+      "laterPeriodChange": "Longer upside requires sustained tight supply and project execution.",
+      "mechanism": "The incremental edge is the speed/duration of physical tightening relative to an already bullish recovery forecast.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "fastmarkets-cobalt-20190820",
+        "huayou-research-20190902"
+      ]
+    },
+    "pathShape": "turnaround",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Supply reset is meaningful but market/forecast already anticipate a large recovery.",
+      "evidenceRefs": [
+        "fastmarkets-cobalt-20190820",
+        "huayou-research-20190902"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Inventory, new supply and battery chemistry make duration uncertain.",
+      "evidenceRefs": [
+        "fastmarkets-cobalt-20190820"
+      ]
+    },
+    "falsifier": "Cobalt price/margins do not improve through Q4 or inventory remains excessive.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "cobalt supply/price and directly exposed producers/refiners",
+    "geographicScope": "global cobalt supply with DRC mine concentration",
+    "customerScope": "battery/material and industrial cobalt buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The Mutanda event is a coherent cobalt supply shock; copper/nickel side businesses are treated as expression quality rather than merged into the thesis.",
+    "evidenceRefs": [
+      "glencore-mutanda-20190807",
+      "fastmarkets-cobalt-20190820",
+      "huayou-research-20190902"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "cobalt price rebounded but inventories/current company earnings remained weak",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "fastmarkets-cobalt-20190820",
+        "huayou-research-20190902"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "year-end Mutanda closure and price recovery can repair 2020 margins",
+      "horizon": "next 1-2 quarters",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807",
+        "huayou-research-20190902"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "battery demand supports cobalt but substitution/new supply constrain duration",
+      "horizon": "multi-year",
+      "evidenceRefs": [
+        "fastmarkets-cobalt-20190820"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not average weak current earnings with positive 2020 supply shock; keep Research until price/margin conversion is observed.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "leader_underperforming_sector",
+    "companyEvidenceConclusion": "mixed",
+    "rationale": "Cobalt price/supply signal improved before Huayou's earnings recovered.",
+    "evidenceRefs": [
+      "fastmarkets-cobalt-20190820",
+      "huayou-research-20190902"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "Mutanda closure is a new supply event rather than narrative repetition.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "insufficient",
+      "rationale": "H1 earnings remained deeply depressed.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Published forecast expects a large 2020 earnings recovery.",
+      "evidenceRefs": [
+        "huayou-research-20190902"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Mine closure can affect multi-quarter supply.",
+      "evidenceRefs": [
+        "glencore-mutanda-20190807"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Price/margin recovery fails to materialize before closure.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "603799.SH",
+    "purestTicker": "300618.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "The purer cobalt expression is not preferred automatically; current earnings/balance-sheet evidence matters.",
+    "earningsQualityComparison": "Huayou has verified volume/customer scale but still weak H1 profit; CMOC offers diversified earnings.",
+    "downsideComparison": "Diversification can reduce cobalt-specific downside, while direct torque increases upside and risk.",
+    "evidenceRefs": [
+      "huayou-research-20190902",
+      "cmoc-h1-20190828",
+      "regime-cobalt-20190930"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: credible medium-term supply shock, but current earnings trough and already-visible recovery expectations make timing unresolved.",
+    "alreadyPricedAssessment": "supply_shock_partially_absorbed",
+    "constraints": [
+      "earnings trough",
+      "commodity inventories",
+      "leverage",
+      "high recovery expectations"
+    ]
+  },
+  "bearCase": "Mutanda closes as planned but inventories/new projects delay tightness and high-beta cobalt equities de-rate.",
+  "invalidationConditions": [
+    {
+      "indicator": "cobalt price/inventory",
+      "observationMethod": "specialist market data",
+      "threshold": "rebound reverses or inventory remains excessive"
+    },
+    {
+      "indicator": "Huayou cobalt margin",
+      "observationMethod": "quarterly results",
+      "threshold": "no margin recovery"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Research only; require realized margin confirmation before any promotion."
+  ]
+}
