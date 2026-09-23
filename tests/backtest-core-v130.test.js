@@ -23,7 +23,7 @@ function baseMemo() {
     skillVersion: '1.3.0',
     equityReturnArchetype: 'ordinary_growth_compounder',
     acceptableExpressionSet: [{
-      ticker: '600000.SH',
+      ticker: '000001.SZ',
       role: 'preferred',
       directExposure: 'clear',
       earningsConversion: 'clear',
@@ -480,12 +480,12 @@ test('v1.3 supports up to three acceptable expressions and one optional preferre
   const m = baseMemo();
   m.acceptableExpressionSet = [
     {
-      ticker: '600000.SH', role: 'preferred', directExposure: 'clear', earningsConversion: 'clear',
+      ticker: '000001.SZ', role: 'preferred', directExposure: 'clear', earningsConversion: 'clear',
       balanceSheetOrSurvival: 'pass', expectationFit: 'clear', downsideContainment: 'credible',
       conclusion: 'acceptable', rationale: 'Preferred but not required to be peer-best.', evidenceRefs: ['e1']
     },
     {
-      ticker: '600001.SH', role: 'acceptable', directExposure: 'credible', earningsConversion: 'credible',
+      ticker: '000004.SZ', role: 'acceptable', directExposure: 'credible', earningsConversion: 'credible',
       balanceSheetOrSurvival: 'pass', expectationFit: 'credible', downsideContainment: 'credible',
       conclusion: 'acceptable', rationale: 'Good-enough expression of the same opportunity.', evidenceRefs: ['e1']
     }
