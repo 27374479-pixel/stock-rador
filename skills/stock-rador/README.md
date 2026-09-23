@@ -3,7 +3,29 @@
 The versioned files are immutable research contracts. Do not edit an old version after it
 has been used by a frozen backtest. Create a new version instead.
 
-## Current version: 1.0.0
+## Current version: 1.1.0
+
+- [SKILL.md](versions/1.1.0/SKILL.md)
+- [EVALS.md](versions/1.1.0/EVALS.md)
+- [DISCOVERY.md](versions/1.1.0/DISCOVERY.md)
+- [opportunity-memo.template.json](versions/1.1.0/opportunity-memo.template.json)
+- [backtest-manifest.template.json](versions/1.1.0/backtest-manifest.template.json)
+- [discovery-source-pack.template.json](versions/1.1.0/discovery-source-pack.template.json)
+- [missed-opportunity-audit.template.json](versions/1.1.0/missed-opportunity-audit.template.json)
+
+V1.1 keeps the full V1.0 framework and refines one expectation-absorption failure class:
+company-engine price dislocation is now direction-aware.
+
+- **de_rated**: 20d < 0, 60d < 0
+- **early_turn**: 20d >= 0, 60d < 0
+- **late_reversal**: 20d < 0, 60d >= 0
+- **sustained_strength**: 20d >= 0, 60d >= 0
+
+High-priority company-engine overrides may use only de_rated or early_turn.
+Late-reversal is treated as a likely already-rerated / expectation-absorbed state and cannot
+use the override route.
+
+## Previous current contract: 1.0.0
 
 - [SKILL.md](versions/1.0.0/SKILL.md)
 - [EVALS.md](versions/1.0.0/EVALS.md)
