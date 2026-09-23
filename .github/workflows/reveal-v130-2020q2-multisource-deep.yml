@@ -30,7 +30,7 @@ jobs:
             backtests/runs/2020q2-multisource-deep-v1.3-001/prices.json
       - name: Evaluate frozen selections
         run: |
-          node scripts/evaluate-skill-run-v130.cjs \
+          node scripts/evaluate-skill-run-v131.cjs \
             backtests/runs/2020q2-multisource-deep-v1.3-001/lock.json \
             backtests/runs/2020q2-multisource-deep-v1.3-001/prices.json \
             backtests/runs/2020q2-multisource-deep-v1.3-001/outcome.json
@@ -42,3 +42,5 @@ jobs:
           git commit -m "backtest: reveal v1.3 2020Q2 deep diagnostics"
           git pull --rebase origin ai-skill-v1.3-2020q2-holdout-20260923
           git push origin HEAD:ai-skill-v1.3-2020q2-holdout-20260923
+
+# retry-with-post-lock-v131-suspension-safe-evaluator
