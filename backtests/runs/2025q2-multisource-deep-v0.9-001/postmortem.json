@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025q2-multisource-deep-v0.9-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "rareearth_northrare",
+      "frozenDecision": "北方稀土 High-priority selection over 中国稀土/盛和资源",
+      "base60d": {
+        "selectedReturn": 1.2492911809943856,
+        "benchmarkReturn": 0.18031828397069294,
+        "benchmarkExcess": 1.0689728970236927,
+        "matchedControlExcess": 0.5048551119081905,
+        "bestControlTicker": "600392.SH",
+        "excessVsBestControl": 0.41854599726051034,
+        "selectedRank": 1
+      },
+      "laterFundamentalCheck": {
+        "description": "2025H1 revenue +45.24%, attributable profit +1951.52%; Q2 profit also increased sequentially, consistent with continued price/cost conversion.",
+        "source": "post-reveal public H1 filing/research"
+      },
+      "failureClass": null,
+      "label": "direct_conversion_right",
+      "generalLesson": "A High-priority setup is strongest when the external event has already converted into company revenue/profit/cash, the opportunity regime is favorable, and the selected company beats frozen peers on the same causal bridge."
+    },
+    {
+      "case": "solar_sungrow",
+      "frozenDecision": "阳光电源 Research selection because solar opportunity timing was neutral despite realized company conversion",
+      "base60d": {
+        "selectedReturn": 1.1098464899715115,
+        "benchmarkReturn": 0.14835816555323444,
+        "benchmarkExcess": 0.961488324418277,
+        "matchedControlExcess": 0.7672814011523148,
+        "bestControlTicker": "300763.SZ",
+        "excessVsBestControl": 0.5635572148472145,
+        "selectedRank": 1
+      },
+      "laterFundamentalCheck": {
+        "description": "2025H1 revenue +40.34%, attributable profit +55.97%, operating cash flow RMB3.43bn versus negative prior year, confirming that the earnings bridge persisted after the cutoff.",
+        "source": "post-reveal 2025H1 filing"
+      },
+      "failureClass": "company_specific_engine_hidden_by_broad_sector_timing",
+      "label": "timing_gate_missed_idiosyncratic_multi_engine",
+      "generalLesson": "A neutral broad-sector regime may be too coarse when the selected company has a distinct profitable engine (for example storage/inverter mix) that is not the same economic mechanism as the weak commodity-manufacturing part of the sector. Do not change v0.9 from this case alone; test unchanged v0.9 on another holdout."
+    },
+    {
+      "case": "memory_quality_vs_convexity",
+      "frozenDecision": "兆易创新 Research selection over 北京君正/江波龙/德明利",
+      "base60d": {
+        "selectedReturn": 0.5520924516201118,
+        "benchmarkReturn": 0.14906336781074758,
+        "benchmarkExcess": 0.4030290838093642,
+        "matchedControlExcess": 0.003965243032392207,
+        "bestControlTicker": "001309.SZ",
+        "excessVsBestControl": -0.29306450664766315,
+        "selectedRank": 3
+      },
+      "failureClass": "quality_right_convexity_missed",
+      "label": "quality_right_convexity_missed",
+      "generalLesson": "The decision to keep a proxy-only conversion case below High-priority was defensible, but the peer ranking still underweighted cyclical operating leverage in loss-making storage names. This remains a diagnostic for the turning_point_convexity path, not evidence to retune it on the same run."
+    },
+    {
+      "case": "power_no_selection",
+      "frozenDecision": "High-priority opportunity hypothesis / No selection because the pre-cutoff A-share price regime was adverse",
+      "failureClass": null,
+      "label": "no_selection_preserved",
+      "generalLesson": "Keep structural industry evidence separate from stock timing. This run does not score a stock because none was frozen."
+    }
+  ],
+  "prohibitedUses": [
+    "Do not change v0.9 thresholds, timing labels, archetypes or conversion requirements using this Q2 outcome.",
+    "Do not claim v0.9 validated from one High-priority historical signal.",
+    "The Sungrow miss may motivate a future general hypothesis only if a separate unchanged-v0.9 holdout reproduces the same failure class."
+  ],
+  "nextValidation": {
+    "skillVersion": "0.9.0",
+    "keepSkillUnchanged": true,
+    "proposedHoldout": "2025Q1",
+    "question": "Does another independent window show that broad opportunity timing incorrectly suppresses companies with a distinct, already-realized earnings engine?"
+  }
+}
