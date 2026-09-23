@@ -1,0 +1,183 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-10-12T23:59:59+08:00",
+  "researchReadyAt": "2021-10-12T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q4-dram-downcycle",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The explicit DRAM downturn should affect supplier earnings over coming quarters."
+  },
+  "changeHypothesis": {
+    "summary": "TrendForce projected Q4 DRAM contract-price declines and a 2022 downswing as buyer procurement weakened and inventories rose. The physical signal was negative, so backward-looking semiconductor earnings could not justify bottom-fishing without a differentiated company path.",
+    "firstCredibleDate": "2021-10-12",
+    "valueChain": [
+      "inventory buildup",
+      "weaker procurement",
+      "DRAM price decline",
+      "memory margin/profit"
+    ],
+    "persistenceReason": "Inventory normalization and contract-price cycles extend over multiple quarters.",
+    "disconfirmingEvidence": [
+      "All three frozen memory names had negative 20d relative returns.",
+      "The broad basket was adverse.",
+      "No company-specific path evidence overcame the negative physical cycle at the event cutoff."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-dram-downturn-20211012",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20211012",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "buyer inventory/procurement weakness",
+      "to": "DRAM contract-price decline",
+      "mechanism": "Excess supply and buyer inventories reduce purchasing urgency.",
+      "evidenceRefs": [
+        "tf-dram-downturn-20211012"
+      ],
+      "failureMode": "demand unexpectedly reaccelerates or supply is cut",
+      "lag": "quarters"
+    },
+    {
+      "from": "lower DRAM prices",
+      "to": "listed memory earnings",
+      "mechanism": "Lower ASP/mix compresses margin unless a company has differentiated products or cost structure.",
+      "evidenceRefs": [
+        "tf-dram-downturn-20211012"
+      ],
+      "failureMode": "company exposure is structurally insulated",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "memory buyers/OEMs may benefit from lower costs"
+    ],
+    "losers": [
+      "memory suppliers exposed to falling ASP"
+    ],
+    "substitutes": [
+      "newer memory generations / differentiated products"
+    ],
+    "bottlenecks": [
+      "inventory normalization"
+    ],
+    "falseThemeMatches": [
+      "semiconductor names selected only because trailing earnings were strong"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Memory/MCU exposure but frozen physical memory cycle is worsening.",
+      "evidenceRefs": [
+        "tf-dram-downturn-20211012",
+        "regime-memory-20211012"
+      ],
+      "earningsSensitivity": {
+        "base": "no pre-cutoff differentiated path frozen",
+        "favorable": "MCU/non-DRAM mix offsets cycle.",
+        "adverse": "memory ASP decline dominates."
+      },
+      "principalRisks": [
+        "cycle downturn"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Automotive/industrial memory exposure but no event-cutoff evidence proves insulation from DRAM downturn.",
+      "evidenceRefs": [
+        "tf-dram-downturn-20211012",
+        "regime-memory-20211012"
+      ],
+      "earningsSensitivity": {
+        "base": "unverified differentiated path",
+        "favorable": "specialty memory demand offsets generic prices.",
+        "adverse": "inventory/ASP pressure spreads."
+      },
+      "principalRisks": [
+        "cycle",
+        "inventory"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No stock selection: forward physical evidence is worsening and no verified differentiated company path overrides it."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Memory shares were already weak, but the physical price/inventory evidence still pointed down rather than to a confirmed bottom.",
+    "thesisExpectation": "No bullish thesis is frozen; the event is a negative timing filter.",
+    "measurableGap": "None suitable for a long selection.",
+    "evidenceRefs": [
+      "tf-dram-downturn-20211012",
+      "regime-memory-20211012"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "de-rating alone does not prove a bottom",
+    "constraints": [
+      "physical downturn",
+      "no differentiated path"
+    ]
+  },
+  "bearCase": "The DRAM downturn deepens exactly as physical evidence indicates.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM price/inventory",
+      "observationMethod": "subsequent TrendForce updates",
+      "threshold": "declines accelerate or inventory remains high"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "company-specific mix insulation"
+  ],
+  "nextResearchActions": [
+    "Wait for a physical bottom or verified differentiated company earnings path."
+  ]
+}
