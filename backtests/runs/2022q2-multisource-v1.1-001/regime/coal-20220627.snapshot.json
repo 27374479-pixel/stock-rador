@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2022q2-coal-20220627",
+  "cutoffDate": "2022-06-27",
+  "fetchedAt": "2026-09-23T07:15:37.726Z",
+  "provider": "Tencent public daily qfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "601088.SH",
+    "601225.SH",
+    "600188.SH"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2022-05-27",
+      "endDate": "2022-06-27",
+      "return": 0.11070402119311229
+    },
+    "60": {
+      "startDate": "2022-03-25",
+      "endDate": "2022-06-27",
+      "return": 0.06460306091405843
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "601088.SH",
+        "startDate": "2022-05-27",
+        "endDate": "2022-06-27",
+        "return": -0.09051158723218189,
+        "benchmarkReturn": 0.11070402119311229,
+        "excessReturn": -0.20121560842529418
+      },
+      {
+        "ticker": "601225.SH",
+        "startDate": "2022-05-27",
+        "endDate": "2022-06-27",
+        "return": 0.11457566085604398,
+        "benchmarkReturn": 0.11070402119311229,
+        "excessReturn": 0.003871639662931692
+      },
+      {
+        "ticker": "600188.SH",
+        "startDate": "2022-05-27",
+        "endDate": "2022-06-27",
+        "return": -0.05056872687405778,
+        "benchmarkReturn": 0.11070402119311229,
+        "excessReturn": -0.16127274806717007
+      }
+    ],
+    "60": [
+      {
+        "ticker": "601088.SH",
+        "startDate": "2022-03-25",
+        "endDate": "2022-06-27",
+        "return": 0.3367609254498716,
+        "benchmarkReturn": 0.06460306091405843,
+        "excessReturn": 0.27215786453581314
+      },
+      {
+        "ticker": "601225.SH",
+        "startDate": "2022-03-25",
+        "endDate": "2022-06-27",
+        "return": 0.6691996568206886,
+        "benchmarkReturn": 0.06460306091405843,
+        "excessReturn": 0.6045965959066302
+      },
+      {
+        "ticker": "600188.SH",
+        "startDate": "2022-03-25",
+        "endDate": "2022-06-27",
+        "return": 0.016954128440366922,
+        "benchmarkReturn": 0.06460306091405843,
+        "excessReturn": -0.04764893247369151
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": -0.11953890560984419,
+    "lookback60Excess": 0.2763685093229173,
+    "positiveBreadth20": 0.3333333333333333,
+    "positiveBreadth60": 0.6666666666666666
+  },
+  "conclusion": "neutral",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2021-12-29,2022-06-27,300,qfq",
+    "601088.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601088,day,2021-12-29,2022-06-27,300,qfq",
+    "601225.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601225,day,2021-12-29,2022-06-27,300,qfq",
+    "600188.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600188,day,2021-12-29,2022-06-27,300,qfq"
+  }
+}
