@@ -1,0 +1,543 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-06-11T23:59:59+08:00",
+  "researchReadyAt": "2021-06-11T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q2-nev-catl",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Battery demand, share and capacity expansion are multi-year, but the stock and baseline already price substantial compounding."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "China NEV sales and production were accelerating at triple-digit rates and CATL Q1 profit grew 163%, confirming a structural battery demand engine. However, the stock was sustained_strength and the contemporaneous baseline already priced 2021-23 profit growth of +65%/+34%/+29% at roughly 93x/69x/54x PE.",
+    "firstCredibleDate": "2021-04-29",
+    "valueChain": [
+      "NEV volume",
+      "battery demand",
+      "CATL share/capacity",
+      "revenue",
+      "profit"
+    ],
+    "persistenceReason": "EV penetration and battery capacity build are multi-year structural trends.",
+    "disconfirmingEvidence": [
+      "Forward PE remained very high across the path.",
+      "Raw-material inflation was already identified as a margin risk.",
+      "The stock had strongly outperformed over both 20d and 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "caam-nev-20210510",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "caam-nev-20210611",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-nev-20210611",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "catl-q1-20210430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "catl-path-20210429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "catl-capacity-20210505",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "byd-q1-20210429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "saic-q1-20210430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "NEV adoption",
+      "to": "battery demand",
+      "mechanism": "Triple-digit NEV volume growth increases installed battery demand.",
+      "evidenceRefs": [
+        "caam-nev-20210510",
+        "caam-nev-20210611"
+      ],
+      "failureMode": "EV demand slows or policy support weakens",
+      "lag": "quarters"
+    },
+    {
+      "from": "battery demand",
+      "to": "CATL volume/share",
+      "mechanism": "Global scale, customer base and planned capacity support high shipment growth.",
+      "evidenceRefs": [
+        "catl-capacity-20210505"
+      ],
+      "failureMode": "competition/share loss or capacity delay",
+      "lag": "quarters-years"
+    },
+    {
+      "from": "volume/share",
+      "to": "equity alpha",
+      "mechanism": "High growth creates alpha only if earnings outgrow a baseline already pricing strong multi-year compounding.",
+      "evidenceRefs": [
+        "catl-path-20210429",
+        "regime-nev-20210611"
+      ],
+      "failureMode": "great execution merely meets a premium baseline",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "battery leaders with share/capacity advantages"
+    ],
+    "secondOrderWinners": [
+      "high-quality battery materials/equipment"
+    ],
+    "losers": [
+      "legacy ICE exposure"
+    ],
+    "substitutes": [
+      "other battery chemistries/suppliers"
+    ],
+    "bottlenecks": [
+      "raw materials",
+      "capacity execution"
+    ],
+    "falseThemeMatches": [
+      "NEV names without profit conversion"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "verifiedExposure": "Q1 profit +163%, global battery leadership and major capacity expansion.",
+      "evidenceRefs": [
+        "catl-q1-20210430",
+        "catl-capacity-20210505"
+      ],
+      "earningsSensitivity": {
+        "base": "2021-23 profit RMB9.210/12.346/15.964bn.",
+        "favorable": "share/capacity grow faster than baseline.",
+        "adverse": "margin pressure or share loss offsets volume."
+      },
+      "principalRisks": [
+        "valuation duration",
+        "raw materials",
+        "competition"
+      ]
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Rapid NEV product growth, but Q1 absolute profit remained modest relative to valuation.",
+      "evidenceRefs": [
+        "byd-q1-20210429"
+      ],
+      "earningsSensitivity": {
+        "base": "DM-i/product cycle growth.",
+        "favorable": "vehicle mix/scale improves profit.",
+        "adverse": "cost pressure limits conversion."
+      },
+      "principalRisks": [
+        "profit conversion",
+        "valuation"
+      ]
+    },
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "verifiedExposure": "Large OEM with strong low-base Q1 profit recovery but weaker structural NEV re-rating.",
+      "evidenceRefs": [
+        "saic-q1-20210430"
+      ],
+      "earningsSensitivity": {
+        "base": "legacy recovery.",
+        "favorable": "NEV/JV recovery.",
+        "adverse": "chip shortage and transition drag."
+      },
+      "principalRisks": [
+        "transition",
+        "chip shortage"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Major Chinese NEV leader exposed to the same structural demand.",
+      "whySelectedCompanyShouldOutperform": "CATL has cleaner battery-volume economics and a more explicit multi-year profit path; BYD's Q1 profit base was much smaller.",
+      "evidenceRefs": [
+        "catl-path-20210429",
+        "byd-q1-20210429"
+      ]
+    },
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large auto OEM exposed to the same industry demand but a different technology transition.",
+      "whySelectedCompanyShouldOutperform": "CATL has much stronger structural NEV exposure and multi-year growth, while SAIC's Q1 rebound was heavily low-base recovery.",
+      "evidenceRefs": [
+        "catl-q1-20210430",
+        "saic-q1-20210430"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300750.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "selectedAdvantages": [
+          "cleaner battery share/capacity economics",
+          "explicit multi-year forecast"
+        ],
+        "selectedDisadvantages": [
+          "both trade at premium expectations; BYD has vehicle/battery optionality"
+        ],
+        "evidenceRefs": [
+          "catl-path-20210429",
+          "byd-q1-20210429"
+        ],
+        "switchCondition": "Prefer BYD if vehicle unit economics improve faster than CATL's battery margin path.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "600104.SH",
+        "selectedAdvantages": [
+          "far stronger structural growth path"
+        ],
+        "selectedDisadvantages": [
+          "SAIC has lower expectation burden"
+        ],
+        "evidenceRefs": [
+          "catl-path-20210429",
+          "saic-q1-20210430"
+        ],
+        "switchCondition": "Prefer SAIC if transition improves while CATL valuation compresses without new path upgrades.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "CATL is the clearest structural-growth expression, but expectation burden blocks High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The Apr29 baseline expected 2021-23 profit growth +65%/+34%/+29% at about 93x/69x/54x PE, and the stock had strongly outperformed across both 20d and 60d.",
+    "thesisExpectation": "EV demand and capacity expansion could keep compounding above this already-high path.",
+    "measurableGap": "The required gap is not 'EVs grow fast'; it is whether CATL beats an already-aggressive multi-year forecast enough to justify the premium duration.",
+    "evidenceRefs": [
+      "catl-path-20210429",
+      "regime-nev-20210611"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year earnings-duration path and forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021-23 profit RMB9.210/12.346/15.964bn; PE ~92.8x/69.3x/53.6x at Apr29.",
+    "thesisScenario": "Share, capacity and storage expansion push 2022-23 earnings materially above baseline.",
+    "breakevenCondition": "Growth must stay high for multiple years without margin compression; simple delivery of the published path is insufficient.",
+    "ordinaryScenarioFailure": "EV demand stays excellent but earnings merely meet baseline, causing duration/multiple compression.",
+    "catalystOrTimingBridge": "Monthly installations, capacity milestones and H1 earnings can test the path.",
+    "evidenceRefs": [
+      "catl-path-20210429",
+      "catl-capacity-20210505",
+      "regime-nev-20210611"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "NEV volumes and CATL Q1 profit both accelerated.",
+      "evidenceRefs": [
+        "caam-nev-20210611",
+        "catl-q1-20210430"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q1 attributable profit +163%.",
+      "evidenceRefs": [
+        "catl-q1-20210430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "CATL has the strongest frozen structural battery path versus OEM controls.",
+      "evidenceRefs": [
+        "catl-path-20210429",
+        "byd-q1-20210429",
+        "saic-q1-20210430"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The Apr29 forecast is recent and already incorporates storage/capacity growth.",
+      "evidenceRefs": [
+        "catl-path-20210429"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Use sustained 20/60d strength plus multi-year forward PE.",
+      "evidenceRefs": [
+        "regime-nev-20210611",
+        "catl-path-20210429"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight NEV basket versus CSI300",
+      "lookback20Excess": 0.23632992321032564,
+      "lookback60Excess": 0.23673079995153443,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-nev-20210611"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "NEV volumes and CATL Q1 earnings are accelerating.",
+      "evidenceRefs": [
+        "caam-nev-20210611",
+        "catl-q1-20210430"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "NEV/battery ecosystem demand is broadly strong, though OEM profit conversion differs.",
+      "evidenceRefs": [
+        "caam-nev-20210611",
+        "catl-path-20210429"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "structural",
+      "rationale": "EV penetration and battery capacity expansion are multi-year.",
+      "evidenceRefs": [
+        "catl-capacity-20210505"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The selected stock and sector have already rerated materially.",
+      "evidenceRefs": [
+        "regime-nev-20210611"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Industry timing is strong, but expectation absorption remains high."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "300750.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong Q1 profit and industry leadership.",
+      "evidenceRefs": [
+        "catl-q1-20210430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Capacity/share can still exceed plan, but baseline is already aggressive.",
+      "evidenceRefs": [
+        "catl-capacity-20210505",
+        "catl-path-20210429"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Forward PE remains high even two years out.",
+      "evidenceRefs": [
+        "catl-path-20210429"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 and monthly installation data are within base horizon.",
+      "evidenceRefs": [
+        "catl-q1-20210430"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Business quality is strong but duration/multiple risk is high.",
+      "evidenceRefs": [
+        "catl-path-20210429",
+        "regime-nev-20210611"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "revisionAdvantage": "CATL has cleaner battery-volume and share evidence.",
+        "valuationAdvantage": "Neither has obvious low expectation burden.",
+        "qualityTradeoff": "Both high-quality growth; CATL path more directly tied to battery demand.",
+        "catalystAdvantage": "Installations/capacity are frequent.",
+        "downsideTradeoff": "Both premium-duration equities.",
+        "evidenceRefs": [
+          "catl-path-20210429",
+          "byd-q1-20210429"
+        ],
+        "switchCondition": "Switch if BYD unit economics improve and CATL's path no longer outgrows its premium.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "600104.SH",
+        "revisionAdvantage": "CATL structural growth much stronger.",
+        "valuationAdvantage": "SAIC lower burden but weaker path.",
+        "qualityTradeoff": "CATL higher growth; SAIC mature cash generator.",
+        "catalystAdvantage": "CATL demand more directly linked to NEV growth.",
+        "downsideTradeoff": "SAIC has lower duration risk.",
+        "evidenceRefs": [
+          "catl-path-20210429",
+          "saic-q1-20210430"
+        ],
+        "switchCondition": "Switch if CATL multiple compresses while SAIC transition visibly improves.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "NEV demand and CATL capacity/share were expanding rapidly.",
+    "earningsMechanism": "Higher GWh shipments and storage growth translate to revenue/profit if unit margins hold.",
+    "nextObservableMetric": "H1 shipments, market share, storage revenue and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "catl-q1-20210430",
+      "catl-capacity-20210505"
+    ],
+    "failureCondition": "Volume grows but margin/cost pressure leaves earnings near or below the frozen baseline."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021 profit RMB9.210bn, +65%.",
+      "nextPeriod": "2022 profit RMB12.346bn, +34%.",
+      "laterPeriod": "2023 profit RMB15.964bn, +29%.",
+      "rationale": "The baseline already prices structural NEV, storage and capacity growth.",
+      "evidenceRefs": [
+        "catl-path-20210429"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q1 strength supports 2021 execution.",
+      "nextPeriodChange": "Capacity expansion could support above-baseline 2022 growth, but this is already central to consensus.",
+      "laterPeriodChange": "Storage/global share can extend growth, but no independent evidence proves a materially higher 2023 path by cutoff.",
+      "mechanism": "The business duration is excellent, but the market baseline already assigns much of that duration.",
+      "evidenceRefs": [
+        "catl-q1-20210430",
+        "catl-capacity-20210505"
+      ]
+    },
+    "pathShape": "ordinary_growth_compounder",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Execution quality is clear; incremental path advantage beyond consensus is not.",
+      "evidenceRefs": [
+        "catl-path-20210429",
+        "catl-capacity-20210505"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The valuation requires multi-year high growth and margin resilience.",
+      "evidenceRefs": [
+        "catl-path-20210429"
+      ]
+    },
+    "falsifier": "Updated 2022-23 earnings fail to rise materially above the frozen path despite continued strong EV volume.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: ordinary growth compounder with exceptional business quality but high expectation duration.",
+    "alreadyPricedAssessment": "substantial multi-year growth already capitalized",
+    "constraints": [
+      "premium PE",
+      "sustained_strength",
+      "raw-material margin risk"
+    ]
+  },
+  "bearCase": "The company executes very well but only meets the already-high baseline, causing multiple compression.",
+  "invalidationConditions": [
+    {
+      "indicator": "2022-23 earnings path",
+      "observationMethod": "updated forecasts",
+      "threshold": "no material uplift"
+    },
+    {
+      "indicator": "unit margin/share",
+      "observationMethod": "H1/installation data",
+      "threshold": "margin or share weakens"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "normalized long-run battery margins",
+    "future valuation compression"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; business quality alone cannot bypass expectation-duration burden."
+  ]
+}
