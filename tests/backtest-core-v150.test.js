@@ -325,7 +325,7 @@ test('v1.5 sector-confirmed path still fails closed under adverse broad timing',
   };
   m.opportunityTimingTest.overallConclusion = 'adverse';
   const errors = validateOpportunityMemo(m, 'memo.json', manifest());
-  assert.ok(errors.some((x) => x.includes('unless a valid v1.1+ company-engine override')));
+  assert.ok(errors.some((x) => x.includes('unless a valid override route is used')));
 });
 
 test('v1.5 research_only route cannot be High-priority', () => {
