@@ -1,0 +1,626 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2023q2-multisource-deep-v1.0-001",
+  "cutoffAt": "2023-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2023Q2 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China coal-price, industrial-profit, aviation and PMI data.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS, CAAC and NDRC items surfaced by Q2 changes."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Company-first-party evidence at discovery stage.",
+      "coverageStatus": "unavailable",
+      "limitations": "No issuer-specific discovery evidence is used before event screening; company evidence is deferred to deep research."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable battery-material and industrial price conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses TrendForce/Fastmarkets-attributed public data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on lithium supply-demand balance.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on Reuters historical reporting for the lithium rebound."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist battery-chain demand/price evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce releases."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "trendforce-lithium-20230508",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Lithium Prices Rebound, China’s Battery Industry Chain Expected to Recover in May",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20230508-11664.html",
+      "publishedAt": "2023-05-08T00:00:00+08:00",
+      "availableAt": "2023-05-08T00:00:00+08:00",
+      "originGroup": "trendforce-lithium-q2-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Battery-grade lithium carbonate fell sharply in April but stabilized and rebounded in late April; LiPF6 and several battery-material prices also showed bottoming/recovery signals."
+      ],
+      "entities": [
+        "lithium carbonate",
+        "lithium hydroxide",
+        "LiPF6",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "lithium price decline bottoms",
+        "battery-chain restocking begins"
+      ]
+    },
+    {
+      "itemId": "reuters-lithium-20230502",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Lithium prices bounce after big plunge, but surpluses loom",
+      "publisher": "Reuters",
+      "url": "https://finance.yahoo.com/news/lithium-prices-bounce-big-plunge-180235659.html",
+      "publishedAt": "2023-05-02T00:00:00Z",
+      "availableAt": "2023-05-02T00:00:00Z",
+      "originGroup": "reuters-lithium-20230502",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China battery-grade lithium carbonate rose for the first time in five months after a steep fall; analysts warned new supply still posed downside risk."
+      ],
+      "entities": [
+        "lithium carbonate",
+        "EV batteries",
+        "China"
+      ],
+      "observedChanges": [
+        "first lithium rebound after collapse",
+        "surplus risk remains"
+      ]
+    },
+    {
+      "itemId": "reuters-lithium-20230621",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China lithium price rebound to be capped by growing supply - analysts",
+      "publisher": "Reuters",
+      "url": "https://tech.yahoo.com/business/articles/china-lithium-price-rebound-capped-112329026.html",
+      "publishedAt": "2023-06-21T00:00:00Z",
+      "availableAt": "2023-06-21T00:00:00Z",
+      "originGroup": "reuters-lithium-20230621",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China lithium carbonate prices nearly doubled from the spring low as EV/storage demand recovered, but analysts expected supply growth to outpace demand."
+      ],
+      "entities": [
+        "lithium carbonate",
+        "EVs",
+        "energy storage"
+      ],
+      "observedChanges": [
+        "lithium price rebound matures",
+        "demand recovery confirmed",
+        "supply ceiling persists"
+      ]
+    },
+    {
+      "itemId": "nbs-coal-20230614",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年6月上旬流通领域重要生产资料市场价格变动情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202306/t20230614_1940552.html",
+      "publishedAt": "2023-06-14T09:30:00+08:00",
+      "availableAt": "2023-06-14T09:30:00+08:00",
+      "originGroup": "nbs-coal-202306-early",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Early-June 5500-kcal Shanxi premium mixed coal fell 12.7% from late May to RMB785.6/t; other thermal coal grades fell roughly 13% over the same ten-day interval."
+      ],
+      "entities": [
+        "thermal coal",
+        "power fuel"
+      ],
+      "observedChanges": [
+        "thermal coal input cost drops sharply"
+      ]
+    },
+    {
+      "itemId": "nbs-industrial-profits-20230629",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "The Profit of Industrial Enterprises above Designated Size from January to May in 2023",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202306/t20230629_1940928.html",
+      "publishedAt": "2023-06-29T09:30:00+08:00",
+      "availableAt": "2023-06-29T09:30:00+08:00",
+      "originGroup": "nbs-industrial-profits-202305",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-May industrial profits fell 18.8% overall, but electricity/heat/gas/water production and supply profits rose 34.8% YoY, showing a sharp sector divergence."
+      ],
+      "entities": [
+        "electricity",
+        "heat power",
+        "industrial profits"
+      ],
+      "observedChanges": [
+        "power-sector profits recover despite broad industrial weakness"
+      ]
+    },
+    {
+      "itemId": "caac-mayday-20230504",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年“五一”假期民航运输旅客941.2万人次",
+      "publisher": "中国民航局",
+      "url": "https://www.caac.gov.cn/XWZX/MHYW/202305/t20230504_218475.html",
+      "publishedAt": "2023-05-04T10:48:00+08:00",
+      "availableAt": "2023-05-04T10:48:00+08:00",
+      "originGroup": "caac-mayday-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May Day daily air-passenger traffic reached 1.882m, 4.2% above the comparable 2019 level; domestic flight counts exceeded 2019 while average load factor remained below 2019."
+      ],
+      "entities": [
+        "civil aviation",
+        "domestic travel",
+        "load factor"
+      ],
+      "observedChanges": [
+        "domestic air demand recovers above 2019 holiday level",
+        "load factor not fully normalized"
+      ]
+    },
+    {
+      "itemId": "caac-may-20230620",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "中国民航2023年5月份主要生产指标统计",
+      "publisher": "中国民航局",
+      "url": "https://www.caac.gov.cn/XXGK/XXGK/TJSJ/202306/t20230620_220398.html",
+      "publishedAt": "2023-06-20T00:00:00+08:00",
+      "availableAt": "2023-06-20T00:00:00+08:00",
+      "originGroup": "caac-monthly-202305",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May passenger volume reached 51.698m, +328.2% YoY, confirming a broad aviation traffic recovery."
+      ],
+      "entities": [
+        "civil aviation",
+        "passenger volume"
+      ],
+      "observedChanges": [
+        "aviation traffic recovery persists into May"
+      ]
+    },
+    {
+      "itemId": "ndrc-grid-tariff-20230515",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于第三监管周期区域电网输电价格及有关事项的通知",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/tzgg/202305/t20230515_1355742.html",
+      "publishedAt": "2023-05-15T00:00:00+08:00",
+      "availableAt": "2023-05-15T00:00:00+08:00",
+      "originGroup": "ndrc-grid-tariff-202305",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NDRC set third-regulatory-cycle regional grid transmission tariffs from June 1 under a two-part tariff structure."
+      ],
+      "entities": [
+        "grid transmission tariffs",
+        "State Grid",
+        "China Southern Grid"
+      ],
+      "observedChanges": [
+        "regulated transmission pricing framework changes"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20230531",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年5月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202305/t20230531_1940272.html",
+      "publishedAt": "2023-05-31T09:30:00+08:00",
+      "availableAt": "2023-05-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202305",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May manufacturing PMI fell to 48.8; production and new orders were below 50."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing demand contracts"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20230630",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年6月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202306/t20230630_1940935.html",
+      "publishedAt": "2023-06-30T09:30:00+08:00",
+      "availableAt": "2023-06-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202306",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "June manufacturing PMI improved slightly to 49.0, while new orders remained below 50 at 48.6."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing remains contractionary despite modest improvement"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2023q2-thermal-power-margin-recovery",
+      "statement": "Thermal-coal input prices fell sharply in Q2 while official industrial-profit data showed electricity/heat/gas/water profits rising strongly against broad industrial weakness, creating a direct cost-spread opportunity for power generators.",
+      "changeType": "input_cost_collapse_with_profit_recovery",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-06-14T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-coal-20230614",
+        "nbs-industrial-profits-20230629"
+      ],
+      "independentOriginGroups": [
+        "nbs-coal-202306-early",
+        "nbs-industrial-profits-202305"
+      ],
+      "affectedValueChain": [
+        "thermal coal miners",
+        "coal-fired power generators",
+        "electricity retailers"
+      ],
+      "contradictionSearchNotes": "Falling coal hurts miners but can expand generator margins. Deep research must verify company fuel-cost sensitivity and realized profit conversion rather than assume all utilities benefit equally.",
+      "researchQuestion": "Which A-share thermal-power generator had already realized coal-cost margin recovery and retained valuation/asymmetry room?"
+    },
+    {
+      "eventId": "event-2023q2-air-travel-reopening",
+      "statement": "China domestic aviation demand returned to or above pre-pandemic holiday levels during Q2 and monthly passenger traffic recovered sharply, but load factors and international capacity were not fully normalized.",
+      "changeType": "reopening_demand_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2023-05-04T10:48:00+08:00",
+      "memberItemIds": [
+        "caac-mayday-20230504",
+        "caac-may-20230620"
+      ],
+      "independentOriginGroups": [
+        "caac-mayday-2023",
+        "caac-monthly-202305"
+      ],
+      "affectedValueChain": [
+        "airlines",
+        "airports",
+        "travel services",
+        "jet fuel"
+      ],
+      "contradictionSearchNotes": "Traffic recovery does not guarantee airline profit because fuel, yields, capacity and international mix matter. Deep research must require realized unit-economics improvement.",
+      "researchQuestion": "Did any A-share airline/airport convert passenger recovery into a measurable earnings bridge before June-end?"
+    },
+    {
+      "eventId": "event-2023q2-lithium-rebound",
+      "statement": "Lithium carbonate reversed upward after a five-month collapse as EV/storage demand and restocking recovered, but supply growth was expected to cap the rebound, creating a potentially short-lived turning-point rather than a clean structural upcycle.",
+      "changeType": "commodity_turning_point_with_supply_ceiling",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-05-02T00:00:00Z",
+      "memberItemIds": [
+        "reuters-lithium-20230502",
+        "trendforce-lithium-20230508",
+        "reuters-lithium-20230621"
+      ],
+      "independentOriginGroups": [
+        "reuters-lithium-20230502",
+        "trendforce-lithium-q2-2023",
+        "reuters-lithium-20230621"
+      ],
+      "affectedValueChain": [
+        "lithium miners",
+        "lithium salts",
+        "battery cells",
+        "EVs",
+        "energy storage"
+      ],
+      "contradictionSearchNotes": "A higher lithium price helps upstream but pressures cells/EVs; the rebound may be capped by supply. Turning-point candidates require explicit operating leverage and survival/working-capital checks.",
+      "researchQuestion": "Is there a listed lithium producer with a real price-to-profit turning-point bridge, or is the rebound too supply-capped/anticipated?"
+    },
+    {
+      "eventId": "event-2023q2-grid-tariff-reform",
+      "statement": "NDRC reset regional/provincial transmission tariffs under the third regulatory cycle from June 1, but the immediate listed-company earnings incidence was not clear from the policy text alone.",
+      "changeType": "regulated_tariff_reform",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-05-15T00:00:00+08:00",
+      "memberItemIds": [
+        "ndrc-grid-tariff-20230515"
+      ],
+      "independentOriginGroups": [
+        "ndrc-grid-tariff-202305"
+      ],
+      "affectedValueChain": [
+        "grid operators",
+        "regulated utilities",
+        "large power consumers"
+      ],
+      "contradictionSearchNotes": "Policy is real but earnings incidence depends on regulated asset bases and cost allocation; no direct company engine is visible at discovery.",
+      "researchQuestion": "Keep as policy context unless company-level regulated-return impact can be quantified."
+    },
+    {
+      "eventId": "event-2023q2-manufacturing-contraction",
+      "statement": "China manufacturing PMI remained below 50 through May-June while broad industrial profits were still falling, even as selected reopening/cost-spread sectors improved.",
+      "changeType": "macro_demand_weakness",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2023-05-31T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20230531",
+        "nbs-pmi-20230630",
+        "nbs-industrial-profits-20230629"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202305",
+        "nbs-pmi-202306",
+        "nbs-industrial-profits-202305"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "industrial demand"
+      ],
+      "contradictionSearchNotes": "Useful as macro context and a timing challenge, not a narrow long opportunity.",
+      "researchQuestion": "Use as a contradiction filter for company engines rather than promote a standalone stock thesis."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-power-20230629",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen 2023Q2 thermal-power price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q2-multisource-v1.0-001/regime/power-20230629.snapshot.json",
+      "publishedAt": "2023-06-29T15:00:00+08:00",
+      "availableAt": "2023-06-29T15:00:00+08:00",
+      "normalizedClaims": [
+        "Power basket 20d excess -8.37pp, 60d +16.89pp; breadth 0%/100%; neutral. 华电 20d excess -5.98pp, 60d +26.55pp."
+      ]
+    },
+    {
+      "id": "regime-aviation-20230620",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen 2023Q2 aviation price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q2-multisource-v1.0-001/regime/aviation-20230620.snapshot.json",
+      "publishedAt": "2023-06-20T15:00:00+08:00",
+      "availableAt": "2023-06-20T15:00:00+08:00",
+      "normalizedClaims": [
+        "Aviation basket 20d excess -1.77pp, 60d -5.79pp; breadth 33.3%/33.3%; adverse. 春秋 itself remained positive relative to CSI300 over both lookbacks."
+      ]
+    },
+    {
+      "id": "regime-lithium-20230621",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen 2023Q2 lithium price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q2-multisource-v1.0-001/regime/lithium-20230621.snapshot.json",
+      "publishedAt": "2023-06-21T15:00:00+08:00",
+      "availableAt": "2023-06-21T15:00:00+08:00",
+      "normalizedClaims": [
+        "Lithium basket 20d excess -5.25pp, 60d -6.46pp; breadth 0%/0%; adverse."
+      ]
+    },
+    {
+      "id": "huadian-q1-20230429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "华电国际2023年第一季度报告",
+      "publisher": "华电国际",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9164820&stockid=600027",
+      "publishedAt": "2023-04-29T00:00:00+08:00",
+      "availableAt": "2023-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB31.978bn +10.98%; attributable profit RMB1.134bn +82.30%;扣非 +113.11%. Company stated the profit improvement mainly came from lower coal prices and higher electricity/heat prices."
+      ]
+    },
+    {
+      "id": "huadian-research-20230509",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "华电国际首次覆盖：涅槃重生，价值重铸",
+      "publisher": "民生证券 via 证券之星",
+      "url": "https://stock.stockstar.com/RB2023050900015932.shtml",
+      "publishedAt": "2023-05-09T00:00:00+08:00",
+      "availableAt": "2023-05-09T00:00:00+08:00",
+      "normalizedClaims": [
+        "2023-25 EPS forecasts RMB0.52/0.57/0.60; May5 price implied PE 12.2/11.3/10.7x. Coal-price volatility remains the key operating sensitivity."
+      ]
+    },
+    {
+      "id": "huaneng-q1-20230426",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "华能国际2023年第一季度报告",
+      "publisher": "华能国际",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9084502&stockid=600011",
+      "publishedAt": "2023-04-26T00:00:00+08:00",
+      "availableAt": "2023-04-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB65.269bn +0.03%; attributable profit RMB2.250bn +335.30% from a prior-year loss;扣非 +241.95%. Company explicitly attributed domestic-power profit improvement to lower coal prices and higher electricity prices."
+      ]
+    },
+    {
+      "id": "huaneng-valuation-202305",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "Thermal-power peer valuation snapshot May 2023",
+      "publisher": "Public analyst peer tables",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202401131617482786_1.pdf",
+      "publishedAt": "2023-05-19T00:00:00+08:00",
+      "availableAt": "2023-05-19T00:00:00+08:00",
+      "normalizedClaims": [
+        "A contemporaneous peer table placed 华能国际 around 14.85x 2023E PE, above 华电国际's roughly 12x range."
+      ]
+    },
+    {
+      "id": "gd-power-q1-20230428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "国电电力2023年第一季度报告",
+      "publisher": "国电电力",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9131799&stockid=600795",
+      "publishedAt": "2023-04-28T00:00:00+08:00",
+      "availableAt": "2023-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB45.333bn -3.10%; attributable profit RMB964m -7.02%;扣非 +4.18%; CFO RMB7.789bn -2.56%."
+      ]
+    },
+    {
+      "id": "gd-power-research-20230505",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "国电电力2023年一季报点评：投资收益暂时拖累业绩，新能源引领转型",
+      "publisher": "中信证券 via 水滴研报",
+      "url": "https://www.sdyanbao.com/detail/402966",
+      "publishedAt": "2023-05-05T00:00:00+08:00",
+      "availableAt": "2023-05-05T00:00:00+08:00",
+      "normalizedClaims": [
+        "2023E profit forecast RMB7.004bn, 2023E PE about 10.3x at May4 price; analyst expected coal cost to decline but Q1 profit was slightly below expectations."
+      ]
+    },
+    {
+      "id": "spring-q1-20230428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "春秋航空2023年第一季度报告",
+      "publisher": "春秋航空",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9139215&stockid=601021",
+      "publishedAt": "2023-04-28T00:00:00+08:00",
+      "availableAt": "2023-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB3.863bn +63.65%; attributable profit RMB356m, turning positive; CFO RMB1.392bn positive."
+      ]
+    },
+    {
+      "id": "spring-research-20230428",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "春秋航空2022年年报及2023年一季报点评：一季度盈利超预期，低成本龙头弹性初现",
+      "publisher": "券商研报 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/736181776257/index.phtml",
+      "publishedAt": "2023-04-28T00:00:00+08:00",
+      "availableAt": "2023-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 profitability was above expectations; 2023-25 profit forecasts RMB1.740/3.862/3.357bn, corresponding to PE 35.08/15.81/18.19x."
+      ]
+    },
+    {
+      "id": "juneyao-q1-20230429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "吉祥航空2023年第一季度报告",
+      "publisher": "吉祥航空",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9156999&stockid=603885",
+      "publishedAt": "2023-04-29T00:00:00+08:00",
+      "availableAt": "2023-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB4.442bn +78.67%; attributable profit RMB165m, turning positive; CFO RMB1.232bn positive."
+      ]
+    },
+    {
+      "id": "juneyao-research-20230429",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "吉祥航空：一季度迅速恢复盈利，看好民营航司成长潜力",
+      "publisher": "国信证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202305041586234127_1.pdf",
+      "publishedAt": "2023-04-29T00:00:00+08:00",
+      "availableAt": "2023-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 ASK exceeded 2019 by 6.6%, RPK nearly recovered to 2019, load factor 79.9%; unit RPK revenue was above 2019, confirming rapid unit-economics recovery."
+      ]
+    },
+    {
+      "id": "airchina-q1-20230427",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中国国航2023年第一季度报告",
+      "publisher": "中国国航",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9108244&stockid=601111",
+      "publishedAt": "2023-04-27T00:00:00+08:00",
+      "availableAt": "2023-04-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB25.068bn +94.06% but attributable loss RMB2.926bn; CFO RMB6.796bn positive."
+      ]
+    },
+    {
+      "id": "tianqi-q1-20230429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "天齐锂业2023年第一季度报告",
+      "publisher": "天齐锂业",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9176839&stockid=002466",
+      "publishedAt": "2023-04-29T00:00:00+08:00",
+      "availableAt": "2023-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB11.449bn +117.77%; attributable profit RMB4.875bn +46.49%;扣非 +70.67%; CFO RMB4.936bn +28.66%."
+      ]
+    },
+    {
+      "id": "ganfeng-q1-20230428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "赣锋锂业2023年第一季度报告",
+      "publisher": "赣锋锂业",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9147284&stockid=002460",
+      "publishedAt": "2023-04-28T00:00:00+08:00",
+      "availableAt": "2023-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB9.438bn +75.91%; attributable profit RMB2.397bn -32.01%;扣非 -31.07%; CFO RMB-3.169bn."
+      ]
+    },
+    {
+      "id": "yahua-q1-20230428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "雅化集团2023年第一季度报告",
+      "publisher": "雅化集团",
+      "url": "https://epaper.stcn.com/att/202304/28/805032eb-308d-4eb2-9edd-6633bcb3b84c.pdf",
+      "publishedAt": "2023-04-28T00:00:00+08:00",
+      "availableAt": "2023-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB3.038bn +14.21%; attributable profit RMB593m -41.99%;扣非 -43.92%; CFO RMB254m +30.53%. Company commentary said high lithium raw-material costs rose faster than revenue."
+      ]
+    }
+  ]
+}
