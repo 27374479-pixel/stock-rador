@@ -1,0 +1,444 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-06-10T23:59:59+08:00",
+  "researchReadyAt": "2022-06-10T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q2-auto-reopening-changan",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Reopening, purchase-tax stimulus and model launches should affect volumes/profit over one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Shanghai reopening, supply-chain normalization and purchase-tax relief improved auto demand just as 长安 exited a weak April. Q1 core profit had already improved sharply, but by June 10 the stock had substantially rerated over both 20d and 60d before the new policy/reopening earnings bridge was visible in filings.",
+    "firstCredibleDate": "2022-05-30",
+    "valueChain": [
+      "reopening/tax relief",
+      "production normalization",
+      "vehicle sales/new models",
+      "core margin/profit"
+    ],
+    "persistenceReason": "Tax relief lasts through year-end and product-cycle benefits can persist, but the incremental post-reopening profit bridge was still forward-looking.",
+    "disconfirmingEvidence": [
+      "长安 20d/60d relative price was already strongly positive.",
+      "Q1 CFO fell 89%.",
+      "May/June production recovery had not yet entered a quarterly profit report."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-shanghai-20220530",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tax-auto-20220531",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "miit-auto-20220610",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-auto-20220610",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "changan-q1-20220429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "changan-research-20220510",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "changan-calendar-20220610",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "saic-q1-20220430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "reopening/tax cut",
+      "to": "auto production and demand",
+      "mechanism": "Supply-chain normalization and lower purchase tax support output and retail demand.",
+      "evidenceRefs": [
+        "reuters-shanghai-20220530",
+        "tax-auto-20220531",
+        "miit-auto-20220610"
+      ],
+      "failureMode": "demand recovery proves temporary",
+      "lag": "weeks"
+    },
+    {
+      "from": "production/demand recovery",
+      "to": "长安 earnings",
+      "mechanism": "Higher utilization and new-model volume can lift core earnings if pricing/mix remain healthy.",
+      "evidenceRefs": [
+        "changan-q1-20220429",
+        "changan-research-20220510"
+      ],
+      "failureMode": "volume recovers without margin/cash conversion",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings recovery",
+      "to": "stock alpha",
+      "mechanism": "Low forward PE can support returns only if new stimulus earnings exceed what the prior rerating already discounts.",
+      "evidenceRefs": [
+        "regime-auto-20220610",
+        "changan-research-20220510"
+      ],
+      "failureMode": "good news is already priced",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "OEMs with production recovery and profitable new models"
+    ],
+    "secondOrderWinners": [
+      "components/dealers"
+    ],
+    "losers": [
+      "OEMs relying on discounts"
+    ],
+    "substitutes": [
+      "used cars/public transport"
+    ],
+    "bottlenecks": [
+      "components/logistics"
+    ],
+    "falseThemeMatches": [
+      "auto names with volume recovery but weak margins/cash"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000625.SZ",
+      "name": "长安汽车",
+      "verifiedExposure": "Q1 core profit improved strongly; May production normalization and new models provide direct reopening exposure.",
+      "evidenceRefs": [
+        "changan-q1-20220429",
+        "changan-research-20220510",
+        "changan-calendar-20220610"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1扣非 +215%; May recovery not yet in reported profit.",
+        "favorable": "production/new models convert to core profit.",
+        "adverse": "rerating outruns profit recovery."
+      },
+      "principalRisks": [
+        "expectation absorption",
+        "CFO weakness",
+        "execution"
+      ]
+    },
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "verifiedExposure": "Large Shanghai-linked OEM but Q1 revenue/profit/CFO weakened before reopening.",
+      "evidenceRefs": [
+        "saic-q1-20220430"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit -19.4%.",
+        "favorable": "Shanghai normalization boosts production.",
+        "adverse": "JV/legacy weakness persists."
+      },
+      "principalRisks": [
+        "weak core trend"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large Shanghai-linked listed OEM directly exposed to reopening and purchase-tax stimulus.",
+      "whySelectedCompanyShouldOutperform": "长安 had stronger Q1 core earnings and product-cycle momentum, while SAIC entered reopening with falling profit/cash flow.",
+      "evidenceRefs": [
+        "changan-q1-20220429",
+        "saic-q1-20220430"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000625.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600104.SH",
+        "selectedAdvantages": [
+          "much stronger Q1 core-profit growth",
+          "more visible new-model catalysts"
+        ],
+        "selectedDisadvantages": [
+          "长安 had already rerated far more strongly"
+        ],
+        "evidenceRefs": [
+          "changan-q1-20220429",
+          "changan-research-20220510",
+          "saic-q1-20220430",
+          "regime-auto-20220610"
+        ],
+        "switchCondition": "Prefer SAIC if its reopening earnings inflect while 长安's post-rerating core profit disappoints.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Company fundamentals favor 长安, but price absorption makes the stock-level asymmetry insufficient for High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The auto basket was favorable and 长安 had already outperformed CSI300 by ~28.0pp over 20d and ~45.8pp over 60d. Q1 core earnings were strong and research already anticipated recovery/new models.",
+    "thesisExpectation": "Tax relief and reopening sustain production recovery and core earnings.",
+    "measurableGap": "The operating opportunity is real, but there is no clean proof that the new policy/reopening earnings exceed the very large prior rerating.",
+    "evidenceRefs": [
+      "regime-auto-20220610",
+      "changan-q1-20220429",
+      "changan-research-20220510"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus incremental post-reopening earnings bridge.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "May10 report implied roughly 11x 2022E PE, but by Jun10 the stock had materially rerated.",
+    "thesisScenario": "Production normalization and tax stimulus lift H2 core earnings beyond the pre-rerating forecast.",
+    "breakevenCondition": "Post-reopening core-profit revisions must exceed what is already embedded after the 20d/60d rally.",
+    "ordinaryScenarioFailure": "Volumes recover as expected but earnings merely confirm the already-rerated narrative.",
+    "catalystOrTimingBridge": "June/July sales and H1 earnings can test conversion.",
+    "evidenceRefs": [
+      "changan-research-20220510",
+      "regime-auto-20220610"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Official May production/sales recovered sharply after lockdown.",
+      "evidenceRefs": [
+        "miit-auto-20220610"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Q1 core earnings were strong, but the incremental reopening/tax-cut bridge was not yet in reported earnings.",
+      "evidenceRefs": [
+        "changan-q1-20220429",
+        "changan-calendar-20220610"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "长安 entered reopening with stronger Q1 core profit than SAIC.",
+      "evidenceRefs": [
+        "changan-q1-20220429",
+        "saic-q1-20220430"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "May10 forecast predates some reopening/tax support.",
+      "evidenceRefs": [
+        "changan-research-20220510",
+        "tax-auto-20220531"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Frozen 20d/60d relative rerating.",
+      "evidenceRefs": [
+        "regime-auto-20220610"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen auto basket versus CSI300",
+      "lookback20Excess": 0.21495927973541687,
+      "lookback60Excess": 0.23103122111503027,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-auto-20220610"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Reopening and tax stimulus improved production/demand from a disrupted base.",
+      "evidenceRefs": [
+        "reuters-shanghai-20220530",
+        "tax-auto-20220531",
+        "miit-auto-20220610"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "长安 Q1 core profit was strong while SAIC remained weak; new stimulus earnings were not yet broad/realized.",
+      "evidenceRefs": [
+        "changan-q1-20220429",
+        "saic-q1-20220430"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Tax relief runs through year-end and supply normalization/product launches persist.",
+      "evidenceRefs": [
+        "tax-auto-20220531",
+        "changan-research-20220510"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "长安/长城 already had large 20d/60d relative gains by cutoff.",
+      "evidenceRefs": [
+        "regime-auto-20220610"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Sector recovery is favorable but stock-specific expectation absorption prevents High-priority."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000625.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Positive earnings and strong Q1扣非 growth clear the minimum quality floor despite CFO weakness.",
+      "evidenceRefs": [
+        "changan-q1-20220429"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Reopening/tax relief can lift H2 earnings, but the stock already rerated.",
+      "evidenceRefs": [
+        "tax-auto-20220531",
+        "miit-auto-20220610"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Pre-rerating forward PE was low-double-digit, though the cutoff price had risen materially.",
+      "evidenceRefs": [
+        "changan-research-20220510",
+        "regime-auto-20220610"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales and H1 reporting occur within base horizon.",
+      "evidenceRefs": [
+        "changan-calendar-20220610"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low absolute valuation helps but recent rerating raises sell-the-news risk.",
+      "evidenceRefs": [
+        "regime-auto-20220610",
+        "changan-research-20220510"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600104.SH",
+        "revisionAdvantage": "长安 has stronger current core earnings and product momentum.",
+        "valuationAdvantage": "Both can benefit from reopening, but 长安's prior rerating consumes more room.",
+        "qualityTradeoff": "长安 stronger Q1 core profit; SAIC weaker cash/profit.",
+        "catalystAdvantage": "长安 product launches add a company catalyst.",
+        "downsideTradeoff": "长安 has higher absorption risk after rally.",
+        "evidenceRefs": [
+          "changan-q1-20220429",
+          "saic-q1-20220430",
+          "regime-auto-20220610"
+        ],
+        "switchCondition": "Switch if SAIC post-reopening earnings inflect while 长安 core profit only meets expectations.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "May production/sales rebounded sharply after lockdown and tax relief began.",
+    "earningsMechanism": "Higher utilization and sales can raise revenue/core profit if mix and pricing remain stable.",
+    "nextObservableMetric": "June/July sales and H1 core profit/CFO",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "miit-auto-20220610",
+      "changan-q1-20220429"
+    ],
+    "failureCondition": "Volume recovery does not translate to H1/H2 core-profit and cash improvement."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: favorable sector recovery and reasonable valuation, but post-lockdown/tax earnings remain unreported and stock price has already rerated strongly.",
+    "alreadyPricedAssessment": "high absorption risk",
+    "constraints": [
+      "sustained_strength",
+      "new earnings bridge proxy-only"
+    ]
+  },
+  "bearCase": "The market correctly prices the reopening before profits arrive; subsequent data merely confirm consensus and the stock mean-reverts.",
+  "invalidationConditions": [
+    {
+      "indicator": "core profit/CFO",
+      "observationMethod": "H1 filing",
+      "threshold": "no improvement from reopening despite volume recovery"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "cutoff-date exact forward consensus after rally",
+    "incremental tax-stimulus margin impact"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research only; do not chase the reopening headline."
+  ]
+}
