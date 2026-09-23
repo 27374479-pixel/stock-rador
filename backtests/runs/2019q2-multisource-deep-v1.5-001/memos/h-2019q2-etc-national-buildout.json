@@ -1,0 +1,622 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "researchReadyAt": "2019-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q2-etc-national-buildout",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The national ETC buildout has a hard 2019 deadline and should convert into June-Q3 orders quickly; 60d tests whether the remaining expectation gap survived the large pre-cutoff rerating."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002869.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Direct ETC leader with Q1 profit growth and a cutoff-valid June forecast for large 2019 earnings, but the stock had already delivered +84.7pp 60d excess and the company had not yet issued the July H1 guidance upgrade.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "jinyi-q1-20190426",
+        "jinyi-research-20190612",
+        "regime-etc-20190630"
+      ]
+    },
+    {
+      "ticker": "300552.SZ",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "mixed",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Direct ETC exposure and Q1 revenue +56%, but the company remained loss-making at cutoff and had also rerated sharply.",
+      "evidenceRefs": [
+        "wanji-q1-20190427",
+        "wanji-research-20190415",
+        "regime-etc-20190630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "A hard national deadline made ETC procurement a measurable finite capex cycle. Cutoff-valid research expected a large earnings jump, but direct suppliers had already rerated dramatically before first-party H1 confirmation.",
+    "firstCredibleDate": "2019-05-22",
+    "valueChain": [
+      "national deadline",
+      "OBU/RSU procurement",
+      "supplier shipments",
+      "Q2/Q3 earnings"
+    ],
+    "persistenceReason": "The order cycle should persist through 2019 implementation, but hardware demand is explicitly finite.",
+    "disconfirmingEvidence": [
+      "JinYi had +84.7pp 60d benchmark excess and Wanji +50.7pp.",
+      "JinYi's cutoff-valid April H1 profit guidance was only RMB8-13m.",
+      "The much larger H1 guidance upgrade occurred after cutoff and cannot be used."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "statecouncil-etc-20190522",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "mot-etc-20190627",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "jinyi-q1-20190426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "jinyi-research-20190612",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "jinyi-h1-forecast-20190426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "wanji-q1-20190427",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "wanji-research-20190415",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-etc-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "national ETC deadline",
+      "to": "OBU/RSU procurement",
+      "mechanism": "October/year-end implementation deadlines require rapid hardware/system procurement.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ],
+      "failureMode": "orders are already fully booked/priced or rollout is delayed",
+      "lag": "weeks"
+    },
+    {
+      "from": "procurement",
+      "to": "supplier earnings",
+      "mechanism": "Higher shipments and utilization can produce large Q2/Q3 earnings leverage.",
+      "evidenceRefs": [
+        "jinyi-research-20190612",
+        "wanji-research-20190415"
+      ],
+      "failureMode": "price competition/costs or already-priced expectations absorb the benefit",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "OBU/RSU suppliers"
+    ],
+    "secondOrderWinners": [
+      "toll-system integrators",
+      "road communications"
+    ],
+    "losers": [
+      "manual toll infrastructure"
+    ],
+    "substitutes": [
+      "competing ETC suppliers"
+    ],
+    "bottlenecks": [
+      "production capacity",
+      "installation pace"
+    ],
+    "falseThemeMatches": [
+      "smart-transport names without ETC order earnings"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002869.SZ",
+      "name": "金溢科技",
+      "verifiedExposure": "ETC equipment >95% of revenue per cutoff research.",
+      "evidenceRefs": [
+        "jinyi-q1-20190426",
+        "jinyi-research-20190612"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit +35.9%; cutoff H1 company guidance only RMB8-13m; June research forecast much larger full-year earnings.",
+        "favorable": "June-July orders validate the high full-year forecast.",
+        "adverse": "The huge rerating already prices the order wave or the forecast is too optimistic."
+      },
+      "principalRisks": [
+        "extreme pre-cutoff rerating",
+        "finite demand"
+      ]
+    },
+    {
+      "ticker": "300552.SZ",
+      "name": "万集科技",
+      "verifiedExposure": "Direct ETC/OBU/RSU supplier.",
+      "evidenceRefs": [
+        "wanji-q1-20190427",
+        "wanji-research-20190415"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +56% but still loss-making.",
+        "favorable": "Policy orders create operating leverage.",
+        "adverse": "Losses/competition persist despite revenue growth."
+      },
+      "principalRisks": [
+        "loss-making at cutoff",
+        "finite cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002373.SZ",
+      "name": "千方科技",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Broader intelligent-transport integrator exposed to the same policy cycle.",
+      "whySelectedCompanyShouldOutperform": "Direct ETC suppliers have higher order torque, but Qianfang has broader/recurring business and much lower prior rerating.",
+      "evidenceRefs": [
+        "regime-etc-20190630"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002869.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002373.SZ",
+        "selectedAdvantages": [
+          "much more direct OBU/RSU exposure",
+          "cutoff research quantified very high 2019 earnings torque"
+        ],
+        "selectedDisadvantages": [
+          "far higher expectation absorption and shorter hardware duration"
+        ],
+        "evidenceRefs": [
+          "jinyi-research-20190612",
+          "regime-etc-20190630"
+        ],
+        "switchCondition": "Prefer Qianfang if recurring business and valuation offer a better risk-adjusted path as direct ETC expectations saturate.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The opportunity is real and near-term, but cutoff expectation absorption is too high and first-party earnings confirmation too weak for V1.5 base-horizon promotion."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "ETC basket had +42.45pp 60d excess; JinYi +84.72pp and Wanji +50.71pp. June 12 research already forecast JinYi 2019 profit +733%, while first-party H1 guidance still remained much lower.",
+    "thesisExpectation": "Orders can accelerate sharply through Q3, but a clear remaining expectation gap must be demonstrated after the large rerating.",
+    "measurableGap": "The physical/order bridge is credible; the unpriced portion is not clear enough at June 30.",
+    "evidenceRefs": [
+      "regime-etc-20190630",
+      "jinyi-research-20190612",
+      "jinyi-h1-forecast-20190426"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cutoff-valid order/earnings forecasts versus extreme relative-price absorption and company guidance.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "June report forecast JinYi EPS 1.53 and PE 18.9x at June 12 price, but by month-end the stock had rerated further; company H1 guidance still only RMB8-13m.",
+    "thesisScenario": "June-July order acceleration produces earnings materially above the cutoff-valid company guidance and remains under-reflected after the price surge.",
+    "breakevenCondition": "A material first-party earnings/order upgrade must arrive before the market fully discounts the finite 2019 installation wave.",
+    "ordinaryScenarioFailure": "The order boom occurs but merely validates already aggressive analyst forecasts after an extreme rerating.",
+    "catalystOrTimingBridge": "Q2/H1 order and earnings updates are within 20-60d.",
+    "evidenceRefs": [
+      "regime-etc-20190630",
+      "jinyi-research-20190612",
+      "jinyi-h1-forecast-20190426"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "The national deadline and implementation timetable are explicit.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "JinYi Q1 was profitable and analyst forecasts were strong, but first-party H1 guidance remained modest; Wanji was still loss-making.",
+      "evidenceRefs": [
+        "jinyi-q1-20190426",
+        "jinyi-h1-forecast-20190426",
+        "wanji-q1-20190427"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Direct ETC suppliers strongly outperformed before cutoff.",
+      "evidenceRefs": [
+        "regime-etc-20190630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "June research quantified an aggressive full-year earnings path while company guidance remained lower.",
+      "evidenceRefs": [
+        "jinyi-research-20190612",
+        "jinyi-h1-forecast-20190426"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Direct suppliers already had extraordinary 60d excess returns.",
+      "evidenceRefs": [
+        "regime-etc-20190630"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.08338613932684291,
+      "lookback60Excess": 0.4245497387239556,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-etc-20190630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "National implementation deadlines imply rapid order issuance.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Analyst forecasts are strongly positive, but first-party earnings confirmation is not yet broad.",
+      "evidenceRefs": [
+        "jinyi-research-20190612",
+        "jinyi-h1-forecast-20190426",
+        "wanji-q1-20190427"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "short_lived",
+      "rationale": "The dominant hardware buildout has explicit 2019 deadlines.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Direct supplier equities had already rerated dramatically.",
+      "evidenceRefs": [
+        "regime-etc-20190630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical/catalyst timing is strong, but expectation absorption and incomplete cutoff earnings confirmation block Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002869.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "JinYi was profitable and had direct ETC economics.",
+      "evidenceRefs": [
+        "jinyi-q1-20190426"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Cutoff research indicates substantial full-year earnings leverage.",
+      "evidenceRefs": [
+        "jinyi-research-20190612"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Extreme rerating leaves limited evidence of residual slack.",
+      "evidenceRefs": [
+        "regime-etc-20190630",
+        "jinyi-research-20190612"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1/Q3 orders and results are near-term.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Hard policy demand helps near-term but finite duration and high absorption create downside.",
+      "evidenceRefs": [
+        "regime-etc-20190630",
+        "statecouncil-etc-20190522"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002373.SZ",
+        "revisionAdvantage": "Direct suppliers have much higher policy-order torque.",
+        "valuationAdvantage": "Qianfang has far less price absorption; no clear direct-supplier valuation advantage.",
+        "qualityTradeoff": "JinYi is profitable and focused; Qianfang is more diversified.",
+        "catalystAdvantage": "Direct OBU/RSU shipments convert faster.",
+        "downsideTradeoff": "Qianfang has lower finite-cycle concentration.",
+        "switchCondition": "Switch if the remaining direct-supplier expectation gap cannot be independently verified.",
+        "evidenceRefs": [
+          "jinyi-q1-20190426",
+          "jinyi-research-20190612",
+          "regime-etc-20190630"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "order_backlog",
+    "driverChange": "National policy forces rapid ETC hardware/system procurement.",
+    "earningsMechanism": "Higher OBU/RSU shipments and utilization increase revenue/profit.",
+    "nextObservableMetric": "H1/Q3 company orders, revenue and profit guidance",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "statecouncil-etc-20190522",
+      "jinyi-research-20190612"
+    ],
+    "failureCondition": "No material company-level order/earnings confirmation arrives after the policy-driven rerating."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q1 JinYi profit +35.9%; Wanji still loss-making.",
+      "nextPeriod": "Analyst forecast assumes a very large 2019 earnings jump; company H1 guidance remained modest.",
+      "laterPeriod": "Hardware demand should normalize after the 2019 deployment deadline.",
+      "rationale": "Cutoff contains both aggressive analyst expectations and much more conservative company guidance.",
+      "evidenceRefs": [
+        "jinyi-q1-20190426",
+        "jinyi-research-20190612",
+        "jinyi-h1-forecast-20190426",
+        "wanji-q1-20190427"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "June-July orders can produce a large Q2 earnings acceleration.",
+      "nextPeriodChange": "Q3 remains supported by the installation deadline.",
+      "laterPeriodChange": "No long-duration hardware boom is assumed after rollout.",
+      "mechanism": "A valid short-horizon opportunity requires new first-party evidence to outrun the already-large rerating.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The operating mechanism is strong but the remaining unpriced earnings gap is not proven at cutoff.",
+      "evidenceRefs": [
+        "jinyi-research-20190612",
+        "regime-etc-20190630"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The deadline creates a known post-buildout normalization risk.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522"
+      ]
+    },
+    "falsifier": "No first-party order/earnings upgrade arrives before rollout expectations peak.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "2019 ETC OBU/RSU and toll-system buildout",
+    "geographicScope": "China nationwide implementation",
+    "customerScope": "provincial toll operators/ETC issuers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The direct equipment suppliers share one finite mandated procurement cycle; recurring post-rollout V2X is excluded.",
+    "evidenceRefs": [
+      "statecouncil-etc-20190522",
+      "mot-etc-20190627",
+      "jinyi-research-20190612"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "hard implementation deadline and expected June-July orders",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "jinyi-research-20190612"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "Q2/Q3 order-to-earnings conversion",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "jinyi-research-20190612"
+      ]
+    },
+    "structural": {
+      "direction": "negative",
+      "driver": "hardware demand normalizes after nationwide rollout",
+      "horizon": "after 2019 deployment",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Preserve the near/base catalyst separately from the structural expiry, but require a demonstrable residual expectation gap before using the V1.5 route.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Direct supplier stocks and cutoff research were strong, but first-party H1 confirmation had not yet caught up.",
+    "evidenceRefs": [
+      "jinyi-q1-20190426",
+      "jinyi-h1-forecast-20190426",
+      "regime-etc-20190630"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "extreme",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "The May/June implementation timetable is new and specific.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "JinYi Q1 was profitable, but the large post-policy earnings surge was not yet first-party confirmed; Wanji remained loss-making.",
+      "evidenceRefs": [
+        "jinyi-q1-20190426",
+        "jinyi-h1-forecast-20190426",
+        "wanji-q1-20190427"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "June research forecast large earnings growth, but it was already visible to the market.",
+      "evidenceRefs": [
+        "jinyi-research-20190612"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Catalyst is near-term but hardware demand is finite.",
+      "evidenceRefs": [
+        "statecouncil-etc-20190522"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No new first-party order/earnings evidence appears after the large rerating.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002869.SZ",
+    "purestTicker": "002869.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Directness is offset by extreme expectation absorption; purity alone does not justify promotion.",
+    "earningsQualityComparison": "JinYi is profitable while Wanji remains loss-making; Qianfang is more diversified.",
+    "downsideComparison": "Finite-cycle concentration and prior rerating weigh heavily against the purest expression.",
+    "evidenceRefs": [
+      "jinyi-q1-20190426",
+      "wanji-q1-20190427",
+      "regime-etc-20190630"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: exceptional policy/order convexity, but extreme pre-cutoff rerating and insufficient first-party incremental confirmation prevent the new V1.5 route.",
+    "alreadyPricedAssessment": "extreme_absorption_without_clear_residual_gap",
+    "constraints": [
+      "+84.7pp 60d excess in preferred expression",
+      "finite 2019 hardware cycle",
+      "cutoff company guidance still modest"
+    ]
+  },
+  "bearCase": "The policy boom is real but already heavily discounted; first-party earnings catch up only after the stock has priced the finite cycle.",
+  "invalidationConditions": [
+    {
+      "indicator": "company order/earnings update",
+      "observationMethod": "company guidance/filings",
+      "threshold": "no material upgrade before the deadline"
+    },
+    {
+      "indicator": "remaining valuation gap",
+      "observationMethod": "cutoff-valid forecast vs price",
+      "threshold": "no credible residual upside after rerating"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Research only. Explicitly do not use base_horizon_convexity without a clear cutoff expectation gap."
+  ]
+}
