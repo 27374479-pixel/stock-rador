@@ -1,0 +1,457 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "researchReadyAt": "2020-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q2-construction-machinery",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Replacement/infrastructure demand should appear in H1/Q3 machinery earnings over 60d, but the adverse pre-cutoff price regime prevents Primary status."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600031.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Direct excavator/construction machinery leader with low forward valuation and a quantified multi-year earnings path, but Q1 earnings and price regime had not yet confirmed the turn.",
+      "evidenceRefs": [
+        "sany-q1-20200429",
+        "sany-research-20200623",
+        "regime-construction-20200630"
+      ]
+    },
+    {
+      "ticker": "000157.SZ",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Direct machinery exposure, positive Q1 profit and low forward PE provide a second acceptable expression; exact peer-best ranking is intentionally not required.",
+      "evidenceRefs": [
+        "zoomlion-q1-20200430",
+        "machinery-strategy-20200624",
+        "regime-construction-20200630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Infrastructure/replacement demand and industry research supported a multi-quarter construction-machinery recovery. Sany and Zoomlion had low forward valuations and quantified earnings paths, but the frozen equity basket was still materially adverse relative to CSI300.",
+    "firstCredibleDate": "2020-06-23",
+    "valueChain": [
+      "infrastructure/replacement demand",
+      "machinery utilization/sales",
+      "manufacturer revenue/margins",
+      "earnings"
+    ],
+    "persistenceReason": "Replacement cycle, market-share concentration and infrastructure activity can persist across multiple reporting periods.",
+    "disconfirmingEvidence": [
+      "Both frozen machinery names underperformed CSI300 over 20d and 60d.",
+      "Sany Q1 earnings were still sharply down.",
+      "The recovery forecast could already assume a large post-lockdown normalization."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-industrial-profits-20200629",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-ironore-20200618",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sany-q1-20200429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zoomlion-q1-20200430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sany-research-20200623",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "machinery-strategy-20200624",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-construction-20200630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "infrastructure/replacement demand",
+      "to": "machinery sales and utilization",
+      "mechanism": "Construction activity and replacement demand lift excavator/crane sales.",
+      "evidenceRefs": [
+        "reuters-ironore-20200618",
+        "sany-research-20200623"
+      ],
+      "failureMode": "stimulus demand fades",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "sales/utilization",
+      "to": "manufacturer earnings",
+      "mechanism": "Higher volumes and concentration improve operating leverage and profit.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "zoomlion-q1-20200430"
+      ],
+      "failureMode": "price competition or Q1 weakness persists",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "construction machinery OEMs"
+    ],
+    "secondOrderWinners": [
+      "components and hydraulics"
+    ],
+    "losers": [
+      "weak legacy capacity"
+    ],
+    "substitutes": [
+      "used equipment"
+    ],
+    "bottlenecks": [
+      "replacement demand and credit"
+    ],
+    "falseThemeMatches": [
+      "broad industrial names without machinery sales exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600031.SH",
+      "name": "三一重工",
+      "verifiedExposure": "Leading construction machinery OEM with quantified recovery forecasts.",
+      "evidenceRefs": [
+        "sany-q1-20200429",
+        "sany-research-20200623"
+      ],
+      "earningsSensitivity": {
+        "base": "2020/21/22 profit 14.43/16.62/17.66bn.",
+        "favorable": "Share gains and replacement demand lift earnings above forecast.",
+        "adverse": "Infrastructure demand fades or margin leverage disappoints."
+      },
+      "principalRisks": [
+        "adverse price regime",
+        "Q1 weakness"
+      ]
+    },
+    {
+      "ticker": "000157.SZ",
+      "name": "中联重科",
+      "verifiedExposure": "Direct machinery/crane/concrete equipment exposure with positive Q1 profit.",
+      "evidenceRefs": [
+        "zoomlion-q1-20200430",
+        "machinery-strategy-20200624"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E/21E EPS 0.72/0.84 at low PE.",
+        "favorable": "Recovery and market share lift profit.",
+        "adverse": "Recovery stalls."
+      },
+      "principalRisks": [
+        "cyclical demand"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "Research-level opportunity freezes two acceptable expressions rather than claiming exact peer ranking; no additional comparable control with equally strong frozen evidence is forced.",
+  "selectionComparison": {
+    "selectedTicker": "600031.SH",
+    "pairwise": [],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Both direct expressions are acceptable; Sany is preferred for the clearer quantified operating-leverage thesis, not because it must outperform Zoomlion."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Forecasts already expected Sany +28.8% 2020 profit and low-teens/low-double-digit PE, while both stocks still lagged CSI300 over 20d and 60d.",
+    "thesisExpectation": "If replacement and infrastructure demand persist, earnings can exceed the conservative outer-year path and the adverse price regime may reverse.",
+    "measurableGap": "Fundamentals/valuation look more constructive than price confirmation, so this remains Research rather than Primary.",
+    "evidenceRefs": [
+      "sany-research-20200623",
+      "machinery-strategy-20200624",
+      "regime-construction-20200630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward earnings and normalized machinery-cycle PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Sany 2020/21/22 profit +28.8%/+15.2%/+6.2% at ~10.9x/9.4x/8.9x PE; Zoomlion similarly low PE.",
+    "thesisScenario": "Demand persistence/share gains lift earnings above the frozen baseline and relative price begins to confirm.",
+    "breakevenCondition": "Recovery must produce earnings revisions rather than just meet already-positive forecasts.",
+    "ordinaryScenarioFailure": "Industry rebound is temporary and stocks remain value traps despite low multiples.",
+    "catalystOrTimingBridge": "H1/Q3 results and monthly machinery demand can test the thesis.",
+    "evidenceRefs": [
+      "sany-research-20200623",
+      "machinery-strategy-20200624",
+      "regime-construction-20200630"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Industrial profits and infrastructure-linked demand were improving by late Q2.",
+      "evidenceRefs": [
+        "nbs-industrial-profits-20200629",
+        "reuters-ironore-20200618"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Zoomlion stayed profitable but Sany Q1 earnings were still sharply down; the full rebound had not been reported.",
+      "evidenceRefs": [
+        "sany-q1-20200429",
+        "zoomlion-q1-20200430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "insufficient",
+      "rationale": "The price basket was adverse with zero positive relative breadth.",
+      "evidenceRefs": [
+        "regime-construction-20200630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Late-June forecasts explicitly quantified a positive but slowing multi-year earnings path.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "machinery-strategy-20200624"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Both names lagged CSI300 over 20d and 60d, so price absorption is low rather than high.",
+      "evidenceRefs": [
+        "regime-construction-20200630"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": -0.06221564081415365,
+      "lookback60Excess": -0.0727917102120057,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-construction-20200630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Post-lockdown industrial/infrastructure activity and machinery forecasts point to accelerating recovery.",
+      "evidenceRefs": [
+        "nbs-industrial-profits-20200629",
+        "sany-research-20200623"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both Sany and Zoomlion carried positive forward earnings paths in late-June research.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "machinery-strategy-20200624"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Replacement and infrastructure demand can persist through multiple quarters.",
+      "evidenceRefs": [
+        "sany-research-20200623"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "Stocks had not rerated relative to CSI300 despite improving expectations.",
+      "evidenceRefs": [
+        "regime-construction-20200630"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Fundamentals and valuation are constructive, but V1.3 correctly refuses Primary status while the broad pre-cutoff equity regime remains adverse."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600031.SH",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "Sany Q1 was weak, while Zoomlion remained profitable; recovery quality was not uniformly realized.",
+      "evidenceRefs": [
+        "sany-q1-20200429",
+        "zoomlion-q1-20200430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Late-June research quantified strong 2020 recovery and continued 2021 growth.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "machinery-strategy-20200624"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Forward PE was around high single digits to low double digits.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "machinery-strategy-20200624"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1/Q3 earnings and machinery sales are near-term tests.",
+      "evidenceRefs": [
+        "sany-research-20200623"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low valuation and profitable leaders provide some containment, though a cyclical slowdown can still hurt.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "zoomlion-q1-20200430"
+      ]
+    },
+    "pairwise": [],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Infrastructure/replacement demand was expected to lift construction-machinery volumes after Q1 disruption.",
+    "earningsMechanism": "Higher machinery volumes and market share improve manufacturer revenue and operating leverage.",
+    "nextObservableMetric": "H1/Q3 machinery sales, revenue and profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "sany-research-20200623",
+      "machinery-strategy-20200624"
+    ],
+    "failureCondition": "H1/Q3 earnings fail to accelerate despite the demand recovery."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Sany Q1 profit -31.9%, Zoomlion Q1 roughly flat-positive.",
+      "nextPeriod": "2020 forecasts embed strong recovery, especially Sany +28.8% profit.",
+      "laterPeriod": "2021-22 growth slows materially in the published path.",
+      "rationale": "Late-June forecasts already assume a recovery but not indefinite acceleration.",
+      "evidenceRefs": [
+        "sany-q1-20200429",
+        "zoomlion-q1-20200430",
+        "sany-research-20200623"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q2/H1 demand can reverse the Q1 earnings weakness.",
+      "nextPeriodChange": "2020 results can exceed the recovery baseline if replacement/share gains persist.",
+      "laterPeriodChange": "Outer-year growth can stay above the slowing baseline if concentration and replacement demand last.",
+      "mechanism": "The gap is duration and conversion of the post-lockdown recovery, not simply low PE.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "machinery-strategy-20200624"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "The post-Q1 demand recovery can improve the path beyond already-positive forecasts.",
+      "evidenceRefs": [
+        "sany-research-20200623"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Cyclical normalization is real, but low valuation reduces long-duration burden.",
+      "evidenceRefs": [
+        "sany-research-20200623",
+        "machinery-strategy-20200624"
+      ]
+    },
+    "falsifier": "H1/Q3 earnings do not improve materially and relative price remains adverse despite strong industry demand.",
+    "overallConclusion": "credible_path_room"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research: low valuation and earnings bridge are attractive, but V1.3 timing gate blocks Primary while the basket remains adverse.",
+    "alreadyPricedAssessment": "not_absorbed_but_not_confirmed",
+    "constraints": [
+      "adverse relative-price regime",
+      "Q1 earnings not yet fully recovered"
+    ]
+  },
+  "bearCase": "Low valuation reflects a temporary stimulus/replacement peak; earnings recovery fades before equity confirmation appears.",
+  "invalidationConditions": [
+    {
+      "indicator": "machinery earnings",
+      "observationMethod": "H1/Q3 results",
+      "threshold": "no material sequential/YoY recovery"
+    },
+    {
+      "indicator": "relative price regime",
+      "observationMethod": "20/60d basket excess",
+      "threshold": "remains adverse as fundamentals mature"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze both Sany and Zoomlion as Research expressions; do not upgrade until company earnings and/or price regime confirm."
+  ]
+}
