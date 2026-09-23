@@ -25,10 +25,10 @@ jobs:
       - run: npm test
       - name: Freeze v1.3 2020Q4 pre-cutoff regimes
         run: |
-          node scripts/fetch-precutoff-regime.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/shipping-20201210.json backtests/runs/2020q4-multisource-v1.3-001/regime/shipping-20201210.snapshot.json
-          node scripts/fetch-precutoff-regime.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/nev-20201214.json backtests/runs/2020q4-multisource-v1.3-001/regime/nev-20201214.snapshot.json
-          node scripts/fetch-precutoff-regime.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201231.json backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201231.snapshot.json
-          node scripts/fetch-precutoff-regime.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/dram-20201125.json backtests/runs/2020q4-multisource-v1.3-001/regime/dram-20201125.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/shipping-20201210.json backtests/runs/2020q4-multisource-v1.3-001/regime/shipping-20201210.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/nev-20201214.json backtests/runs/2020q4-multisource-v1.3-001/regime/nev-20201214.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201231.json backtests/runs/2020q4-multisource-v1.3-001/regime/metals-20201231.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q4-multisource-v1.3-001/regime/dram-20201125.json backtests/runs/2020q4-multisource-v1.3-001/regime/dram-20201125.snapshot.json
       - name: Commit regime snapshots
         run: |
           git config user.name "github-actions[bot]"
@@ -37,3 +37,5 @@ jobs:
           git commit -m "backtest: freeze v1.3 2020Q4 pre-cutoff regimes"
           git pull --rebase origin ai-skill-v1.3-20260923
           git push origin HEAD:ai-skill-v1.3-20260923
+
+# retry-with-hfq-history-adjustment
