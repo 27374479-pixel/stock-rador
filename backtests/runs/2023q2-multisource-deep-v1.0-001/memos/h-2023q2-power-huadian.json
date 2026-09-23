@@ -1,0 +1,598 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.0.0",
+  "cutoffAt": "2023-06-29T15:30:00+08:00",
+  "researchReadyAt": "2023-06-29T14:30:00+08:00",
+  "actionableAt": "2023-06-29T14:30:00+08:00",
+  "hypothesisId": "h-2023q2-power-huadian",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Coal-cost relief and electricity/heat pricing should continue to appear in one to two reporting cycles if the margin-recovery engine persists."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "company_engine_override",
+  "changeHypothesis": {
+    "summary": "Thermal-coal prices fell sharply while official industrial-profit data showed power-sector profits recovering. 华电国际 had already converted this cost/price spread into Q1 attributable profit +82.3% and扣非 +113.1%. Its frozen 2023E PE was about 12.2x: below 华能's peer reference while only modestly above 国电, whose Q1 profit still declined.",
+    "firstCredibleDate": "2023-04-29",
+    "valueChain": [
+      "thermal-coal price",
+      "fuel cost",
+      "electricity/heat realized price",
+      "thermal-power gross margin",
+      "attributable profit"
+    ],
+    "persistenceReason": "Coal prices continued falling into June and sector-level power profits were already rising, supporting a multi-quarter normalization rather than a one-day accounting event.",
+    "disconfirmingEvidence": [
+      "The power basket had already strongly outperformed over 60d before a sharp 20d pullback.",
+      "国电电力 carried a slightly lower frozen PE.",
+      "Power demand and regulated/market electricity pricing remain macro/policy sensitive."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-coal-20230614",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "nbs-industrial-profits-20230629",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-power-20230629",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "huadian-q1-20230429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "huadian-research-20230509",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "huaneng-q1-20230426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "huaneng-valuation-202305",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "gd-power-q1-20230428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "gd-power-research-20230505",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "lower thermal-coal price",
+      "to": "fuel-cost relief",
+      "mechanism": "Coal is a major variable cost for coal-fired generation; falling market/contract fuel cost lowers unit generation cost.",
+      "evidenceRefs": [
+        "nbs-coal-20230614",
+        "huadian-q1-20230429"
+      ],
+      "failureMode": "coal rebounds or contracted fuel cost does not follow spot/market decline",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "fuel-cost relief plus electricity/heat price",
+      "to": "华电 profit",
+      "mechanism": "The company explicitly reported Q1 profit improvement from lower coal and higher electricity/heat prices.",
+      "evidenceRefs": [
+        "huadian-q1-20230429"
+      ],
+      "failureMode": "electricity price/mix weakens or volume falls enough to offset fuel savings",
+      "lag": "already realized and continuing quarterly"
+    },
+    {
+      "from": "realized margin recovery",
+      "to": "selection alpha",
+      "mechanism": "A roughly 12.2x frozen 2023E PE leaves room for further earnings normalization without requiring a premium rerating.",
+      "evidenceRefs": [
+        "huadian-research-20230509",
+        "regime-power-20230629"
+      ],
+      "failureMode": "Q1 was the peak of the recovery or a cheaper peer converts faster",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "coal-fired generators with high fuel-cost sensitivity and stable realized power pricing"
+    ],
+    "secondOrderWinners": [
+      "integrated utilities with thermal margin recovery"
+    ],
+    "losers": [
+      "thermal-coal producers if coal prices keep falling"
+    ],
+    "substitutes": [
+      "hydro/nuclear/renewables"
+    ],
+    "bottlenecks": [
+      "fuel procurement, power demand, tariff/market pricing"
+    ],
+    "falseThemeMatches": [
+      "utilities whose earnings are dominated by non-thermal assets or one-off investment gains"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600027.SH",
+      "name": "华电国际",
+      "verifiedExposure": "Large coal-power platform; Q1 profit/扣非 already accelerated and management explicitly attributed the improvement to lower coal and higher electricity/heat prices.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "huadian-research-20230509"
+      ],
+      "earningsSensitivity": {
+        "base": "2023E EPS RMB0.52 and ~12.2x PE on frozen May5 reference.",
+        "favorable": "continued coal-price decline expands thermal margin further.",
+        "adverse": "coal rebounds, power price/mix weakens, or demand disappoints."
+      },
+      "principalRisks": [
+        "coal price reversal",
+        "power demand",
+        "tariff competition"
+      ]
+    },
+    {
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "verifiedExposure": "Q1 profit turned from loss to RMB2.25bn with the same lower-coal/higher-power-price mechanism.",
+      "evidenceRefs": [
+        "huaneng-q1-20230426"
+      ],
+      "earningsSensitivity": {
+        "base": "Very strong turnaround but a higher frozen peer PE reference.",
+        "favorable": "continued fuel-cost normalization sustains profit recovery.",
+        "adverse": "high coal sensitivity and recent rerating compress payoff."
+      },
+      "principalRisks": [
+        "higher valuation",
+        "fuel sensitivity",
+        "prior rerating"
+      ]
+    },
+    {
+      "ticker": "600795.SH",
+      "name": "国电电力",
+      "verifiedExposure": "Large diversified generator with coal-power exposure; Q1 attributable profit still fell 7.0% even though analysts expected later coal-cost improvement.",
+      "evidenceRefs": [
+        "gd-power-q1-20230428",
+        "gd-power-research-20230505"
+      ],
+      "earningsSensitivity": {
+        "base": "2023E PE ~10.3x but Q1 profit conversion lagged peers.",
+        "favorable": "coal-cost decline plus renewables lifts later earnings.",
+        "adverse": "investment income/operating conversion remains weak."
+      },
+      "principalRisks": [
+        "weaker current conversion",
+        "hydro/new-energy mix",
+        "execution"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct large thermal-power peer benefiting from the same coal-price/electricity-price spread.",
+      "whySelectedCompanyShouldOutperform": "华电 combined realized Q1 profit acceleration with a lower frozen forward-PE burden, while 华能 had a larger absolute turnaround but a higher peer valuation reference.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "huadian-research-20230509",
+        "huaneng-q1-20230426",
+        "huaneng-valuation-202305"
+      ]
+    },
+    {
+      "ticker": "600795.SH",
+      "name": "国电电力",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large thermal/new-energy peer exposed to falling coal costs.",
+      "whySelectedCompanyShouldOutperform": "国电 was cheaper but Q1 attributable profit still declined and was described as slightly below expectations; 华电's coal-to-profit bridge was already realized.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "gd-power-q1-20230428",
+        "gd-power-research-20230505"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600027.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600011.SH",
+        "selectedAdvantages": [
+          "Q1 revenue +11% with profit +82%",
+          "lower frozen forward PE than 华能 peer reference",
+          "direct lower-coal/higher-price earnings attribution"
+        ],
+        "selectedDisadvantages": [
+          "华能's Q1 absolute profit turnaround was larger"
+        ],
+        "evidenceRefs": [
+          "huadian-q1-20230429",
+          "huadian-research-20230509",
+          "huaneng-q1-20230426",
+          "huaneng-valuation-202305"
+        ],
+        "switchCondition": "Prefer 华能 if its subsequent thermal margin revisions materially exceed 华电 while the valuation premium closes.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "600795.SH",
+        "selectedAdvantages": [
+          "realized Q1 profit +82% versus 国电 -7%",
+          "direct cost-spread conversion already visible",
+          "stronger near-term revision evidence"
+        ],
+        "selectedDisadvantages": [
+          "国电 had a lower ~10.3x 2023E PE and larger later-recovery potential"
+        ],
+        "evidenceRefs": [
+          "huadian-q1-20230429",
+          "huadian-research-20230509",
+          "gd-power-q1-20230428",
+          "gd-power-research-20230505"
+        ],
+        "switchCondition": "Prefer 国电 if coal-cost decline starts producing faster realized profit growth while its valuation discount persists.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "华电 offers the cleanest combination of already-realized thermal margin recovery and still-moderate valuation; 华能 is more expensive and 国电's cheaper valuation lacks equally strong current conversion."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The sector had outperformed strongly over 60d but corrected over the latest 20d. 华电's May5 frozen reference was ~12.2x 2023E PE despite Q1 attributable profit +82% and扣非 +113%.",
+    "thesisExpectation": "June coal-cost declines extend the already-realized Q1 margin recovery into H1/Q3 without requiring multiple expansion.",
+    "measurableGap": "The company engine is stronger than the latest 20d price action, while valuation remains moderate relative to realized earnings recovery.",
+    "evidenceRefs": [
+      "regime-power-20230629",
+      "huadian-q1-20230429",
+      "huadian-research-20230509",
+      "nbs-coal-20230614"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus realized coal-cost-to-profit conversion versus thermal-power peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2023E EPS RMB0.52 at roughly 12.2x PE; Q1 attributable profit already +82.3%.",
+    "thesisScenario": "Further coal-cost decline sustains thermal-margin improvement through H1/Q3 while electricity/heat pricing remains supportive.",
+    "breakevenCondition": "The already-realized margin recovery must persist; no premium multiple expansion is required.",
+    "ordinaryScenarioFailure": "Coal rebounds or electricity demand/price weakens so Q1 proves the high point of the recovery.",
+    "catalystOrTimingBridge": "H1 results and subsequent coal-cost disclosures are inside the 60d base horizon.",
+    "evidenceRefs": [
+      "huadian-research-20230509",
+      "huadian-q1-20230429",
+      "nbs-coal-20230614"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official coal prices fell sharply in June while power-sector profits diverged positively from broad industry.",
+      "evidenceRefs": [
+        "nbs-coal-20230614",
+        "nbs-industrial-profits-20230629"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "华电 Q1 attributable profit +82.3% and扣非 +113.1%, explicitly linked to lower coal/higher electricity and heat prices.",
+      "evidenceRefs": [
+        "huadian-q1-20230429"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "华能 also recovered but at a higher valuation reference; 国电 Q1 profit still declined despite being cheaper.",
+      "evidenceRefs": [
+        "huaneng-q1-20230426",
+        "huaneng-valuation-202305",
+        "gd-power-q1-20230428",
+        "gd-power-research-20230505"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The frozen May forecast preceded the additional sharp June coal-price decline and later official sector-profit evidence.",
+      "evidenceRefs": [
+        "huadian-research-20230509",
+        "nbs-coal-20230614",
+        "nbs-industrial-profits-20230629"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use frozen 20/60d sector and selected-company relative returns plus forward PE.",
+      "evidenceRefs": [
+        "regime-power-20230629",
+        "huadian-research-20230509"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen thermal-power basket versus CSI300",
+      "lookback20Excess": -0.08365285828566833,
+      "lookback60Excess": 0.1688737397683692,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-power-20230629"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Coal prices fell sharply into June while sector profits were already recovering.",
+      "evidenceRefs": [
+        "nbs-coal-20230614",
+        "nbs-industrial-profits-20230629"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "华电 and 华能 already showed strong profit recovery and 国电 analysts expected later cost relief despite a weak Q1.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "huaneng-q1-20230426",
+        "gd-power-research-20230505"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Fuel-cost normalization and electricity-price economics affect multiple quarterly reporting periods.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "nbs-coal-20230614"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "60d sector rerating was strong, but a full 20d relative pullback reduced immediate crowding.",
+      "evidenceRefs": [
+        "regime-power-20230629"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "The recent price regime is mixed even though the earnings engine remains strong."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600027.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Profitable large utility with positive operating cash flow and realized Q1 margin recovery.",
+      "evidenceRefs": [
+        "huadian-q1-20230429"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Additional June coal-cost decline occurred after Q1 realization and the frozen May forecast.",
+      "evidenceRefs": [
+        "nbs-coal-20230614",
+        "huadian-research-20230509"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "~12.2x 2023E PE remains moderate given realized profit acceleration; below 华能's peer reference and only modestly above cheaper but weaker-converting 国电.",
+      "evidenceRefs": [
+        "huadian-research-20230509",
+        "huaneng-valuation-202305",
+        "gd-power-research-20230505"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 results will directly show whether June coal-cost relief extended the Q1 margin recovery within the base horizon.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "nbs-coal-20230614"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Moderate forward valuation and already-realized profitability reduce reliance on a fresh sector rerating.",
+      "evidenceRefs": [
+        "huadian-research-20230509",
+        "huadian-q1-20230429"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600011.SH",
+        "revisionAdvantage": "Both have realized recovery; 华电 combines revenue growth with strong扣非 growth and further June coal-cost headroom.",
+        "valuationAdvantage": "华电 frozen PE reference is lower.",
+        "qualityTradeoff": "Both pass; 华能 has larger absolute scale/turnaround.",
+        "catalystAdvantage": "Both have H1 coal-cost catalysts; 华电 starts from a lower valuation burden.",
+        "downsideTradeoff": "Lower frozen PE favors 华电 after a sector rerating.",
+        "evidenceRefs": [
+          "huadian-q1-20230429",
+          "huadian-research-20230509",
+          "huaneng-q1-20230426",
+          "huaneng-valuation-202305"
+        ],
+        "switchCondition": "Switch if 华能's realized thermal-margin revisions materially exceed 华电 while valuation premium closes.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "600795.SH",
+        "revisionAdvantage": "华电's Q1 profit engine is already realized; 国电's Q1 attributable profit still declined.",
+        "valuationAdvantage": "国电 is cheaper, but its valuation discount compensates for weaker current conversion.",
+        "qualityTradeoff": "Both pass; 华电 has stronger current earnings momentum.",
+        "catalystAdvantage": "华电 needs continuation, while 国电 still needs a larger conversion step.",
+        "downsideTradeoff": "国电's lower PE helps downside, but 华电 has stronger realized profit evidence.",
+        "evidenceRefs": [
+          "huadian-q1-20230429",
+          "gd-power-q1-20230428",
+          "gd-power-research-20230505"
+        ],
+        "switchCondition": "Switch if 国电 begins realizing faster coal-cost profit growth while keeping its discount.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "cost",
+    "driverChange": "Thermal-coal prices fell materially and 华电 had already reported lower coal plus higher electricity/heat prices as the direct cause of Q1 profit recovery.",
+    "earningsMechanism": "Lower fuel cost expands thermal-power gross margin at a given realized electricity/heat price, lifting operating and attributable profit.",
+    "nextObservableMetric": "H1 thermal-power fuel cost, gross margin and attributable/扣非 profit",
+    "realizationWindowTradingDays": 45,
+    "status": "realized",
+    "evidenceRefs": [
+      "huadian-q1-20230429",
+      "nbs-coal-20230614"
+    ],
+    "failureCondition": "H1/Q3 thermal margin and profit fail to improve despite continued coal-cost relief, or realized power prices fall enough to offset it."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overrideMode": "fundamental_price_divergence",
+    "realizedEngine": {
+      "conclusion": "clear",
+      "rationale": "Q1 attributable profit +82.3% and扣非 +113.1% already showed direct fuel-cost/electricity-price conversion.",
+      "evidenceRefs": [
+        "huadian-q1-20230429"
+      ]
+    },
+    "independentFundamentalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Official June coal-price data and NBS industrial-profit data independently confirm the sector cost/profit mechanism.",
+      "evidenceRefs": [
+        "nbs-coal-20230614",
+        "nbs-industrial-profits-20230629"
+      ]
+    },
+    "engineHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Fuel-cost normalization flows through procurement/inventory and quarterly generation economics over multiple reporting periods.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "nbs-coal-20230614"
+      ]
+    },
+    "fundamentalPriceDivergence": {
+      "conclusion": "credible",
+      "rationale": "Company earnings and sector cost fundamentals improved while 华电's latest 20d return underperformed CSI300 by ~5.98pp after a strong prior 60d move.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "regime-power-20230629",
+        "nbs-coal-20230614"
+      ]
+    },
+    "nextCatalystWithinBase": {
+      "conclusion": "clear",
+      "rationale": "H1 reporting will directly test fuel-cost/margin continuation inside 60 trading days.",
+      "evidenceRefs": [
+        "huadian-q1-20230429",
+        "nbs-coal-20230614"
+      ]
+    },
+    "priceWeaknessAttribution": {
+      "conclusion": "non_company_fundamental",
+      "rationale": "The latest pullback affected all three frozen power names despite continued coal-cost decline and improving official sector profits, pointing to sector de-rating/profit-taking rather than company-specific deterioration.",
+      "evidenceRefs": [
+        "regime-power-20230629",
+        "nbs-coal-20230614",
+        "nbs-industrial-profits-20230629"
+      ]
+    },
+    "companyPriceDislocation": {
+      "selected20Excess": -0.059816900239034854,
+      "selected60Excess": 0.2655165783936291,
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "regime-power-20230629"
+      ]
+    },
+    "falsifier": "H1 report fails to show continued thermal-margin/profit improvement despite lower coal costs, or a frozen peer develops a clearly superior realized revision/valuation combination.",
+    "evidenceRefs": [
+      "huadian-q1-20230429",
+      "nbs-coal-20230614",
+      "regime-power-20230629"
+    ],
+    "overallConclusion": "credible_override"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority only through the v1.0 company-engine override; broad sector timing is neutral rather than favorable.",
+    "alreadyPricedAssessment": "strong 60d rerating followed by 20d de-rating; valuation still moderate",
+    "constraints": [
+      "sector already had a strong 60d move",
+      "regulated/market power-price risk",
+      "coal-price reversal"
+    ]
+  },
+  "bearCase": "Coal-cost recovery is already mostly discounted; electricity prices/demand soften, leaving later profit below raised expectations.",
+  "invalidationConditions": [
+    {
+      "indicator": "thermal fuel cost and margin",
+      "observationMethod": "H1/Q3 filings",
+      "threshold": "no continued margin/profit improvement despite lower coal"
+    },
+    {
+      "indicator": "relative peer conversion",
+      "observationMethod": "peer filings/estimates",
+      "threshold": "华能 or 国电 develops a clearly superior realized earnings/valuation edge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact contracted coal-cost lag",
+    "H1 realized electricity-price mix"
+  ],
+  "nextResearchActions": [
+    "Freeze High-priority via company-engine override.",
+    "Judge at the pre-registered 60d base horizon; later holding requires re-underwriting."
+  ]
+}
