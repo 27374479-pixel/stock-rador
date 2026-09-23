@@ -1,0 +1,42 @@
+name: lock-v130-2019q4-multisource-deep
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.3-2019q4-holdout-20260923
+    paths:
+      - .github/workflows/lock-v130-2019q4-multisource-deep.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.3-2019q4-holdout-20260923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Assert outcome files absent before lock
+        run: |
+          test ! -e backtests/runs/2019q4-multisource-deep-v1.3-001/prices.json
+          test ! -e backtests/runs/2019q4-multisource-deep-v1.3-001/outcome.json
+      - name: Lock v1.3 2019Q4 deep holdout
+        run: |
+          node scripts/lock-skill-run-v130.cjs \
+            backtests/runs/2019q4-multisource-deep-v1.3-001/manifest.json \
+            backtests/runs/2019q4-multisource-deep-v1.3-001/lock.json
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2019q4-multisource-deep-v1.3-001/lock.json
+          git commit -m "backtest: lock v1.3 2019Q4 deep holdout"
+          git pull --rebase origin ai-skill-v1.3-2019q4-holdout-20260923
+          git push origin HEAD:ai-skill-v1.3-2019q4-holdout-20260923
