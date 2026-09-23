@@ -1,0 +1,218 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-09-26T23:59:59+08:00",
+  "researchReadyAt": "2022-09-26T21:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q3-memory-downcycle",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The event is a worsening downcycle; a future turning point would require supply cuts plus realized margin/profit stabilization."
+  },
+  "changeHypothesis": {
+    "summary": "DRAM/NAND pricing and inventory deteriorated through Q3. Strong H1 profits at 兆易创新/北京君正 were backward-looking relative to the newly worsening industry data, and there was no supply/earnings inflection by cutoff.",
+    "firstCredibleDate": "2022-08-10",
+    "valueChain": [
+      "weak PC/server/mobile demand",
+      "inventory build",
+      "price cuts",
+      "gross margin/profit deterioration"
+    ],
+    "persistenceReason": "TrendForce expected further double-digit Q4 declines.",
+    "disconfirmingEvidence": [
+      "H1 company profits were still positive/strong, so the negative thesis had not fully entered reported earnings.",
+      "Stocks were already de-rated, creating future bottoming optionality but not a current buy signal."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-dram-20220810",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-dram-20220922",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-nand-20220926",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20220926",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-h1-20220827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "junzheng-h1-20220827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "weak terminal demand/inventory",
+      "to": "memory ASP decline",
+      "mechanism": "Buyers destock while suppliers compete on price.",
+      "evidenceRefs": [
+        "tf-dram-20220810",
+        "tf-dram-20220922",
+        "tf-nand-20220926"
+      ],
+      "failureMode": "aggressive supply cuts or demand rebound",
+      "lag": "quarters"
+    },
+    {
+      "from": "ASP decline",
+      "to": "company earnings",
+      "mechanism": "Lower ASP and inventory pressure eventually compress gross margin/profit.",
+      "evidenceRefs": [
+        "giga-h1-20220827",
+        "junzheng-h1-20220827"
+      ],
+      "failureMode": "product mix offsets commodity-memory weakness",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "buyers benefiting from lower memory costs"
+    ],
+    "secondOrderWinners": [
+      "OEMs if demand holds"
+    ],
+    "losers": [
+      "memory suppliers/designers with inventory/ASP exposure"
+    ],
+    "substitutes": [
+      "newer memory generations"
+    ],
+    "bottlenecks": [
+      "inventory clearing"
+    ],
+    "falseThemeMatches": [
+      "de-rated memory stocks without a supply/earnings bottom"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Memory/MCU supplier with strong H1 profit, but H1 predates the sharp Q3 deterioration.",
+      "evidenceRefs": [
+        "giga-h1-20220827"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit about RMB1.527bn, nearly double YoY.",
+        "favorable": "MCU/product mix offsets memory weakness.",
+        "adverse": "Q3/Q4 pricing enters margins."
+      },
+      "principalRisks": [
+        "backward-looking earnings",
+        "price decline"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Memory exposure with H1 profit +43.9% but CFO turned negative.",
+      "evidenceRefs": [
+        "junzheng-h1-20220827"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit RMB511m +43.9%.",
+        "favorable": "auto/industrial mix protects margins.",
+        "adverse": "memory downcycle catches up."
+      },
+      "principalRisks": [
+        "negative CFO",
+        "downcycle"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No turning point exists. Strong H1 earnings are stale relative to the worsening Q3 physical data."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Both main A-share memory names were de-rated, but industry data still pointed to worsening Q4 prices rather than a trough.",
+    "thesisExpectation": "A future supply response may eventually create a bottom, but not yet.",
+    "measurableGap": "No positive earnings-conversion gap can be defended before cutoff.",
+    "evidenceRefs": [
+      "regime-memory-20220926",
+      "tf-dram-20220922",
+      "tf-nand-20220926"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: de-rating alone is not a turning-point signal while physical pricing continues to worsen.",
+    "alreadyPricedAssessment": "some bad news priced, but no positive bridge",
+    "constraints": [
+      "adverse sector regime",
+      "worsening ASP",
+      "no supply turn"
+    ]
+  },
+  "bearCase": "The apparent cheapness is a value trap because Q3/Q4 earnings have not yet absorbed the price collapse.",
+  "invalidationConditions": [
+    {
+      "indicator": "memory contract prices",
+      "observationMethod": "industry data",
+      "threshold": "price declines stop/reverse"
+    },
+    {
+      "indicator": "company margin/profit",
+      "observationMethod": "quarterly filing",
+      "threshold": "sequential stabilization despite weak ASP"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "company-specific inventory mix",
+    "timing of supplier production cuts"
+  ],
+  "nextResearchActions": [
+    "No selection until supply cuts and earnings inflection are directly measurable."
+  ]
+}
