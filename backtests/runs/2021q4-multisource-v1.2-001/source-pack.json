@@ -1,0 +1,406 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2021q4-multisource-v1.2-001",
+  "cutoffAt": "2021-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2021Q4 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official power-market reform, industrial-profit, PMI and property-policy evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NDRC/NBS/PBOC items relevant to surfaced Q4 changes."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company evidence is deferred to deep research."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable memory pricing/inventory conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on coal intervention, lithium scarcity, NEV demand and property easing.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters pages are accessed through syndicated copies where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist battery/material and memory-cycle evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on TrendForce."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "ndrc-power-reform-20211012",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于进一步深化燃煤发电上网电价市场化改革的通知",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/wszb/shrmfdswdjschggygqk/xgmb/202110/t20211012_1299461.html",
+      "publishedAt": "2021-10-12T00:00:00+08:00",
+      "availableAt": "2021-10-12T00:00:00+08:00",
+      "originGroup": "ndrc-power-reform-20211012",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "All coal-fired generation would progressively enter the power market; market transaction prices could move up or down by up to 20%, with high-energy-consumption users exempt from the upward cap."
+      ],
+      "entities": [
+        "coal-fired power",
+        "electricity tariffs",
+        "power market"
+      ],
+      "observedChanges": [
+        "coal-fired tariff flexibility increases",
+        "fuel-cost pass-through mechanism improves"
+      ]
+    },
+    {
+      "itemId": "reuters-coal-intervention-20211019",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China coal prices plunge from record high as govt considers intervention",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/world-news/china-coal-prices-plunge-from-record-high-as-govt-considers-intervention-2648261",
+      "publishedAt": "2021-10-19T11:32:00+08:00",
+      "availableAt": "2021-10-19T11:32:00+08:00",
+      "originGroup": "reuters-coal-intervention-20211019",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Thermal-coal futures fell from record levels after the state planner signaled intervention to return coal prices to a reasonable range during the power crunch."
+      ],
+      "entities": [
+        "thermal coal",
+        "NDRC",
+        "power crunch"
+      ],
+      "observedChanges": [
+        "coal-price upside becomes policy-constrained",
+        "power-generator input-cost pressure may ease"
+      ]
+    },
+    {
+      "itemId": "reuters-coal-intervention-20211022",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China coal prices notch worst week since May on govt intervention",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/china-coal-prices-dive-as-govt-plans-intervention-to-ease-power-crunch-2652001",
+      "publishedAt": "2021-10-22T10:21:00+08:00",
+      "availableAt": "2021-10-22T10:21:00+08:00",
+      "originGroup": "reuters-coal-intervention-20211022",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Thermal-coal futures fell nearly 30% from the week's record as Beijing intensified supply/price intervention."
+      ],
+      "entities": [
+        "thermal coal",
+        "power crunch"
+      ],
+      "observedChanges": [
+        "fuel-cost shock begins to reverse"
+      ]
+    },
+    {
+      "itemId": "reuters-lithium-20211029",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "High lithium costs start to feed into prices of China EV batteries",
+      "publisher": "Reuters via Nippon.com",
+      "url": "https://www.nippon.com/en/news/reu20211029KBN2HJ1MP/",
+      "publishedAt": "2021-10-29T00:00:00Z",
+      "availableAt": "2021-10-29T00:00:00Z",
+      "originGroup": "reuters-lithium-20211029",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China lithium-carbonate prices had risen more than 300% year over year as supply lagged unexpectedly strong EV demand; higher raw-material costs were beginning to feed into battery prices."
+      ],
+      "entities": [
+        "lithium carbonate",
+        "EV batteries",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "lithium scarcity becomes severe",
+        "battery input costs rise"
+      ]
+    },
+    {
+      "itemId": "reuters-nev-20211210",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China vehicle sales fall for seventh month in prolonged chip shortage",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/china-nov-vehicle-sales-fall-91-industry-body-2706774",
+      "publishedAt": "2021-12-10T02:35:00+08:00",
+      "availableAt": "2021-12-10T02:35:00+08:00",
+      "originGroup": "reuters-nev-20211210",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November overall vehicle sales fell 9.1% YoY, but NEV sales rose 121% to about 450,000 units; industry commentary said consumer acceptance had shifted toward demand-driven adoption."
+      ],
+      "entities": [
+        "NEVs",
+        "autos",
+        "battery demand"
+      ],
+      "observedChanges": [
+        "NEV demand remains exceptionally strong despite weak overall autos"
+      ]
+    },
+    {
+      "itemId": "tf-cathode-20211223",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "Driven by NEVs, Power Battery Demand for Cathode Materials Forecast to Exceed 2.15 Million Tons in 2025",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20211223-11065.html",
+      "publishedAt": "2021-12-23T00:00:00+08:00",
+      "availableAt": "2021-12-23T00:00:00+08:00",
+      "originGroup": "trendforce-cathode-20211223",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "EVs accounted for over 60% of lithium-battery consumption; 2021 China NEV sales through November reached about 2.99m and power-battery installation grew rapidly. Cathode capacity expansion was expected over the following two to three years."
+      ],
+      "entities": [
+        "power batteries",
+        "cathode materials",
+        "NEVs"
+      ],
+      "observedChanges": [
+        "battery-material demand has structural growth",
+        "future capacity response becomes visible"
+      ]
+    },
+    {
+      "itemId": "tf-dram-downturn-20211012",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Prices Projected to Enter Period of Downswing in 2022 as Demand Lags Behind Supply",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/news/2021/10/12/dram-prices-projected-to-enter-period-of-downswing-in-2022-as-demand-lags-behind-supply-says-trendforce/",
+      "publishedAt": "2021-10-12T00:00:00+08:00",
+      "availableAt": "2021-10-12T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20211012",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DRAM contract prices were expected to decline 3-8% QoQ in Q4 and enter a 2022 downswing as buyer procurement weakened and inventories rose."
+      ],
+      "entities": [
+        "DRAM",
+        "inventory",
+        "PC/server memory"
+      ],
+      "observedChanges": [
+        "memory cycle turns downward",
+        "inventory overhang rises"
+      ]
+    },
+    {
+      "itemId": "nbs-profit-20211227",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年1—11月份全国规模以上工业企业利润同比增长38.0%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901319.html",
+      "publishedAt": "2021-12-27T09:30:00+08:00",
+      "availableAt": "2021-12-27T09:30:00+08:00",
+      "originGroup": "nbs-profit-202111",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Nov mining profits +186% YoY, oil/gas +284%, coal mining +223%, while power/heat production and supply profits fell 38.6%."
+      ],
+      "entities": [
+        "coal mining",
+        "oil and gas",
+        "power generation"
+      ],
+      "observedChanges": [
+        "upstream/downstream profit transfer remains extreme",
+        "power earnings remain under pressure"
+      ]
+    },
+    {
+      "itemId": "reuters-property-20211225",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China central bank says to promote healthy development of property market",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/china-central-bank-says-to-promote-healthy-development-of-property-market-2724050",
+      "publishedAt": "2021-12-25T06:54:00+08:00",
+      "availableAt": "2021-12-25T06:54:00+08:00",
+      "originGroup": "reuters-property-20211225",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "PBOC signaled marginal easing toward the property market and said it would better satisfy reasonable housing demand, but this did not establish a developer-level sales or cash-flow recovery."
+      ],
+      "entities": [
+        "property developers",
+        "housing demand",
+        "PBOC"
+      ],
+      "observedChanges": [
+        "property policy tone eases marginally"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20211231",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年12月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901325.html",
+      "publishedAt": "2021-12-31T09:00:00+08:00",
+      "availableAt": "2021-12-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202112",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "December manufacturing PMI rose to 50.3 as commodity-price pressure eased, but new orders remained below 50 at 49.7."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing demand"
+      ],
+      "observedChanges": [
+        "manufacturing stabilizes",
+        "demand remains soft"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2021q4-coal-power-price-reset",
+      "statement": "China simultaneously widened coal-fired generation's tariff flexibility and intervened to crush record thermal-coal prices, creating a potentially durable repair in thermal-power unit economics after severe fuel-cost pressure.",
+      "changeType": "regulated_spread_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-10-12T00:00:00+08:00",
+      "memberItemIds": [
+        "ndrc-power-reform-20211012",
+        "reuters-coal-intervention-20211019",
+        "reuters-coal-intervention-20211022",
+        "nbs-profit-20211227"
+      ],
+      "independentOriginGroups": [
+        "ndrc-power-reform-20211012",
+        "reuters-coal-intervention-20211019",
+        "reuters-coal-intervention-20211022",
+        "nbs-profit-202111"
+      ],
+      "affectedValueChain": [
+        "thermal-power generators",
+        "coal miners",
+        "industrial power users"
+      ],
+      "contradictionSearchNotes": "Power-sector profits were still deeply negative through November. The reform improves the revenue/cost mechanism, but High-priority requires a company where the full normalized earnings/cash path is credibly repaired rather than merely a policy headline.",
+      "researchQuestion": "Which listed thermal generator had the most durable tariff/fuel-spread path improvement with acceptable balance-sheet and expectation burden?"
+    },
+    {
+      "eventId": "event-2021q4-lithium-nev-scarcity",
+      "statement": "NEV demand remained exceptionally strong while lithium prices rose more than 300% and battery costs began increasing; long-term cathode demand was structural but capacity expansion created a future supply-response question.",
+      "changeType": "structural_demand_plus_input_scarcity",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-10-29T00:00:00Z",
+      "memberItemIds": [
+        "reuters-lithium-20211029",
+        "reuters-nev-20211210",
+        "tf-cathode-20211223"
+      ],
+      "independentOriginGroups": [
+        "reuters-lithium-20211029",
+        "reuters-nev-20211210",
+        "trendforce-cathode-20211223"
+      ],
+      "affectedValueChain": [
+        "lithium miners/salts",
+        "battery makers",
+        "cathode materials",
+        "NEV OEMs"
+      ],
+      "contradictionSearchNotes": "Structural demand is strong, but upstream scarcity profits may already imply long-duration high prices while battery/OEM margins face input inflation. The full earnings path must distinguish persistent demand from temporary scarcity rent.",
+      "researchQuestion": "Is there an A-share lithium/battery expression where the next/later earnings path improves beyond the already-known scarcity baseline?"
+    },
+    {
+      "eventId": "event-2021q4-dram-downcycle",
+      "statement": "DRAM exited a three-quarter upcycle into falling contract prices as buyer inventories rose and procurement weakened, making forward physical evidence explicitly worse despite strong backward-looking semiconductor earnings.",
+      "changeType": "cyclical_downturn",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-10-12T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-downturn-20211012"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20211012"
+      ],
+      "affectedValueChain": [
+        "memory suppliers",
+        "memory designers",
+        "storage modules",
+        "PC/server OEMs"
+      ],
+      "contradictionSearchNotes": "This is a negative cycle signal and single specialist origin. Do not bottom-fish using stale earnings; require company-specific resilience or a genuine turning-point bridge.",
+      "researchQuestion": "Does any listed memory company have a sufficiently differentiated durable path to justify selection during an explicit physical downturn?"
+    },
+    {
+      "eventId": "event-2021q4-property-marginal-easing",
+      "statement": "Property policy tone turned marginally more supportive in late December, but the signal did not yet prove a developer-level sales, margin, liquidity or cash-flow recovery.",
+      "changeType": "policy_tone_easing",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-12-25T06:54:00+08:00",
+      "memberItemIds": [
+        "reuters-property-20211225"
+      ],
+      "independentOriginGroups": [
+        "reuters-property-20211225"
+      ],
+      "affectedValueChain": [
+        "developers",
+        "banks",
+        "construction",
+        "homebuyers"
+      ],
+      "contradictionSearchNotes": "Policy support can reduce tail risk without creating equity value if operating cash flow and sales remain weak.",
+      "researchQuestion": "Reject generic property-long mapping until direct company economics improve."
+    },
+    {
+      "eventId": "event-2021q4-manufacturing-cost-relief",
+      "statement": "Manufacturing PMI recovered modestly as commodity-price pressure eased, but new orders remained below 50 and broad demand was not yet strong.",
+      "changeType": "macro_stabilization",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-12-31T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20211231"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202112"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "industrial users"
+      ],
+      "contradictionSearchNotes": "Useful as macro timing and cost-pressure context, not a narrow stock-selection thesis.",
+      "researchQuestion": "Use as contradiction/regime evidence only."
+    }
+  ]
+}
