@@ -1,0 +1,560 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-12-26T23:59:59+08:00",
+  "researchReadyAt": "2021-12-26T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q4-power-reset-huaneng",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Tariff-market reform and fuel-cost normalization can repair thermal-power earnings over one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "October reform widened coal-fired tariff flexibility while coal-price intervention reduced input-cost pressure, creating a genuine normalized-earnings repair path for thermal power. 华能 had the largest structural upside to a tariff/fuel-spread reset, but Q3 still showed a large loss, the stock had already rerated dramatically over 60d, and contemporaneous 2022E valuation was materially richer than 华电.",
+    "firstCredibleDate": "2021-10-12",
+    "valueChain": [
+      "coal-price intervention",
+      "marketized power tariff",
+      "thermal spread",
+      "normalized power earnings/cash flow",
+      "renewable reinvestment"
+    ],
+    "persistenceReason": "The tariff mechanism is regulatory and multi-quarter; coal-price normalization can improve cash generation beyond a one-month commodity move.",
+    "disconfirmingEvidence": [
+      "Q3 attributable loss RMB3.499bn and YTD profit -91.42%.",
+      "华能 60d benchmark-relative return remained about +125pp at Nov1 while 20d had already turned negative.",
+      "Dec26 consensus showed 2022E PE ~21.9x for 华能 versus ~6.5x for 华电."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "ndrc-power-reform-20211012",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-coal-intervention-20211019",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-coal-intervention-20211022",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "nbs-profit-20211227",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-power-20211101",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "huaneng-q3-20211027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "huadian-q3-20211027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "guodian-q3-20211030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "utilities-consensus-20211226",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "tariff marketization + lower coal pressure",
+      "to": "thermal spread",
+      "mechanism": "Higher allowed power transaction prices and constrained coal prices improve revenue-cost pass-through.",
+      "evidenceRefs": [
+        "ndrc-power-reform-20211012",
+        "reuters-coal-intervention-20211022"
+      ],
+      "failureMode": "coal prices stay high or tariff uplift is insufficient",
+      "lag": "quarters"
+    },
+    {
+      "from": "thermal spread repair",
+      "to": "华能 normalized earnings/cash flow",
+      "mechanism": "Large coal-fired fleet provides high operating leverage when fuel-price and tariff spread normalizes.",
+      "evidenceRefs": [
+        "huaneng-q3-20211027",
+        "utilities-consensus-20211226"
+      ],
+      "failureMode": "fuel costs overwhelm power-price gains or losses persist",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "normalized earnings repair",
+      "to": "equity alpha",
+      "mechanism": "Alpha requires recovery not already capitalized by the prior rerating and must compare favorably with cheaper power peers.",
+      "evidenceRefs": [
+        "regime-power-20211101",
+        "utilities-consensus-20211226"
+      ],
+      "failureMode": "recovery is already priced or peers offer better recovery/valuation",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "thermal generators with tariff/fuel spread repair"
+    ],
+    "secondOrderWinners": [
+      "renewable-transition utilities funded by restored cash flow"
+    ],
+    "losers": [
+      "coal miners if policy intervention compresses coal prices"
+    ],
+    "substitutes": [
+      "hydro/nuclear/renewables"
+    ],
+    "bottlenecks": [
+      "coal prices",
+      "provincial transaction tariffs"
+    ],
+    "falseThemeMatches": [
+      "power names without meaningful coal-fired spread sensitivity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "verifiedExposure": "Large thermal fleet with high sensitivity to tariff/fuel spread; Q3 loss shows the starting impairment.",
+      "evidenceRefs": [
+        "huaneng-q3-20211027",
+        "utilities-consensus-20211226"
+      ],
+      "earningsSensitivity": {
+        "base": "2021E EPS -0.10; 2022E EPS 0.45 at ~21.9x PE.",
+        "favorable": "tariff uplift and coal normalization restore thermal profits and fund renewables.",
+        "adverse": "fuel costs remain elevated or recovery is already priced."
+      },
+      "principalRisks": [
+        "late-reversal price state",
+        "rich recovery valuation",
+        "fuel cost"
+      ]
+    },
+    {
+      "ticker": "600027.SH",
+      "name": "华电国际",
+      "verifiedExposure": "Thermal-power peer with Q3 loss and 2022 recovery forecast.",
+      "evidenceRefs": [
+        "huadian-q3-20211027",
+        "utilities-consensus-20211226"
+      ],
+      "earningsSensitivity": {
+        "base": "2021E EPS 0.18; 2022E EPS 0.52 at ~6.46x PE.",
+        "favorable": "same tariff/fuel repair at lower expectation burden.",
+        "adverse": "coal exposure and balance-sheet pressure."
+      },
+      "principalRisks": [
+        "coal cost",
+        "recovery quality"
+      ]
+    },
+    {
+      "ticker": "600795.SH",
+      "name": "国电电力",
+      "verifiedExposure": "Large thermal fleet; Q3 attributable loss and negative扣非 YTD.",
+      "evidenceRefs": [
+        "guodian-q3-20211030"
+      ],
+      "earningsSensitivity": {
+        "base": "profitability impaired in Q3.",
+        "favorable": "spread repair improves normalized earnings.",
+        "adverse": "fuel pressure persists."
+      },
+      "principalRisks": [
+        "earnings quality",
+        "fuel spread"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600027.SH",
+      "name": "华电国际",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct thermal-power peer exposed to the same tariff and coal-price reset.",
+      "whySelectedCompanyShouldOutperform": "华能 has larger scale and renewable-transition optionality, but 华电 has much lower frozen 2022E valuation; therefore the edge is not clean.",
+      "evidenceRefs": [
+        "huaneng-q3-20211027",
+        "huadian-q3-20211027",
+        "utilities-consensus-20211226"
+      ]
+    },
+    {
+      "ticker": "600795.SH",
+      "name": "国电电力",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large thermal-power peer exposed to the same regulatory spread reset.",
+      "whySelectedCompanyShouldOutperform": "华能's scale and consensus recovery are clearer, but 国电 may offer lower expectation burden after weaker rerating.",
+      "evidenceRefs": [
+        "huaneng-q3-20211027",
+        "guodian-q3-20211030",
+        "regime-power-20211101"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600011.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600027.SH",
+        "selectedAdvantages": [
+          "larger scale",
+          "renewable-transition optionality",
+          "clear 2022 earnings-recovery path"
+        ],
+        "selectedDisadvantages": [
+          "~21.9x 2022E PE versus ~6.5x for 华电",
+          "both had severe Q3 thermal losses"
+        ],
+        "evidenceRefs": [
+          "huaneng-q3-20211027",
+          "huadian-q3-20211027",
+          "utilities-consensus-20211226"
+        ],
+        "switchCondition": "Prefer 华电 if tariff/fuel repair converts similarly while its large valuation discount persists.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "600795.SH",
+        "selectedAdvantages": [
+          "more explicit frozen 2022 consensus recovery",
+          "larger transition platform"
+        ],
+        "selectedDisadvantages": [
+          "华能 had the strongest prior 60d rerating and therefore more absorption risk"
+        ],
+        "evidenceRefs": [
+          "guodian-q3-20211030",
+          "utilities-consensus-20211226",
+          "regime-power-20211101"
+        ],
+        "switchCondition": "Prefer 国电 if its normalized profit recovery becomes clearer at lower expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The mechanism is credible but no clear stock-level asymmetry survives peer valuation and prior rerating."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "By Dec26, consensus already expected 华能 to swing from 2021E EPS -0.10 to 2022E 0.45; shares had already experienced a massive 60d rerating before rolling over. 华电 offered a similar 2022 recovery at a far lower PE.",
+    "thesisExpectation": "Tariff reform plus lower coal pressure makes the earnings repair more durable than a one-quarter rebound and can improve cash generation for renewable investment.",
+    "measurableGap": "The gap is durability and cash repair, not merely a 2022 earnings rebound; the latter is already in consensus.",
+    "evidenceRefs": [
+      "utilities-consensus-20211226",
+      "regime-power-20211101",
+      "ndrc-power-reform-20211012"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Turnaround earnings path plus peer-relative 2022E PE and prior price absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021E EPS -0.10 and 2022E EPS 0.45 for 华能 at 21.92x 2022E PE; 华电 2022E EPS 0.52 at 6.46x.",
+    "thesisScenario": "The new tariff/fuel mechanism sustains profitability beyond the initial 2022 recovery and improves cash generation/renewable reinvestment.",
+    "breakevenCondition": "华能 must recover faster or more durably than the cheaper thermal peers; merely meeting 2022 consensus is insufficient.",
+    "ordinaryScenarioFailure": "2022 recovery occurs but is fully anticipated and peer valuations remain more attractive.",
+    "catalystOrTimingBridge": "Annual power contracts, coal prices and 2022 Q1 earnings can test the normalized spread within 60d.",
+    "evidenceRefs": [
+      "utilities-consensus-20211226",
+      "ndrc-power-reform-20211012",
+      "regime-power-20211101"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "The regulatory spread mechanism improved even while reported Q3 profits were still impaired.",
+      "evidenceRefs": [
+        "ndrc-power-reform-20211012",
+        "reuters-coal-intervention-20211022"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Q3 remained a large loss, so the repaired mechanism was not yet realized in company earnings.",
+      "evidenceRefs": [
+        "huaneng-q3-20211027"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "All thermal peers were impaired and multiple names had plausible recovery.",
+      "evidenceRefs": [
+        "huadian-q3-20211027",
+        "guodian-q3-20211030",
+        "utilities-consensus-20211226"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "consensus",
+      "conclusion": "insufficient",
+      "rationale": "Dec26 consensus already captures a substantial 2022 earnings recovery.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare the huge frozen 60d rerating, 20d reversal and peer-relative 2022E valuation.",
+      "evidenceRefs": [
+        "regime-power-20211101",
+        "utilities-consensus-20211226"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen thermal-power basket versus CSI300 after Q3 filings",
+      "lookback20Excess": -0.12049529762716978,
+      "lookback60Excess": 0.6852505466937954,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-power-20211101"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Tariff flexibility increased while coal intervention reduced input-cost pressure.",
+      "evidenceRefs": [
+        "ndrc-power-reform-20211012",
+        "reuters-coal-intervention-20211022"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Consensus expected power generators to recover in 2022 as annual contracts and tariffs reset.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "structural",
+      "rationale": "The marketized tariff framework is structural rather than a one-off event.",
+      "evidenceRefs": [
+        "ndrc-power-reform-20211012"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "All three power names had strongly positive 60d relative returns followed by negative 20d returns.",
+      "evidenceRefs": [
+        "regime-power-20211101"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamental mechanism improves, but the entry state is late-reversal after a large prior rerating."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600011.SH",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "Large positive operating cash flow remains, but Q3 losses and YTD profit collapse weaken the current quality floor.",
+      "evidenceRefs": [
+        "huaneng-q3-20211027"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "2022 earnings recovery is expected, but further revision room beyond consensus is uncertain.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226",
+        "ndrc-power-reform-20211012"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "2022E PE ~21.9x is materially above 华电's ~6.5x for a similar turnaround.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Annual contract prices, coal costs and Q1 2022 results lie within the base horizon.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Structural reform helps, but high recovery valuation and prior rerating leave de-rating risk.",
+      "evidenceRefs": [
+        "regime-power-20211101",
+        "utilities-consensus-20211226"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600027.SH",
+        "revisionAdvantage": "Both recover; 华能 has greater scale but no clear revision monopoly.",
+        "valuationAdvantage": "华电 has a decisive 2022E PE advantage.",
+        "qualityTradeoff": "Both had Q3 losses; 华能 retains stronger absolute CFO.",
+        "catalystAdvantage": "Both share the same tariff/fuel catalysts.",
+        "downsideTradeoff": "华能 has more absorption/valuation risk.",
+        "evidenceRefs": [
+          "huaneng-q3-20211027",
+          "huadian-q3-20211027",
+          "utilities-consensus-20211226"
+        ],
+        "switchCondition": "Switch to 华电 if similar earnings recovery arrives without valuation convergence.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "600795.SH",
+        "revisionAdvantage": "华能 consensus path is clearer.",
+        "valuationAdvantage": "No decisive frozen advantage for 华能 after its prior rerating.",
+        "qualityTradeoff": "Both have thermal losses; 华能 has larger transition platform.",
+        "catalystAdvantage": "Same regulatory/fuel mechanism.",
+        "downsideTradeoff": "华能 prior rerating is much larger.",
+        "evidenceRefs": [
+          "guodian-q3-20211030",
+          "regime-power-20211101"
+        ],
+        "switchCondition": "Switch if 国电's normalized recovery becomes clearer at lower burden.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "cost",
+    "driverChange": "Tariff flexibility widened and thermal-coal prices were forced down from record levels.",
+    "earningsMechanism": "The combined revenue/cost reset should repair thermal generation margin and operating cash generation.",
+    "nextObservableMetric": "2022 Q1 thermal margin, attributable profit and CFO",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "ndrc-power-reform-20211012",
+      "reuters-coal-intervention-20211022",
+      "huaneng-q3-20211027"
+    ],
+    "failureCondition": "2022 Q1 remains materially loss-making despite tariff and coal-cost normalization."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "consensus",
+      "nearTerm": "2021E remains loss-making at EPS -0.10.",
+      "nextPeriod": "2022E EPS rebounds to 0.45, already embedding substantial tariff/fuel-spread repair.",
+      "laterPeriod": "The frozen Dec26 consensus table does not establish a precise 2023 EPS path; longer-term value depends on durable thermal spread and renewable transition rather than a proven outer-year revision.",
+      "rationale": "The market already expects a large 2022 turnaround, so the thesis cannot claim alpha merely from a return to profitability.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Annual contracts and coal-price normalization may make the 2022 recovery more reliable than the baseline.",
+      "nextPeriodChange": "No clean pre-cutoff evidence proves 华能's 2022 earnings exceed consensus by enough to justify its premium over 华电.",
+      "laterPeriodChange": "Structural tariff reform and renewable reinvestment could improve durability, but the magnitude is not frozen strongly enough for a High-priority path claim.",
+      "mechanism": "Regulatory spread repair changes normalized economics, but peer-relative valuation and prior rerating absorb much of the obvious benefit.",
+      "evidenceRefs": [
+        "ndrc-power-reform-20211012",
+        "reuters-coal-intervention-20211022",
+        "utilities-consensus-20211226"
+      ]
+    },
+    "pathShape": "turnaround",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Durability may improve, but the full path advantage over consensus and cheaper peers is not clear.",
+      "evidenceRefs": [
+        "utilities-consensus-20211226",
+        "regime-power-20211101"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The stock already experienced an exceptional 60d rerating before the earnings repair was realized.",
+      "evidenceRefs": [
+        "regime-power-20211101"
+      ]
+    },
+    "falsifier": "2022 Q1 profit/cash recovery fails to exceed the already-large consensus rebound or 华电 realizes comparable repair at much lower valuation.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: real structural repair, but late-reversal and weak peer-relative valuation/asymmetry.",
+    "alreadyPricedAssessment": "large prior rerating and 2022 recovery already expected",
+    "constraints": [
+      "late-reversal",
+      "Q3 losses",
+      "peer valuation"
+    ]
+  },
+  "bearCase": "The reform is real but already capitalized; fuel costs remain sticky and cheaper peers capture the same normalized recovery.",
+  "invalidationConditions": [
+    {
+      "indicator": "2022 thermal margin/profit",
+      "observationMethod": "Q1 2022 report",
+      "threshold": "no meaningful normalized recovery"
+    },
+    {
+      "indicator": "peer-relative recovery",
+      "observationMethod": "华电/国电 reports and valuation",
+      "threshold": "peers recover similarly at lower burden"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "precise 2023 consensus path at Dec26",
+    "renewable capex return spread"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection; do not promote on reform headline alone."
+  ]
+}
