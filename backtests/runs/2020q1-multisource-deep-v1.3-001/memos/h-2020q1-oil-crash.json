@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-oil-crash",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Oil-price collapse should affect upstream earnings immediately and through the next reporting cycle."
+  },
+  "changeHypothesis": {
+    "summary": "A supply war collided with pandemic demand destruction. Upstream oil exposure had a sharply negative earnings regime, while downstream input-cost benefits were not enough without resilient end demand.",
+    "firstCredibleDate": "2020-03-09",
+    "valueChain": [
+      "oil supply war+demand shock",
+      "crude price",
+      "upstream realizations/refining margins",
+      "earnings"
+    ],
+    "persistenceReason": "Commodity price shocks can persist, but policy supply changes are unpredictable.",
+    "disconfirmingEvidence": [
+      "Short-term relative price resilience of oil equities does not change the negative commodity earnings bridge."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-oil-20200309",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-oil-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "oil price collapse",
+      "to": "upstream earnings",
+      "mechanism": "Lower realized prices directly compress upstream revenue and profit.",
+      "evidenceRefs": [
+        "reuters-oil-20200309"
+      ],
+      "failureMode": "supply agreement rapidly reverses oil prices",
+      "lag": "days to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "fuel users if demand survives"
+    ],
+    "losers": [
+      "upstream oil producers"
+    ],
+    "substitutes": [
+      "cash/low-cost producers"
+    ],
+    "bottlenecks": [
+      "storage and demand"
+    ],
+    "falseThemeMatches": [
+      "downstream companies assumed to benefit despite simultaneous demand collapse"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "verifiedExposure": "Large upstream exposure to collapsing crude prices.",
+      "evidenceRefs": [
+        "regime-oil-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "Negative price bridge.",
+        "favorable": "Oil price rapidly rebounds.",
+        "adverse": "Low prices persist."
+      },
+      "principalRisks": [
+        "commodity crash"
+      ]
+    },
+    {
+      "ticker": "600028.SH",
+      "name": "中国石化",
+      "verifiedExposure": "Integrated exposure; lower feedstock is offset by collapsing demand and inventory/refining risks.",
+      "evidenceRefs": [
+        "regime-oil-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "Mixed integrated effect.",
+        "favorable": "Refining/chemical demand survives and input costs fall.",
+        "adverse": "Demand destruction dominates."
+      },
+      "principalRisks": [
+        "demand collapse",
+        "inventory risk"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No long selection: the physical/earnings regime is adverse and downstream benefit is not independently established."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Oil-equity basket was neutral relative to CSI300 while crude suffered an historic collapse.",
+    "thesisExpectation": "Avoid forcing a beneficiary story during simultaneous demand destruction.",
+    "measurableGap": "No positive company earnings bridge.",
+    "evidenceRefs": [
+      "reuters-oil-20200309",
+      "regime-oil-20200331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "negative_physical_regime",
+    "constraints": [
+      "commodity crash",
+      "global demand destruction"
+    ]
+  },
+  "bearCase": "Apparent value or relative resilience masks an earnings collapse.",
+  "invalidationConditions": [
+    {
+      "indicator": "crude price and demand",
+      "observationMethod": "market/industry data",
+      "threshold": "sustained recovery with verified company earnings conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as an avoidance signal."
+  ]
+}
