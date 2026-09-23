@@ -1,0 +1,190 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-12-30T23:59:59+08:00",
+  "researchReadyAt": "2022-12-30T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q4-airline-reopening",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "International reopening can affect traffic quickly, but profitability depends on capacity, fares and fuel over several quarters."
+  },
+  "changeHypothesis": {
+    "summary": "International-flight restrictions were formally removed, but airlines had already rerated before reopening and were still deeply loss-making. The policy is a genuine long-duration catalyst, not yet a direct realized earnings bridge.",
+    "firstCredibleDate": "2022-12-28",
+    "valueChain": [
+      "reopening",
+      "capacity/passengers",
+      "load factor/yield",
+      "fuel/unit cost",
+      "profit"
+    ],
+    "persistenceReason": "Policy reopening is durable.",
+    "disconfirmingEvidence": [
+      "Spring Q3 loss RMB492m, YTD loss RMB1.737bn.",
+      "Spring stock 20d +16.5pp and 60d +23.5pp versus CSI300 before Jan8 reopening.",
+      "Fuel/capacity normalization remains uncertain."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "caac-reopen-20221228",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-airline-reopen-20221230",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-aviation-20221230",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "spring-q3-20221029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "spring-research-20221029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "international reopening",
+      "to": "passenger/capacity recovery",
+      "mechanism": "Flight restrictions removed from Jan8.",
+      "evidenceRefs": [
+        "caac-reopen-20221228"
+      ],
+      "failureMode": "demand/capacity recovery slower than expected",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "traffic recovery",
+      "to": "airline profit",
+      "mechanism": "Higher utilization/load can improve unit economics if fares and fuel cooperate.",
+      "evidenceRefs": [
+        "spring-q3-20221029"
+      ],
+      "failureMode": "fuel/cost and capacity ramp absorb revenue",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "airlines with strong balance sheets and efficient cost bases"
+    ],
+    "secondOrderWinners": [
+      "airports/travel"
+    ],
+    "losers": [
+      "none direct"
+    ],
+    "substitutes": [
+      "rail/domestic travel"
+    ],
+    "bottlenecks": [
+      "international slots",
+      "fuel",
+      "staff/aircraft utilization"
+    ],
+    "falseThemeMatches": [
+      "airlines whose stock rerating outruns profit recovery"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601021.SH",
+      "name": "春秋航空",
+      "verifiedExposure": "Low-cost airline with relative operating strength, but still loss-making in Q3.",
+      "evidenceRefs": [
+        "spring-q3-20221029",
+        "spring-research-20221029"
+      ],
+      "earningsSensitivity": {
+        "base": "2022 forecast loss; 2023 recovery forecast.",
+        "favorable": "reopening restores utilization/yields.",
+        "adverse": "cost and capacity ramp delay profits."
+      },
+      "principalRisks": [
+        "sustained_strength",
+        "loss base",
+        "fuel"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection because earnings remain unconverted and reopening was already heavily anticipated in price."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Spring had already outperformed CSI300 by +16.5pp over 20d and +23.5pp over 60d before the formal Jan8 reopening.",
+    "thesisExpectation": "Traffic and profit recover in 2023.",
+    "measurableGap": "Policy is clear but expected profit recovery is largely prospective and price has already anticipated it.",
+    "evidenceRefs": [
+      "regime-aviation-20221230",
+      "spring-research-20221029"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "reopening anticipated before earnings recovery",
+    "constraints": [
+      "sustained_strength",
+      "losses"
+    ]
+  },
+  "bearCase": "Traffic recovery occurs but costs/capacity normalize slowly, leaving earnings below optimistic reopening expectations.",
+  "invalidationConditions": [
+    {
+      "indicator": "profitability/load factor/unit cost",
+      "observationMethod": "monthly traffic/next report",
+      "threshold": "traffic growth fails to produce profit improvement"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "international fare/yield recovery"
+  ],
+  "nextResearchActions": [
+    "No selection until traffic-to-profit bridge is visible."
+  ]
+}
