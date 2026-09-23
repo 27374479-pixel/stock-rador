@@ -1,0 +1,373 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2019q4-multisource-v1.3-001",
+  "cutoffAt": "2019-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current model/search weights. Only evidence available by the 2019Q4 cutoff is frozen; model-memory/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official macro/industry demand and price evidence.",
+      "coverageStatus": "partial",
+      "limitations": "NBS and MIIT data available by 2019-12-31; no exhaustive official source crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer disclosures and customer/supplier evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep company research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable product pricing, inventory and shipment conditions.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce DRAM evidence plus construction-equipment industry statistics."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed contemporaneous reporting on industrial/company ecosystem changes.",
+      "coverageStatus": "partial",
+      "limitations": "Mainstream financial press only."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist technology cycle evidence.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce storage-cycle reporting."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forums/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "nbs-pmi-20191231",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2019年12月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/201912/t20191231_1767584.html",
+      "publishedAt": "2019-12-31T09:00:00+08:00",
+      "availableAt": "2019-12-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-201912",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "December manufacturing PMI was 50.2; production 53.2 and new orders 51.2, with new orders above 50 for a second month while small-enterprise PMI remained 47.2."
+      ],
+      "entities": [
+        "China manufacturing",
+        "PMI",
+        "new orders"
+      ],
+      "observedChanges": [
+        "manufacturing demand/production stabilize above 50",
+        "small firms remain weak"
+      ]
+    },
+    {
+      "itemId": "nbs-pork-20191210",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2019年11月份居民消费价格同比上涨4.5%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/201912/t20191210_1767565.html",
+      "publishedAt": "2019-12-10T09:30:00+08:00",
+      "availableAt": "2019-12-10T09:30:00+08:00",
+      "originGroup": "nbs-cpi-201911",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November pork prices rose 110.2% YoY and 3.8% MoM; livestock meat prices rose 74.5% YoY, showing an extreme hog-supply/price regime."
+      ],
+      "entities": [
+        "pork",
+        "hog cycle",
+        "CPI"
+      ],
+      "observedChanges": [
+        "pork scarcity pricing remains extreme"
+      ]
+    },
+    {
+      "itemId": "miit-auto-201911",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2019年11月汽车工业经济运行情况",
+      "publisher": "工业和信息化部",
+      "url": "https://wap.miit.gov.cn/gxsj/tjfx/zbgy/qc/art/2020/art_a26a3997a5354eb98570cd1e3a022821.html",
+      "publishedAt": "2019-12-12T00:00:00+08:00",
+      "availableAt": "2019-12-12T00:00:00+08:00",
+      "originGroup": "miit-auto-201911",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November NEV sales were 95k, down 43.7% YoY; Jan-Nov auto-industry key-enterprise revenue was down 5% and profits/taxes down 19%, while commercial vehicles were less weak."
+      ],
+      "entities": [
+        "NEV",
+        "autos",
+        "commercial vehicles"
+      ],
+      "observedChanges": [
+        "NEV demand remains sharply negative",
+        "broad auto earnings remain weak"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-20191111",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Decline in Q4 DRAM Contract Prices Lessens as Buying Momentum Recovers",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20191111-10197.html",
+      "publishedAt": "2019-11-11T00:00:00+08:00",
+      "availableAt": "2019-11-11T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20191111",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q4 DRAM ASP decline had narrowed to about 5%, October trading volume rose materially QoQ, buyers were more willing to pay, and lower supplier inventories could allow prices to stabilize/recover in 2020."
+      ],
+      "entities": [
+        "DRAM",
+        "inventory",
+        "contract prices"
+      ],
+      "observedChanges": [
+        "DRAM downcycle decelerates",
+        "buyer restocking begins"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-20191216",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "As Spot Prices See Sharp Upturn, 1Q20 DRAM Contract Prices Stop Falling",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20191216-10206.html",
+      "publishedAt": "2019-12-16T00:00:00+08:00",
+      "availableAt": "2019-12-16T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20191216",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DRAM spot prices had begun to rebound; buyers were raising inventory, and TrendForce expected the cyclical price upturn to begin with server DRAM while most other DRAM categories were closer to flat/slightly down in 1Q20."
+      ],
+      "entities": [
+        "server DRAM",
+        "PC DRAM",
+        "mobile DRAM",
+        "inventory"
+      ],
+      "observedChanges": [
+        "server DRAM becomes first clear product-level upturn",
+        "broader DRAM recovery remains uneven"
+      ]
+    },
+    {
+      "itemId": "excavator-20191209",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "中国工程机械工业协会：11月挖掘机销量同比增21.7%",
+      "publisher": "第一财经",
+      "url": "https://www.yicai.com/news/100430247.html",
+      "publishedAt": "2019-12-09T20:04:00+08:00",
+      "availableAt": "2019-12-09T20:04:00+08:00",
+      "originGroup": "ccma-excavator-201911",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November excavator sales were 19,316 units, +21.7% YoY; domestic +21.2%, exports +25.6%; Jan-Nov total +15.0% and exports +36.6%."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "infrastructure"
+      ],
+      "observedChanges": [
+        "construction-equipment demand reaccelerates"
+      ]
+    },
+    {
+      "itemId": "tesla-china-20191230",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "首批国产特斯拉Model 3正式交付，相关产业链迎“黄金期”",
+      "publisher": "第一财经",
+      "url": "https://www.yicai.com/news/100451029.html",
+      "publishedAt": "2019-12-30T12:49:00+08:00",
+      "availableAt": "2019-12-30T12:49:00+08:00",
+      "originGroup": "tesla-china-delivery-20191230",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Shanghai-made Model 3 began first internal-customer deliveries earlier than the previously expected 2020Q1 timing; domestic suppliers were already being discussed as a growing part of the localized supply chain."
+      ],
+      "entities": [
+        "Tesla Shanghai",
+        "Model 3",
+        "domestic auto suppliers"
+      ],
+      "observedChanges": [
+        "Tesla China production moves from construction to realized delivery",
+        "localization opportunity becomes operational rather than conceptual"
+      ]
+    },
+    {
+      "itemId": "tesla-supplychain-20191111",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "中国优质供应商将充实特斯拉全球供应链",
+      "publisher": "中国证券报",
+      "url": "https://www.cs.com.cn/ssgs/gsxw/201911/t20191111_5997819.html",
+      "publishedAt": "2019-11-11T06:58:00+08:00",
+      "availableAt": "2019-11-11T06:58:00+08:00",
+      "originGroup": "tesla-localization-20191111",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Tesla Shanghai had entered trial production; Chinese Model 3 was expected to begin small-scale delivery by year end and larger delivery in 2020Q1, with supply-chain localization expected to deepen."
+      ],
+      "entities": [
+        "Tesla Shanghai",
+        "Model 3",
+        "local suppliers"
+      ],
+      "observedChanges": [
+        "localized EV supply chain moves toward production ramp"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2019q4-dram-cycle-turn",
+      "statement": "The DRAM downcycle was visibly bottoming: Q4 price declines narrowed, buyer restocking increased, and by mid-December server DRAM was identified as the first product segment likely to return to price growth.",
+      "changeType": "product_price_cycle_inflection",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-11-11T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-dram-20191111",
+        "trendforce-dram-20191216"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20191111",
+        "trendforce-dram-20191216"
+      ],
+      "affectedValueChain": [
+        "server DRAM",
+        "memory suppliers",
+        "memory interface/components",
+        "server OEMs"
+      ],
+      "contradictionSearchNotes": "Broader DRAM recovery was uneven: server DRAM led while PC/mobile categories were not yet clearly rising. Deep research must preserve product-level distinctions instead of mapping a single server signal to every memory-theme stock.",
+      "researchQuestion": "Which A-share expressions, if any, have direct earnings sensitivity to the specific product segments turning up, and should a broader memory hypothesis be separated from server DRAM?"
+    },
+    {
+      "eventId": "event-2019q4-tesla-localization",
+      "statement": "Tesla Shanghai moved from trial production to realized Model 3 delivery by year end, bringing the domestic supply-chain localization thesis from expectation into an observable production ramp.",
+      "changeType": "localization_volume_ramp",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-11-11T06:58:00+08:00",
+      "memberItemIds": [
+        "tesla-supplychain-20191111",
+        "tesla-china-20191230"
+      ],
+      "independentOriginGroups": [
+        "tesla-localization-20191111",
+        "tesla-china-delivery-20191230"
+      ],
+      "affectedValueChain": [
+        "EV components",
+        "battery system",
+        "auto electronics",
+        "body/chassis parts"
+      ],
+      "contradictionSearchNotes": "Many listed companies were described as Tesla-related with very different revenue materiality. Deep research must verify actual supply content and incremental earnings rather than accept concept exposure.",
+      "researchQuestion": "Which domestic suppliers had already-verifiable Tesla content with material incremental earnings and acceptable expectation burden?"
+    },
+    {
+      "eventId": "event-2019q4-construction-machinery-acceleration",
+      "statement": "Excavator demand reaccelerated sharply in November, with domestic and export sales both above 20% YoY and Jan-Nov volume already 15% above the prior year.",
+      "changeType": "physical_volume_acceleration",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-12-09T20:04:00+08:00",
+      "memberItemIds": [
+        "excavator-20191209"
+      ],
+      "independentOriginGroups": [
+        "ccma-excavator-201911"
+      ],
+      "affectedValueChain": [
+        "excavator OEMs",
+        "hydraulics",
+        "construction equipment components"
+      ],
+      "contradictionSearchNotes": "The industry had already been strong for several years, so deep research must distinguish continuing structural/share gains from a late-cycle volume peak.",
+      "researchQuestion": "Do leading OEM/component companies still have earnings-path room beyond the already-visible machinery cycle?"
+    },
+    {
+      "eventId": "event-2019q4-pork-scarcity",
+      "statement": "Pork prices remained in an extreme scarcity regime, rising 110.2% YoY in November, creating a potentially large producer margin pool but also a strong incentive for supply restoration.",
+      "changeType": "commodity_scarcity_price_spike",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-12-10T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pork-20191210"
+      ],
+      "independentOriginGroups": [
+        "nbs-cpi-201911"
+      ],
+      "affectedValueChain": [
+        "hog producers",
+        "feed",
+        "meat processors",
+        "consumers"
+      ],
+      "contradictionSearchNotes": "The price signal is extremely visible and may be late-cycle. Deep research must test biological inventory/capacity restoration and whether listed producers' volume survival is strong enough to monetize high prices.",
+      "researchQuestion": "Are high pork prices still an investable earnings inflection, or already a late-cycle scarcity headline?"
+    },
+    {
+      "eventId": "event-2019q4-nev-demand-weakness",
+      "statement": "China NEV demand remained deeply weak in November, with sales down 43.7% YoY and broad auto-industry revenue/profits still under pressure.",
+      "changeType": "demand_contraction",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-12-12T00:00:00+08:00",
+      "memberItemIds": [
+        "miit-auto-201911"
+      ],
+      "independentOriginGroups": [
+        "miit-auto-201911"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "battery suppliers",
+        "auto components"
+      ],
+      "contradictionSearchNotes": "Tesla localization is a separate company/supply-chain event and should not be used to declare the whole NEV market healthy.",
+      "researchQuestion": "Should broad domestic NEV exposure remain fail-closed while selectively researching Tesla-localization beneficiaries?"
+    },
+    {
+      "eventId": "event-2019q4-manufacturing-stabilization",
+      "statement": "China manufacturing PMI stabilized above 50 with production and new orders expanding, but small firms remained below the threshold, making this broad context rather than a standalone sector thesis.",
+      "changeType": "macro_demand_stabilization",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-12-31T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20191231"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-201912"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "industrial cyclicals"
+      ],
+      "contradictionSearchNotes": "Aggregate stabilization can coexist with sector divergence; require narrower physical and earnings evidence.",
+      "researchQuestion": "Which narrow industries show independent physical acceleration beyond the macro PMI context?"
+    }
+  ]
+}
