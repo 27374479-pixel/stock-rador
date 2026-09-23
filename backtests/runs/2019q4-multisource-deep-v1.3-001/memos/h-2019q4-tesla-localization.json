@@ -1,0 +1,488 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2019-12-31T23:59:59+08:00",
+  "researchReadyAt": "2019-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q4-tesla-localization",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Shanghai Model 3 ramp should become visible in supplier orders and early-2020 earnings within 60d."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601689.SH",
+      "role": "preferred",
+      "directExposure": "credible",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Tesla content >RMB5,000/car and estimated 2020/21 Tesla profit contribution were quantified, while the legacy business showed sequential recovery. Theme rerating and limited target-price room keep it Research.",
+      "evidenceRefs": [
+        "tesla-china-20191230",
+        "tuopu-research-20191223",
+        "regime-tesla-20191231"
+      ]
+    },
+    {
+      "ticker": "603305.SH",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "mixed",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "More direct Tesla exposure, but 1-9M profit was -40.8% YoY and the October target price offered almost no immediate valuation slack.",
+      "evidenceRefs": [
+        "xusheng-research-20191024",
+        "regime-tesla-20191231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Tesla Shanghai moved into actual delivery and domestic supplier localization became operational. The open question is whether supplier earnings upside remains after a strong pre-cutoff rerating.",
+    "firstCredibleDate": "2019-11-11",
+    "valueChain": [
+      "Tesla Shanghai production",
+      "localized components",
+      "supplier revenue/margin",
+      "earnings"
+    ],
+    "persistenceReason": "Localization and Model 3 ramp can persist for several quarters.",
+    "disconfirmingEvidence": [
+      "Tesla basket already had +23.7pp 60d excess.",
+      "Tuopu report target implied only about 9% upside from Dec 19.",
+      "Xusheng 1-9M profit remained sharply down."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tesla-supplychain-20191111",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tesla-china-20191230",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tuopu-research-20191223",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "xusheng-research-20191024",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-tesla-20191231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Shanghai Model 3 ramp",
+      "to": "localized supplier orders",
+      "mechanism": "Local production raises content sourced from domestic component suppliers.",
+      "evidenceRefs": [
+        "tesla-supplychain-20191111",
+        "tesla-china-20191230"
+      ],
+      "failureMode": "localization/production ramp is delayed",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "supplier orders",
+      "to": "earnings",
+      "mechanism": "Verified per-car content and scale utilization lift revenue/profit.",
+      "evidenceRefs": [
+        "tuopu-research-20191223",
+        "xusheng-research-20191024"
+      ],
+      "failureMode": "legacy weakness or pricing offsets Tesla growth",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "verified Tesla suppliers"
+    ],
+    "secondOrderWinners": [
+      "EV materials/components"
+    ],
+    "losers": [
+      "non-localized legacy suppliers"
+    ],
+    "substitutes": [
+      "imported components"
+    ],
+    "bottlenecks": [
+      "Tesla production ramp",
+      "supplier qualification"
+    ],
+    "falseThemeMatches": [
+      "Tesla concept names without material content"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601689.SH",
+      "name": "拓普集团",
+      "verifiedExposure": "Verified Tesla content >RMB5,000/car plus diversified legacy auto customers.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ],
+      "earningsSensitivity": {
+        "base": "2019/20/21 EPS 0.49/0.68/0.92.",
+        "favorable": "Tesla ramp and legacy utilization recovery produce estimate upgrades.",
+        "adverse": "Theme is already priced and legacy auto remains weak."
+      },
+      "principalRisks": [
+        "theme rerating",
+        "legacy-auto weakness"
+      ]
+    },
+    {
+      "ticker": "603305.SH",
+      "name": "旭升股份",
+      "verifiedExposure": "Deep Tesla die-cast parts exposure.",
+      "evidenceRefs": [
+        "xusheng-research-20191024"
+      ],
+      "earningsSensitivity": {
+        "base": "1-9M profit -40.8%; Tesla China can improve 2020.",
+        "favorable": "Shanghai ramp restores growth.",
+        "adverse": "Direct exposure is already valued aggressively and legacy Tesla pricing pressure persists."
+      },
+      "principalRisks": [
+        "high directness/expectation burden",
+        "earnings still down"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "603305.SH",
+      "name": "旭升股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "More pure Tesla supplier, useful to test direct-exposure bias.",
+      "whySelectedCompanyShouldOutperform": "Tuopu combines verified Tesla increment with a broader earnings base and less dependence on a single customer.",
+      "evidenceRefs": [
+        "tuopu-research-20191223",
+        "xusheng-research-20191024",
+        "regime-tesla-20191231"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601689.SH",
+    "pairwise": [
+      {
+        "controlTicker": "603305.SH",
+        "selectedAdvantages": [
+          "quantified Tesla profit increment",
+          "broader customer base",
+          "sequential legacy recovery"
+        ],
+        "selectedDisadvantages": [
+          "less pure Tesla exposure",
+          "already strong 60d rerating"
+        ],
+        "evidenceRefs": [
+          "tuopu-research-20191223",
+          "xusheng-research-20191024",
+          "regime-tesla-20191231"
+        ],
+        "switchCondition": "Prefer Xusheng if its realized earnings turn positive and valuation room becomes clearly better than Tuopu's.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Prefer diversified earnings support over thematic purity, but prior rerating and limited target room keep the opportunity at Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Tesla basket had +23.74pp 60d excess with full breadth; Tuopu's Dec 23 target was RMB19 versus RMB17.44 current price.",
+    "thesisExpectation": "Actual Model 3 delivery can still lift 2020 supplier earnings, especially if Tesla localization outpaces the already-positive baseline.",
+    "measurableGap": "The earnings bridge is credible but much of the localization story is already visible in price and research forecasts.",
+    "evidenceRefs": [
+      "regime-tesla-20191231",
+      "tuopu-research-20191223",
+      "xusheng-research-20191024"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "2020-21 EPS path and Tesla incremental profit versus theme rerating/target-price room.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Tuopu 2019/20/21 EPS 0.49/0.68/0.92; target RMB19 vs RMB17.44. Xusheng target RMB28.6 vs RMB28 in Oct.",
+    "thesisScenario": "Tesla production/localization beats the frozen ramp and supplier margins improve.",
+    "breakevenCondition": "Tesla earnings increment must exceed already-published expectations and offset legacy auto weakness.",
+    "ordinaryScenarioFailure": "Shanghai ramp merely matches consensus and multiples compress after the Q4 rerating.",
+    "catalystOrTimingBridge": "Tesla production/delivery and supplier quarterly results are observable within 60d.",
+    "evidenceRefs": [
+      "regime-tesla-20191231",
+      "tuopu-research-20191223",
+      "xusheng-research-20191024"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Shanghai Model 3 moved from trial production into actual delivery.",
+      "evidenceRefs": [
+        "tesla-supplychain-20191111",
+        "tesla-china-20191230"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Tuopu had quantified per-car content and sequential recovery, but 2019 profit remained down.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "All frozen Tesla-supply-chain names beat CSI300 over 20d and 60d.",
+      "evidenceRefs": [
+        "regime-tesla-20191231"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Tuopu report quantified 2019-21 EPS and Tesla profit contribution.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Theme-level rerating was already substantial and target-price room was limited.",
+      "evidenceRefs": [
+        "regime-tesla-20191231",
+        "tuopu-research-20191223"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.09930707745531613,
+      "lookback60Excess": 0.23743869653640828,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-tesla-20191231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Tesla Shanghai moved into delivery and localization ramp.",
+      "evidenceRefs": [
+        "tesla-china-20191230"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Tuopu's 2020/21 path improves, but Xusheng still had weak realized earnings.",
+      "evidenceRefs": [
+        "tuopu-research-20191223",
+        "xusheng-research-20191024"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Localization and production ramp can persist for several quarters.",
+      "evidenceRefs": [
+        "tesla-supplychain-20191111",
+        "tesla-china-20191230"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Supply-chain basket and key names had already rerated strongly.",
+      "evidenceRefs": [
+        "regime-tesla-20191231"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Strong fundamental event but high absorption blocks Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601689.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Tuopu has diversified customers and positive operating cash flow despite weak industry conditions.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Tesla increment can lift 2020/21 earnings if the ramp beats expectations.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Target-price and forward multiple room is limited after rerating.",
+      "evidenceRefs": [
+        "tuopu-research-20191223",
+        "regime-tesla-20191231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Tesla deliveries and supplier results are near-term.",
+      "evidenceRefs": [
+        "tesla-china-20191230"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Diversified earnings base is safer than pure Tesla exposure, but legacy auto remains weak.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "603305.SH",
+        "revisionAdvantage": "Tuopu has quantified Tesla profit contribution plus improving legacy utilization.",
+        "valuationAdvantage": "Neither has large valuation slack; Xusheng's October target implied almost no room.",
+        "qualityTradeoff": "Xusheng is purer Tesla exposure but its 1-9M profit was down 40.8%; Tuopu has a broader earnings base.",
+        "catalystAdvantage": "Both map to Tesla Shanghai; Tuopu's per-car content is explicitly quantified.",
+        "downsideTradeoff": "Tuopu's diversification reduces single-customer dependence.",
+        "switchCondition": "Switch to Xusheng only if realized earnings turn and valuation room becomes superior.",
+        "evidenceRefs": [
+          "tuopu-research-20191223",
+          "xusheng-research-20191024",
+          "regime-tesla-20191231"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Tesla Shanghai began Model 3 deliveries and was expected to ramp materially in 2020.",
+    "earningsMechanism": "More localized vehicle volume multiplies verified per-car component content into supplier revenue/profit.",
+    "nextObservableMetric": "Tesla China production/delivery and supplier revenue/profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "tesla-china-20191230",
+      "tuopu-research-20191223"
+    ],
+    "failureCondition": "Tesla ramp does not generate earnings revisions beyond the frozen 2020 path."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Tuopu Q3 decline narrowed; Tesla China entered delivery.",
+      "nextPeriod": "Tuopu 2020E EPS 0.68 and estimated Tesla profit increment RMB93m.",
+      "laterPeriod": "2021E EPS 0.92 and Tesla increment RMB180m.",
+      "rationale": "Current Dec 23 report quantifies both legacy recovery and Tesla incremental profit.",
+      "evidenceRefs": [
+        "tuopu-research-20191223"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Early Model 3 ramp can improve utilization/order visibility.",
+      "nextPeriodChange": "Localization above the frozen 150k 2020 production assumption could raise EPS.",
+      "laterPeriodChange": "Further localization can compound, but much is already in the narrative.",
+      "mechanism": "Incremental path depends on localization/volume exceeding an explicit bullish baseline.",
+      "evidenceRefs": [
+        "tesla-china-20191230",
+        "tuopu-research-20191223"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The event is real but the baseline is already bullish and price has rerated.",
+      "evidenceRefs": [
+        "tuopu-research-20191223",
+        "regime-tesla-20191231"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Strong valuation/price expectations require sustained multi-year ramp.",
+      "evidenceRefs": [
+        "regime-tesla-20191231"
+      ]
+    },
+    "falsifier": "Tesla China volume and supplier earnings merely meet or miss the frozen 2020 baseline.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: real localization engine, but limited valuation slack after a strong Q4 rerating.",
+    "alreadyPricedAssessment": "substantially_absorbed",
+    "constraints": [
+      "strong prior rerating",
+      "legacy auto weakness",
+      "customer concentration"
+    ]
+  },
+  "bearCase": "Tesla ramp succeeds operationally but is already priced, while legacy auto weakness prevents earnings from beating expectations.",
+  "invalidationConditions": [
+    {
+      "indicator": "Tesla China volume",
+      "observationMethod": "delivery/production data",
+      "threshold": "material shortfall vs ramp"
+    },
+    {
+      "indicator": "supplier earnings",
+      "observationMethod": "quarterly results",
+      "threshold": "no positive revision beyond frozen path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All selections and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze Tuopu as preferred Research expression and use Xusheng as the direct-exposure control."
+  ]
+}
