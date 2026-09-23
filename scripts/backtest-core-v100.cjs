@@ -522,8 +522,9 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
             !['broad_positive', 'narrow_positive', 'mixed'].includes(timing?.earningsRevisionBreadth?.conclusion)) {
           errors.push(`${memoPath} High-priority company-engine override cannot have negative/unresolved earnings-revision breadth`);
         }
-        if (!['structural', 'multi_quarter'].includes(timing?.eventHalfLife?.conclusion)) {
-          errors.push(`${memoPath} High-priority selection requires structural or multi-quarter event half-life`);
+        if (!v10EngineOverride &&
+            !['structural', 'multi_quarter'].includes(timing?.eventHalfLife?.conclusion)) {
+          errors.push(`${memoPath} High-priority sector-confirmed selection requires structural or multi-quarter event half-life`);
         }
         if (!['low', 'moderate'].includes(timing?.lateCycleRisk?.conclusion)) {
           errors.push(`${memoPath} High-priority selection cannot have high/unresolved late-cycle risk`);
@@ -797,6 +798,19 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
           }
         }
 
+        const engineHalfLife = override.engineHalfLife;
+        if (!engineHalfLife || !['structural', 'multi_quarter', 'short_lived', 'uncertain'].includes(engineHalfLife.conclusion)) {
+          errors.push(`${memoPath} companyEngineTimingOverrideTest.engineHalfLife.conclusion is invalid`);
+        }
+        if (engineHalfLife) {
+          if (typeof engineHalfLife.rationale !== 'string' || !engineHalfLife.rationale.trim()) {
+            errors.push(`${memoPath} companyEngineTimingOverrideTest.engineHalfLife.rationale is required`);
+          }
+          if (!Array.isArray(engineHalfLife.evidenceRefs) || engineHalfLife.evidenceRefs.length === 0) {
+            errors.push(`${memoPath} companyEngineTimingOverrideTest.engineHalfLife.evidenceRefs must be non-empty`);
+          }
+        }
+
         const attribution = override.priceWeaknessAttribution;
         if (!attribution || !['non_company_fundamental', 'company_fundamental', 'mixed', 'unresolved'].includes(attribution.conclusion)) {
           errors.push(`${memoPath} companyEngineTimingOverrideTest.priceWeaknessAttribution.conclusion is invalid`);
@@ -861,8 +875,8 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
           if (!['clear', 'credible'].includes(memo?.crossSectionalAsymmetryTest?.downsideContainment?.conclusion)) {
             errors.push(`${memoPath} High-priority company-engine override requires downside containment`);
           }
-          if (!['clear_asymmetry', 'credible_asymmetry'].includes(memo?.crossSectionalAsymmetryTest?.overallConclusion)) {
-            errors.push(`${memoPath} High-priority company-engine override requires clear/credible asymmetry`);
+          if (memo?.crossSectionalAsymmetryTest?.overallConclusion !== 'clear_asymmetry') {
+            errors.push(`${memoPath} High-priority company-engine override requires clear asymmetry`);
           }
           if ((memo?.crossSectionalAsymmetryTest?.pairwise ?? []).some((pair) => pair?.netAsymmetry !== 'selected')) {
             errors.push(`${memoPath} High-priority company-engine override must beat every frozen control`);
@@ -872,6 +886,9 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
           }
           if (attribution?.conclusion !== 'non_company_fundamental') {
             errors.push(`${memoPath} High-priority company-engine override requires price weakness attributed away from company fundamentals`);
+          }
+          if (!['structural', 'multi_quarter'].includes(engineHalfLife?.conclusion)) {
+            errors.push(`${memoPath} High-priority company-engine override requires structural or multi-quarter company-engine half-life`);
           }
           if (!['de_rated', 'mixed'].includes(dislocation?.conclusion)) {
             errors.push(`${memoPath} High-priority company-engine override requires de_rated or mixed company price dislocation`);
