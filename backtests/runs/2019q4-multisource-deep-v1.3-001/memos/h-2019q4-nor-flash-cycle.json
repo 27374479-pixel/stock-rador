@@ -1,0 +1,451 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2019-12-31T23:59:59+08:00",
+  "researchReadyAt": "2019-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q4-nor-flash-cycle",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "NOR Flash demand/pricing and company margin/earnings revisions can appear within one to two quarters; 60d tests whether the upcycle was already fully absorbed."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "603986.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Q3 revenue/profit growth and NOR product demand were already strong, but the stock/theme had rerated dramatically and forward PE remained high.",
+      "evidenceRefs": [
+        "giga-q3-20191030",
+        "giga-research-20191030",
+        "regime-memory-20191231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "A broader memory event contained two distinct product stories: server DRAM was beginning a price turn, while GigaDevice's realized earnings and research evidence pointed to a separate NOR Flash/TWS/5G demand cycle. These must be evaluated separately.",
+    "firstCredibleDate": "2019-10-30",
+    "valueChain": [
+      "TWS/5G device demand",
+      "NOR Flash volume/pricing",
+      "GigaDevice Flash mix",
+      "earnings"
+    ],
+    "persistenceReason": "TWS/5G demand can persist for quarters, but semiconductor valuation and product cycles are volatile.",
+    "disconfirmingEvidence": [
+      "Memory-theme basket had +53.9pp 60d excess.",
+      "Giga report already used ~49x 2020E PE.",
+      "DRAM project was future R&D rather than realized DRAM earnings."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-dram-20191111",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-dram-20191216",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-q3-20191030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-research-20191030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20191231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "TWS/5G NOR demand",
+      "to": "NOR Flash pricing/mix",
+      "mechanism": "Higher-capacity NOR demand and better product mix can lift ASP/margin.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ],
+      "failureMode": "consumer demand or pricing weakens",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "NOR mix/pricing",
+      "to": "Giga earnings",
+      "mechanism": "Flash remains a realized core business and Q3 earnings/margins had already improved.",
+      "evidenceRefs": [
+        "giga-q3-20191030",
+        "giga-research-20191030"
+      ],
+      "failureMode": "valuation compression overwhelms earnings growth",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "NOR Flash suppliers"
+    ],
+    "secondOrderWinners": [
+      "TWS/5G electronics"
+    ],
+    "losers": [
+      "buyers facing higher component costs"
+    ],
+    "substitutes": [
+      "alternative memory suppliers"
+    ],
+    "bottlenecks": [
+      "foundry capacity",
+      "demand duration"
+    ],
+    "falseThemeMatches": [
+      "DRAM concepts without realized NOR/DRAM earnings"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Realized NOR/NAND Flash and MCU business; DRAM remained future development.",
+      "evidenceRefs": [
+        "giga-q3-20191030",
+        "giga-research-20191030"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E EPS 3.23 at ~49x PE.",
+        "favorable": "NOR demand/pricing upgrades exceed the already-bullish path.",
+        "adverse": "Theme de-rates or NOR upcycle fails to broaden."
+      },
+      "principalRisks": [
+        "very high valuation",
+        "large prior rerating"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Semiconductor/memory-theme proxy that had also rerated strongly.",
+      "whySelectedCompanyShouldOutperform": "Giga has directly verified realized Flash earnings and an explicit NOR demand bridge.",
+      "evidenceRefs": [
+        "regime-memory-20191231"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "selectedAdvantages": [
+          "realized Flash revenue/profit and cash-flow growth",
+          "explicit NOR demand/pricing thesis"
+        ],
+        "selectedDisadvantages": [
+          "very high valuation and strong prior rerating"
+        ],
+        "evidenceRefs": [
+          "giga-q3-20191030",
+          "giga-research-20191030",
+          "regime-memory-20191231"
+        ],
+        "switchCondition": "Prefer Beijing Junzheng only if direct realized memory earnings and a better expectation path are independently verified before reveal.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Giga is the cleaner product-level expression, but expectation burden blocks Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Memory-theme basket had +53.93pp 60d excess with full breadth; Giga's frozen report implied ~49x 2020E PE after strong Q3 growth.",
+    "thesisExpectation": "NOR/TWS/5G demand can keep earnings revisions positive, but incremental upside must exceed an already-bullish baseline.",
+    "measurableGap": "The product/earnings bridge is strong, yet price absorption is extreme.",
+    "evidenceRefs": [
+      "regime-memory-20191231",
+      "giga-research-20191030",
+      "giga-q3-20191030"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward EPS and NOR cycle versus 60d rerating and high forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2019/20/21 EPS 2.10/3.23/3.99; ~75x/49x/40x PE at Oct 30 report price.",
+    "thesisScenario": "NOR price/mix improves faster than the already-upgraded forecast.",
+    "breakevenCondition": "Earnings revisions must be strong enough to offset a premium multiple and very large theme rerating.",
+    "ordinaryScenarioFailure": "NOR demand improves but merely meets the published bullish forecast.",
+    "catalystOrTimingBridge": "NOR pricing, TWS demand and quarterly earnings are observable within 60d.",
+    "evidenceRefs": [
+      "regime-memory-20191231",
+      "giga-research-20191030",
+      "giga-q3-20191030"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Q3 earnings accelerated and report identified a new NOR demand cycle.",
+      "evidenceRefs": [
+        "giga-q3-20191030",
+        "giga-research-20191030"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q3 revenue +63% YoY and profit +98.2% YoY were already realized.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Memory-theme basket had strong positive breadth.",
+      "evidenceRefs": [
+        "regime-memory-20191231"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Current report quantified 2019-21 EPS and premium valuation.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "60d excess was extreme and valuation premium already substantial.",
+      "evidenceRefs": [
+        "regime-memory-20191231",
+        "giga-research-20191030"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.12697626354537028,
+      "lookback60Excess": 0.5393357124128264,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-memory-20191231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Q3 earnings and NOR demand evidence were strengthening.",
+      "evidenceRefs": [
+        "giga-q3-20191030",
+        "giga-research-20191030"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Giga estimates were raised, but direct product-level confirmation is concentrated in one expression.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "TWS/5G demand can persist across quarters.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Theme and stock had already rerated dramatically.",
+      "evidenceRefs": [
+        "regime-memory-20191231"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Strong company engine, but extreme absorption blocks Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603986.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Giga had strong realized Q3 growth and cash-flow expansion.",
+      "evidenceRefs": [
+        "giga-q3-20191030"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "NOR/TWS/5G demand can support further revisions.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "2020E PE ~49x and large prior rerating leave limited slack.",
+      "evidenceRefs": [
+        "giga-research-20191030",
+        "regime-memory-20191231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Pricing/mix and quarterly earnings are near-term.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong balance sheet/earnings quality are offset by valuation and cycle risk.",
+      "evidenceRefs": [
+        "giga-q3-20191030",
+        "regime-memory-20191231"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "revisionAdvantage": "Giga has verified realized Flash earnings and explicit NOR demand evidence.",
+        "valuationAdvantage": "No valuation advantage is claimed; both had rerated strongly.",
+        "qualityTradeoff": "Giga's cash flow and Q3 earnings are directly documented.",
+        "catalystAdvantage": "NOR/TWS/5G product demand maps directly to Giga.",
+        "downsideTradeoff": "High valuation remains a material risk despite stronger mapping.",
+        "switchCondition": "Switch only if the proxy's direct memory earnings and expectation room are verified.",
+        "evidenceRefs": [
+          "giga-q3-20191030",
+          "giga-research-20191030",
+          "regime-memory-20191231"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Higher-capacity NOR demand and product mix were improving.",
+    "earningsMechanism": "NOR demand/mix raises Flash revenue and margin in a realized core business.",
+    "nextObservableMetric": "NOR pricing/mix, revenue, gross margin and EPS revisions",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "giga-q3-20191030",
+      "giga-research-20191030"
+    ],
+    "failureCondition": "NOR demand does not generate revisions beyond the frozen 2020 EPS path."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q3 revenue/profit already accelerated.",
+      "nextPeriod": "2020E EPS 3.23, +53% profit growth forecast.",
+      "laterPeriod": "2021E EPS 3.99, slower +24% profit growth.",
+      "rationale": "The market already had a strong multi-year growth baseline.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "NOR mix/pricing continues into Q4/2020Q1.",
+      "nextPeriodChange": "TWS/5G demand drives further 2020 revisions.",
+      "laterPeriodChange": "Longer duration requires new products and share gains, not just a one-cycle price move.",
+      "mechanism": "Alpha requires growth duration to exceed an already expensive forecast.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Company engine is real, but the market already discounts a steep 2020 path.",
+      "evidenceRefs": [
+        "giga-research-20191030"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Premium multiple and cycle exposure create high duration risk.",
+      "evidenceRefs": [
+        "regime-memory-20191231",
+        "giga-research-20191030"
+      ]
+    },
+    "falsifier": "NOR demand/pricing fails to push earnings above the frozen 2020 path.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong product/company engine but exceptionally high expectation burden.",
+    "alreadyPricedAssessment": "high",
+    "constraints": [
+      "~49x 2020E PE",
+      "extreme 60d rerating",
+      "semiconductor cycle volatility"
+    ]
+  },
+  "bearCase": "The NOR thesis is fundamentally correct but already priced; even good earnings cannot prevent multiple compression.",
+  "invalidationConditions": [
+    {
+      "indicator": "NOR pricing/demand",
+      "observationMethod": "industry/company updates",
+      "threshold": "no further improvement"
+    },
+    {
+      "indicator": "EPS path",
+      "observationMethod": "results/forecasts",
+      "threshold": "no revision above frozen 2020E 3.23"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All selections and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep NOR Flash separate from server DRAM; Research only because of extreme absorption."
+  ]
+}
