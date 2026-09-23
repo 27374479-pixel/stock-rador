@@ -1,0 +1,246 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-04-30T15:30:00+08:00",
+  "researchReadyAt": "2025-04-30T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-q2-power-backlog-2025q2",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 40,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Global power-equipment backlog is multi-quarter, but a stock selection requires favorable opportunity timing and company-level conversion."
+  },
+  "changeHypothesis": {
+    "summary": "ABB and GE Vernova confirmed a real global power-equipment backlog cycle, and 思源电气 had the strongest Q1 A-share earnings conversion. However, by the Apr30 cutoff the entire frozen A-share opportunity basket had underperformed CSI300 over both 20 and 60 days with 0% positive breadth. V0.9 therefore keeps the industry hypothesis high priority but makes no stock selection.",
+    "firstCredibleDate": "2025-04-17",
+    "valueChain": [
+      "grid/data-center capex",
+      "equipment orders/backlog",
+      "supplier utilization/delivery",
+      "earnings"
+    ],
+    "persistenceReason": "Two independent first-party global suppliers reported high/record backlog and strong power-equipment orders.",
+    "disconfirmingEvidence": [
+      "A-share basket price regime was uniformly adverse.",
+      "许继 revenue/profit declined and 伊戈尔 profit/margin deteriorated despite revenue growth.",
+      "思源 Q1 operating cash flow was negative."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "abb-q1-20250417",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "gev-q1-20250423",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-power-20250430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "siyuan-q1-20250426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "xuji-q1-20250426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "igor-q1-20250429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "global grid/power capex",
+      "to": "equipment backlog",
+      "mechanism": "Data centers, grids and generation projects require transformers, switchgear and related equipment.",
+      "evidenceRefs": [
+        "abb-q1-20250417",
+        "gev-q1-20250423"
+      ],
+      "failureMode": "project delays or capacity additions normalize backlog",
+      "lag": "quarters"
+    },
+    {
+      "from": "backlog",
+      "to": "A-share earnings",
+      "mechanism": "Only suppliers with qualified products and profitable delivery convert the cycle into earnings.",
+      "evidenceRefs": [
+        "siyuan-q1-20250426",
+        "xuji-q1-20250426",
+        "igor-q1-20250429"
+      ],
+      "failureMode": "mix, pricing or working-capital pressure breaks the conversion",
+      "lag": "one to four quarters"
+    },
+    {
+      "from": "earnings thesis",
+      "to": "stock selection",
+      "mechanism": "V0.9 requires favorable pre-cutoff opportunity timing in addition to company quality.",
+      "evidenceRefs": [
+        "regime-power-20250430"
+      ],
+      "failureMode": "good companies stay trapped in a weak opportunity regime",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified transformer/switchgear/power-equipment suppliers"
+    ],
+    "secondOrderWinners": [
+      "electrical components/materials"
+    ],
+    "losers": [
+      "developers facing long lead times"
+    ],
+    "substitutes": [
+      "alternative local suppliers"
+    ],
+    "bottlenecks": [
+      "transformer/switchgear capacity",
+      "qualification"
+    ],
+    "falseThemeMatches": [
+      "power concepts without profitable delivery exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002028.SZ",
+      "name": "思源电气",
+      "verifiedExposure": "Q1 revenue +21.4%, profit +22.9%,扣非 +28.1%.",
+      "evidenceRefs": [
+        "siyuan-q1-20250426"
+      ],
+      "earningsSensitivity": {
+        "base": "Current earnings conversion is positive.",
+        "favorable": "global order cycle raises overseas/high-margin delivery.",
+        "adverse": "weak basket regime and negative CFO persist."
+      },
+      "principalRisks": [
+        "adverse timing",
+        "cash-flow seasonality"
+      ]
+    },
+    {
+      "ticker": "000400.SZ",
+      "name": "许继电气",
+      "verifiedExposure": "Grid/UHV exposure but Q1 revenue -16.4% and profit -12.5%.",
+      "evidenceRefs": [
+        "xuji-q1-20250426"
+      ],
+      "earningsSensitivity": {
+        "base": "weak Q1 recognition.",
+        "favorable": "later delivery catches up.",
+        "adverse": "weakness persists."
+      },
+      "principalRisks": [
+        "conversion not realized",
+        "timing"
+      ]
+    },
+    {
+      "ticker": "002922.SZ",
+      "name": "伊戈尔",
+      "verifiedExposure": "Q1 revenue +40% but profit -28%, gross margin pressure.",
+      "evidenceRefs": [
+        "igor-q1-20250429"
+      ],
+      "earningsSensitivity": {
+        "base": "top-line growth without profit conversion.",
+        "favorable": "AIDC/overseas mix restores margin.",
+        "adverse": "margin pressure persists."
+      },
+      "principalRisks": [
+        "margin",
+        "cash flow"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "思源 has the best current company evidence, but V0.9 forbids High-priority selection in an adverse opportunity price regime and no alternative offers a clean timing/asymmetry edge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Global industry evidence was positive, but the A-share basket had underperformed CSI300 over both 20 and 60 days with zero positive breadth.",
+    "thesisExpectation": "The global cycle may eventually convert, but a fresh company/timing confirmation is required before selection.",
+    "measurableGap": "Opportunity fundamentals and stock-market regime disagree.",
+    "evidenceRefs": [
+      "regime-power-20250430",
+      "siyuan-q1-20250426"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection because timing gate is adverse despite a valid structural industry thesis.",
+    "alreadyPricedAssessment": "not applicable",
+    "constraints": [
+      "20d and 60d relative regime adverse",
+      "0% positive breadth"
+    ]
+  },
+  "bearCase": "Global backlog is real but A-share names face local pricing/mix/cash-flow issues and continue underperforming.",
+  "invalidationConditions": [
+    {
+      "indicator": "opportunity price regime",
+      "observationMethod": "fresh deterministic snapshot",
+      "threshold": "remains adverse or deteriorates"
+    },
+    {
+      "indicator": "company earnings conversion",
+      "observationMethod": "next quarterly reports",
+      "threshold": "leading candidates fail to improve profit/cash conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No stock selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "company-specific backlog/delivery margins",
+    "timing of overseas order conversion"
+  ],
+  "nextResearchActions": [
+    "Keep High-priority hypothesis / No selection.",
+    "Re-underwrite only at a new cutoff with improved timing and direct conversion evidence."
+  ]
+}
