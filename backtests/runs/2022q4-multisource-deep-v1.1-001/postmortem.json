@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2022q4-multisource-deep-v1.1-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "chip_naura_late_reversal_research_only",
+      "frozenDecision": "北方华创 Research selection; not High-priority because strong realized localization earnings were paired with late_reversal price state, premium valuation and mixed peer asymmetry.",
+      "base60d": {
+        "selectedReturn": -0.11233024617304088,
+        "benchmarkReturn": 0.18098652772016743,
+        "benchmarkExcess": -0.2933167738932083,
+        "matchedControlExcess": 0.04149408587015396,
+        "bestControlTicker": "603690.SH",
+        "bestControlReturn": -0.024334662651582906,
+        "excessVsBestControl": -0.08799558352145798,
+        "selectedRank": 2
+      },
+      "later120d": {
+        "selectedReturn": 0.27466790851070333,
+        "benchmarkReturn": 0.12483877016438338,
+        "benchmarkExcess": 0.14982913834631995,
+        "selectedRank": 1
+      },
+      "failureClass": null,
+      "label": "late_reversal_correctly_blocked_at_base_horizon",
+      "generalLesson": "A strong structural thesis can remain correct long-term while being a poor immediate entry after a prior rerating. The 60d base horizon validates caution on the late-reversal state; the 120d recovery should not retroactively turn the original entry timing into a success."
+    },
+    {
+      "case": "pv_deye_mixed_asymmetry_research_only",
+      "frozenDecision": "德业股份 Research selection only; no High-priority because all three PV-downstream peers were de-rated with strong realized engines and selected-vs-peer asymmetry was mixed.",
+      "base60d": {
+        "selectedReturn": -0.15245958704507923,
+        "benchmarkReturn": 0.04748901599500854,
+        "benchmarkExcess": -0.19994860304008777,
+        "matchedControlExcess": -0.15225503613041003,
+        "bestControlTicker": "300274.SZ",
+        "bestControlReturn": 0.14561205197017313,
+        "excessVsBestControl": -0.29807163901525235,
+        "selectedRank": 3
+      },
+      "postOutcomeFundamentalDiagnosis": "Deye fundamentals did not collapse: 2023Q1 revenue +147.88% and attributable profit +345.64%. Sungrow also accelerated sharply (+266.90% Q1 profit), while Ginlong profit grew +97.27%. The group remained fundamentally strong but the market preferred a different expression.",
+      "failureClass": null,
+      "label": "mixed_asymmetry_correctly_not_promoted",
+      "generalLesson": "Fastest realized growth is not sufficient to choose the best stock. When several peers have valid engines and valuation/growth trade-offs are mixed, the Skill should remain Research rather than invent a winner."
+    },
+    {
+      "case": "property_policy_no_selection",
+      "frozenDecision": "Property financing reset promoted as High-priority hypothesis but No selection because policy relief was immediately rerated while developer profits/margins remained weak.",
+      "failureClass": null,
+      "label": "policy_good_news_not_equal_buy_signal",
+      "generalLesson": "Balance-sheet/tail-risk policy support can be economically important without creating immediate equity alpha after a rapid rerating. Financing relief is not the same as a realized sales/margin earnings bridge."
+    },
+    {
+      "case": "airline_reopening_no_selection",
+      "frozenDecision": "Airline reopening promoted as High-priority hypothesis but No selection because airline stocks already anticipated reopening while Q3 earnings remained deeply negative.",
+      "failureClass": null,
+      "label": "reopening_good_news_not_equal_buy_signal",
+      "generalLesson": "A durable policy catalyst should not be bought merely on confirmation when price has run ahead of unit-economics recovery."
+    }
+  ],
+  "crossWindowExpectationAbsorptionCheck": {
+    "lateReversalEvidence": [
+      {
+        "case": "2023Q2 华电国际",
+        "state": "late_reversal",
+        "baseOutcome": "High-priority failure under v1.0"
+      },
+      {
+        "case": "2022Q4 北方华创",
+        "state": "late_reversal",
+        "baseOutcome": "Research-only and strong 60d underperformance; 120d long-term recovery"
+      }
+    ],
+    "expectationDurationEvidence": [
+      {
+        "case": "2023Q3 比亚迪",
+        "interpretation": "Realized earnings remained strong but premium growth duration/intensity was overestimated."
+      },
+      {
+        "case": "2022Q4 德业股份",
+        "interpretation": "Realized growth remained exceptional, but multiple strong peers existed and the highest-growth name was not the best stock expression."
+      }
+    ],
+    "interpretation": "The late-reversal/expectation-absorption warning now repeats across unrelated industries and supports keeping V1.1. The separate expectation-duration/quality-premium question is important but still not cleanly repeated enough to justify a new version."
+  },
+  "decision": {
+    "keepV11Immutable": true,
+    "createV12Now": false,
+    "reason": "V1.1 late-reversal discipline gained independent support, while the expectation-duration issue still lacks a sufficiently repeated, precisely defined failure class.",
+    "nextAction": "Continue unchanged V1.1 on another independent historical window with a different economic mix."
+  },
+  "prohibitedUses": [
+    "Do not alter V1.1 from this same-period run.",
+    "Do not use the 120d North Huachuang recovery to override the pre-registered 60d decision horizon.",
+    "Do not create a rule that highest earnings growth should win.",
+    "Do not learn fixed PE/growth/return thresholds from Deye/Sungrow or North Huachuang."
+  ]
+}
