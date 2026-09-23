@@ -1,0 +1,465 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "researchReadyAt": "2020-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q2-gold-monetary-regime",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Gold-price leverage was already visible in Q1 earnings; 60d tests whether a near-eight-year gold high still leaves equity upside after valuation and price absorption."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600547.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Q1 profit +57.9% directly confirms gold-to-earnings conversion, but ~68x 2020E PE and a commodity already near an eight-year high make expectation/downside fit only mixed.",
+      "evidenceRefs": [
+        "shandong-q1-20200429",
+        "shandong-research-20200510",
+        "regime-gold-20200630",
+        "reuters-gold-20200624"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Gold reached a near-eight-year high under pandemic/monetary safe-haven demand, and Shandong Gold had already converted that into +57.9% Q1 profit. The unresolved issue is not the earnings bridge but whether the high gold price and high equity valuation already absorb too much of the path.",
+    "firstCredibleDate": "2020-04-29",
+    "valueChain": [
+      "monetary/pandemic risk",
+      "gold price",
+      "miner realized price",
+      "profit/cash flow",
+      "equity valuation"
+    ],
+    "persistenceReason": "Monetary easing and pandemic uncertainty can persist, but commodity expectations can reverse rapidly.",
+    "disconfirmingEvidence": [
+      "Gold was already near an eight-year high.",
+      "Shandong Gold 2020E PE was around 68x.",
+      "Gold-equity basket was only neutral versus CSI300."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-gold-20200624",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shandong-q1-20200429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "shandong-research-20200510",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-gold-20200630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "higher gold price",
+      "to": "miner realized price",
+      "mechanism": "Gold producers directly monetize higher realized bullion prices.",
+      "evidenceRefs": [
+        "reuters-gold-20200624",
+        "shandong-q1-20200429"
+      ],
+      "failureMode": "gold price reverses",
+      "lag": "weeks"
+    },
+    {
+      "from": "realized price",
+      "to": "profit",
+      "mechanism": "Q1 revenue/profit acceleration confirms operating leverage.",
+      "evidenceRefs": [
+        "shandong-q1-20200429"
+      ],
+      "failureMode": "costs or production decline offset price",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "gold miners"
+    ],
+    "secondOrderWinners": [
+      "precious-metals refiners"
+    ],
+    "losers": [
+      "gold consumers"
+    ],
+    "substitutes": [
+      "other safe-haven assets"
+    ],
+    "bottlenecks": [
+      "mine output and grade"
+    ],
+    "falseThemeMatches": [
+      "gold concepts without meaningful mine earnings"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600547.SH",
+      "name": "山东黄金",
+      "verifiedExposure": "Direct gold miner with realized Q1 earnings conversion.",
+      "evidenceRefs": [
+        "shandong-q1-20200429",
+        "shandong-research-20200510"
+      ],
+      "earningsSensitivity": {
+        "base": "2020/21/22 profit 16.67/21.52/24.18亿元 at high PE.",
+        "favorable": "Gold stays high and earnings exceed the conservative Q1-implied forecast.",
+        "adverse": "Gold normalizes or valuation compresses."
+      },
+      "principalRisks": [
+        "high valuation",
+        "commodity reversal"
+      ]
+    },
+    {
+      "ticker": "601899.SH",
+      "name": "紫金矿业",
+      "verifiedExposure": "Diversified gold/copper miner and sector counterfactual.",
+      "evidenceRefs": [
+        "regime-gold-20200630"
+      ],
+      "earningsSensitivity": {
+        "base": "Company-specific June-cutoff earnings path less fully frozen in this pack.",
+        "favorable": "Gold/copper strength compounds.",
+        "adverse": "Mixed commodity exposure dilutes pure gold bridge."
+      },
+      "principalRisks": [
+        "mapping breadth"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601899.SH",
+      "name": "紫金矿业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed precious/base-metals miner exposed to the same commodity/monetary regime.",
+      "whySelectedCompanyShouldOutperform": "Shandong Gold has the cleaner frozen pure-gold Q1 earnings conversion; Zijin offers diversification but a less directly frozen June company bridge.",
+      "evidenceRefs": [
+        "regime-gold-20200630",
+        "shandong-q1-20200429"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600547.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601899.SH",
+        "selectedAdvantages": [
+          "cleaner direct gold exposure",
+          "realized +57.9% Q1 profit conversion"
+        ],
+        "selectedDisadvantages": [
+          "higher valuation burden and weaker recent relative price"
+        ],
+        "evidenceRefs": [
+          "shandong-q1-20200429",
+          "shandong-research-20200510",
+          "regime-gold-20200630"
+        ],
+        "switchCondition": "Prefer Zijin if diversified copper/gold earnings provide a better normalized path at lower expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Shandong is the cleanest frozen gold earnings bridge, but valuation and relative-price tradeoffs prevent a strong selection edge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Gold was already near an eight-year high; Shandong Gold carried roughly 68x 2020E PE despite strong Q1 earnings.",
+    "thesisExpectation": "Further upside requires gold strength and/or company earnings to persist beyond a high baseline.",
+    "measurableGap": "The economic direction is valid, but expectation room is not clean enough for Primary.",
+    "evidenceRefs": [
+      "reuters-gold-20200624",
+      "shandong-research-20200510",
+      "regime-gold-20200630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year miner earnings under normalized gold prices versus forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2020/21/22 profit 16.67/21.52/24.18亿元; 2020E PE ~68x.",
+    "thesisScenario": "Gold remains elevated long enough for earnings to exceed the already-raised path.",
+    "breakevenCondition": "Sustained gold/production must compensate for premium valuation and eventual normalization.",
+    "ordinaryScenarioFailure": "Gold stays strong but merely meets the priced earnings path; multiple compresses.",
+    "catalystOrTimingBridge": "Gold price and H1/Q3 miner earnings are observable within 60d.",
+    "evidenceRefs": [
+      "reuters-gold-20200624",
+      "shandong-research-20200510",
+      "regime-gold-20200630"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Gold remained near multi-year highs under persistent macro risk.",
+      "evidenceRefs": [
+        "reuters-gold-20200624"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q1 revenue +28.7% and profit +57.9% directly confirm conversion.",
+      "evidenceRefs": [
+        "shandong-q1-20200429"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "The two-name gold basket was neutral; Shandong lagged while Zijin modestly outperformed.",
+      "evidenceRefs": [
+        "regime-gold-20200630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The May forecast already incorporated strong gold earnings and premium valuation.",
+      "evidenceRefs": [
+        "shandong-research-20200510"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Commodity itself was near an eight-year high and valuation was premium even though the stock had not led CSI300 recently.",
+      "evidenceRefs": [
+        "reuters-gold-20200624",
+        "shandong-research-20200510",
+        "regime-gold-20200630"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": -0.017270050584553553,
+      "lookback60Excess": -0.023016786302014314,
+      "positiveBreadth20": 0.5,
+      "positiveBreadth60": 0.5,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-gold-20200630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Gold remained elevated and Q1 miner earnings converted strongly.",
+      "evidenceRefs": [
+        "reuters-gold-20200624",
+        "shandong-q1-20200429"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Shandong's earnings path was positive but sector breadth is not strongly evidenced.",
+      "evidenceRefs": [
+        "shandong-research-20200510"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Monetary/pandemic drivers can persist for multiple quarters but are not structural guarantees.",
+      "evidenceRefs": [
+        "reuters-gold-20200624"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The underlying commodity was already near an eight-year high and valuation burden was large.",
+      "evidenceRefs": [
+        "reuters-gold-20200624",
+        "shandong-research-20200510"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Earnings conversion is excellent, but price/valuation duration makes the entry a Research case."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600547.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Shandong remained profitable with positive operating cash flow and strong Q1 growth.",
+      "evidenceRefs": [
+        "shandong-q1-20200429"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Strong Q1 suggests the frozen 2020 forecast could be conservative if gold persists.",
+      "evidenceRefs": [
+        "shandong-q1-20200429",
+        "shandong-research-20200510"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Forward PE around 68x leaves little conventional slack.",
+      "evidenceRefs": [
+        "shandong-research-20200510"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Gold prices and H1/Q3 results update rapidly.",
+      "evidenceRefs": [
+        "reuters-gold-20200624"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Direct gold earnings help, but premium valuation and commodity reversal create large downside.",
+      "evidenceRefs": [
+        "shandong-research-20200510",
+        "reuters-gold-20200624"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601899.SH",
+        "revisionAdvantage": "Shandong has cleaner pure-gold Q1 conversion.",
+        "valuationAdvantage": "Zijin may have better diversified normalized valuation.",
+        "qualityTradeoff": "Shandong's Q1 evidence is cleaner in the frozen pack.",
+        "catalystAdvantage": "Gold updates map directly to Shandong.",
+        "downsideTradeoff": "Diversification may cushion Zijin in gold normalization.",
+        "evidenceRefs": [
+          "shandong-q1-20200429",
+          "regime-gold-20200630"
+        ],
+        "switchCondition": "Switch if Zijin's diversified earnings path is independently verified at a lower burden.",
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Gold reached a near-eight-year high.",
+    "earningsMechanism": "Higher realized gold price expands mine revenue and profit; Q1 conversion is already visible.",
+    "nextObservableMetric": "gold price, production, H1/Q3 attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "reuters-gold-20200624",
+      "shandong-q1-20200429"
+    ],
+    "failureCondition": "Gold/production normalize and earnings fail to exceed the frozen path."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q1 profit was already +57.9%.",
+      "nextPeriod": "2020 profit forecast 16.67亿元 implied strong full-year earnings.",
+      "laterPeriod": "2021/22 forecasts 21.52/24.18亿元 assume continued growth but slowing incremental gains.",
+      "rationale": "The May forecast already internalizes much of the gold-price benefit.",
+      "evidenceRefs": [
+        "shandong-q1-20200429",
+        "shandong-research-20200510"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Persistently high gold can keep H1 earnings above baseline.",
+      "nextPeriodChange": "2020 earnings can beat 16.67亿元 if Q1 run-rate and gold price persist.",
+      "laterPeriodChange": "Outer-year upside requires sustained high gold and/or production growth beyond the already-positive forecast.",
+      "mechanism": "The thesis is duration of elevated gold earnings, not discovery of an unrecognized current-quarter beat.",
+      "evidenceRefs": [
+        "reuters-gold-20200624",
+        "shandong-research-20200510"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term earnings can beat, but much of the multi-year gold strength is already in forecasts/valuation.",
+      "evidenceRefs": [
+        "shandong-q1-20200429",
+        "shandong-research-20200510"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Premium valuation and multi-year-high commodity price require durable favorable conditions.",
+      "evidenceRefs": [
+        "shandong-research-20200510",
+        "reuters-gold-20200624"
+      ]
+    },
+    "falsifier": "Gold remains high but Shandong earnings/estimates fail to rise beyond the frozen baseline.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: excellent realized earnings bridge, but high valuation and commodity-duration risk block Primary.",
+    "alreadyPricedAssessment": "substantial_expectation_burden",
+    "constraints": [
+      "~68x 2020E PE",
+      "gold near multi-year high"
+    ]
+  },
+  "bearCase": "Gold normalization and multiple compression overwhelm otherwise strong mine earnings.",
+  "invalidationConditions": [
+    {
+      "indicator": "gold price/realized price",
+      "observationMethod": "market/company updates",
+      "threshold": "sustained reversal"
+    },
+    {
+      "indicator": "earnings revisions",
+      "observationMethod": "H1/Q3 and forecasts",
+      "threshold": "no uplift beyond frozen path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Shandong Gold as Research expression; do not promote solely because Q1 earnings are excellent."
+  ]
+}
