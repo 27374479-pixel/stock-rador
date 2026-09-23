@@ -1,0 +1,525 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2019q2-multisource-v1.5-001",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2019Q2 replay built in September 2026 with current model/search weights. Only evidence available by 2019-06-30 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy, licensing, trade-control and macro evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central-government and U.S. Commerce releases; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/company operating evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep company research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable price/demand/industry conditions.",
+      "coverageStatus": "partial",
+      "limitations": "NBS food prices and TrendForce semiconductor demand/price evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting.",
+      "coverageStatus": "partial",
+      "limitations": "Xinhua 5G reporting used as an independent news origin."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist technology supply/demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce semiconductor memory/foundry data."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "miit-5g-license-20190606",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "工业和信息化部向四家企业颁发5G牌照",
+      "publisher": "工业和信息化部",
+      "url": "https://wap.miit.gov.cn/xwdt/gxdt/ldhd/art/2020/art_5487f43651924ca2bdc2349c6d1ab4aa.html",
+      "publishedAt": "2019-06-06T23:54:00+08:00",
+      "availableAt": "2019-06-06T23:54:00+08:00",
+      "originGroup": "miit-5g-license-20190606",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MIIT formally licensed China Telecom, China Mobile, China Unicom and China Broadcasting Network to operate 5G services, marking the start of commercial deployment."
+      ],
+      "entities": [
+        "5G",
+        "telecom operators",
+        "network equipment"
+      ],
+      "observedChanges": [
+        "commercial 5G moves from trial/policy expectation into licensed deployment"
+      ]
+    },
+    {
+      "itemId": "xinhua-5g-20190606",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "repost",
+      "title": "我国正式发放5G商用牌照",
+      "publisher": "新华社（中央网信办转载）",
+      "url": "https://www.cac.gov.cn/2019-06/06/c_1124591450.htm",
+      "publishedAt": "2019-06-06T12:49:00+08:00",
+      "availableAt": "2019-06-06T12:49:00+08:00",
+      "originGroup": "xinhua-5g-20190606",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Xinhua reported that China entered the 5G commercial era after licenses were issued, with network construction and industry applications expected to accelerate."
+      ],
+      "entities": [
+        "5G",
+        "commercial deployment"
+      ],
+      "observedChanges": [
+        "5G commercial deployment becomes an observable national event"
+      ]
+    },
+    {
+      "itemId": "us-commerce-huawei-20190515",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "Department of Commerce Announces the Addition of Huawei Technologies Co. Ltd. to the Entity List",
+      "publisher": "U.S. Department of Commerce",
+      "url": "https://2017-2021.commerce.gov/news/press-releases/2019/05/department-commerce-announces-addition-huawei-technologies-co-ltd.html",
+      "publishedAt": "2019-05-15T00:00:00-04:00",
+      "availableAt": "2019-05-15T00:00:00-04:00",
+      "originGroup": "us-commerce-huawei-20190515",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "U.S. Commerce announced Huawei and affiliates would be added to the Entity List, materially increasing supply-chain and technology-access uncertainty."
+      ],
+      "entities": [
+        "Huawei",
+        "Entity List",
+        "semiconductors",
+        "smartphones"
+      ],
+      "observedChanges": [
+        "Huawei supply chain faces a new external restriction"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-20190606",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "The US-China Trade War Rages On: DRAM Price Decline 3Q to Widen to 15%",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190606-10146.html",
+      "publishedAt": "2019-06-06T00:00:00+08:00",
+      "availableAt": "2019-06-06T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20190606",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce widened its 3Q DRAM price-decline forecast to 10-15% because Huawei smartphone/server shipments and data-center demand were expected to weaken."
+      ],
+      "entities": [
+        "DRAM",
+        "Huawei",
+        "servers",
+        "smartphones"
+      ],
+      "observedChanges": [
+        "memory physical demand outlook worsens despite domestic-substitution narrative"
+      ]
+    },
+    {
+      "itemId": "trendforce-foundry-20190613",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Global Top Ten Foundries for 2Q19 Perform Less-than-expected Due to Sliding Demand and High Inventories",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190613-10149.html",
+      "publishedAt": "2019-06-13T00:00:00+08:00",
+      "availableAt": "2019-06-13T00:00:00+08:00",
+      "originGroup": "trendforce-foundry-20190613",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce estimated top-ten foundry 2Q revenue down about 8% YoY as demand weakened and inventories remained high; Huawei restrictions added further 2H uncertainty."
+      ],
+      "entities": [
+        "foundries",
+        "Huawei",
+        "semiconductors"
+      ],
+      "observedChanges": [
+        "broad semiconductor demand remains weak even as localization pressure rises"
+      ]
+    },
+    {
+      "itemId": "ndrc-rareearth-20190528",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家发展改革委有关负责人就稀土产业发展相关问题答记者问",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/201905/t20190528_954426.html",
+      "publishedAt": "2019-05-28T00:00:00+08:00",
+      "availableAt": "2019-05-28T00:00:00+08:00",
+      "originGroup": "ndrc-rareearth-20190528",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NDRC highlighted rare earths as a strategic resource, stressed priority for domestic needs, and addressed the possibility of using the sector within the U.S.-China trade dispute without announcing an export ban."
+      ],
+      "entities": [
+        "rare earths",
+        "strategic resources",
+        "trade friction"
+      ],
+      "observedChanges": [
+        "rare-earth policy attention and strategic value sharply rise"
+      ]
+    },
+    {
+      "itemId": "ndrc-rareearth-20190618",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "政策研究室副主任兼委新闻发言人孟玮答问之二：关于促进稀土产业高质量发展的措施",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xxgk/jd/jd/201906/t20190618_1182899.html",
+      "publishedAt": "2019-06-18T00:00:00+08:00",
+      "availableAt": "2019-06-18T00:00:00+08:00",
+      "originGroup": "ndrc-rareearth-20190618",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NDRC said it had held three recent meetings with experts, major companies and local governments to study policies and stronger sector regulation, confirming sustained policy attention but not a concrete export cutoff."
+      ],
+      "entities": [
+        "rare earths",
+        "industry policy",
+        "regulation"
+      ],
+      "observedChanges": [
+        "rare-earth policy discussion broadens from rhetoric to policy consultation"
+      ]
+    },
+    {
+      "itemId": "statecouncil-etc-20190522",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "深化收费公路制度改革取消高速公路省界收费站实施方案",
+      "publisher": "国务院办公厅（财政部公开）",
+      "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201905/t20190522_3263074.htm",
+      "publishedAt": "2019-05-22T00:00:00+08:00",
+      "availableAt": "2019-05-22T00:00:00+08:00",
+      "originGroup": "statecouncil-etc-20190516",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The State Council plan required toll-system/ETC hardware and software upgrades to be largely completed by October 2019, system testing by December, and ETC use at expressway entrances to reach 90% by year end."
+      ],
+      "entities": [
+        "ETC",
+        "toll systems",
+        "road electronics"
+      ],
+      "observedChanges": [
+        "a national infrastructure deadline creates a finite but measurable equipment/order cycle"
+      ]
+    },
+    {
+      "itemId": "mot-etc-20190627",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于十三届全国人大二次会议第7822号建议的答复函",
+      "publisher": "交通运输部",
+      "url": "https://xxgk.mot.gov.cn/jigou/glj/202006/t20200623_3313160.html",
+      "publishedAt": "2019-06-27T00:00:00+08:00",
+      "availableAt": "2019-06-27T00:00:00+08:00",
+      "originGroup": "mot-etc-20190627",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MOT reiterated the timetable: engineering completion by October, system integration/testing in November-December, and readiness for system switching by year end."
+      ],
+      "entities": [
+        "ETC",
+        "toll system construction"
+      ],
+      "observedChanges": [
+        "the ETC implementation deadline remains intact and operational"
+      ]
+    },
+    {
+      "itemId": "nea-pv-parity-20190520",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于公布2019年第一批风电、光伏发电平价上网项目的通知",
+      "publisher": "国家发展改革委/国家能源局",
+      "url": "https://zfxxgk.nea.gov.cn/auto87/201905/t20190522_3664.htm",
+      "publishedAt": "2019-05-20T00:00:00+08:00",
+      "availableAt": "2019-05-20T00:00:00+08:00",
+      "originGroup": "nea-pv-parity-20190520",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The first 2019 wind/solar grid-parity project list totaled 20.76GW and required grid companies to support connections and guaranteed acquisition under long-term fixed-price contracts."
+      ],
+      "entities": [
+        "solar",
+        "grid parity",
+        "renewables"
+      ],
+      "observedChanges": [
+        "grid-parity projects move from framework policy into a concrete project list"
+      ]
+    },
+    {
+      "itemId": "nea-pv-build-20190530",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家能源局关于2019年风电、光伏发电项目建设有关事项的通知",
+      "publisher": "国家能源局",
+      "url": "https://www.nea.gov.cn/2019-05/30/c_138102793.htm",
+      "publishedAt": "2019-05-30T00:00:00+08:00",
+      "availableAt": "2019-05-30T00:00:00+08:00",
+      "originGroup": "nea-pv-build-20190530",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NEA prioritized grid-parity projects and launched competitive allocation for subsidized projects, while requiring grid connection and consumption conditions."
+      ],
+      "entities": [
+        "photovoltaics",
+        "wind",
+        "competitive allocation"
+      ],
+      "observedChanges": [
+        "2019 PV construction policy becomes executable after earlier policy uncertainty"
+      ]
+    },
+    {
+      "itemId": "nbs-pork-20190612",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "2019年5月份居民消费价格同比上涨2.7%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900334.html",
+      "publishedAt": "2019-06-12T09:30:00+08:00",
+      "availableAt": "2019-06-12T09:30:00+08:00",
+      "originGroup": "nbs-cpi-201905",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May pork prices were +18.2% YoY, confirming a developing hog-supply shortage while month-on-month prices were roughly flat."
+      ],
+      "entities": [
+        "pork",
+        "hog supply",
+        "CPI"
+      ],
+      "observedChanges": [
+        "pork scarcity is visible but not yet at the later 2019 extreme"
+      ]
+    },
+    {
+      "itemId": "trendforce-nand-20190620",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Uncertainties in the Market Rise while a Bounce in NAND Flash Prices Remains Unlikely in 3Q",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190620-10152.html",
+      "publishedAt": "2019-06-20T00:00:00+08:00",
+      "availableAt": "2019-06-20T00:00:00+08:00",
+      "originGroup": "trendforce-nand-20190620",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NAND contract prices had fallen about 20% QoQ for two consecutive quarters and TrendForce still did not expect a 3Q rebound because smartphones, servers and notebooks remained weak."
+      ],
+      "entities": [
+        "NAND",
+        "smartphones",
+        "servers",
+        "notebooks"
+      ],
+      "observedChanges": [
+        "memory downcycle remains active despite technology-policy headlines"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2019q2-5g-commercial-license",
+      "statement": "China moved 5G from trial/policy preparation into formal commercial licensing on June 6, potentially accelerating network equipment and optical demand.",
+      "changeType": "commercialization_policy_trigger",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-06-06T12:49:00+08:00",
+      "memberItemIds": [
+        "miit-5g-license-20190606",
+        "xinhua-5g-20190606"
+      ],
+      "independentOriginGroups": [
+        "miit-5g-license-20190606",
+        "xinhua-5g-20190606"
+      ],
+      "affectedValueChain": [
+        "telecom equipment",
+        "optical modules/components",
+        "base stations",
+        "operators"
+      ],
+      "contradictionSearchNotes": "Licensing itself does not prove incremental capex or earnings. Deep research must verify operator procurement/order conversion and whether listed suppliers already rerated before the license.",
+      "researchQuestion": "Which A-share 5G expressions had measurable order/earnings conversion and expectation room at June 30?"
+    },
+    {
+      "eventId": "event-2019q2-huawei-restriction-supplychain",
+      "statement": "Huawei's Entity List restriction created a simultaneous localization incentive and near-term demand/supply shock; contemporaneous memory/foundry data remained weak, so 'domestic substitution' and 'electronics demand' must be split rather than averaged.",
+      "changeType": "supplychain_restriction_and_localization_pressure",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-15T00:00:00-04:00",
+      "memberItemIds": [
+        "us-commerce-huawei-20190515",
+        "trendforce-dram-20190606",
+        "trendforce-foundry-20190613",
+        "trendforce-nand-20190620"
+      ],
+      "independentOriginGroups": [
+        "us-commerce-huawei-20190515",
+        "trendforce-dram-20190606",
+        "trendforce-foundry-20190613",
+        "trendforce-nand-20190620"
+      ],
+      "affectedValueChain": [
+        "Huawei suppliers",
+        "domestic semiconductors",
+        "memory",
+        "foundries",
+        "smartphone/server supply chains"
+      ],
+      "contradictionSearchNotes": "The policy shock can benefit localization over a long horizon while simultaneously reducing Huawei/device demand and worsening memory/foundry utilization in the near term. V1.5 must create separate company/product hypotheses before any selection.",
+      "researchQuestion": "Can any domestic supplier show a company-specific order/share engine strong enough to overcome the near-term electronics demand shock, or should the broad theme fail closed?"
+    },
+    {
+      "eventId": "event-2019q2-rareearth-strategic-repricing",
+      "statement": "Rare earths became a high-profile strategic-policy topic during escalating trade friction, with NDRC conducting repeated policy consultations; however no export ban or quantified production cut was announced.",
+      "changeType": "policy_expectation_repricing",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-28T00:00:00+08:00",
+      "memberItemIds": [
+        "ndrc-rareearth-20190528",
+        "ndrc-rareearth-20190618"
+      ],
+      "independentOriginGroups": [
+        "ndrc-rareearth-20190528",
+        "ndrc-rareearth-20190618"
+      ],
+      "affectedValueChain": [
+        "rare-earth miners",
+        "separation/refining",
+        "magnet materials",
+        "downstream users"
+      ],
+      "contradictionSearchNotes": "Policy attention is real but economic transmission is ambiguous without quotas, exports or price/volume evidence. Separate resource owners, processors and downstream magnets; do not equate strategic rhetoric with earnings.",
+      "researchQuestion": "Did any listed rare-earth company have a direct, under-reflected earnings bridge by June 30, or was the theme mostly expectation repricing?"
+    },
+    {
+      "eventId": "event-2019q2-etc-national-buildout",
+      "statement": "The State Council converted toll-station reform into a national ETC hardware/software construction program with explicit October and year-end deadlines.",
+      "changeType": "mandated_infrastructure_buildout",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-22T00:00:00+08:00",
+      "memberItemIds": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ],
+      "independentOriginGroups": [
+        "statecouncil-etc-20190516",
+        "mot-etc-20190627"
+      ],
+      "affectedValueChain": [
+        "OBU/RSU suppliers",
+        "toll-system integrators",
+        "road communications"
+      ],
+      "contradictionSearchNotes": "The opportunity has unusually explicit timing but also an unusually explicit expiry. V1.5 should test whether order/earnings conversion occurs before normalization without treating the finite cycle as a long-duration compounder.",
+      "researchQuestion": "Which listed ETC suppliers had verified orders/capacity and a base-horizon catalyst that occurred before the deployment wave expired?"
+    },
+    {
+      "eventId": "event-2019q2-pv-policy-restart",
+      "statement": "After prior policy uncertainty, 2019 solar construction rules became executable through a 20.76GW first parity-project list and a formal parity-first/competitive-bidding framework.",
+      "changeType": "project_pipeline_policy_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-20T00:00:00+08:00",
+      "memberItemIds": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530"
+      ],
+      "independentOriginGroups": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530"
+      ],
+      "affectedValueChain": [
+        "solar modules",
+        "inverters",
+        "polysilicon",
+        "EPC/project developers"
+      ],
+      "contradictionSearchNotes": "Policy restart does not imply equal benefit across upstream/downstream. Deep research must separate project-volume beneficiaries from segments still facing price pressure or overcapacity.",
+      "researchQuestion": "Which PV companies had a direct earnings bridge from the 2019 project restart rather than only generic sector beta?"
+    },
+    {
+      "eventId": "event-2019q2-pork-scarcity-emergence",
+      "statement": "By May, pork prices were already +18.2% YoY, indicating a developing hog-supply shortage before the later 2019 extreme scarcity phase.",
+      "changeType": "commodity_scarcity_emergence",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-06-12T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pork-20190612"
+      ],
+      "independentOriginGroups": [
+        "nbs-cpi-201905"
+      ],
+      "affectedValueChain": [
+        "hog producers",
+        "feed",
+        "meat processors",
+        "consumers"
+      ],
+      "contradictionSearchNotes": "The price signal is earlier than the Q3/Q4 extremes but month-on-month pricing was not yet accelerating strongly. Deep research must verify producer volumes/costs and avoid assuming future scarcity severity.",
+      "researchQuestion": "Were any low-cost hog producers already converting the emerging price regime into measurable earnings before June 30?"
+    },
+    {
+      "eventId": "event-2019q2-memory-downcycle",
+      "statement": "DRAM and NAND physical markets remained in a pronounced downcycle in June, with Huawei restrictions worsening smartphone/server uncertainty and memory prices still expected to fall.",
+      "changeType": "product_price_demand_contraction",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-06-06T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-dram-20190606",
+        "trendforce-nand-20190620"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20190606",
+        "trendforce-nand-20190620"
+      ],
+      "affectedValueChain": [
+        "DRAM",
+        "NAND",
+        "memory module suppliers",
+        "device OEMs"
+      ],
+      "contradictionSearchNotes": "This is a negative physical signal that should remain separate from long-run semiconductor localization. Generic semiconductor price momentum may not override a missing positive product-level earnings bridge.",
+      "researchQuestion": "Should broad memory exposure remain No selection at June 30 despite domestic-substitution narratives?"
+    }
+  ]
+}
