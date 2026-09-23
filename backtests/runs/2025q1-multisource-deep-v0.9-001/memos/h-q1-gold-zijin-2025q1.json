@@ -1,0 +1,446 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "0.9.0",
+  "cutoffAt": "2025-03-31T15:30:00+08:00",
+  "researchReadyAt": "2025-03-31T15:10:00+08:00",
+  "actionableAt": "2025-03-31T15:10:00+08:00",
+  "hypothesisId": "h-q1-gold-zijin-2025q1",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Record gold prices and planned production growth should affect miner earnings estimates within one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "changeHypothesis": {
+    "summary": "Gold ended Q1 at record highs after an >18% quarterly gain. 紫金矿业 offered a strong risk/reward expression: 2024 profit +51.5%, 2025 gold production expected to grow around 16-17%, gold profit weight rising, and a roughly 11-12x 2025E valuation. 山东黄金 was the purer gold control with faster 2025 earnings-growth expectations but roughly 20x PE.",
+    "firstCredibleDate": "2025-03-31",
+    "valueChain": [
+      "record gold price",
+      "miner realized selling price",
+      "gold production growth",
+      "mine margin/profit",
+      "earnings revisions"
+    ],
+    "persistenceReason": "Gold gains were supported by multiple demand drivers including central banks, investment demand and geopolitical/trade uncertainty, while both miners planned additional production.",
+    "disconfirmingEvidence": [
+      "Gold was already at a record and the entire miner basket had outperformed for 20/60d.",
+      "紫金 is diversified into copper and other metals, diluting pure gold beta.",
+      "Mine grades/costs can rise and offset metal-price gains."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-gold-20250331",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-gold-20250331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "zijin-forecast-20250122",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "zijin-research-20250123",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "zijin-gold-mix-20250316",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "shandong-annual-20250328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "shandong-research-20250328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "record gold price",
+      "to": "miner realized price",
+      "mechanism": "Higher spot/benchmark gold prices raise realized revenue per ounce/gram for unhedged production.",
+      "evidenceRefs": [
+        "reuters-gold-20250331",
+        "shandong-annual-20250328"
+      ],
+      "failureMode": "gold reverses or hedging/discounts limit realization",
+      "lag": "days to quarters"
+    },
+    {
+      "from": "realized price plus production growth",
+      "to": "紫金 earnings",
+      "mechanism": "Rising gold output and price increase gold-business profit; the gold share of company profit was already rising.",
+      "evidenceRefs": [
+        "zijin-forecast-20250122",
+        "zijin-research-20250123",
+        "zijin-gold-mix-20250316"
+      ],
+      "failureMode": "cost/grade deterioration or copper weakness offsets gold contribution",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "earnings conversion",
+      "to": "selection alpha",
+      "mechanism": "Low forward valuation and production growth can produce favorable revisions without requiring premium rerating.",
+      "evidenceRefs": [
+        "zijin-research-20250123",
+        "zijin-gold-mix-20250316",
+        "regime-gold-20250331"
+      ],
+      "failureMode": "record gold already fully capitalized in miner prices",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "gold miners with rising production and manageable costs"
+    ],
+    "secondOrderWinners": [
+      "royalty/refining firms with price-linked economics"
+    ],
+    "losers": [
+      "gold-consuming jewelry users if demand weakens"
+    ],
+    "substitutes": [
+      "other safe-haven assets"
+    ],
+    "bottlenecks": [
+      "mine grades/project execution"
+    ],
+    "falseThemeMatches": [
+      "gold retailers without direct commodity-price profit sensitivity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601899.SH",
+      "name": "紫金矿业",
+      "verifiedExposure": "Large and growing gold business; 2024 profit +51.5%, 2025 gold output expected +16-17%, gold profit share increasing.",
+      "evidenceRefs": [
+        "zijin-forecast-20250122",
+        "zijin-research-20250123",
+        "zijin-gold-mix-20250316"
+      ],
+      "earningsSensitivity": {
+        "base": "2025E profit roughly RMB37.9-39.0bn on pre-cutoff references.",
+        "favorable": "record gold plus production growth lift gold-business profit and revisions.",
+        "adverse": "gold reverses or copper/costs offset."
+      },
+      "principalRisks": [
+        "diversified metal exposure",
+        "gold reversal",
+        "project/cost risk"
+      ]
+    },
+    {
+      "ticker": "600547.SH",
+      "name": "山东黄金",
+      "verifiedExposure": "Pure gold producer; 2024 mined gold 46.17t +10.5%, 2025 plan >=50t, 2025E profit forecast +94.6%.",
+      "evidenceRefs": [
+        "shandong-annual-20250328",
+        "shandong-research-20250328"
+      ],
+      "earningsSensitivity": {
+        "base": "2025E profit RMB5.744bn.",
+        "favorable": "record gold and production expansion create high gold-specific earnings torque.",
+        "adverse": "cost inflation or valuation compression."
+      },
+      "principalRisks": [
+        "higher valuation",
+        "cost inflation",
+        "gold reversal"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600547.SH",
+      "name": "山东黄金",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large direct gold-mining peer exposed to the same record gold price.",
+      "whySelectedCompanyShouldOutperform": "紫金 offered much lower frozen forward valuation and higher diversification/downside support while still planning faster gold production growth; 山东黄金 offered purer gold beta but at roughly 20x 2025E PE.",
+      "evidenceRefs": [
+        "zijin-gold-mix-20250316",
+        "shandong-research-20250328"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601899.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600547.SH",
+        "selectedAdvantages": [
+          "roughly 11-12x versus ~20x 2025E PE",
+          "2025 mined-gold growth around 16-17% versus 山东 plan at least ~8%",
+          "diversified copper/gold cash generation provides downside support"
+        ],
+        "selectedDisadvantages": [
+          "山东黄金 has purer gold exposure and much faster 2025E profit-growth forecast"
+        ],
+        "evidenceRefs": [
+          "zijin-research-20250123",
+          "zijin-gold-mix-20250316",
+          "shandong-annual-20250328",
+          "shandong-research-20250328"
+        ],
+        "switchCondition": "Prefer 山东黄金 if gold-specific earnings revisions clearly exceed 紫金's while its valuation premium compresses or 紫金's non-gold businesses deteriorate.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "紫金 has the better frozen valuation/downside asymmetry while retaining substantial and increasing gold sensitivity."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Gold miners had already outperformed the benchmark over both 20 and 60 days; however, 紫金's pre-cutoff valuation was still only roughly 11-12x 2025E despite record gold and planned gold-output growth.",
+    "thesisExpectation": "Record gold prices plus rising production drive earnings above the frozen baseline without requiring multiple expansion.",
+    "measurableGap": "The price regime is strong but the absolute earnings valuation remains modest relative to a pure-gold peer.",
+    "evidenceRefs": [
+      "regime-gold-20250331",
+      "zijin-gold-mix-20250316",
+      "shandong-research-20250328"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE plus gold-production/price sensitivity versus a pure-gold peer.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2025E profit roughly RMB38-39bn and about 11-12x PE; gold price already at record highs.",
+    "thesisScenario": "Q1/Q2 realized gold price and +16-17% planned gold production lift profit above the frozen baseline.",
+    "breakevenCondition": "Gold-business profit growth must exceed any offset from costs/copper weakness; no valuation expansion is required.",
+    "ordinaryScenarioFailure": "Gold stays high but mine costs or non-gold businesses offset the benefit, leaving earnings near baseline.",
+    "catalystOrTimingBridge": "Q1/Q2 production and earnings disclosures directly test the bridge within 20-60d.",
+    "evidenceRefs": [
+      "zijin-research-20250123",
+      "zijin-gold-mix-20250316",
+      "reuters-gold-20250331"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Gold reached record highs and the company's gold production/profit importance was increasing.",
+      "evidenceRefs": [
+        "reuters-gold-20250331",
+        "zijin-gold-mix-20250316"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "2024 profit already increased 51.5% and prior-period results showed metal-price/production conversion.",
+      "evidenceRefs": [
+        "zijin-forecast-20250122"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "山东 has stronger pure-gold torque, but 紫金 has lower valuation and faster planned gold-volume growth.",
+      "evidenceRefs": [
+        "zijin-gold-mix-20250316",
+        "shandong-research-20250328"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The pre-cutoff earnings forecasts were formed before gold ended Q1 above $3,100 at a new record.",
+      "evidenceRefs": [
+        "zijin-research-20250123",
+        "reuters-gold-20250331"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use deterministic miner-basket 20/60d relative regime plus absolute forward valuation.",
+      "evidenceRefs": [
+        "regime-gold-20250331",
+        "zijin-gold-mix-20250316"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen gold-miner basket versus CSI300",
+      "lookback20Excess": 0.16566855395983657,
+      "lookback60Excess": 0.1943914038462133,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-gold-20250331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Gold price accelerated to fresh records during Q1.",
+      "evidenceRefs": [
+        "reuters-gold-20250331"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both 紫金 and 山东 had positive earnings/production growth frameworks before cutoff.",
+      "evidenceRefs": [
+        "zijin-research-20250123",
+        "shandong-research-20250328"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Central-bank/investment/geopolitical demand drivers and mine production cycles are not one-day events.",
+      "evidenceRefs": [
+        "reuters-gold-20250331"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "All miners had positive 20/60d breadth and record gold increases crowding risk, but forward valuation of selected company remained modest.",
+      "evidenceRefs": [
+        "regime-gold-20250331",
+        "zijin-gold-mix-20250316"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Commodity impulse, earnings framework and market regime align."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601899.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Large profitable diversified miner with strong 2024 profit growth clears quality.",
+      "evidenceRefs": [
+        "zijin-forecast-20250122"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Record Q1 gold and planned gold-volume growth can lift the pre-cutoff earnings baseline.",
+      "evidenceRefs": [
+        "reuters-gold-20250331",
+        "zijin-gold-mix-20250316"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Roughly 11-12x 2025E PE is materially below the pure-gold peer.",
+      "evidenceRefs": [
+        "zijin-research-20250123",
+        "zijin-gold-mix-20250316",
+        "shandong-research-20250328"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q1 earnings and production data are near-term and within the base horizon.",
+      "evidenceRefs": [
+        "zijin-gold-mix-20250316"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Lower valuation and diversified copper/gold earnings reduce reliance on a gold-only rerating.",
+      "evidenceRefs": [
+        "zijin-gold-mix-20250316"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600547.SH",
+        "revisionAdvantage": "山东 has more pure-gold revision torque; 紫金 still has meaningful gold-volume growth and gold profit share expansion.",
+        "valuationAdvantage": "紫金 roughly 11-12x versus 山东 ~20x 2025E.",
+        "qualityTradeoff": "Both pass; 紫金 is more diversified, 山东 more gold-pure.",
+        "catalystAdvantage": "Both benefit immediately from record gold; 紫金 also has multiple project/volume catalysts.",
+        "downsideTradeoff": "Lower valuation/diversification favor 紫金 if gold normalizes.",
+        "evidenceRefs": [
+          "zijin-gold-mix-20250316",
+          "shandong-research-20250328"
+        ],
+        "switchCondition": "Switch if 山东's gold-specific revisions outrun its valuation premium or 紫金's non-gold operations weaken.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Gold rose more than 18% in Q1 to record levels while 紫金 planned roughly 16-17% gold-volume growth in 2025.",
+    "earningsMechanism": "Higher realized gold price multiplied by higher mined-gold volume raises gold-segment revenue/gross profit; prior earnings growth establishes the company can monetize metal-price/volume changes.",
+    "nextObservableMetric": "Q1/Q2 mined-gold volume, realized gold price, mine margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "reuters-gold-20250331",
+      "zijin-forecast-20250122",
+      "zijin-gold-mix-20250316"
+    ],
+    "failureCondition": "Gold-segment margin/profit fails to increase despite record prices and planned volume growth, or non-gold/cost deterioration fully offsets it."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority: favorable timing, direct quantitative earnings bridge and attractive peer-relative valuation.",
+    "alreadyPricedAssessment": "positive momentum but valuation not saturated",
+    "constraints": [
+      "record-gold reversal risk",
+      "diversified non-gold exposure"
+    ]
+  },
+  "bearCase": "Gold reverses, mine costs rise, or copper/non-gold weakness offsets the gold uplift while miner multiples compress.",
+  "invalidationConditions": [
+    {
+      "indicator": "gold price/realized mine margin",
+      "observationMethod": "commodity and quarterly earnings data",
+      "threshold": "gold/margin reverses enough to invalidate upward earnings bridge"
+    },
+    {
+      "indicator": "mined-gold production",
+      "observationMethod": "company production report",
+      "threshold": "volume growth materially misses the 2025 plan"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before outcome reveal."
+    ]
+  },
+  "unknowns": [
+    "exact Q1 product-level realized-price sensitivity",
+    "full March31 consensus distribution"
+  ],
+  "nextResearchActions": [
+    "Freeze as High-priority selection.",
+    "Evaluate versus 山东黄金 and CSI300 at 20/60/120d."
+  ]
+}
