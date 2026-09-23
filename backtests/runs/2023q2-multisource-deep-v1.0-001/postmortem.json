@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023q2-multisource-deep-v1.0-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "thermal_power_huadian_company_engine_override",
+      "frozenDecision": "华电国际 High-priority selection via company_engine_override over 华能国际/国电电力",
+      "base60d": {
+        "selectedReturn": -0.19892816213886444,
+        "benchmarkReturn": -0.03770376251529606,
+        "benchmarkExcess": -0.16122439962356838,
+        "matchedControlExcess": -0.12734360843273745,
+        "bestControlTicker": "600795.SH",
+        "bestControlReturn": -0.0019980019980019303,
+        "excessVsBestControl": -0.1969301601408625,
+        "selectedRank": 3
+      },
+      "postOutcomeFundamentalDiagnosis": "The earnings bridge itself persisted rather than failing. 华电国际 Q3 attributable profit later rose 181.43% YoY and YTD profit 92.49%, while the stock still underperformed both frozen peers at the pre-registered 60d horizon.",
+      "failureClass": "mixed_price_dislocation_directionality_lost",
+      "rootCause": "V1.0 treated all opposite-sign 20d/60d excess-return states as one 'mixed' dislocation. 华电 entered with 20d excess -5.98pp but 60d excess +26.55pp: a late reversal after substantial prior rerating. This is economically different from an early turn where 20d becomes positive while 60d remains negative.",
+      "generalLesson": "A company-engine override should distinguish de-rated/early-turn price states from late-reversal states. Strong realized fundamentals are not sufficient if the longer-horizon rerating has already occurred and the shorter horizon is reversing."
+    },
+    {
+      "case": "aviation_spring_research_only",
+      "frozenDecision": "春秋航空 Research selection; no High-priority override because sector timing was adverse and peer-relative valuation/asymmetry was mixed",
+      "base60d": {
+        "selectedReturn": -0.06025365164770846,
+        "benchmarkReturn": -0.04491826763193563,
+        "benchmarkExcess": -0.015335384015772835,
+        "matchedControlExcess": -0.02800891732176891,
+        "bestControlTicker": "601111.SH",
+        "bestControlReturn": 0.006318681318681518,
+        "excessVsBestControl": -0.06657233296638998,
+        "selectedRank": 2
+      },
+      "failureClass": null,
+      "label": "research_only_correct",
+      "generalLesson": "A realized company recovery does not justify an override when valuation slack and clear peer asymmetry are absent."
+    },
+    {
+      "case": "lithium_tianqi_research_only",
+      "frozenDecision": "天齐锂业 Research selection because the new lithium rebound was proxy-only and the sector regime was adverse",
+      "base60d": {
+        "selectedReturn": -0.1863023724053342,
+        "benchmarkReturn": -0.0325190951208314,
+        "benchmarkExcess": -0.1537832772845028,
+        "matchedControlExcess": 0.003705812182678736,
+        "bestControlTicker": "002497.SZ",
+        "bestControlReturn": -0.1233696439837546,
+        "excessVsBestControl": -0.0629327284215796,
+        "selectedRank": 2
+      },
+      "postOutcomeFundamentalDiagnosis": "天齐 H1 attributable profit fell 37.52% YoY and Q2 profit was much lower sequentially as lithium chemical selling prices fell, confirming that strong Q1 legacy earnings did not prove the new May-June spot rebound had converted.",
+      "failureClass": null,
+      "label": "proxy_conversion_correctly_demoted",
+      "generalLesson": "Strong trailing earnings cannot substitute for a fresh earnings bridge tied to the newly discovered economic change."
+    }
+  ],
+  "crossWindowDislocationCheck": {
+    "developmentCases": [
+      {
+        "case": "2025Q1 新易盛",
+        "selected20Excess": -0.32421260555226417,
+        "selected60Excess": -0.17238000794462782,
+        "mechanicalState": "de_rated"
+      },
+      {
+        "case": "2025Q2 阳光电源",
+        "selected20Excess": 0.07825136649959141,
+        "selected60Excess": -0.08565941448483327,
+        "mechanicalState": "early_turn"
+      }
+    ],
+    "independentV10Cases": [
+      {
+        "case": "2023Q4 中际旭创",
+        "selected20Excess": 0.08142714678048524,
+        "selected60Excess": -0.14341519277668047,
+        "mechanicalState": "early_turn",
+        "baseOutcome": "success"
+      },
+      {
+        "case": "2023Q2 华电国际",
+        "selected20Excess": -0.059816900239034854,
+        "selected60Excess": 0.2655165783936291,
+        "mechanicalState": "late_reversal",
+        "baseOutcome": "failure"
+      }
+    ],
+    "interpretation": "The current 'mixed' label is directionally ambiguous. Early-turn and late-reversal states carry opposite expectation-absorption meaning."
+  },
+  "prohibitedUses": [
+    "Do not alter the frozen v1.0 2023Q2 run.",
+    "Do not claim a revised dislocation rule works from this same-period failure.",
+    "Do not add industry, valuation, or return-magnitude thresholds from named cases."
+  ],
+  "nextValidation": {
+    "keepV10Immutable": true,
+    "proposedVersion": "1.1.0",
+    "proposedChangeOnly": "Split mixed company price dislocation into early_turn and late_reversal; High-priority override may use de_rated or early_turn, not late_reversal.",
+    "proposedHoldout": "2023Q3",
+    "requirement": "Freeze v1.1 before any 2023Q3 outcome reveal; use a broad economic mix rather than targeting known override sectors."
+  }
+}
