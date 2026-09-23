@@ -1,0 +1,520 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.0.0",
+  "cutoffAt": "2023-06-20T15:30:00+08:00",
+  "researchReadyAt": "2023-06-20T15:10:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q2-aviation-spring",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Passenger recovery, load factor and unit-yield economics should be visible over the summer reporting cycle."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Domestic aviation demand recovered strongly and 春秋航空 had already returned to profit in Q1 with positive cash flow. However, the aviation basket was adverse and 春秋's frozen 2023E PE around 35x did not leave a clear valuation advantage over another profitable private carrier, 吉祥航空.",
+    "firstCredibleDate": "2023-04-28",
+    "valueChain": [
+      "passenger demand",
+      "ASK/RPK/load factor",
+      "yield",
+      "unit cost",
+      "airline operating profit"
+    ],
+    "persistenceReason": "CAAC May Day and monthly May data confirmed demand recovery beyond a single holiday.",
+    "disconfirmingEvidence": [
+      "Industry price regime was adverse.",
+      "春秋's 2023E valuation was high because full-year earnings were still recovering.",
+      "International capacity/load factor had not fully normalized."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "caac-mayday-20230504",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "caac-may-20230620",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-aviation-20230620",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "spring-q1-20230428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "spring-research-20230428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "juneyao-q1-20230429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "juneyao-research-20230429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "airchina-q1-20230427",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "reopening passenger demand",
+      "to": "ASK/RPK/load factor and yield",
+      "mechanism": "Higher travel demand fills restored capacity and supports ticket yields.",
+      "evidenceRefs": [
+        "caac-mayday-20230504",
+        "caac-may-20230620",
+        "spring-research-20230428"
+      ],
+      "failureMode": "capacity grows faster than demand or fares normalize too quickly",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "unit economics",
+      "to": "春秋 earnings",
+      "mechanism": "Low-cost structure and recovered traffic had already returned Q1 to profit and positive operating cash flow.",
+      "evidenceRefs": [
+        "spring-q1-20230428",
+        "spring-research-20230428"
+      ],
+      "failureMode": "fuel/FX or international recovery offsets domestic strength",
+      "lag": "quarterly"
+    },
+    {
+      "from": "earnings recovery",
+      "to": "stock alpha",
+      "mechanism": "Further summer earnings growth needs to outrun an already-high 2023 recovery multiple and adverse sector regime.",
+      "evidenceRefs": [
+        "spring-research-20230428",
+        "regime-aviation-20230620"
+      ],
+      "failureMode": "reopening recovery is already priced or peers offer cheaper exposure",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "airlines with low unit cost and strong load-factor/yield recovery"
+    ],
+    "secondOrderWinners": [
+      "airports/travel services"
+    ],
+    "losers": [
+      "airlines with slow international recovery or high cost/fuel sensitivity"
+    ],
+    "substitutes": [
+      "high-speed rail"
+    ],
+    "bottlenecks": [
+      "international slots, aircraft utilization, fuel/FX"
+    ],
+    "falseThemeMatches": [
+      "airlines with traffic recovery but continuing large losses"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601021.SH",
+      "name": "春秋航空",
+      "verifiedExposure": "Q1 revenue +63.65%, profit turned positive and CFO was positive; low-cost model and traffic/yield recovery were already visible.",
+      "evidenceRefs": [
+        "spring-q1-20230428",
+        "spring-research-20230428"
+      ],
+      "earningsSensitivity": {
+        "base": "2023E profit RMB1.74bn at ~35x PE.",
+        "favorable": "summer load factor/yield and international capacity lift profit further.",
+        "adverse": "fuel/FX/capacity competition compresses unit profit."
+      },
+      "principalRisks": [
+        "high recovery valuation",
+        "fuel",
+        "FX",
+        "demand normalization"
+      ]
+    },
+    {
+      "ticker": "603885.SH",
+      "name": "吉祥航空",
+      "verifiedExposure": "Q1 revenue +78.67%, profit turned positive and CFO was strongly positive; unit RPK revenue exceeded 2019.",
+      "evidenceRefs": [
+        "juneyao-q1-20230429",
+        "juneyao-research-20230429"
+      ],
+      "earningsSensitivity": {
+        "base": "Rapid profit recovery with larger full-service/international exposure.",
+        "favorable": "international capacity and yield recover.",
+        "adverse": "higher cost/FX burden."
+      },
+      "principalRisks": [
+        "international recovery",
+        "FX",
+        "cost"
+      ]
+    },
+    {
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "verifiedExposure": "Traffic recovered but Q1 still lost RMB2.926bn.",
+      "evidenceRefs": [
+        "airchina-q1-20230427"
+      ],
+      "earningsSensitivity": {
+        "base": "Large loss despite reopening.",
+        "favorable": "international network recovery drives later profit inflection.",
+        "adverse": "high fixed costs/slow international recovery."
+      },
+      "principalRisks": [
+        "ongoing losses",
+        "international pace",
+        "fuel/FX"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "603885.SH",
+      "name": "吉祥航空",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Profitable private airline exposed to the same reopening demand recovery.",
+      "whySelectedCompanyShouldOutperform": "春秋 had stronger Q1 profit scale and a low-cost operating model, but 吉祥 also realized recovery and may carry a lower valuation burden.",
+      "evidenceRefs": [
+        "spring-q1-20230428",
+        "spring-research-20230428",
+        "juneyao-q1-20230429",
+        "juneyao-research-20230429"
+      ]
+    },
+    {
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed airline exposed to the same domestic/international reopening.",
+      "whySelectedCompanyShouldOutperform": "春秋 was already profitable and cash-generative while 国航 still reported a large Q1 loss.",
+      "evidenceRefs": [
+        "spring-q1-20230428",
+        "airchina-q1-20230427"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601021.SH",
+    "pairwise": [
+      {
+        "controlTicker": "603885.SH",
+        "selectedAdvantages": [
+          "larger Q1 profit",
+          "low-cost model",
+          "strong passenger/load-factor recovery"
+        ],
+        "selectedDisadvantages": [
+          "吉祥 also turned profitable and 春秋's frozen 2023E PE is high"
+        ],
+        "evidenceRefs": [
+          "spring-q1-20230428",
+          "spring-research-20230428",
+          "juneyao-q1-20230429",
+          "juneyao-research-20230429"
+        ],
+        "switchCondition": "Prefer 吉祥 if its international/full-service earnings recovery accelerates while 春秋's valuation premium persists.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "601111.SH",
+        "selectedAdvantages": [
+          "already profitable versus large Q1 loss",
+          "lower-cost business model",
+          "stronger near-term unit economics"
+        ],
+        "selectedDisadvantages": [
+          "国航 has larger international reopening torque if long-haul capacity returns"
+        ],
+        "evidenceRefs": [
+          "spring-q1-20230428",
+          "airchina-q1-20230427"
+        ],
+        "switchCondition": "Prefer 国航 only after international recovery produces a realized profit inflection.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "春秋 has the strongest current earnings quality, but the relative valuation edge versus 吉祥 is not clear enough for High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Reopening was well known and 春秋's frozen 2023E PE was about 35x. The sector basket underperformed the benchmark over both 20 and 60 days.",
+    "thesisExpectation": "Summer domestic/international load factor and yield improvement can lift earnings further.",
+    "measurableGap": "Company fundamentals are improving, but valuation and adverse sector timing leave limited asymmetry versus 吉祥.",
+    "evidenceRefs": [
+      "spring-research-20230428",
+      "regime-aviation-20230620",
+      "caac-may-20230620"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Recovery-year forward PE plus load-factor/yield and cash-profit conversion versus profitable airline peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2023E profit RMB1.74bn at ~35.08x PE.",
+    "thesisScenario": "Summer demand, yield and utilization exceed the already-recovery-oriented 2023 baseline.",
+    "breakevenCondition": "Earnings must rise faster than current recovery expectations and compensate for a high 2023 multiple.",
+    "ordinaryScenarioFailure": "Traffic improves but fare/cost normalization leaves profit near consensus while the multiple compresses.",
+    "catalystOrTimingBridge": "Summer traffic and H1 results lie within 20-60 trading days.",
+    "evidenceRefs": [
+      "spring-research-20230428",
+      "caac-may-20230620"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official holiday and May passenger data show continuing reopening demand recovery.",
+      "evidenceRefs": [
+        "caac-mayday-20230504",
+        "caac-may-20230620"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "春秋 Q1 returned to profit and positive operating cash flow.",
+      "evidenceRefs": [
+        "spring-q1-20230428"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "吉祥 also returned to profit while 国航 remained loss-making, so 春秋 is strong but not uniquely dominant.",
+      "evidenceRefs": [
+        "juneyao-q1-20230429",
+        "airchina-q1-20230427"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "May passenger recovery and summer demand could exceed the Apr28 forecast assumptions.",
+      "evidenceRefs": [
+        "spring-research-20230428",
+        "caac-may-20230620"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use frozen adverse aviation basket and high recovery-year PE.",
+      "evidenceRefs": [
+        "regime-aviation-20230620",
+        "spring-research-20230428"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen airline basket versus CSI300",
+      "lookback20Excess": -0.017663397915410644,
+      "lookback60Excess": -0.0579012911444298,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-aviation-20230620"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Passenger traffic continued recovering into May/holiday periods.",
+      "evidenceRefs": [
+        "caac-mayday-20230504",
+        "caac-may-20230620"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Private airlines 春秋/吉祥 had turned profitable, while 国航 still had large losses.",
+      "evidenceRefs": [
+        "spring-q1-20230428",
+        "juneyao-q1-20230429",
+        "airchina-q1-20230427"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Domestic/international reopening and utilization normalization extend across multiple quarters.",
+      "evidenceRefs": [
+        "caac-may-20230620",
+        "spring-research-20230428"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Demand recovery is well recognized but share-price breadth remains weak, indicating valuation/cost uncertainty.",
+      "evidenceRefs": [
+        "regime-aviation-20230620"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Fundamentals improve but the broad price regime remains adverse."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601021.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Profit and operating cash flow have already turned positive.",
+      "evidenceRefs": [
+        "spring-q1-20230428"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Summer utilization/yield can lift earnings above the April forecast.",
+      "evidenceRefs": [
+        "spring-research-20230428",
+        "caac-may-20230620"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "~35x 2023E PE is not clearly cheap relative to another profitable private-airline control.",
+      "evidenceRefs": [
+        "spring-research-20230428",
+        "juneyao-q1-20230429"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Summer operations/H1 results are inside the base horizon.",
+      "evidenceRefs": [
+        "caac-may-20230620"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low-cost model helps, but high recovery-year valuation plus fuel/FX risk can compress returns.",
+      "evidenceRefs": [
+        "spring-research-20230428"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "603885.SH",
+        "revisionAdvantage": "春秋 has stronger Q1 profit scale and low-cost economics, but 吉祥 also has realized recovery.",
+        "valuationAdvantage": "No clear advantage; 春秋's 2023E PE is high.",
+        "qualityTradeoff": "Both pass; 春秋 has low-cost strength, 吉祥 broader full-service/international recovery torque.",
+        "catalystAdvantage": "Both have summer reopening catalysts.",
+        "downsideTradeoff": "春秋 operating model is stronger, but valuation offsets some protection.",
+        "evidenceRefs": [
+          "spring-q1-20230428",
+          "spring-research-20230428",
+          "juneyao-q1-20230429",
+          "juneyao-research-20230429"
+        ],
+        "switchCondition": "Switch if 吉祥's unit economics/earnings revisions accelerate at a lower valuation.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "601111.SH",
+        "revisionAdvantage": "春秋 earnings recovery is already realized; 国航 still needs a full profit turn.",
+        "valuationAdvantage": "Loss-making 国航 makes PE comparison unreliable.",
+        "qualityTradeoff": "春秋 clearly stronger current quality.",
+        "catalystAdvantage": "春秋 can compound existing profitability rather than first cross breakeven.",
+        "downsideTradeoff": "国航 fixed-cost and international recovery risk is larger.",
+        "evidenceRefs": [
+          "spring-q1-20230428",
+          "airchina-q1-20230427"
+        ],
+        "switchCondition": "Switch only after 国航 realizes a stronger profit inflection.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "utilization",
+    "driverChange": "Domestic passenger demand and utilization recovered sharply, with Q1 company profit already positive and May official passenger volumes continuing to rise.",
+    "earningsMechanism": "Higher load factor/yield spreads fixed aircraft/labor costs over more passenger revenue, improving operating profit.",
+    "nextObservableMetric": "summer load factor, passenger yield, unit cost and H1 attributable profit",
+    "realizationWindowTradingDays": 45,
+    "status": "realized",
+    "evidenceRefs": [
+      "spring-q1-20230428",
+      "spring-research-20230428",
+      "caac-may-20230620"
+    ],
+    "failureCondition": "Summer traffic grows but load factor/yield/unit cost do not sustain profit improvement."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: company engine is real, but adverse sector timing and mixed relative valuation/asymmetry prevent override.",
+    "alreadyPricedAssessment": "fundamental recovery partly recognized but sector remains weak",
+    "constraints": [
+      "high 2023E recovery multiple",
+      "fuel/FX",
+      "international normalization"
+    ]
+  },
+  "bearCase": "Traffic recovery continues but fares normalize and costs rise, so earnings undershoot high recovery-year expectations.",
+  "invalidationConditions": [
+    {
+      "indicator": "load factor/yield/unit cost",
+      "observationMethod": "monthly operations/H1 report",
+      "threshold": "profitability fails to improve with traffic"
+    },
+    {
+      "indicator": "peer asymmetry",
+      "observationMethod": "吉祥/国航 results",
+      "threshold": "peer earnings recover faster at lower burden"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "full consensus distribution",
+    "summer fuel and FX impact"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection.",
+    "Do not use company-specific positive price relative return to bypass valuation/asymmetry gates."
+  ]
+}
