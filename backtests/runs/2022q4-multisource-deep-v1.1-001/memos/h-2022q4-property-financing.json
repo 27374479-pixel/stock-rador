@@ -1,0 +1,234 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-11-29T23:59:59+08:00",
+  "researchReadyAt": "2022-11-29T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q4-property-financing",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Financing relief can affect balance sheets quickly, but sales/profit repair takes multiple quarters."
+  },
+  "changeHypothesis": {
+    "summary": "Developer financing support broadened materially, but listed property leaders had already rerated sharply within 20d while Q3 profits/margins remained under pressure. The policy reduces tail risk; it does not yet provide a direct profit-growth bridge.",
+    "firstCredibleDate": "2022-11-24",
+    "valueChain": [
+      "credit/equity support",
+      "liquidity",
+      "land/sales activity",
+      "margin/profit"
+    ],
+    "persistenceReason": "Policy channels are durable, but operating recovery is uncertain.",
+    "disconfirmingEvidence": [
+      "All three frozen leaders had 20d excess +19-32pp.",
+      "Vanke Q3 profit -14%; Poly Q3 -31%; CMSK Q3 -49%.",
+      "Gross margins remained under pressure."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "csrc-property-20221128",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-property-20221128",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-property-credit-20221124",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-property-20221129",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "vanke-q3-20221029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "poly-q3-20221031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cmsk-q3-20221031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "financing support",
+      "to": "lower liquidity/tail risk",
+      "mechanism": "Credit/equity channels improve refinancing capacity.",
+      "evidenceRefs": [
+        "csrc-property-20221128",
+        "reuters-property-credit-20221124"
+      ],
+      "failureMode": "sales/cash flow remain too weak",
+      "lag": "weeks"
+    },
+    {
+      "from": "liquidity relief",
+      "to": "profit recovery",
+      "mechanism": "Requires sales, completion and margin recovery rather than financing alone.",
+      "evidenceRefs": [
+        "vanke-q3-20221029",
+        "poly-q3-20221031",
+        "cmsk-q3-20221031"
+      ],
+      "failureMode": "margins/sales remain weak",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "developers with viable projects and financing access"
+    ],
+    "secondOrderWinners": [
+      "construction/materials after sales recovery"
+    ],
+    "losers": [
+      "weak developers unable to restore sales"
+    ],
+    "substitutes": [
+      "state-owned developers"
+    ],
+    "bottlenecks": [
+      "sales",
+      "cash collections",
+      "project completion"
+    ],
+    "falseThemeMatches": [
+      "developers rerating on policy without earnings repair"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000002.SZ",
+      "name": "万科A",
+      "verifiedExposure": "High-quality developer but Q3 profit fell and margins compressed.",
+      "evidenceRefs": [
+        "vanke-q3-20221029"
+      ],
+      "earningsSensitivity": {
+        "base": "liquidity improves before profit.",
+        "favorable": "sales/margins recover.",
+        "adverse": "policy cannot restore demand."
+      },
+      "principalRisks": [
+        "profit margin",
+        "sales"
+      ]
+    },
+    {
+      "ticker": "600048.SH",
+      "name": "保利发展",
+      "verifiedExposure": "State-backed developer; Q3 profit -31%.",
+      "evidenceRefs": [
+        "poly-q3-20221031"
+      ],
+      "earningsSensitivity": {
+        "base": "financing access strong but current profit weak.",
+        "favorable": "sales recovery.",
+        "adverse": "margin erosion."
+      },
+      "principalRisks": [
+        "margin"
+      ]
+    },
+    {
+      "ticker": "001979.SZ",
+      "name": "招商蛇口",
+      "verifiedExposure": "Q3 profit -49%.",
+      "evidenceRefs": [
+        "cmsk-q3-20221031"
+      ],
+      "earningsSensitivity": {
+        "base": "operating cash positive but profit down.",
+        "favorable": "financing/M&A support.",
+        "adverse": "sales/margins weak."
+      },
+      "principalRisks": [
+        "profit decline"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Policy tail-risk relief is real, but no company has a realized profit bridge after the immediate sector rerating."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Policy support was public and the three frozen leaders had already massively outperformed over 20d/60d.",
+    "thesisExpectation": "Financing relief prevents distress and may support future operating recovery.",
+    "measurableGap": "No clean incremental profit gap remains measurable at cutoff.",
+    "evidenceRefs": [
+      "regime-property-20221129",
+      "csrc-property-20221128"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "policy rapidly rerated sector before profit repair",
+    "constraints": [
+      "sustained_strength",
+      "weak Q3 profit"
+    ]
+  },
+  "bearCase": "Financing relief prevents crisis but fails to restore sales/margins, so equity rerating fades.",
+  "invalidationConditions": [
+    {
+      "indicator": "sales/margins/profit",
+      "observationMethod": "monthly sales and next filing",
+      "threshold": "no realized operating recovery"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "post-policy sales elasticity"
+  ],
+  "nextResearchActions": [
+    "No selection until operating profit bridge appears."
+  ]
+}
