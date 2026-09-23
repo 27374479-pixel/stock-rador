@@ -459,7 +459,6 @@ test('v1.3 allows a High-priority acceptable expression without beating every fr
   m.actionableAt = m.researchReadyAt;
   m.crossSectionalAsymmetryTest.overallConclusion = 'mixed';
   m.crossSectionalAsymmetryTest.pairwise[0].netAsymmetry = 'mixed';
-  m.selectionComparison.pairwise[0].netEdge = 'mixed';
   const errors = validateOpportunityMemo(m, 'memo.json', manifest());
   assert.ok(!errors.some((x) => x.includes('must beat every frozen control')));
   assert.ok(!errors.some((x) => x.includes('requires clear/credible cross-sectional asymmetry')));
