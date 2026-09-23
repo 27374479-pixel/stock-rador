@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-mobile-dram-weakness",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Mobile DRAM remained a negative physical cycle and is an avoidance signal rather than a long opportunity."
+  },
+  "changeHypothesis": {
+    "summary": "Mobile DRAM contract prices were still expected to fall 10-15% in Q3 due weak smartphone demand and elevated inventory.",
+    "firstCredibleDate": "2019-07-30",
+    "valueChain": [
+      "smartphone demand",
+      "mobile DRAM inventory/price",
+      "supplier margin"
+    ],
+    "persistenceReason": "Weak handset demand/inventory can persist until stocks normalize.",
+    "disconfirmingEvidence": [
+      "Generic semiconductor equities were strong, but that does not reverse the product data."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-mobile-weak-20190730",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-theme-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "weak smartphones/high inventory",
+      "to": "mobile DRAM price decline",
+      "mechanism": "Excess inventory and weak demand pressure contracts.",
+      "evidenceRefs": [
+        "dram-mobile-weak-20190730"
+      ],
+      "failureMode": "unexpected demand/supply shock",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "mobile OEM buyers from lower component cost"
+    ],
+    "losers": [
+      "mobile DRAM suppliers"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "inventory"
+    ],
+    "falseThemeMatches": [
+      "strong generic memory stocks treated as proof of mobile DRAM recovery"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No long selection: the frozen physical product signal is negative."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Generic memory equities were hot, creating a direct conflict with mobile DRAM fundamentals.",
+    "thesisExpectation": "Remain fail-closed until mobile pricing/inventory turns.",
+    "measurableGap": "No positive earnings bridge.",
+    "evidenceRefs": [
+      "dram-mobile-weak-20190730",
+      "regime-memory-theme-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "mobile DRAM",
+    "geographicScope": "global",
+    "customerScope": "smartphone OEMs",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [
+      "h-2019q3-pc-dram-stabilization"
+    ],
+    "rationale": "Mobile DRAM has distinct demand and inventory from PC DRAM.",
+    "evidenceRefs": [
+      "dram-mobile-weak-20190730"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "10-15% contract-price decline and weak smartphone demand",
+      "horizon": "Q3",
+      "evidenceRefs": [
+        "dram-mobile-weak-20190730"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "inventory remains elevated",
+      "horizon": "next quarter",
+      "evidenceRefs": [
+        "dram-mobile-weak-20190730"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "future demand/supply discipline can eventually normalize",
+      "horizon": "2020+",
+      "evidenceRefs": [
+        "dram-mobile-weak-20190730"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not use long-term possible normalization to override the negative base-horizon product signal.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No direct A-share mobile DRAM supplier is frozen; generic theme price is irrelevant.",
+    "evidenceRefs": [
+      "dram-mobile-weak-20190730",
+      "regime-memory-theme-20190930"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "negative_physical_signal_despite_hot_theme",
+    "constraints": [
+      "weak smartphone demand",
+      "inventory"
+    ]
+  },
+  "bearCase": "Buying generic memory strength while the specific product remains in decline produces a wrong causal trade.",
+  "invalidationConditions": [
+    {
+      "indicator": "mobile DRAM pricing/inventory",
+      "observationMethod": "TrendForce",
+      "threshold": "clear stabilization/reversal"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; retain as avoidance signal."
+  ]
+}
