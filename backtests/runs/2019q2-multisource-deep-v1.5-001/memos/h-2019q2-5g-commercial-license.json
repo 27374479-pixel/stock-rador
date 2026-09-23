@@ -1,0 +1,651 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "researchReadyAt": "2019-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q2-5g-commercial-license",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The June 6 commercial-license event should affect operator capex/order visibility over the next one to two reporting cycles; 60d is the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000063.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Direct telecom-equipment exposure, Q1 operating cash-flow recovery and explicit 2019-21 earnings path, but Q1 revenue was still -19.3% and ZTE had already rerated relative to peers.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606",
+        "zte-q1-20190430",
+        "zte-research-20190615",
+        "regime-5g-20190630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Commercial 5G licensing converted a long-running policy theme into an executable network buildout, while ZTE had recovered profit/cash flow from the 2018 sanction shock. The unresolved question is incremental capex beyond a visible consensus path.",
+    "firstCredibleDate": "2019-06-06",
+    "valueChain": [
+      "5G license",
+      "operator capex/tenders",
+      "network-equipment orders",
+      "supplier revenue/profit"
+    ],
+    "persistenceReason": "5G rollout is multi-quarter, but near-term capex intensity and Huawei/trade-friction effects remain uncertain.",
+    "disconfirmingEvidence": [
+      "5G basket was only neutral and peer breadth weak.",
+      "ZTE Q1 revenue remained down 19.34%.",
+      "June research already embedded strong 2019-21 earnings recovery."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "miit-5g-license-20190606",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "xinhua-5g-20190606",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zte-q1-20190430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zte-research-20190615",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "5g-industry-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "fiberhome-q1-20190430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "accelink-q1-20190427",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-5g-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "commercial 5G licensing",
+      "to": "operator capex/orders",
+      "mechanism": "Licenses allow operators to move from trials into commercial network deployment.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606",
+        "xinhua-5g-20190606"
+      ],
+      "failureMode": "operators pace capex more slowly than expected",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "operator capex/orders",
+      "to": "ZTE earnings",
+      "mechanism": "ZTE is a direct network-equipment vendor; earnings/cash flow were recovering before cutoff.",
+      "evidenceRefs": [
+        "zte-q1-20190430",
+        "zte-research-20190615"
+      ],
+      "failureMode": "revenue/margin recovery lags capex",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "telecom equipment vendors"
+    ],
+    "secondOrderWinners": [
+      "optical components",
+      "network servers"
+    ],
+    "losers": [
+      "legacy-only equipment"
+    ],
+    "substitutes": [
+      "alternative vendors"
+    ],
+    "bottlenecks": [
+      "operator capex pace",
+      "trade restrictions"
+    ],
+    "falseThemeMatches": [
+      "5G concepts without material network-equipment revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000063.SZ",
+      "name": "中兴通讯",
+      "verifiedExposure": "Direct operator network/5G equipment exposure.",
+      "evidenceRefs": [
+        "zte-q1-20190430",
+        "zte-research-20190615"
+      ],
+      "earningsSensitivity": {
+        "base": "2019/20/21 EPS forecast 1.11/1.76/2.48; Q1 revenue still -19.3%.",
+        "favorable": "5G tenders lift revenue and revisions faster than the frozen path.",
+        "adverse": "Capex is slower or trade friction hurts execution."
+      },
+      "principalRisks": [
+        "visible recovery expectations",
+        "trade friction"
+      ]
+    },
+    {
+      "ticker": "600498.SH",
+      "name": "烽火通信",
+      "verifiedExposure": "Direct transmission/network equipment peer.",
+      "evidenceRefs": [
+        "fiberhome-q1-20190430"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +14.9%, profit +19.7%.",
+        "favorable": "5G transmission demand accelerates.",
+        "adverse": "Cash consumption/order conversion disappoints."
+      },
+      "principalRisks": [
+        "negative operating cash flow"
+      ]
+    },
+    {
+      "ticker": "002281.SZ",
+      "name": "光迅科技",
+      "verifiedExposure": "Optical-component exposure to network capex.",
+      "evidenceRefs": [
+        "accelink-q1-20190427"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +1.0%, profit -17.8%.",
+        "favorable": "Optical orders accelerate with 5G.",
+        "adverse": "Weak realized profit persists."
+      },
+      "principalRisks": [
+        "weak Q1 profit"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600498.SH",
+      "name": "烽火通信",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct network/transmission equipment peer exposed to the same licensed rollout.",
+      "whySelectedCompanyShouldOutperform": "ZTE has stronger frozen multi-year recovery estimates and clearer full-network exposure.",
+      "evidenceRefs": [
+        "fiberhome-q1-20190430",
+        "5g-industry-20190630",
+        "regime-5g-20190630"
+      ]
+    },
+    {
+      "ticker": "002281.SZ",
+      "name": "光迅科技",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Optical-component peer exposed to 5G transport demand.",
+      "whySelectedCompanyShouldOutperform": "ZTE has stronger frozen earnings/cash-flow recovery evidence, while Accelink Q1 profit was still down.",
+      "evidenceRefs": [
+        "accelink-q1-20190427",
+        "regime-5g-20190630"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000063.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600498.SH",
+        "selectedAdvantages": [
+          "full-network 5G exposure",
+          "explicit 2019-21 EPS recovery path",
+          "Q1 cash-flow recovery"
+        ],
+        "selectedDisadvantages": [
+          "Q1 revenue still down and expectations already visible"
+        ],
+        "evidenceRefs": [
+          "zte-q1-20190430",
+          "zte-research-20190615",
+          "fiberhome-q1-20190430"
+        ],
+        "switchCondition": "Prefer FiberHome if cutoff-date order/revision evidence and valuation room become clearly stronger.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "002281.SZ",
+        "selectedAdvantages": [
+          "stronger company-level earnings baseline and network exposure"
+        ],
+        "selectedDisadvantages": [
+          "optical components may have higher narrow-cycle torque"
+        ],
+        "evidenceRefs": [
+          "zte-research-20190615",
+          "accelink-q1-20190427"
+        ],
+        "switchCondition": "Prefer Accelink if optical orders and earnings revisions become materially stronger with less expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "ZTE is the cleanest direct expression, but neutral broad timing and already-visible recovery expectations keep it Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "5G basket was neutral; ZTE alone had +12.1pp 60d excess while peers lagged. June research already forecast strong 2019-21 EPS recovery.",
+    "thesisExpectation": "Commercial licensing can accelerate domestic operator orders enough to improve the visible recovery path.",
+    "measurableGap": "The direction is credible, but the incremental gap over consensus is not yet clear enough for Primary.",
+    "evidenceRefs": [
+      "regime-5g-20190630",
+      "zte-research-20190615",
+      "5g-industry-20190630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward EPS path versus neutral sector breadth and post-license order/revision evidence.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "ZTE 2019/20/21 EPS 1.11/1.76/2.48 in June research; June 28 industry table also showed a positive 5G earnings path.",
+    "thesisScenario": "Commercial deployment causes operator orders and margins to exceed the already-positive recovery path.",
+    "breakevenCondition": "Order/revenue revisions must rise beyond the visible 5G consensus rather than merely validate it.",
+    "ordinaryScenarioFailure": "5G rollout proceeds but ZTE only delivers the already-discounted recovery.",
+    "catalystOrTimingBridge": "Operator tenders/order wins and interim results are observable within 60d.",
+    "evidenceRefs": [
+      "regime-5g-20190630",
+      "zte-research-20190615",
+      "5g-industry-20190630"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "5G licensing is a concrete commercialization trigger.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Profit/cash flow recovered, but Q1 revenue remained down.",
+      "evidenceRefs": [
+        "zte-q1-20190430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "ZTE outperformed while two frozen peers did not confirm.",
+      "evidenceRefs": [
+        "regime-5g-20190630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "June research quantified 2019-21 EPS expectations.",
+      "evidenceRefs": [
+        "zte-research-20190615",
+        "5g-industry-20190630"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "ZTE itself had rerated while sector breadth remained weak.",
+      "evidenceRefs": [
+        "regime-5g-20190630"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.01547395053261121,
+      "lookback60Excess": -0.03938841433697008,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-5g-20190630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Commercial licensing moves the industry into deployment.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "ZTE has a strong recovery forecast, but cross-peer earnings evidence is mixed.",
+      "evidenceRefs": [
+        "zte-research-20190615",
+        "fiberhome-q1-20190430",
+        "accelink-q1-20190427"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "5G deployment is a multi-quarter network program.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "ZTE rerated, but broad sector price confirmation is not mature.",
+      "evidenceRefs": [
+        "regime-5g-20190630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamental trigger is real but broad timing/expectation gap is not strong enough for Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000063.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "ZTE returned to profit and positive operating cash flow.",
+      "evidenceRefs": [
+        "zte-q1-20190430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "5G licensing can support revisions above the frozen path.",
+      "evidenceRefs": [
+        "zte-research-20190615"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Recovery is already explicitly capitalized in forward estimates.",
+      "evidenceRefs": [
+        "zte-research-20190615",
+        "5g-industry-20190630"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Commercial tenders/orders and interim results are reachable.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Scale and cash-flow recovery help, but trade restrictions remain material.",
+      "evidenceRefs": [
+        "zte-q1-20190430",
+        "us-commerce-huawei-20190515"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600498.SH",
+        "revisionAdvantage": "ZTE has the more explicit multi-period recovery path.",
+        "valuationAdvantage": "No clean advantage is claimed.",
+        "qualityTradeoff": "FiberHome Q1 growth is steadier; ZTE cash-flow recovery is stronger after a depressed base.",
+        "catalystAdvantage": "Both map directly to operator capex.",
+        "downsideTradeoff": "ZTE has higher trade-friction exposure.",
+        "switchCondition": "Switch if FiberHome order/revision and valuation evidence become superior.",
+        "evidenceRefs": [
+          "zte-research-20190615",
+          "fiberhome-q1-20190430"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "002281.SZ",
+        "revisionAdvantage": "ZTE has stronger frozen profit/forecast evidence.",
+        "valuationAdvantage": "Accelink may have narrower optical torque; no clean ZTE valuation edge.",
+        "qualityTradeoff": "Accelink Q1 headline profit was down while ZTE cash flow recovered.",
+        "catalystAdvantage": "ZTE maps to the full network buildout.",
+        "downsideTradeoff": "Optical exposure may be more focused but less diversified.",
+        "switchCondition": "Switch if optical orders/revisions clearly lead.",
+        "evidenceRefs": [
+          "zte-q1-20190430",
+          "accelink-q1-20190427"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Commercial licenses enable operator network deployment.",
+    "earningsMechanism": "Higher operator capex produces equipment orders, revenue and margin recovery.",
+    "nextObservableMetric": "operator tenders, network-equipment revenue and interim profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "miit-5g-license-20190606",
+      "zte-research-20190615"
+    ],
+    "failureCondition": "Commercial licensing does not produce order/revision acceleration within the base horizon."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q1 profit/cash flow recovered but revenue remained -19.3%.",
+      "nextPeriod": "2019/20 EPS forecast 1.11/1.76.",
+      "laterPeriod": "2021 EPS forecast 2.48.",
+      "rationale": "June report provides a strong visible recovery baseline.",
+      "evidenceRefs": [
+        "zte-q1-20190430",
+        "zte-research-20190615"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "5G licensing increases order visibility.",
+      "nextPeriodChange": "Domestic capex can raise 2019-20 estimates.",
+      "laterPeriodChange": "5G is structurally multi-year, but longer growth is already widely expected.",
+      "mechanism": "Incremental alpha requires deployment speed and earnings to exceed a visible consensus recovery.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606",
+        "zte-research-20190615"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Direction is positive but incremental path advantage over consensus is not yet demonstrated.",
+      "evidenceRefs": [
+        "zte-research-20190615"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "5G is multi-quarter but trade friction and visible consensus reduce duration certainty.",
+      "evidenceRefs": [
+        "us-commerce-huawei-20190515",
+        "zte-research-20190615"
+      ]
+    },
+    "falsifier": "Orders/revisions fail to rise beyond the frozen path.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "commercial 5G network equipment and transport buildout",
+    "geographicScope": "China operator deployment",
+    "customerScope": "licensed Chinese telecom operators",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The 5G license creates one coherent operator-capex chain; Huawei restriction is modeled separately.",
+    "evidenceRefs": [
+      "miit-5g-license-20190606",
+      "zte-research-20190615"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "licenses and imminent operator procurement",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "miit-5g-license-20190606"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "network orders and earnings recovery",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "zte-research-20190615"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "multi-year 5G rollout",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "5g-industry-20190630"
+      ]
+    },
+    "conflictType": "aligned",
+    "resolutionRule": "Keep the structural 5G thesis separate from Huawei-specific supply-chain restrictions and require incremental company revisions.",
+    "conclusion": "coherent"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "ZTE had recovered profit/cash flow and outperformed while peer breadth remained weak.",
+    "evidenceRefs": [
+      "zte-q1-20190430",
+      "regime-5g-20190630"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "Commercial licenses are a new implementation trigger.",
+      "evidenceRefs": [
+        "miit-5g-license-20190606"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "ZTE profit/cash flow recovered, though revenue was still weak.",
+      "evidenceRefs": [
+        "zte-q1-20190430"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "June research shows a steep recovery path that could still be revised.",
+      "evidenceRefs": [
+        "zte-research-20190615"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "5G rollout persists across quarters.",
+      "evidenceRefs": [
+        "5g-industry-20190630"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "No incremental orders/revisions follow licensing.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "000063.SZ",
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preference is based on direct network exposure plus earnings/cash-flow evidence, not thematic purity.",
+    "earningsQualityComparison": "FiberHome has steadier Q1 growth; ZTE has stronger recovery torque.",
+    "downsideComparison": "Trade-friction risk prevents a purity-only ranking.",
+    "evidenceRefs": [
+      "zte-q1-20190430",
+      "fiberhome-q1-20190430",
+      "regime-5g-20190630"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: concrete commercialization trigger and credible direct expression, but neutral breadth and visible consensus recovery reduce expectation gap.",
+    "alreadyPricedAssessment": "partially_absorbed_company_specific",
+    "constraints": [
+      "neutral sector breadth",
+      "visible bullish recovery forecasts",
+      "trade friction"
+    ]
+  },
+  "bearCase": "5G licensing is real but capex ramps gradually and ZTE merely meets a widely anticipated recovery path.",
+  "invalidationConditions": [
+    {
+      "indicator": "operator orders/revenue",
+      "observationMethod": "tenders/company results",
+      "threshold": "no acceleration after licensing"
+    },
+    {
+      "indicator": "earnings revisions",
+      "observationMethod": "interim results/forecast updates",
+      "threshold": "no improvement beyond frozen path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze as Research; do not promote from the licensing headline alone."
+  ]
+}
