@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-09-10T23:59:59+08:00",
+  "researchReadyAt": "2021-09-10T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q3-auto-chip-shortage",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Automotive semiconductor scarcity can support supplier pricing/utilization, but company-specific scarcity-to-profit attribution must be verified."
+  },
+  "changeHypothesis": {
+    "summary": "The automotive semiconductor shortage was severe enough to cut global and Chinese vehicle output. 士兰微/斯达半导 had strong H1 IGBT/power semiconductor growth and some automotive exposure, but the frozen evidence could not isolate how much earnings acceleration was caused by the automotive shortage rather than broader industrial/white-goods/photovoltaic demand, while both leading price candidates were already in late_reversal.",
+    "firstCredibleDate": "2021-08-19",
+    "valueChain": [
+      "auto chip shortage",
+      "OEM production cuts",
+      "power semiconductor demand/pricing",
+      "supplier utilization",
+      "earnings"
+    ],
+    "persistenceReason": "Auto qualification and constrained capacity can persist for quarters.",
+    "disconfirmingEvidence": [
+      "士兰微/斯达 strong earnings have multiple end-market drivers, not a clean shortage attribution.",
+      "Both leading candidates were late_reversal by Sep10.",
+      "韦尔 was de_rated but is not a clean auto-shortage expression."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-autochips-20210819",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-china-auto-20210910",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-autochip-20210910",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "silan-h1-20210830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "star-h1-20210830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "auto semiconductor shortage",
+      "to": "OEM production constraints",
+      "mechanism": "Insufficient chips force production cuts despite vehicle demand.",
+      "evidenceRefs": [
+        "reuters-autochips-20210819",
+        "reuters-china-auto-20210910"
+      ],
+      "failureMode": "capacity catches up or OEM demand weakens",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "scarcity",
+      "to": "listed supplier earnings",
+      "mechanism": "Only qualified automotive chip suppliers with material exposure can monetize high utilization/pricing.",
+      "evidenceRefs": [
+        "silan-h1-20210830",
+        "star-h1-20210830"
+      ],
+      "failureMode": "earnings are driven by unrelated end-markets or auto exposure is immaterial",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified auto power-semiconductor suppliers with material automotive revenue"
+    ],
+    "secondOrderWinners": [
+      "foundry/test capacity used by auto chips"
+    ],
+    "losers": [
+      "OEMs unable to produce vehicles"
+    ],
+    "substitutes": [
+      "alternative qualified chip suppliers"
+    ],
+    "bottlenecks": [
+      "automotive qualification",
+      "wafer capacity"
+    ],
+    "falseThemeMatches": [
+      "broad semiconductor stocks with no material auto scarcity exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "verifiedExposure": "EV motor-drive IGBT modules began batch supply and IGBT revenue grew >110%, but total earnings also reflected many non-auto markets.",
+      "evidenceRefs": [
+        "silan-h1-20210830"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong H1 multi-product growth.",
+        "favorable": "auto IGBT ramp becomes material.",
+        "adverse": "shortage attribution proves small and late-reversal price unwinds."
+      },
+      "principalRisks": [
+        "mapping ambiguity",
+        "late_reversal"
+      ]
+    },
+    {
+      "ticker": "603290.SH",
+      "name": "斯达半导",
+      "verifiedExposure": "IGBT supplier with strong H1 growth and automotive relevance, but event-specific earnings attribution remains incomplete.",
+      "evidenceRefs": [
+        "star-h1-20210830"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 revenue/profit +72.6%/+90.9%.",
+        "favorable": "NEV IGBT demand drives sustained revisions.",
+        "adverse": "growth already priced or broader demand slows."
+      },
+      "principalRisks": [
+        "late_reversal",
+        "expectation burden"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No stock is selected because event-specific automotive scarcity exposure and incremental earnings path are not auditable enough at cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The chip shortage was widely visible; the strongest power-semiconductor names had already rerated over 60d and turned weak over 20d.",
+    "thesisExpectation": "Qualified auto suppliers could earn scarcity rents.",
+    "measurableGap": "No reliable stock-specific incremental earnings path beyond already-strong H1 results is frozen.",
+    "evidenceRefs": [
+      "regime-autochip-20210910",
+      "silan-h1-20210830",
+      "star-h1-20210830"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: physical bottleneck is real, but stock mapping is ambiguous and leading candidates show late-reversal absorption.",
+    "alreadyPricedAssessment": "high theme absorption",
+    "constraints": [
+      "event-specific earnings attribution weak",
+      "late_reversal"
+    ]
+  },
+  "bearCase": "The shortage remains severe but listed suppliers' strong earnings were already driven/discounted by broader semiconductor demand, while auto OEM production cuts limit unit growth.",
+  "invalidationConditions": [
+    {
+      "indicator": "auto-specific revenue/profit",
+      "observationMethod": "future filings/IR",
+      "threshold": "fails to become a material driver"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "auto-specific revenue shares",
+    "shortage pricing contribution"
+  ],
+  "nextResearchActions": [
+    "Require auditable automotive revenue/earnings bridge before any selection."
+  ]
+}
