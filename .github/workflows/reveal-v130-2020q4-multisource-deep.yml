@@ -25,12 +25,12 @@ jobs:
       - run: npm test
       - name: Fetch frozen historical prices
         run: |
-          node scripts/fetch-backtest-prices.cjs \
+          node scripts/fetch-backtest-prices-hfq.cjs \
             backtests/runs/2020q4-multisource-deep-v1.3-001/lock.json \
             backtests/runs/2020q4-multisource-deep-v1.3-001/prices.json
       - name: Evaluate frozen selections
         run: |
-          node scripts/evaluate-skill-run-v061.cjs \
+          node scripts/evaluate-skill-run-v130.cjs \
             backtests/runs/2020q4-multisource-deep-v1.3-001/lock.json \
             backtests/runs/2020q4-multisource-deep-v1.3-001/prices.json \
             backtests/runs/2020q4-multisource-deep-v1.3-001/outcome.json
@@ -42,3 +42,5 @@ jobs:
           git commit -m "backtest: reveal v1.3 2020Q4 deep diagnostics"
           git pull --rebase origin ai-skill-v1.3-20260923
           git push origin HEAD:ai-skill-v1.3-20260923
+
+# rerun-with-v130-hfq-post-lock-infrastructure
