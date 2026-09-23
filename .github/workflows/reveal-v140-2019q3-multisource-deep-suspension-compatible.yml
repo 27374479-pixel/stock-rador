@@ -1,0 +1,44 @@
+name: reveal-v140-2019q3-multisource-deep-suspension-compatible
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.4-2019q3-holdout-20260923
+    paths:
+      - .github/workflows/reveal-v140-2019q3-multisource-deep-suspension-compatible.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.4-2019q3-holdout-20260923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Re-fetch frozen historical prices from locked universe
+        run: |
+          node scripts/fetch-backtest-prices-hfq.cjs \
+            backtests/runs/2019q3-multisource-deep-v1.4-001/lock.json \
+            backtests/runs/2019q3-multisource-deep-v1.4-001/prices.json
+      - name: Evaluate with suspension-compatible path accounting
+        run: |
+          node scripts/evaluate-skill-run-v140-suspension-compatible.cjs \
+            backtests/runs/2019q3-multisource-deep-v1.4-001/lock.json \
+            backtests/runs/2019q3-multisource-deep-v1.4-001/prices.json \
+            backtests/runs/2019q3-multisource-deep-v1.4-001/outcome.json
+      - name: Commit diagnostic outcomes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2019q3-multisource-deep-v1.4-001/prices.json backtests/runs/2019q3-multisource-deep-v1.4-001/outcome.json
+          git commit -m "backtest: reveal v1.4 2019Q3 deep diagnostics with suspension accounting"
+          git pull --rebase origin ai-skill-v1.4-2019q3-holdout-20260923
+          git push origin HEAD:ai-skill-v1.4-2019q3-holdout-20260923
