@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025q1-multisource-deep-v0.9-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "optical_eoptolink",
+      "frozenDecision": "新易盛 Research selection because broad optical opportunity timing was adverse despite realized earnings conversion and clear peer asymmetry",
+      "base60d": {
+        "selectedReturn": 0.2774018751931484,
+        "benchmarkReturn": -0.010513629253532275,
+        "benchmarkExcess": 0.2879155044466807,
+        "matchedControlExcess": 0.35384800713957865,
+        "bestControlTicker": "300308.SZ",
+        "bestControlReturn": -0.07644613194643024,
+        "excessVsBestControl": 0.35384800713957865,
+        "selectedRank": 1
+      },
+      "laterFundamentalCheck": {
+        "description": "2025Q1 revenue RMB4.052bn +264.13%, attributable profit RMB1.573bn +384.54%, CFO +20.45%; company attributed the growth to data-center demand. The frozen company-specific earnings engine continued to accelerate after cutoff.",
+        "source": "post-reveal 2025Q1 filing"
+      },
+      "failureClass": "company_specific_engine_hidden_by_broad_sector_timing",
+      "label": "timing_gate_missed_idiosyncratic_multi_engine",
+      "replicationOf": "2025q2 Sungrow failure class",
+      "generalLesson": "A broad sector basket can be adverse while one company has a distinct, already-realized earnings engine and materially better valuation/revision asymmetry. Sector timing should remain a risk signal, but it should not be an unconditional veto when a stricter company-engine timing test is satisfied."
+    },
+    {
+      "case": "gold_zijin",
+      "frozenDecision": "紫金矿业 High-priority selection over 山东黄金/山金国际",
+      "base60d": {
+        "selectedReturn": 0.09130632680928552,
+        "benchmarkReturn": 0.011123156201994444,
+        "benchmarkExcess": 0.08018317060729108,
+        "matchedControlExcess": -0.0005676210949313032,
+        "bestControlTicker": "600547.SH",
+        "bestControlReturn": 0.18439249124554302,
+        "excessVsBestControl": -0.0930861644362575,
+        "selectedRank": 2
+      },
+      "laterFundamentalCheck": {
+        "description": "Post-cutoff Q1 results showed strong earnings conversion across the peer set: 紫金 profit +62.39%, 山东黄金 +46.62%, 山金国际 +37.91%. The gold opportunity was fundamentally valid; the 60d cross-sectional ranking was mixed rather than a clear company-fundamental failure.",
+        "source": "post-reveal Q1 filings"
+      },
+      "failureClass": "opportunity_right_selection_edge_weak",
+      "label": "opportunity_right_selection_mixed",
+      "generalLesson": "Do not infer a new rule from one control-ranking miss when the selected company beats the benchmark and fundamentals remain strong. Event purity versus valuation may need more evidence before any future change."
+    },
+    {
+      "case": "power_no_selection",
+      "frozenDecision": "High-priority opportunity hypothesis / No selection under neutral timing and insufficient direct company conversion",
+      "label": "no_selection_preserved",
+      "generalLesson": "No post-reveal stock claim is made because no company was frozen."
+    },
+    {
+      "case": "tungsten_no_selection",
+      "frozenDecision": "Research hypothesis / No selection under adverse timing and proxy-only post-policy conversion",
+      "label": "no_selection_preserved",
+      "generalLesson": "No post-reveal stock claim is made because no company was frozen."
+    }
+  ],
+  "replicatedFailureClass": {
+    "name": "company_specific_engine_hidden_by_broad_sector_timing",
+    "independentHistoricalRuns": [
+      "2025q2-multisource-deep-v0.9-001 / 阳光电源",
+      "2025q1-multisource-deep-v0.9-001 / 新易盛"
+    ],
+    "commonPattern": [
+      "company-specific earnings conversion was already realized before reveal",
+      "company had clear cross-sectional revision/valuation asymmetry",
+      "broad sector/opportunity price regime was neutral or adverse",
+      "selected company subsequently beat benchmark and frozen controls at the pre-registered 60d base horizon",
+      "post-cutoff fundamentals confirmed persistence of the company-specific engine"
+    ],
+    "implication": "Sufficient evidence now exists to design a new general company-engine timing override. Q1/Q2 outcomes may motivate the mechanism but may not validate the next version."
+  },
+  "prohibitedUses": [
+    "Do not change v0.9 or relabel its frozen Q1/Q2 decisions.",
+    "Do not use Q1/Q2 to claim the next version works.",
+    "Any company-engine timing override must be versioned and validated on a new holdout/forward sample."
+  ],
+  "nextValidation": {
+    "proposedSkillVersion": "1.0.0",
+    "proposedMechanism": "company-engine timing override with strict realized-conversion, mechanism-separation, relative-price and downside conditions",
+    "validationRequirement": "new historical holdout not used in mechanism design"
+  }
+}
