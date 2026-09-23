@@ -1,0 +1,165 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-auto-collapse",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Record auto-demand collapse should affect OEM earnings over the next reporting cycles; this is primarily an avoidance test."
+  },
+  "changeHypothesis": {
+    "summary": "February auto sales collapsed about 79% YoY. Relative-price resilience during a broader market crash is not a positive earnings bridge.",
+    "firstCredibleDate": "2020-03-12",
+    "valueChain": [
+      "mobility restrictions",
+      "vehicle demand",
+      "OEM volumes",
+      "earnings"
+    ],
+    "persistenceReason": "Demand can rebound as restrictions ease, but the cutoff contains no verified recovery volume.",
+    "disconfirmingEvidence": [
+      "The frozen auto basket was benchmark-relative favorable despite physical demand collapse, demonstrating why price relative strength alone can mislead."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-auto-20200312",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-auto-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "record sales collapse",
+      "to": "OEM revenue/profit",
+      "mechanism": "Vehicle volumes fall sharply before fixed costs adjust.",
+      "evidenceRefs": [
+        "reuters-auto-20200312"
+      ],
+      "failureMode": "a rapid V-shaped rebound arrives before earnings damage persists",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [
+      "auto OEMs",
+      "components"
+    ],
+    "substitutes": [
+      "public transport/used cars"
+    ],
+    "bottlenecks": [
+      "consumer confidence",
+      "dealership reopening"
+    ],
+    "falseThemeMatches": [
+      "relative-strength OEMs without verified demand recovery"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "verifiedExposure": "Direct OEM exposure to collapsed China auto demand.",
+      "evidenceRefs": [
+        "regime-auto-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "Physical demand shock dominates.",
+        "favorable": "Rapid reopening restores sales.",
+        "adverse": "Demand weakness persists."
+      },
+      "principalRisks": [
+        "demand collapse"
+      ]
+    },
+    {
+      "ticker": "601633.SH",
+      "name": "长城汽车",
+      "verifiedExposure": "Direct OEM exposure; relative strength does not prove earnings acceleration.",
+      "evidenceRefs": [
+        "regime-auto-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "Physical demand shock dominates.",
+        "favorable": "Rapid reopening restores sales.",
+        "adverse": "Demand weakness persists."
+      },
+      "principalRisks": [
+        "demand collapse"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No long selection before verified sales recovery; favorable relative-price basket does not override the negative physical signal."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Auto equities fell less than CSI300 on the frozen lookbacks, but February sales were at a record collapse.",
+    "thesisExpectation": "Wait for physical recovery rather than front-run it from relative price alone.",
+    "measurableGap": "No positive earnings bridge exists at cutoff.",
+    "evidenceRefs": [
+      "reuters-auto-20200312",
+      "regime-auto-20200331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "relative_strength_without_positive_bridge",
+    "constraints": [
+      "record demand collapse"
+    ]
+  },
+  "bearCase": "A premature contrarian long confuses 'fell less than market' with improving business fundamentals.",
+  "invalidationConditions": [
+    {
+      "indicator": "monthly auto sales",
+      "observationMethod": "CAAM data",
+      "threshold": "sustained YoY recovery and company earnings bridge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; use as a canonical negative-signal/relative-strength conflict case."
+  ]
+}
