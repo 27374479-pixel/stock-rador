@@ -1,0 +1,878 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2019q2-multisource-deep-v1.5-001",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2019Q2 replay built in September 2026 with current model/search weights. Only evidence available by 2019-06-30 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy, licensing, trade-control and macro evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central-government and U.S. Commerce releases; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/company operating evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected issuer quarterly filings and cutoff-valid guidance/research were frozen; no exhaustive A-share company crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable price/demand/industry conditions.",
+      "coverageStatus": "partial",
+      "limitations": "NBS food prices and TrendForce semiconductor demand/price evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting.",
+      "coverageStatus": "partial",
+      "limitations": "Xinhua 5G reporting used as an independent news origin."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist technology supply/demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce semiconductor memory/foundry data."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "miit-5g-license-20190606",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "工业和信息化部向四家企业颁发5G牌照",
+      "publisher": "工业和信息化部",
+      "url": "https://wap.miit.gov.cn/xwdt/gxdt/ldhd/art/2020/art_5487f43651924ca2bdc2349c6d1ab4aa.html",
+      "publishedAt": "2019-06-06T23:54:00+08:00",
+      "availableAt": "2019-06-06T23:54:00+08:00",
+      "originGroup": "miit-5g-license-20190606",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MIIT formally licensed China Telecom, China Mobile, China Unicom and China Broadcasting Network to operate 5G services, marking the start of commercial deployment."
+      ],
+      "entities": [
+        "5G",
+        "telecom operators",
+        "network equipment"
+      ],
+      "observedChanges": [
+        "commercial 5G moves from trial/policy expectation into licensed deployment"
+      ]
+    },
+    {
+      "itemId": "xinhua-5g-20190606",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "我国正式发放5G商用牌照",
+      "publisher": "新华社（中央网信办转载）",
+      "url": "https://www.cac.gov.cn/2019-06/06/c_1124591450.htm",
+      "publishedAt": "2019-06-06T12:49:00+08:00",
+      "availableAt": "2019-06-06T12:49:00+08:00",
+      "originGroup": "xinhua-5g-20190606",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Xinhua reported that China entered the 5G commercial era after licenses were issued, with network construction and industry applications expected to accelerate."
+      ],
+      "entities": [
+        "5G",
+        "commercial deployment"
+      ],
+      "observedChanges": [
+        "5G commercial deployment becomes an observable national event"
+      ]
+    },
+    {
+      "itemId": "us-commerce-huawei-20190515",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "Department of Commerce Announces the Addition of Huawei Technologies Co. Ltd. to the Entity List",
+      "publisher": "U.S. Department of Commerce",
+      "url": "https://2017-2021.commerce.gov/news/press-releases/2019/05/department-commerce-announces-addition-huawei-technologies-co-ltd.html",
+      "publishedAt": "2019-05-15T00:00:00-04:00",
+      "availableAt": "2019-05-15T00:00:00-04:00",
+      "originGroup": "us-commerce-huawei-20190515",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "U.S. Commerce announced Huawei and affiliates would be added to the Entity List, materially increasing supply-chain and technology-access uncertainty."
+      ],
+      "entities": [
+        "Huawei",
+        "Entity List",
+        "semiconductors",
+        "smartphones"
+      ],
+      "observedChanges": [
+        "Huawei supply chain faces a new external restriction"
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-20190606",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "The US-China Trade War Rages On: DRAM Price Decline 3Q to Widen to 15%",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190606-10146.html",
+      "publishedAt": "2019-06-06T00:00:00+08:00",
+      "availableAt": "2019-06-06T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20190606",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce widened its 3Q DRAM price-decline forecast to 10-15% because Huawei smartphone/server shipments and data-center demand were expected to weaken."
+      ],
+      "entities": [
+        "DRAM",
+        "Huawei",
+        "servers",
+        "smartphones"
+      ],
+      "observedChanges": [
+        "memory physical demand outlook worsens despite domestic-substitution narrative"
+      ]
+    },
+    {
+      "itemId": "trendforce-foundry-20190613",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Global Top Ten Foundries for 2Q19 Perform Less-than-expected Due to Sliding Demand and High Inventories",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190613-10149.html",
+      "publishedAt": "2019-06-13T00:00:00+08:00",
+      "availableAt": "2019-06-13T00:00:00+08:00",
+      "originGroup": "trendforce-foundry-20190613",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce estimated top-ten foundry 2Q revenue down about 8% YoY as demand weakened and inventories remained high; Huawei restrictions added further 2H uncertainty."
+      ],
+      "entities": [
+        "foundries",
+        "Huawei",
+        "semiconductors"
+      ],
+      "observedChanges": [
+        "broad semiconductor demand remains weak even as localization pressure rises"
+      ]
+    },
+    {
+      "itemId": "ndrc-rareearth-20190528",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家发展改革委有关负责人就稀土产业发展相关问题答记者问",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/201905/t20190528_954426.html",
+      "publishedAt": "2019-05-28T00:00:00+08:00",
+      "availableAt": "2019-05-28T00:00:00+08:00",
+      "originGroup": "ndrc-rareearth-20190528",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NDRC highlighted rare earths as a strategic resource, stressed priority for domestic needs, and addressed the possibility of using the sector within the U.S.-China trade dispute without announcing an export ban."
+      ],
+      "entities": [
+        "rare earths",
+        "strategic resources",
+        "trade friction"
+      ],
+      "observedChanges": [
+        "rare-earth policy attention and strategic value sharply rise"
+      ]
+    },
+    {
+      "itemId": "ndrc-rareearth-20190618",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "政策研究室副主任兼委新闻发言人孟玮答问之二：关于促进稀土产业高质量发展的措施",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xxgk/jd/jd/201906/t20190618_1182899.html",
+      "publishedAt": "2019-06-18T00:00:00+08:00",
+      "availableAt": "2019-06-18T00:00:00+08:00",
+      "originGroup": "ndrc-rareearth-20190618",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NDRC said it had held three recent meetings with experts, major companies and local governments to study policies and stronger sector regulation, confirming sustained policy attention but not a concrete export cutoff."
+      ],
+      "entities": [
+        "rare earths",
+        "industry policy",
+        "regulation"
+      ],
+      "observedChanges": [
+        "rare-earth policy discussion broadens from rhetoric to policy consultation"
+      ]
+    },
+    {
+      "itemId": "statecouncil-etc-20190522",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "深化收费公路制度改革取消高速公路省界收费站实施方案",
+      "publisher": "国务院办公厅（财政部公开）",
+      "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201905/t20190522_3263074.htm",
+      "publishedAt": "2019-05-22T00:00:00+08:00",
+      "availableAt": "2019-05-22T00:00:00+08:00",
+      "originGroup": "statecouncil-etc-20190516",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The State Council plan required toll-system/ETC hardware and software upgrades to be largely completed by October 2019, system testing by December, and ETC use at expressway entrances to reach 90% by year end."
+      ],
+      "entities": [
+        "ETC",
+        "toll systems",
+        "road electronics"
+      ],
+      "observedChanges": [
+        "a national infrastructure deadline creates a finite but measurable equipment/order cycle"
+      ]
+    },
+    {
+      "itemId": "mot-etc-20190627",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于十三届全国人大二次会议第7822号建议的答复函",
+      "publisher": "交通运输部",
+      "url": "https://xxgk.mot.gov.cn/jigou/glj/202006/t20200623_3313160.html",
+      "publishedAt": "2019-06-27T00:00:00+08:00",
+      "availableAt": "2019-06-27T00:00:00+08:00",
+      "originGroup": "mot-etc-20190627",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MOT reiterated the timetable: engineering completion by October, system integration/testing in November-December, and readiness for system switching by year end."
+      ],
+      "entities": [
+        "ETC",
+        "toll system construction"
+      ],
+      "observedChanges": [
+        "the ETC implementation deadline remains intact and operational"
+      ]
+    },
+    {
+      "itemId": "nea-pv-parity-20190520",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于公布2019年第一批风电、光伏发电平价上网项目的通知",
+      "publisher": "国家发展改革委/国家能源局",
+      "url": "https://zfxxgk.nea.gov.cn/auto87/201905/t20190522_3664.htm",
+      "publishedAt": "2019-05-20T00:00:00+08:00",
+      "availableAt": "2019-05-20T00:00:00+08:00",
+      "originGroup": "nea-pv-parity-20190520",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The first 2019 wind/solar grid-parity project list totaled 20.76GW and required grid companies to support connections and guaranteed acquisition under long-term fixed-price contracts."
+      ],
+      "entities": [
+        "solar",
+        "grid parity",
+        "renewables"
+      ],
+      "observedChanges": [
+        "grid-parity projects move from framework policy into a concrete project list"
+      ]
+    },
+    {
+      "itemId": "nea-pv-build-20190530",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家能源局关于2019年风电、光伏发电项目建设有关事项的通知",
+      "publisher": "国家能源局",
+      "url": "https://www.nea.gov.cn/2019-05/30/c_138102793.htm",
+      "publishedAt": "2019-05-30T00:00:00+08:00",
+      "availableAt": "2019-05-30T00:00:00+08:00",
+      "originGroup": "nea-pv-build-20190530",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NEA prioritized grid-parity projects and launched competitive allocation for subsidized projects, while requiring grid connection and consumption conditions."
+      ],
+      "entities": [
+        "photovoltaics",
+        "wind",
+        "competitive allocation"
+      ],
+      "observedChanges": [
+        "2019 PV construction policy becomes executable after earlier policy uncertainty"
+      ]
+    },
+    {
+      "itemId": "nbs-pork-20190612",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "2019年5月份居民消费价格同比上涨2.7%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900334.html",
+      "publishedAt": "2019-06-12T09:30:00+08:00",
+      "availableAt": "2019-06-12T09:30:00+08:00",
+      "originGroup": "nbs-cpi-201905",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May pork prices were +18.2% YoY, confirming a developing hog-supply shortage while month-on-month prices were roughly flat."
+      ],
+      "entities": [
+        "pork",
+        "hog supply",
+        "CPI"
+      ],
+      "observedChanges": [
+        "pork scarcity is visible but not yet at the later 2019 extreme"
+      ]
+    },
+    {
+      "itemId": "trendforce-nand-20190620",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Uncertainties in the Market Rise while a Bounce in NAND Flash Prices Remains Unlikely in 3Q",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20190620-10152.html",
+      "publishedAt": "2019-06-20T00:00:00+08:00",
+      "availableAt": "2019-06-20T00:00:00+08:00",
+      "originGroup": "trendforce-nand-20190620",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NAND contract prices had fallen about 20% QoQ for two consecutive quarters and TrendForce still did not expect a 3Q rebound because smartphones, servers and notebooks remained weak."
+      ],
+      "entities": [
+        "NAND",
+        "smartphones",
+        "servers",
+        "notebooks"
+      ],
+      "observedChanges": [
+        "memory downcycle remains active despite technology-policy headlines"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2019q2-5g-commercial-license",
+      "statement": "China moved 5G from trial/policy preparation into formal commercial licensing on June 6, potentially accelerating network equipment and optical demand.",
+      "changeType": "commercialization_policy_trigger",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-06-06T12:49:00+08:00",
+      "memberItemIds": [
+        "miit-5g-license-20190606",
+        "xinhua-5g-20190606"
+      ],
+      "independentOriginGroups": [
+        "miit-5g-license-20190606",
+        "xinhua-5g-20190606"
+      ],
+      "affectedValueChain": [
+        "telecom equipment",
+        "optical modules/components",
+        "base stations",
+        "operators"
+      ],
+      "contradictionSearchNotes": "Licensing itself does not prove incremental capex or earnings. Deep research must verify operator procurement/order conversion and whether listed suppliers already rerated before the license.",
+      "researchQuestion": "Which A-share 5G expressions had measurable order/earnings conversion and expectation room at June 30?"
+    },
+    {
+      "eventId": "event-2019q2-huawei-restriction-supplychain",
+      "statement": "Huawei's Entity List restriction created a simultaneous localization incentive and near-term demand/supply shock; contemporaneous memory/foundry data remained weak, so 'domestic substitution' and 'electronics demand' must be split rather than averaged.",
+      "changeType": "supplychain_restriction_and_localization_pressure",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-15T00:00:00-04:00",
+      "memberItemIds": [
+        "us-commerce-huawei-20190515",
+        "trendforce-dram-20190606",
+        "trendforce-foundry-20190613",
+        "trendforce-nand-20190620"
+      ],
+      "independentOriginGroups": [
+        "us-commerce-huawei-20190515",
+        "trendforce-dram-20190606",
+        "trendforce-foundry-20190613",
+        "trendforce-nand-20190620"
+      ],
+      "affectedValueChain": [
+        "Huawei suppliers",
+        "domestic semiconductors",
+        "memory",
+        "foundries",
+        "smartphone/server supply chains"
+      ],
+      "contradictionSearchNotes": "The policy shock can benefit localization over a long horizon while simultaneously reducing Huawei/device demand and worsening memory/foundry utilization in the near term. V1.5 must create separate company/product hypotheses before any selection.",
+      "researchQuestion": "Can any domestic supplier show a company-specific order/share engine strong enough to overcome the near-term electronics demand shock, or should the broad theme fail closed?"
+    },
+    {
+      "eventId": "event-2019q2-rareearth-strategic-repricing",
+      "statement": "Rare earths became a high-profile strategic-policy topic during escalating trade friction, with NDRC conducting repeated policy consultations; however no export ban or quantified production cut was announced.",
+      "changeType": "policy_expectation_repricing",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-28T00:00:00+08:00",
+      "memberItemIds": [
+        "ndrc-rareearth-20190528",
+        "ndrc-rareearth-20190618"
+      ],
+      "independentOriginGroups": [
+        "ndrc-rareearth-20190528",
+        "ndrc-rareearth-20190618"
+      ],
+      "affectedValueChain": [
+        "rare-earth miners",
+        "separation/refining",
+        "magnet materials",
+        "downstream users"
+      ],
+      "contradictionSearchNotes": "Policy attention is real but economic transmission is ambiguous without quotas, exports or price/volume evidence. Separate resource owners, processors and downstream magnets; do not equate strategic rhetoric with earnings.",
+      "researchQuestion": "Did any listed rare-earth company have a direct, under-reflected earnings bridge by June 30, or was the theme mostly expectation repricing?"
+    },
+    {
+      "eventId": "event-2019q2-etc-national-buildout",
+      "statement": "The State Council converted toll-station reform into a national ETC hardware/software construction program with explicit October and year-end deadlines.",
+      "changeType": "mandated_infrastructure_buildout",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-22T00:00:00+08:00",
+      "memberItemIds": [
+        "statecouncil-etc-20190522",
+        "mot-etc-20190627"
+      ],
+      "independentOriginGroups": [
+        "statecouncil-etc-20190516",
+        "mot-etc-20190627"
+      ],
+      "affectedValueChain": [
+        "OBU/RSU suppliers",
+        "toll-system integrators",
+        "road communications"
+      ],
+      "contradictionSearchNotes": "The opportunity has unusually explicit timing but also an unusually explicit expiry. V1.5 should test whether order/earnings conversion occurs before normalization without treating the finite cycle as a long-duration compounder.",
+      "researchQuestion": "Which listed ETC suppliers had verified orders/capacity and a base-horizon catalyst that occurred before the deployment wave expired?"
+    },
+    {
+      "eventId": "event-2019q2-pv-policy-restart",
+      "statement": "After prior policy uncertainty, 2019 solar construction rules became executable through a 20.76GW first parity-project list and a formal parity-first/competitive-bidding framework.",
+      "changeType": "project_pipeline_policy_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-05-20T00:00:00+08:00",
+      "memberItemIds": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530"
+      ],
+      "independentOriginGroups": [
+        "nea-pv-parity-20190520",
+        "nea-pv-build-20190530"
+      ],
+      "affectedValueChain": [
+        "solar modules",
+        "inverters",
+        "polysilicon",
+        "EPC/project developers"
+      ],
+      "contradictionSearchNotes": "Policy restart does not imply equal benefit across upstream/downstream. Deep research must separate project-volume beneficiaries from segments still facing price pressure or overcapacity.",
+      "researchQuestion": "Which PV companies had a direct earnings bridge from the 2019 project restart rather than only generic sector beta?"
+    },
+    {
+      "eventId": "event-2019q2-pork-scarcity-emergence",
+      "statement": "By May, pork prices were already +18.2% YoY, indicating a developing hog-supply shortage before the later 2019 extreme scarcity phase.",
+      "changeType": "commodity_scarcity_emergence",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-06-12T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pork-20190612"
+      ],
+      "independentOriginGroups": [
+        "nbs-cpi-201905"
+      ],
+      "affectedValueChain": [
+        "hog producers",
+        "feed",
+        "meat processors",
+        "consumers"
+      ],
+      "contradictionSearchNotes": "The price signal is earlier than the Q3/Q4 extremes but month-on-month pricing was not yet accelerating strongly. Deep research must verify producer volumes/costs and avoid assuming future scarcity severity.",
+      "researchQuestion": "Were any low-cost hog producers already converting the emerging price regime into measurable earnings before June 30?"
+    },
+    {
+      "eventId": "event-2019q2-memory-downcycle",
+      "statement": "DRAM and NAND physical markets remained in a pronounced downcycle in June, with Huawei restrictions worsening smartphone/server uncertainty and memory prices still expected to fall.",
+      "changeType": "product_price_demand_contraction",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-06-06T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-dram-20190606",
+        "trendforce-nand-20190620"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20190606",
+        "trendforce-nand-20190620"
+      ],
+      "affectedValueChain": [
+        "DRAM",
+        "NAND",
+        "memory module suppliers",
+        "device OEMs"
+      ],
+      "contradictionSearchNotes": "This is a negative physical signal that should remain separate from long-run semiconductor localization. Generic semiconductor price momentum may not override a missing positive product-level earnings bridge.",
+      "researchQuestion": "Should broad memory exposure remain No selection at June 30 despite domestic-substitution narratives?"
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-5g-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff 5G price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/5g-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "5G basket was neutral: +1.55pp 20d excess and -3.94pp 60d excess with only one-third positive breadth; ZTE itself was strong while FiberHome/Accelink were weak."
+      ]
+    },
+    {
+      "id": "regime-semis-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff semiconductor-theme price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/semis-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Semiconductor basket was neutral: +7.83pp 20d excess and +0.24pp 60d excess, but only one-third of names beat CSI300 over 60d; price strength was concentrated."
+      ]
+    },
+    {
+      "id": "regime-rareearth-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff rare-earth price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/rareearth-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Rare-earth basket had -7.42pp 20d excess but +12.05pp 60d excess; every frozen name lagged CSI300 in the final 20d after a strong prior policy-driven rerating."
+      ]
+    },
+    {
+      "id": "regime-etc-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff ETC price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/etc-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "ETC basket was favorable with +8.34pp 20d and +42.45pp 60d excess; JinYi had +84.72pp 60d excess and Wanji +50.71pp, showing very high expectation absorption before cutoff."
+      ]
+    },
+    {
+      "id": "regime-pv-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff PV price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/pv-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "PV basket was neutral: -8.13pp 20d excess but +4.42pp 60d excess; Longi and Tongwei retained positive 60d excess while all three frozen names lagged over the final 20d."
+      ]
+    },
+    {
+      "id": "regime-pork-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff pork-equity price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/pork-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Pork basket was neutral: -12.10pp 20d excess and +4.87pp 60d excess; only New Hope beat CSI300 over 60d while all three names lagged in the final 20d."
+      ]
+    },
+    {
+      "id": "regime-memory-20190630",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff generic memory-theme price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2019q2-multisource-deep-v1.5-001/regime/memory-20190630.snapshot.json",
+      "publishedAt": "2019-06-30T15:00:00+08:00",
+      "availableAt": "2019-06-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Generic memory-theme basket was neutral/weak: -2.59pp 20d and -5.83pp 60d excess; neither frozen name beat CSI300 over 60d."
+      ]
+    },
+    {
+      "id": "zte-q1-20190430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中兴通讯2019年第一季度报告",
+      "publisher": "中兴通讯",
+      "url": "https://disc.static.szse.cn/disc/disk01/finalpage/2019-04-30/44664ef6-0695-4469-b4ba-f9a02b4cd675.PDF",
+      "publishedAt": "2019-04-30T00:00:00+08:00",
+      "availableAt": "2019-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB22.20bn -19.34%; attributable profit RMB862.6m after the prior-year sanction loss;扣非 RMB132.9m; operating cash flow RMB1.260bn versus -RMB171m."
+      ]
+    },
+    {
+      "id": "zte-research-20190615",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "中兴通讯：业绩增长稳健，国内市场广阔叠加5G技术领先，5G商用扬帆起航",
+      "publisher": "东吴证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201906171335348951_1.pdf?1601214723000.pdf=",
+      "publishedAt": "2019-06-15T00:00:00+08:00",
+      "availableAt": "2019-06-15T00:00:00+08:00",
+      "normalizedClaims": [
+        "Report forecast 2019/20/21 EPS 1.11/1.76/2.48 and PE 27.3x/17.24x/12.19 at RMB30.28; expected 2019 H1 attributable profit RMB1.2-1.8bn and argued 5G licensing would accelerate operator capital spending."
+      ]
+    },
+    {
+      "id": "5g-industry-20190630",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "华为或迎转机 | MWC热点回顾 | 中报展望",
+      "publisher": "华泰证券",
+      "url": "https://crm.htsc.com.cn/doc/2019/107205/67c0a81d-b60c-4f4f-b44e-9430260d6b4e.pdf",
+      "publishedAt": "2019-06-30T00:00:00+08:00",
+      "availableAt": "2019-06-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "At June 28 prices the report showed ZTE 2019/20/21 EPS 1.10/1.40/1.94 at PE 29.57x/23.24x/16.77; FiberHome 0.87/1.14/1.42 at PE 32.02x/24.44x/19.62; sector expectations already reflected ongoing 5G buildout."
+      ]
+    },
+    {
+      "id": "fiberhome-q1-20190430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "烽火通信2019年第一季度报告",
+      "publisher": "烽火通信",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5334945&stockid=600498",
+      "publishedAt": "2019-04-30T00:00:00+08:00",
+      "availableAt": "2019-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB4.881bn +14.90%, attributable profit RMB166.7m +19.71%,扣非 +21.19%; operating cash flow remained negative RMB1.703bn but improved 41.38%."
+      ]
+    },
+    {
+      "id": "accelink-q1-20190427",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "光迅科技2019年第一季度报告",
+      "publisher": "光迅科技",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5297678&stockid=002281",
+      "publishedAt": "2019-04-27T00:00:00+08:00",
+      "availableAt": "2019-04-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB1.219bn +0.99%; attributable profit RMB63.93m -17.80%;扣非 profit was positive year-on-year while headline profit remained down."
+      ]
+    },
+    {
+      "id": "jinyi-q1-20190426",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "金溢科技2019年第一季度报告",
+      "publisher": "金溢科技",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5287397&stockid=002869",
+      "publishedAt": "2019-04-26T00:00:00+08:00",
+      "availableAt": "2019-04-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB145.45m -3.41%, attributable profit RMB9.40m +35.85%,扣非 +25.80%; operating cash flow remained negative. The then-current H1 forecast was only RMB8-13m profit."
+      ]
+    },
+    {
+      "id": "jinyi-research-20190612",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "金溢科技：重量级政策出台，深度利好ETC行业龙头",
+      "publisher": "天风证券",
+      "url": "https://img3.gelonghui.com/pdf/95f86-497d0666-9e01-4572-b9fa-6b7d3ce97cdf.pdf",
+      "publishedAt": "2019-06-12T00:00:00+08:00",
+      "availableAt": "2019-06-12T00:00:00+08:00",
+      "normalizedClaims": [
+        "At RMB28.88 the report set RMB35.19 target and forecast 2019/20/21 revenue RMB2.185/2.576/3.220bn, net profit RMB180/216/258m, EPS 1.53/1.83/2.19 and PE 18.87x/15.75x/13.18; expected policy-driven ETC orders to surge in June-July."
+      ]
+    },
+    {
+      "id": "jinyi-h1-forecast-20190426",
+      "sourceType": "first_party",
+      "contentKind": "guidance",
+      "title": "金溢科技2019年1-6月业绩预告（4月26日版本）",
+      "publisher": "金溢科技",
+      "url": "https://money.finance.sina.com.cn/corp/go.php/vFD_AchievementNotice/stockid/002869.phtml",
+      "publishedAt": "2019-04-26T00:00:00+08:00",
+      "availableAt": "2019-04-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "The cutoff-valid H1 guidance was only RMB8-13m attributable profit; the later July 12 upgrade to RMB42-48m was not available by the simulated cutoff and is explicitly excluded."
+      ]
+    },
+    {
+      "id": "wanji-q1-20190427",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "万集科技2019年第一季度报告",
+      "publisher": "万集科技",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5298945&stockid=300552",
+      "publishedAt": "2019-04-27T00:00:00+08:00",
+      "availableAt": "2019-04-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB117.27m +56.02%; attributable result remained a RMB16.05m loss, so the policy ramp had not yet produced realized profitability by cutoff."
+      ]
+    },
+    {
+      "id": "wanji-research-20190415",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "万集科技：ETC渗透率提升带来业绩高弹性",
+      "publisher": "证券研究机构",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201904151320107323_1.pdf",
+      "publishedAt": "2019-04-15T00:00:00+08:00",
+      "availableAt": "2019-04-15T00:00:00+08:00",
+      "normalizedClaims": [
+        "Report forecast 2019/20/21 EPS 0.73/0.98/1.29 and highlighted ETC penetration/toll-station reform, but the earnings improvement remained forecast rather than realized at cutoff."
+      ]
+    },
+    {
+      "id": "longi-q1-20190430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "隆基股份2019年第一季度报告",
+      "publisher": "隆基股份",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5316718&stockid=601012",
+      "publishedAt": "2019-04-30T00:00:00+08:00",
+      "availableAt": "2019-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB5.710bn +64.56%, attributable profit RMB611m +12.54%,扣非 +17.81%, and operating cash flow turned to +RMB938m from -RMB717m; higher wafer/module volumes drove the revenue increase."
+      ]
+    },
+    {
+      "id": "pv-industry-20190630",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "风光明媚：光伏竞价或超预期，风电抢装如火如荼",
+      "publisher": "兴业证券电新团队",
+      "url": "https://www.sohu.com/a/323977502_619374",
+      "publishedAt": "2019-06-30T00:00:00+08:00",
+      "availableAt": "2019-06-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "At June 28 prices the contemporaneous forecast showed Longi 2019/20/21 EPS 1.21/1.63/2.04 and PE about 19.1x/14.2x/11.3x, while policy competition/project expectations were improving."
+      ]
+    },
+    {
+      "id": "tongwei-research-20190418",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "通威股份：业绩符合申万宏源预期，综合竞争力领先行业",
+      "publisher": "申万宏源",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201904181320660217_1.pdf",
+      "publishedAt": "2019-04-18T00:00:00+08:00",
+      "availableAt": "2019-04-18T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB6.169bn +18.14% and profit RMB491m +53.36%; report forecast 2019/20/21 profit RMB3.286/3.992/4.540bn, EPS 0.85/1.03/1.17 and PE 16x/13x/12x at RMB13.83."
+      ]
+    },
+    {
+      "id": "sunshine-q1-20190429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "阳光电源2019年第一季度报告",
+      "publisher": "阳光电源",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5216271&stockid=300274",
+      "publishedAt": "2019-04-29T00:00:00+08:00",
+      "availableAt": "2019-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue grew about 30.1% while attributable profit fell about 15.6%, making the company a weaker earnings-conversion expression for the same policy restart."
+      ]
+    },
+    {
+      "id": "north-huachuang-q1-20190430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "北方华创2019年第一季度报告",
+      "publisher": "北方华创",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5316941&stockid=002371",
+      "publishedAt": "2019-04-30T00:00:00+08:00",
+      "availableAt": "2019-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB708m +30.51%, attributable profit +29.65%, but扣非 profit was -RMB22.48m and deteriorated 87.76%, so headline growth did not establish a clean post-restriction localization earnings engine."
+      ]
+    },
+    {
+      "id": "giga-q1-20190430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兆易创新2019年第一季度报告",
+      "publisher": "兆易创新",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5321270&stockid=603986",
+      "publishedAt": "2019-04-30T00:00:00+08:00",
+      "availableAt": "2019-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB456m -15.73%, attributable profit -55.58% and扣非 -62.03%, consistent with the weak physical memory/electronics cycle."
+      ]
+    },
+    {
+      "id": "will-q1-20190427",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "韦尔股份2019年第一季度报告",
+      "publisher": "韦尔股份",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5284260&stockid=603501",
+      "publishedAt": "2019-04-27T00:00:00+08:00",
+      "availableAt": "2019-04-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB723m -11.84%, attributable profit +19.10%,扣非 +19.39%; operating cash flow remained negative, giving mixed rather than broad semiconductor confirmation."
+      ]
+    },
+    {
+      "id": "shenghe-q1-20190429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "盛和资源2019年第一季度报告",
+      "publisher": "盛和资源",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5298607&stockid=600392",
+      "publishedAt": "2019-04-29T00:00:00+08:00",
+      "availableAt": "2019-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +15.34%, attributable profit -54.81%,扣非 -56.10%, and operating cash flow deteriorated sharply, so strategic-resource rhetoric had not converted into current earnings."
+      ]
+    },
+    {
+      "id": "baotou-rareearth-q1-20190430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "北方稀土2019年第一季度报告",
+      "publisher": "北方稀土",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5336449&stockid=600111",
+      "publishedAt": "2019-04-30T00:00:00+08:00",
+      "availableAt": "2019-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +30.98% largely from trading activity, attributable profit +9.66%,扣非 -10.02%, and operating cash flow -54.69%; current operating evidence did not show a strong resource-price earnings inflection."
+      ]
+    },
+    {
+      "id": "muyuan-q1-20190413",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "牧原股份2019年第一季度报告",
+      "publisher": "牧原股份",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=5180472&stockid=002714",
+      "publishedAt": "2019-04-13T00:00:00+08:00",
+      "availableAt": "2019-04-13T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB3.048bn +10.62% but attributable result was a RMB541m loss versus RMB136m profit a year earlier; the May pork-price rise had not yet converted into reported earnings by cutoff."
+      ]
+    }
+  ]
+}
