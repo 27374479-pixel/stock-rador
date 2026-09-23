@@ -1,0 +1,466 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "researchReadyAt": "2020-06-30T21:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q2-pv-company-engine-vs-pricing",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "LONGi's company engine was already realized, but upstream polysilicon pricing remained weak and PV equities had sharply rerated; 60d tests whether company-specific growth can still work without inventing an upstream scarcity thesis."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601012.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "LONGi had +205% Q1 profit and direct PV manufacturing exposure, but +54pp 60d excess and weak upstream physical pricing make the incremental entry case expectation-heavy.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "energytrend-pv-20200630",
+        "regime-pv-20200630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "PV equities strongly rerated even though late-June polysilicon pricing remained weak. LONGi nevertheless had a powerful company-specific Q1 engine, while Tongwei's upstream-integrated profit fell. The correct research question is company differentiation, not a generic bullish PV scarcity thesis.",
+    "firstCredibleDate": "2020-04-23",
+    "valueChain": [
+      "PV demand",
+      "wafer/module scale and mix",
+      "company profit",
+      "equity expectations"
+    ],
+    "persistenceReason": "Leading-company scale/share gains can persist even when upstream pricing is weak, but the market may already have capitalized that differentiation.",
+    "disconfirmingEvidence": [
+      "Polysilicon prices were still declining in late June.",
+      "LONGi had already outperformed CSI300 by ~54pp over 60d.",
+      "Tongwei Q1 profit fell despite revenue growth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "energytrend-pv-20200630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "longi-q1-20200423",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tongwei-q1-20200421",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pv-20200630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "company scale/mix/share",
+      "to": "LONGi earnings",
+      "mechanism": "Leading wafer/module execution can grow revenue/profit even while upstream input pricing is weak.",
+      "evidenceRefs": [
+        "longi-q1-20200423"
+      ],
+      "failureMode": "share/margin growth slows",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings differentiation",
+      "to": "equity alpha",
+      "mechanism": "Further upside requires company earnings to outrun a stock price that already strongly rerated.",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ],
+      "failureMode": "company remains good but expectations are fully priced",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "efficient scale PV manufacturers with share gains"
+    ],
+    "secondOrderWinners": [
+      "equipment/material suppliers"
+    ],
+    "losers": [
+      "upstream producers without pricing power"
+    ],
+    "substitutes": [
+      "other module technologies"
+    ],
+    "bottlenecks": [
+      "demand, capacity utilization, price competition"
+    ],
+    "falseThemeMatches": [
+      "treating all PV names as beneficiaries of weak upstream pricing"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "Leading PV manufacturer with realized Q1 revenue/profit acceleration.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "regime-pv-20200630"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +50.6%, profit +204.9%.",
+        "favorable": "Scale/share gains continue despite weak upstream pricing.",
+        "adverse": "Price competition or demand weakness catches up."
+      },
+      "principalRisks": [
+        "large prior rerating",
+        "industry pricing conflict"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Upstream-integrated PV expression exposed to polysilicon pricing.",
+      "evidenceRefs": [
+        "tongwei-q1-20200421",
+        "energytrend-pv-20200630"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +26.9% but profit -29.8%.",
+        "favorable": "Later upstream scarcity emerges.",
+        "adverse": "Weak prices keep suppressing profit."
+      },
+      "principalRisks": [
+        "weak physical pricing",
+        "weak current profit"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Major listed PV/upstream expression exposed to the same broad theme.",
+      "whySelectedCompanyShouldOutperform": "LONGi has clearly stronger realized company earnings while Tongwei's Q1 profit and late-June upstream pricing are weak.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "tongwei-q1-20200421",
+        "energytrend-pv-20200630"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601012.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600438.SH",
+        "selectedAdvantages": [
+          "far stronger realized Q1 earnings",
+          "less dependent on an upstream scarcity thesis"
+        ],
+        "selectedDisadvantages": [
+          "LONGi has much larger prior rerating"
+        ],
+        "evidenceRefs": [
+          "longi-q1-20200423",
+          "tongwei-q1-20200421",
+          "regime-pv-20200630"
+        ],
+        "switchCondition": "Prefer Tongwei only after upstream pricing turns and profit conversion is directly verified.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "LONGi is the only frozen PV expression with a strong realized company engine; this does not convert the weak upstream physical signal into a generic sector long."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PV leaders had already sharply rerated: basket +43.9pp 60d excess, LONGi about +54.0pp, despite late-June weak polysilicon pricing.",
+    "thesisExpectation": "LONGi can still outperform if its company-specific growth duration exceeds the already-rerated baseline.",
+    "measurableGap": "Company differentiation is real, but incremental price/path room is uncertain.",
+    "evidenceRefs": [
+      "longi-q1-20200423",
+      "energytrend-pv-20200630",
+      "regime-pv-20200630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Company earnings-duration versus strong prior relative-price absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Market already strongly rewarded PV leaders while upstream prices remained weak.",
+    "thesisScenario": "LONGi share/scale gains keep earnings revisions positive despite weak upstream pricing.",
+    "breakevenCondition": "Company earnings must keep revising upward enough to overcome the large prior rerating.",
+    "ordinaryScenarioFailure": "LONGi remains a strong company but earnings merely meet expectations as valuation normalizes.",
+    "catalystOrTimingBridge": "H1/Q3 earnings and PV pricing/shipments update inside the base horizon.",
+    "evidenceRefs": [
+      "longi-q1-20200423",
+      "energytrend-pv-20200630",
+      "regime-pv-20200630"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "mixed",
+      "rationale": "Company-level LONGi fundamentals are strong, but late-June upstream pricing remains weak.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "energytrend-pv-20200630"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "LONGi Q1 profit +204.9% is direct realized confirmation.",
+      "evidenceRefs": [
+        "longi-q1-20200423"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "PV basket had very strong relative-price breadth, but Tongwei's company earnings were weak.",
+      "evidenceRefs": [
+        "regime-pv-20200630",
+        "tongwei-q1-20200421"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "none",
+      "conclusion": "insufficient",
+      "rationale": "No sufficiently frozen multi-year consensus baseline is in the pack; price itself shows strong expectation absorption.",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "LONGi had ~+19.2pp 20d and +54.0pp 60d benchmark excess.",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ]
+    },
+    "unresolvedReason": "missing_baseline",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.18263916774853117,
+      "lookback60Excess": 0.43944920604088444,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "LONGi's company engine is strong, while sector upstream pricing remains weak rather than accelerating.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "energytrend-pv-20200630"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "LONGi has strong company confirmation but Tongwei's profit fell.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "tongwei-q1-20200421"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "structural",
+      "rationale": "PV adoption can be structural, but this specific late-Q2 pricing state is not a scarcity cycle.",
+      "evidenceRefs": [
+        "energytrend-pv-20200630"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "PV equities had already rerated dramatically by cutoff.",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Price is favorable but the broad physical evidence and expectation absorption are too conflicted for Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601012.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "LONGi had strong realized revenue/profit growth.",
+      "evidenceRefs": [
+        "longi-q1-20200423"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Exceptional Q1 growth supports further company revisions, but no frozen outer-year baseline proves room.",
+      "evidenceRefs": [
+        "longi-q1-20200423"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Large prior rerating is a substantial expectation burden.",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1/Q3 earnings and PV pricing update quickly.",
+      "evidenceRefs": [
+        "energytrend-pv-20200630",
+        "longi-q1-20200423"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Company quality is strong but theme-level rerating and price competition can create large downside.",
+      "evidenceRefs": [
+        "regime-pv-20200630",
+        "energytrend-pv-20200630"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600438.SH",
+        "revisionAdvantage": "LONGi has much stronger realized company earnings and less dependence on upstream price recovery.",
+        "valuationAdvantage": "Tongwei may gain more if upstream pricing turns, but currently lacks that physical support.",
+        "qualityTradeoff": "LONGi Q1 quality is much stronger.",
+        "catalystAdvantage": "LONGi earnings directly test the company-engine thesis.",
+        "downsideTradeoff": "LONGi carries greater prior-rerating risk.",
+        "evidenceRefs": [
+          "longi-q1-20200423",
+          "tongwei-q1-20200421",
+          "energytrend-pv-20200630",
+          "regime-pv-20200630"
+        ],
+        "switchCondition": "Switch only after polysilicon pricing and Tongwei profit conversion turn positive.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "market_share",
+    "driverChange": "LONGi Q1 revenue +50.6% and profit +204.9% despite weak upstream pricing.",
+    "earningsMechanism": "Company scale/mix/share gains translate demand into revenue and profit independently of an upstream scarcity thesis.",
+    "nextObservableMetric": "H1/Q3 revenue, profit, shipments and margin",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "longi-q1-20200423"
+    ],
+    "failureCondition": "Company earnings growth decelerates while the broad PV rerating remains elevated."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "other",
+      "nearTerm": "Q1 company growth is exceptionally strong.",
+      "nextPeriod": "No clean frozen 2020-21 consensus path in this pack; market price already reflects substantial optimism.",
+      "laterPeriod": "Structural PV growth is plausible but the incremental outer-year earnings path is unmeasured.",
+      "rationale": "Use realized Q1 plus price absorption rather than fabricating a consensus path.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "regime-pv-20200630"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "H1 can retain strong earnings momentum.",
+      "nextPeriodChange": "Company share/scale can continue to beat a market baseline implicit in the rerating.",
+      "laterPeriodChange": "Evidence is insufficient to prove outer-year earnings advantage beyond the structural theme.",
+      "mechanism": "Company-specific execution can differ from weak upstream pricing, but the duration advantage must be re-underwritten.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "energytrend-pv-20200630"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Company growth is strong but the incremental path versus already-rerated expectations is not measured.",
+      "evidenceRefs": [
+        "longi-q1-20200423",
+        "regime-pv-20200630"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Large prior rerating plus missing explicit outer-year baseline create high duration risk.",
+      "evidenceRefs": [
+        "regime-pv-20200630"
+      ]
+    },
+    "falsifier": "H1/Q3 earnings growth slows without a new physical/market-share catalyst while price remains highly rerated.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong company engine but conflicting sector physical data and extreme prior rerating.",
+    "alreadyPricedAssessment": "substantial",
+    "constraints": [
+      "weak upstream physical pricing",
+      "large prior rerating",
+      "missing clean multi-year expectation baseline"
+    ]
+  },
+  "bearCase": "The market correctly anticipates LONGi's company strength; growth stays good but no longer surprises, while sector pricing remains weak.",
+  "invalidationConditions": [
+    {
+      "indicator": "LONGi earnings growth",
+      "observationMethod": "H1/Q3 reports",
+      "threshold": "material deceleration without positive revisions"
+    },
+    {
+      "indicator": "PV physical pricing",
+      "observationMethod": "industry data",
+      "threshold": "continued broad weakness without company-specific offset"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep LONGi as Research expression; explicitly reject a generic upstream scarcity interpretation until physical pricing turns."
+  ]
+}
