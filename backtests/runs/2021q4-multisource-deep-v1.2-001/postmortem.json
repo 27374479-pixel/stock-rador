@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2021q4-multisource-deep-v1.2-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "power_huaneng_research_block_correct",
+      "frozenDecision": "华能国际 Research selection; not High-priority because timing was neutral, expectation burden tight, prior rerating large, peer asymmetry mixed, and the 2022 recovery was already substantially embedded in consensus.",
+      "base60d": {
+        "selectedReturn": -0.29390807867629054,
+        "benchmarkReturn": -0.156497870134095,
+        "benchmarkExcess": -0.13741020854219554,
+        "matchedControlExcess": 0.00895157781181577,
+        "bestControlTicker": "600795.SH",
+        "bestControlReturn": -0.2243355635537223,
+        "excessVsBestControl": -0.06957251512256823,
+        "selectedRank": 2
+      },
+      "failureClass": null,
+      "label": "turnaround_expectation_already_embedded_correctly_blocked",
+      "generalLesson": "A credible regulatory spread reset does not justify High-priority when consensus already embeds a large earnings rebound, the stock has rerated ahead of realized recovery, and a cheaper peer can capture the same mechanism."
+    },
+    {
+      "case": "lithium_saltlake_research_relative_success",
+      "frozenDecision": "盐湖股份 Research selection; not High-priority because broad lithium timing was adverse and the selected-vs-赣锋 edge remained mixed despite a credible v1.2 full-path case.",
+      "base20d": {
+        "selectedReturn": -0.13979480235404385,
+        "benchmarkReturn": -0.035079324700286296,
+        "benchmarkExcess": -0.10471547765375755,
+        "selectedRank": 2
+      },
+      "base60d": {
+        "selectedReturn": -0.002628650969882962,
+        "benchmarkReturn": -0.15717354524273897,
+        "benchmarkExcess": 0.154544894272856,
+        "matchedControlExcess": 0.09597745364311872,
+        "bestControlTicker": "002460.SZ",
+        "bestControlReturn": -0.0779864306521254,
+        "excessVsBestControl": 0.07535777968224244,
+        "selectedRank": 1
+      },
+      "later120d": {
+        "selectedReturn": -0.05465719115008194,
+        "benchmarkReturn": -0.1027243764460758,
+        "benchmarkExcess": 0.04806718529599385,
+        "selectedRank": 3
+      },
+      "failureClass": "research_only_relative_alpha_not_primary",
+      "interpretation": "The frozen research selection showed strong 60d relative alpha and beat matched peers, but absolute return was approximately flat and the later peer ranking reversed. This is useful recall evidence, not sufficient proof that the adverse-timing or clear-asymmetry High-priority gates should be loosened.",
+      "generalLesson": "A credible expectation-path advantage can justify keeping a name in Research through an adverse regime, but one relative-success case is not enough to promote mixed-asymmetry selections into Primary."
+    },
+    {
+      "case": "dram_no_selection_fail_closed",
+      "frozenDecision": "DRAM downcycle hypothesis / No selection because company-level differentiated earnings resilience was not verified.",
+      "failureClass": null,
+      "label": "negative_cycle_no_selection_preserved",
+      "generalLesson": "An explicit industry downturn should remain unselected until a listed company demonstrates auditable economic differentiation; stale historical earnings are not a bottom signal."
+    }
+  ],
+  "crossWindowExpectationPathCheck": {
+    "confirmedStrengths": [
+      {
+        "case": "2022Q1 藏格矿业",
+        "pattern": "scarcity step-up already embedded + late_reversal + flat outer-year path",
+        "result": "Research downgrade protected against a poor base-horizon entry."
+      },
+      {
+        "case": "2021Q4 华能国际",
+        "pattern": "large consensus turnaround already embedded + prior rerating + mixed peer asymmetry",
+        "result": "Research downgrade correctly avoided a severe 60d loss."
+      },
+      {
+        "case": "2021Q4 盐湖股份",
+        "pattern": "credible full-path improvement but adverse regime and mixed peer edge",
+        "result": "Research preserved useful relative-alpha optionality without forcing a Primary call."
+      }
+    ],
+    "durableCashYieldQuestion": {
+      "priorCase": "2022Q1 中国神华",
+      "repeatedIndependentCase": false,
+      "interpretation": "No second independent company/industry in this window reproduces the Shenhua pattern of stable normalized earnings plus durable cash distribution generating missed High-priority alpha. The evidence remains insufficient for a v1.3 cash-yield extension."
+    }
+  },
+  "decision": {
+    "keepV12Immutable": true,
+    "createV13Now": false,
+    "reason": "V1.2 correctly blocked 华能 and preserved 盐湖 as Research. The previously observed Shenhua durability/cash-yield false negative did not independently repeat in 2021Q4.",
+    "nextAction": "Run unchanged V1.2 on another untouched historical window with a different economic mix. Continue recording both false positives and false negatives, and only version a new gate after a failure class repeats across companies and industries."
+  },
+  "prohibitedUses": [
+    "Do not upgrade V1.2 from the same-period Salt Lake 60d relative success.",
+    "Do not weaken adverse-timing or clear-asymmetry requirements from one Research winner.",
+    "Do not create a generic high-dividend/low-PE override from the single Shenhua case.",
+    "Do not use Salt Lake 120d peer reversal to rewrite the pre-registered 60d result."
+  ]
+}
