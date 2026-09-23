@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q4-multisource-deep-v1.3-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "baseHorizonTradingDays": 60,
+  "validationClass": "exploratory_contaminated",
+  "primaryResult": {
+    "hypothesisId": "h-2019q4-construction-machinery-acceleration",
+    "frozenExpressions": [
+      "600031.SH",
+      "601100.SH"
+    ],
+    "basket60d": {
+      "netReturn": 0.12003164325847815,
+      "benchmarkReturn": -0.09385759520545456,
+      "benchmarkExcess": 0.2138892384639327
+    },
+    "expression60d": [
+      {
+        "ticker": "600031.SH",
+        "netReturn": 0.01082241348449653,
+        "benchmarkExcess": 0.10468000868995109
+      },
+      {
+        "ticker": "601100.SH",
+        "netReturn": 0.22924087303245977,
+        "benchmarkExcess": 0.3230984682379143
+      }
+    ],
+    "assessment": "opportunity_right_multiple_acceptable_expressions",
+    "interpretation": "The Primary direction worked without needing the future-best peer. Both frozen acceptable expressions beat CSI300 at 60d, validating the opportunity-first contract."
+  },
+  "researchDiagnostics": [
+    {
+      "hypothesisId": "h-2019q4-tesla-localization",
+      "ticker": "601689.SH",
+      "base60d": {
+        "netReturn": -0.01789564629626672,
+        "benchmarkExcess": 0.07596194890918784
+      },
+      "control": {
+        "ticker": "603305.SH",
+        "netReturn": 0.11445019360586661
+      },
+      "assessment": "research_direction_right_expression_adequate_not_peer_best",
+      "interpretation": "The diversified preferred expression still beat the benchmark even though the purer Tesla control did better at 60d; by 120d the preferred expression later outperformed the control. This argues against a fixed purity or diversification preference."
+    },
+    {
+      "hypothesisId": "h-2019q4-nor-flash-cycle",
+      "ticker": "603986.SH",
+      "base60d": {
+        "netReturn": 0.28385909087663497,
+        "benchmarkExcess": 0.3777166860820895
+      },
+      "control": {
+        "ticker": "300223.SZ",
+        "netReturn": 0.09687156999375679
+      },
+      "assessment": "large_research_false_negative_under_high_absorption",
+      "interpretation": "The product/company engine remained powerful despite ~49x 2020E PE and extreme pre-cutoff theme rerating. High absorption alone cannot be a veto when fresh product-level demand and realized earnings acceleration remain strong."
+    },
+    {
+      "hypothesisId": "h-2019q4-pork-scarcity",
+      "ticker": "002714.SZ",
+      "base60d": {
+        "netReturn": 0.3322548751296779,
+        "benchmarkExcess": 0.42611247033513244
+      },
+      "bestControl": {
+        "ticker": "000876.SZ",
+        "netReturn": 0.5449186156048305
+      },
+      "assessment": "large_research_false_negative_with_realized_engine_and_cycle_duration_risk",
+      "interpretation": "Late-cycle risk was real, but the realized company engine and equity reset still supported substantial 60d excess. Exact peer-best ranking is secondary because the selected expression itself was highly adequate."
+    }
+  ],
+  "noSelectionAudit": {
+    "broadNEV": {
+      "frozenDecision": "No selection",
+      "frozenExpressions": [
+        "300750.SZ",
+        "002594.SZ"
+      ],
+      "base60d": {
+        "basketNetReturn": 0.16551159902895862,
+        "benchmarkReturn": -0.09385759520545456,
+        "benchmarkExcess": 0.2593691942344132,
+        "positiveExcessBreadth": 1
+      },
+      "assessment": "missed_opportunity"
+    },
+    "serverDRAM": {
+      "frozenDecision": "No selection",
+      "assessment": "unauditable_without_hindsight_substitution",
+      "reason": "No direct A-share server-DRAM earnings expression was frozen before reveal."
+    }
+  },
+  "missedOpportunityDiagnosis": {
+    "broadNEV": {
+      "diagnosis": "multi_horizon_evidence_conflict_and_leader_separation_miss",
+      "preCutoffEvidenceAvailable": [
+        "2019-12-03 MIIT draft development plan targeted roughly 25% NEV share of new vehicle sales by 2025 and reinforced battery/electric-drive policy direction.",
+        "CATL 2019Q3 filing showed 1-9M revenue +71.7%, attributable profit +45.65%,扣非 +49.34%, operating cash flow +81.99% despite weak aggregate NEV sales.",
+        "The frozen price regime already showed strong CATL divergence while BYD had not participated over 60d; this should have triggered company/structural-policy decomposition rather than a broad-sector veto."
+      ],
+      "processLesson": "Evidence at different horizons must not automatically cancel. Short-term sector demand contraction can coexist with a multi-year policy reset and a leader-specific share/earnings engine. The system should split these into separate hypotheses and demand separate falsifiers."
+    }
+  },
+  "crossWindowEvidence": {
+    "hypothesisGranularity": [
+      "2020Q1 memory miss: server-DRAM framing caused adjacent NOR/NAND opportunity to be discarded.",
+      "2019Q4 decomposition: separating NOR Flash from server DRAM produced a strong Research direction while server DRAM correctly remained No selection."
+    ],
+    "expectationAbsorption": [
+      "2020Q1 5G/server/gold show that visible bullish narratives and prior rerating can indeed fail.",
+      "2019Q4 NOR and 2020Q2 construction/PV show that high prior rerating or tight expectations are not sufficient alone to veto a still-accelerating company/product engine."
+    ],
+    "expressionAdequacy": [
+      "2019Q4 Tesla: the preferred diversified expression was adequate though not 60d peer-best.",
+      "2020Q1/2020Q2 gold: repeated pure-exposure preference toward Shandong Gold was inadequate versus benchmark/control.",
+      "Therefore directness is one input, not a ranking objective; expectation burden, earnings conversion and downside containment must jointly determine adequacy."
+    ]
+  },
+  "versionDecision": {
+    "createV14Candidate": true,
+    "keepV13HistoricalRunsImmutable": true,
+    "reason": "The same structural failure classes now recur or receive independent-window support: hypothesis granularity, multi-horizon evidence conflict, leader-vs-sector divergence, and overly mechanical absorption vetoes. V1.4 should formalize these diagnostics without retroactively changing historical selections.",
+    "v14ChangesToImplement": [
+      "Mandatory hypothesis-decomposition audit when evidence points to distinct products, geographies, customer groups or time horizons with materially different causal paths.",
+      "Explicit evidence-horizon matrix separating near-term physical demand, medium-term earnings conversion and longer-term structural/policy drivers; one horizon may not silently veto another.",
+      "Leader-divergence diagnostic when sector aggregates weaken but company share/revenue/profit/cash flow are accelerating.",
+      "High-absorption continuation diagnostic distinguishing fresh incremental earnings/product evidence from mere confirmation of a known narrative.",
+      "Expression-purity check: never prefer the purest thematic exposure solely because its causal mapping is cleaner; retain valuation, expectation path, earnings quality and downside containment as co-equal constraints."
+    ],
+    "promotionPolicy": "Do not automatically loosen High-priority gates from 2019Q4. Introduce the new diagnostics first and validate the resulting V1.4 candidate unchanged on another untouched historical window before treating the continuation route as a promotion override."
+  },
+  "prohibitedUses": [
+    "Do not change frozen 2019Q4 selections after reveal.",
+    "Do not infer that all high-valuation/high-momentum growth should be promoted.",
+    "Do not infer that weak current sector sales are irrelevant; instead separate current-demand, policy-duration and leader-specific hypotheses.",
+    "Do not claim historical replay is clean alpha validation."
+  ]
+}
