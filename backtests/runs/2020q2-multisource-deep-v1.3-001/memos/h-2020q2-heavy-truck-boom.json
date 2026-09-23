@@ -1,0 +1,477 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "researchReadyAt": "2020-06-30T15:00:00+08:00",
+  "actionableAt": "2020-06-30T15:00:00+08:00",
+  "hypothesisId": "h-2020q2-heavy-truck-boom",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Record heavy-truck demand should reach OEM revenue/profit within the current and next reporting cycle; 60d captures the first clean post-Q2 earnings update."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "sector_confirmed",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000951.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Direct heavy-truck OEM exposure, improving Q1 cash flow, record May industry demand and low-teens forward PE provide a sound expression without requiring peer-best performance.",
+      "evidenceRefs": [
+        "caam-auto-202005",
+        "sinotruk-q1-20200430",
+        "auto-weekly-20200628",
+        "regime-truck-20200630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "May heavy-truck sales reached a record and rose 65.6% YoY after Q1 pandemic disruption. 中国重汽 is a direct OEM whose Q1 cash flow had already improved; the modest published earnings path leaves room if Q2-Q3 demand stays unusually strong.",
+    "firstCredibleDate": "2020-06-11",
+    "valueChain": [
+      "infrastructure/logistics demand",
+      "heavy-truck volumes",
+      "OEM utilization/mix",
+      "profit and cash flow"
+    ],
+    "persistenceReason": "Infrastructure stimulus, replacement demand and emissions-policy replacement can persist across multiple quarters rather than one isolated month.",
+    "disconfirmingEvidence": [
+      "The selected stock had already outperformed CSI300 by ~39pp over 60d.",
+      "Q1 reported revenue/profit were still down YoY.",
+      "The boom can normalize if deferred replacement demand is exhausted."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "caam-auto-202005",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "sinotruk-q1-20200430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "weichai-q1-20200430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "auto-weekly-20200628",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-truck-20200630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "record heavy-truck demand",
+      "to": "China Heavy Truck unit deliveries",
+      "mechanism": "A direct OEM captures industry unit growth through deliveries and utilization.",
+      "evidenceRefs": [
+        "caam-auto-202005",
+        "auto-weekly-20200628"
+      ],
+      "failureMode": "industry sales mean-revert quickly",
+      "lag": "weeks"
+    },
+    {
+      "from": "unit growth",
+      "to": "earnings and cash flow",
+      "mechanism": "Higher factory utilization and truck volumes lift revenue/profit; Q1 cash flow already improved despite pandemic disruption.",
+      "evidenceRefs": [
+        "sinotruk-q1-20200430",
+        "auto-weekly-20200628"
+      ],
+      "failureMode": "discounting/costs offset volume",
+      "lag": "one to two quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "heavy-truck OEMs",
+      "engines/powertrain"
+    ],
+    "secondOrderWinners": [
+      "logistics and construction suppliers"
+    ],
+    "losers": [
+      "weak passenger-only auto exposure"
+    ],
+    "substitutes": [
+      "used trucks"
+    ],
+    "bottlenecks": [
+      "engine/emissions components"
+    ],
+    "falseThemeMatches": [
+      "auto names without material heavy-truck exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000951.SZ",
+      "name": "中国重汽",
+      "verifiedExposure": "Direct heavy-truck OEM exposed to record industry volume.",
+      "evidenceRefs": [
+        "sinotruk-q1-20200430",
+        "auto-weekly-20200628"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E/21E EPS 2.16/2.32 at June24.",
+        "favorable": "Record Q2 sales lift full-year EPS above the modest published path.",
+        "adverse": "Truck demand normalizes and Q1 weakness persists."
+      },
+      "principalRisks": [
+        "cycle normalization",
+        "prior rerating"
+      ]
+    },
+    {
+      "ticker": "000338.SZ",
+      "name": "潍柴动力",
+      "verifiedExposure": "Heavy-duty powertrain supplier with broad commercial-vehicle exposure.",
+      "evidenceRefs": [
+        "weichai-q1-20200430",
+        "auto-weekly-20200628"
+      ],
+      "earningsSensitivity": {
+        "base": "2020E/21E EPS 1.24/1.35.",
+        "favorable": "Truck boom lifts engine volumes.",
+        "adverse": "Broad businesses/cash-flow stress dilute the truck impulse."
+      },
+      "principalRisks": [
+        "Q1 cash-flow stress",
+        "broader exposure"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "000338.SZ",
+      "name": "潍柴动力",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct heavy-truck/powertrain peer exposed to the same volume boom.",
+      "whySelectedCompanyShouldOutperform": "China Heavy Truck has purer OEM volume exposure, much stronger relative-price confirmation and a cleaner Q1 cash-flow trajectory in the frozen pack.",
+      "evidenceRefs": [
+        "weichai-q1-20200430",
+        "regime-truck-20200630"
+      ]
+    }
+  ],
+  "matchedControlException": "Only one sufficiently evidenced direct listed heavy-truck peer was frozen in the company pack; adding less comparable auto names would weaken the counterfactual.",
+  "selectionComparison": {
+    "selectedTicker": "000951.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "000338.SZ",
+        "selectedAdvantages": [
+          "purer direct heavy-truck volume exposure",
+          "stronger frozen relative-price confirmation",
+          "Q1 operating cash flow already positive"
+        ],
+        "selectedDisadvantages": [
+          "Weichai has broader scale and diversification"
+        ],
+        "evidenceRefs": [
+          "sinotruk-q1-20200430",
+          "weichai-q1-20200430",
+          "regime-truck-20200630"
+        ],
+        "switchCondition": "Prefer Weichai if its broader powertrain earnings/cash conversion visibly overtakes the direct OEM volume bridge.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "The objective is a sound expression of the truck boom, not a guaranteed peer champion; China Heavy Truck has the cleaner frozen direct bridge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Published late-June forecasts already expected 2020/21 EPS 2.16/2.32, while China Heavy Truck had materially rerated over 60d.",
+    "thesisExpectation": "Record Q2 volumes can lift 2020 earnings above a still-moderate path if strength persists into Q3.",
+    "measurableGap": "Low-teens forward PE and modest 2021 growth assumptions leave room despite substantial prior rerating.",
+    "evidenceRefs": [
+      "auto-weekly-20200628",
+      "regime-truck-20200630",
+      "caam-auto-202005"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward EPS path versus low-teens PE and cycle-normalized demand.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2020E/21E EPS 2.16/2.32; PE about 13.3x/12.4x at June24.",
+    "thesisScenario": "Q2-Q3 record volumes produce earnings above the frozen 2020 path while 2021 does not immediately revert.",
+    "breakevenCondition": "The truck boom must persist long enough to generate an earnings revision beyond the published modest path.",
+    "ordinaryScenarioFailure": "Industry volume falls back sharply after deferred replacement demand and earnings merely meet the existing forecast.",
+    "catalystOrTimingBridge": "Monthly truck sales plus H1/Q3 results fall inside the 60d base window.",
+    "evidenceRefs": [
+      "auto-weekly-20200628",
+      "regime-truck-20200630",
+      "caam-auto-202005"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "May heavy-truck sales were a record +65.6% YoY.",
+      "evidenceRefs": [
+        "caam-auto-202005"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Q1 still reflected pandemic weakness, but operating cash flow had turned positive before the May volume surge.",
+      "evidenceRefs": [
+        "sinotruk-q1-20200430"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "The truck basket was favorable, though breadth was only 50%; China Heavy Truck carried the relative strength.",
+      "evidenceRefs": [
+        "regime-truck-20200630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Late-June estimates were current but still embedded only modest 2021 EPS growth.",
+      "evidenceRefs": [
+        "auto-weekly-20200628"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Selected stock had +15.3pp 20d and +39.2pp 60d excess, so rerating is material but valuation remains modest.",
+      "evidenceRefs": [
+        "regime-truck-20200630",
+        "auto-weekly-20200628"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.061140302109887745,
+      "lookback60Excess": 0.19027661316189415,
+      "positiveBreadth20": 0.5,
+      "positiveBreadth60": 0.5,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-truck-20200630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "May heavy-truck sales hit a record after Q1 disruption.",
+      "evidenceRefs": [
+        "caam-auto-202005"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Late-June analyst forecasts explicitly favored the heavy-truck beneficiaries.",
+      "evidenceRefs": [
+        "auto-weekly-20200628"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Infrastructure/replacement/emissions drivers can run across several quarters.",
+      "evidenceRefs": [
+        "caam-auto-202005",
+        "auto-weekly-20200628"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "The selected stock already rerated strongly, but low-teens forward valuation limits the evidence for a fully mature cycle.",
+      "evidenceRefs": [
+        "regime-truck-20200630",
+        "auto-weekly-20200628"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Physical demand, listed exposure and frozen price regime all confirm the opportunity, with absorption risk acknowledged."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000951.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "China Heavy Truck remained profitable through Q1 and operating cash flow improved despite the pandemic shock.",
+      "evidenceRefs": [
+        "sinotruk-q1-20200430"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Record May volumes can beat a published path with only modest 2021 growth.",
+      "evidenceRefs": [
+        "caam-auto-202005",
+        "auto-weekly-20200628"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Forward PE around 13x/12x leaves meaningful valuation slack if earnings revise upward.",
+      "evidenceRefs": [
+        "auto-weekly-20200628"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly truck sales and H1/Q3 results directly test the thesis.",
+      "evidenceRefs": [
+        "caam-auto-202005"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low-teens forward valuation and direct profitable OEM exposure provide some containment, though the cycle can reverse.",
+      "evidenceRefs": [
+        "auto-weekly-20200628",
+        "sinotruk-q1-20200430"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "000338.SZ",
+        "revisionAdvantage": "China Heavy Truck has purer direct unit-volume exposure and stronger price confirmation.",
+        "valuationAdvantage": "Both are inexpensive; Weichai is slightly cheaper on point PE.",
+        "qualityTradeoff": "Weichai is more diversified, but its Q1 cash-flow stress weakens the frozen earnings bridge.",
+        "catalystAdvantage": "China Heavy Truck monthly/industry truck sales map more directly to the thesis.",
+        "downsideTradeoff": "Weichai diversification can reduce downside if truck demand normalizes.",
+        "evidenceRefs": [
+          "auto-weekly-20200628",
+          "sinotruk-q1-20200430",
+          "weichai-q1-20200430",
+          "regime-truck-20200630"
+        ],
+        "switchCondition": "Switch if Weichai's cash conversion and heavy-duty engine earnings visibly accelerate faster than the OEM bridge.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "May heavy-truck sales +65.6% YoY to a monthly record.",
+    "earningsMechanism": "Direct OEM volumes raise revenue and utilization; the Q1 report provides the pre-boom company baseline.",
+    "nextObservableMetric": "monthly heavy-truck sales and H1/Q3 OEM revenue/profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "caam-auto-202005",
+      "sinotruk-q1-20200430",
+      "auto-weekly-20200628"
+    ],
+    "failureCondition": "Industry sales normalize before H1/Q3 earnings exceed the frozen forecast path."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q1 earnings were still down from the pandemic shock.",
+      "nextPeriod": "2020E EPS 2.16 implies recovery but not an extreme boom.",
+      "laterPeriod": "2021E EPS 2.32 implies only modest further growth.",
+      "rationale": "The late-June published forecast gives an explicit modest multi-period baseline.",
+      "evidenceRefs": [
+        "auto-weekly-20200628",
+        "sinotruk-q1-20200430"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Record Q2 volumes should sharply improve the H1/Q3 run rate.",
+      "nextPeriodChange": "2020 full-year EPS can exceed 2.16 if Q3 demand remains strong.",
+      "laterPeriodChange": "2021 can stay above the frozen baseline if replacement/infrastructure demand persists rather than fully normalizing.",
+      "mechanism": "The new information is a much stronger realized volume path than the Q1 baseline and modest published outer-year earnings path.",
+      "evidenceRefs": [
+        "caam-auto-202005",
+        "auto-weekly-20200628"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Record industry volume is a meaningful positive change relative to the modest frozen earnings path.",
+      "evidenceRefs": [
+        "caam-auto-202005",
+        "auto-weekly-20200628"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Prior rerating and cyclical normalization matter, but the valuation does not require many years of exceptional growth.",
+      "evidenceRefs": [
+        "regime-truck-20200630",
+        "auto-weekly-20200628"
+      ]
+    },
+    "falsifier": "Truck sales and company earnings normalize quickly enough that 2020/21 EPS estimates do not rise above 2.16/2.32.",
+    "overallConclusion": "credible_path_room"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority: direct volume bridge, favorable regime and low-teens forward valuation offset meaningful prior rerating.",
+    "alreadyPricedAssessment": "partially_absorbed_but_room_remains",
+    "constraints": [
+      "cyclical normalization",
+      "substantial 60d rerating"
+    ]
+  },
+  "bearCase": "The record truck month is deferred replacement demand; sales normalize and the stock has already priced the rebound.",
+  "invalidationConditions": [
+    {
+      "indicator": "heavy-truck monthly sales",
+      "observationMethod": "CAAM/industry monthly data",
+      "threshold": "rapid normalization below the record-recovery trend"
+    },
+    {
+      "indicator": "2020/21 EPS path",
+      "observationMethod": "H1/Q3 results and updated forecasts",
+      "threshold": "no upward revision beyond 2.16/2.32"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "All company mappings and states are frozen before outcome reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze China Heavy Truck as the sole Primary expression; keep Weichai as a peer diagnostic rather than forcing a second selection."
+  ]
+}
