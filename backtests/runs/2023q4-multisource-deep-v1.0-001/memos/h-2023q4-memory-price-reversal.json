@@ -1,0 +1,566 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.0.0",
+  "cutoffAt": "2023-10-31T23:59:59+08:00",
+  "researchReadyAt": "2023-10-31T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q4-memory-price-reversal",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Q4 contract-price reversal should affect earnings over one to two quarters."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Memory pricing clearly turned upward in Q4 2023 and the listed memory basket was already favorable, but none of the main A-share candidates had yet converted the price reset into improving reported profit. 兆易创新 retained the best current quality, but its Q3 profit still fell 82.7%.",
+    "firstCredibleDate": "2023-10-13",
+    "valueChain": [
+      "supplier production cuts",
+      "DRAM/NAND price rebound",
+      "supplier ASP/mix",
+      "company gross margin/profit"
+    ],
+    "persistenceReason": "TrendForce expected the price uptrend to continue into 1Q24 if supply discipline held.",
+    "disconfirmingEvidence": [
+      "Company Q3 results still showed severe profit declines/losses.",
+      "Physical evidence is concentrated in one specialist origin.",
+      "High-beta storage peers carried major inventory/cash risks."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-dram-20231013",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tf-mobile-memory-20231026",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-memory-20231031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "giga-q3-20231025",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "junzheng-q3-20231026",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "junzheng-research-20231031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "longsys-q3-20231027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "demingli-q3-20231031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "supplier production cuts/restocking",
+      "to": "memory contract-price rebound",
+      "mechanism": "Supply discipline and improved mobile/server procurement support higher DRAM/NAND contract prices.",
+      "evidenceRefs": [
+        "tf-dram-20231013",
+        "tf-mobile-memory-20231026"
+      ],
+      "failureMode": "suppliers restore output or end demand weakens",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "higher memory prices",
+      "to": "A-share earnings",
+      "mechanism": "Higher ASP/mix should improve gross margin only if product exposure/inventory economics transmit the reset.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "junzheng-q3-20231026",
+        "longsys-q3-20231027",
+        "demingli-q3-20231031"
+      ],
+      "failureMode": "inventory losses or weak product mix offset price gains",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings conversion",
+      "to": "selection alpha",
+      "mechanism": "High-priority requires realized or quantitative profit bridge, which is not yet present.",
+      "evidenceRefs": [
+        "regime-memory-20231031"
+      ],
+      "failureMode": "sector price rally occurs before earnings conversion",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "memory suppliers with pricing power"
+    ],
+    "secondOrderWinners": [
+      "storage suppliers with favorable inventory"
+    ],
+    "losers": [
+      "OEMs facing higher memory costs"
+    ],
+    "substitutes": [
+      "alternative suppliers/generations"
+    ],
+    "bottlenecks": [
+      "wafer allocation"
+    ],
+    "falseThemeMatches": [
+      "loss-making storage names without survival/cash support"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Memory supplier that remained profitable despite severe cycle pressure.",
+      "evidenceRefs": [
+        "giga-q3-20231025"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit -82.7% YoY.",
+        "favorable": "Q4 price reset improves margin/profit.",
+        "adverse": "weak demand/valuation offsets."
+      },
+      "principalRisks": [
+        "conversion not yet realized",
+        "cycle"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "DRAM/memory exposure but Q3/YTD profit remained sharply down.",
+      "evidenceRefs": [
+        "junzheng-q3-20231026",
+        "junzheng-research-20231031"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 profit -33.7%.",
+        "favorable": "cycle recovery improves utilization/margins.",
+        "adverse": "industry markets recover slowly."
+      },
+      "principalRisks": [
+        "high PE",
+        "slow recovery"
+      ]
+    },
+    {
+      "ticker": "301308.SZ",
+      "name": "江波龙",
+      "verifiedExposure": "Large storage business with Q3 revenue +66.6% but continued losses.",
+      "evidenceRefs": [
+        "longsys-q3-20231027"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 loss RMB287m.",
+        "favorable": "inventory/margin recovery creates convexity.",
+        "adverse": "cash/inventory losses persist."
+      },
+      "principalRisks": [
+        "losses",
+        "cash burn",
+        "inventory"
+      ]
+    },
+    {
+      "ticker": "001309.SZ",
+      "name": "德明利",
+      "verifiedExposure": "Storage revenue grew but remained loss-making with severe cash burn.",
+      "evidenceRefs": [
+        "demingli-q3-20231031"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 loss RMB31.8m.",
+        "favorable": "price recovery turns gross margin.",
+        "adverse": "working capital risk dominates."
+      },
+      "principalRisks": [
+        "losses",
+        "negative CFO",
+        "inventory"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct memory-design peer.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 retained stronger current profit quality, though both lacked realized Q4 price conversion.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "junzheng-q3-20231026"
+      ]
+    },
+    {
+      "ticker": "301308.SZ",
+      "name": "江波龙",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Storage-cycle peer with high price sensitivity.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 was profitable while 江波龙 remained loss-making with negative cash flow.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "longsys-q3-20231027"
+      ]
+    },
+    {
+      "ticker": "001309.SZ",
+      "name": "德明利",
+      "controlType": "peer",
+      "fairCounterfactualReason": "High-beta storage peer.",
+      "whySelectedCompanyShouldOutperform": "兆易创新 had a materially stronger survival/quality floor.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "demingli-q3-20231031"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603986.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "selectedAdvantages": [
+          "stronger current earnings quality"
+        ],
+        "selectedDisadvantages": [
+          "北京君正 Q3 profitability improved sequentially and may have recovery torque"
+        ],
+        "evidenceRefs": [
+          "giga-q3-20231025",
+          "junzheng-q3-20231026",
+          "junzheng-research-20231031"
+        ],
+        "switchCondition": "Switch if 北京君正 realizes faster memory margin/profit recovery at a lower burden.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "301308.SZ",
+        "selectedAdvantages": [
+          "positive profit and better cash quality"
+        ],
+        "selectedDisadvantages": [
+          "江波龙 has much greater cyclical revenue/operating leverage"
+        ],
+        "evidenceRefs": [
+          "giga-q3-20231025",
+          "longsys-q3-20231027"
+        ],
+        "switchCondition": "Switch only after 江波龙 gross-margin/profit inflection is realized and survival risk improves.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "001309.SZ",
+        "selectedAdvantages": [
+          "positive profit and much stronger cash quality"
+        ],
+        "selectedDisadvantages": [
+          "德明利 has higher price-cycle beta"
+        ],
+        "evidenceRefs": [
+          "giga-q3-20231025",
+          "demingli-q3-20231031"
+        ],
+        "switchCondition": "Switch only after 德明利 profitability/cash conversion visibly turns.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Quality points to 兆易创新, but the cycle could create greater convexity in weaker peers; no clean High-priority edge exists yet."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The price rebound was already visible and the opportunity basket was favorable. Company Q3 earnings, however, still reflected the downcycle.",
+    "thesisExpectation": "Q4/1Q24 pricing can drive earnings inflection.",
+    "measurableGap": "Industry price evidence is ahead of reported company profit evidence.",
+    "evidenceRefs": [
+      "tf-mobile-memory-20231026",
+      "regime-memory-20231031",
+      "giga-q3-20231025"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cycle-normalized earnings and realized price-to-margin bridge versus memory peers.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Reported Q3 profits remained depressed despite an emerging price rebound.",
+    "thesisScenario": "Q4 price increases transmit to gross margin and earnings.",
+    "breakevenCondition": "At least one reporting cycle must show profit/margin acceleration sufficient to justify the already-favorable sector regime.",
+    "ordinaryScenarioFailure": "Memory prices rise but A-share earnings conversion lags while sector prices already anticipate recovery.",
+    "catalystOrTimingBridge": "Q4/1Q24 reports can test margin/profit conversion.",
+    "evidenceRefs": [
+      "tf-mobile-memory-20231026",
+      "giga-q3-20231025",
+      "regime-memory-20231031"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "DRAM/NAND pricing turned upward and mobile increases accelerated.",
+      "evidenceRefs": [
+        "tf-dram-20231013",
+        "tf-mobile-memory-20231026"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "insufficient",
+      "rationale": "Q3 company profits still showed downcycle conditions; the Q4 price reset had not entered reported earnings.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "junzheng-q3-20231026"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "兆易创新 has better quality but high-beta loss-making peers may have more cycle convexity.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "longsys-q3-20231027",
+        "demingli-q3-20231031"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "Q3 earnings predate the Q4 price reset.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "tf-mobile-memory-20231026"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Use frozen favorable 20/60d memory basket.",
+      "evidenceRefs": [
+        "regime-memory-20231031"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen memory basket versus CSI300",
+      "lookback20Excess": 0.1403313876203582,
+      "lookback60Excess": 0.13821162789711855,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 0.75,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-memory-20231031"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Q4 memory contract-price increases accelerated after prolonged declines.",
+      "evidenceRefs": [
+        "tf-dram-20231013",
+        "tf-mobile-memory-20231026"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Industry pricing improved, but candidate reported earnings remained weak/loss-making.",
+      "evidenceRefs": [
+        "giga-q3-20231025",
+        "junzheng-q3-20231026",
+        "longsys-q3-20231027",
+        "demingli-q3-20231031"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Supply cuts and TrendForce's expected continuation into 1Q24 imply more than a one-off move.",
+      "evidenceRefs": [
+        "tf-mobile-memory-20231026"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Basket breadth is strong but the cycle had only recently turned.",
+      "evidenceRefs": [
+        "regime-memory-20231031"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Sector timing is favorable but company earnings conversion is not yet strong enough."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603986.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Positive earnings and strong cash-flow improvement clear quality.",
+      "evidenceRefs": [
+        "giga-q3-20231025"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Q4 prices may improve future earnings from a depressed base.",
+      "evidenceRefs": [
+        "tf-mobile-memory-20231026",
+        "giga-q3-20231025"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No sufficiently clean cycle-normalized valuation anchor is frozen.",
+      "evidenceRefs": [
+        "giga-q3-20231025"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q4/1Q24 reporting lies inside the thesis window.",
+      "evidenceRefs": [
+        "tf-mobile-memory-20231026"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Quality is better than peers, but sector prices have already turned before earnings.",
+      "evidenceRefs": [
+        "regime-memory-20231031",
+        "giga-q3-20231025"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300223.SZ",
+        "revisionAdvantage": "Both can recover; 北京君正 Q3 sequential improvement weakens a clear selected edge.",
+        "valuationAdvantage": "No decisive normalized valuation edge frozen.",
+        "qualityTradeoff": "兆易创新 better current cash/profit quality.",
+        "catalystAdvantage": "Both require Q4/1Q24 earnings conversion.",
+        "downsideTradeoff": "兆易创新 has somewhat better quality floor.",
+        "evidenceRefs": [
+          "giga-q3-20231025",
+          "junzheng-q3-20231026",
+          "junzheng-research-20231031"
+        ],
+        "switchCondition": "Switch if 北京君正 realizes faster margin/profit recovery.",
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "301308.SZ",
+        "revisionAdvantage": "江波龙 has larger possible cycle torque but lacks realized profit.",
+        "valuationAdvantage": "PE is not useful while 江波龙 is loss-making.",
+        "qualityTradeoff": "兆易创新 clearly stronger.",
+        "catalystAdvantage": "Both depend on cycle conversion; 江波龙 needs a larger turn.",
+        "downsideTradeoff": "江波龙 inventory/cash risk is materially worse.",
+        "evidenceRefs": [
+          "giga-q3-20231025",
+          "longsys-q3-20231027"
+        ],
+        "switchCondition": "Switch after realized 江波龙 profit/working-capital inflection.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "001309.SZ",
+        "revisionAdvantage": "德明利 has higher cycle beta but no current profit.",
+        "valuationAdvantage": "PE is not meaningful while loss-making.",
+        "qualityTradeoff": "兆易创新 clearly stronger.",
+        "catalystAdvantage": "兆易创新 needs margin recovery; 德明利 first needs survival/profit inflection.",
+        "downsideTradeoff": "德明利 cash risk is much higher.",
+        "evidenceRefs": [
+          "giga-q3-20231025",
+          "demingli-q3-20231031"
+        ],
+        "switchCondition": "Switch after realized profit/cash inflection.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Q4 DRAM/NAND contract prices turned upward after supplier production cuts and renewed handset/server demand.",
+    "earningsMechanism": "Higher memory ASP/mix should improve gross profit if product and inventory economics transmit the industry reset.",
+    "nextObservableMetric": "Q4/1Q24 memory gross margin and quarterly profit",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "tf-dram-20231013",
+      "tf-mobile-memory-20231026",
+      "giga-q3-20231025"
+    ],
+    "failureCondition": "Company margin/profit fails to improve despite higher industry contract prices."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: favorable sector timing but no realized company conversion and no clean peer asymmetry.",
+    "alreadyPricedAssessment": "sector recovery partly priced",
+    "constraints": [
+      "company profits still depressed",
+      "valuation normalization unclear"
+    ]
+  },
+  "bearCase": "The price rebound proves supply-driven and temporary while end demand remains weak; sector equities anticipate more earnings recovery than companies deliver.",
+  "invalidationConditions": [
+    {
+      "indicator": "memory gross margin/profit",
+      "observationMethod": "next filing",
+      "threshold": "no sequential improvement"
+    },
+    {
+      "indicator": "supplier discipline",
+      "observationMethod": "industry pricing/supply updates",
+      "threshold": "price rebound reverses"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "cycle-normalized earnings",
+    "inventory cost basis by company"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection only.",
+    "Do not promote from favorable sector price action alone."
+  ]
+}
