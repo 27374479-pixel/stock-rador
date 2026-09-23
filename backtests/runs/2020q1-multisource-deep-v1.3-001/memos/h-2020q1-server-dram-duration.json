@@ -1,0 +1,178 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-server-dram-duration",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Server DRAM pricing can move over one to two quarters, but a direct A-share earnings bridge must be established before selection."
+  },
+  "changeHypothesis": {
+    "summary": "Server DRAM pricing expectations strengthened for Q2, but the available A-share memory-theme names did not provide a clean direct server-DRAM earnings bridge at the cutoff.",
+    "firstCredibleDate": "2020-03-10",
+    "valueChain": [
+      "server demand",
+      "DRAM pricing",
+      "memory supplier economics"
+    ],
+    "persistenceReason": "Inventory and procurement can affect DRAM pricing for quarters, but product mix matters.",
+    "disconfirmingEvidence": [
+      "The memory-theme basket had already rerated over 60d and then sharply de-rated over 20d.",
+      "兆易创新/北京君正 were not clean server-DRAM supplier proxies in the frozen pack."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-dram-20200310",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "memory-theme-20200312",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20200331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "server DRAM price acceleration",
+      "to": "memory supplier earnings",
+      "mechanism": "Higher contract prices can lift supplier margins.",
+      "evidenceRefs": [
+        "trendforce-dram-20200310"
+      ],
+      "failureMode": "candidate product mix is not server DRAM",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "server DRAM suppliers"
+    ],
+    "secondOrderWinners": [
+      "memory packaging"
+    ],
+    "losers": [
+      "server buyers"
+    ],
+    "substitutes": [
+      "other memory products"
+    ],
+    "bottlenecks": [
+      "inventory/product mix"
+    ],
+    "falseThemeMatches": [
+      "memory-theme A-shares without direct server-DRAM exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Strong memory-theme company but frozen evidence does not prove direct server-DRAM economics.",
+      "evidenceRefs": [
+        "memory-theme-20200312",
+        "regime-memory-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "Theme exposure only.",
+        "favorable": "Other memory/MCU products grow.",
+        "adverse": "Generic DRAM mapping is wrong."
+      },
+      "principalRisks": [
+        "mapping error",
+        "large volatility"
+      ]
+    },
+    {
+      "ticker": "300223.SZ",
+      "name": "北京君正",
+      "verifiedExposure": "Memory-theme association, but no cutoff-date direct server-DRAM earnings bridge.",
+      "evidenceRefs": [
+        "memory-theme-20200312",
+        "regime-memory-20200331"
+      ],
+      "earningsSensitivity": {
+        "base": "Theme association only.",
+        "favorable": "Future acquisition/product exposure could improve.",
+        "adverse": "At cutoff the mapping is not direct enough."
+      },
+      "principalRisks": [
+        "mapping uncertainty"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: keep the physical DRAM signal separate from generic A-share semiconductor momentum."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Memory-theme names had +18.8pp 60d excess but -19.7pp 20d excess; the theme had already been heavily traded.",
+    "thesisExpectation": "Only a direct server-DRAM earnings bridge would justify selection.",
+    "measurableGap": "Direct exposure is not frozen.",
+    "evidenceRefs": [
+      "trendforce-dram-20200310",
+      "memory-theme-20200312",
+      "regime-memory-20200331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "mixed_and_mapping_insufficient",
+    "constraints": [
+      "mapping uncertainty",
+      "large prior theme volatility"
+    ]
+  },
+  "bearCase": "A generic semiconductor name moves for unrelated reasons and falsely validates the DRAM thesis.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct server-DRAM revenue",
+      "observationMethod": "company filing",
+      "threshold": "verified material exposure and earnings conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; keep server vendors in the separate server-demand hypothesis."
+  ]
+}
