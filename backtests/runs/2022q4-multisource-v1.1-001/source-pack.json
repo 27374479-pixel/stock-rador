@@ -1,0 +1,402 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2022q4-multisource-v1.1-001",
+  "cutoffAt": "2022-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current model/search weights. Only pre-2022Q4-cutoff evidence is retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China aviation, property-financing and macro policy/data.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on CAAC, CSRC and NBS evidence surfaced by broad discovery."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Physical PV/semiconductor supply-chain evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent reporting on export controls/property/reopening market response.",
+      "coverageStatus": "partial",
+      "limitations": "Uses Reuters syndicated copies when direct archive pages are unavailable."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist semiconductor/PV analysis.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on TrendForce."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Historical community/forum discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-chip-controls-20221007",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Chip industry grapples with new U.S. curbs on China sales",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://www.investing.com/news/economy/chip-industry-grapples-with-new-us-curbs-on-china-sales-2907578",
+      "publishedAt": "2022-10-07T21:04:00Z",
+      "availableAt": "2022-10-07T21:04:00Z",
+      "originGroup": "reuters-chip-controls-20221007",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The US imposed broad restrictions on advanced chips and semiconductor manufacturing equipment sales to China, immediately disrupting global equipment suppliers and China-based fabs."
+      ],
+      "entities": [
+        "semiconductor equipment",
+        "China fabs",
+        "US export controls"
+      ],
+      "observedChanges": [
+        "foreign semiconductor-equipment availability tightens"
+      ]
+    },
+    {
+      "itemId": "tf-chip-controls-20221008",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "U.S. Department of Commerce Again Imposes Restrictions on China",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20221008-11411.html",
+      "publishedAt": "2022-10-08T00:00:00+08:00",
+      "availableAt": "2022-10-08T00:00:00+08:00",
+      "originGroup": "trendforce-chip-controls-20221008",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Restrictions covered advanced logic, DRAM at 18nm or below and NAND with 128 layers or more, increasing the difficulty of obtaining manufacturing equipment for China-based production."
+      ],
+      "entities": [
+        "logic IC",
+        "DRAM",
+        "NAND",
+        "semiconductor equipment"
+      ],
+      "observedChanges": [
+        "advanced-fab equipment constraint becomes structural"
+      ]
+    },
+    {
+      "itemId": "reuters-chip-response-20221013",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "China faces its Sputnik moment as US export curbs hit chip ambitions",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://www.investing.com/news/economy/analysischina-faces-its-sputnik-moment-as-us-export-curbs-deal-a-blow-to-its-chip-ambitions-2911075",
+      "publishedAt": "2022-10-13T01:47:00Z",
+      "availableAt": "2022-10-13T01:47:00Z",
+      "originGroup": "reuters-chip-response-20221013",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The controls were expected to intensify Chinese efforts to develop domestic semiconductor manufacturing alternatives, though commercial success and timing were uncertain."
+      ],
+      "entities": [
+        "China semiconductors",
+        "domestic equipment",
+        "export controls"
+      ],
+      "observedChanges": [
+        "domestic substitution incentive rises sharply"
+      ]
+    },
+    {
+      "itemId": "csrc-property-20221128",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "证监会新闻发言人就资本市场支持房地产市场平稳健康发展答记者问",
+      "publisher": "中国证监会",
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c6763083/content.shtml",
+      "publishedAt": "2022-11-28T00:00:00+08:00",
+      "availableAt": "2022-11-28T00:00:00+08:00",
+      "originGroup": "csrc-property-equity-20221128",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "CSRC reopened/optimized five equity-financing channels for eligible listed real-estate companies, including M&A, refinancing and related funding uses."
+      ],
+      "entities": [
+        "property developers",
+        "equity refinancing",
+        "M&A"
+      ],
+      "observedChanges": [
+        "developer equity-financing channel reopens"
+      ]
+    },
+    {
+      "itemId": "reuters-property-20221128",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China property stocks surge on fundraising support",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://www.investing.com/news/economy/china-property-shares-surge-on-opening-up-of-equity-financing-option-2953207",
+      "publishedAt": "2022-11-28T21:22:00Z",
+      "availableAt": "2022-11-28T21:22:00Z",
+      "originGroup": "reuters-property-equity-20221128",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chinese property shares and bonds surged after regulators reopened equity financing, following earlier bank/bond support measures."
+      ],
+      "entities": [
+        "China property developers",
+        "equity financing"
+      ],
+      "observedChanges": [
+        "policy support broadens",
+        "property shares rerate immediately"
+      ]
+    },
+    {
+      "itemId": "reuters-property-credit-20221124",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China banks pledge $162 billion in credit to developers, shares rally",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://www.investing.com/news/economy/china-banks-pledge-162-billion-in-credit-to-developers-shares-rally-2951403",
+      "publishedAt": "2022-11-24T08:26:00Z",
+      "availableAt": "2022-11-24T08:26:00Z",
+      "originGroup": "reuters-property-credit-20221124",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Major Chinese banks pledged at least $162bn in credit lines to developers as policy support intensified."
+      ],
+      "entities": [
+        "property developers",
+        "bank credit"
+      ],
+      "observedChanges": [
+        "developer liquidity support expands"
+      ]
+    },
+    {
+      "itemId": "caac-reopen-20221228",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于发布《恢复国际客运航班的若干措施》的通知",
+      "publisher": "中国民航局",
+      "url": "https://www.caac.gov.cn/XXGK/XXGK/TZTG/202212/t20221228_216737.html",
+      "publishedAt": "2022-12-28T00:00:00+08:00",
+      "availableAt": "2022-12-28T00:00:00+08:00",
+      "originGroup": "caac-reopen-20221228",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "From Jan 8, 2023, prior international-flight controls such as the five-ones policy would be removed and scheduled international passenger services could resume under bilateral agreements."
+      ],
+      "entities": [
+        "airlines",
+        "international flights",
+        "reopening"
+      ],
+      "observedChanges": [
+        "international aviation capacity restrictions removed"
+      ]
+    },
+    {
+      "itemId": "reuters-airline-reopen-20221230",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "Chinese airlines primed to take advantage of border opening",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://www.investing.com/news/stock-market-news/analysischinese-airlines-primed-to-take-advantage-of-border-opening-2971261",
+      "publishedAt": "2022-12-30T00:02:00Z",
+      "availableAt": "2022-12-30T00:02:00Z",
+      "originGroup": "reuters-airline-reopen-20221230",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chinese airlines were viewed as early beneficiaries because they retained aircraft/staff capacity, but the pace of international demand recovery remained uncertain."
+      ],
+      "entities": [
+        "Chinese airlines",
+        "international reopening"
+      ],
+      "observedChanges": [
+        "airline capacity/demand opportunity opens"
+      ]
+    },
+    {
+      "itemId": "tf-pv-20221223",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Prices Have Started to Drop in PV Industry Chain This December",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20221223-11512.html",
+      "publishedAt": "2022-12-23T00:00:00+08:00",
+      "availableAt": "2022-12-23T00:00:00+08:00",
+      "originGroup": "trendforce-pv-20221223",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Polysilicon prices fell about 8.3% MoM in December and M10 wafer prices about 19.5% MoM as new capacity, inventory pressure and slower seasonal demand ended prior tightness; upstream/component prices were expected to keep falling into 1Q23."
+      ],
+      "entities": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules"
+      ],
+      "observedChanges": [
+        "PV upstream scarcity reverses",
+        "component prices begin broad decline"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20221231",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年12月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901700.html",
+      "publishedAt": "2022-12-31T09:30:00+08:00",
+      "availableAt": "2022-12-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202212",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "December manufacturing PMI fell to 47.0; production 44.6 and new orders 43.9, showing severe broad-demand weakness during the reopening transition."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "broad manufacturing contracts sharply"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2022q4-chip-equipment-localization",
+      "statement": "October US export controls structurally restricted advanced semiconductor chips/equipment to China and intensified domestic-substitution incentives, but the near-term effect mixed stronger domestic demand with fab-capex disruption.",
+      "changeType": "geopolitical_supply_restriction_and_localization",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-10-07T21:04:00Z",
+      "memberItemIds": [
+        "reuters-chip-controls-20221007",
+        "tf-chip-controls-20221008",
+        "reuters-chip-response-20221013"
+      ],
+      "independentOriginGroups": [
+        "reuters-chip-controls-20221007",
+        "reuters-chip-response-20221013",
+        "trendforce-chip-controls-20221008"
+      ],
+      "affectedValueChain": [
+        "semiconductor equipment",
+        "foundries",
+        "memory fabs",
+        "design"
+      ],
+      "contradictionSearchNotes": "Localization opportunity is plausible, but restrictions can also delay customer capex and service access. Company-specific domestic order/profit conversion is mandatory.",
+      "researchQuestion": "Which non-STAR A-share semiconductor-equipment supplier had already converted localization into orders/revenue/profit rather than theme exposure?"
+    },
+    {
+      "eventId": "event-2022q4-property-financing-reset",
+      "statement": "Late-November policy support expanded from bank/bond credit to equity refinancing for developers, materially improving financing access while property shares rerated immediately.",
+      "changeType": "balance_sheet_policy_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-11-24T08:26:00Z",
+      "memberItemIds": [
+        "csrc-property-20221128",
+        "reuters-property-20221128",
+        "reuters-property-credit-20221124"
+      ],
+      "independentOriginGroups": [
+        "csrc-property-equity-20221128",
+        "reuters-property-equity-20221128",
+        "reuters-property-credit-20221124"
+      ],
+      "affectedValueChain": [
+        "developers",
+        "banks",
+        "construction/materials"
+      ],
+      "contradictionSearchNotes": "Liquidity support can prevent failure without restoring sales/profits. Immediate equity rerating creates strong expectation-absorption risk.",
+      "researchQuestion": "Did any high-quality developer combine actual balance-sheet/sales resilience with unabsorbed financing upside?"
+    },
+    {
+      "eventId": "event-2022q4-airline-reopening",
+      "statement": "China formally removed major international-flight restrictions from Jan 8, 2023, opening a multi-quarter airline recovery, but the decision arrived at quarter-end before traffic/profit recovery could be observed.",
+      "changeType": "policy_reopening_demand_release",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-12-28T00:00:00+08:00",
+      "memberItemIds": [
+        "caac-reopen-20221228",
+        "reuters-airline-reopen-20221230"
+      ],
+      "independentOriginGroups": [
+        "caac-reopen-20221228",
+        "reuters-airline-reopen-20221230"
+      ],
+      "affectedValueChain": [
+        "airlines",
+        "airports",
+        "travel"
+      ],
+      "contradictionSearchNotes": "Reopening is durable, but company earnings were still pandemic-depressed and the news arrived extremely late in the window. Selection needs survival plus a quantitative capacity-to-profit bridge.",
+      "researchQuestion": "Was any listed airline financially strong enough and sufficiently under-reflected to qualify before Dec31?"
+    },
+    {
+      "eventId": "event-2022q4-pv-input-deflation",
+      "statement": "PV upstream/component scarcity reversed sharply in December as polysilicon and wafer prices fell on new capacity and inventory pressure, potentially shifting value from upstream materials toward downstream cells/modules/inverters/projects.",
+      "changeType": "input_cost_deflation_value_chain_shift",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-12-23T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-pv-20221223"
+      ],
+      "independentOriginGroups": [
+        "trendforce-pv-20221223"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules",
+        "inverters",
+        "developers"
+      ],
+      "contradictionSearchNotes": "Falling component prices help downstream demand/costs but can trigger inventory losses and signal weak seasonality. Company mapping must separate inventory exposure from project/volume benefits.",
+      "researchQuestion": "Which downstream listed company can benefit from lower system cost without taking large inventory-price losses?"
+    },
+    {
+      "eventId": "event-2022q4-macro-contraction",
+      "statement": "December manufacturing PMI collapsed to 47.0 during the reopening transition, creating a severe near-term macro/operational shock despite improving 2023 policy expectations.",
+      "changeType": "macro_contraction",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-12-31T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20221231"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202212"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "consumer demand",
+        "logistics"
+      ],
+      "contradictionSearchNotes": "Use as near-term contradiction/timing context, not a standalone long thesis.",
+      "researchQuestion": "Use to stress-test company engines during the reopening transition."
+    }
+  ]
+}
