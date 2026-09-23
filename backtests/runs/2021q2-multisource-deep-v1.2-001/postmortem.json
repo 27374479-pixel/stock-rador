@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2021q2-multisource-deep-v1.2-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "star_long_duration_growth_research_false_negative_candidate",
+      "equityReturnArchetype": "ordinary_growth_compounder",
+      "frozenDecision": "斯达半导 Research selection; not High-priority because 2021-23 consensus already embedded rapid growth and forward PE remained roughly 104x/70x/52x.",
+      "base60d": {
+        "selectedReturn": 0.6902715380574527,
+        "benchmarkReturn": -0.03847972585092674,
+        "benchmarkExcess": 0.7287512639083794,
+        "matchedControlExcess": 0.3372714223608966,
+        "bestControlTicker": "600460.SH",
+        "bestControlReturn": 0.7724385458984215,
+        "selectedRank": 2
+      },
+      "later120d": {
+        "selectedReturn": 1.1900170598001,
+        "benchmarkExcess": 1.239261923883419,
+        "selectedRank": 1
+      },
+      "failureClass": "possible_growth_duration_underestimation",
+      "interpretation": "The valuation burden was genuinely high, yet the combination of early-turn price state, realized Q1 earnings acceleration, direct automotive-IGBT scarcity exposure and multi-quarter qualification dynamics produced very large absolute/index alpha. However, the selected stock still trailed 士兰微 at 60d, so this is simultaneously a recall success and a peer-expression ranking miss.",
+      "generalLesson": "For ordinary long-duration growth compounders, high forward PE and a strong consensus path may not be sufficient to block High-priority if the industry is in a structural acceleration phase and the company has realized, directly attributable share/volume gains. This requires independent replication before changing V1.2."
+    },
+    {
+      "case": "catl_long_duration_growth_research_relative_success",
+      "equityReturnArchetype": "ordinary_growth_compounder",
+      "frozenDecision": "宁德时代 Research selection; not High-priority because sustained-strength pricing and roughly 93x/69x/54x 2021-23 PE created high expectation-duration risk.",
+      "base60d": {
+        "selectedReturn": 0.15090203591361728,
+        "benchmarkReturn": -0.05458019070394915,
+        "benchmarkExcess": 0.20548222661756643,
+        "matchedControlExcess": 0.03612309538312908,
+        "bestControlTicker": "002594.SZ",
+        "bestControlReturn": 0.20572127872127877,
+        "selectedRank": 2
+      },
+      "later120d": {
+        "selectedReturn": 0.4475773829973515,
+        "benchmarkExcess": 0.49023857688991956,
+        "selectedRank": 1
+      },
+      "failureClass": "possible_growth_duration_underestimation",
+      "interpretation": "CATL produced strong index and matched-basket alpha at 60d despite premium valuation, but BYD was the better frozen peer at the base horizon. This supports a growth-duration recall concern but does not prove the selected expression was optimal.",
+      "generalLesson": "Premium valuation should not be treated as automatically absorbed when structural demand, share and capacity are still compounding. The harder question is whether the market is underestimating duration, not simply whether PE is high."
+    },
+    {
+      "case": "zijin_cyclical_growth_hybrid_expression_miss",
+      "equityReturnArchetype": "cyclical_growth_hybrid",
+      "frozenDecision": "紫金矿业 Research selection under adverse metals timing; chosen for structural copper/gold volume growth.",
+      "base60d": {
+        "selectedReturn": 0.1540627572165023,
+        "benchmarkReturn": -0.020150244956034014,
+        "benchmarkExcess": 0.17421300217253632,
+        "matchedControlExcess": -0.6791927387560486,
+        "bestControlTicker": "601600.SH",
+        "bestControlReturn": 1.0092464833116228,
+        "selectedRank": 3
+      },
+      "failureClass": "cross_sectional_expression_miss",
+      "interpretation": "The industry/opportunity direction recovered, but the quality/structural-growth expression lagged much higher-beta metal peers. This is not evidence that V1.2 expectation-path gating was too strict; it is evidence that cyclical-growth hybrids need sharper torque-versus-quality peer ranking.",
+      "generalLesson": "For cyclical-growth hybrids, the best long-term company is not necessarily the best near-term expression of a commodity rebound."
+    },
+    {
+      "case": "hog_no_selection_remains_fail_closed",
+      "equityReturnArchetype": "deep_cycle_turnaround",
+      "frozenDecision": "Hog collapse / No selection because reserve purchases and 20d stabilization did not establish a company earnings trough.",
+      "failureClass": null,
+      "label": "cycle_bottom_not_proven",
+      "generalLesson": "Do not infer a durable earnings trough from price stabilization alone when spot economics remain below company cost and capacity exit is unverified."
+    }
+  ],
+  "archetypeFrameworkDiagnostic": {
+    "purpose": "Descriptive classification only; no V1.2 gate changed in this run.",
+    "observedArchetypes": [
+      {
+        "archetype": "ordinary_growth_compounder",
+        "examples": [
+          "宁德时代",
+          "斯达半导"
+        ],
+        "dominantQuestion": "Is the market underestimating the duration or slope of a structurally compounding earnings path, even when headline PE is high?"
+      },
+      {
+        "archetype": "cyclical_growth_hybrid",
+        "examples": [
+          "紫金矿业"
+        ],
+        "dominantQuestion": "How much of return comes from commodity beta versus durable volume growth, and which peer has the best near-term torque?"
+      },
+      {
+        "archetype": "deep_cycle_turnaround",
+        "examples": [
+          "牧原股份 research candidate set"
+        ],
+        "dominantQuestion": "Has the economic trough actually formed, or is the equity merely bouncing before losses/capacity exit are complete?"
+      },
+      {
+        "archetype": "durable_cash_yield",
+        "examples": [
+          "中国神华 in prior windows"
+        ],
+        "dominantQuestion": "How durable is the normalized earnings floor and shareholder cash return? Do not evaluate it with a pure growth-acceleration template."
+      }
+    ]
+  },
+  "crossWindowCheck": {
+    "growthDurationQuestion": {
+      "repeatedAcrossCompaniesInThisWindow": true,
+      "independentAcrossWindows": false,
+      "cases": [
+        "宁德时代",
+        "斯达半导"
+      ],
+      "interpretation": "Both cases occur in the same electrification/semiconductor acceleration regime. This is enough to elevate the issue for further testing, but not enough to version a new rule."
+    },
+    "durableCashYieldQuestion": {
+      "priorCase": "中国神华",
+      "newIndependentCase": false,
+      "interpretation": "No new durable-cash-yield company is tested in this window. Do not create a generic dividend-stock override."
+    }
+  },
+  "decision": {
+    "keepV12Immutable": true,
+    "createNextVersionNow": false,
+    "reason": "2021Q2 reveals a credible long-duration-growth recall problem, but it is concentrated in one macro/technology regime and peer ranking was still imperfect. More independent windows are required.",
+    "nextAction": "Continue unchanged V1.2 on another untouched window with equityReturnArchetype recorded descriptively. If ordinary_growth_compounder false negatives repeat outside the 2021Q2 electrification regime, consider an archetype-aware expectation-duration extension."
+  },
+  "prohibitedUses": [
+    "Do not promote all high-PE growth stocks because CATL and Star performed well.",
+    "Do not weaken V1.2 expectation-path requirements from one regime.",
+    "Do not treat research-selection absolute alpha as proof that the frozen selected peer was optimal.",
+    "Do not use the dividend/cash-yield archetype as a generic low-PE/high-yield buy rule."
+  ]
+}
