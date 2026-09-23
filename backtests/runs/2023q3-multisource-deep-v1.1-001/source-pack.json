@@ -1,0 +1,663 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2023q3-multisource-deep-v1.1-001",
+  "cutoffAt": "2023-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2023Q3 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China auto and macro data.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on MIIT/NBS releases surfaced by broad discovery."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Issuer evidence is deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable memory pricing and supply conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on oil-supply cuts and Huawei semiconductor breakthrough.",
+      "coverageStatus": "partial",
+      "limitations": "Uses Reuters syndicated copies where direct historical Reuters pages are not accessible."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist memory-cycle evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on TrendForce releases."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-oil-20230905",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Oil prices settle at 10-month high as Saudi, Russia extend supply cuts",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://uk.investing.com/news/commodities-news/oil-prices-settle-at-10-month-high-as-saudi-russia-extend-supply-cuts-3143350",
+      "publishedAt": "2023-09-05T20:46:00Z",
+      "availableAt": "2023-09-05T20:46:00Z",
+      "originGroup": "reuters-oil-20230905",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Brent closed above $90/bbl for the first time since November 2022 after Saudi Arabia and Russia extended voluntary supply cuts through year-end; the extension duration exceeded expectations."
+      ],
+      "entities": [
+        "Brent",
+        "Saudi Arabia",
+        "Russia",
+        "OPEC+"
+      ],
+      "observedChanges": [
+        "global crude supply tightens",
+        "oil price reaches 10-month high"
+      ]
+    },
+    {
+      "itemId": "reuters-oil-20230929",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Oil ends Q3 up about 30% on tight global supply",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://www.investing.com/news/commodities-news/oil-prices-fall-as-russia-saudi-arabia-expected-to-boost-supply-3185837",
+      "publishedAt": "2023-09-29T15:31:00Z",
+      "availableAt": "2023-09-29T15:31:00Z",
+      "originGroup": "reuters-oil-20230929",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Oil ended Q3 with roughly 28-30% quarterly gains as OPEC+ cuts tightened global supply, while late-quarter profit taking highlighted expectation-absorption risk."
+      ],
+      "entities": [
+        "Brent",
+        "WTI",
+        "OPEC+"
+      ],
+      "observedChanges": [
+        "oil supply shock persists",
+        "Q3 price rerating becomes large"
+      ]
+    },
+    {
+      "itemId": "miit-auto-20230911",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年8月汽车工业经济运行情况",
+      "publisher": "工业和信息化部",
+      "url": "https://www.miit.gov.cn/gxsj/tjfx/zbgy/qc/art/2023/art_47ce38044656401bbf575d5e12c644bb.html",
+      "publishedAt": "2023-09-11T20:12:00+08:00",
+      "availableAt": "2023-09-11T20:12:00+08:00",
+      "originGroup": "miit-auto-202308",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August auto sales +8.4% YoY, NEV sales +27%; Jan-Aug auto exports +61.9% and NEV exports +110%."
+      ],
+      "entities": [
+        "China autos",
+        "NEVs",
+        "exports"
+      ],
+      "observedChanges": [
+        "auto demand grows",
+        "exports accelerate",
+        "NEV penetration rises"
+      ]
+    },
+    {
+      "itemId": "reuters-huawei-20230830",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China chip stocks rally after Huawei Mate 60 Pro launch",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://theprint.in/tech/chip-stocks-rally-after-huaweis-low-key-launch-of-new-mate-60-pro-phone/1737866/",
+      "publishedAt": "2023-08-30T11:15:00+05:30",
+      "availableAt": "2023-08-30T11:15:00+05:30",
+      "originGroup": "reuters-huawei-20230830",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Huawei launched Mate 60 Pro amid speculation that it used a domestically produced 5G-capable chip, triggering a sharp rally in Chinese semiconductor shares."
+      ],
+      "entities": [
+        "Huawei",
+        "Mate 60 Pro",
+        "SMIC",
+        "Chinese semiconductors"
+      ],
+      "observedChanges": [
+        "domestic advanced-chip capability becomes visible",
+        "semiconductor shares rerate immediately"
+      ]
+    },
+    {
+      "itemId": "reuters-huawei-20230907",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Huawei's new smartphone uses more China-made parts than previous models-TechInsights",
+      "publisher": "Reuters (syndicated)",
+      "url": "https://tech.yahoo.com/phones/articles/huaweis-smartphone-uses-more-china-104741323.html",
+      "publishedAt": "2023-09-07T10:47:00Z",
+      "availableAt": "2023-09-07T10:47:00Z",
+      "originGroup": "reuters-huawei-20230907",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TechInsights found Mate 60 Pro used substantially more domestically produced silicon and an advanced SMIC-manufactured 7nm chip, confirming a meaningful domestic semiconductor capability advance."
+      ],
+      "entities": [
+        "Huawei",
+        "SMIC",
+        "7nm",
+        "domestic chips"
+      ],
+      "observedChanges": [
+        "domestic semiconductor substitution independently confirmed"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20230705",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM ASP Decline Narrows to 0~5% for 3Q23 Owing to Production Cuts and Seasonal Demand",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20230705-11743.html",
+      "publishedAt": "2023-07-05T00:00:00+08:00",
+      "availableAt": "2023-07-05T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Supplier production cuts were narrowing DRAM ASP declines to 0-5% in Q3, but inventories remained high and a tangible broad price recovery was not yet expected."
+      ],
+      "entities": [
+        "DRAM",
+        "DDR4",
+        "DDR5",
+        "server DRAM"
+      ],
+      "observedChanges": [
+        "DRAM decline narrows",
+        "supplier cuts begin to work",
+        "inventory overhang persists"
+      ]
+    },
+    {
+      "itemId": "tf-nand-20230706",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "NAND Flash ASP to Continue Falling 3~8% in 3Q23, Only Wafer Prices to Increase",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20230706-11752.html",
+      "publishedAt": "2023-07-06T00:00:00+08:00",
+      "availableAt": "2023-07-06T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NAND remained oversupplied in Q3 and module ASPs were expected to keep falling 3-8%; wafer pricing was the first area where increases could emerge."
+      ],
+      "entities": [
+        "NAND Flash",
+        "SSD",
+        "UFS",
+        "wafers"
+      ],
+      "observedChanges": [
+        "NAND bottoming remains incomplete",
+        "wafer prices turn before modules"
+      ]
+    },
+    {
+      "itemId": "tf-memory-outlook-20230830",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "2024 DRAM and NAND bit demand expected to recover from low 2023 base",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20230830-11812.html",
+      "publishedAt": "2023-08-30T00:00:00+08:00",
+      "availableAt": "2023-08-30T00:00:00+08:00",
+      "originGroup": "trendforce-memory-2024-outlook",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Suppliers were expected to maintain production discipline into 2024, but consumer-demand visibility remained uncertain and supply-demand balance depended on continued restraint."
+      ],
+      "entities": [
+        "DRAM",
+        "NAND",
+        "servers",
+        "smartphones"
+      ],
+      "observedChanges": [
+        "memory-cycle recovery becomes more plausible but remains conditional"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20230831",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202308/t20230831_1942429.html",
+      "publishedAt": "2023-08-31T09:30:00+08:00",
+      "availableAt": "2023-08-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202308",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August manufacturing PMI improved to 49.7; production 51.9 and new orders 50.2."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing activity improves toward expansion"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20230930",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年9月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/sjjd/202309/t20230928_1943292.html",
+      "publishedAt": "2023-09-30T09:30:00+08:00",
+      "availableAt": "2023-09-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202309",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "September manufacturing PMI rose to 50.2, returning to expansion for the first time since April; production 52.7 and new orders 50.5."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing returns to expansion"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20230909",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2023年8月份工业生产者出厂价格同比下降3.0% 环比上涨0.2%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202309/t20230909_1942697.html",
+      "publishedAt": "2023-09-09T09:30:00+08:00",
+      "availableAt": "2023-09-09T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202308",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August PPI remained -3.0% YoY but turned +0.2% MoM; mining/raw-material prices rose sequentially while processing prices remained weak."
+      ],
+      "entities": [
+        "China PPI",
+        "raw materials"
+      ],
+      "observedChanges": [
+        "producer prices begin sequential recovery",
+        "upstream/raw materials strengthen before processing"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2023q3-oil-supply-tightening",
+      "statement": "Saudi and Russian voluntary cuts extended through year-end, driving Brent above $90 and nearly 30% Q3 gains. The supply shock was real, but the late-quarter rerating was already large.",
+      "changeType": "commodity_supply_tightening_with_rerating",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-09-05T20:46:00Z",
+      "memberItemIds": [
+        "reuters-oil-20230905",
+        "reuters-oil-20230929"
+      ],
+      "independentOriginGroups": [
+        "reuters-oil-20230905",
+        "reuters-oil-20230929"
+      ],
+      "affectedValueChain": [
+        "upstream oil producers",
+        "refiners",
+        "petrochemicals",
+        "airlines",
+        "transport"
+      ],
+      "contradictionSearchNotes": "Higher crude helps upstream but hurts refiners/transport. By quarter-end the commodity itself had already rerated sharply, so expectation absorption is central.",
+      "researchQuestion": "Which A-share upstream producer had a realized oil-price earnings bridge and was not already in a late-reversal/fully-priced state?"
+    },
+    {
+      "eventId": "event-2023q3-auto-export-acceleration",
+      "statement": "China auto demand and exports remained strong in Q3, with August exports +32.1% YoY, Jan-Aug exports +61.9%, and NEV exports more than doubling year to date.",
+      "changeType": "export_and_scale_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2023-09-11T20:12:00+08:00",
+      "memberItemIds": [
+        "miit-auto-20230911"
+      ],
+      "independentOriginGroups": [
+        "miit-auto-202308"
+      ],
+      "affectedValueChain": [
+        "OEMs",
+        "batteries",
+        "components",
+        "logistics"
+      ],
+      "contradictionSearchNotes": "Industry volume growth can coexist with price wars and margin compression. Company-level gross-margin/profit conversion is mandatory.",
+      "researchQuestion": "Which listed auto OEM or supplier converted export/scale growth into realized earnings rather than volume-only growth?"
+    },
+    {
+      "eventId": "event-2023q3-huawei-domestic-chip-breakthrough",
+      "statement": "Huawei Mate 60 Pro revealed a materially more domestic semiconductor supply chain and an advanced SMIC-made chip, making domestic substitution technically more credible while semiconductor shares immediately rerated.",
+      "changeType": "technology_substitution_breakthrough",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-08-30T11:15:00+05:30",
+      "memberItemIds": [
+        "reuters-huawei-20230830",
+        "reuters-huawei-20230907"
+      ],
+      "independentOriginGroups": [
+        "reuters-huawei-20230830",
+        "reuters-huawei-20230907"
+      ],
+      "affectedValueChain": [
+        "foundry",
+        "semiconductor equipment",
+        "EDA/design",
+        "RF/components",
+        "smartphones"
+      ],
+      "contradictionSearchNotes": "The technical breakthrough is real, but market prices reacted immediately and the listed-company earnings map is indirect. Deep research must reject theme-only names.",
+      "researchQuestion": "Is there an A-share semiconductor supplier with already-realized domestic-substitution revenue/profit and room after the Mate 60 rerating?"
+    },
+    {
+      "eventId": "event-2023q3-memory-bottoming",
+      "statement": "DRAM declines narrowed as production cuts took hold while NAND remained oversupplied; the cycle was approaching a trough but broad price recovery and company earnings conversion were still incomplete by Q3.",
+      "changeType": "cyclical_bottoming_without_full_price_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2023-07-05T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20230705",
+        "tf-nand-20230706",
+        "tf-memory-outlook-20230830"
+      ],
+      "independentOriginGroups": [
+        "trendforce-memory-q3-2023",
+        "trendforce-memory-2024-outlook"
+      ],
+      "affectedValueChain": [
+        "DRAM/NAND suppliers",
+        "storage modules",
+        "memory designers",
+        "OEMs"
+      ],
+      "contradictionSearchNotes": "DRAM and NAND timing differed and inventory stayed high. A turning-point selection needs realized/quantitative margin inflection, not just less-negative prices.",
+      "researchQuestion": "Did any A-share memory company have a sufficiently clean turning-point earnings bridge before Q3 ended?"
+    },
+    {
+      "eventId": "event-2023q3-manufacturing-recovery",
+      "statement": "China manufacturing PMI improved through Q3 and returned to expansion in September, while PPI sequentially turned positive but remained deeply negative year-on-year.",
+      "changeType": "broad_macro_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2023-08-31T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20230831",
+        "nbs-pmi-20230930",
+        "nbs-ppi-20230909"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202308",
+        "nbs-pmi-202309",
+        "nbs-ppi-202308"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "raw materials",
+        "exporters"
+      ],
+      "contradictionSearchNotes": "Useful context but too broad for direct stock selection.",
+      "researchQuestion": "Use as regime context rather than standalone long thesis."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-oil-20230929",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff oil opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q3-multisource-v1.1-001/regime/oil-20230929.snapshot.json",
+      "publishedAt": "2023-09-28T15:00:00+08:00",
+      "availableAt": "2023-09-28T15:00:00+08:00",
+      "normalizedClaims": [
+        "Oil basket 20d excess +9.96pp and 60d +10.97pp; breadth 100%/66.7%; favorable. 中国海油 20d excess +15.88pp and 60d +22.59pp: sustained_strength."
+      ]
+    },
+    {
+      "id": "regime-auto-20230911",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff auto opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q3-multisource-v1.1-001/regime/auto-20230911.snapshot.json",
+      "publishedAt": "2023-09-11T15:00:00+08:00",
+      "availableAt": "2023-09-11T15:00:00+08:00",
+      "normalizedClaims": [
+        "Auto basket 20d excess +4.10pp and 60d +7.58pp; breadth 100%/66.7%; favorable. 比亚迪 20d excess +2.79pp and 60d -5.01pp: early_turn."
+      ]
+    },
+    {
+      "id": "regime-huawei-20230907",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff Huawei-semiconductor opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q3-multisource-v1.1-001/regime/huawei-semi-20230907.snapshot.json",
+      "publishedAt": "2023-09-07T15:00:00+08:00",
+      "availableAt": "2023-09-07T15:00:00+08:00",
+      "normalizedClaims": [
+        "Huawei-semiconductor basket 20d excess +5.32pp but 60d -14.95pp; breadth 66.7%/33.3%; neutral. 长川 de_rated, 赛微 sustained_strength, 通富 early_turn."
+      ]
+    },
+    {
+      "id": "regime-memory-20230831",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff memory opportunity price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2023q3-multisource-v1.1-001/regime/memory-20230831.snapshot.json",
+      "publishedAt": "2023-08-31T15:00:00+08:00",
+      "availableAt": "2023-08-31T15:00:00+08:00",
+      "normalizedClaims": [
+        "Memory basket 20d excess -3.70pp and 60d -8.90pp; breadth 25%/25%; adverse. 兆易/君正/江波龙 were de_rated; 德明利 sustained_strength."
+      ]
+    },
+    {
+      "id": "byd-h1-20230829",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "比亚迪2023年半年度报告摘要",
+      "publisher": "比亚迪",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9471213&stockid=002594",
+      "publishedAt": "2023-08-29T00:00:00+08:00",
+      "availableAt": "2023-08-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB260.124bn +72.72%; attributable profit RMB10.954bn +204.68%;扣非 +220.02%; operating cash flow RMB81.971bn +89.81%."
+      ]
+    },
+    {
+      "id": "byd-research-20230829",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "比亚迪：盈利表现强劲，高端化加速",
+      "publisher": "华西证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/stock/relnews/cn/2023-08-29/doc-imziwkpx8963166.shtml",
+      "publishedAt": "2023-08-29T18:39:00+08:00",
+      "availableAt": "2023-08-29T18:39:00+08:00",
+      "normalizedClaims": [
+        "Q2 revenue RMB139.951bn +67.0% YoY/+16.5% QoQ; profit RMB6.82bn +144.9% YoY/+65.2% QoQ. Forecast 2023-25 profit RMB25.08/32.61/41.01bn; Aug28 price RMB235.53 implied PE 27x/21x/17x."
+      ]
+    },
+    {
+      "id": "saic-h1-20230831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "上汽集团2023年半年度报告",
+      "publisher": "上汽集团",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9490434&stockid=600104",
+      "publishedAt": "2023-08-31T00:00:00+08:00",
+      "availableAt": "2023-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +3.73%; attributable profit +2.54%;扣非 profit -7.19%; operating cash flow turned positive RMB6.893bn."
+      ]
+    },
+    {
+      "id": "gwm-h1-20230831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "长城汽车2023年半年度报告",
+      "publisher": "长城汽车",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9490514&stockid=601633",
+      "publishedAt": "2023-08-31T00:00:00+08:00",
+      "availableAt": "2023-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +12.61%; attributable profit -75.69%;扣非 -63.60%; operating cash flow RMB-2.436bn; gross margin fell 1.53pp."
+      ]
+    },
+    {
+      "id": "cnooc-h1-research-20230818",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "中国海油2023年半年报点评：油气产量创历史新高",
+      "publisher": "光大证券 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/745672611130/index.phtml",
+      "publishedAt": "2023-08-18T00:00:00+08:00",
+      "availableAt": "2023-08-18T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB192.1bn -5.09%; profit RMB63.8bn -11.30%; total oil/gas production +8.86%. Q2 profit decline was much smaller than oil-price decline, showing cost/volume resilience."
+      ]
+    },
+    {
+      "id": "cnooc-valuation-20230818",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "中国海油公司点评：稀缺央企 再超预期",
+      "publisher": "券商研报 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/lastest/rptid/745653869723/index.phtml",
+      "publishedAt": "2023-08-18T00:00:00+08:00",
+      "availableAt": "2023-08-18T00:00:00+08:00",
+      "normalizedClaims": [
+        "2023-25 profit forecasts RMB124.824/134.648/140.176bn, implying PE about 7.03x/6.51x/6.26x at the frozen report reference; H1 A-share dynamic dividend yield about 7.12%."
+      ]
+    },
+    {
+      "id": "petrochina-h1-20230831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中国石油2023年半年度报告摘要",
+      "publisher": "中国石油",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9493184&stockid=601857",
+      "publishedAt": "2023-08-31T00:00:00+08:00",
+      "availableAt": "2023-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue -8.3%; attributable profit RMB85.272bn +4.5%; operating cash flow +13.1%. Upstream realized oil price fell 21.7% but oil/gas volume increased."
+      ]
+    },
+    {
+      "id": "sinopec-h1-20230828",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中国石化2023年半年度报告摘要",
+      "publisher": "中国石化",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9459054&stockid=600028",
+      "publishedAt": "2023-08-28T00:00:00+08:00",
+      "availableAt": "2023-08-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue -1.1%; attributable profit RMB35.111bn -20.1%;扣非 -22.4%; operating cash flow improved sharply."
+      ]
+    },
+    {
+      "id": "changchuan-h1-20230829",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "长川科技2023年半年度报告",
+      "publisher": "长川科技",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9467781&stockid=300604",
+      "publishedAt": "2023-08-29T00:00:00+08:00",
+      "availableAt": "2023-08-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue -35.86%; attributable profit -91.65%;扣非 loss RMB84.77m; operating cash flow RMB-622m."
+      ]
+    },
+    {
+      "id": "saiwei-h1-20230825",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "赛微电子2023年半年度报告",
+      "publisher": "赛微电子",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9445417&stockid=300456",
+      "publishedAt": "2023-08-25T00:00:00+08:00",
+      "availableAt": "2023-08-25T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 attributable loss RMB27.44m versus profit a year earlier;扣非 loss RMB61.97m; operating cash flow nearly flat and down sharply YoY."
+      ]
+    },
+    {
+      "id": "tongfu-h1-20230831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "通富微电2023年半年度报告摘要",
+      "publisher": "通富微电",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9495338&stockid=002156",
+      "publishedAt": "2023-08-31T00:00:00+08:00",
+      "availableAt": "2023-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +3.56%; attributable loss RMB187.69m versus profit RMB365.42m a year earlier; operating cash flow -49.75% YoY."
+      ]
+    },
+    {
+      "id": "giga-h1-20230829",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兆易创新2023年半年度报告摘要",
+      "publisher": "兆易创新",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9448076&stockid=603986",
+      "publishedAt": "2023-08-29T00:00:00+08:00",
+      "availableAt": "2023-08-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB2.966bn -37.97%; attributable profit RMB336m -78.00%;扣非 -81.23%; operating cash flow improved strongly from a low base."
+      ]
+    },
+    {
+      "id": "junzheng-h1-20230831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "北京君正2023年半年度报告摘要",
+      "publisher": "北京君正",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9493142&stockid=300223",
+      "publishedAt": "2023-08-31T00:00:00+08:00",
+      "availableAt": "2023-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB2.221bn -20.79%; attributable profit RMB222m -56.53%;扣非 -58.51%; operating cash flow turned positive."
+      ]
+    }
+  ]
+}
