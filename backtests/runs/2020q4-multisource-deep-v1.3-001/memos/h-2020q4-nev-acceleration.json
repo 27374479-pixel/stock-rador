@@ -1,0 +1,581 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-12-14T23:59:59+08:00",
+  "researchReadyAt": "2020-12-14T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q4-nev-acceleration",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "NEV sales and battery shipments can compound over multiple quarters, but premium valuations require full-path discipline."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002594.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "BYD had exceptional realized Q3 earnings and direct NEV exposure, but its multi-year valuation already capitalized substantial growth.",
+      "evidenceRefs": [
+        "byd-q3-20201030",
+        "byd-strategy-20201127",
+        "regime-nev-20201214"
+      ]
+    },
+    {
+      "ticker": "300750.SZ",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "borderline",
+      "rationale": "CATL had direct battery exposure, strong cash conversion and a visible 2021-22 profit path, but the stock had also rerated strongly and trailing earnings growth was still modest.",
+      "evidenceRefs": [
+        "catl-q3-20201028",
+        "catl-research-20201028",
+        "regime-nev-20201214"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "NEV monthly sales more than doubled and the long-term policy framework became clearer, but BYD/CATL had already rerated sharply. The opportunity is structurally real; the unresolved question is whether future growth exceeds an already-premium baseline.",
+    "firstCredibleDate": "2020-11-02",
+    "valueChain": [
+      "NEV adoption policy",
+      "vehicle sales",
+      "battery demand",
+      "OEM/battery earnings",
+      "long-duration growth"
+    ],
+    "persistenceReason": "The 2021-2035 plan and record monthly sales make the demand shift structural.",
+    "disconfirmingEvidence": [
+      "BYD 60d excess ~+79pp and CATL ~+35pp.",
+      "BYD forward PE in the Nov27 strategy was ~92x 2021E and ~73x 2022E.",
+      "CATL 9M profit was still slightly down YoY."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "gov-nev-plan-20201102",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "caam-nev-20201214",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-nev-20201214",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "byd-q3-20201030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "byd-strategy-20201127",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "catl-q3-20201028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "catl-research-20201028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "policy + accelerating NEV adoption",
+      "to": "vehicle/battery volumes",
+      "mechanism": "Higher NEV penetration raises OEM and battery shipments.",
+      "evidenceRefs": [
+        "gov-nev-plan-20201102",
+        "caam-nev-20201214"
+      ],
+      "failureMode": "sales/policy adoption slows",
+      "lag": "quarters"
+    },
+    {
+      "from": "volume growth",
+      "to": "BYD/CATL earnings",
+      "mechanism": "BYD had already converted Q3 volume/mix into profit; CATL had strong cash and expected Q4 share recovery.",
+      "evidenceRefs": [
+        "byd-q3-20201030",
+        "catl-research-20201028"
+      ],
+      "failureMode": "price competition or battery ASP decline offsets volume",
+      "lag": "quarters"
+    },
+    {
+      "from": "structural earnings",
+      "to": "equity alpha",
+      "mechanism": "Premium growth stocks only outperform if the full multi-year path exceeds already-high market expectations.",
+      "evidenceRefs": [
+        "byd-strategy-20201127",
+        "catl-research-20201028",
+        "regime-nev-20201214"
+      ],
+      "failureMode": "growth is excellent but merely meets the premium baseline",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "scaled NEV OEMs",
+      "leading battery makers"
+    ],
+    "secondOrderWinners": [
+      "power semiconductors",
+      "battery materials/components"
+    ],
+    "losers": [
+      "legacy ICE exposure"
+    ],
+    "substitutes": [
+      "hybrids/ICE during transition"
+    ],
+    "bottlenecks": [
+      "battery capacity",
+      "chips",
+      "charging"
+    ],
+    "falseThemeMatches": [
+      "NEV concepts without direct shipment/earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Integrated NEV OEM/battery/semiconductor exposure with explosive Q3 earnings.",
+      "evidenceRefs": [
+        "byd-q3-20201030"
+      ],
+      "earningsSensitivity": {
+        "base": "2020/21/22 EPS baseline roughly 1.47/1.89/2.37 in Nov27 strategy.",
+        "favorable": "NEV/flagship volume and vertical integration beat baseline.",
+        "adverse": "growth is absorbed by price competition and premium valuation."
+      },
+      "principalRisks": [
+        "valuation duration",
+        "competition"
+      ]
+    },
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "verifiedExposure": "Leading power-battery supplier with strong cash conversion and Tesla supply beginning.",
+      "evidenceRefs": [
+        "catl-q3-20201028",
+        "catl-research-20201028"
+      ],
+      "earningsSensitivity": {
+        "base": "2020/21/22 profit forecast RMB5.2/6.8/8.5bn.",
+        "favorable": "global share and battery volumes beat baseline.",
+        "adverse": "ASP decline/competition offsets volume."
+      },
+      "principalRisks": [
+        "premium valuation",
+        "battery price pressure"
+      ]
+    },
+    {
+      "ticker": "002074.SZ",
+      "name": "国轩高科",
+      "verifiedExposure": "Power-battery exposure but less frozen company-specific earnings evidence in this source pack.",
+      "evidenceRefs": [
+        "regime-nev-20201214",
+        "caam-nev-20201214"
+      ],
+      "earningsSensitivity": {
+        "base": "insufficient frozen path.",
+        "favorable": "industry growth lifts utilization.",
+        "adverse": "company-specific economics lag."
+      },
+      "principalRisks": [
+        "evidence gap"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002074.SZ",
+      "name": "国轩高科",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed battery peer exposed to the same NEV demand acceleration.",
+      "whySelectedCompanyShouldOutperform": "BYD/CATL have stronger frozen scale, cash or realized earnings evidence.",
+      "evidenceRefs": [
+        "byd-q3-20201030",
+        "catl-q3-20201028",
+        "regime-nev-20201214"
+      ]
+    },
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed OEM exposed to auto recovery but with less direct high-growth NEV economics.",
+      "whySelectedCompanyShouldOutperform": "BYD has much more direct NEV growth and CATL directly captures battery demand.",
+      "evidenceRefs": [
+        "caam-nev-20201214",
+        "byd-q3-20201030"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002594.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002074.SZ",
+        "selectedAdvantages": [
+          "far stronger realized Q3 earnings and integrated NEV exposure"
+        ],
+        "selectedDisadvantages": [
+          "much higher expectation burden"
+        ],
+        "evidenceRefs": [
+          "byd-q3-20201030",
+          "byd-strategy-20201127",
+          "regime-nev-20201214"
+        ],
+        "switchCondition": "Prefer Gotion only after its earnings path becomes comparably auditable at lower burden.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "600104.SH",
+        "selectedAdvantages": [
+          "structural NEV exposure and much faster growth"
+        ],
+        "selectedDisadvantages": [
+          "SAIC can offer lower valuation and mature cash flows"
+        ],
+        "evidenceRefs": [
+          "caam-nev-20201214",
+          "byd-q3-20201030"
+        ],
+        "switchCondition": "Prefer SAIC if NEV growth fails to exceed the premium baseline.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "The economic expressions are good companies, but expectation-duration risk keeps the opportunity at Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "NEV sales were at records and the long-term plan was public. BYD/CATL had already sharply outperformed, and BYD's Nov27 2021/22 PE was roughly 92x/73x.",
+    "thesisExpectation": "Structural adoption remains strong, but equity alpha requires growth well beyond the already-premium baseline.",
+    "measurableGap": "The opportunity direction is strong; expectation room is not sufficiently proven.",
+    "evidenceRefs": [
+      "caam-nev-20201214",
+      "byd-strategy-20201127",
+      "catl-research-20201028",
+      "regime-nev-20201214"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year earnings growth versus premium forward valuation and price rerating.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "BYD 2020/21/22 EPS 1.47/1.89/2.37 at very high forward PE; CATL profit forecast 5.2/6.8/8.5bn.",
+    "thesisScenario": "Sales/market share compound faster than baseline for several years.",
+    "breakevenCondition": "The 2021-22 earnings path must beat an already-high growth baseline enough to offset valuation compression.",
+    "ordinaryScenarioFailure": "Industry growth stays excellent but companies merely meet forecast and multiples normalize.",
+    "catalystOrTimingBridge": "Monthly sales and 2021 Q1 shipments/earnings arrive within base horizon.",
+    "evidenceRefs": [
+      "byd-strategy-20201127",
+      "catl-research-20201028",
+      "caam-nev-20201214"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Official November NEV sales +105% and long-term policy support confirm structural acceleration.",
+      "evidenceRefs": [
+        "caam-nev-20201214",
+        "gov-nev-plan-20201102"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "BYD Q3 earnings conversion is very strong; CATL cash conversion is strong though earnings acceleration is milder.",
+      "evidenceRefs": [
+        "byd-q3-20201030",
+        "catl-q3-20201028"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Multiple direct NEV/battery leaders participate, confirming sector breadth.",
+      "evidenceRefs": [
+        "regime-nev-20201214",
+        "caam-nev-20201214"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The contemporaneous forecasts and strategy are already recent and explicitly incorporate strong NEV growth.",
+      "evidenceRefs": [
+        "byd-strategy-20201127",
+        "catl-research-20201028"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Use the extraordinary 60d outperformance and premium multi-year valuation.",
+      "evidenceRefs": [
+        "regime-nev-20201214",
+        "byd-strategy-20201127"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen NEV basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.055494298905407836,
+      "lookback60Excess": 0.5366086345802091,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-nev-20201214"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "NEV sales and adoption policy are both accelerating.",
+      "evidenceRefs": [
+        "caam-nev-20201214",
+        "gov-nev-plan-20201102"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Both OEM and battery leaders have positive medium-term growth paths.",
+      "evidenceRefs": [
+        "byd-strategy-20201127",
+        "catl-research-20201028"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "structural",
+      "rationale": "The 2021-2035 policy and electrification adoption are structural.",
+      "evidenceRefs": [
+        "gov-nev-plan-20201102"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Direct leaders already had extraordinary 60d benchmark-relative returns.",
+      "evidenceRefs": [
+        "regime-nev-20201214"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Structural fundamentals are excellent but current equity entry is expectation-heavy."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002594.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "BYD has realized profit and cash-flow acceleration.",
+      "evidenceRefs": [
+        "byd-q3-20201030"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Record sales can still lift earnings, but a large part is in baseline.",
+      "evidenceRefs": [
+        "caam-nev-20201214",
+        "byd-strategy-20201127"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Forward valuation is very demanding.",
+      "evidenceRefs": [
+        "byd-strategy-20201127"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales and Q1 reporting are frequent.",
+      "evidenceRefs": [
+        "caam-nev-20201214"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Structural growth helps but premium duration exposes the stocks to multiple compression.",
+      "evidenceRefs": [
+        "regime-nev-20201214",
+        "byd-strategy-20201127"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002074.SZ",
+        "revisionAdvantage": "BYD has clearer realized earnings conversion.",
+        "valuationAdvantage": "Gotion may carry lower expectation burden but has weaker frozen earnings evidence.",
+        "qualityTradeoff": "BYD quality evidence is stronger.",
+        "catalystAdvantage": "BYD vehicle sales directly update the thesis.",
+        "downsideTradeoff": "BYD's premium is a larger valuation risk.",
+        "evidenceRefs": [
+          "byd-q3-20201030",
+          "regime-nev-20201214"
+        ],
+        "switchCondition": "Switch if Gotion develops a comparably strong audited earnings path at a lower burden.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "600104.SH",
+        "revisionAdvantage": "BYD is far more exposed to fast-growing NEV demand.",
+        "valuationAdvantage": "SAIC likely has lower point valuation but slower growth.",
+        "qualityTradeoff": "BYD growth/cash conversion stronger; SAIC mature cash flows may reduce downside.",
+        "catalystAdvantage": "NEV monthly sales benefit BYD more directly.",
+        "downsideTradeoff": "SAIC has lower duration risk.",
+        "evidenceRefs": [
+          "caam-nev-20201214",
+          "byd-q3-20201030"
+        ],
+        "switchCondition": "Switch if premium-growth earnings no longer outrun mature OEM baseline.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "NEV sales accelerated to record levels and BYD Q3 vehicle/NEV economics drove exceptional earnings.",
+    "earningsMechanism": "Higher vehicle/battery volumes and mix improve revenue and profit; BYD conversion is already visible.",
+    "nextObservableMetric": "monthly NEV sales, vehicle/battery shipments, Q1 profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "caam-nev-20201214",
+      "byd-q3-20201030"
+    ],
+    "failureCondition": "Sales remain high but earnings path fails to beat premium baseline."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2020 earnings already rebound strongly for BYD; CATL earnings are near flat.",
+      "nextPeriod": "2021 forecasts embed strong growth for BYD/CATL.",
+      "laterPeriod": "2022 forecasts continue material growth and premium valuation assumes long-duration electrification.",
+      "rationale": "Contemporaneous strategy/research already capitalizes the structural NEV theme.",
+      "evidenceRefs": [
+        "byd-strategy-20201127",
+        "catl-research-20201028"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Record November sales can lift near-term deliveries.",
+      "nextPeriodChange": "2021 may beat if BYD/CATL share and utilization exceed forecasts.",
+      "laterPeriodChange": "No independent cutoff evidence proves 2022+ earnings exceed the already-structural growth baseline by enough to justify the premium.",
+      "mechanism": "The thesis mostly confirms a known structural trend rather than discovering a new unpriced duration change.",
+      "evidenceRefs": [
+        "caam-nev-20201214",
+        "gov-nev-plan-20201102",
+        "byd-strategy-20201127"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term operating upside exists, but the market baseline already assumes substantial multi-year growth.",
+      "evidenceRefs": [
+        "byd-strategy-20201127",
+        "catl-research-20201028",
+        "caam-nev-20201214"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Very high forward multiples and extraordinary prior returns require many years of strong execution.",
+      "evidenceRefs": [
+        "byd-strategy-20201127",
+        "regime-nev-20201214"
+      ]
+    },
+    "falsifier": "2021-22 earnings estimates do not rise materially above the already-aggressive baseline despite record industry sales.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: direction is excellent, but premium growth expectations are already heavily capitalized.",
+    "alreadyPricedAssessment": "high",
+    "constraints": [
+      "valuation duration",
+      "large prior rerating"
+    ]
+  },
+  "bearCase": "NEV adoption remains strong while valuation multiples compress because realized earnings merely meet already-high expectations.",
+  "invalidationConditions": [
+    {
+      "indicator": "2021-22 earnings revisions",
+      "observationMethod": "updated forecasts/results",
+      "threshold": "no material upward revision"
+    },
+    {
+      "indicator": "NEV volume/share",
+      "observationMethod": "monthly sales/shipments",
+      "threshold": "growth or share slows"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact comparable forward valuation for CATL at cutoff"
+  ],
+  "nextResearchActions": [
+    "Keep BYD/CATL as Research-level expressions; do not promote from sector strength alone."
+  ]
+}
