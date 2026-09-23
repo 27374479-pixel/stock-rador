@@ -1,0 +1,555 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2022q3-multisource-deep-v1.1-001",
+  "cutoffAt": "2022-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2022Q3 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China auto and PMI evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on MIIT/NBS releases relevant to surfaced Q3 changes."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Issuer evidence is deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable semiconductor/memory pricing conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on Sichuan/Chongqing power shortages and manufacturing impact.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters pages are accessed through syndication where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist power-battery / memory industry evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on accessible TrendForce sources."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl is used; unavailable is declared explicitly."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "miit-auto-20220909",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年8月汽车工业经济运行情况",
+      "publisher": "工业和信息化部",
+      "url": "https://www.miit.gov.cn/gxsj/tjfx/zbgy/qc/art/2022/art_706267a598c94a25b9391224b63a62ab.html",
+      "publishedAt": "2022-09-09T19:31:00+08:00",
+      "availableAt": "2022-09-09T19:31:00+08:00",
+      "originGroup": "miit-auto-202208",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August auto sales +32.1% YoY; NEV sales doubled YoY to 666k and penetration reached 27.9%; auto exports +65% YoY and NEV exports +82.3%."
+      ],
+      "entities": [
+        "China autos",
+        "NEVs",
+        "exports"
+      ],
+      "observedChanges": [
+        "NEV demand accelerates",
+        "auto exports accelerate",
+        "industry scale expands"
+      ]
+    },
+    {
+      "itemId": "trendforce-battery-20220914",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "Power Batteries Enter Period of Rapid Development",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20220914-11381.html",
+      "publishedAt": "2022-09-14T00:00:00+08:00",
+      "availableAt": "2022-09-14T00:00:00+08:00",
+      "originGroup": "trendforce-power-battery-20220914",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Global power-battery demand was entering a rapid-growth phase as transport electrification accelerated; manufacturers were expanding capacity aggressively."
+      ],
+      "entities": [
+        "power batteries",
+        "EVs",
+        "energy storage"
+      ],
+      "observedChanges": [
+        "battery demand remains structurally strong",
+        "capacity expansion accelerates"
+      ]
+    },
+    {
+      "itemId": "reuters-sichuan-20220815",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Sichuan orders industrial shutdowns as power shortage intensifies",
+      "publisher": "Reuters via Investing.com Japan",
+      "url": "https://jp.investing.com/news/commodities-news/article-542214",
+      "publishedAt": "2022-08-15T19:23:00+08:00",
+      "availableAt": "2022-08-15T19:23:00+08:00",
+      "originGroup": "reuters-sichuan-power-20220815",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Sichuan ordered industrial users in 19 of 21 cities to halt production for several days as extreme heat and drought reduced hydropower output while residential demand surged. Metals, chemicals and lithium production were affected."
+      ],
+      "entities": [
+        "Sichuan",
+        "hydropower",
+        "industrial power",
+        "metals",
+        "lithium"
+      ],
+      "observedChanges": [
+        "hydropower shortfall becomes physical industrial bottleneck",
+        "factory curtailments begin"
+      ]
+    },
+    {
+      "itemId": "reuters-chongqing-20220825",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China's Chongqing extends power curbs as drought drags on",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/chinas-chongqing-extends-power-curbs-as-drought-drags-on-2879629",
+      "publishedAt": "2022-08-25T09:10:00+08:00",
+      "availableAt": "2022-08-25T09:10:00+08:00",
+      "originGroup": "reuters-chongqing-power-20220825",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Chongqing extended factory power curbs as extreme heat and drought persisted; Sichuan normally exports hydropower while coal-fired plants in eastern China were under pressure to compensate."
+      ],
+      "entities": [
+        "Chongqing",
+        "Sichuan",
+        "hydropower",
+        "thermal power"
+      ],
+      "observedChanges": [
+        "power shortage persists",
+        "thermal generation balancing need rises"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20220810",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Consumer DRAM Price Decline Expands to 13~18%",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20220810-11334.html",
+      "publishedAt": "2022-08-10T00:00:00+08:00",
+      "availableAt": "2022-08-10T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2022",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Q3 consumer DRAM price declines widened to 13-18% as inventory pressure rose and suppliers cut prices aggressively; further declines into Q4 were expected."
+      ],
+      "entities": [
+        "DRAM",
+        "DDR3",
+        "DDR4",
+        "inventory"
+      ],
+      "observedChanges": [
+        "memory downcycle accelerates",
+        "inventory pressure worsens"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20220922",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Q4 Price Drop Expanded to 13~18%",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20220922-11391.html",
+      "publishedAt": "2022-09-22T00:00:00+08:00",
+      "availableAt": "2022-09-22T00:00:00+08:00",
+      "originGroup": "trendforce-memory-q3-2022",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Weak consumer/server demand and high inventories caused DRAM shipments/bit demand to decline in Q3 and led TrendForce to forecast another 13-18% Q4 contract-price drop."
+      ],
+      "entities": [
+        "DRAM",
+        "server",
+        "PC",
+        "smartphone"
+      ],
+      "observedChanges": [
+        "memory downcycle remains unresolved",
+        "server/PC demand weakens"
+      ]
+    },
+    {
+      "itemId": "tf-nand-20220926",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "NAND Flash Pricing Forecast to Drop 15~20% in 4Q22",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20220926-11395.html",
+      "publishedAt": "2022-09-26T00:00:00+08:00",
+      "availableAt": "2022-09-26T00:00:00+08:00",
+      "originGroup": "trendforce-nand-q3-2022",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NAND oversupply intensified, wafer prices had fallen sharply and some supplier product sales were expected to cross into loss territory before year-end."
+      ],
+      "entities": [
+        "NAND",
+        "SSD",
+        "UFS",
+        "inventory"
+      ],
+      "observedChanges": [
+        "NAND oversupply deepens",
+        "loss economics emerge"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20220831",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901567.html",
+      "publishedAt": "2022-08-31T09:30:00+08:00",
+      "availableAt": "2022-08-31T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202208",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August manufacturing PMI was 49.4; production 49.8 and new orders 49.2 remained below 50 amid heat/power and demand disruptions."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing remains contractionary",
+        "demand recovery weak"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20220930",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2022年9月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901601.html",
+      "publishedAt": "2022-09-30T09:30:00+08:00",
+      "availableAt": "2022-09-30T09:30:00+08:00",
+      "originGroup": "nbs-pmi-202209",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "September manufacturing PMI recovered to 50.1 and production to 51.5, but new orders remained below 50 at 49.8."
+      ],
+      "entities": [
+        "China manufacturing PMI"
+      ],
+      "observedChanges": [
+        "manufacturing output recovers",
+        "demand still not fully expansionary"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2022q3-nev-export-scale",
+      "statement": "China's auto and NEV market accelerated sharply in Q3, with August NEV sales doubling YoY, penetration near 28%, and auto/NEV exports rising strongly; battery demand remained structurally strong.",
+      "changeType": "volume_export_scale_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2022-09-09T19:31:00+08:00",
+      "memberItemIds": [
+        "miit-auto-20220909",
+        "trendforce-battery-20220914"
+      ],
+      "independentOriginGroups": [
+        "miit-auto-202208",
+        "trendforce-power-battery-20220914"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "power batteries",
+        "components",
+        "export logistics"
+      ],
+      "contradictionSearchNotes": "Volume growth can coexist with raw-material inflation and margin pressure. Company selection requires realized profit/cash conversion, not unit growth alone.",
+      "researchQuestion": "Which A-share OEM/battery name converted extraordinary NEV/export growth into earnings without excessive expectation burden?"
+    },
+    {
+      "eventId": "event-2022q3-drought-power-scarcity",
+      "statement": "Extreme heat and drought caused Sichuan/Chongqing industrial power curtailments as hydropower output fell, while thermal plants elsewhere were asked to compensate, creating a real short-duration power-scarcity shock.",
+      "changeType": "physical_power_supply_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-08-15T19:23:00+08:00",
+      "memberItemIds": [
+        "reuters-sichuan-20220815",
+        "reuters-chongqing-20220825"
+      ],
+      "independentOriginGroups": [
+        "reuters-sichuan-power-20220815",
+        "reuters-chongqing-power-20220825"
+      ],
+      "affectedValueChain": [
+        "hydropower",
+        "thermal power",
+        "industrial metals",
+        "chemicals",
+        "lithium",
+        "manufacturing"
+      ],
+      "contradictionSearchNotes": "The weather shock may be short-lived. A listed-company winner requires measurable generation/fuel economics and a catalyst that survives normalization.",
+      "researchQuestion": "Did any thermal/power generator have a durable earnings bridge, or was this only a temporary weather shock?"
+    },
+    {
+      "eventId": "event-2022q3-memory-downcycle",
+      "statement": "Memory pricing deteriorated sharply through Q3 as inventories rose, DRAM/NAND contract prices fell double digits, and some NAND products approached loss economics.",
+      "changeType": "cyclical_deterioration",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-08-10T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20220810",
+        "tf-dram-20220922",
+        "tf-nand-20220926"
+      ],
+      "independentOriginGroups": [
+        "trendforce-memory-q3-2022",
+        "trendforce-nand-q3-2022"
+      ],
+      "affectedValueChain": [
+        "DRAM/NAND suppliers",
+        "memory designers",
+        "storage modules",
+        "PC/server/phone OEMs"
+      ],
+      "contradictionSearchNotes": "This is primarily a negative opportunity/regime signal. Do not bottom-fish until supply response, survival and earnings inflection become measurable.",
+      "researchQuestion": "Is there any defensible turning-point candidate, or should the Skill explicitly choose No selection?"
+    },
+    {
+      "eventId": "event-2022q3-manufacturing-fragile-recovery",
+      "statement": "Manufacturing contracted in August and barely returned to expansion in September while new orders remained below 50, showing fragile broad demand despite selected auto growth.",
+      "changeType": "macro_recovery_with_weak_demand",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2022-08-31T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20220831",
+        "nbs-pmi-20220930"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202208",
+        "nbs-pmi-202209"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "industrial demand",
+        "exporters"
+      ],
+      "contradictionSearchNotes": "Useful as a cross-thesis regime filter but too broad for direct stock selection.",
+      "researchQuestion": "Use as macro contradiction/timing context rather than standalone long thesis."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-auto-20220914",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff auto price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2022q3-multisource-v1.1-001/regime/auto-20220914.snapshot.json",
+      "publishedAt": "2022-09-14T15:00:00+08:00",
+      "availableAt": "2022-09-14T15:00:00+08:00",
+      "normalizedClaims": [
+        "Auto basket 20d excess -9.88pp and 60d -9.01pp; breadth 0%/0%; adverse. BYD 20d excess -10.42pp and 60d -12.85pp: de_rated. CATL also de_rated."
+      ]
+    },
+    {
+      "id": "regime-power-20220825",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff power price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2022q3-multisource-v1.1-001/regime/power-20220825.snapshot.json",
+      "publishedAt": "2022-08-25T15:00:00+08:00",
+      "availableAt": "2022-08-25T15:00:00+08:00",
+      "normalizedClaims": [
+        "Power basket 20d excess +30.17pp and 60d +39.89pp; breadth 100%/100%; favorable but heavily rerated. 华电 60d excess +71.22pp, 华能 +21.54pp, 国电 +26.92pp."
+      ]
+    },
+    {
+      "id": "regime-memory-20220926",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff memory price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2022q3-multisource-v1.1-001/regime/memory-20220926.snapshot.json",
+      "publishedAt": "2022-09-26T15:00:00+08:00",
+      "availableAt": "2022-09-26T15:00:00+08:00",
+      "normalizedClaims": [
+        "Memory basket 20d excess -7.15pp and 60d -15.38pp; breadth 0%/0%; adverse. Both 兆易创新 and 北京君正 were de_rated."
+      ]
+    },
+    {
+      "id": "byd-h1-20220830",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "比亚迪2022年半年度报告摘要",
+      "publisher": "比亚迪",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8498643&stockid=002594",
+      "publishedAt": "2022-08-30T00:00:00+08:00",
+      "availableAt": "2022-08-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB150.607bn +65.71%; attributable profit RMB3.595bn +206.35%;扣非 +721.72%; CFO RMB43.185bn +346.27%."
+      ]
+    },
+    {
+      "id": "byd-research-20220904",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "比亚迪：8月销量再创新高，新车型订单饱满迅速上量",
+      "publisher": "东吴证券",
+      "url": "https://www.sdyanbao.com/detail/285895",
+      "publishedAt": "2022-09-04T00:00:00+08:00",
+      "availableAt": "2022-09-04T00:00:00+08:00",
+      "normalizedClaims": [
+        "2022-24 profit forecasts RMB11.785/23.336/32.725bn, implying PE about 70x/35x/25x at RMB282. Forecast 2023 profit growth ~98%; August NEV sales +155% YoY and battery installation +115% YoY."
+      ]
+    },
+    {
+      "id": "gwm-h1-20220831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "长城汽车2022年半年度报告摘要",
+      "publisher": "长城汽车",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8503834&stockid=601633",
+      "publishedAt": "2022-08-31T00:00:00+08:00",
+      "availableAt": "2022-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +0.33%; attributable profit +58.72% but扣非 profit -27.56%; CFO -45.97%."
+      ]
+    },
+    {
+      "id": "saic-h1-20220826",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "上汽集团2022年半年度报告摘要",
+      "publisher": "上汽集团",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8463865&stockid=600104",
+      "publishedAt": "2022-08-26T00:00:00+08:00",
+      "availableAt": "2022-08-26T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue -14.47%; attributable profit -48.10%;扣非 -48.47%; CFO turned negative RMB-4.704bn."
+      ]
+    },
+    {
+      "id": "catl-h1-20220824",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "宁德时代2022年半年度报告摘要",
+      "publisher": "宁德时代",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8452998&stockid=300750",
+      "publishedAt": "2022-08-24T00:00:00+08:00",
+      "availableAt": "2022-08-24T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB112.971bn +156.32%; attributable profit RMB8.168bn +82.17%; Q2 profit recovered strongly after Q1 raw-material pressure."
+      ]
+    },
+    {
+      "id": "catl-research-20220824",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "宁德时代H1业绩亮眼，多家券商上调盈利预测",
+      "publisher": "新浪财经/市场资讯",
+      "url": "https://finance.sina.com.cn/stock/gujiayidong/2022-08-24/doc-imizirav9472671.shtml",
+      "publishedAt": "2022-08-24T11:26:00+08:00",
+      "availableAt": "2022-08-24T11:26:00+08:00",
+      "normalizedClaims": [
+        "CICC raised 2022/23 profit forecasts to RMB26.51/41.47bn; contemporaneous price implied about 32.8x 2023E PE. Q2 profit +163.9% YoY while power-battery H1 gross margin was 15.04%, down materially YoY."
+      ]
+    },
+    {
+      "id": "huaneng-h1-20220818",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "华能国际2022年半年度报告",
+      "publisher": "华能国际",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8383585&stockid=600011",
+      "publishedAt": "2022-08-18T00:00:00+08:00",
+      "availableAt": "2022-08-18T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +22.68% but attributable loss RMB3.009bn due to sharply higher coal procurement prices; thermal generation profitability remained under pressure before the August heatwave."
+      ]
+    },
+    {
+      "id": "huadian-h1-20220827",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "华电国际2022年半年度报告",
+      "publisher": "华电国际",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8477677&stockid=600027",
+      "publishedAt": "2022-08-27T00:00:00+08:00",
+      "availableAt": "2022-08-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue -8.99%; attributable profit RMB1.645bn -51.22%;扣非 +20.58%."
+      ]
+    },
+    {
+      "id": "guodian-h1-20220823",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "国电电力2022年半年度报告",
+      "publisher": "国电电力",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8447663&stockid=600795",
+      "publishedAt": "2022-08-23T00:00:00+08:00",
+      "availableAt": "2022-08-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +20.03%; attributable profit roughly RMB2.33bn, down about 22%; thermal-power contribution remained modest while renewables contributed more than half of profit."
+      ]
+    },
+    {
+      "id": "giga-h1-20220827",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兆易创新2022年半年度报告",
+      "publisher": "兆易创新",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8477342&stockid=603986",
+      "publishedAt": "2022-08-27T00:00:00+08:00",
+      "availableAt": "2022-08-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 net profit about RMB1.527bn versus RMB0.786bn a year earlier; H1 results remained strong, but the new Q3 industry evidence showed sharply worsening inventory and pricing after much of H1 had passed."
+      ]
+    },
+    {
+      "id": "junzheng-h1-20220827",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "北京君正2022年半年度报告摘要",
+      "publisher": "北京君正",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=8483840&stockid=300223",
+      "publishedAt": "2022-08-27T00:00:00+08:00",
+      "availableAt": "2022-08-27T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB2.804bn +20.06%; attributable profit RMB511m +43.94%;扣非 +47.15%; CFO RMB-138m versus positive RMB513m a year earlier."
+      ]
+    }
+  ]
+}
