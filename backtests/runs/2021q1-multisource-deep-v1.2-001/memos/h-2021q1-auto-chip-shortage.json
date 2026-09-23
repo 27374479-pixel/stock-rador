@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-03-31T23:59:59+08:00",
+  "researchReadyAt": "2021-03-31T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q1-auto-chip-shortage",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Auto qualification and foundry scarcity can last multiple quarters, but company-specific earnings evidence was not frozen by cutoff."
+  },
+  "changeHypothesis": {
+    "summary": "Global auto-chip scarcity was already forcing OEM production cuts in January, but by March-end the A-share candidate basket was broadly de-rated and no cutoff-bounded company filing had yet demonstrated material auto-specific shortage-to-profit conversion.",
+    "firstCredibleDate": "2021-01-08",
+    "valueChain": [
+      "auto demand recovery",
+      "foundry shortage",
+      "automotive chips",
+      "OEM production",
+      "chip supplier earnings"
+    ],
+    "persistenceReason": "Automotive qualification and foundry lead times are slow, so the bottleneck can persist.",
+    "disconfirmingEvidence": [
+      "Only one strong independent physical/news origin was frozen in Q1 discovery.",
+      "Company Q1 earnings reports arrived after cutoff.",
+      "Candidate economic exposure to automotive shortage was not sufficiently audited before Mar31."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-autochip-20210108",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-autochip-20210331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "auto demand recovery/foundry constraints",
+      "to": "auto-chip scarcity",
+      "mechanism": "OEM recovery collided with limited semiconductor capacity.",
+      "evidenceRefs": [
+        "reuters-autochip-20210108"
+      ],
+      "failureMode": "OEM demand slows or foundry allocation improves",
+      "lag": "months"
+    },
+    {
+      "from": "chip scarcity",
+      "to": "A-share supplier earnings",
+      "mechanism": "Only suppliers with verified qualified auto revenue and pricing power should benefit.",
+      "evidenceRefs": [
+        "reuters-autochip-20210108"
+      ],
+      "failureMode": "candidate exposure is non-auto or OEM cuts offset pricing",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified automotive semiconductor suppliers with verified share/price leverage"
+    ],
+    "secondOrderWinners": [
+      "foundries with qualified capacity"
+    ],
+    "losers": [
+      "OEMs unable to source chips"
+    ],
+    "substitutes": [
+      "alternative qualified suppliers"
+    ],
+    "bottlenecks": [
+      "foundry capacity",
+      "automotive qualification"
+    ],
+    "falseThemeMatches": [
+      "general semiconductor stocks without material automotive exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603290.SH",
+      "name": "斯达半导",
+      "verifiedExposure": "IGBT exposure is plausible, but cutoff-bounded Q1 earnings/auto-specific profit evidence was not yet available.",
+      "evidenceRefs": [
+        "regime-autochip-20210331"
+      ],
+      "earningsSensitivity": {
+        "base": "unverified at cutoff",
+        "favorable": "auto IGBT wins convert to profit",
+        "adverse": "no material auto conversion"
+      },
+      "principalRisks": [
+        "mapping/evidence gap"
+      ]
+    },
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "verifiedExposure": "Power semiconductor capacity could benefit from tight supply, but auto-specific earnings mapping was not yet sufficiently frozen.",
+      "evidenceRefs": [
+        "regime-autochip-20210331"
+      ],
+      "earningsSensitivity": {
+        "base": "unverified",
+        "favorable": "qualified capacity monetizes",
+        "adverse": "general semiconductor exposure dominates"
+      },
+      "principalRisks": [
+        "mapping gap"
+      ]
+    },
+    {
+      "ticker": "603501.SH",
+      "name": "韦尔股份",
+      "verifiedExposure": "Large semiconductor platform, but the Q1 discovery did not isolate automotive scarcity as the dominant earnings driver.",
+      "evidenceRefs": [
+        "regime-autochip-20210331"
+      ],
+      "earningsSensitivity": {
+        "base": "diversified CIS/analog",
+        "favorable": "auto CIS grows",
+        "adverse": "smartphone mix dominates"
+      },
+      "principalRisks": [
+        "non-auto exposure"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection until company-specific automotive shortage-to-profit evidence is directly frozen."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The physical shortage was known, while candidate shares had mostly de-rated during Q1.",
+    "thesisExpectation": "Qualified suppliers may later show pricing/share gains.",
+    "measurableGap": "Company-level auto exposure and incremental earnings remained unverified.",
+    "evidenceRefs": [
+      "reuters-autochip-20210108",
+      "regime-autochip-20210331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: physical shortage alone is insufficient without audited company mapping.",
+    "alreadyPricedAssessment": "stocks de-rated but earnings incidence unverified",
+    "constraints": [
+      "company mapping gap",
+      "no cutoff-bounded Q1 earnings confirmation"
+    ]
+  },
+  "bearCase": "Shortage is real but benefits foreign/foundry suppliers more than the chosen A-share names, while OEM production cuts limit chip shipment volumes.",
+  "invalidationConditions": [
+    {
+      "indicator": "auto-specific revenue/profit",
+      "observationMethod": "future company filings",
+      "threshold": "no material shortage-linked conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "auto revenue share by candidate",
+    "pricing power by product"
+  ],
+  "nextResearchActions": [
+    "Require direct company-level automotive exposure and realized earnings evidence before selecting."
+  ]
+}
