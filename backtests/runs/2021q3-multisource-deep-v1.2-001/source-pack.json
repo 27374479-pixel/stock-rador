@@ -1,0 +1,610 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2021q3-multisource-deep-v1.2-001",
+  "cutoffAt": "2021-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2021Q3 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China manufacturing-demand context.",
+      "coverageStatus": "partial",
+      "limitations": "Uses NBS August PMI available before quarter-end; September PMI release was after cutoff and is excluded."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company evidence is deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable semiconductor/memory pricing conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on shipping congestion, power shortages, and auto chip constraints.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters articles are accessed through syndication where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist shipping-market congestion/rate evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses S&P Global and public SCFI-related reporting."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-shipping-20210805",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China-U.S. container shipping rates sail past $20,000 to record",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/chinaus-container-shipping-rates-sail-past-20000-to-record-2580571",
+      "publishedAt": "2021-08-05T17:43:00+08:00",
+      "availableAt": "2021-08-05T17:43:00+08:00",
+      "originGroup": "reuters-shipping-20210805",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China-to-U.S. container rates exceeded $20,000/FEU as peak-season orders, Delta outbreaks and slow container turnaround tightened effective capacity."
+      ],
+      "entities": [
+        "container shipping",
+        "China-U.S.",
+        "freight rates"
+      ],
+      "observedChanges": [
+        "container freight rates hit record highs",
+        "shipping becomes seller's market"
+      ]
+    },
+    {
+      "itemId": "reuters-ningbo-20210813",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Port, shipping firms divert vessels after a Ningbo terminal shuts",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/port-shipping-firms-divert-vessels-after-a-ningbo-terminal-shuts-2589189",
+      "publishedAt": "2021-08-13T17:53:00+08:00",
+      "availableAt": "2021-08-13T17:53:00+08:00",
+      "originGroup": "reuters-ningbo-20210813",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Ningbo terminal closure forced vessel diversions while Shanghai/Ningbo congestion remained severe, adding another physical bottleneck ahead of peak season."
+      ],
+      "entities": [
+        "Ningbo",
+        "Shanghai",
+        "container shipping"
+      ],
+      "observedChanges": [
+        "port congestion worsens",
+        "effective shipping capacity tightens"
+      ]
+    },
+    {
+      "itemId": "spg-shipping-20210820",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Trans-Pacific port congestion undermines premium services",
+      "publisher": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/shipping/082021-container-premiums-trans-pacific-port-congestion-undermines-quality-of-premium-services",
+      "publishedAt": "2021-08-20T20:19:00Z",
+      "availableAt": "2021-08-20T20:19:00Z",
+      "originGroup": "spg-shipping-20210820",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China-to-U.S. East Coast premium freight was quoted around $20k-$25k/FEU while port queues worsened, confirming extreme rate/throughput stress."
+      ],
+      "entities": [
+        "container freight",
+        "US West Coast",
+        "Ningbo"
+      ],
+      "observedChanges": [
+        "premium freight stays extreme",
+        "port congestion persists"
+      ]
+    },
+    {
+      "itemId": "reuters-power-20210927",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China power crunch spreads, shutting factories and dimming growth outlook",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/chinas-power-crunch-begins-to-weigh-on-economic-outlook-2626893",
+      "publishedAt": "2021-09-27T14:04:00+08:00",
+      "availableAt": "2021-09-27T14:04:00+08:00",
+      "originGroup": "reuters-power-20210927",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Widening power shortages halted production at factories as coal scarcity/high prices and emissions constraints squeezed generation economics."
+      ],
+      "entities": [
+        "coal",
+        "thermal power",
+        "factories",
+        "electricity"
+      ],
+      "observedChanges": [
+        "power shortage becomes nationwide industrial constraint",
+        "coal scarcity pushes thermal-power economics into stress"
+      ]
+    },
+    {
+      "itemId": "reuters-power-explainer-20210927",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "What is behind China's power crunch?",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/what-is-behind-chinas-power-crunch-2627527",
+      "publishedAt": "2021-09-27T23:55:00+08:00",
+      "availableAt": "2021-09-27T23:55:00+08:00",
+      "originGroup": "reuters-power-explainer-20210927",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Coal supply shortages, record coal prices, emissions constraints and strong industrial demand jointly produced the power crunch; thermal generators were squeezed by capped power tariffs."
+      ],
+      "entities": [
+        "coal",
+        "thermal power",
+        "electricity tariffs"
+      ],
+      "observedChanges": [
+        "input-output spread collapses for thermal power",
+        "coal producers gain pricing leverage"
+      ]
+    },
+    {
+      "itemId": "reuters-autochips-20210819",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Toyota slashes September output amid chip crunch, COVID resurgence",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/toyota-to-slash-september-production-due-to-global-chip-shortage--nikkei-2593993",
+      "publishedAt": "2021-08-19T14:22:00+08:00",
+      "availableAt": "2021-08-19T14:22:00+08:00",
+      "originGroup": "reuters-autochips-20210819",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Toyota cut planned September global production by about 40% as semiconductor and parts shortages constrained output."
+      ],
+      "entities": [
+        "automotive semiconductors",
+        "Toyota",
+        "auto production"
+      ],
+      "observedChanges": [
+        "auto chip shortage worsens",
+        "vehicle production cut materially"
+      ]
+    },
+    {
+      "itemId": "reuters-china-auto-20210910",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China vehicle sales fall for fourth month on chip shortages",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/china-vehicle-sales-fall-18-in-august-industry-body-2612620",
+      "publishedAt": "2021-09-10T14:18:00+08:00",
+      "availableAt": "2021-09-10T14:18:00+08:00",
+      "originGroup": "reuters-china-auto-20210910",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China August vehicle sales fell 17.8% YoY due to semiconductor shortages, while NEV sales more than doubled, creating divergent exposure within the auto value chain."
+      ],
+      "entities": [
+        "China autos",
+        "NEVs",
+        "semiconductors"
+      ],
+      "observedChanges": [
+        "legacy auto volume constrained",
+        "NEV demand remains strong despite chip shortage"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20210810",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "PC DRAM contract prices expected to decline in 4Q21",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20210810-10890.html",
+      "publishedAt": "2021-08-10T00:00:00+08:00",
+      "availableAt": "2021-08-10T00:00:00+08:00",
+      "originGroup": "trendforce-dram-q3-2021",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "PC DRAM spot prices had fallen roughly 32% from May highs and moved below contract prices; 4Q contract pricing was expected to turn down as client inventories rose."
+      ],
+      "entities": [
+        "DRAM",
+        "PC",
+        "inventories"
+      ],
+      "observedChanges": [
+        "DRAM spot pricing turns down",
+        "client inventory becomes excessive"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20210922",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Prices Projected to Decline by 3-8% QoQ in 4Q21",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20210922-10947.html",
+      "publishedAt": "2021-09-22T00:00:00+08:00",
+      "availableAt": "2021-09-22T00:00:00+08:00",
+      "originGroup": "trendforce-dram-q3-2021",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Client DRAM inventory exceeded healthy levels; overall 4Q DRAM ASP was projected -3% to -8%, PC DRAM -5% to -10%, with server DRAM also turning down."
+      ],
+      "entities": [
+        "DRAM",
+        "server DRAM",
+        "PC DRAM"
+      ],
+      "observedChanges": [
+        "memory downcycle broadens",
+        "server DRAM also loses pricing power"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20210831",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901208.html",
+      "publishedAt": "2021-08-31T09:00:00+08:00",
+      "availableAt": "2021-08-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202108",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August manufacturing PMI fell to 50.1; new orders were 49.6 and supplier delivery time 48.0, showing weakening demand and longer delivery times before the late-September power shock."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing demand",
+        "supplier delivery"
+      ],
+      "observedChanges": [
+        "manufacturing demand weakens",
+        "delivery times lengthen"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2021q3-container-freight-boom",
+      "statement": "Container freight rates reached record levels and port congestion worsened through August-September 2021, creating an extraordinary profit pool for carriers but also a major expectation-duration question after a prolonged rally.",
+      "changeType": "capacity_scarcity_price_spike",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-08-05T17:43:00+08:00",
+      "memberItemIds": [
+        "reuters-shipping-20210805",
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ],
+      "independentOriginGroups": [
+        "reuters-shipping-20210805",
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ],
+      "affectedValueChain": [
+        "container carriers",
+        "ports",
+        "freight forwarders",
+        "exporters/importers"
+      ],
+      "contradictionSearchNotes": "The profit pool is real, but extreme freight rates may be peak-like and already capitalized. Deep research must freeze the multi-year earnings path and cash-distribution mechanism, not rely on spot freight alone.",
+      "researchQuestion": "Did any A-share container carrier still have full-path expectation room and durable cash-distribution value after the record-rate rerating?"
+    },
+    {
+      "eventId": "event-2021q3-coal-power-crunch",
+      "statement": "China's late-Q3 power crunch made coal scarcity and thermal-power spread compression a physical economic shock: miners gained pricing power while generators faced capped tariffs and expensive fuel.",
+      "changeType": "input_output_spread_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-09-27T14:04:00+08:00",
+      "memberItemIds": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927"
+      ],
+      "independentOriginGroups": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927"
+      ],
+      "affectedValueChain": [
+        "coal miners",
+        "thermal generators",
+        "industrial users",
+        "power equipment"
+      ],
+      "contradictionSearchNotes": "Same macro event creates opposite winners/losers. Deep research must map the spread correctly and avoid buying generators simply because power is scarce.",
+      "researchQuestion": "Which listed coal/resource expression had realized earnings/cash leverage without an already-exhausted expectation path?"
+    },
+    {
+      "eventId": "event-2021q3-auto-chip-shortage",
+      "statement": "The global semiconductor shortage intensified enough to force major automakers to slash production, while China auto sales fell sharply even as NEV demand stayed strong.",
+      "changeType": "component_supply_bottleneck",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-08-19T14:22:00+08:00",
+      "memberItemIds": [
+        "reuters-autochips-20210819",
+        "reuters-china-auto-20210910"
+      ],
+      "independentOriginGroups": [
+        "reuters-autochips-20210819",
+        "reuters-china-auto-20210910"
+      ],
+      "affectedValueChain": [
+        "automotive semiconductors",
+        "OEMs",
+        "NEV makers",
+        "electronics distributors"
+      ],
+      "contradictionSearchNotes": "Scarcity does not automatically imply listed chip suppliers have pricing power or material automotive exposure. Company-level auto-semiconductor revenue/earnings conversion is mandatory.",
+      "researchQuestion": "Is there an A-share auto-semiconductor supplier with auditable automotive exposure and realized scarcity-to-profit conversion?"
+    },
+    {
+      "eventId": "event-2021q3-dram-downcycle",
+      "statement": "DRAM moved from shortage to inventory-led downcycle during Q3: spot prices fell, client inventories became excessive and broad contract-price declines were projected for Q4.",
+      "changeType": "cyclical_price_reversal_down",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-08-10T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20210810",
+        "tf-dram-20210922"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-q3-2021"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory designers",
+        "modules",
+        "PC/server OEMs"
+      ],
+      "contradictionSearchNotes": "This is a negative industry signal. Deep research should fail closed unless a company has genuinely differentiated exposure or a contrary verified earnings path.",
+      "researchQuestion": "Should the Skill explicitly avoid memory names despite still-good trailing financials?"
+    },
+    {
+      "eventId": "event-2021q3-manufacturing-demand-slowdown",
+      "statement": "By August, manufacturing expansion had slowed close to stall speed, new orders were below 50 and supplier delivery times remained extended, providing a weak-demand backdrop before the late-Q3 power shock.",
+      "changeType": "macro_demand_softening",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-08-31T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20210831"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202108"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "exporters",
+        "industrial inputs"
+      ],
+      "contradictionSearchNotes": "Macro context only; too broad for direct stock selection.",
+      "researchQuestion": "Use as contradiction and duration context for shipping, auto and power theses."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-shipping-20210831",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen aligned shipping price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q3-multisource-v1.2-001/regime/shipping-20210831.snapshot.json",
+      "publishedAt": "2021-08-31T15:00:00+08:00",
+      "availableAt": "2021-08-31T15:00:00+08:00",
+      "normalizedClaims": [
+        "Shipping basket 20d excess +5.70pp and 60d +29.15pp; favorable. 中远海控 20d excess +6.88pp and 60d +54.61pp: sustained_strength."
+      ]
+    },
+    {
+      "id": "regime-coal-20210927",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen coal price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q3-multisource-v1.2-001/regime/coal-20210927.snapshot.json",
+      "publishedAt": "2021-09-27T15:00:00+08:00",
+      "availableAt": "2021-09-27T15:00:00+08:00",
+      "normalizedClaims": [
+        "Coal basket 20d excess +76.39pp and 60d +247.05pp; breadth 100%/100%. 中国神华 20d +54.16pp and 60d +78.86pp, sustained_strength; 兖矿 60d excess exceeded +557pp."
+      ]
+    },
+    {
+      "id": "regime-autochip-20210910",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen auto-chip price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q3-multisource-v1.2-001/regime/autochip-20210910.snapshot.json",
+      "publishedAt": "2021-09-10T15:00:00+08:00",
+      "availableAt": "2021-09-10T15:00:00+08:00",
+      "normalizedClaims": [
+        "Auto-chip basket 20d excess -4.82pp and 60d +15.54pp; neutral. 士兰微 and 斯达半导 were late_reversal; 韦尔股份 was de_rated."
+      ]
+    },
+    {
+      "id": "regime-dram-20210922",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen DRAM price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q3-multisource-v1.2-001/regime/dram-20210922.snapshot.json",
+      "publishedAt": "2021-09-22T15:00:00+08:00",
+      "availableAt": "2021-09-22T15:00:00+08:00",
+      "normalizedClaims": [
+        "DRAM basket 20d excess -13.51pp and 60d +19.29pp; neutral. All three names underperformed the benchmark over 20d; 兆易创新 was de_rated while 北京君正/国科微 were late_reversal."
+      ]
+    },
+    {
+      "id": "cosco-h1-20210831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中远海控2021年半年度报告",
+      "publisher": "中远海控",
+      "url": "https://finance.sina.com.cn/stock/s/2021-08-31/doc-iktzqtyt3157251.shtml",
+      "publishedAt": "2021-08-31T09:55:00+08:00",
+      "availableAt": "2021-08-31T09:55:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB139.264bn +88.06%; attributable profit RMB37.098bn +3162.31%;扣非 profit +4096.43%; H1 profit was already 3.7x full-year 2020 profit."
+      ]
+    },
+    {
+      "id": "cosco-forecast-20210831",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "中远海控：预测全年净利润近千亿 上调目标价至36元",
+      "publisher": "中信建投 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/company/rptid/683716163115/index.phtml",
+      "publishedAt": "2021-08-31T00:00:00+08:00",
+      "availableAt": "2021-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2021/22/23 profit RMB95.8/76.5/61.3bn, implying -20%/-20% profit declines after the 2021 peak; forecast shipping imbalance to persist into 2022. Report used EV/EBITDA 2.3x versus peer average 3.78x and target RMB36."
+      ]
+    },
+    {
+      "id": "zhonggu-h1-20210810",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中谷物流2021年半年度报告",
+      "publisher": "中谷物流",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7423295&stockid=603565",
+      "publishedAt": "2021-08-10T00:00:00+08:00",
+      "availableAt": "2021-08-10T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +26.23%; profit +342.90%;扣非 +254.39%; CFO +90.71%. Roughly RMB471m of H1 profit came from disposal of four used container ships, reducing comparability of headline profit."
+      ]
+    },
+    {
+      "id": "cmshipping-h1-20210828",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "招商轮船2021年半年度报告",
+      "publisher": "招商轮船",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7476484&stockid=601872",
+      "publishedAt": "2021-08-28T00:00:00+08:00",
+      "availableAt": "2021-08-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue -21.96%; attributable profit -68.81%; CFO -53.03%, showing much weaker exposure to the container-rate boom."
+      ]
+    },
+    {
+      "id": "shenhua-h1-20210828",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中国神华2021年半年度报告",
+      "publisher": "中国神华",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7500498&stockid=601088",
+      "publishedAt": "2021-08-28T00:00:00+08:00",
+      "availableAt": "2021-08-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB144.0bn +37.1%; attributable profit about RMB26.0bn +26%; Q2 attributable profit about RMB14.4bn, +24.1% sequentially."
+      ]
+    },
+    {
+      "id": "shenhua-forecast-20210829",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "中国神华中报点评：业绩同比大增，煤炭龙头低估值凸显",
+      "publisher": "开源证券 via 东方财富",
+      "url": "https://data.eastmoney.com/report/info/AP202108291513132687.html",
+      "publishedAt": "2021-08-29T00:00:00+08:00",
+      "availableAt": "2021-08-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2021/22/23 profit RMB49.7/50.3/50.7bn, growth +26.9%/+1.2%/+0.7%; PE about 7.3x/7.2x/7.1x. This is a stable normalized path, not an accelerating outer-year path."
+      ]
+    },
+    {
+      "id": "yankuang-h1-20210828",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "兖州煤业2021年半年度报告",
+      "publisher": "兖州煤业",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7500548&stockid=600188",
+      "publishedAt": "2021-08-28T00:00:00+08:00",
+      "availableAt": "2021-08-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 attributable profit RMB6.042bn +13.75%;扣非 +104.28%; CFO +436.74%."
+      ]
+    },
+    {
+      "id": "shaanxi-h1-20210831",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "陕西煤业2021年半年度报告",
+      "publisher": "陕西煤业",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7506795&stockid=601225",
+      "publishedAt": "2021-08-31T00:00:00+08:00",
+      "availableAt": "2021-08-31T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue +87.24%; attributable profit +66.10%;扣非 +79.55%."
+      ]
+    },
+    {
+      "id": "silan-h1-20210830",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "士兰微2021年半年度报告",
+      "publisher": "士兰微",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7443108&stockid=600460",
+      "publishedAt": "2021-08-30T00:00:00+08:00",
+      "availableAt": "2021-08-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 electric-vehicle motor-drive IGBT modules had begun batch supply at some domestic customers; total IGBT revenue exceeded RMB190m and grew over 110%, but the company also benefited broadly from white goods, industrial control, MEMS and other products."
+      ]
+    },
+    {
+      "id": "star-h1-20210830",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "斯达半导2021年半年度报告",
+      "publisher": "斯达半导",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7506042&stockid=603290",
+      "publishedAt": "2021-08-30T00:00:00+08:00",
+      "availableAt": "2021-08-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue about RMB720m +72.6%; attributable profit about RMB150m +90.9%; strong IGBT demand existed, but the frozen event evidence did not isolate how much of the earnings acceleration was specifically caused by the automotive semiconductor shortage."
+      ]
+    },
+    {
+      "id": "giga-h1-20210830",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "兆易创新：业绩超预期 国产替代需求助力公司高成长",
+      "publisher": "国联民生证券 via 新浪财经",
+      "url": "https://stock.finance.sina.com.cn/stock/go.php/vReport_Show/kind/company/rptid/683637627390/index.phtml",
+      "publishedAt": "2021-08-30T00:00:00+08:00",
+      "availableAt": "2021-08-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "H1 revenue RMB3.641bn +119.62%; profit RMB786m +116.44%;扣非 +137.6%; CFO RMB808m. Forecast 2021/22/23 profit RMB1.806/2.352/2.731bn. Growth was driven by NOR Flash and MCU as well as emerging DRAM, so a DRAM-only event map would be incomplete."
+      ]
+    }
+  ]
+}
