@@ -516,10 +516,10 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
           memo?.timingRoute === 'company_engine_override';
         if (!v10EngineOverride) {
           if (timing.overallConclusion !== 'favorable') {
-            errors.push(`${memoPath} High-priority selection requires favorable opportunity timing unless a valid v1.0 company-engine override is used`);
+            errors.push(`${memoPath} High-priority selection requires favorable opportunity timing unless a valid v1.1 company-engine override is used`);
           }
           if (timing?.priceRegime?.conclusion !== 'favorable') {
-            errors.push(`${memoPath} High-priority selection requires favorable pre-cutoff industry price regime unless a valid v1.0 company-engine override is used`);
+            errors.push(`${memoPath} High-priority selection requires favorable pre-cutoff industry price regime unless a valid v1.1 company-engine override is used`);
           }
         }
         if (!['accelerating', 'persistent'].includes(timing?.fundamentalImpulse?.conclusion)) {
