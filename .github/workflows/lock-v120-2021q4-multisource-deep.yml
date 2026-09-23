@@ -1,0 +1,38 @@
+name: lock-v120-2021q4-multisource-deep
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.2-20260923
+    paths:
+      - .github/workflows/lock-v120-2021q4-multisource-deep.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.2-20260923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Lock v1.2 2021Q4 deep holdout
+        run: |
+          node scripts/lock-skill-run-v120.cjs \
+            backtests/runs/2021q4-multisource-deep-v1.2-001/manifest.json \
+            backtests/runs/2021q4-multisource-deep-v1.2-001/lock.json
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2021q4-multisource-deep-v1.2-001/lock.json
+          git commit -m "backtest: lock v1.2 2021Q4 deep holdout"
+          git pull --rebase origin ai-skill-v1.2-20260923
+          git push origin HEAD:ai-skill-v1.2-20260923
