@@ -1,0 +1,743 @@
+{
+  "schemaVersion": "1.1",
+  "evaluatorVersion": "0.6.1-partial-horizons",
+  "runId": "2021q1-multisource-deep-v1.2-001",
+  "evaluatedAt": "2026-09-23T09:30:58.670Z",
+  "frozenLockSha256": "6004c104118256b068eff3b5ad3855a5182fe45406d899d72c5d078dace33884",
+  "priceSource": {
+    "provider": "Tencent public daily kline",
+    "fetchedAt": "2026-09-23T09:30:54.631Z",
+    "path": "backtests/runs/2021q1-multisource-deep-v1.2-001/prices.json"
+  },
+  "hypothesisMemoSummary": {
+    "count": 3,
+    "highPriorityHypothesisCount": 3,
+    "researchHypothesisCount": 0,
+    "noSelectionCount": 1,
+    "researchSelectionCount": 2,
+    "highPrioritySelectionCount": 0,
+    "rows": [
+      {
+        "memoPath": "backtests/runs/2021q1-multisource-deep-v1.2-001/memos/h-2021q1-rareearth-shenghe.json",
+        "hypothesisId": "h-2021q1-rareearth-shenghe",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2021q1-multisource-deep-v1.2-001/memos/h-2021q1-polysilicon-tongwei.json",
+        "hypothesisId": "h-2021q1-polysilicon-tongwei",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2021q1-multisource-deep-v1.2-001/memos/h-2021q1-auto-chip-shortage.json",
+        "hypothesisId": "h-2021q1-auto-chip-shortage",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      }
+    ]
+  },
+  "results": [
+    {
+      "hypothesisId": "h-2021q1-rareearth-shenghe",
+      "ticker": "600392.SH",
+      "memoPath": "backtests/runs/2021q1-multisource-deep-v1.2-001/memos/h-2021q1-rareearth-shenghe.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "600392.SH",
+        "pairwise": [
+          {
+            "controlTicker": "600111.SH",
+            "selectedAdvantages": [
+              "explicit 2021-22 forecast path",
+              "broader resource/trading exposure"
+            ],
+            "selectedDisadvantages": [
+              "北方稀土 has dominant light-rare-earth quota/resource scale"
+            ],
+            "evidenceRefs": [
+              "shenghe-path-20210218",
+              "reuters-rareearth-quota-20210219"
+            ],
+            "switchCondition": "Prefer 北方 if its quota/cost advantage produces a clearly better normalized multi-year path after price normalization.",
+            "netEdge": "mixed"
+          },
+          {
+            "controlTicker": "000831.SZ",
+            "selectedAdvantages": [
+              "stronger frozen forecast visibility"
+            ],
+            "selectedDisadvantages": [
+              "五矿 may have purer heavy-rare-earth scarcity torque"
+            ],
+            "evidenceRefs": [
+              "shenghe-path-20210218",
+              "regime-rareearth-20210326"
+            ],
+            "switchCondition": "Prefer 五矿 if heavy-rare-earth earnings durability is independently verified.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "mixed",
+        "rationale": "盛和 is a research representative, not a clear cross-sectional winner after the rerating."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2021-03-26T20:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2021-03-26T20:00:00+08:00",
+      "entryDate": "2021-03-29",
+      "entryAdjustedOpen": 14.92,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Rare-earth price/volume can flow into earnings quickly, but the 60d rerating and supply response make the base horizon an expectation-absorption test."
+      },
+      "matchedControls": [
+        {
+          "ticker": "600111.SH",
+          "name": "北方稀土",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large listed rare-earth producer exposed to the same price surge.",
+          "whySelectedCompanyShouldOutperform": "盛和 had an explicit contemporaneous earnings path and global resource/trading exposure, while 北方稀土 also benefited from higher quotas that could dilute price scarcity.",
+          "evidenceRefs": [
+            "shenghe-path-20210218",
+            "reuters-rareearth-quota-20210219",
+            "regime-rareearth-20210326"
+          ]
+        },
+        {
+          "ticker": "000831.SZ",
+          "name": "五矿稀土",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Listed rare-earth producer exposed to the same supply/pricing cycle.",
+          "whySelectedCompanyShouldOutperform": "盛和's frozen 2021-22 growth path is more explicit, though all peers share late-cycle price risk.",
+          "evidenceRefs": [
+            "shenghe-path-20210218",
+            "regime-rareearth-20210326"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": -0.0006369426751592355
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2021-04-26",
+          "netReturn": 0.08562817879171769,
+          "benchmarkReturn": 0.004944321947009778,
+          "excessReturn": 0.08068385684470791,
+          "matchedControlBasketReturn": 0.03846626722536706,
+          "matchedControlExcess": 0.047161911566350634,
+          "bestControlTicker": "600111.SH",
+          "bestControlReturn": 0.08948457908079988,
+          "excessVsBestControl": -0.0038564002890821847,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600111.SH",
+              "controlType": "peer",
+              "netReturn": 0.08948457908079988
+            },
+            {
+              "ticker": "000831.SZ",
+              "controlType": "peer",
+              "netReturn": -0.012552044630065762
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.13625450180072018,
+            "peakDate": "2021-03-31",
+            "troughDate": "2021-04-13"
+          }
+        },
+        "60": {
+          "exitDate": "2021-06-25",
+          "netReturn": 0.11238426452903694,
+          "benchmarkReturn": 0.037153669842802994,
+          "excessReturn": 0.07523059468623394,
+          "matchedControlBasketReturn": 0.11136469060483434,
+          "matchedControlExcess": 0.0010195739242025992,
+          "bestControlTicker": "000831.SZ",
+          "bestControlReturn": 0.12875485949923404,
+          "excessVsBestControl": -0.016370594970197105,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600111.SH",
+              "controlType": "peer",
+              "netReturn": 0.09397452171043463
+            },
+            {
+              "ticker": "000831.SZ",
+              "controlType": "peer",
+              "netReturn": 0.12875485949923404
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.17341699942954947,
+            "peakDate": "2021-05-10",
+            "troughDate": "2021-05-24"
+          }
+        },
+        "120": {
+          "exitDate": "2021-09-17",
+          "netReturn": 0.6816199885904983,
+          "benchmarkReturn": -0.038857857671616425,
+          "excessReturn": 0.7204778462621148,
+          "matchedControlBasketReturn": 1.5689851388395253,
+          "matchedControlExcess": -0.887365150249027,
+          "bestControlTicker": "600111.SH",
+          "bestControlReturn": 1.7468346522446176,
+          "excessVsBestControl": -1.0652146636541193,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "600111.SH",
+              "controlType": "peer",
+              "netReturn": 1.7468346522446176
+            },
+            {
+              "ticker": "000831.SZ",
+              "controlType": "peer",
+              "netReturn": 1.391135625434433
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.19875776397515532,
+            "peakDate": "2021-08-06",
+            "troughDate": "2021-08-18"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-06-25",
+        "netReturn": 0.11238426452903694,
+        "benchmarkReturn": 0.037153669842802994,
+        "excessReturn": 0.07523059468623394,
+        "matchedControlBasketReturn": 0.11136469060483434,
+        "matchedControlExcess": 0.0010195739242025992,
+        "bestControlTicker": "000831.SZ",
+        "bestControlReturn": 0.12875485949923404,
+        "excessVsBestControl": -0.016370594970197105,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 3,
+        "rankPercentile": 0.5,
+        "controlReturns": [
+          {
+            "ticker": "600111.SH",
+            "controlType": "peer",
+            "netReturn": 0.09397452171043463
+          },
+          {
+            "ticker": "000831.SZ",
+            "controlType": "peer",
+            "netReturn": 0.12875485949923404
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.17341699942954947,
+          "peakDate": "2021-05-10",
+          "troughDate": "2021-05-24"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2021q1-polysilicon-tongwei",
+      "ticker": "600438.SH",
+      "memoPath": "backtests/runs/2021q1-multisource-deep-v1.2-001/memos/h-2021q1-polysilicon-tongwei.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "600438.SH",
+        "pairwise": [
+          {
+            "controlTicker": "600089.SH",
+            "selectedAdvantages": [
+              "cleaner polysilicon cost/volume thesis",
+              "locked 2021 capacity"
+            ],
+            "selectedDisadvantages": [
+              "TBEA has diversified power/coal optionality"
+            ],
+            "evidenceRefs": [
+              "tongwei-path-20210122",
+              "regime-polysilicon-20210326"
+            ],
+            "switchCondition": "Prefer TBEA if its polysilicon plus diversified earnings path is independently stronger at lower burden.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "601012.SH",
+            "selectedAdvantages": [
+              "direct beneficiary of polysilicon scarcity",
+              "low cost"
+            ],
+            "selectedDisadvantages": [
+              "LONGi has stronger downstream franchise if cost pass-through succeeds"
+            ],
+            "evidenceRefs": [
+              "tongwei-path-20210122",
+              "pvmag-polysilicon-20210303"
+            ],
+            "switchCondition": "Prefer LONGi if downstream pricing power fully absorbs silicon inflation and Tongwei price upside proves transient.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "credible",
+        "rationale": "Tongwei is the clearest upstream scarcity expression, but lack of realized Q1 earnings and adverse sector timing keep it Research."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2021-03-26T20:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2021-03-26T20:00:00+08:00",
+      "entryDate": "2021-03-29",
+      "entryAdjustedOpen": 27.188,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Locked capacity and spot-price economics can affect Q1/H1 profit quickly, while later profitability depends on new industry capacity."
+      },
+      "matchedControls": [
+        {
+          "ticker": "600089.SH",
+          "name": "特变电工",
+          "controlType": "peer",
+          "fairCounterfactualReason": "A-share company with polysilicon exposure through Xinte.",
+          "whySelectedCompanyShouldOutperform": "Tongwei had a cleaner frozen low-cost/locked-volume polysilicon thesis, while TBEA had more mixed business drivers.",
+          "evidenceRefs": [
+            "tongwei-path-20210122",
+            "regime-polysilicon-20210326"
+          ]
+        },
+        {
+          "ticker": "601012.SH",
+          "name": "隆基绿能",
+          "controlType": "sector_proxy",
+          "fairCounterfactualReason": "Leading downstream PV company exposed to the same end-demand but opposite upstream-cost incidence.",
+          "whySelectedCompanyShouldOutperform": "Tongwei should capture upstream scarcity margins while module/wafer economics face raw-material pressure.",
+          "evidenceRefs": [
+            "pvmag-polysilicon-20210303",
+            "infolink-polysilicon-20210317",
+            "tongwei-path-20210122"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.0021854511395567044
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2021-04-26",
+          "netReturn": 0.08573279008765278,
+          "benchmarkReturn": 0.004944321947009778,
+          "excessReturn": 0.080788468140643,
+          "matchedControlBasketReturn": 0.07989817130418742,
+          "matchedControlExcess": 0.005834618783465362,
+          "bestControlTicker": "601012.SH",
+          "bestControlReturn": 0.13827960964733332,
+          "excessVsBestControl": -0.052546819559680547,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600089.SH",
+              "controlType": "peer",
+              "netReturn": 0.021516732961041507
+            },
+            {
+              "ticker": "601012.SH",
+              "controlType": "sector_proxy",
+              "netReturn": 0.13827960964733332
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.10849476350195086,
+            "peakDate": "2021-04-06",
+            "troughDate": "2021-04-13"
+          }
+        },
+        "60": {
+          "exitDate": "2021-06-25",
+          "netReturn": 0.26380060281046047,
+          "benchmarkReturn": 0.037153669842802994,
+          "excessReturn": 0.22664693296765748,
+          "matchedControlBasketReturn": 0.32325561051577256,
+          "matchedControlExcess": -0.05945500770531209,
+          "bestControlTicker": "601012.SH",
+          "bestControlReturn": 0.5110854472948778,
+          "excessVsBestControl": -0.24728484448441734,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600089.SH",
+              "controlType": "peer",
+              "netReturn": 0.1354257737366673
+            },
+            {
+              "ticker": "601012.SH",
+              "controlType": "sector_proxy",
+              "netReturn": 0.5110854472948778
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.19479904119516145,
+            "peakDate": "2021-05-19",
+            "troughDate": "2021-06-16"
+          }
+        },
+        "120": {
+          "exitDate": "2021-09-17",
+          "netReturn": 0.642621428887429,
+          "benchmarkReturn": -0.038857857671616425,
+          "excessReturn": 0.6814792865590454,
+          "matchedControlBasketReturn": 0.9779999782989164,
+          "matchedControlExcess": -0.33537854941148737,
+          "bestControlTicker": "600089.SH",
+          "bestControlReturn": 1.5507379707196112,
+          "excessVsBestControl": -0.9081165418321822,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600089.SH",
+              "controlType": "peer",
+              "netReturn": 1.5507379707196112
+            },
+            {
+              "ticker": "601012.SH",
+              "controlType": "sector_proxy",
+              "netReturn": 0.4052619858782216
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.21807125757919932,
+            "peakDate": "2021-09-02",
+            "troughDate": "2021-09-17"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-06-25",
+        "netReturn": 0.26380060281046047,
+        "benchmarkReturn": 0.037153669842802994,
+        "excessReturn": 0.22664693296765748,
+        "matchedControlBasketReturn": 0.32325561051577256,
+        "matchedControlExcess": -0.05945500770531209,
+        "bestControlTicker": "601012.SH",
+        "bestControlReturn": 0.5110854472948778,
+        "excessVsBestControl": -0.24728484448441734,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 3,
+        "rankPercentile": 0.5,
+        "controlReturns": [
+          {
+            "ticker": "600089.SH",
+            "controlType": "peer",
+            "netReturn": 0.1354257737366673
+          },
+          {
+            "ticker": "601012.SH",
+            "controlType": "sector_proxy",
+            "netReturn": 0.5110854472948778
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.19479904119516145,
+          "peakDate": "2021-05-19",
+          "troughDate": "2021-06-16"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "tickerLevel": {
+      "20": {
+        "count": 2,
+        "meanNetReturn": 0.08568048443968523,
+        "medianNetReturn": 0.08568048443968523,
+        "meanExcessReturn": 0.08073616249267546,
+        "medianExcessReturn": 0.08073616249267546,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": 0.026498265174907998,
+        "medianMatchedControlExcess": 0.026498265174907998,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.028201609924381366,
+        "medianExcessVsBestControl": -0.028201609924381366,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 2,
+        "meanNetReturn": 0.1880924336697487,
+        "medianNetReturn": 0.1880924336697487,
+        "meanExcessReturn": 0.1509387638269457,
+        "medianExcessReturn": 0.1509387638269457,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": -0.029217716890554746,
+        "medianMatchedControlExcess": -0.029217716890554746,
+        "matchedControlHitRate": 0.5,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.13182771972730722,
+        "medianExcessVsBestControl": -0.13182771972730722,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 2,
+        "meanNetReturn": 0.6621207087389637,
+        "medianNetReturn": 0.6621207087389637,
+        "meanExcessReturn": 0.7009785664105801,
+        "medianExcessReturn": 0.7009785664105801,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": -0.6113718498302572,
+        "medianMatchedControlExcess": -0.6113718498302572,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.9866656027431507,
+        "medianExcessVsBestControl": -0.9866656027431507,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.25,
+        "blockedEntryCount": 0
+      }
+    },
+    "hypothesisLevel": {
+      "20": {
+        "count": 2,
+        "meanNetReturn": 0.08568048443968523,
+        "medianNetReturn": 0.08568048443968523,
+        "meanExcessReturn": 0.08073616249267546,
+        "medianExcessReturn": 0.08073616249267546,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 2,
+        "meanNetReturn": 0.1880924336697487,
+        "medianNetReturn": 0.1880924336697487,
+        "meanExcessReturn": 0.1509387638269457,
+        "medianExcessReturn": 0.1509387638269457,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 2,
+        "meanNetReturn": 0.6621207087389637,
+        "medianNetReturn": 0.6621207087389637,
+        "meanExcessReturn": 0.7009785664105801,
+        "medianExcessReturn": 0.7009785664105801,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryTickerLevel": {
+      "20": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      }
+    },
+    "primaryHypothesisLevel": {
+      "20": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      },
+      "60": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      },
+      "120": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      }
+    },
+    "primaryThesisBase": {
+      "count": 0,
+      "pendingBaseCount": 0,
+      "meanNetReturn": null,
+      "medianNetReturn": null,
+      "meanExcessReturn": null,
+      "medianExcessReturn": null,
+      "excessHitRate": null,
+      "matchedControlCount": 0,
+      "meanMatchedControlExcess": null,
+      "medianMatchedControlExcess": null,
+      "matchedControlHitRate": null,
+      "bestControlCount": 0,
+      "meanExcessVsBestControl": null,
+      "medianExcessVsBestControl": null,
+      "winsAllControlsRate": null,
+      "meanRankPercentile": null
+    }
+  },
+  "hypothesisResults": [
+    {
+      "hypothesisId": "h-2021q1-rareearth-shenghe",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.08562817879171769,
+          "excessReturn": 0.08068385684470791
+        },
+        "60": {
+          "netReturn": 0.11238426452903694,
+          "excessReturn": 0.07523059468623394
+        },
+        "120": {
+          "netReturn": 0.6816199885904983,
+          "excessReturn": 0.7204778462621148
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2021q1-polysilicon-tongwei",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.08573279008765278,
+          "excessReturn": 0.080788468140643
+        },
+        "60": {
+          "netReturn": 0.26380060281046047,
+          "excessReturn": 0.22664693296765748
+        },
+        "120": {
+          "netReturn": 0.642621428887429,
+          "excessReturn": 0.6814792865590454
+        }
+      }
+    }
+  ],
+  "primaryHypothesisResults": []
+}
