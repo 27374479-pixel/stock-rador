@@ -1,0 +1,239 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-08-25T23:59:59+08:00",
+  "researchReadyAt": "2022-08-25T21:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2022q3-drought-power-scarcity",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Weather-driven generation scarcity could affect power volumes/pricing within weeks, but durability and company economics were unresolved."
+  },
+  "changeHypothesis": {
+    "summary": "Sichuan/Chongqing drought and heat caused real industrial curtailments and thermal balancing demand, but power stocks had already rerated dramatically before cutoff while H1 thermal economics remained weak or loss-making.",
+    "firstCredibleDate": "2022-08-15",
+    "valueChain": [
+      "drought/hydropower shortfall",
+      "thermal balancing demand",
+      "generation/utilization",
+      "fuel cost",
+      "power earnings"
+    ],
+    "persistenceReason": "The physical shock was real but weather-driven and likely short-lived.",
+    "disconfirmingEvidence": [
+      "华能 H1 lost RMB3.0bn due high coal costs.",
+      "华电 H1 attributable profit -51%.",
+      "Power basket already outperformed CSI300 by ~30pp over 20d and ~40pp over 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-sichuan-20220815",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-chongqing-20220825",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-power-20220825",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "huaneng-h1-20220818",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "huadian-h1-20220827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "guodian-h1-20220823",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "drought/heat",
+      "to": "hydropower shortfall and thermal balancing",
+      "mechanism": "Lower hydro output plus record cooling demand increases thermal generation need.",
+      "evidenceRefs": [
+        "reuters-sichuan-20220815",
+        "reuters-chongqing-20220825"
+      ],
+      "failureMode": "weather normalizes quickly",
+      "lag": "days-weeks"
+    },
+    {
+      "from": "thermal generation",
+      "to": "listed power earnings",
+      "mechanism": "Extra utilization only helps if tariff/fuel spread is positive.",
+      "evidenceRefs": [
+        "huaneng-h1-20220818",
+        "huadian-h1-20220827",
+        "guodian-h1-20220823"
+      ],
+      "failureMode": "high coal costs absorb volume benefit",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "thermal generators with positive fuel/tariff spread"
+    ],
+    "secondOrderWinners": [
+      "coal suppliers"
+    ],
+    "losers": [
+      "hydro-dependent industrial users"
+    ],
+    "substitutes": [
+      "interprovincial imports",
+      "demand response"
+    ],
+    "bottlenecks": [
+      "coal/fuel cost",
+      "grid dispatch"
+    ],
+    "falseThemeMatches": [
+      "power names rallying on scarcity despite weak generation economics"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "verifiedExposure": "Large thermal generator, but H1 was loss-making because coal procurement costs rose sharply.",
+      "evidenceRefs": [
+        "huaneng-h1-20220818"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 attributable loss RMB3.0bn.",
+        "favorable": "higher utilization plus easing coal costs.",
+        "adverse": "coal costs stay high."
+      },
+      "principalRisks": [
+        "negative spread",
+        "weather normalization"
+      ]
+    },
+    {
+      "ticker": "600027.SH",
+      "name": "华电国际",
+      "verifiedExposure": "Thermal-heavy utility, but H1 attributable profit fell 51%.",
+      "evidenceRefs": [
+        "huadian-h1-20220827"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit RMB1.645bn -51%.",
+        "favorable": "generation/tariff improve.",
+        "adverse": "fuel spread remains poor."
+      },
+      "principalRisks": [
+        "already rerated",
+        "fuel cost"
+      ]
+    },
+    {
+      "ticker": "600795.SH",
+      "name": "国电电力",
+      "verifiedExposure": "Diversified utility; H1 thermal profit small and renewables contributed much of earnings.",
+      "evidenceRefs": [
+        "guodian-h1-20220823"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 attributable profit down ~22%.",
+        "favorable": "thermal utilization and renewable contribution improve.",
+        "adverse": "thermal spread weak."
+      },
+      "principalRisks": [
+        "impure event exposure"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Physical scarcity is real, but no candidate combines durable positive earnings conversion with unabsorbed price expectations."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Power equities had already surged: 华电 +71pp versus CSI300 over 60d, 华能 +22pp, 国电 +27pp, while H1 thermal economics remained weak.",
+    "thesisExpectation": "Short-term scarcity could lift utilization.",
+    "measurableGap": "No credible remaining expectation gap after the rerating and weak fuel spread.",
+    "evidenceRefs": [
+      "regime-power-20220825",
+      "huaneng-h1-20220818",
+      "huadian-h1-20220827",
+      "guodian-h1-20220823"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "fully_priced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: short-duration weather shock, weak H1 thermal economics and extreme prior rerating.",
+    "alreadyPricedAssessment": "highly absorbed",
+    "constraints": [
+      "weather half-life",
+      "coal costs",
+      "sustained price strength"
+    ]
+  },
+  "bearCase": "Weather normalizes before extra generation creates material profit, while already-rerated power stocks mean-revert.",
+  "invalidationConditions": [
+    {
+      "indicator": "weather/power curbs",
+      "observationMethod": "grid/government updates",
+      "threshold": "curbs normalize"
+    },
+    {
+      "indicator": "thermal fuel spread",
+      "observationMethod": "company reporting",
+      "threshold": "no profit improvement"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "plant-level dispatch",
+    "short-term coal/tariff spread"
+  ],
+  "nextResearchActions": [
+    "No selection. Require durable realized spread improvement before revisiting."
+  ]
+}
