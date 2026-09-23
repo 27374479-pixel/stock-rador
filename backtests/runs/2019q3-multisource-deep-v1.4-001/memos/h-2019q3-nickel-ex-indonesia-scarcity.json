@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.4.0",
+  "cutoffAt": "2019-09-30T23:59:59+08:00",
+  "researchReadyAt": "2019-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q3-nickel-ex-indonesia-scarcity",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Ore scarcity can support non-Indonesian resource owners from 2020, but the frozen A-share candidate set lacks a clean realized non-Indonesian nickel miner."
+  },
+  "changeHypothesis": {
+    "summary": "The export ban should tighten seaborne ore outside Indonesia, but the frozen A-share names are mostly processors/project developers rather than clean operating non-Indonesian nickel mines.",
+    "firstCredibleDate": "2019-09-02",
+    "valueChain": [
+      "Indonesian export ban",
+      "seaborne ore scarcity",
+      "non-Indonesian resource rent",
+      "earnings"
+    ],
+    "persistenceReason": "Policy starts Jan 2020 and can persist, subject to substitute supply.",
+    "disconfirmingEvidence": [
+      "No frozen candidate has a clean realized non-Indonesian nickel-resource earnings bridge."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nickel-ban-20190902",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-nickel-20190930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "export ban",
+      "to": "ex-Indonesia ore scarcity",
+      "mechanism": "Removal of Indonesian exports reduces seaborne supply.",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ],
+      "failureMode": "substitute ore supply fills gap",
+      "lag": "months"
+    },
+    {
+      "from": "scarcity",
+      "to": "A-share earnings",
+      "mechanism": "Requires an operating non-Indonesian nickel resource owner.",
+      "evidenceRefs": [
+        "regime-nickel-20190930"
+      ],
+      "failureMode": "no clean expression",
+      "lag": "unresolved"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "operating non-Indonesian nickel miners"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "ore importers"
+    ],
+    "substitutes": [
+      "Philippine ore",
+      "scrap"
+    ],
+    "bottlenecks": [
+      "resource ownership"
+    ],
+    "falseThemeMatches": [
+      "Indonesian project developers treated as ex-Indonesia miners"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: the causal opportunity lacks a clean frozen A-share expression."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Generic nickel theme was neutral and does not solve the mapping gap.",
+    "thesisExpectation": "Require operating resource exposure outside Indonesia.",
+    "measurableGap": "No frozen expression.",
+    "evidenceRefs": [
+      "nickel-ban-20190902",
+      "regime-nickel-20190930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "seaborne nickel ore outside Indonesia",
+    "geographicScope": "ex-Indonesia",
+    "customerScope": "ore importers/processors",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [
+      "h-2019q3-nickel-indonesia-processing"
+    ],
+    "rationale": "This child isolates the scarcity mechanism from local Indonesian processing.",
+    "evidenceRefs": [
+      "nickel-ban-20190902"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "policy shock reprices future ore scarcity",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "export halt reduces seaborne supply",
+      "horizon": "from Jan 2020",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "substitute supply and processing shifts can offset scarcity",
+      "horizon": "multi-year",
+      "evidenceRefs": [
+        "nickel-ban-20190902"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep resource scarcity distinct from Indonesian processing; expression gap remains a fail-closed condition.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No company-specific operating resource evidence is frozen.",
+    "evidenceRefs": [
+      "regime-nickel-20190930"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "expression_missing",
+    "constraints": [
+      "no direct A-share resource owner"
+    ]
+  },
+  "bearCase": "A generic nickel proxy rises for unrelated reasons and falsely validates the scarcity thesis.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct resource ownership",
+      "observationMethod": "company filing",
+      "threshold": "operating material non-Indonesian nickel exposure"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection unless a direct resource expression is independently verified."
+  ]
+}
