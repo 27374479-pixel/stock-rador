@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2020q2-truck-20200630",
+  "cutoffDate": "2020-06-30",
+  "fetchedAt": "2026-09-23T11:29:21.015Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "000951.SZ",
+    "000338.SZ"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2020-05-29",
+      "endDate": "2020-06-30",
+      "return": 0.07678781076901586
+    },
+    "60": {
+      "startDate": "2020-03-30",
+      "endDate": "2020-06-30",
+      "return": 0.13332480519091705
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "000951.SZ",
+        "startDate": "2020-05-29",
+        "endDate": "2020-06-30",
+        "return": 0.22973247544869624,
+        "benchmarkReturn": 0.07678781076901586,
+        "excessReturn": 0.15294466467968038
+      },
+      {
+        "ticker": "000338.SZ",
+        "startDate": "2020-05-29",
+        "endDate": "2020-06-30",
+        "return": 0.04612375030911098,
+        "benchmarkReturn": 0.07678781076901586,
+        "excessReturn": -0.030664060459904885
+      }
+    ],
+    "60": [
+      {
+        "ticker": "000951.SZ",
+        "startDate": "2020-03-30",
+        "endDate": "2020-06-30",
+        "return": 0.5257726760894774,
+        "benchmarkReturn": 0.13332480519091705,
+        "excessReturn": 0.39244787089856037
+      },
+      {
+        "ticker": "000338.SZ",
+        "startDate": "2020-03-30",
+        "endDate": "2020-06-30",
+        "return": 0.12143016061614498,
+        "benchmarkReturn": 0.13332480519091705,
+        "excessReturn": -0.011894644574772073
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": 0.061140302109887745,
+    "lookback60Excess": 0.19027661316189415,
+    "positiveBreadth20": 0.5,
+    "positiveBreadth60": 0.5
+  },
+  "conclusion": "favorable",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2020-01-02,2020-06-30,300,hfq",
+    "000951.SZ": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz000951,day,2020-01-02,2020-06-30,300,hfq",
+    "000338.SZ": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz000338,day,2020-01-02,2020-06-30,300,hfq"
+  }
+}
