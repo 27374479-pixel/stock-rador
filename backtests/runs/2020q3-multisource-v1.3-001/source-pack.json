@@ -1,0 +1,377 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2020q3-multisource-v1.3-001",
+  "cutoffAt": "2020-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2020Q3 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China auto and manufacturing recovery evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on CAAM and NBS releases available by quarter-end."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable solar and DRAM supply/demand/pricing conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Cross-check gold macro/market regime.",
+      "coverageStatus": "partial",
+      "limitations": "Uses Reuters syndicated reporting for historical accessibility."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist solar/memory market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses TrendForce releases."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-gold-20200805",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Stunned by gold's record rise? There's more to come, analysts say",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/stunned-by-golds-record-rise-theres-more-to-come-analysts-say-2255005",
+      "publishedAt": "2020-08-05T13:37:00Z",
+      "availableAt": "2020-08-05T13:37:00Z",
+      "originGroup": "reuters-gold-20200805",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Gold had broken above $2,000/oz to record highs as low real yields, central-bank stimulus, dollar weakness and pandemic uncertainty supported demand; the speed of the rally also raised correction/expectation-absorption risk."
+      ],
+      "entities": [
+        "gold",
+        "real yields",
+        "USD",
+        "monetary stimulus"
+      ],
+      "observedChanges": [
+        "gold reaches record high",
+        "monetary/real-yield support becomes dominant"
+      ]
+    },
+    {
+      "itemId": "reuters-gold-20200728",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Gold eyes $2,000 mark in speedy record-breaking run",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/gold-eyes-2000-mark-in-speedy-recordbreaking-run-2241769",
+      "publishedAt": "2020-07-28T00:00:00Z",
+      "availableAt": "2020-07-28T00:00:00Z",
+      "originGroup": "reuters-gold-20200728",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Gold's rally was tied to dollar weakness, pandemic uncertainty, central-bank liquidity and record-low real U.S. yields."
+      ],
+      "entities": [
+        "gold",
+        "real yields",
+        "Fed",
+        "USD"
+      ],
+      "observedChanges": [
+        "gold macro engine independently confirmed"
+      ]
+    },
+    {
+      "itemId": "tf-pv-20200813",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "PV Module Prices to Rebound into Uptrend as Global Wafer Prices Surge Once Again",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20200813-10433.html",
+      "publishedAt": "2020-08-13T00:00:00+08:00",
+      "availableAt": "2020-08-13T00:00:00+08:00",
+      "originGroup": "trendforce-pv-20200813",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Polysilicon prices rose more than 10% after a Xinjiang plant accident and pandemic disruptions, pushing wafer prices higher; module prices began to rebound, although end demand had not fully recovered."
+      ],
+      "entities": [
+        "polysilicon",
+        "wafers",
+        "PV modules",
+        "Xinjiang"
+      ],
+      "observedChanges": [
+        "polysilicon supply shock tightens upstream",
+        "wafer/module prices turn upward"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20200917",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Brief analysis of the economic operation of the auto industry in August 2020",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/44/id/1537.html",
+      "publishedAt": "2020-09-17T00:00:00+08:00",
+      "availableAt": "2020-09-17T00:00:00+08:00",
+      "originGroup": "caam-auto-202008",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August auto sales rose 11.6% YoY and NEV sales rose 25.8% YoY to 109k, a record for August, indicating broad auto recovery and renewed NEV momentum."
+      ],
+      "entities": [
+        "China autos",
+        "NEV"
+      ],
+      "observedChanges": [
+        "auto recovery persists",
+        "NEV monthly sales return to growth"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20200904",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Sales of New Energy Vehicles in July 2020",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/34/id/146.html",
+      "publishedAt": "2020-09-04T00:00:00+08:00",
+      "availableAt": "2020-09-04T00:00:00+08:00",
+      "originGroup": "caam-nev-202007",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "July NEV sales rose 19.3% YoY, confirming that the industry had returned to positive monthly growth before the stronger August data."
+      ],
+      "entities": [
+        "China NEV",
+        "BEV",
+        "PHEV"
+      ],
+      "observedChanges": [
+        "NEV demand inflects from contraction to monthly growth"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20200916",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "Sluggish Server Production in 4Q20 to Be Accompanied by Expanded QoQ Decline of 13-18% in Server DRAM Prices",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20200916-10483.html",
+      "publishedAt": "2020-09-16T00:00:00+08:00",
+      "availableAt": "2020-09-16T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20200916",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Excess server inventory and weak procurement led TrendForce to forecast a 13-18% QoQ decline in server DRAM prices for Q4, with one to two quarters needed to correct inventories."
+      ],
+      "entities": [
+        "server DRAM",
+        "server inventory",
+        "data centers"
+      ],
+      "observedChanges": [
+        "server DRAM downcycle deepens",
+        "inventory correction becomes multi-quarter"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20200831",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Server DIMM Price Aug. 2020",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP200831CK",
+      "publishedAt": "2020-08-31T00:00:00+08:00",
+      "availableAt": "2020-08-31T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20200831",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Server DRAM contract prices continued to decline month over month in August, preceding the stronger September downcycle warning."
+      ],
+      "entities": [
+        "server DRAM",
+        "contract prices"
+      ],
+      "observedChanges": [
+        "server DRAM pricing already weak before September"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20200930",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2020年9月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202010/t20201010_1793054.html",
+      "publishedAt": "2020-09-30T09:00:00+08:00",
+      "availableAt": "2020-09-30T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202009",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "September manufacturing PMI rose to 51.5 with production 54.0 and new orders 52.8, confirming continued broad economic recovery by quarter-end."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing recovery"
+      ],
+      "observedChanges": [
+        "manufacturing recovery strengthens"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20200831",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2020年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900838.html",
+      "publishedAt": "2020-08-31T09:00:00+08:00",
+      "availableAt": "2020-08-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202008",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August manufacturing PMI was 51.0 and new orders 52.0, showing demand recovery continued before the September strengthening."
+      ],
+      "entities": [
+        "China PMI",
+        "new orders"
+      ],
+      "observedChanges": [
+        "manufacturing/new-order recovery persists"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2020q3-gold-record-regime",
+      "statement": "Gold reached record highs above $2,000 as low real yields, dollar weakness, monetary stimulus and pandemic uncertainty reinforced the monetary/defensive demand regime, but the rapid move created substantial expectation-absorption risk.",
+      "changeType": "macro_monetary_asset_rerating",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-07-28T00:00:00Z",
+      "memberItemIds": [
+        "reuters-gold-20200728",
+        "reuters-gold-20200805"
+      ],
+      "independentOriginGroups": [
+        "reuters-gold-20200728",
+        "reuters-gold-20200805"
+      ],
+      "affectedValueChain": [
+        "gold miners",
+        "precious-metals refiners",
+        "jewelry demand"
+      ],
+      "contradictionSearchNotes": "The gold macro thesis was widely visible after a vertical rally. Deep research must distinguish sustainable mine cash-flow leverage from simply chasing the commodity high.",
+      "researchQuestion": "Which A-share gold producers, if any, still had acceptable normalized earnings/cash-flow paths after the record-gold rerating?"
+    },
+    {
+      "eventId": "event-2020q3-polysilicon-supply-shock",
+      "statement": "A Xinjiang polysilicon plant accident and pandemic disruptions caused a sharp polysilicon price rise that propagated into wafer and module pricing, creating a direct upstream supply-scarcity opportunity but a margin headwind for downstream buyers.",
+      "changeType": "physical_supply_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-08-13T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-pv-20200813"
+      ],
+      "independentOriginGroups": [
+        "trendforce-pv-20200813"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules"
+      ],
+      "contradictionSearchNotes": "Physical scarcity is real but single-origin at discovery and downstream demand remained incomplete. Deep research must map listed-company upstream exposure and duration rather than assume the entire PV chain benefits.",
+      "researchQuestion": "Is there a low-cost polysilicon producer with realized/quantitative price-to-profit conversion and an acceptable normalized path?"
+    },
+    {
+      "eventId": "event-2020q3-nev-recovery",
+      "statement": "China NEV monthly sales returned to positive year-on-year growth in July and accelerated further in August, while the broader auto market also recovered, creating an early post-pandemic volume inflection.",
+      "changeType": "post_shock_volume_recovery",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-09-04T00:00:00+08:00",
+      "memberItemIds": [
+        "caam-nev-20200904",
+        "caam-nev-20200917"
+      ],
+      "independentOriginGroups": [
+        "caam-nev-202007",
+        "caam-auto-202008"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "power batteries",
+        "components"
+      ],
+      "contradictionSearchNotes": "Monthly growth returned from a depressed base; cumulative YTD NEV sales were still deeply down. Deep research must separate a real structural turn from low-base normalization.",
+      "researchQuestion": "Which listed NEV/battery expressions had a realized earnings bridge and still-reasonable expectations at this early recovery point?"
+    },
+    {
+      "eventId": "event-2020q3-dram-downcycle",
+      "statement": "Server DRAM pricing and demand weakened through August-September as excess server inventory built, with a projected 13-18% Q4 price decline and a one-to-two-quarter inventory correction.",
+      "changeType": "cyclical_price_reversal_down",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-08-31T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20200831",
+        "tf-dram-20200916"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20200831",
+        "trendforce-dram-20200916"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory designers",
+        "server OEMs"
+      ],
+      "contradictionSearchNotes": "This is a negative physical signal. The Skill should fail closed unless a company has a clearly differentiated counter-engine.",
+      "researchQuestion": "Should memory names be avoided despite the broader economic recovery?"
+    },
+    {
+      "eventId": "event-2020q3-manufacturing-recovery",
+      "statement": "China manufacturing production and new orders remained expansionary through August and strengthened further in September, confirming a broad recovery backdrop.",
+      "changeType": "broad_macro_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-08-31T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20200831",
+        "nbs-pmi-20200930"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202008",
+        "nbs-pmi-202009"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "industrial cyclicals",
+        "exports"
+      ],
+      "contradictionSearchNotes": "Use as context for commodity/auto/solar theses; too broad for direct stock selection.",
+      "researchQuestion": "Use as timing and persistence context, not a standalone stock thesis."
+    }
+  ]
+}
