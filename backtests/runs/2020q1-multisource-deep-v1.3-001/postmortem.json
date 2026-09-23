@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2020q1-multisource-deep-v1.3-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "baseHorizonTradingDays": 60,
+  "validationClass": "exploratory_contaminated",
+  "primaryResult": {
+    "primarySelectionCount": 0,
+    "interpretation": "V1.3 produced no High-priority selections in this crisis window. This was not automatically a failure: the frozen Research set as a group did not beat CSI300 at the pre-registered 60d horizon."
+  },
+  "researchDiagnostics": [
+    {
+      "hypothesisId": "h-2020q1-5g-infrastructure",
+      "frozenState": "Research selection",
+      "expression": "000063.SZ",
+      "base60d": {
+        "netReturn": -0.05385387914017292,
+        "benchmarkReturn": 0.15356706406322118,
+        "benchmarkExcess": -0.2074209432033941
+      },
+      "matchedControls": [
+        {
+          "ticker": "600498.SH",
+          "netReturn": -0.10716193485539083
+        },
+        {
+          "ticker": "002281.SZ",
+          "netReturn": 0.0255908727291958
+        }
+      ],
+      "label": "correct_block_theme_absorption_and_execution",
+      "interpretation": "The structural 5G direction was real, but visible bullish forecasts, prior theme rerating and execution risk were sufficient reasons not to promote. A direct company bridge did not guarantee base-horizon alpha."
+    },
+    {
+      "hypothesisId": "h-2020q1-cloud-server-acceleration",
+      "frozenState": "Research selection",
+      "frozenExpressions": [
+        "000977.SZ",
+        "603019.SH"
+      ],
+      "base60d": {
+        "basketNetReturn": 0.10497348467172873,
+        "benchmarkReturn": 0.15356706406322118,
+        "basketBenchmarkExcess": -0.04859357939149245
+      },
+      "expression60d": [
+        {
+          "ticker": "000977.SZ",
+          "netReturn": -0.027857025129377933,
+          "benchmarkExcess": -0.18142408919259911
+        },
+        {
+          "ticker": "603019.SH",
+          "netReturn": 0.2378039944728354,
+          "benchmarkExcess": 0.08423693040961422
+        }
+      ],
+      "label": "mixed_expressions_direction_not_sufficient",
+      "interpretation": "The physical server/cloud thesis was strong, but the two acceptable expressions diverged sharply. One expression beat the benchmark while the preferred expression materially lagged, so opportunity-first evaluation does not support calling the basket a success. This does not repeat the 2020Q2 construction/PV false-negative pattern."
+    },
+    {
+      "hypothesisId": "h-2020q1-gold-liquidity-reset",
+      "frozenState": "Research selection",
+      "expression": "600547.SH",
+      "base60d": {
+        "netReturn": 0.10990607876449277,
+        "benchmarkReturn": 0.15356706406322118,
+        "benchmarkExcess": -0.043660985298728416
+      },
+      "matchedControl": {
+        "ticker": "601899.SH",
+        "netReturn": 0.2054641201249514,
+        "benchmarkExcess": 0.05189705606173023,
+        "selectedExcessVsControl": -0.09555804136045865
+      },
+      "label": "correct_block_and_repeated_expression_bias",
+      "interpretation": "High valuation and lack of realized 2020 earnings confirmation correctly blocked Primary. More importantly, the pure-gold preferred expression again lagged a diversified Zijin control, repeating the 2020Q2 gold expression failure."
+    }
+  ],
+  "noSelectionAudit": {
+    "source": "no-selection-audit.json",
+    "diagnosticOnly": true,
+    "base60d": [
+      {
+        "basketId": "ppe",
+        "meanNetReturn": -0.14650498469681772,
+        "benchmarkExcess": -0.3000720487600389,
+        "assessment": "correct_fail_closed"
+      },
+      {
+        "basketId": "memory",
+        "meanNetReturn": 0.30470959034370204,
+        "benchmarkExcess": 0.15114252628048086,
+        "assessment": "missed_opportunity_but_causal_hypothesis_was_too_narrow"
+      },
+      {
+        "basketId": "auto",
+        "meanNetReturn": -0.07362008122396674,
+        "benchmarkExcess": -0.22718714528718792,
+        "assessment": "correct_fail_closed"
+      },
+      {
+        "basketId": "oil",
+        "meanNetReturn": -0.04136084096771708,
+        "benchmarkExcess": -0.19492790503093826,
+        "assessment": "correct_fail_closed"
+      }
+    ],
+    "horizonDiscipline": [
+      "The memory-theme basket beat CSI300 at 60d but underperformed it by about 23.20pp at 120d, consistent with a time-bounded cycle rather than a durable company engine.",
+      "The auto basket was very poor at 60d, while 长城汽车 later surged by 120d. This validates requiring a new recovery signal/re-underwriting rather than buying at the March demand-collapse cutoff."
+    ]
+  },
+  "missedOpportunityDiagnosis": {
+    "hypothesisId": "h-2020q1-server-dram-duration",
+    "frozenDecision": "No selection",
+    "observedBase60dMemoryBasketExcess": 0.15114252628048086,
+    "diagnosis": "discovery_and_hypothesis_granularity_miss",
+    "rationale": [
+      "The frozen discovery hypothesis centered on server DRAM because that was the strongest physical server-memory evidence.",
+      "Contemporaneous pre-cutoff evidence also described a broader storage upcycle: NAND Flash prices had risen, NOR Flash was tight/starting to rise, DRAM had stopped falling, and A-share names such as 兆易创新/北京君正 were discussed as storage-cycle/domestic-substitution beneficiaries.",
+      "兆易创新's March 26 investor communication explicitly described its Flash products as NOR Flash and SLC NAND and discussed shortage-driven semiconductor cycles.",
+      "Therefore the correct process lesson is to split distinct product-market cycles into independent hypotheses instead of forcing every storage expression through a server-DRAM revenue bridge."
+    ],
+    "nonConclusion": "This same-period outcome does not prove that 兆易创新 or 北京君正 should have been selected ex ante. It identifies a hypothesis-definition/retrieval gap to test in another window."
+  },
+  "crossWindowImplications": {
+    "notRepeated": [
+      "2020Q2 showed large Research false negatives in construction machinery and LONGi; 2020Q1 does not support mechanically loosening timing/absorption gates. 5G, the server basket, and gold all failed to beat CSI300 at the 60d hypothesis level."
+    ],
+    "repeated": [
+      "Pure thematic exposure can be a poor preferred expression when expectation burden is high. 山东黄金 lagged benchmark and/or 紫金矿业 at the 60d base horizon in both 2020Q1 and 2020Q2.",
+      "A direction can be economically correct while the chosen expression set is inadequate; opportunity-first does not excuse a selected expression that itself fails benchmark-relative adequacy."
+    ],
+    "newCandidateFailureClasses": [
+      "hypothesis granularity collapse: distinct product subcycles are merged into one narrow causal hypothesis, causing valid adjacent opportunities to be discarded by an overly specific mapping gate",
+      "direct-exposure bias: purity of thematic exposure is over-weighted relative to valuation/expectation burden and diversified earnings support"
+    ]
+  },
+  "decision": {
+    "keepV13Immutable": true,
+    "createV14Now": false,
+    "reason": "The cross-window evidence now identifies two plausible general failure classes, but historical replay remains model/search contaminated. The next untouched window should pre-register diagnostics for product-market decomposition and directness-versus-expectation tradeoffs before any rule is promoted.",
+    "nextAction": "Run unchanged V1.3 on an untouched 2019Q4 window. Explicitly preserve separate product-market hypotheses when the frozen evidence supports them, and record whether a diversified expression with lower expectation burden is acceptable without requiring it to be the best peer. Use the result to decide whether V1.4 should formalize a hypothesis-decomposition gate and an expression-burden override."
+  },
+  "prohibitedUses": [
+    "Do not promote all Research selections because one server expression worked.",
+    "Do not loosen price/expectation timing gates from the 2020Q2 result; 2020Q1 supplies strong counterexamples.",
+    "Do not treat the 60d memory miss as proof that generic semiconductor theme buying is valid.",
+    "Do not prefer pure thematic exposure merely because its causal mapping is cleaner if expectation burden makes the expression inadequate.",
+    "Do not tune V1.3 from this same historical window or claim clean alpha validation."
+  ]
+}
