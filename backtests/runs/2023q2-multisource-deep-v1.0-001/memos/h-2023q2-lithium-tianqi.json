@@ -1,0 +1,504 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.0.0",
+  "cutoffAt": "2023-06-21T23:59:59+08:00",
+  "researchReadyAt": "2023-06-21T22:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2023q2-lithium-tianqi",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A lithium-price rebound should affect producer realized pricing and margins over one to two quarters if it is durable."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Lithium carbonate rebounded sharply from its spring low as EV/storage demand and restocking improved, but analysts expected growing supply to cap the move. 天齐 retained the strongest current earnings/cash quality among the frozen producers, yet Q1 results largely reflected the earlier high-price cycle rather than the new May-June rebound, so the new earnings bridge remained proxy-only.",
+    "firstCredibleDate": "2023-05-02",
+    "valueChain": [
+      "lithium price",
+      "realized lithium-salt/mineral price",
+      "gross margin",
+      "producer profit"
+    ],
+    "persistenceReason": "Demand recovery and restocking were real, but the supply ceiling made the half-life uncertain rather than structural.",
+    "disconfirmingEvidence": [
+      "All frozen lithium equities underperformed CSI300 over both 20/60d.",
+      "赣锋 and 雅化 Q1 profits fell materially.",
+      "New supply was expected to cap lithium-price rebound."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-lithium-20230502",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "trendforce-lithium-20230508",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "reuters-lithium-20230621",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "regime-lithium-20230621",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "tianqi-q1-20230429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "ganfeng-q1-20230428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    },
+    {
+      "id": "yahua-q1-20230428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence used in this memo."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "EV/storage restocking",
+      "to": "lithium price rebound",
+      "mechanism": "Improving battery demand and restocking lifted lithium carbonate from its spring low.",
+      "evidenceRefs": [
+        "reuters-lithium-20230502",
+        "trendforce-lithium-20230508",
+        "reuters-lithium-20230621"
+      ],
+      "failureMode": "new mine/refining supply overwhelms demand",
+      "lag": "weeks"
+    },
+    {
+      "from": "lithium price",
+      "to": "producer earnings",
+      "mechanism": "Higher realized lithium prices can improve mining/salt margins, but only after inventory and contract lags.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "ganfeng-q1-20230428",
+        "yahua-q1-20230428"
+      ],
+      "failureMode": "new rebound is too late/short to reach realized pricing or input costs offset it",
+      "lag": "one to two quarters"
+    },
+    {
+      "from": "earnings conversion",
+      "to": "selection alpha",
+      "mechanism": "The selected producer needs a fresh profit reset beyond legacy high-price Q1 earnings and an adverse sector price regime.",
+      "evidenceRefs": [
+        "regime-lithium-20230621"
+      ],
+      "failureMode": "commodity rebound stalls while equities correctly anticipate supply pressure",
+      "lag": "20-120 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost lithium producers with direct price exposure"
+    ],
+    "secondOrderWinners": [
+      "integrated battery-material firms if spreads expand"
+    ],
+    "losers": [
+      "battery/carmakers if raw-material costs rise sharply"
+    ],
+    "substitutes": [
+      "other chemistries/materials"
+    ],
+    "bottlenecks": [
+      "mine supply, conversion capacity"
+    ],
+    "falseThemeMatches": [
+      "producers whose Q1 profit reflects old prices rather than the new rebound"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002466.SZ",
+      "name": "天齐锂业",
+      "verifiedExposure": "Q1 revenue +117.8%, profit +46.5%,扣非 +70.7%, CFO +28.7%; strongest current quality among frozen lithium controls.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong Q1 earnings, but largely before the May-June rebound.",
+        "favorable": "rebound persists and realized price/margins re-accelerate.",
+        "adverse": "supply caps price and Q1 proves peak legacy economics."
+      },
+      "principalRisks": [
+        "commodity supply",
+        "price volatility",
+        "Q1 not representative of new rebound"
+      ]
+    },
+    {
+      "ticker": "002460.SZ",
+      "name": "赣锋锂业",
+      "verifiedExposure": "Q1 revenue +75.9% but profit -32.0% and CFO turned deeply negative.",
+      "evidenceRefs": [
+        "ganfeng-q1-20230428"
+      ],
+      "earningsSensitivity": {
+        "base": "Large exposure but deteriorating profitability/cash conversion.",
+        "favorable": "lithium rebound restores margins.",
+        "adverse": "raw-material/inventory pressure persists."
+      },
+      "principalRisks": [
+        "negative CFO",
+        "margin decline",
+        "inventory"
+      ]
+    },
+    {
+      "ticker": "002497.SZ",
+      "name": "雅化集团",
+      "verifiedExposure": "Q1 revenue +14.2% but profit -42%; company commentary cited high raw-material cost.",
+      "evidenceRefs": [
+        "yahua-q1-20230428"
+      ],
+      "earningsSensitivity": {
+        "base": "Profit compression despite growth.",
+        "favorable": "lower-cost inventory/rebound improves spread.",
+        "adverse": "supply/price mismatch persists."
+      },
+      "principalRisks": [
+        "margin compression",
+        "commodity cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002460.SZ",
+      "name": "赣锋锂业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large integrated lithium producer exposed to the same commodity rebound.",
+      "whySelectedCompanyShouldOutperform": "天齐 had positive profit/cash growth while 赣锋 profit fell and CFO turned deeply negative.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "ganfeng-q1-20230428"
+      ]
+    },
+    {
+      "ticker": "002497.SZ",
+      "name": "雅化集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Lithium-salt producer exposed to the same price/spread cycle.",
+      "whySelectedCompanyShouldOutperform": "天齐 Q1 earnings/cash quality was stronger while 雅化 profit was already compressed by raw-material costs.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "yahua-q1-20230428"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "002466.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002460.SZ",
+        "selectedAdvantages": [
+          "Q1 profit +46% versus -32%",
+          "positive CFO growth versus large negative CFO",
+          "stronger current margin/cash quality"
+        ],
+        "selectedDisadvantages": [
+          "赣锋 has broader vertical integration and may have stronger rebound torque if spreads normalize"
+        ],
+        "evidenceRefs": [
+          "tianqi-q1-20230429",
+          "ganfeng-q1-20230428"
+        ],
+        "switchCondition": "Prefer 赣锋 only after realized margin/cash-flow recovery from the new rebound.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "002497.SZ",
+        "selectedAdvantages": [
+          "strong Q1 profit and cash growth versus material profit decline",
+          "lower evidence of raw-material squeeze"
+        ],
+        "selectedDisadvantages": [
+          "雅化 may have greater operating leverage if lithium spreads reverse sharply"
+        ],
+        "evidenceRefs": [
+          "tianqi-q1-20230429",
+          "yahua-q1-20230428"
+        ],
+        "switchCondition": "Prefer 雅化 only after its lithium-salt margin/profit inflection is realized.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "天齐 is the best current-quality expression, but the fresh May-June rebound has not yet produced a distinct new earnings reset."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Lithium prices had already nearly doubled from the spring low, yet the whole producer basket remained adverse relative to CSI300; supply growth was expected to cap the commodity rebound.",
+    "thesisExpectation": "If the rebound is durable, 天齐's realized lithium pricing can stabilize/re-accelerate earnings.",
+    "measurableGap": "Company quality is strong, but the new rebound-to-profit bridge is not yet observed and the equity regime remains uniformly weak.",
+    "evidenceRefs": [
+      "reuters-lithium-20230621",
+      "regime-lithium-20230621",
+      "tianqi-q1-20230429"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Fresh commodity-rebound earnings bridge plus peer quality; no clean valuation reset is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Q1 profit was strong but reflected earlier high lithium economics; the May-June rebound occurred after Q1.",
+    "thesisScenario": "New lithium rebound persists long enough to stabilize realized prices/margins into H1/Q3.",
+    "breakevenCondition": "The new commodity rebound—not legacy Q1 pricing—must produce a fresh margin/profit revision.",
+    "ordinaryScenarioFailure": "Supply caps prices and Q1 earnings decline sequentially even though spot lithium bounced.",
+    "catalystOrTimingBridge": "H1/Q3 realized lithium price and margin updates test the bridge.",
+    "evidenceRefs": [
+      "reuters-lithium-20230621",
+      "tianqi-q1-20230429"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "conflicted",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Lithium price rebounded materially and battery demand/restocking improved.",
+      "evidenceRefs": [
+        "trendforce-lithium-20230508",
+        "reuters-lithium-20230621"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "天齐 Q1 was strong, but those results predate the new May-June rebound and do not confirm its incremental earnings impact.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "reuters-lithium-20230621"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "天齐's Q1 profit/cash quality was materially stronger than 赣锋 and 雅化.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "ganfeng-q1-20230428",
+        "yahua-q1-20230428"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "Q1 earnings are not a clean baseline for the later spring-bottom rebound.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "trendforce-lithium-20230508"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "All frozen lithium names underperformed the benchmark over both lookbacks, but weakness may reflect valid supply concerns rather than underpricing.",
+      "evidenceRefs": [
+        "regime-lithium-20230621",
+        "reuters-lithium-20230621"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen lithium-producer basket versus CSI300",
+      "lookback20Excess": -0.05254152790761094,
+      "lookback60Excess": -0.06460294517096543,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-lithium-20230621"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "The rebound persisted from late April into June, but supply growth capped confidence in a structural upcycle.",
+      "evidenceRefs": [
+        "trendforce-lithium-20230508",
+        "reuters-lithium-20230621"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "天齐 remained strong while 赣锋/雅化 Q1 profits deteriorated.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "ganfeng-q1-20230428",
+        "yahua-q1-20230428"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "uncertain",
+      "rationale": "Demand recovery supports prices but growing supply was explicitly expected to cap the rebound.",
+      "evidenceRefs": [
+        "reuters-lithium-20230621"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Equities were weak rather than crowded, but commodity rebound sustainability is uncertain.",
+      "evidenceRefs": [
+        "regime-lithium-20230621",
+        "reuters-lithium-20230621"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Commodity bounce has not produced a favorable equity/revision regime."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002466.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit and cash-flow growth clear the quality floor.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "A durable rebound could help, but supply growth and the fact Q1 already reflected high prior pricing limit a clear reset.",
+      "evidenceRefs": [
+        "reuters-lithium-20230621",
+        "tianqi-q1-20230429"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No clean normalized-cycle valuation anchor is frozen.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 results and realized lithium-price/margin data are inside the base horizon.",
+      "evidenceRefs": [
+        "reuters-lithium-20230621"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong balance/cash quality helps, but commodity supply can overwhelm current earnings.",
+      "evidenceRefs": [
+        "tianqi-q1-20230429",
+        "reuters-lithium-20230621"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002460.SZ",
+        "revisionAdvantage": "天齐 has stronger current earnings/cash quality, but the fresh rebound has not yet created a new revision.",
+        "valuationAdvantage": "No clean normalized valuation advantage frozen.",
+        "qualityTradeoff": "天齐 clearly stronger Q1 quality.",
+        "catalystAdvantage": "Both depend on H1 realized price/margin; 赣锋 also needs cash-flow normalization.",
+        "downsideTradeoff": "天齐 has materially better current CFO.",
+        "evidenceRefs": [
+          "tianqi-q1-20230429",
+          "ganfeng-q1-20230428"
+        ],
+        "switchCondition": "Switch after 赣锋 shows realized margin and cash-flow recovery.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "002497.SZ",
+        "revisionAdvantage": "天齐 has stronger current profitability; 雅化 may have larger spread rebound torque.",
+        "valuationAdvantage": "No decisive normalized valuation edge frozen.",
+        "qualityTradeoff": "天齐 stronger current profit/cash.",
+        "catalystAdvantage": "Both need fresh rebound conversion; 雅化 must first reverse margin compression.",
+        "downsideTradeoff": "天齐 better current earnings buffer.",
+        "evidenceRefs": [
+          "tianqi-q1-20230429",
+          "yahua-q1-20230428"
+        ],
+        "switchCondition": "Switch after 雅化 shows realized spread/profit inflection.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Lithium carbonate rebounded sharply from the spring low as restocking/demand recovered.",
+    "earningsMechanism": "If sustained, higher realized lithium prices can stabilize producer gross margins and profit after contract/inventory lags.",
+    "nextObservableMetric": "H1 realized lithium price, gross margin and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "trendforce-lithium-20230508",
+      "reuters-lithium-20230621",
+      "tianqi-q1-20230429"
+    ],
+    "failureCondition": "H1/Q3 earnings decline despite the spot rebound because new supply or contract/inventory effects dominate."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: selected company quality is strong, but the new commodity rebound has not yet become a realized earnings engine and sector timing is adverse.",
+    "alreadyPricedAssessment": "equities remain de-rated for supply-cycle risk",
+    "constraints": [
+      "adverse 20/60d regime",
+      "supply ceiling",
+      "fresh bridge proxy-only"
+    ]
+  },
+  "bearCase": "The commodity bounce is a restocking rally inside a supply-driven downcycle, and producer earnings continue to fall.",
+  "invalidationConditions": [
+    {
+      "indicator": "lithium realized price/gross margin",
+      "observationMethod": "H1/Q3 filings",
+      "threshold": "no stabilization/recovery"
+    },
+    {
+      "indicator": "supply-demand balance",
+      "observationMethod": "industry price/supply updates",
+      "threshold": "new supply keeps prices below recovery thesis"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "normalized-cycle valuation",
+    "contract/inventory lag"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research selection.",
+    "Do not use strong Q1 legacy earnings as proof that the new May-June rebound has converted."
+  ]
+}
