@@ -1,0 +1,548 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-08-31T23:59:59+08:00",
+  "researchReadyAt": "2021-08-31T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q3-shipping-cosco",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Record freight rates and congestion can sustain near-term profits, but the frozen multi-year forecast explicitly expects post-2021 profit normalization."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Container freight scarcity and port congestion were real and 中远海控 H1 profit had exploded, but by Aug31 the company had already rerated sharply and the contemporaneous forecast explicitly projected 2022 and 2023 profit declines of about 20% each. V1.2 therefore treats the opportunity as peak-profit path risk rather than a simple low-multiple bargain.",
+    "firstCredibleDate": "2021-08-05",
+    "valueChain": [
+      "port congestion",
+      "effective container capacity",
+      "freight rates",
+      "container revenue/margin",
+      "earnings/cash"
+    ],
+    "persistenceReason": "Congestion could persist into 2022, but new capacity/normalization and the published forecast imply earnings need not remain at the 2021 peak.",
+    "disconfirmingEvidence": [
+      "COSCO 60d excess versus CSI300 was +54.61pp by the aligned Aug31 cutoff.",
+      "The frozen forecast expected 2022 and 2023 profit to decline ~20% each.",
+      "Other shipping peers had materially different business mixes and profit conversion."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "reuters-shipping-20210805",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "reuters-ningbo-20210813",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "spg-shipping-20210820",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-shipping-20210831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cosco-h1-20210831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cosco-forecast-20210831",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "zhonggu-h1-20210810",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "cmshipping-h1-20210828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "port congestion and equipment scarcity",
+      "to": "record container freight rates",
+      "mechanism": "Slow vessel/container turnaround reduces effective capacity during strong peak-season demand.",
+      "evidenceRefs": [
+        "reuters-shipping-20210805",
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ],
+      "failureMode": "congestion normalizes or demand softens",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "record freight rates",
+      "to": "COSCO earnings",
+      "mechanism": "Higher per-container revenue and strong utilization raised container segment margins dramatically, already visible in H1.",
+      "evidenceRefs": [
+        "cosco-h1-20210831"
+      ],
+      "failureMode": "rate normalization outpaces cost/volume support",
+      "lag": "realized"
+    },
+    {
+      "from": "earnings boom",
+      "to": "equity alpha",
+      "mechanism": "Alpha requires the post-2021 earnings path to be better than the already-frozen decline path, not merely another strong quarter.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831",
+        "regime-shipping-20210831"
+      ],
+      "failureMode": "2021 peak profits confirm consensus while 2022-23 normalize as expected",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "container carriers with high spot/contract rate realization"
+    ],
+    "secondOrderWinners": [
+      "ports and logistics assets with congestion pricing power"
+    ],
+    "losers": [
+      "exporters/importers paying freight surcharges"
+    ],
+    "substitutes": [
+      "air/rail/alternative ports"
+    ],
+    "bottlenecks": [
+      "port throughput",
+      "containers",
+      "vessel schedules"
+    ],
+    "falseThemeMatches": [
+      "shipping companies dominated by tanker/dry-bulk exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601919.SH",
+      "name": "中远海控",
+      "verifiedExposure": "Direct global container carrier with H1 revenue +88% and profit +3162%.",
+      "evidenceRefs": [
+        "cosco-h1-20210831"
+      ],
+      "earningsSensitivity": {
+        "base": "2021/22/23 profit forecast RMB95.8/76.5/61.3bn.",
+        "favorable": "congestion/rates stay high materially longer than forecast.",
+        "adverse": "rates normalize and profit follows the frozen -20%/-20% outer-year path."
+      },
+      "principalRisks": [
+        "peak freight normalization",
+        "regulatory pressure",
+        "expectation absorption"
+      ]
+    },
+    {
+      "ticker": "603565.SH",
+      "name": "中谷物流",
+      "verifiedExposure": "Domestic container shipping; H1 core earnings improved but headline profit included a large ship-disposal gain.",
+      "evidenceRefs": [
+        "zhonggu-h1-20210810"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit +343%, with material asset-disposal contribution.",
+        "favorable": "domestic container rates/volume remain strong.",
+        "adverse": "non-recurring gains distort headline earnings."
+      },
+      "principalRisks": [
+        "non-recurring profit",
+        "domestic mix"
+      ]
+    },
+    {
+      "ticker": "601872.SH",
+      "name": "招商轮船",
+      "verifiedExposure": "Shipping operator but H1 revenue/profit fell sharply, indicating weaker direct exposure to the container-rate boom.",
+      "evidenceRefs": [
+        "cmshipping-h1-20210828"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit -68.8%.",
+        "favorable": "shipping mix improves.",
+        "adverse": "tanker/dry-bulk weakness dominates."
+      },
+      "principalRisks": [
+        "wrong subsegment exposure"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "603565.SH",
+      "name": "中谷物流",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed container-shipping peer benefiting from tight capacity.",
+      "whySelectedCompanyShouldOutperform": "COSCO has a cleaner global freight-rate earnings engine and much larger realized operating scale, while 中谷 headline H1 profit included ship-disposal gains.",
+      "evidenceRefs": [
+        "cosco-h1-20210831",
+        "zhonggu-h1-20210810"
+      ]
+    },
+    {
+      "ticker": "601872.SH",
+      "name": "招商轮船",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large listed shipping peer exposed to global shipping conditions.",
+      "whySelectedCompanyShouldOutperform": "COSCO has direct container exposure and realized profit acceleration; 招商轮船 H1 earnings declined due different shipping mix.",
+      "evidenceRefs": [
+        "cosco-h1-20210831",
+        "cmshipping-h1-20210828"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "601919.SH",
+    "pairwise": [
+      {
+        "controlTicker": "603565.SH",
+        "selectedAdvantages": [
+          "cleaner global container-rate exposure",
+          "far larger realized cash/profit engine"
+        ],
+        "selectedDisadvantages": [
+          "COSCO had already rerated strongly and its outer-year path declines"
+        ],
+        "evidenceRefs": [
+          "cosco-h1-20210831",
+          "cosco-forecast-20210831",
+          "zhonggu-h1-20210810",
+          "regime-shipping-20210831"
+        ],
+        "switchCondition": "Prefer 中谷 if recurring core earnings, not disposal gains, show a superior normalized path at lower expectation burden.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601872.SH",
+        "selectedAdvantages": [
+          "direct container boom exposure",
+          "realized H1 profit acceleration"
+        ],
+        "selectedDisadvantages": [
+          "招商轮船 offers different-cycle optionality if container rates peak"
+        ],
+        "evidenceRefs": [
+          "cosco-h1-20210831",
+          "cmshipping-h1-20210828"
+        ],
+        "switchCondition": "Prefer 招商轮船 if tanker/dry-bulk economics inflect while container normalization begins.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "COSCO is the clearest expression of the freight boom, but absolute expectation-path/timing burden blocks High-priority."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "H1 record profit was public, freight rates were at records, COSCO had outperformed CSI300 by ~54.6pp over 60d, and the Aug31 report already forecast 2022/23 profit declines of ~20% each.",
+    "thesisExpectation": "Congestion lasts into 2022 longer than expected, sustaining earnings/cash above the frozen decline path.",
+    "measurableGap": "The required gap is not another strong 2021 quarter; it is a materially flatter or rising 2022-23 profit path than the frozen baseline.",
+    "evidenceRefs": [
+      "cosco-forecast-20210831",
+      "regime-shipping-20210831"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Multi-year normalized earnings / EV-EBITDA path rather than peak-year PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021/22/23 profit RMB95.8/76.5/61.3bn; current EV/EBITDA cited at 2.3x versus peer 3.78x.",
+    "thesisScenario": "Operational congestion persists long enough to lift the 2022-23 path above the forecast decline.",
+    "breakevenCondition": "The outer-year profit path must decline materially less than the frozen -20%/-20% baseline.",
+    "ordinaryScenarioFailure": "Freight remains strong into early 2022 but still normalizes enough for profits to fall as already forecast.",
+    "catalystOrTimingBridge": "Q3/Q4 freight-rate realization and 2022 booking visibility can test path persistence.",
+    "evidenceRefs": [
+      "cosco-forecast-20210831",
+      "spg-shipping-20210820"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Record freight rates, congestion and H1 profit all confirm the boom.",
+      "evidenceRefs": [
+        "reuters-shipping-20210805",
+        "spg-shipping-20210820",
+        "cosco-h1-20210831"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "H1 revenue/profit/margins already converted the physical freight shortage.",
+      "evidenceRefs": [
+        "cosco-h1-20210831"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "COSCO's container exposure converted much more cleanly than 招商轮船; 中谷 also benefited but had non-recurring disposal profit.",
+      "evidenceRefs": [
+        "cosco-h1-20210831",
+        "zhonggu-h1-20210810",
+        "cmshipping-h1-20210828"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "insufficient",
+      "rationale": "The Aug31 forecast is contemporaneous with H1 and explicitly incorporates persistent 2022 imbalance, so little obvious baseline lag remains.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Use aligned Aug31 20/60d relative returns plus the published declining outer-year path.",
+      "evidenceRefs": [
+        "regime-shipping-20210831",
+        "cosco-forecast-20210831"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen shipping basket versus CSI300",
+      "lookback20Excess": 0.05697010465630888,
+      "lookback60Excess": 0.29149310095914466,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-shipping-20210831"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Congestion/rate evidence remained severe through August.",
+      "evidenceRefs": [
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Container carriers benefit, but shipping subsegments differ greatly.",
+      "evidenceRefs": [
+        "cosco-h1-20210831",
+        "zhonggu-h1-20210810",
+        "cmshipping-h1-20210828"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "The contemporaneous report expected supply-demand imbalance into 2022.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Freight rates were at records and COSCO had already sharply outperformed over 60d.",
+      "evidenceRefs": [
+        "regime-shipping-20210831",
+        "reuters-shipping-20210805"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical boom remains real, but expectation absorption and peak-path risk make immediate timing neutral."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601919.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Massive recurring container profit and cash-generation improvement.",
+      "evidenceRefs": [
+        "cosco-h1-20210831"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Near-term rates can beat, but the outer-year baseline already assumes sustained imbalance then normalization.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Published EV/EBITDA was below peer average, but peak earnings make point valuation insufficient.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q3/Q4 freight and contract visibility lie within 60 trading days.",
+      "evidenceRefs": [
+        "spg-shipping-20210820"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low multiple helps, but profit normalization and prior rerating create large drawdown risk.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831",
+        "regime-shipping-20210831"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "603565.SH",
+        "revisionAdvantage": "COSCO has cleaner recurring global container earnings; 中谷 has non-recurring ship-disposal contribution.",
+        "valuationAdvantage": "No clean full-path peer valuation frozen.",
+        "qualityTradeoff": "COSCO stronger scale/recurring engine; 中谷 smaller and more domestic.",
+        "catalystAdvantage": "Global route rates directly update COSCO.",
+        "downsideTradeoff": "Both face normalization; COSCO had larger prior rerating.",
+        "evidenceRefs": [
+          "cosco-h1-20210831",
+          "zhonggu-h1-20210810",
+          "regime-shipping-20210831"
+        ],
+        "switchCondition": "Switch if 中谷 recurring core path proves more durable at lower burden.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601872.SH",
+        "revisionAdvantage": "COSCO directly benefits from container scarcity while 招商轮船 H1 declined.",
+        "valuationAdvantage": "Different subsegments make point comparison weak.",
+        "qualityTradeoff": "COSCO currently stronger.",
+        "catalystAdvantage": "Container rates map directly to COSCO.",
+        "downsideTradeoff": "招商轮船 has less peak-container exposure if normalization begins.",
+        "evidenceRefs": [
+          "cosco-h1-20210831",
+          "cmshipping-h1-20210828"
+        ],
+        "switchCondition": "Switch if tanker/dry-bulk path inflects as container normalizes.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Record freight rates and congestion raised per-container revenue/margins.",
+    "earningsMechanism": "Higher freight realization directly expanded container segment profit and cash flow, already visible in H1.",
+    "nextObservableMetric": "Q3/Q4 container revenue per TEU, margin and updated 2022-23 forecasts",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "cosco-h1-20210831",
+      "spg-shipping-20210820"
+    ],
+    "failureCondition": "Outer-year profit path remains near the frozen -20%/-20% declines despite record near-term rates."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021 profit RMB95.8bn, +865% YoY.",
+      "nextPeriod": "2022 profit RMB76.5bn, -20% YoY.",
+      "laterPeriod": "2023 profit RMB61.3bn, -20% YoY.",
+      "rationale": "Aug31 forecast already assumes congestion persists into 2022 yet profits normalize after the 2021 peak.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Record rates can keep 2021 profit at or above the already-high baseline.",
+      "nextPeriodChange": "For alpha, 2022 profit must decline materially less than the frozen -20% path.",
+      "laterPeriodChange": "A durable thesis requires 2023 normalization to be milder than the frozen second -20% decline.",
+      "mechanism": "Congestion duration, contract-rate resets and slow capacity growth would have to shift the whole path, not merely extend the 2021 peak by one quarter.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831",
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ]
+    },
+    "pathShape": "peak_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Near-term strength is clear, but no pre-cutoff evidence proves the published 2022-23 decline path is materially too pessimistic.",
+      "evidenceRefs": [
+        "cosco-forecast-20210831"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The stock has already rerated strongly while the frozen baseline explicitly models peak-profit normalization.",
+      "evidenceRefs": [
+        "regime-shipping-20210831",
+        "cosco-forecast-20210831"
+      ]
+    },
+    "falsifier": "Q3/Q4 updates fail to raise 2022-23 profit materially above the frozen decline path.",
+    "overallConclusion": "mixed"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: apparent low multiple sits on peak earnings; v1.2 requires evidence that 2022-23 normalization is too pessimistic.",
+    "alreadyPricedAssessment": "substantial peak-profit absorption",
+    "constraints": [
+      "record freight",
+      "strong prior rerating",
+      "declining outer-year consensus"
+    ]
+  },
+  "bearCase": "The market correctly identifies 2021 as peak profit; rates remain high briefly but normalization drives 2022-23 earnings down as forecast.",
+  "invalidationConditions": [
+    {
+      "indicator": "2022-23 earnings path",
+      "observationMethod": "updated forecasts/filings",
+      "threshold": "no material uplift versus frozen path"
+    },
+    {
+      "indicator": "freight normalization",
+      "observationMethod": "route rates/congestion",
+      "threshold": "effective capacity normalizes faster than expected"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "2022 contract-rate renewal durability",
+    "global container capacity normalization speed"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research only under v1.2 peak-path discipline."
+  ]
+}
