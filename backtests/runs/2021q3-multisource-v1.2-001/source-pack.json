@@ -1,0 +1,413 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2021q3-multisource-v1.2-001",
+  "cutoffAt": "2021-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2021Q3 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China manufacturing-demand context.",
+      "coverageStatus": "partial",
+      "limitations": "Uses NBS August PMI available before quarter-end; September PMI release was after cutoff and is excluded."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party discovery evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company evidence is deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable semiconductor/memory pricing conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses accessible TrendForce market data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed reporting on shipping congestion, power shortages, and auto chip constraints.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters articles are accessed through syndication where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist shipping-market congestion/rate evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses S&P Global and public SCFI-related reporting."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-shipping-20210805",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China-U.S. container shipping rates sail past $20,000 to record",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economy/chinaus-container-shipping-rates-sail-past-20000-to-record-2580571",
+      "publishedAt": "2021-08-05T17:43:00+08:00",
+      "availableAt": "2021-08-05T17:43:00+08:00",
+      "originGroup": "reuters-shipping-20210805",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China-to-U.S. container rates exceeded $20,000/FEU as peak-season orders, Delta outbreaks and slow container turnaround tightened effective capacity."
+      ],
+      "entities": [
+        "container shipping",
+        "China-U.S.",
+        "freight rates"
+      ],
+      "observedChanges": [
+        "container freight rates hit record highs",
+        "shipping becomes seller's market"
+      ]
+    },
+    {
+      "itemId": "reuters-ningbo-20210813",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Port, shipping firms divert vessels after a Ningbo terminal shuts",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/port-shipping-firms-divert-vessels-after-a-ningbo-terminal-shuts-2589189",
+      "publishedAt": "2021-08-13T17:53:00+08:00",
+      "availableAt": "2021-08-13T17:53:00+08:00",
+      "originGroup": "reuters-ningbo-20210813",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Ningbo terminal closure forced vessel diversions while Shanghai/Ningbo congestion remained severe, adding another physical bottleneck ahead of peak season."
+      ],
+      "entities": [
+        "Ningbo",
+        "Shanghai",
+        "container shipping"
+      ],
+      "observedChanges": [
+        "port congestion worsens",
+        "effective shipping capacity tightens"
+      ]
+    },
+    {
+      "itemId": "spg-shipping-20210820",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "dataset",
+      "title": "Trans-Pacific port congestion undermines premium services",
+      "publisher": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/shipping/082021-container-premiums-trans-pacific-port-congestion-undermines-quality-of-premium-services",
+      "publishedAt": "2021-08-20T20:19:00Z",
+      "availableAt": "2021-08-20T20:19:00Z",
+      "originGroup": "spg-shipping-20210820",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China-to-U.S. East Coast premium freight was quoted around $20k-$25k/FEU while port queues worsened, confirming extreme rate/throughput stress."
+      ],
+      "entities": [
+        "container freight",
+        "US West Coast",
+        "Ningbo"
+      ],
+      "observedChanges": [
+        "premium freight stays extreme",
+        "port congestion persists"
+      ]
+    },
+    {
+      "itemId": "reuters-power-20210927",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China power crunch spreads, shutting factories and dimming growth outlook",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/chinas-power-crunch-begins-to-weigh-on-economic-outlook-2626893",
+      "publishedAt": "2021-09-27T14:04:00+08:00",
+      "availableAt": "2021-09-27T14:04:00+08:00",
+      "originGroup": "reuters-power-20210927",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Widening power shortages halted production at factories as coal scarcity/high prices and emissions constraints squeezed generation economics."
+      ],
+      "entities": [
+        "coal",
+        "thermal power",
+        "factories",
+        "electricity"
+      ],
+      "observedChanges": [
+        "power shortage becomes nationwide industrial constraint",
+        "coal scarcity pushes thermal-power economics into stress"
+      ]
+    },
+    {
+      "itemId": "reuters-power-explainer-20210927",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "What is behind China's power crunch?",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/what-is-behind-chinas-power-crunch-2627527",
+      "publishedAt": "2021-09-27T23:55:00+08:00",
+      "availableAt": "2021-09-27T23:55:00+08:00",
+      "originGroup": "reuters-power-explainer-20210927",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Coal supply shortages, record coal prices, emissions constraints and strong industrial demand jointly produced the power crunch; thermal generators were squeezed by capped power tariffs."
+      ],
+      "entities": [
+        "coal",
+        "thermal power",
+        "electricity tariffs"
+      ],
+      "observedChanges": [
+        "input-output spread collapses for thermal power",
+        "coal producers gain pricing leverage"
+      ]
+    },
+    {
+      "itemId": "reuters-autochips-20210819",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Toyota slashes September output amid chip crunch, COVID resurgence",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/toyota-to-slash-september-production-due-to-global-chip-shortage--nikkei-2593993",
+      "publishedAt": "2021-08-19T14:22:00+08:00",
+      "availableAt": "2021-08-19T14:22:00+08:00",
+      "originGroup": "reuters-autochips-20210819",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Toyota cut planned September global production by about 40% as semiconductor and parts shortages constrained output."
+      ],
+      "entities": [
+        "automotive semiconductors",
+        "Toyota",
+        "auto production"
+      ],
+      "observedChanges": [
+        "auto chip shortage worsens",
+        "vehicle production cut materially"
+      ]
+    },
+    {
+      "itemId": "reuters-china-auto-20210910",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China vehicle sales fall for fourth month on chip shortages",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/economic-indicators/china-vehicle-sales-fall-18-in-august-industry-body-2612620",
+      "publishedAt": "2021-09-10T14:18:00+08:00",
+      "availableAt": "2021-09-10T14:18:00+08:00",
+      "originGroup": "reuters-china-auto-20210910",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China August vehicle sales fell 17.8% YoY due to semiconductor shortages, while NEV sales more than doubled, creating divergent exposure within the auto value chain."
+      ],
+      "entities": [
+        "China autos",
+        "NEVs",
+        "semiconductors"
+      ],
+      "observedChanges": [
+        "legacy auto volume constrained",
+        "NEV demand remains strong despite chip shortage"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20210810",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "PC DRAM contract prices expected to decline in 4Q21",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20210810-10890.html",
+      "publishedAt": "2021-08-10T00:00:00+08:00",
+      "availableAt": "2021-08-10T00:00:00+08:00",
+      "originGroup": "trendforce-dram-q3-2021",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "PC DRAM spot prices had fallen roughly 32% from May highs and moved below contract prices; 4Q contract pricing was expected to turn down as client inventories rose."
+      ],
+      "entities": [
+        "DRAM",
+        "PC",
+        "inventories"
+      ],
+      "observedChanges": [
+        "DRAM spot pricing turns down",
+        "client inventory becomes excessive"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20210922",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Prices Projected to Decline by 3-8% QoQ in 4Q21",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20210922-10947.html",
+      "publishedAt": "2021-09-22T00:00:00+08:00",
+      "availableAt": "2021-09-22T00:00:00+08:00",
+      "originGroup": "trendforce-dram-q3-2021",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Client DRAM inventory exceeded healthy levels; overall 4Q DRAM ASP was projected -3% to -8%, PC DRAM -5% to -10%, with server DRAM also turning down."
+      ],
+      "entities": [
+        "DRAM",
+        "server DRAM",
+        "PC DRAM"
+      ],
+      "observedChanges": [
+        "memory downcycle broadens",
+        "server DRAM also loses pricing power"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20210831",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年8月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901208.html",
+      "publishedAt": "2021-08-31T09:00:00+08:00",
+      "availableAt": "2021-08-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202108",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August manufacturing PMI fell to 50.1; new orders were 49.6 and supplier delivery time 48.0, showing weakening demand and longer delivery times before the late-September power shock."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing demand",
+        "supplier delivery"
+      ],
+      "observedChanges": [
+        "manufacturing demand weakens",
+        "delivery times lengthen"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2021q3-container-freight-boom",
+      "statement": "Container freight rates reached record levels and port congestion worsened through August-September 2021, creating an extraordinary profit pool for carriers but also a major expectation-duration question after a prolonged rally.",
+      "changeType": "capacity_scarcity_price_spike",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-08-05T17:43:00+08:00",
+      "memberItemIds": [
+        "reuters-shipping-20210805",
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ],
+      "independentOriginGroups": [
+        "reuters-shipping-20210805",
+        "reuters-ningbo-20210813",
+        "spg-shipping-20210820"
+      ],
+      "affectedValueChain": [
+        "container carriers",
+        "ports",
+        "freight forwarders",
+        "exporters/importers"
+      ],
+      "contradictionSearchNotes": "The profit pool is real, but extreme freight rates may be peak-like and already capitalized. Deep research must freeze the multi-year earnings path and cash-distribution mechanism, not rely on spot freight alone.",
+      "researchQuestion": "Did any A-share container carrier still have full-path expectation room and durable cash-distribution value after the record-rate rerating?"
+    },
+    {
+      "eventId": "event-2021q3-coal-power-crunch",
+      "statement": "China's late-Q3 power crunch made coal scarcity and thermal-power spread compression a physical economic shock: miners gained pricing power while generators faced capped tariffs and expensive fuel.",
+      "changeType": "input_output_spread_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-09-27T14:04:00+08:00",
+      "memberItemIds": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927"
+      ],
+      "independentOriginGroups": [
+        "reuters-power-20210927",
+        "reuters-power-explainer-20210927"
+      ],
+      "affectedValueChain": [
+        "coal miners",
+        "thermal generators",
+        "industrial users",
+        "power equipment"
+      ],
+      "contradictionSearchNotes": "Same macro event creates opposite winners/losers. Deep research must map the spread correctly and avoid buying generators simply because power is scarce.",
+      "researchQuestion": "Which listed coal/resource expression had realized earnings/cash leverage without an already-exhausted expectation path?"
+    },
+    {
+      "eventId": "event-2021q3-auto-chip-shortage",
+      "statement": "The global semiconductor shortage intensified enough to force major automakers to slash production, while China auto sales fell sharply even as NEV demand stayed strong.",
+      "changeType": "component_supply_bottleneck",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-08-19T14:22:00+08:00",
+      "memberItemIds": [
+        "reuters-autochips-20210819",
+        "reuters-china-auto-20210910"
+      ],
+      "independentOriginGroups": [
+        "reuters-autochips-20210819",
+        "reuters-china-auto-20210910"
+      ],
+      "affectedValueChain": [
+        "automotive semiconductors",
+        "OEMs",
+        "NEV makers",
+        "electronics distributors"
+      ],
+      "contradictionSearchNotes": "Scarcity does not automatically imply listed chip suppliers have pricing power or material automotive exposure. Company-level auto-semiconductor revenue/earnings conversion is mandatory.",
+      "researchQuestion": "Is there an A-share auto-semiconductor supplier with auditable automotive exposure and realized scarcity-to-profit conversion?"
+    },
+    {
+      "eventId": "event-2021q3-dram-downcycle",
+      "statement": "DRAM moved from shortage to inventory-led downcycle during Q3: spot prices fell, client inventories became excessive and broad contract-price declines were projected for Q4.",
+      "changeType": "cyclical_price_reversal_down",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-08-10T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20210810",
+        "tf-dram-20210922"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-q3-2021"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory designers",
+        "modules",
+        "PC/server OEMs"
+      ],
+      "contradictionSearchNotes": "This is a negative industry signal. Deep research should fail closed unless a company has genuinely differentiated exposure or a contrary verified earnings path.",
+      "researchQuestion": "Should the Skill explicitly avoid memory names despite still-good trailing financials?"
+    },
+    {
+      "eventId": "event-2021q3-manufacturing-demand-slowdown",
+      "statement": "By August, manufacturing expansion had slowed close to stall speed, new orders were below 50 and supplier delivery times remained extended, providing a weak-demand backdrop before the late-Q3 power shock.",
+      "changeType": "macro_demand_softening",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-08-31T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20210831"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202108"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "exporters",
+        "industrial inputs"
+      ],
+      "contradictionSearchNotes": "Macro context only; too broad for direct stock selection.",
+      "researchQuestion": "Use as contradiction and duration context for shipping, auto and power theses."
+    }
+  ]
+}
