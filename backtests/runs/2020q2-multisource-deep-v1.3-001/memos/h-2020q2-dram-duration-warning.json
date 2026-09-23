@@ -1,0 +1,161 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-06-30T23:59:59+08:00",
+  "researchReadyAt": "2020-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q2-dram-duration-warning",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "If server-DRAM duration weakens, physical pricing and supplier expectations should become visible over one to two quarters."
+  },
+  "changeHypothesis": {
+    "summary": "Server DRAM remained in an upcycle but expected 2H20 price increases were revised down. GigaDevice's exceptional company growth is real but is not sufficient evidence that it is a direct beneficiary of the server-DRAM physical cycle.",
+    "firstCredibleDate": "2020-05-22",
+    "valueChain": [
+      "server procurement",
+      "DRAM contract price",
+      "memory supplier economics"
+    ],
+    "persistenceReason": "Procurement/inventory dynamics can affect pricing across several quarters.",
+    "disconfirmingEvidence": [
+      "Electronics equities were strong.",
+      "GigaDevice Q1 profit was exceptional.",
+      "The frozen source pack does not establish a clean server-DRAM earnings bridge for an A-share name."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-server-dram-20200522",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff physical-cycle evidence."
+    },
+    {
+      "id": "giga-q1-20200429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts_generic_mapping",
+      "supportsClaim": "Strong company growth exists but does not prove direct server-DRAM transmission."
+    },
+    {
+      "id": "memory-research-20200312",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "The memory upcycle narrative was already widely visible before Q2."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "weaker procurement/price expectations",
+      "to": "server DRAM supplier earnings",
+      "mechanism": "Lower expected contract-price upside reduces future margin expansion.",
+      "evidenceRefs": [
+        "trendforce-server-dram-20200522"
+      ],
+      "failureMode": "demand unexpectedly accelerates",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "buyers if memory costs fall"
+    ],
+    "losers": [
+      "undifferentiated DRAM suppliers"
+    ],
+    "substitutes": [
+      "other semiconductor product cycles"
+    ],
+    "bottlenecks": [
+      "inventory normalization"
+    ],
+    "falseThemeMatches": [
+      "A-share semiconductor companies whose strong earnings come from different products"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Strong memory/MCU company, but frozen evidence does not establish a clean server-DRAM cycle bridge.",
+      "evidenceRefs": [
+        "giga-q1-20200429",
+        "trendforce-server-dram-20200522"
+      ],
+      "earningsSensitivity": {
+        "base": "Company growth is strong.",
+        "favorable": "Non-server products can keep growing.",
+        "adverse": "Generic DRAM mapping is wrong."
+      },
+      "principalRisks": [
+        "mapping error",
+        "premium valuation"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No stock selection: do not convert strong semiconductor company earnings into a server-DRAM thesis without a direct bridge."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "A memory upcycle narrative was already public before Q2 while server-DRAM 2H price expectations were later revised down.",
+    "thesisExpectation": "Respect the duration warning unless direct company evidence proves a differentiated engine.",
+    "measurableGap": "No sufficiently direct A-share server-DRAM expression is frozen.",
+    "evidenceRefs": [
+      "memory-research-20200312",
+      "trendforce-server-dram-20200522"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "generic memory narrative already visible; direct mapping insufficient",
+    "constraints": [
+      "physical duration weakening",
+      "mapping uncertainty"
+    ]
+  },
+  "bearCase": "A strong A-share semiconductor stock rises for unrelated company reasons, falsely making a generic DRAM thesis look correct.",
+  "invalidationConditions": [
+    {
+      "indicator": "server DRAM pricing/procurement",
+      "observationMethod": "industry data",
+      "threshold": "clear re-acceleration plus direct company earnings bridge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "direct server-DRAM revenue share of candidate A-share names"
+  ],
+  "nextResearchActions": [
+    "No selection; keep GigaDevice in the separate company-growth/electronics hypothesis rather than double-counting it as DRAM beta."
+  ]
+}
