@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-22-forward-discovery-v0.6-001",
+  "auditUniverseTickerDigest": "e24393502faf23ef3233dd4418f571adafebe70514d55afdcec5810e5739aa87",
+  "benchmarkTicker": "000300.SH",
+  "cutoffDate": "2026-09-22",
+  "entryRule": "next_trading_day_open_after_cutoff_date",
+  "horizonTradingDays": 120,
+  "oneWayCostRate": 0.001,
+  "adjustment": "forward_adjusted_qfq",
+  "generatedAt": null,
+  "provider": null,
+  "providerNotes": null,
+  "rows": [
+    {
+      "ticker": "000001.SZ",
+      "status": "ok",
+      "entryDate": null,
+      "exitDate": null,
+      "entryOpen": null,
+      "exitClose": null,
+      "netReturn": null,
+      "benchmarkReturn": null,
+      "excessReturn": null,
+      "notes": null
+    }
+  ],
+  "statusDefinitions": {
+    "ok": "Sufficient price history exists to compute the frozen 120-trading-day outcome.",
+    "insufficient_history": "The security did not have enough post-cutoff trading history for the frozen horizon.",
+    "delisted": "Security delisted during the horizon; retain it in the denominator.",
+    "suspended": "Trading suspension prevents a standard outcome calculation; retain it in the denominator.",
+    "price_missing": "Required market data could not be retrieved or verified; retain it in the denominator.",
+    "execution_blocked": "Frozen entry rule was not executable; retain the case for later execution_filtered classification."
+  }
+}
