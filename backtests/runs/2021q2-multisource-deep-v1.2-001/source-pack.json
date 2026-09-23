@@ -1,0 +1,700 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2021q2-multisource-deep-v1.2-001",
+  "cutoffAt": "2021-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2021Q2 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official hog-price, PPI, auto and PMI evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses NDRC/NBS/CAAM pre-cutoff releases."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to prevent company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable commodity and component scarcity conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses public metals and auto-chip market evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Cross-check metals policy and chip-supply shocks.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters is accessed through syndicated copies where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist commodity/semiconductor evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses S&P Global/TrendForce when available."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "ndrc-hog-20210616",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家发展改革委发布生猪价格过度下跌三级预警",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202106/t20210616_1283300.html",
+      "publishedAt": "2021-06-16T00:00:00+08:00",
+      "availableAt": "2021-06-16T00:00:00+08:00",
+      "originGroup": "ndrc-hog-20210616",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Hog prices had fallen enough for the hog-to-grain ratio to enter the level-3 excessive-decline warning zone; NDRC cited concentrated heavy-hog selling, frozen-pork imports and weak seasonal demand."
+      ],
+      "entities": [
+        "hog prices",
+        "pork",
+        "feed"
+      ],
+      "observedChanges": [
+        "hog profitability collapses",
+        "official cycle warning begins"
+      ]
+    },
+    {
+      "itemId": "ndrc-hog-20210628",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "猪粮比价进入过度下跌一级预警区间",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/202106/t20210628_1284337.html",
+      "publishedAt": "2021-06-28T00:00:00+08:00",
+      "availableAt": "2021-06-28T00:00:00+08:00",
+      "originGroup": "ndrc-hog-20210628",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "June 21-25 average hog-to-grain ratio fell to 4.90:1, triggering the highest excessive-decline warning and planned central/local pork reserve purchases."
+      ],
+      "entities": [
+        "hog prices",
+        "pork reserves"
+      ],
+      "observedChanges": [
+        "hog cycle reaches severe loss zone",
+        "policy floor intervention begins"
+      ]
+    },
+    {
+      "itemId": "reuters-hog-20210628",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China to buy pork for state reserves to support prices",
+      "publisher": "Reuters syndicated",
+      "url": "https://www.thepigsite.com/news/2021/06/china-to-buy-pork-for-state-reserves-to-support-prices",
+      "publishedAt": "2021-06-28T00:00:00Z",
+      "availableAt": "2021-06-28T00:00:00Z",
+      "originGroup": "reuters-hog-20210628",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Live hog prices had plunged about 65% from the start of 2021 to early June; the reserve-purchase plan followed a severe profitability collapse, while spot prices had begun rebounding from a June 21 low."
+      ],
+      "entities": [
+        "hog prices",
+        "pig farmers",
+        "state reserves"
+      ],
+      "observedChanges": [
+        "deep cyclical loss confirmed",
+        "first rebound signal appears"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-20210510",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Copper hits record high on demand hope, tight supply",
+      "publisher": "Reuters syndicated",
+      "url": "https://www.marketscreener.com/news/latest/Copper-hits-record-high-on-demand-hope-tight-supply-33206386/",
+      "publishedAt": "2021-05-10T02:56:00Z",
+      "availableAt": "2021-05-10T02:56:00Z",
+      "originGroup": "reuters-copper-20210510",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Copper hit record highs in London and Shanghai after more than 30% YTD gains, supported by recovery/green-demand expectations and tight concentrate supply."
+      ],
+      "entities": [
+        "copper",
+        "aluminum",
+        "industrial metals"
+      ],
+      "observedChanges": [
+        "industrial metal prices reach records",
+        "scarcity narrative peaks"
+      ]
+    },
+    {
+      "itemId": "reuters-metals-crackdown-20210520",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "China's industrial commodities slide after Beijing warns of market crackdown",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/chinas-industrial-commodities-slide-after-beijing-warns-of-market-crackdown-2511636",
+      "publishedAt": "2021-05-20T14:04:00+08:00",
+      "availableAt": "2021-05-20T14:04:00+08:00",
+      "originGroup": "reuters-metals-crackdown-20210520",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Iron ore, coking coal and steel fell more than 5% after China announced measures to curb soaring raw-material prices and speculation."
+      ],
+      "entities": [
+        "copper",
+        "steel",
+        "coal",
+        "commodity policy"
+      ],
+      "observedChanges": [
+        "policy pushes against commodity rerating",
+        "peak-price risk rises"
+      ]
+    },
+    {
+      "itemId": "nbs-ppi-20210609",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2021年5月份工业生产者出厂价格同比上涨9.0%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1901121.html",
+      "publishedAt": "2021-06-09T09:30:00+08:00",
+      "availableAt": "2021-06-09T09:30:00+08:00",
+      "originGroup": "nbs-ppi-202105",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May PPI +9.0% YoY/+1.6% MoM; mining producer prices +36.4%, non-ferrous input prices +28.0% YoY and ferrous inputs +26.8%, confirming a broad upstream profit/input-cost shock."
+      ],
+      "entities": [
+        "PPI",
+        "metals",
+        "raw materials"
+      ],
+      "observedChanges": [
+        "upstream inflation accelerates sharply"
+      ]
+    },
+    {
+      "itemId": "spg-reserve-metals-20210616",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "China confirms metal stocks release from state reserves",
+      "publisher": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/metals/061621-china-confirms-metal-stocks-release-from-state-reserves",
+      "publishedAt": "2021-06-16T10:48:00Z",
+      "availableAt": "2021-06-16T10:48:00Z",
+      "originGroup": "spg-metals-reserve-20210616",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China confirmed releases of copper, aluminum and zinc from state reserves to downstream processors to stabilize supply and prices; futures had already begun trending lower."
+      ],
+      "entities": [
+        "copper",
+        "aluminum",
+        "zinc",
+        "state reserves"
+      ],
+      "observedChanges": [
+        "physical policy supply response begins",
+        "commodity price upside constrained"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20210510",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Sales of New Energy Vehicles in April 2021",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/54/id/1648.html",
+      "publishedAt": "2021-05-10T00:00:00+08:00",
+      "availableAt": "2021-05-10T00:00:00+08:00",
+      "originGroup": "caam-nev-202104",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "April NEV sales reached 206k, +180.3% YoY; Jan-Apr NEV sales 732k, +249.2% YoY."
+      ],
+      "entities": [
+        "NEVs",
+        "BEVs",
+        "PHEVs"
+      ],
+      "observedChanges": [
+        "NEV demand accelerates dramatically"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20210611",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Production of New Energy Vehicles in May 2021",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/53/id/1637.html",
+      "publishedAt": "2021-06-11T00:00:00+08:00",
+      "availableAt": "2021-06-11T00:00:00+08:00",
+      "originGroup": "caam-nev-202105",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May NEV production reached 217k, +151.7% YoY; Jan-May production 967k, +224% YoY."
+      ],
+      "entities": [
+        "NEVs",
+        "EV production"
+      ],
+      "observedChanges": [
+        "NEV scale remains structurally high"
+      ]
+    },
+    {
+      "itemId": "reuters-autochip-20210521",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Nissan, Suzuki Motor to curtail production in June due to chip shortage",
+      "publisher": "Reuters via Nippon.com",
+      "url": "https://www.nippon.com/en/news/reu20210521KCN2D21B5/",
+      "publishedAt": "2021-05-21T00:00:00Z",
+      "availableAt": "2021-05-21T00:00:00Z",
+      "originGroup": "reuters-autochip-20210521",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Nissan and Suzuki planned June production curtailments because semiconductor shortages were still constraining vehicle output; Mitsubishi also planned production reductions."
+      ],
+      "entities": [
+        "automotive semiconductors",
+        "Nissan",
+        "Suzuki"
+      ],
+      "observedChanges": [
+        "auto-chip bottleneck persists into Q2"
+      ]
+    },
+    {
+      "itemId": "tf-autochip-20210128",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "12-inch Fab Capacities for Automotive Semiconductor Undergo Most Severe Shortage",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20210128-10660.html",
+      "publishedAt": "2021-01-28T00:00:00+08:00",
+      "availableAt": "2021-01-28T00:00:00+08:00",
+      "originGroup": "trendforce-autochip-20210128",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Automotive MCU/CIS and several 8-inch power/analog products faced severe foundry-capacity shortages; auto IC qualification makes supply switching slow."
+      ],
+      "entities": [
+        "auto MCU",
+        "CIS",
+        "power semiconductors",
+        "foundry"
+      ],
+      "observedChanges": [
+        "automotive semiconductor supply is structurally constrained"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20210601",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Purchasing Managers Index for May 2021",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/english/PressRelease/202106/t20210601_1818052.html",
+      "publishedAt": "2021-06-01T09:00:00+08:00",
+      "availableAt": "2021-06-01T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202105",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May manufacturing PMI 51.0 remained expansionary but new-orders growth slowed; supplier delivery time fell to 47.6, showing supply constraints."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing demand"
+      ],
+      "observedChanges": [
+        "manufacturing remains expanding but demand momentum slows",
+        "supply delivery worsens"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2021q2-hog-collapse",
+      "statement": "Hog economics deteriorated from a high-price cycle into severe losses by late June, with the hog-to-grain ratio falling below 5:1 and triggering the highest official warning plus reserve-purchase intervention; spot hog prices had just begun a rebound from the June low.",
+      "changeType": "deep_cycle_loss_with_policy_floor",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-06-16T00:00:00+08:00",
+      "memberItemIds": [
+        "ndrc-hog-20210616",
+        "ndrc-hog-20210628",
+        "reuters-hog-20210628"
+      ],
+      "independentOriginGroups": [
+        "ndrc-hog-20210616",
+        "ndrc-hog-20210628",
+        "reuters-hog-20210628"
+      ],
+      "affectedValueChain": [
+        "hog breeders",
+        "feed",
+        "pork processors",
+        "consumers"
+      ],
+      "contradictionSearchNotes": "A reserve purchase can create a short rebound without restoring breeder profitability. Turning-point candidates need survival, cost and forward supply evidence.",
+      "researchQuestion": "Is any listed breeder at a genuine earnings trough with survival and operating-leverage evidence, or is this too early to bottom-fish?"
+    },
+    {
+      "eventId": "event-2021q2-industrial-metals-peak",
+      "statement": "Copper and other industrial commodities reached record highs amid tight supply and global recovery, but Chinese authorities then escalated anti-speculation measures and confirmed releases of copper/aluminum/zinc reserves, creating a classic high-profit-versus-policy/peak-duration conflict.",
+      "changeType": "commodity_superprofit_with_policy_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2021-05-10T02:56:00Z",
+      "memberItemIds": [
+        "reuters-copper-20210510",
+        "reuters-metals-crackdown-20210520",
+        "nbs-ppi-20210609",
+        "spg-reserve-metals-20210616"
+      ],
+      "independentOriginGroups": [
+        "reuters-copper-20210510",
+        "reuters-metals-crackdown-20210520",
+        "nbs-ppi-202105",
+        "spg-metals-reserve-20210616"
+      ],
+      "affectedValueChain": [
+        "copper miners",
+        "aluminum producers",
+        "smelters",
+        "downstream manufacturers"
+      ],
+      "contradictionSearchNotes": "Spot profits may be spectacular while policy explicitly attempts to cap the price path. V1.2 must distinguish durable low-cost supply advantage from peak price extrapolation.",
+      "researchQuestion": "Does any A-share metals producer retain a superior normalized earnings path after policy intervention, or should peak profits be treated as already absorbed?"
+    },
+    {
+      "eventId": "event-2021q2-nev-acceleration",
+      "statement": "China NEV sales/production continued growing at triple-digit rates through April-May, indicating a structural scale-up despite broader auto and component constraints.",
+      "changeType": "structural_volume_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-05-10T00:00:00+08:00",
+      "memberItemIds": [
+        "caam-nev-20210510",
+        "caam-nev-20210611"
+      ],
+      "independentOriginGroups": [
+        "caam-nev-202104",
+        "caam-nev-202105"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "batteries",
+        "power semiconductors",
+        "components"
+      ],
+      "contradictionSearchNotes": "Volume growth alone does not prove profit conversion and high-growth expectations may already be capitalized. Deep research must freeze the multi-year earnings path.",
+      "researchQuestion": "Which A-share NEV company converted structural volume growth into an incremental future earnings path rather than merely confirming already-premium expectations?"
+    },
+    {
+      "eventId": "event-2021q2-auto-chip-shortage",
+      "statement": "Automotive semiconductor scarcity remained severe enough to force production curtailments, while long qualification cycles and full foundry utilization made the bottleneck difficult to resolve quickly.",
+      "changeType": "component_supply_bottleneck",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-01-28T00:00:00+08:00",
+      "memberItemIds": [
+        "reuters-autochip-20210521",
+        "tf-autochip-20210128"
+      ],
+      "independentOriginGroups": [
+        "reuters-autochip-20210521",
+        "trendforce-autochip-20210128"
+      ],
+      "affectedValueChain": [
+        "auto chip suppliers",
+        "foundries",
+        "OEMs",
+        "power semiconductors"
+      ],
+      "contradictionSearchNotes": "Shortage hurts OEM volumes and may benefit qualified suppliers, but listed-company automotive revenue exposure must be directly auditable.",
+      "researchQuestion": "Can any A-share chip supplier prove material auto-specific scarcity-to-profit conversion before cutoff?"
+    },
+    {
+      "eventId": "event-2021q2-manufacturing-expansion-slowing",
+      "statement": "May manufacturing remained in expansion but new-order momentum slowed and supplier delivery times worsened, indicating strong activity with mounting input/supply constraints.",
+      "changeType": "macro_expansion_with_supply_pressure",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2021-06-01T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20210601",
+        "nbs-ppi-20210609"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202105",
+        "nbs-ppi-202105"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "raw materials",
+        "downstream users"
+      ],
+      "contradictionSearchNotes": "Useful as context across metals/auto/chips, not a direct stock thesis.",
+      "researchQuestion": "Use as cross-thesis input-cost and demand context."
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "regime-hog-20210628",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff hog price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q2-multisource-v1.2-001/regime/hog-20210628.snapshot.json",
+      "publishedAt": "2021-06-28T15:00:00+08:00",
+      "availableAt": "2021-06-28T15:00:00+08:00",
+      "normalizedClaims": [
+        "Hog basket 20d excess +0.95pp but 60d -20.57pp; breadth 100%/0%; neutral. All three major breeders had recent stabilization after a severe 60d de-rating."
+      ]
+    },
+    {
+      "id": "regime-metals-20210616",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff industrial-metals price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q2-multisource-v1.2-001/regime/metals-20210616.snapshot.json",
+      "publishedAt": "2021-06-16T15:00:00+08:00",
+      "availableAt": "2021-06-16T15:00:00+08:00",
+      "normalizedClaims": [
+        "Metals basket 20d excess -11.89pp and 60d -1.33pp; breadth 0%/33.3%; adverse. 紫金矿业 underperformed CSI300 on both 20d and 60d despite strong Q1 earnings."
+      ]
+    },
+    {
+      "id": "regime-nev-20210611",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff NEV price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q2-multisource-v1.2-001/regime/nev-20210611.snapshot.json",
+      "publishedAt": "2021-06-11T15:00:00+08:00",
+      "availableAt": "2021-06-11T15:00:00+08:00",
+      "normalizedClaims": [
+        "NEV basket 20d excess +23.63pp and 60d +23.67pp; breadth 66.7%/66.7%; favorable. BYD and CATL were sustained_strength, while SAIC lagged."
+      ]
+    },
+    {
+      "id": "regime-autochip-20210521",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "Frozen pre-cutoff automotive-semiconductor price-regime snapshot",
+      "publisher": "Stock Rador deterministic snapshot",
+      "url": "repo://backtests/runs/2021q2-multisource-v1.2-001/regime/autochip-20210521.snapshot.json",
+      "publishedAt": "2021-05-21T15:00:00+08:00",
+      "availableAt": "2021-05-21T15:00:00+08:00",
+      "normalizedClaims": [
+        "Auto-chip basket 20d excess +12.87pp and 60d +13.21pp; breadth 66.7%/66.7%; favorable. 士兰微 was sustained_strength, 斯达半导 was an early-turn candidate, 韦尔股份 was late_reversal."
+      ]
+    },
+    {
+      "id": "muyuan-q1-20210430",
+      "sourceType": "first_party",
+      "contentKind": "filing_summary",
+      "title": "牧原股份2021年一季报与公司日历",
+      "publisher": "东方财富Choice",
+      "url": "https://data.eastmoney.com/stockcalendar/002714.html",
+      "publishedAt": "2021-04-30T00:00:00+08:00",
+      "availableAt": "2021-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "2021Q1 attributable profit was RMB6.963bn, +68.54% YoY, while the later-Q2 hog-price collapse was not yet reflected in reported earnings."
+      ]
+    },
+    {
+      "id": "muyuan-cost-20210621",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "猪价再度跌破年内新低：生猪养殖进入全面性亏损",
+      "publisher": "新浪财经",
+      "url": "https://finance.sina.com.cn/stock/hyyj/2021-06-21/doc-ikqcfnca2364659.shtml",
+      "publishedAt": "2021-06-21T00:00:00+08:00",
+      "availableAt": "2021-06-21T00:00:00+08:00",
+      "normalizedClaims": [
+        "牧原 disclosed Q1 full hog-raising cost around RMB16/kg and aimed to reduce full-year cost below RMB14/kg; June hog prices fell below even this low-cost producer's then-current cost, implying industry-wide losses."
+      ]
+    },
+    {
+      "id": "zijin-q1-20210417",
+      "sourceType": "first_party",
+      "contentKind": "filing_summary",
+      "title": "紫金矿业2021年第一季度业绩",
+      "publisher": "东方财富Choice",
+      "url": "https://data.eastmoney.com/stockcalendar/601899.html",
+      "publishedAt": "2021-04-17T00:00:00+08:00",
+      "availableAt": "2021-04-17T00:00:00+08:00",
+      "normalizedClaims": [
+        "2021Q1 attributable profit was RMB2.511bn, +141.44% YoY."
+      ]
+    },
+    {
+      "id": "zijin-path-20210322",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "紫金矿业：业绩高速增长，揭开全球化之路新篇章",
+      "publisher": "华金证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202103221474699584_1.pdf?1616411906000.pdf=",
+      "publishedAt": "2021-03-22T00:00:00+08:00",
+      "availableAt": "2021-03-22T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2021-23 profit RMB12.822/21.630/28.279bn, growth +97.0%/+68.7%/+30.7%, with PE about 21.5x/12.8x/9.8x; the path explicitly assumes major copper/gold projects ramp across 2021-23."
+      ]
+    },
+    {
+      "id": "zijin-projects-20210323",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "紫金矿业：公司进入高速成长期，向世界级有色资源矿业巨头迈进",
+      "publisher": "中国银河证券 via 新浪财经",
+      "url": "https://finance.sina.com.cn/stock/stockzmt/2021-03-24/doc-ikknscsk0462537.shtml",
+      "publishedAt": "2021-03-24T07:57:00+08:00",
+      "availableAt": "2021-03-24T07:57:00+08:00",
+      "normalizedClaims": [
+        "Large copper/gold projects were entering a multi-year production ramp: 2021 copper output plan +19-28% and 2022/2025 production targets implied structural volume growth beyond commodity-price effects."
+      ]
+    },
+    {
+      "id": "catl-q1-20210430",
+      "sourceType": "first_party",
+      "contentKind": "filing_summary",
+      "title": "宁德时代2021年第一季度业绩",
+      "publisher": "东方财富Choice",
+      "url": "https://data.eastmoney.com/stockcalendar/300750.html",
+      "publishedAt": "2021-04-30T00:00:00+08:00",
+      "availableAt": "2021-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "2021Q1 attributable profit was RMB1.954bn, +163.38% YoY."
+      ]
+    },
+    {
+      "id": "catl-path-20210429",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "宁德时代点评报告：市占率维持稳定，储能业务大幅增长",
+      "publisher": "万联证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202104301488798730_1.pdf?1619802908000.pdf=",
+      "publishedAt": "2021-04-29T00:00:00+08:00",
+      "availableAt": "2021-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2021-23 revenue RMB91.484/134.244/180.050bn and profit RMB9.210/12.346/15.964bn; profit growth +65%/+34%/+29%; implied PE about 92.8x/69.3x/53.6x at the report price."
+      ]
+    },
+    {
+      "id": "catl-capacity-20210505",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "宁德时代：行业地位稳固，加速扩产迎接全球需求高增",
+      "publisher": "国金证券",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP202105051489899274_1.pdf?1620245144000.pdf=",
+      "publishedAt": "2021-05-05T00:00:00+08:00",
+      "availableAt": "2021-05-05T00:00:00+08:00",
+      "normalizedClaims": [
+        "Global battery share and planned capacity expansion supported a multi-year volume path, while raw-material inflation was already expected to limit near-term unit-cost improvement."
+      ]
+    },
+    {
+      "id": "byd-q1-20210429",
+      "sourceType": "first_party",
+      "contentKind": "filing_summary",
+      "title": "比亚迪2021年第一季度业绩",
+      "publisher": "东方财富Choice",
+      "url": "https://data.eastmoney.com/stockcalendar/002594.html",
+      "publishedAt": "2021-04-29T00:00:00+08:00",
+      "availableAt": "2021-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "2021Q1 attributable profit was RMB237m, +110.73% YoY, but absolute profit remained small relative to the premium valuation and broad growth narrative."
+      ]
+    },
+    {
+      "id": "saic-q1-20210430",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "上汽集团2021年第一季度报告",
+      "publisher": "上汽集团 via 新浪财经",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7194122&stockid=600104",
+      "publishedAt": "2021-04-30T00:00:00+08:00",
+      "availableAt": "2021-04-30T00:00:00+08:00",
+      "normalizedClaims": [
+        "2021Q1 revenue +82.13%, attributable profit +510.83% and operating cash flow turned positive, reflecting low-base recovery rather than the same structural battery-growth path."
+      ]
+    },
+    {
+      "id": "star-q1-20210428",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "斯达半导2021年第一季度报告",
+      "publisher": "斯达半导 via 新浪财经",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7146967&stockid=603290",
+      "publishedAt": "2021-04-28T00:00:00+08:00",
+      "availableAt": "2021-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue RMB325m +135.70%; attributable profit RMB75.05m +177.23%;扣非 +229.26%; operating cash flow turned strongly positive."
+      ]
+    },
+    {
+      "id": "star-path-20210428",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "斯达半导：一季报超预期，多领域IGBT获得突破",
+      "publisher": "华安证券 via 东方财富",
+      "url": "https://data.eastmoney.com/report/info/AP202104281488349699.html",
+      "publishedAt": "2021-04-28T00:00:00+08:00",
+      "availableAt": "2021-04-28T00:00:00+08:00",
+      "normalizedClaims": [
+        "Forecast 2021-23 profit RMB307/460/614m with implied PE about 103.9x/69.5x/52.0x; the baseline already assumes strong automotive IGBT and broader power-semiconductor growth."
+      ]
+    },
+    {
+      "id": "silan-q1-20210429",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "士兰微2021年第一季度报告",
+      "publisher": "士兰微 via 新浪财经",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7167291&stockid=600460",
+      "publishedAt": "2021-04-29T00:00:00+08:00",
+      "availableAt": "2021-04-29T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +113.47%; attributable profit RMB174m versus a near-zero prior-year base; operating cash flow remained slightly negative."
+      ]
+    },
+    {
+      "id": "will-q1-20210423",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "韦尔股份2021年第一季度报告",
+      "publisher": "韦尔股份 via 新浪财经",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=7094743&stockid=603501",
+      "publishedAt": "2021-04-23T00:00:00+08:00",
+      "availableAt": "2021-04-23T00:00:00+08:00",
+      "normalizedClaims": [
+        "Q1 revenue +62.76%; attributable profit RMB1.041bn +133.84%;扣非 +116.56%; operating cash flow turned positive."
+      ]
+    }
+  ]
+}
