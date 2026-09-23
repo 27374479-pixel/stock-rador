@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2020-03-31T23:59:59+08:00",
+  "researchReadyAt": "2020-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2020q1-consumer-hardware-conflict",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "WFH notebook demand and supply disruption can resolve over one to two quarters, but the cutoff signal is contradictory."
+  },
+  "changeHypothesis": {
+    "summary": "Remote-work notebook demand appeared, yet supply was disrupted and the full-year notebook forecast was still reduced. A headline beneficiary trade would ignore the demand/supply conflict.",
+    "firstCredibleDate": "2020-03-30",
+    "valueChain": [
+      "WFH/education demand",
+      "notebook supply",
+      "component orders",
+      "earnings"
+    ],
+    "persistenceReason": "WFH can persist, but global consumer weakness and supply constraints may offset it.",
+    "disconfirmingEvidence": [
+      "TrendForce still cut the full-year notebook forecast despite late-March WFH demand."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-notebook-20200330",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "WFH demand",
+      "to": "notebook/component orders",
+      "mechanism": "Remote work increases device needs.",
+      "evidenceRefs": [
+        "trendforce-notebook-20200330"
+      ],
+      "failureMode": "supply shortages/global recession dominate",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [
+      "existing devices"
+    ],
+    "bottlenecks": [
+      "supply chain",
+      "consumer demand"
+    ],
+    "falseThemeMatches": [
+      "all PC/component stocks assumed to benefit from WFH"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection because the physical demand and supply evidence conflicts and no company-specific pricing power is frozen."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "WFH was already a visible narrative by late March.",
+    "thesisExpectation": "Only a verified component bottleneck or company-specific earnings bridge should convert the theme into a selection.",
+    "measurableGap": "No such bridge is frozen.",
+    "evidenceRefs": [
+      "trendforce-notebook-20200330"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "conflicted_signal",
+    "constraints": [
+      "supply disruption",
+      "global demand uncertainty"
+    ]
+  },
+  "bearCase": "WFH headlines lift concepts while actual shipments and full-year demand disappoint.",
+  "invalidationConditions": [
+    {
+      "indicator": "notebook shipments/component pricing",
+      "observationMethod": "industry data",
+      "threshold": "clear sustained positive demand and company conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; keep as a conflict/fail-closed case."
+  ]
+}
