@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2021q3-multisource-v1.2-001",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-23T16:30:00+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/1.2.0/SKILL.md",
+    "version": "1.2.0"
+  },
+  "model": {
+    "name": "GPT-5.6 Sol",
+    "reasoning": "high"
+  },
+  "discoveryWindow": {
+    "startDate": "2021-07-01",
+    "endDate": "2021-09-30"
+  },
+  "screeningPath": "backtests/runs/2021q3-multisource-v1.2-001/screening.json",
+  "implementationPaths": [
+    "scripts/backtest-core-v120.cjs",
+    "scripts/lock-skill-run-v120.cjs",
+    "scripts/fetch-precutoff-regime.cjs",
+    "scripts/discovery-core.cjs",
+    "scripts/audit-discovery-recall.cjs"
+  ],
+  "contaminationControls": {
+    "modelMemoryRisk": "known_uncontrolled",
+    "sourcePackPath": "backtests/runs/2021q3-multisource-v1.2-001/source-pack.json",
+    "identityStressPath": "backtests/runs/2021q3-multisource-v1.2-001/identity-stress.json",
+    "searchResultFutureLeakageObserved": true,
+    "validationClass": "exploratory_contaminated",
+    "notes": "Third independent v1.2 holdout. V1.2 remains immutable after 2022Q1 and 2021Q4 diagnostics."
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "trackedHypothesisStates": [
+    "Research hypothesis",
+    "High-priority hypothesis"
+  ],
+  "trackedSelectionStates": [
+    "No selection",
+    "Research selection",
+    "High-priority selection"
+  ],
+  "primarySelectionStates": [
+    "High-priority selection"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "hypothesisMemoPaths": [],
+  "selections": [],
+  "reportingPolicy": {
+    "primaryMetric": "discovery_coverage_only",
+    "mustReportAllSelections": true,
+    "mustReportMatchedControls": true,
+    "mustReportBestControl": true,
+    "mustReportHypothesisAndSelectionStates": true,
+    "mustReportExpectationBurden": true,
+    "noSignalIsValid": true
+  },
+  "discoveryPolicy": {
+    "requiredLanes": [
+      "official_primary",
+      "company_first_party",
+      "physical_industry",
+      "reputable_news",
+      "specialist_trade",
+      "community_weak_signal"
+    ],
+    "minimumCoveredLanes": 4,
+    "screeningTarget": "event_cluster",
+    "postOutcomeMissAudit": {
+      "candidateUniverse": "Historical diagnostic only; exact 2021Q3 universe not prospectively frozen.",
+      "candidateRule": "Same-period hindsight cases diagnose only and may not tune v1.2.",
+      "causalEligibilityRule": "Detectable only if pre-cutoff public evidence could support the thesis without future outcomes.",
+      "samePeriodMayTuneSkill": false
+    }
+  }
+}
