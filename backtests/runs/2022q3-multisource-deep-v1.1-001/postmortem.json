@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2022q3-multisource-deep-v1.1-001",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "findings": [
+    {
+      "case": "nev_byd_derated_override",
+      "frozenDecision": "比亚迪 High-priority company_engine_override selection over 长城汽车/上汽集团",
+      "base60d": {
+        "selectedReturn": -0.0521320163927963,
+        "benchmarkReturn": -0.03034337342012683,
+        "benchmarkExcess": -0.02178864297266947,
+        "matchedControlExcess": -0.02254401267286621,
+        "bestControlTicker": "600104.SH",
+        "bestControlReturn": -0.021441403016688176,
+        "excessVsBestControl": -0.030690613376108122,
+        "selectedRank": 3
+      },
+      "postOutcomeFundamentalDiagnosis": "The operating engine did not fail. BYD Q3 2022 revenue rose 115.59% YoY, attributable profit rose 350.26% YoY, and YTD attributable profit rose 281.13%. The frozen thesis correctly identified extraordinary earnings conversion, but the stock still underperformed lower-expectation OEM controls over the pre-registered 60d horizon.",
+      "failureClass": "same_company_expectation_duration_and_quality_premium_misread",
+      "rootCause": "V1.1 interpreted a de-rated 20d/60d price state plus realized profit/CFO acceleration as sufficient expectation room. The frozen valuation still required roughly 98% forecast 2023 earnings growth and about 35x 2023E PE, so the market could continue compressing the duration/quality premium even as near-term earnings beat the operating thesis.",
+      "generalLesson": "De-rating is not the same as low expectations. For premium compounders, expectation burden must eventually test the duration and intensity of superior growth embedded in valuation, not only near-term earnings conversion and recent relative-price weakness."
+    },
+    {
+      "case": "drought_power_no_selection",
+      "frozenDecision": "High-priority physical power-scarcity hypothesis / No selection because the weather shock was short-lived, thermal economics were weak, and power equities had already rerated sharply.",
+      "failureClass": null,
+      "label": "physical_shock_without_durable_earnings_bridge_blocked",
+      "generalLesson": "A real physical shortage is not automatically an equity opportunity when the event half-life is short, the fuel/tariff spread is unresolved, and prices have already moved strongly."
+    },
+    {
+      "case": "memory_downcycle_no_selection",
+      "frozenDecision": "Research hypothesis / No selection because Q3 physical memory pricing was still worsening despite strong backward-looking H1 profits.",
+      "failureClass": null,
+      "label": "stale_earnings_do_not_override_worsening_physical_cycle",
+      "generalLesson": "Backward-looking strong earnings should not be used to bottom-fish a cycle while forward physical price/inventory evidence continues to deteriorate."
+    }
+  ],
+  "crossWindowExpectationDurationCheck": {
+    "repeatedSameCompanyCases": [
+      {
+        "case": "2023Q3 比亚迪",
+        "frozenState": "early_turn / sector_confirmed",
+        "outcome": "High-priority base60d failure",
+        "fundamentalOutcome": "Q3 2023 earnings remained strong",
+        "interpretation": "Premium valuation already encoded long-duration superior growth."
+      },
+      {
+        "case": "2022Q3 比亚迪",
+        "frozenState": "de_rated / company_engine_override",
+        "outcome": "High-priority base60d failure",
+        "fundamentalOutcome": "Q3 2022 revenue +115.59%, profit +350.26%",
+        "interpretation": "Even a substantial de-rating did not guarantee low expectations because the premium still embedded near-doubling forward earnings."
+      }
+    ],
+    "interpretation": "Expectation-duration/quality-premium misread now repeats across time but only in the same company. This raises priority for cross-company validation but is not sufficient to create V1.2."
+  },
+  "decision": {
+    "keepV11Immutable": true,
+    "createV12Now": false,
+    "reason": "The expectation-duration issue repeated in BYD across two periods, but same-company repetition is not sufficiently general to justify a new generic gate.",
+    "nextAction": "Continue unchanged V1.1 on another independent window and seek cross-company/cross-industry evidence before versioning any expectation-duration mechanism."
+  },
+  "prohibitedUses": [
+    "Do not alter V1.1 using this 2022Q3 outcome.",
+    "Do not learn fixed PE, PEG, growth, momentum or drawdown thresholds from BYD.",
+    "Do not infer that de-rated premium companies are universally bad buys.",
+    "Do not create V1.2 until the same failure class repeats in a different company/industry or is otherwise supported by an independent causal test."
+  ]
+}
