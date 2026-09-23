@@ -1,0 +1,511 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.1.0",
+  "cutoffAt": "2022-06-27T23:59:59+08:00",
+  "researchReadyAt": "2022-06-27T20:45:00+08:00",
+  "actionableAt": "2022-06-27T20:45:00+08:00",
+  "hypothesisId": "h-2022q2-pv-shortage-tongwei",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Booked polysilicon shortages and high utilization should remain visible in H1/Q3 earnings over one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "sector_confirmed",
+  "changeHypothesis": {
+    "summary": "Polysilicon remained structurally undersupplied into late June, with suppliers booked/overbooked and maintenance limiting output. 通威 had already converted the shortage into Q1 revenue +132%, profit +513% and CFO +93%. Despite sustained stock strength, frozen forward PE was only ~13x and consensus already modeled a 2023 profit decline, reducing the risk that valuation required perpetual peak growth.",
+    "firstCredibleDate": "2022-04-26",
+    "valueChain": [
+      "PV demand",
+      "polysilicon shortage",
+      "high silicon price/utilization",
+      "producer margin/cash earnings"
+    ],
+    "persistenceReason": "June supply was booked and maintenance/limited output was expected to extend undersupply into Q3.",
+    "disconfirmingEvidence": [
+      "The stock had already strongly outperformed over 20d/60d.",
+      "Silicon capacity expansion could normalize profits in 2023.",
+      "PV upstream is highly cyclical."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "energytrend-pv-20220609",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "siliconchina-pv-20220627",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pv-20220627",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tongwei-q1-20220426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tongwei-research-20220620",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tbea-q1-20220423",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tbea-research-20220613",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "longi-q1-20220428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "PV demand + constrained silicon supply",
+      "to": "high polysilicon price/utilization",
+      "mechanism": "Booked supply and maintenance keep silicon scarce.",
+      "evidenceRefs": [
+        "energytrend-pv-20220609",
+        "siliconchina-pv-20220627"
+      ],
+      "failureMode": "new capacity arrives faster than demand",
+      "lag": "quarters"
+    },
+    {
+      "from": "silicon price/utilization",
+      "to": "通威 earnings",
+      "mechanism": "Low-cost silicon production captures scarcity margin; Q1 profit/CFO already confirm conversion.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426",
+        "tongwei-research-20220620"
+      ],
+      "failureMode": "silicon prices/margins fall sharply",
+      "lag": "realized/quarters"
+    },
+    {
+      "from": "earnings duration",
+      "to": "stock alpha",
+      "mechanism": "At ~13x 2022E PE with 2023 earnings already forecast lower, sustained scarcity can still surprise without requiring a high-duration growth multiple.",
+      "evidenceRefs": [
+        "tongwei-research-20220620",
+        "regime-pv-20220627"
+      ],
+      "failureMode": "market correctly prices the peak and shortage ends sooner than expected",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost polysilicon producers"
+    ],
+    "secondOrderWinners": [
+      "upstream-integrated PV firms"
+    ],
+    "losers": [
+      "wafer/cell/module producers unable to pass through silicon costs"
+    ],
+    "substitutes": [
+      "alternative silicon suppliers/new capacity"
+    ],
+    "bottlenecks": [
+      "polysilicon output/maintenance"
+    ],
+    "falseThemeMatches": [
+      "downstream PV names whose margins are squeezed by silicon"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Direct low-cost polysilicon producer with Q1 profit +513% and strong CFO.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426",
+        "tongwei-research-20220620"
+      ],
+      "earningsSensitivity": {
+        "base": "2022E PE ~12.94x; consensus 2023 profit already -9% versus 2022.",
+        "favorable": "shortage persists into Q3.",
+        "adverse": "new capacity collapses silicon margins."
+      },
+      "principalRisks": [
+        "peak-cycle silicon",
+        "capacity expansion"
+      ]
+    },
+    {
+      "ticker": "600089.SH",
+      "name": "特变电工",
+      "verifiedExposure": "Silicon exposure plus coal/power/grid businesses; Q1 profit +47%.",
+      "evidenceRefs": [
+        "tbea-q1-20220423",
+        "tbea-research-20220613"
+      ],
+      "earningsSensitivity": {
+        "base": "2022/23 profit forecast RMB9.5/10.5bn.",
+        "favorable": "new silicon capacity and energy businesses add growth.",
+        "adverse": "mixed exposure dilutes silicon torque."
+      },
+      "principalRisks": [
+        "conglomerate mix",
+        "new capacity execution"
+      ]
+    },
+    {
+      "ticker": "601012.SH",
+      "name": "隆基绿能",
+      "verifiedExposure": "Large downstream wafer/module producer exposed to high silicon input costs.",
+      "evidenceRefs": [
+        "longi-q1-20220428"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit only +6.5%.",
+        "favorable": "downstream demand and pass-through improve.",
+        "adverse": "silicon costs squeeze margins."
+      },
+      "principalRisks": [
+        "input cost pressure"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600089.SH",
+      "name": "特变电工",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed upstream silicon producer with additional coal/power/grid earnings.",
+      "whySelectedCompanyShouldOutperform": "通威 had much faster direct silicon-driven Q1 profit growth and a cleaner shortage exposure, while TBEA's earnings were more diversified.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426",
+        "tbea-q1-20220423",
+        "tongwei-research-20220620",
+        "tbea-research-20220613"
+      ]
+    },
+    {
+      "ticker": "601012.SH",
+      "name": "隆基绿能",
+      "controlType": "value_chain",
+      "fairCounterfactualReason": "Large downstream PV leader exposed to the same demand but hurt by silicon scarcity.",
+      "whySelectedCompanyShouldOutperform": "通威 directly captures the constrained input margin while LONGi Q1 profit growth was only ~6.5%.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426",
+        "longi-q1-20220428"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600438.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600089.SH",
+        "selectedAdvantages": [
+          "Q1 profit +513% vs +47%",
+          "cleaner direct scarcity exposure",
+          "strong CFO"
+        ],
+        "selectedDisadvantages": [
+          "TBEA diversified coal/power/grid earnings may reduce silicon-downcycle risk"
+        ],
+        "evidenceRefs": [
+          "tongwei-q1-20220426",
+          "tbea-q1-20220423",
+          "tongwei-research-20220620",
+          "tbea-research-20220613"
+        ],
+        "switchCondition": "Prefer TBEA if silicon margins begin normalizing and diversified earnings revisions dominate.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601012.SH",
+        "selectedAdvantages": [
+          "direct beneficiary of silicon shortage",
+          "far faster Q1 profit growth"
+        ],
+        "selectedDisadvantages": [
+          "LONGi has downstream scale/brand and benefits when silicon costs fall"
+        ],
+        "evidenceRefs": [
+          "tongwei-q1-20220426",
+          "longi-q1-20220428"
+        ],
+        "switchCondition": "Prefer LONGi once silicon shortage breaks and downstream margin expansion becomes the dominant event.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "The event is specifically a silicon shortage, and 通威 is the cleanest realized profit expression at a valuation that already anticipates later normalization."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "通威 had already outperformed CSI300 by ~23.4pp over 20d and ~40.4pp over 60d, but a Jun20 report still valued 2022E at ~12.94x PE and explicitly forecast 2023 profit ~9% lower than 2022.",
+    "thesisExpectation": "The undersupply lasts into Q3, so 2022 cash earnings remain stronger/longer than the market's already-normalizing baseline.",
+    "measurableGap": "Strong price action reflects scarcity, but valuation does not require multi-year earnings acceleration; consensus already prices normalization.",
+    "evidenceRefs": [
+      "regime-pv-20220627",
+      "tongwei-research-20220620",
+      "siliconchina-pv-20220627"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward PE and explicit 2023 normalization baseline.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2022-24 PE ~12.94x/14.26x/12.11x; 2023 profit forecast below 2022.",
+    "thesisScenario": "Silicon shortage persists through Q3, keeping 2022/H1-H2 earnings above the normalization baseline.",
+    "breakevenCondition": "Peak earnings need only persist through the base horizon; the thesis does not require perpetual growth or multiple expansion.",
+    "ordinaryScenarioFailure": "New capacity/maintenance recovery ends the shortage quickly and 2022 earnings peak earlier than expected.",
+    "catalystOrTimingBridge": "H1/Q3 results and silicon price/output data within 60 trading days.",
+    "evidenceRefs": [
+      "tongwei-research-20220620",
+      "siliconchina-pv-20220627"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Silicon remained booked/undersupplied with prices still rising in June.",
+      "evidenceRefs": [
+        "energytrend-pv-20220609",
+        "siliconchina-pv-20220627"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "通威 Q1 profit +513% and CFO +93% already convert scarcity into earnings.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "TBEA also profitable but less direct; LONGi downstream profit growth was much slower.",
+      "evidenceRefs": [
+        "tbea-q1-20220423",
+        "longi-q1-20220428"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "June20 forecast already assumes 2023 normalization, while late-June shortage evidence can still extend 2022 earnings duration.",
+      "evidenceRefs": [
+        "tongwei-research-20220620",
+        "siliconchina-pv-20220627"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Sustained 20d/60d strength offset by low forward PE and explicit future normalization.",
+      "evidenceRefs": [
+        "regime-pv-20220627",
+        "tongwei-research-20220620"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen PV-upstream basket versus CSI300",
+      "lookback20Excess": 0.17132075332246086,
+      "lookback60Excess": 0.3082350880379772,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-pv-20220627"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Late-June supply remained tight and maintenance reduced output while orders were fully booked.",
+      "evidenceRefs": [
+        "energytrend-pv-20220609",
+        "siliconchina-pv-20220627"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "通威/TBEA upstream earnings were strong while downstream LONGi lagged, matching the value-chain thesis.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426",
+        "tbea-q1-20220423",
+        "longi-q1-20220428"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Shortage/maintenance evidence pointed into Q3, not merely days/weeks.",
+      "evidenceRefs": [
+        "siliconchina-pv-20220627"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Price strength is substantial, but valuation/consensus already discount peak normalization rather than perpetual acceleration.",
+      "evidenceRefs": [
+        "regime-pv-20220627",
+        "tongwei-research-20220620"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Physical shortage, earnings and price regime are aligned; valuation still leaves room despite sustained strength."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600438.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Very strong profit,扣非 and operating cash-flow conversion.",
+      "evidenceRefs": [
+        "tongwei-q1-20220426"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Late-June physical shortage can extend earnings duration beyond a baseline already forecasting 2023 decline.",
+      "evidenceRefs": [
+        "siliconchina-pv-20220627",
+        "tongwei-research-20220620"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "~13x 2022E PE and a lower 2023 profit forecast mean the stock does not require long-duration growth continuation.",
+      "evidenceRefs": [
+        "tongwei-research-20220620"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "H1 reporting and silicon price/output updates lie inside base horizon.",
+      "evidenceRefs": [
+        "tongwei-research-20220620",
+        "siliconchina-pv-20220627"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low forward multiple and already-normalizing consensus cushion some peak-cycle risk.",
+      "evidenceRefs": [
+        "tongwei-research-20220620"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600089.SH",
+        "revisionAdvantage": "通威 has cleaner direct silicon shortage exposure and faster realized profit growth.",
+        "valuationAdvantage": "Both benefit from silicon, but 通威's baseline explicitly normalizes 2023 profit.",
+        "qualityTradeoff": "Both profitable; 通威 has stronger direct Q1 conversion.",
+        "catalystAdvantage": "Silicon price/volume maps more directly to 通威.",
+        "downsideTradeoff": "TBEA diversification lowers cycle downside; 通威 has clearer current upside.",
+        "evidenceRefs": [
+          "tongwei-q1-20220426",
+          "tbea-q1-20220423",
+          "tongwei-research-20220620",
+          "tbea-research-20220613"
+        ],
+        "switchCondition": "Switch if silicon shortage ends and TBEA diversified revisions dominate.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601012.SH",
+        "revisionAdvantage": "通威 directly captures silicon scarcity while LONGi is cost-exposed.",
+        "valuationAdvantage": "通威 low forward PE with normalization already modeled.",
+        "qualityTradeoff": "LONGi quality/scale is strong but Q1 profit growth much slower.",
+        "catalystAdvantage": "Late-June silicon shortage is a direct 通威 catalyst.",
+        "downsideTradeoff": "LONGi benefits later if silicon normalizes.",
+        "evidenceRefs": [
+          "tongwei-q1-20220426",
+          "longi-q1-20220428",
+          "siliconchina-pv-20220627"
+        ],
+        "switchCondition": "Switch once silicon prices break and downstream margin recovery becomes realized.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Polysilicon prices remained high/rising while suppliers were fully booked and output constrained.",
+    "earningsMechanism": "High silicon price and utilization expand low-cost producer margins/cash earnings; Q1 already demonstrates conversion.",
+    "nextObservableMetric": "H1 silicon volume/price, attributable profit and CFO",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "tongwei-q1-20220426",
+      "energytrend-pv-20220609",
+      "siliconchina-pv-20220627"
+    ],
+    "failureCondition": "Silicon price/output tightness breaks before H1/Q3 earnings sustain the profit pool."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "High-priority via normal sector-confirmed route; sustained strength is accepted because valuation is low and consensus already models normalization.",
+    "alreadyPricedAssessment": "rerated but not obviously fully priced",
+    "constraints": [
+      "silicon peak-cycle risk",
+      "new capacity"
+    ]
+  },
+  "bearCase": "The market is correctly capitalizing a short-lived 2022 silicon super-profit; new supply arrives quickly and earnings/stock fall despite the low headline PE.",
+  "invalidationConditions": [
+    {
+      "indicator": "silicon price/output balance",
+      "observationMethod": "industry data",
+      "threshold": "shortage resolves materially earlier than expected"
+    },
+    {
+      "indicator": "H1 profit/CFO",
+      "observationMethod": "company filing",
+      "threshold": "profit/cash conversion materially decelerates"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact silicon cash-cost curve",
+    "pace of new capacity ramp"
+  ],
+  "nextResearchActions": [
+    "Freeze High-priority; do not downgrade merely because price is sustained_strength."
+  ]
+}
