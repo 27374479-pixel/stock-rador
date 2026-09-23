@@ -1,0 +1,172 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.3.0",
+  "cutoffAt": "2019-12-31T23:59:59+08:00",
+  "researchReadyAt": "2019-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q4-nev-demand-weakness",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Weak physical NEV demand should affect broad OEM/battery earnings over the next reporting cycle unless a company-specific offset is independently verified."
+  },
+  "changeHypothesis": {
+    "summary": "November NEV sales remained -43.7% YoY and broad auto profits were weak. CATL's strong stock performance is not sufficient to reverse the physical-demand signal for the broad sector.",
+    "firstCredibleDate": "2019-12-12",
+    "valueChain": [
+      "NEV sales",
+      "battery/OEM volume",
+      "revenue/profit"
+    ],
+    "persistenceReason": "Demand weakness can persist until subsidies/base effects/product cycles normalize.",
+    "disconfirmingEvidence": [
+      "CATL had already rerated sharply, creating a divergence between one stock and weak physical market demand.",
+      "Tesla localization is separately modeled and must not be generalized to the whole NEV market."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "miit-auto-201911",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-nev-20191231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tesla-china-20191230",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "NEV sales -43.7% YoY",
+      "to": "broad OEM/battery utilization",
+      "mechanism": "Lower vehicle sales reduce broad-market battery and OEM volumes.",
+      "evidenceRefs": [
+        "miit-auto-201911"
+      ],
+      "failureMode": "company share gains or new models offset market decline",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [
+      "broad NEV OEMs/battery suppliers without share offsets"
+    ],
+    "substitutes": [
+      "ICE vehicles"
+    ],
+    "bottlenecks": [
+      "consumer demand",
+      "subsidy transition"
+    ],
+    "falseThemeMatches": [
+      "one strong stock used to declare sector demand healthy"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "verifiedExposure": "Leading battery supplier, but stock had already rerated dramatically while physical NEV demand was weak.",
+      "evidenceRefs": [
+        "regime-nev-20191231"
+      ],
+      "earningsSensitivity": {
+        "base": "Potential share/quality offset not independently frozen here.",
+        "favorable": "Share gains offset market weakness.",
+        "adverse": "Demand weakness and valuation absorption dominate."
+      },
+      "principalRisks": [
+        "large prior rerating",
+        "physical-demand conflict"
+      ]
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Integrated NEV OEM/battery exposure.",
+      "evidenceRefs": [
+        "regime-nev-20191231"
+      ],
+      "earningsSensitivity": {
+        "base": "Broad demand remains weak.",
+        "favorable": "New models/company-specific strength offset market.",
+        "adverse": "Sector contraction persists."
+      },
+      "principalRisks": [
+        "demand contraction"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No broad NEV long selection. Keep Tesla localization as a separate narrow event."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Frozen NEV basket looked favorable only because CATL had +44.6pp 60d excess while BYD lagged the index.",
+    "thesisExpectation": "Require company-specific realized share/earnings evidence rather than sector narrative.",
+    "measurableGap": "Physical demand and cross-sectional price breadth conflict.",
+    "evidenceRefs": [
+      "miit-auto-201911",
+      "regime-nev-20191231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "cross_section_conflict",
+    "constraints": [
+      "NEV sales -43.7% YoY",
+      "CATL-specific rerating"
+    ]
+  },
+  "bearCase": "Chasing the strongest battery name confuses stock-specific rerating with sector recovery.",
+  "invalidationConditions": [
+    {
+      "indicator": "NEV sales/company share",
+      "observationMethod": "MIIT/CAAM + company data",
+      "threshold": "sustained physical recovery or verified share-driven earnings acceleration"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No broad NEV selection; keep narrow Tesla supplier opportunity separate."
+  ]
+}
