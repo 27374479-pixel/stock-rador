@@ -1,0 +1,39 @@
+name: snapshot-v130-2020q3-precutoff-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.3-20260923
+    paths:
+      - .github/workflows/snapshot-v130-2020q3-precutoff-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.3-20260923
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Freeze v1.3 2020Q3 pre-cutoff regimes
+        run: |
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q3-multisource-v1.3-001/regime/gold-20200805.json backtests/runs/2020q3-multisource-v1.3-001/regime/gold-20200805.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q3-multisource-v1.3-001/regime/polysilicon-20200813.json backtests/runs/2020q3-multisource-v1.3-001/regime/polysilicon-20200813.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q3-multisource-v1.3-001/regime/nev-20200917.json backtests/runs/2020q3-multisource-v1.3-001/regime/nev-20200917.snapshot.json
+          node scripts/fetch-precutoff-regime-hfq.cjs backtests/runs/2020q3-multisource-v1.3-001/regime/dram-20200916.json backtests/runs/2020q3-multisource-v1.3-001/regime/dram-20200916.snapshot.json
+      - name: Commit regime snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2020q3-multisource-v1.3-001/regime/*.snapshot.json
+          git commit -m "backtest: freeze v1.3 2020Q3 pre-cutoff regimes"
+          git pull --rebase origin ai-skill-v1.3-20260923
+          git push origin HEAD:ai-skill-v1.3-20260923
