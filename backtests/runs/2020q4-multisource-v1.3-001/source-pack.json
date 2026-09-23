@@ -1,0 +1,413 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2020q4-multisource-v1.3-001",
+  "cutoffAt": "2020-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Built in September 2026 using current search/model weights. Only sources available by the 2020Q4 cutoff are retained; current-model/search leakage remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official China manufacturing and auto/NEV policy-demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on NBS, CAAM and State Council items relevant to surfaced Q4 changes."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer-first-party evidence.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred to deep research to avoid company-first discovery bias."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable DRAM pricing and semiconductor demand conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Uses TrendForce market evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Cross-check container shipping and industrial-metals changes.",
+      "coverageStatus": "partial",
+      "limitations": "Historical Reuters accessed through syndicated copies where necessary."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist freight-market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Uses S&P Global container-freight reporting."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No historical community crawl; declared unavailable."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "reuters-shipping-20201117",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Container freight rates soar on consumer goods boom, supply chain kinks",
+      "publisher": "Reuters via Investing.com",
+      "url": "https://www.investing.com/news/commodities-news/container-freight-rates-soar-on-consumer-goods-boom-supply-chain-kinks-2350511",
+      "publishedAt": "2020-11-17T22:40:00+08:00",
+      "availableAt": "2020-11-17T22:40:00+08:00",
+      "originGroup": "reuters-shipping-20201117",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Global container shipping rates hit records as U.S./European restocking demand, container scarcity and pandemic-distorted freight flows tightened effective capacity; the Freightos Baltic global index was at a record and up about 30% since July 1."
+      ],
+      "entities": [
+        "container shipping",
+        "freight rates",
+        "China exports"
+      ],
+      "observedChanges": [
+        "container freight becomes seller's market",
+        "equipment/capacity scarcity persists"
+      ]
+    },
+    {
+      "itemId": "spg-shipping-20201120",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Container shipping bottlenecks will support record freight rates into 2021",
+      "publisher": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/shipping/112020-feature-container-shipping-bottlenecks-will-support-record-freight-rates-into-2021",
+      "publishedAt": "2020-11-20T16:04:00Z",
+      "availableAt": "2020-11-20T16:04:00Z",
+      "originGroup": "spg-shipping-20201120",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Container demand rose sharply and capacity bottlenecks were expected to keep freight rates at record highs into 2021; analysts described the higher-rate environment as potentially persistent for months."
+      ],
+      "entities": [
+        "container shipping",
+        "freight rates",
+        "capacity bottlenecks"
+      ],
+      "observedChanges": [
+        "record rates gain persistence",
+        "shipping bottleneck expected into 2021"
+      ]
+    },
+    {
+      "itemId": "spg-shipping-20201210",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Container freight rates: Fresh surge in prices propels key commodity markets to record highs",
+      "publisher": "S&P Global Commodity Insights",
+      "url": "https://www.spglobal.com/energy/en/news-research/latest-news/shipping/121020-container-freight-rates-fresh-surge-in-prices-propels-key-commodity-markets-to-record-highs",
+      "publishedAt": "2020-12-10T06:14:00Z",
+      "availableAt": "2020-12-10T06:14:00Z",
+      "originGroup": "spg-shipping-20201210",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "A fresh year-end freight-rate surge was rippling through metals, petrochemicals and agriculture; logistics bottlenecks were expected to remain elevated into Q1 2021."
+      ],
+      "entities": [
+        "container freight",
+        "metals",
+        "petrochemicals"
+      ],
+      "observedChanges": [
+        "freight-rate shock broadens",
+        "logistics constraints become cross-industry"
+      ]
+    },
+    {
+      "itemId": "gov-nev-plan-20201102",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "新能源汽车产业发展规划（2021—2035年）",
+      "publisher": "国务院办公厅",
+      "url": "https://www.gov.cn/zhengce/content/2020-11/02/content_5556716.htm",
+      "publishedAt": "2020-11-02T00:00:00+08:00",
+      "availableAt": "2020-11-02T00:00:00+08:00",
+      "originGroup": "gov-nev-plan-20201102",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China issued a 2021-2035 NEV development plan emphasizing electrification, technology, infrastructure and market-led industry development, with a 2025 target around 20% NEV share of new vehicle sales."
+      ],
+      "entities": [
+        "NEV",
+        "EV",
+        "power batteries"
+      ],
+      "observedChanges": [
+        "structural policy support is extended",
+        "NEV long-term adoption path becomes clearer"
+      ]
+    },
+    {
+      "itemId": "caam-nev-20201214",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "Brief analysis of the economic operation of the auto industry in November 2020",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/44/id/1575.html",
+      "publishedAt": "2020-12-14T00:00:00+08:00",
+      "availableAt": "2020-12-14T00:00:00+08:00",
+      "originGroup": "caam-nev-202011",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November NEV production/sales were about 198k/200k, +75.1%/+104.9% YoY, setting a monthly record; cumulative sales growth turned positive. Total auto sales also rose 12.6% YoY."
+      ],
+      "entities": [
+        "NEV",
+        "China autos",
+        "vehicle demand"
+      ],
+      "observedChanges": [
+        "NEV demand accelerates sharply",
+        "auto-market recovery broadens"
+      ]
+    },
+    {
+      "itemId": "reuters-copper-20201104",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Copper trading volumes rebound as speculators return",
+      "publisher": "Reuters via Mining Weekly",
+      "url": "https://www.miningweekly.com/article/copper-trading-volumes-rebound-as-speculators-return-2020-11-04",
+      "publishedAt": "2020-11-04T00:00:00Z",
+      "availableAt": "2020-11-04T00:00:00Z",
+      "originGroup": "reuters-copper-20201104",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "China's economic recovery and stimulus boosted copper demand; LME copper had risen more than 50% from March and recently hit a 28-month high."
+      ],
+      "entities": [
+        "copper",
+        "China demand",
+        "industrial metals"
+      ],
+      "observedChanges": [
+        "industrial-metals cycle accelerates",
+        "China recovery pulls copper higher"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20201130",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2020年11月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900921.html",
+      "publishedAt": "2020-11-30T09:00:00+08:00",
+      "availableAt": "2020-11-30T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202011",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November manufacturing PMI rose to 52.1, production to 54.7, new orders to 53.9 and new export orders to 51.5, showing broad domestic/export recovery; raw-material purchase prices rose sharply."
+      ],
+      "entities": [
+        "China PMI",
+        "exports",
+        "raw materials"
+      ],
+      "observedChanges": [
+        "manufacturing/export recovery strengthens",
+        "input-price pressure rises"
+      ]
+    },
+    {
+      "itemId": "nbs-pmi-20201231",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2020年12月中国采购经理指数运行情况",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202012/t20201231_1811956.html",
+      "publishedAt": "2020-12-31T09:00:00+08:00",
+      "availableAt": "2020-12-31T09:00:00+08:00",
+      "originGroup": "nbs-pmi-202012",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "December manufacturing PMI remained strong at 51.9 with production 54.2 and new orders 53.6; raw-material purchase prices accelerated to 68.0, reinforcing the upstream/input-price cycle."
+      ],
+      "entities": [
+        "China PMI",
+        "manufacturing",
+        "raw materials"
+      ],
+      "observedChanges": [
+        "manufacturing remains expansionary",
+        "upstream inflation accelerates"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20201111",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "DRAM Market Bulletin — November 11, 2020",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/category/Semiconductors/DRAM?page=100",
+      "publishedAt": "2020-11-11T00:00:00+08:00",
+      "availableAt": "2020-11-11T00:00:00+08:00",
+      "originGroup": "trendforce-dram-202011",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce described the overall DRAM market in November as still experiencing weakening demand with contract prices continuing to slide from October."
+      ],
+      "entities": [
+        "DRAM",
+        "server DRAM",
+        "PC DRAM"
+      ],
+      "observedChanges": [
+        "DRAM demand weakens",
+        "contract prices remain under pressure"
+      ]
+    },
+    {
+      "itemId": "tf-dram-20201125",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "DRAM Market Bulletin — November 25, 2020",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/research/download/RP201125ND",
+      "publishedAt": "2020-11-25T00:00:00+08:00",
+      "availableAt": "2020-11-25T00:00:00+08:00",
+      "originGroup": "trendforce-dram-202011",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Server DRAM contract prices were still projected to register a small decline in November, showing that the memory cycle had not yet joined the broader manufacturing/commodity recovery."
+      ],
+      "entities": [
+        "server DRAM",
+        "contract prices"
+      ],
+      "observedChanges": [
+        "memory recovery lags broader manufacturing"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2020q4-container-freight-boom",
+      "statement": "Container freight rates reached record levels in Q4 as restocking demand, equipment scarcity and pandemic-distorted logistics tightened effective capacity; specialist sources expected the bottleneck to persist into early 2021.",
+      "changeType": "capacity_scarcity_price_spike",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-11-17T22:40:00+08:00",
+      "memberItemIds": [
+        "reuters-shipping-20201117",
+        "spg-shipping-20201120",
+        "spg-shipping-20201210"
+      ],
+      "independentOriginGroups": [
+        "reuters-shipping-20201117",
+        "spg-shipping-20201120",
+        "spg-shipping-20201210"
+      ],
+      "affectedValueChain": [
+        "container carriers",
+        "freight forwarders",
+        "ports",
+        "exporters/importers"
+      ],
+      "contradictionSearchNotes": "Spot-rate gains are real but peak-duration risk is high. Deep research must freeze the forward earnings/cash path and allow multiple acceptable carrier expressions rather than overfit one winner.",
+      "researchQuestion": "Is the high-rate environment still under-reflected in listed carriers, and which 1-3 carriers are acceptable expressions without requiring exact peer-best ranking?"
+    },
+    {
+      "eventId": "event-2020q4-nev-acceleration",
+      "statement": "China NEV demand accelerated sharply in Q4 while the State Council extended a long-term policy framework through 2035, creating both near-term volume acceleration and a clearer structural adoption path.",
+      "changeType": "structural_volume_acceleration",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2020-11-02T00:00:00+08:00",
+      "memberItemIds": [
+        "gov-nev-plan-20201102",
+        "caam-nev-20201214"
+      ],
+      "independentOriginGroups": [
+        "gov-nev-plan-20201102",
+        "caam-nev-202011"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "power batteries",
+        "semiconductors",
+        "charging infrastructure"
+      ],
+      "contradictionSearchNotes": "Strong policy and volume can already be capitalized in premium growth stocks. Company-level earnings conversion and full-path expectation room remain mandatory.",
+      "researchQuestion": "Which listed NEV/battery companies have realized conversion and a still-improving multi-period earnings path?"
+    },
+    {
+      "eventId": "event-2020q4-industrial-metals-recovery",
+      "statement": "China's manufacturing/export recovery and stimulus-driven demand pushed copper and other raw materials sharply higher while December input-price indices accelerated.",
+      "changeType": "cyclical_recovery_with_upstream_inflation",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-11-04T00:00:00Z",
+      "memberItemIds": [
+        "reuters-copper-20201104",
+        "nbs-pmi-20201130",
+        "nbs-pmi-20201231"
+      ],
+      "independentOriginGroups": [
+        "reuters-copper-20201104",
+        "nbs-pmi-202011",
+        "nbs-pmi-202012"
+      ],
+      "affectedValueChain": [
+        "copper miners",
+        "aluminum producers",
+        "smelters",
+        "downstream manufacturers"
+      ],
+      "contradictionSearchNotes": "Commodity prices had already rallied substantially from March. Deep research must distinguish durable volume/cost advantage from pure spot-price beta and should allow a set of acceptable resource expressions.",
+      "researchQuestion": "Which metal producers have acceptable normalized earnings paths if spot prices cool, rather than only current commodity beta?"
+    },
+    {
+      "eventId": "event-2020q4-dram-weakness",
+      "statement": "Despite broad manufacturing recovery, DRAM demand and contract pricing remained weak in November, creating a negative divergence between memory and the broader industrial cycle.",
+      "changeType": "sector_specific_cyclical_weakness",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-11-11T00:00:00+08:00",
+      "memberItemIds": [
+        "tf-dram-20201111",
+        "tf-dram-20201125"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-202011"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory designers",
+        "server/PC OEMs"
+      ],
+      "contradictionSearchNotes": "Single specialist origin and negative industry direction; deep research should fail closed unless a listed company has differentiated exposure or an independent earnings engine.",
+      "researchQuestion": "Should the Skill explicitly avoid memory names despite the broader manufacturing recovery?"
+    },
+    {
+      "eventId": "event-2020q4-manufacturing-export-recovery",
+      "statement": "China manufacturing, new orders and export orders strengthened through November-December while raw-material input prices accelerated, providing a broad positive macro backdrop but not a narrow stock thesis.",
+      "changeType": "broad_macro_recovery",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2020-11-30T09:00:00+08:00",
+      "memberItemIds": [
+        "nbs-pmi-20201130",
+        "nbs-pmi-20201231"
+      ],
+      "independentOriginGroups": [
+        "nbs-pmi-202011",
+        "nbs-pmi-202012"
+      ],
+      "affectedValueChain": [
+        "broad manufacturing",
+        "exporters",
+        "industrial inputs"
+      ],
+      "contradictionSearchNotes": "Use as context for shipping/metals/NEV; do not select stocks from macro alone.",
+      "researchQuestion": "Use as timing and persistence context rather than a standalone stock thesis."
+    }
+  ]
+}
