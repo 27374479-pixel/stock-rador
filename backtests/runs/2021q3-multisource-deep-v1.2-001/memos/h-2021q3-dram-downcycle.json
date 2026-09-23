@@ -1,0 +1,179 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-09-22T23:59:59+08:00",
+  "researchReadyAt": "2021-09-22T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q3-dram-downcycle",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A broad DRAM contract-price decline should hit margins/orders over one or more reporting cycles."
+  },
+  "changeHypothesis": {
+    "summary": "TrendForce showed DRAM spot and contract pricing rolling over as client inventories became excessive. Although 兆易创新 H1 results were excellent, its growth was driven heavily by NOR Flash and MCU and its DRAM business was still emerging, so the Skill should not use strong trailing earnings to deny a forward physical DRAM downturn.",
+    "firstCredibleDate": "2021-08-10",
+    "valueChain": [
+      "client inventory",
+      "DRAM contract price",
+      "memory supplier ASP",
+      "gross margin/profit"
+    ],
+    "persistenceReason": "Inventory correction and price renegotiation operate over quarters.",
+    "disconfirmingEvidence": [
+      "All frozen memory names underperformed CSI300 over the most recent 20d.",
+      "TrendForce projected broad Q4 DRAM declines including server DRAM.",
+      "兆易's strong H1 earnings were not a pure DRAM earnings signal."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tf-dram-20210810",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tf-dram-20210922",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-dram-20210922",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-h1-20210830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "excess client inventory",
+      "to": "lower DRAM pricing",
+      "mechanism": "Clients reduce procurement while suppliers compete on contract price.",
+      "evidenceRefs": [
+        "tf-dram-20210810",
+        "tf-dram-20210922"
+      ],
+      "failureMode": "demand unexpectedly reaccelerates or supply disruption tightens again",
+      "lag": "quarters"
+    },
+    {
+      "from": "lower DRAM pricing",
+      "to": "A-share memory earnings",
+      "mechanism": "Material DRAM suppliers should face ASP/margin pressure; diversified companies may be insulated by other products.",
+      "evidenceRefs": [
+        "giga-h1-20210830"
+      ],
+      "failureMode": "selected company has little DRAM exposure or other products offset downturn",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "DRAM buyers if lower prices persist"
+    ],
+    "secondOrderWinners": [
+      "OEMs with high memory BOM"
+    ],
+    "losers": [
+      "DRAM suppliers with pricing exposure"
+    ],
+    "substitutes": [
+      "other memory generations/vendors"
+    ],
+    "bottlenecks": [
+      "inventory digestion"
+    ],
+    "falseThemeMatches": [
+      "diversified chip companies whose earnings are driven by NOR/MCU rather than DRAM"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Emerging DRAM plus strong NOR/MCU, but H1 earnings were diversified and not a clean DRAM-downcycle expression.",
+      "evidenceRefs": [
+        "giga-h1-20210830"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit +116%, driven by multiple product lines.",
+        "favorable": "NOR/MCU offset DRAM weakness.",
+        "adverse": "memory pricing weakness broadens."
+      },
+      "principalRisks": [
+        "event mismatch",
+        "forward DRAM downturn"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No long selection from a negative DRAM event without a verified differentiated beneficiary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "DRAM pricing deterioration was now explicit and all frozen names had weakened over 20d.",
+    "thesisExpectation": "The memory downcycle should pressure DRAM-linked earnings; diversified strong-trailing companies should not be treated as automatic longs.",
+    "measurableGap": "No auditable long-side path advantage exists.",
+    "evidenceRefs": [
+      "tf-dram-20210922",
+      "regime-dram-20210922"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: forward industry signal is negative and no differentiated long beneficiary is verified.",
+    "alreadyPricedAssessment": "partial de-rating but no positive bridge",
+    "constraints": [
+      "negative industry price signal"
+    ]
+  },
+  "bearCase": "A stale trailing-earnings screen buys a memory/chip name into a visible ASP downturn and mistakes diversification for a positive DRAM thesis.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM contract pricing/inventory",
+      "observationMethod": "industry updates",
+      "threshold": "price decline reverses and inventories normalize faster than expected"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [
+    "company-specific DRAM revenue share at cutoff"
+  ],
+  "nextResearchActions": [
+    "Remain No selection until a company-specific positive path exists."
+  ]
+}
