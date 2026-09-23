@@ -1,0 +1,533 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.2.0",
+  "cutoffAt": "2021-03-26T23:59:59+08:00",
+  "researchReadyAt": "2021-03-26T20:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2021q1-polysilicon-tongwei",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Locked capacity and spot-price economics can affect Q1/H1 profit quickly, while later profitability depends on new industry capacity."
+  },
+  "decisionValidityTradingDays": 60,
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "changeHypothesis": {
+    "summary": "Polysilicon prices rose roughly 25-45% in Q1 as inventory disappeared. Tongwei had unusually low polysilicon costs, locked 2021 volume and expanding capacity, making it a stronger structural expression than downstream PV. But the broad PV basket was adverse and no pre-Mar26 2021 reported earnings existed to qualify for a company-engine override.",
+    "firstCredibleDate": "2021-01-22",
+    "valueChain": [
+      "PV demand",
+      "polysilicon shortage",
+      "polysilicon price",
+      "Tongwei cost/volume",
+      "profit"
+    ],
+    "persistenceReason": "2021 effective capacity was largely locked and new supply takes time, but later capacity growth can normalize price.",
+    "disconfirmingEvidence": [
+      "PV basket was adverse by Mar26.",
+      "The Jan22 baseline already expected 2021 polysilicon price/volume upside.",
+      "The first 2021 profit preannouncement arrived only after the cutoff and is excluded."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pvmag-polysilicon-20210303",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "infolink-polysilicon-20210310",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "infolink-polysilicon-20210317",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "pvmag-polysilicon-20210326",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-polysilicon-20210326",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "tongwei-path-20210122",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "PV demand/limited upstream capacity",
+      "to": "polysilicon shortage",
+      "mechanism": "Strong wafer demand encounters limited available polysilicon inventory.",
+      "evidenceRefs": [
+        "infolink-polysilicon-20210310",
+        "infolink-polysilicon-20210317"
+      ],
+      "failureMode": "demand destruction or rapid capacity ramp",
+      "lag": "weeks-quarters"
+    },
+    {
+      "from": "polysilicon price",
+      "to": "Tongwei earnings",
+      "mechanism": "Low production cost and locked volume create large incremental margins at higher spot prices.",
+      "evidenceRefs": [
+        "tongwei-path-20210122",
+        "pvmag-polysilicon-20210326"
+      ],
+      "failureMode": "price declines or cost rises",
+      "lag": "quarters"
+    },
+    {
+      "from": "earnings path",
+      "to": "equity alpha",
+      "mechanism": "The de-rated stock can rerate only if Q1/H1 earnings materially exceed the Jan baseline and outer-year capacity economics remain attractive.",
+      "evidenceRefs": [
+        "regime-polysilicon-20210326",
+        "tongwei-path-20210122"
+      ],
+      "failureMode": "high 2021 profit is only a peak and 2022 normalizes",
+      "lag": "20-60 trading days"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost polysilicon producers with secured volume"
+    ],
+    "secondOrderWinners": [
+      "wafer makers able to pass costs"
+    ],
+    "losers": [
+      "cell/module makers unable to pass upstream inflation"
+    ],
+    "substitutes": [
+      "new polysilicon capacity/technology efficiency"
+    ],
+    "bottlenecks": [
+      "polysilicon capacity"
+    ],
+    "falseThemeMatches": [
+      "downstream PV names hurt by the same price increase"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Low estimated polysilicon cost, 2021 effective capacity largely locked and high polysilicon/cell scale.",
+      "evidenceRefs": [
+        "tongwei-path-20210122"
+      ],
+      "earningsSensitivity": {
+        "base": "2021/22 profit forecast RMB6.61/7.04bn.",
+        "favorable": "Q1 spot prices stay above Jan assumptions and volume/cost outperform.",
+        "adverse": "new capacity normalizes silicon prices."
+      },
+      "principalRisks": [
+        "peak silicon price",
+        "PV chain demand destruction",
+        "no pre-cutoff realized Q1 result"
+      ]
+    },
+    {
+      "ticker": "600089.SH",
+      "name": "特变电工",
+      "verifiedExposure": "Indirect polysilicon via Xinte plus power/coal businesses.",
+      "evidenceRefs": [
+        "regime-polysilicon-20210326"
+      ],
+      "earningsSensitivity": {
+        "base": "diversified exposure",
+        "favorable": "silicon price and other energy businesses strengthen",
+        "adverse": "less pure conversion"
+      },
+      "principalRisks": [
+        "mixed business drivers"
+      ]
+    },
+    {
+      "ticker": "601012.SH",
+      "name": "隆基绿能",
+      "verifiedExposure": "Large downstream wafer/module leader facing both demand growth and upstream cost pressure.",
+      "evidenceRefs": [
+        "pvmag-polysilicon-20210303",
+        "regime-polysilicon-20210326"
+      ],
+      "earningsSensitivity": {
+        "base": "structural PV demand",
+        "favorable": "passes through raw-material cost",
+        "adverse": "polysilicon inflation compresses downstream margins"
+      },
+      "principalRisks": [
+        "margin squeeze"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600089.SH",
+      "name": "特变电工",
+      "controlType": "peer",
+      "fairCounterfactualReason": "A-share company with polysilicon exposure through Xinte.",
+      "whySelectedCompanyShouldOutperform": "Tongwei had a cleaner frozen low-cost/locked-volume polysilicon thesis, while TBEA had more mixed business drivers.",
+      "evidenceRefs": [
+        "tongwei-path-20210122",
+        "regime-polysilicon-20210326"
+      ]
+    },
+    {
+      "ticker": "601012.SH",
+      "name": "隆基绿能",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Leading downstream PV company exposed to the same end-demand but opposite upstream-cost incidence.",
+      "whySelectedCompanyShouldOutperform": "Tongwei should capture upstream scarcity margins while module/wafer economics face raw-material pressure.",
+      "evidenceRefs": [
+        "pvmag-polysilicon-20210303",
+        "infolink-polysilicon-20210317",
+        "tongwei-path-20210122"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600438.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600089.SH",
+        "selectedAdvantages": [
+          "cleaner polysilicon cost/volume thesis",
+          "locked 2021 capacity"
+        ],
+        "selectedDisadvantages": [
+          "TBEA has diversified power/coal optionality"
+        ],
+        "evidenceRefs": [
+          "tongwei-path-20210122",
+          "regime-polysilicon-20210326"
+        ],
+        "switchCondition": "Prefer TBEA if its polysilicon plus diversified earnings path is independently stronger at lower burden.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "601012.SH",
+        "selectedAdvantages": [
+          "direct beneficiary of polysilicon scarcity",
+          "low cost"
+        ],
+        "selectedDisadvantages": [
+          "LONGi has stronger downstream franchise if cost pass-through succeeds"
+        ],
+        "evidenceRefs": [
+          "tongwei-path-20210122",
+          "pvmag-polysilicon-20210303"
+        ],
+        "switchCondition": "Prefer LONGi if downstream pricing power fully absorbs silicon inflation and Tongwei price upside proves transient.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Tongwei is the clearest upstream scarcity expression, but lack of realized Q1 earnings and adverse sector timing keep it Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Jan22 baseline already expected 2021/22 profit RMB6.61/7.04bn and explicitly anticipated polysilicon price/volume upside. By Mar26 the stock was deeply de-rated even as polysilicon prices had risen much more.",
+    "thesisExpectation": "Q1/H1 silicon prices and low-cost locked volume can push 2021 earnings materially above the Jan baseline.",
+    "measurableGap": "Physical silicon prices moved far above the early-year level; the unresolved gap is whether this translates to reported profit and persists into 2022.",
+    "evidenceRefs": [
+      "tongwei-path-20210122",
+      "pvmag-polysilicon-20210326",
+      "regime-polysilicon-20210326"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Forward profit path plus low-cost commodity economics.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2021/22 profit RMB6.61/7.04bn; Jan target framework used 45-50x 2021 PE.",
+    "thesisScenario": "2021 realized polysilicon price and volume drive earnings well above RMB6.61bn and capacity growth supports a better 2022 path.",
+    "breakevenCondition": "The profit uplift must be large enough to offset an adverse PV equity regime and later silicon-price normalization.",
+    "ordinaryScenarioFailure": "Spot silicon rises but downstream demand softens or 2022 capacity normalizes the windfall, leaving only a one-year peak.",
+    "catalystOrTimingBridge": "Q1/H1 results and silicon price/contracts can verify the bridge within 60 trading days.",
+    "evidenceRefs": [
+      "tongwei-path-20210122",
+      "infolink-polysilicon-20210317",
+      "pvmag-polysilicon-20210326"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Polysilicon prices accelerated well beyond early-January levels.",
+      "evidenceRefs": [
+        "infolink-polysilicon-20210310",
+        "infolink-polysilicon-20210317",
+        "pvmag-polysilicon-20210326"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "insufficient",
+      "rationale": "No 2021 reported earnings or preannouncement was available by Mar26.",
+      "evidenceRefs": [
+        "tongwei-path-20210122"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Upstream polysilicon has better economics than downstream modules under the shortage.",
+      "evidenceRefs": [
+        "pvmag-polysilicon-20210303",
+        "infolink-polysilicon-20210317"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The Jan22 forecast predates a further large polysilicon price increase through March.",
+      "evidenceRefs": [
+        "tongwei-path-20210122",
+        "pvmag-polysilicon-20210326"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Tongwei was de-rated on both 20d and 60d relative windows.",
+      "evidenceRefs": [
+        "regime-polysilicon-20210326"
+      ]
+    },
+    "unresolvedReason": "measurement_gap_only",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight PV/polysilicon basket versus CSI300",
+      "lookback20Excess": -0.16518083856365215,
+      "lookback60Excess": -0.018181254707995625,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-polysilicon-20210326"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Polysilicon prices and scarcity accelerated through March.",
+      "evidenceRefs": [
+        "infolink-polysilicon-20210317",
+        "pvmag-polysilicon-20210326"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Upstream benefits while downstream margins are squeezed.",
+      "evidenceRefs": [
+        "pvmag-polysilicon-20210303",
+        "infolink-polysilicon-20210317"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "New polysilicon capacity takes months to ramp, but normalization is expected later.",
+      "evidenceRefs": [
+        "pvmag-polysilicon-20210303"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "Tongwei itself is de-rated rather than crowded, though physical silicon price is elevated.",
+      "evidenceRefs": [
+        "regime-polysilicon-20210326"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Company economics look strong, but broad PV price timing is adverse and realized company confirmation is not yet available."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600438.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Low-cost polysilicon position and secured volume are strong business-quality evidence.",
+      "evidenceRefs": [
+        "tongwei-path-20210122"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "March spot silicon prices moved materially above the Jan baseline.",
+      "evidenceRefs": [
+        "tongwei-path-20210122",
+        "pvmag-polysilicon-20210326"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "The stock de-rated materially despite stronger physical pricing; no current-year realized result is yet available.",
+      "evidenceRefs": [
+        "regime-polysilicon-20210326",
+        "tongwei-path-20210122"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q1/H1 profit and silicon contracts arrive inside the base horizon.",
+      "evidenceRefs": [
+        "tongwei-path-20210122"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low production cost and locked volume provide some buffer, though cycle normalization remains a risk.",
+      "evidenceRefs": [
+        "tongwei-path-20210122"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600089.SH",
+        "revisionAdvantage": "Tongwei has cleaner frozen silicon scarcity leverage.",
+        "valuationAdvantage": "Selected stock is de-rated; normalized peer comparison remains incomplete.",
+        "qualityTradeoff": "Tongwei purer upstream, TBEA diversified.",
+        "catalystAdvantage": "Silicon contract and Q1/H1 profit direct.",
+        "downsideTradeoff": "TBEA diversification may cushion silicon reversal.",
+        "evidenceRefs": [
+          "tongwei-path-20210122",
+          "regime-polysilicon-20210326"
+        ],
+        "switchCondition": "Switch if TBEA demonstrates superior full-path earnings.",
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "601012.SH",
+        "revisionAdvantage": "Upstream scarcity directly benefits Tongwei while cost inflation pressures downstream.",
+        "valuationAdvantage": "Tongwei de-rating provides more expectation reset.",
+        "qualityTradeoff": "LONGi downstream franchise vs Tongwei upstream cost leadership.",
+        "catalystAdvantage": "Silicon price flows directly to Tongwei earnings.",
+        "downsideTradeoff": "LONGi benefits if raw-material prices normalize.",
+        "evidenceRefs": [
+          "pvmag-polysilicon-20210303",
+          "tongwei-path-20210122"
+        ],
+        "switchCondition": "Switch if downstream pass-through is stronger than scarcity margins.",
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Polysilicon spot prices rose roughly 25-45% through Q1 while Tongwei's effective volume was largely locked.",
+    "earningsMechanism": "Low production cost creates large incremental margin on higher realized polysilicon prices.",
+    "nextObservableMetric": "Q1/H1 polysilicon realized price, volume and attributable profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "tongwei-path-20210122",
+      "infolink-polysilicon-20210317",
+      "pvmag-polysilicon-20210326"
+    ],
+    "failureCondition": "Reported profit fails to exceed the Jan baseline despite higher silicon prices."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2021E profit RMB6.61bn.",
+      "nextPeriod": "2022E profit RMB7.04bn, only modest growth after the 2021 step-up.",
+      "laterPeriod": "No later path frozen; new silicon capacity is expected to normalize scarcity.",
+      "rationale": "The Jan22 baseline already recognizes low cost, locked volume and 2021 silicon upside.",
+      "evidenceRefs": [
+        "tongwei-path-20210122"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "March silicon pricing implies materially higher 2021 earnings than the Jan baseline if realized.",
+      "nextPeriodChange": "Capacity expansion can support volume, but 2022 silicon-price normalization could offset it.",
+      "laterPeriodChange": "Long-run PV demand is structural, while upstream super-margin duration is uncertain.",
+      "mechanism": "Near-term earnings revision room is clear; outer-year duration is less certain.",
+      "evidenceRefs": [
+        "pvmag-polysilicon-20210326",
+        "tongwei-path-20210122"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "2021 path upside is measurable from price/cost/locked volume, but 2022+ durability is not yet clear.",
+      "evidenceRefs": [
+        "tongwei-path-20210122",
+        "pvmag-polysilicon-20210326"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "The company has structural cost/capacity advantages, but silicon scarcity margins can normalize.",
+      "evidenceRefs": [
+        "tongwei-path-20210122",
+        "pvmag-polysilicon-20210303"
+      ]
+    },
+    "falsifier": "Q1/H1 results do not show a material 2021 earnings uplift, or updated 2022 expectations fall as new supply ramps.",
+    "overallConclusion": "credible_path_room"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strongest 2021Q1 company-level setup, but v1.0+ override requires realized company earnings conversion, which was unavailable before cutoff.",
+    "alreadyPricedAssessment": "stock de-rated despite stronger physical silicon evidence",
+    "constraints": [
+      "adverse sector regime",
+      "no realized 2021 earnings by cutoff"
+    ]
+  },
+  "bearCase": "Silicon spot prices spike but downstream demand destruction and later capacity expansion turn the windfall into a short-lived peak.",
+  "invalidationConditions": [
+    {
+      "indicator": "Q1/H1 attributable profit",
+      "observationMethod": "company filing",
+      "threshold": "fails to materially exceed Jan path"
+    },
+    {
+      "indicator": "2022 silicon path",
+      "observationMethod": "industry capacity/pricing",
+      "threshold": "normalization erodes outer-year earnings"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Freeze before reveal."
+    ]
+  },
+  "unknowns": [
+    "exact realized Q1 silicon ASP",
+    "2022 normalized silicon margin"
+  ],
+  "nextResearchActions": [
+    "Freeze as Research; do not use post-cutoff Q1 preannouncement to upgrade."
+  ]
+}
