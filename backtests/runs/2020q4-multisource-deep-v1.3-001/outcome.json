@@ -1,0 +1,1481 @@
+{
+  "schemaVersion": "1.1",
+  "evaluatorVersion": "1.3-opportunity-first-partial-horizons",
+  "runId": "2020q4-multisource-deep-v1.3-001",
+  "evaluatedAt": "2026-09-23T10:39:23.140Z",
+  "frozenLockSha256": "218993ea9293e2ef6429ab8855fec6f63b18f36dff89c0c377054335dfabde53",
+  "priceSource": {
+    "provider": "Tencent public daily hfq + raw kline",
+    "fetchedAt": "2026-09-23T10:39:17.141Z",
+    "path": "backtests/runs/2020q4-multisource-deep-v1.3-001/prices.json"
+  },
+  "hypothesisMemoSummary": {
+    "count": 4,
+    "highPriorityHypothesisCount": 3,
+    "researchHypothesisCount": 1,
+    "noSelectionCount": 1,
+    "researchSelectionCount": 2,
+    "highPrioritySelectionCount": 1,
+    "rows": [
+      {
+        "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-industrial-metals.json",
+        "hypothesisId": "h-2020q4-industrial-metals-recovery",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "High-priority selection",
+        "actionableAt": "2020-11-30T15:15:00+08:00"
+      },
+      {
+        "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-container-shipping.json",
+        "hypothesisId": "h-2020q4-container-freight-boom",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-nev-acceleration.json",
+        "hypothesisId": "h-2020q4-nev-acceleration",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-dram-weakness.json",
+        "hypothesisId": "h-2020q4-dram-weakness",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      }
+    ]
+  },
+  "results": [
+    {
+      "hypothesisId": "h-2020q4-industrial-metals-recovery",
+      "ticker": "601899.SH",
+      "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-industrial-metals.json",
+      "state": "High-priority selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "High-priority selection",
+      "selectionComparison": {
+        "selectedTicker": "601899.SH",
+        "pairwise": [
+          {
+            "controlTicker": "601600.SH",
+            "selectedAdvantages": [
+              "realized +52% profit and +64% CFO growth",
+              "direct copper/gold mine volume growth",
+              "strong multi-year forecast path"
+            ],
+            "selectedDisadvantages": [
+              "Chalco may have more turnaround beta if aluminum spreads improve"
+            ],
+            "evidenceRefs": [
+              "zijin-q3-20201020",
+              "zijin-research-20201027",
+              "chalco-q3-20201028"
+            ],
+            "switchCondition": "Prefer Chalco only after aluminum spread recovery produces a comparable realized multi-period earnings path.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "000630.SZ",
+            "selectedAdvantages": [
+              "larger upstream mine growth and stronger frozen path evidence"
+            ],
+            "selectedDisadvantages": [
+              "Tongling could offer cheaper beta to copper if smelting economics improve"
+            ],
+            "evidenceRefs": [
+              "zijin-research-20201027",
+              "tongling-q3-20201030"
+            ],
+            "switchCondition": "Prefer Tongling if it develops a stronger direct upstream/earnings path at lower expectation burden.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "credible",
+        "rationale": "The opportunity has more than one acceptable copper/mining expression; 紫金 is preferred for evidence quality, not because the Skill requires it to outperform every peer."
+      },
+      "isPrimarySignal": true,
+      "researchReadyAt": "2020-11-30T15:15:00+08:00",
+      "actionableAt": "2020-11-30T15:15:00+08:00",
+      "entryAnchorAt": "2020-11-30T15:15:00+08:00",
+      "entryDate": "2020-12-01",
+      "entryAdjustedOpen": 15.24,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "China restocking/export recovery and mine-volume growth should enter one to two reporting cycles while copper pricing remains supportive."
+      },
+      "matchedControls": [
+        {
+          "ticker": "601600.SH",
+          "name": "中国铝业",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large upstream/basic-metals SOE exposed to the same reflation cycle.",
+          "whySelectedCompanyShouldOutperform": "紫金 has materially stronger realized profit/cash conversion and mine-volume growth; the acceptable copper expressions are more directly tied to the copper recovery.",
+          "evidenceRefs": [
+            "zijin-q3-20201020",
+            "chalco-q3-20201028"
+          ]
+        },
+        {
+          "ticker": "000630.SZ",
+          "name": "铜陵有色",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Seasoned integrated copper producer exposed to the same copper-price cycle.",
+          "whySelectedCompanyShouldOutperform": "紫金 has a clearer multi-year mine-volume path while 江西 has a more explicit copper-price earnings revision bridge.",
+          "evidenceRefs": [
+            "zijin-research-20201027",
+            "jiangxi-copper-20201102",
+            "tongling-q3-20201030"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": -0.017222820236813652
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2020-12-28",
+          "netReturn": 0.028452846366232132,
+          "benchmarkReturn": 0.02040647736408263,
+          "excessReturn": 0.0080463690021495,
+          "matchedControlBasketReturn": -0.05616184614803982,
+          "matchedControlExcess": 0.08461469251427195,
+          "bestControlTicker": "000630.SZ",
+          "bestControlReturn": -0.03391932251589369,
+          "excessVsBestControl": 0.06237216888212582,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601600.SH",
+              "controlType": "peer",
+              "netReturn": -0.07840436978018595
+            },
+            {
+              "ticker": "000630.SZ",
+              "controlType": "peer",
+              "netReturn": -0.03391932251589369
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.10172744721689064,
+            "peakDate": "2020-12-01",
+            "troughDate": "2020-12-15"
+          }
+        },
+        "60": {
+          "exitDate": "2021-03-02",
+          "netReturn": 0.2553607809513323,
+          "benchmarkReturn": 0.07787424468027226,
+          "excessReturn": 0.17748653627106004,
+          "matchedControlBasketReturn": 0.030044637482423475,
+          "matchedControlExcess": 0.22531614346890882,
+          "bestControlTicker": "000630.SZ",
+          "bestControlReturn": 0.044109308072923126,
+          "excessVsBestControl": 0.21125147287840917,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601600.SH",
+              "controlType": "peer",
+              "netReturn": 0.015979966891923825
+            },
+            {
+              "ticker": "000630.SZ",
+              "controlType": "peer",
+              "netReturn": 0.044109308072923126
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.18390804597701138,
+            "peakDate": "2021-02-22",
+            "troughDate": "2021-03-02"
+          }
+        },
+        "120": {
+          "exitDate": "2021-05-31",
+          "netReturn": 0.2042819385339072,
+          "benchmarkReturn": 0.07423541192755367,
+          "excessReturn": 0.13004652660635352,
+          "matchedControlBasketReturn": 0.17202386416867887,
+          "matchedControlExcess": 0.03225807436522832,
+          "bestControlTicker": "601600.SH",
+          "bestControlReturn": 0.2609297930171608,
+          "excessVsBestControl": -0.0566478544832536,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "601600.SH",
+              "controlType": "peer",
+              "netReturn": 0.2609297930171608
+            },
+            {
+              "ticker": "000630.SZ",
+              "controlType": "peer",
+              "netReturn": 0.08311793532019696
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.33652618135376755,
+            "peakDate": "2021-02-22",
+            "troughDate": "2021-03-24"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-03-02",
+        "netReturn": 0.2553607809513323,
+        "benchmarkReturn": 0.07787424468027226,
+        "excessReturn": 0.17748653627106004,
+        "matchedControlBasketReturn": 0.030044637482423475,
+        "matchedControlExcess": 0.22531614346890882,
+        "bestControlTicker": "000630.SZ",
+        "bestControlReturn": 0.044109308072923126,
+        "excessVsBestControl": 0.21125147287840917,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 3,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "601600.SH",
+            "controlType": "peer",
+            "netReturn": 0.015979966891923825
+          },
+          {
+            "ticker": "000630.SZ",
+            "controlType": "peer",
+            "netReturn": 0.044109308072923126
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.18390804597701138,
+          "peakDate": "2021-02-22",
+          "troughDate": "2021-03-02"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2020q4-industrial-metals-recovery",
+      "ticker": "600362.SH",
+      "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-industrial-metals.json",
+      "state": "High-priority selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "High-priority selection",
+      "selectionComparison": {
+        "selectedTicker": "601899.SH",
+        "pairwise": [
+          {
+            "controlTicker": "601600.SH",
+            "selectedAdvantages": [
+              "realized +52% profit and +64% CFO growth",
+              "direct copper/gold mine volume growth",
+              "strong multi-year forecast path"
+            ],
+            "selectedDisadvantages": [
+              "Chalco may have more turnaround beta if aluminum spreads improve"
+            ],
+            "evidenceRefs": [
+              "zijin-q3-20201020",
+              "zijin-research-20201027",
+              "chalco-q3-20201028"
+            ],
+            "switchCondition": "Prefer Chalco only after aluminum spread recovery produces a comparable realized multi-period earnings path.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "000630.SZ",
+            "selectedAdvantages": [
+              "larger upstream mine growth and stronger frozen path evidence"
+            ],
+            "selectedDisadvantages": [
+              "Tongling could offer cheaper beta to copper if smelting economics improve"
+            ],
+            "evidenceRefs": [
+              "zijin-research-20201027",
+              "tongling-q3-20201030"
+            ],
+            "switchCondition": "Prefer Tongling if it develops a stronger direct upstream/earnings path at lower expectation burden.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "credible",
+        "rationale": "The opportunity has more than one acceptable copper/mining expression; 紫金 is preferred for evidence quality, not because the Skill requires it to outperform every peer."
+      },
+      "isPrimarySignal": true,
+      "researchReadyAt": "2020-11-30T15:15:00+08:00",
+      "actionableAt": "2020-11-30T15:15:00+08:00",
+      "entryAnchorAt": "2020-11-30T15:15:00+08:00",
+      "entryDate": "2020-12-01",
+      "entryAdjustedOpen": 31.188,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "China restocking/export recovery and mine-volume growth should enter one to two reporting cycles while copper pricing remains supportive."
+      },
+      "matchedControls": [
+        {
+          "ticker": "601600.SH",
+          "name": "中国铝业",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large upstream/basic-metals SOE exposed to the same reflation cycle.",
+          "whySelectedCompanyShouldOutperform": "紫金 has materially stronger realized profit/cash conversion and mine-volume growth; the acceptable copper expressions are more directly tied to the copper recovery.",
+          "evidenceRefs": [
+            "zijin-q3-20201020",
+            "chalco-q3-20201028"
+          ]
+        },
+        {
+          "ticker": "000630.SZ",
+          "name": "铜陵有色",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Seasoned integrated copper producer exposed to the same copper-price cycle.",
+          "whySelectedCompanyShouldOutperform": "紫金 has a clearer multi-year mine-volume path while 江西 has a more explicit copper-price earnings revision bridge.",
+          "evidenceRefs": [
+            "zijin-research-20201027",
+            "jiangxi-copper-20201102",
+            "tongling-q3-20201030"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": -0.028181818181818197
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2020-12-28",
+          "netReturn": -0.023053706585834166,
+          "benchmarkReturn": 0.02040647736408263,
+          "excessReturn": -0.0434601839499168,
+          "matchedControlBasketReturn": -0.05616184614803982,
+          "matchedControlExcess": 0.03310813956220565,
+          "bestControlTicker": "000630.SZ",
+          "bestControlReturn": -0.03391932251589369,
+          "excessVsBestControl": 0.010865615930059525,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601600.SH",
+              "controlType": "peer",
+              "netReturn": -0.07840436978018595
+            },
+            {
+              "ticker": "000630.SZ",
+              "controlType": "peer",
+              "netReturn": -0.03391932251589369
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.11138621522082282,
+            "peakDate": "2020-12-01",
+            "troughDate": "2020-12-15"
+          }
+        },
+        "60": {
+          "exitDate": "2021-03-02",
+          "netReturn": 0.20375911122352108,
+          "benchmarkReturn": 0.07787424468027226,
+          "excessReturn": 0.12588486654324882,
+          "matchedControlBasketReturn": 0.030044637482423475,
+          "matchedControlExcess": 0.1737144737410976,
+          "bestControlTicker": "000630.SZ",
+          "bestControlReturn": 0.044109308072923126,
+          "excessVsBestControl": 0.15964980315059796,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601600.SH",
+              "controlType": "peer",
+              "netReturn": 0.015979966891923825
+            },
+            {
+              "ticker": "000630.SZ",
+              "controlType": "peer",
+              "netReturn": 0.044109308072923126
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.2129341993787064,
+            "peakDate": "2021-01-08",
+            "troughDate": "2021-02-05"
+          }
+        },
+        "120": {
+          "exitDate": "2021-05-31",
+          "netReturn": 0.1877593357008518,
+          "benchmarkReturn": 0.07423541192755367,
+          "excessReturn": 0.11352392377329812,
+          "matchedControlBasketReturn": 0.17202386416867887,
+          "matchedControlExcess": 0.015735471532172918,
+          "bestControlTicker": "601600.SH",
+          "bestControlReturn": 0.2609297930171608,
+          "excessVsBestControl": -0.073170457316309,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "601600.SH",
+              "controlType": "peer",
+              "netReturn": 0.2609297930171608
+            },
+            {
+              "ticker": "000630.SZ",
+              "controlType": "peer",
+              "netReturn": 0.08311793532019696
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.25214396009027196,
+            "peakDate": "2021-02-23",
+            "troughDate": "2021-03-24"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-03-02",
+        "netReturn": 0.20375911122352108,
+        "benchmarkReturn": 0.07787424468027226,
+        "excessReturn": 0.12588486654324882,
+        "matchedControlBasketReturn": 0.030044637482423475,
+        "matchedControlExcess": 0.1737144737410976,
+        "bestControlTicker": "000630.SZ",
+        "bestControlReturn": 0.044109308072923126,
+        "excessVsBestControl": 0.15964980315059796,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 3,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "601600.SH",
+            "controlType": "peer",
+            "netReturn": 0.015979966891923825
+          },
+          {
+            "ticker": "000630.SZ",
+            "controlType": "peer",
+            "netReturn": 0.044109308072923126
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.2129341993787064,
+          "peakDate": "2021-01-08",
+          "troughDate": "2021-02-05"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2020q4-container-freight-boom",
+      "ticker": "601919.SH",
+      "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-container-shipping.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "601919.SH",
+        "pairwise": [
+          {
+            "controlTicker": "601866.SH",
+            "selectedAdvantages": [
+              "direct carrier rate exposure",
+              "realized +82% profit and +52% CFO growth"
+            ],
+            "selectedDisadvantages": [
+              "larger prior rerating and peak-rate duration risk"
+            ],
+            "evidenceRefs": [
+              "cosco-q3-20201031",
+              "regime-shipping-20201210"
+            ],
+            "switchCondition": "Prefer COSCO Shipping Development only if container scarcity produces an independently verified superior earnings path.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "600018.SH",
+            "selectedAdvantages": [
+              "direct freight-rate monetization"
+            ],
+            "selectedDisadvantages": [
+              "port cash flows may be less peak-sensitive"
+            ],
+            "evidenceRefs": [
+              "reuters-shipping-20201117",
+              "cosco-q3-20201031"
+            ],
+            "switchCondition": "Prefer the port if freight rates normalize while export throughput stays strong.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "COSCO is the cleanest economic expression, but the opportunity itself is downgraded for expectation-duration risk."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2020-12-10T20:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2020-12-10T20:00:00+08:00",
+      "entryDate": "2020-12-11",
+      "entryAdjustedOpen": 9.99,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Record rates can flow rapidly into carrier earnings, but peak-rate duration is uncertain beyond early 2021."
+      },
+      "matchedControls": [
+        {
+          "ticker": "601866.SH",
+          "name": "中远海发",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Container/logistics-related listed name exposed to the same scarcity environment.",
+          "whySelectedCompanyShouldOutperform": "COSCO has direct freight-rate revenue and already-realized carrier earnings conversion.",
+          "evidenceRefs": [
+            "cosco-q3-20201031",
+            "regime-shipping-20201210"
+          ]
+        },
+        {
+          "ticker": "600018.SH",
+          "name": "上港集团",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large listed port exposed to the same export/logistics boom.",
+          "whySelectedCompanyShouldOutperform": "A port captures throughput, while COSCO directly monetizes record ocean freight rates.",
+          "evidenceRefs": [
+            "reuters-shipping-20201117",
+            "cosco-q3-20201031",
+            "regime-shipping-20201210"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.006403415154749181
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2021-01-08",
+          "netReturn": 0.5834165834165836,
+          "benchmarkReturn": 0.10843677261376983,
+          "excessReturn": 0.4749798108028138,
+          "matchedControlBasketReturn": 0.08492143131285923,
+          "matchedControlExcess": 0.4984951521037244,
+          "bestControlTicker": "601866.SH",
+          "bestControlReturn": 0.11905345328525918,
+          "excessVsBestControl": 0.46436313013132446,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601866.SH",
+              "controlType": "peer",
+              "netReturn": 0.11905345328525918
+            },
+            {
+              "ticker": "600018.SH",
+              "controlType": "peer",
+              "netReturn": 0.05078940934045928
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.05794205794205787,
+            "peakDate": "entry",
+            "troughDate": "2020-12-14"
+          }
+        },
+        "60": {
+          "exitDate": "2021-03-12",
+          "netReturn": 0.16983016983017007,
+          "benchmarkReturn": 0.03803284508110427,
+          "excessReturn": 0.1317973247490658,
+          "matchedControlBasketReturn": -0.0013132596339417435,
+          "matchedControlExcess": 0.17114342946411182,
+          "bestControlTicker": "600018.SH",
+          "bestControlReturn": 0.06998483164535418,
+          "excessVsBestControl": 0.09984533818481589,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601866.SH",
+              "controlType": "peer",
+              "netReturn": -0.07261135091323767
+            },
+            {
+              "ticker": "600018.SH",
+              "controlType": "peer",
+              "netReturn": 0.06998483164535418
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.42224744608399556,
+            "peakDate": "2021-01-13",
+            "troughDate": "2021-03-08"
+          }
+        },
+        "120": {
+          "exitDate": "2021-06-10",
+          "netReturn": 1.5564435564435564,
+          "benchmarkReturn": 0.06326369251001451,
+          "excessReturn": 1.4931798639335419,
+          "matchedControlBasketReturn": 0.07507876509983313,
+          "matchedControlExcess": 1.4813647913437231,
+          "bestControlTicker": "601866.SH",
+          "bestControlReturn": 0.10896583201165422,
+          "excessVsBestControl": 1.4474777244319021,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "601866.SH",
+              "controlType": "peer",
+              "netReturn": 0.10896583201165422
+            },
+            {
+              "ticker": "600018.SH",
+              "controlType": "peer",
+              "netReturn": 0.04119169818801205
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.42224744608399556,
+            "peakDate": "2021-01-13",
+            "troughDate": "2021-03-08"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-03-12",
+        "netReturn": 0.16983016983017007,
+        "benchmarkReturn": 0.03803284508110427,
+        "excessReturn": 0.1317973247490658,
+        "matchedControlBasketReturn": -0.0013132596339417435,
+        "matchedControlExcess": 0.17114342946411182,
+        "bestControlTicker": "600018.SH",
+        "bestControlReturn": 0.06998483164535418,
+        "excessVsBestControl": 0.09984533818481589,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 3,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "601866.SH",
+            "controlType": "peer",
+            "netReturn": -0.07261135091323767
+          },
+          {
+            "ticker": "600018.SH",
+            "controlType": "peer",
+            "netReturn": 0.06998483164535418
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.42224744608399556,
+          "peakDate": "2021-01-13",
+          "troughDate": "2021-03-08"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2020q4-nev-acceleration",
+      "ticker": "002594.SZ",
+      "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-nev-acceleration.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "002594.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "002074.SZ",
+            "selectedAdvantages": [
+              "far stronger realized Q3 earnings and integrated NEV exposure"
+            ],
+            "selectedDisadvantages": [
+              "much higher expectation burden"
+            ],
+            "evidenceRefs": [
+              "byd-q3-20201030",
+              "byd-strategy-20201127",
+              "regime-nev-20201214"
+            ],
+            "switchCondition": "Prefer Gotion only after its earnings path becomes comparably auditable at lower burden.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "600104.SH",
+            "selectedAdvantages": [
+              "structural NEV exposure and much faster growth"
+            ],
+            "selectedDisadvantages": [
+              "SAIC can offer lower valuation and mature cash flows"
+            ],
+            "evidenceRefs": [
+              "caam-nev-20201214",
+              "byd-q3-20201030"
+            ],
+            "switchCondition": "Prefer SAIC if NEV growth fails to exceed the premium baseline.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "The economic expressions are good companies, but expectation-duration risk keeps the opportunity at Research."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2020-12-14T20:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2020-12-14T20:00:00+08:00",
+      "entryDate": "2020-12-15",
+      "entryAdjustedOpen": 171.25,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "NEV sales and battery shipments can compound over multiple quarters, but premium valuations require full-path discipline."
+      },
+      "matchedControls": [
+        {
+          "ticker": "002074.SZ",
+          "name": "国轩高科",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Listed battery peer exposed to the same NEV demand acceleration.",
+          "whySelectedCompanyShouldOutperform": "BYD/CATL have stronger frozen scale, cash or realized earnings evidence.",
+          "evidenceRefs": [
+            "byd-q3-20201030",
+            "catl-q3-20201028",
+            "regime-nev-20201214"
+          ]
+        },
+        {
+          "ticker": "600104.SH",
+          "name": "上汽集团",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large listed OEM exposed to auto recovery but with less direct high-growth NEV economics.",
+          "whySelectedCompanyShouldOutperform": "BYD has much more direct NEV growth and CATL directly captures battery demand.",
+          "evidenceRefs": [
+            "caam-nev-20201214",
+            "byd-q3-20201030"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.000293772032902595
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2021-01-12",
+          "netReturn": 0.3869459591503388,
+          "benchmarkReturn": 0.13479398166923517,
+          "excessReturn": 0.25215197748110363,
+          "matchedControlBasketReturn": 0.18810186827494968,
+          "matchedControlExcess": 0.19884409087538912,
+          "bestControlTicker": "002074.SZ",
+          "bestControlReturn": 0.33132732544923327,
+          "excessVsBestControl": 0.055618633701105535,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002074.SZ",
+              "controlType": "peer",
+              "netReturn": 0.33132732544923327
+            },
+            {
+              "ticker": "600104.SH",
+              "controlType": "peer",
+              "netReturn": 0.04487641110066609
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.0770811921891057,
+            "peakDate": "2020-12-21",
+            "troughDate": "2020-12-29"
+          }
+        },
+        "60": {
+          "exitDate": "2021-03-16",
+          "netReturn": 0.03425059611920922,
+          "benchmarkReturn": 0.02996187849785037,
+          "excessReturn": 0.004288717621358851,
+          "matchedControlBasketReturn": -0.01366103318844375,
+          "matchedControlExcess": 0.04791162930765297,
+          "bestControlTicker": "002074.SZ",
+          "bestControlReturn": 0.09200952685602792,
+          "excessVsBestControl": -0.0577589307368187,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "002074.SZ",
+              "controlType": "peer",
+              "netReturn": 0.09200952685602792
+            },
+            {
+              "ticker": "600104.SH",
+              "controlType": "peer",
+              "netReturn": -0.11933159323291542
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.36059590316573564,
+            "peakDate": "2021-02-02",
+            "troughDate": "2021-03-09"
+          }
+        },
+        "120": {
+          "exitDate": "2021-06-15",
+          "netReturn": 0.3597303718179632,
+          "benchmarkReturn": 0.047643766728850734,
+          "excessReturn": 0.31208660508911246,
+          "matchedControlBasketReturn": -0.0029021686284139148,
+          "matchedControlExcess": 0.3626325404463771,
+          "bestControlTicker": "002074.SZ",
+          "bestControlReturn": 0.09134921519309769,
+          "excessVsBestControl": 0.2683811566248655,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002074.SZ",
+              "controlType": "peer",
+              "netReturn": 0.09134921519309769
+            },
+            {
+              "ticker": "600104.SH",
+              "controlType": "peer",
+              "netReturn": -0.09715355244992552
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.460148975791434,
+            "peakDate": "2021-02-02",
+            "troughDate": "2021-05-07"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-03-16",
+        "netReturn": 0.03425059611920922,
+        "benchmarkReturn": 0.02996187849785037,
+        "excessReturn": 0.004288717621358851,
+        "matchedControlBasketReturn": -0.01366103318844375,
+        "matchedControlExcess": 0.04791162930765297,
+        "bestControlTicker": "002074.SZ",
+        "bestControlReturn": 0.09200952685602792,
+        "excessVsBestControl": -0.0577589307368187,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 3,
+        "rankPercentile": 0.5,
+        "controlReturns": [
+          {
+            "ticker": "002074.SZ",
+            "controlType": "peer",
+            "netReturn": 0.09200952685602792
+          },
+          {
+            "ticker": "600104.SH",
+            "controlType": "peer",
+            "netReturn": -0.11933159323291542
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.36059590316573564,
+          "peakDate": "2021-02-02",
+          "troughDate": "2021-03-09"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2020q4-nev-acceleration",
+      "ticker": "300750.SZ",
+      "memoPath": "backtests/runs/2020q4-multisource-deep-v1.3-001/memos/h-2020q4-nev-acceleration.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "002594.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "002074.SZ",
+            "selectedAdvantages": [
+              "far stronger realized Q3 earnings and integrated NEV exposure"
+            ],
+            "selectedDisadvantages": [
+              "much higher expectation burden"
+            ],
+            "evidenceRefs": [
+              "byd-q3-20201030",
+              "byd-strategy-20201127",
+              "regime-nev-20201214"
+            ],
+            "switchCondition": "Prefer Gotion only after its earnings path becomes comparably auditable at lower burden.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "600104.SH",
+            "selectedAdvantages": [
+              "structural NEV exposure and much faster growth"
+            ],
+            "selectedDisadvantages": [
+              "SAIC can offer lower valuation and mature cash flows"
+            ],
+            "evidenceRefs": [
+              "caam-nev-20201214",
+              "byd-q3-20201030"
+            ],
+            "switchCondition": "Prefer SAIC if NEV growth fails to exceed the premium baseline.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "The economic expressions are good companies, but expectation-duration risk keeps the opportunity at Research."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2020-12-14T20:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2020-12-14T20:00:00+08:00",
+      "entryDate": "2020-12-15",
+      "entryAdjustedOpen": 268.362,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "NEV sales and battery shipments can compound over multiple quarters, but premium valuations require full-path discipline."
+      },
+      "matchedControls": [
+        {
+          "ticker": "002074.SZ",
+          "name": "国轩高科",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Listed battery peer exposed to the same NEV demand acceleration.",
+          "whySelectedCompanyShouldOutperform": "BYD/CATL have stronger frozen scale, cash or realized earnings evidence.",
+          "evidenceRefs": [
+            "byd-q3-20201030",
+            "catl-q3-20201028",
+            "regime-nev-20201214"
+          ]
+        },
+        {
+          "ticker": "600104.SH",
+          "name": "上汽集团",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large listed OEM exposed to auto recovery but with less direct high-growth NEV economics.",
+          "whySelectedCompanyShouldOutperform": "BYD has much more direct NEV growth and CATL directly captures battery demand.",
+          "evidenceRefs": [
+            "caam-nev-20201214",
+            "byd-q3-20201030"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.007518796992481258
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2021-01-12",
+          "netReturn": 0.49324322468061155,
+          "benchmarkReturn": 0.13479398166923517,
+          "excessReturn": 0.3584492430113764,
+          "matchedControlBasketReturn": 0.18810186827494968,
+          "matchedControlExcess": 0.30514135640566187,
+          "bestControlTicker": "002074.SZ",
+          "bestControlReturn": 0.33132732544923327,
+          "excessVsBestControl": 0.16191589923137828,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002074.SZ",
+              "controlType": "peer",
+              "netReturn": 0.33132732544923327
+            },
+            {
+              "ticker": "600104.SH",
+              "controlType": "peer",
+              "netReturn": 0.04487641110066609
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.056166463567960734,
+            "peakDate": "2021-01-07",
+            "troughDate": "2021-01-11"
+          }
+        },
+        "60": {
+          "exitDate": "2021-03-16",
+          "netReturn": 0.20253956252346517,
+          "benchmarkReturn": 0.02996187849785037,
+          "excessReturn": 0.1725776840256148,
+          "matchedControlBasketReturn": -0.01366103318844375,
+          "matchedControlExcess": 0.21620059571190892,
+          "bestControlTicker": "002074.SZ",
+          "bestControlReturn": 0.09200952685602792,
+          "excessVsBestControl": 0.11053003566743724,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002074.SZ",
+              "controlType": "peer",
+              "netReturn": 0.09200952685602792
+            },
+            {
+              "ticker": "600104.SH",
+              "controlType": "peer",
+              "netReturn": -0.11933159323291542
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.2737722199655699,
+            "peakDate": "2021-01-07",
+            "troughDate": "2021-03-09"
+          }
+        },
+        "120": {
+          "exitDate": "2021-06-15",
+          "netReturn": 0.6562410692801735,
+          "benchmarkReturn": 0.047643766728850734,
+          "excessReturn": 0.6085973025513227,
+          "matchedControlBasketReturn": -0.0029021686284139148,
+          "matchedControlExcess": 0.6591432379085873,
+          "bestControlTicker": "002074.SZ",
+          "bestControlReturn": 0.09134921519309769,
+          "excessVsBestControl": 0.5648918540870758,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 3,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002074.SZ",
+              "controlType": "peer",
+              "netReturn": 0.09134921519309769
+            },
+            {
+              "ticker": "600104.SH",
+              "controlType": "peer",
+              "netReturn": -0.09715355244992552
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.300876225845761,
+            "peakDate": "2021-01-07",
+            "troughDate": "2021-03-24"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2021-03-16",
+        "netReturn": 0.20253956252346517,
+        "benchmarkReturn": 0.02996187849785037,
+        "excessReturn": 0.1725776840256148,
+        "matchedControlBasketReturn": -0.01366103318844375,
+        "matchedControlExcess": 0.21620059571190892,
+        "bestControlTicker": "002074.SZ",
+        "bestControlReturn": 0.09200952685602792,
+        "excessVsBestControl": 0.11053003566743724,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 3,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "002074.SZ",
+            "controlType": "peer",
+            "netReturn": 0.09200952685602792
+          },
+          {
+            "ticker": "600104.SH",
+            "controlType": "peer",
+            "netReturn": -0.11933159323291542
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.2737722199655699,
+          "peakDate": "2021-01-07",
+          "troughDate": "2021-03-09"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "tickerLevel": {
+      "20": {
+        "count": 5,
+        "meanNetReturn": 0.29380098140558636,
+        "medianNetReturn": 0.3869459591503388,
+        "meanExcessReturn": 0.21003344326950532,
+        "medianExcessReturn": 0.25215197748110363,
+        "excessHitRate": 0.8,
+        "positiveReturnRate": 0.8,
+        "matchedControlCount": 5,
+        "meanMatchedControlExcess": 0.2240406862922506,
+        "medianMatchedControlExcess": 0.19884409087538912,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 5,
+        "meanExcessVsBestControl": 0.15102708957519873,
+        "medianExcessVsBestControl": 0.06237216888212582,
+        "winsAllControlsRate": 1,
+        "meanRankPercentile": 1,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 5,
+        "meanNetReturn": 0.17314804412953957,
+        "medianNetReturn": 0.20253956252346517,
+        "meanExcessReturn": 0.12240702584206967,
+        "medianExcessReturn": 0.1317973247490658,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 5,
+        "meanMatchedControlExcess": 0.16685725433873602,
+        "medianMatchedControlExcess": 0.1737144737410976,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 5,
+        "meanExcessVsBestControl": 0.10470354382888832,
+        "medianExcessVsBestControl": 0.11053003566743724,
+        "winsAllControlsRate": 0.8,
+        "meanRankPercentile": 0.9,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 5,
+        "meanNetReturn": 0.5928912543552904,
+        "medianNetReturn": 0.3597303718179632,
+        "meanExcessReturn": 0.5314868443907257,
+        "medianExcessReturn": 0.31208660508911246,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 5,
+        "meanMatchedControlExcess": 0.5102268231192177,
+        "medianMatchedControlExcess": 0.3626325404463771,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 5,
+        "meanExcessVsBestControl": 0.4301864846688561,
+        "medianExcessVsBestControl": 0.2683811566248655,
+        "winsAllControlsRate": 0.6,
+        "meanRankPercentile": 0.8,
+        "blockedEntryCount": 0
+      }
+    },
+    "hypothesisLevel": {
+      "20": {
+        "count": 3,
+        "meanNetReturn": 0.34207024840741934,
+        "medianNetReturn": 0.4400945919154752,
+        "meanExcessReturn": 0.25419117119172335,
+        "medianExcessReturn": 0.30530061024624,
+        "excessHitRate": 0.6666666666666666,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 3,
+        "meanNetReturn": 0.17259506507964464,
+        "medianNetReturn": 0.16983016983017007,
+        "meanExcessReturn": 0.12397207565990236,
+        "medianExcessReturn": 0.1317973247490658,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 3,
+        "meanNetReturn": 0.7534833047033347,
+        "medianNetReturn": 0.5079857205490683,
+        "meanExcessReturn": 0.6917690143145284,
+        "medianExcessReturn": 0.4603419538202176,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryTickerLevel": {
+      "20": {
+        "count": 2,
+        "meanNetReturn": 0.002699569890198983,
+        "medianNetReturn": 0.002699569890198983,
+        "meanExcessReturn": -0.01770690747388365,
+        "medianExcessReturn": -0.01770690747388365,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.5,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": 0.0588614160382388,
+        "medianMatchedControlExcess": 0.0588614160382388,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": 0.036618892406092673,
+        "medianExcessVsBestControl": 0.036618892406092673,
+        "winsAllControlsRate": 1,
+        "meanRankPercentile": 1,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 2,
+        "meanNetReturn": 0.2295599460874267,
+        "medianNetReturn": 0.2295599460874267,
+        "meanExcessReturn": 0.15168570140715443,
+        "medianExcessReturn": 0.15168570140715443,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": 0.19951530860500322,
+        "medianMatchedControlExcess": 0.19951530860500322,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": 0.18545063801450357,
+        "medianExcessVsBestControl": 0.18545063801450357,
+        "winsAllControlsRate": 1,
+        "meanRankPercentile": 1,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 2,
+        "meanNetReturn": 0.1960206371173795,
+        "medianNetReturn": 0.1960206371173795,
+        "meanExcessReturn": 0.12178522518982582,
+        "medianExcessReturn": 0.12178522518982582,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 2,
+        "meanMatchedControlExcess": 0.023996772948700618,
+        "medianMatchedControlExcess": 0.023996772948700618,
+        "matchedControlHitRate": 1,
+        "bestControlCount": 2,
+        "meanExcessVsBestControl": -0.0649091558997813,
+        "medianExcessVsBestControl": -0.0649091558997813,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      }
+    },
+    "primaryHypothesisLevel": {
+      "20": {
+        "count": 1,
+        "meanNetReturn": 0.002699569890198983,
+        "medianNetReturn": 0.002699569890198983,
+        "meanExcessReturn": -0.01770690747388365,
+        "medianExcessReturn": -0.01770690747388365,
+        "excessHitRate": 0,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 1,
+        "meanNetReturn": 0.2295599460874267,
+        "medianNetReturn": 0.2295599460874267,
+        "meanExcessReturn": 0.15168570140715443,
+        "medianExcessReturn": 0.15168570140715443,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 1,
+        "meanNetReturn": 0.1960206371173795,
+        "medianNetReturn": 0.1960206371173795,
+        "meanExcessReturn": 0.12178522518982582,
+        "medianExcessReturn": 0.12178522518982582,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryThesisBase": {
+      "count": 2,
+      "pendingBaseCount": 0,
+      "meanNetReturn": 0.2295599460874267,
+      "medianNetReturn": 0.2295599460874267,
+      "meanExcessReturn": 0.15168570140715443,
+      "medianExcessReturn": 0.15168570140715443,
+      "excessHitRate": 1,
+      "matchedControlCount": 2,
+      "meanMatchedControlExcess": 0.19951530860500322,
+      "medianMatchedControlExcess": 0.19951530860500322,
+      "matchedControlHitRate": 1,
+      "bestControlCount": 2,
+      "meanExcessVsBestControl": 0.18545063801450357,
+      "medianExcessVsBestControl": 0.18545063801450357,
+      "winsAllControlsRate": 1,
+      "meanRankPercentile": 1
+    },
+    "opportunityFirstBase": {
+      "count": 1,
+      "directionCaptureRate": 1,
+      "positiveBasketRate": 1,
+      "meanOpportunityExcessReturn": 0.15168570140715443,
+      "medianOpportunityExcessReturn": 0.15168570140715443
+    }
+  },
+  "hypothesisResults": [
+    {
+      "hypothesisId": "h-2020q4-industrial-metals-recovery",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 2,
+      "horizons": {
+        "20": {
+          "netReturn": 0.002699569890198983,
+          "excessReturn": -0.01770690747388365
+        },
+        "60": {
+          "netReturn": 0.2295599460874267,
+          "excessReturn": 0.15168570140715443
+        },
+        "120": {
+          "netReturn": 0.1960206371173795,
+          "excessReturn": 0.12178522518982582
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2020q4-container-freight-boom",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.5834165834165836,
+          "excessReturn": 0.4749798108028138
+        },
+        "60": {
+          "netReturn": 0.16983016983017007,
+          "excessReturn": 0.1317973247490658
+        },
+        "120": {
+          "netReturn": 1.5564435564435564,
+          "excessReturn": 1.4931798639335419
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2020q4-nev-acceleration",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 2,
+      "horizons": {
+        "20": {
+          "netReturn": 0.4400945919154752,
+          "excessReturn": 0.30530061024624
+        },
+        "60": {
+          "netReturn": 0.1183950793213372,
+          "excessReturn": 0.08843320082348682
+        },
+        "120": {
+          "netReturn": 0.5079857205490683,
+          "excessReturn": 0.4603419538202176
+        }
+      }
+    }
+  ],
+  "primaryHypothesisResults": [
+    {
+      "hypothesisId": "h-2020q4-industrial-metals-recovery",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 2,
+      "horizons": {
+        "20": {
+          "netReturn": 0.002699569890198983,
+          "excessReturn": -0.01770690747388365
+        },
+        "60": {
+          "netReturn": 0.2295599460874267,
+          "excessReturn": 0.15168570140715443
+        },
+        "120": {
+          "netReturn": 0.1960206371173795,
+          "excessReturn": 0.12178522518982582
+        }
+      }
+    }
+  ]
+}
