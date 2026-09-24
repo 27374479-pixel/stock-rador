@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-06-30T23:59:59+08:00",
+  "researchReadyAt": "2018-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q2-nand-oversupply",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Supply-demand imbalance can affect contract ASP and margins over the next one to two quarters."
+  },
+  "changeHypothesis": {
+    "summary": "NAND supply/yields were improving faster than end-demand, and contract prices had already declined for two quarters. The upstream state implied further supplier ASP pressure rather than a positive A-share long opportunity.",
+    "firstCredibleDate": "2018-06-27",
+    "valueChain": [
+      "3D NAND yields/bit output",
+      "inventory/oversupply",
+      "NAND contract price",
+      "supplier margin"
+    ],
+    "persistenceReason": "Memory oversupply can persist for quarters until output discipline or demand growth restores balance.",
+    "disconfirmingEvidence": [
+      "64/72-layer output was improving while smartphone/notebook/tablet demand growth was weak.",
+      "No direct positive A-share long expression with measured benefit from cheaper NAND is frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nand-oversupply-20180627",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the required earnings-conversion, expectation and downside gates."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Frozen evidence already describes a falling NAND contract-price cycle.",
+    "thesisExpectation": "Preserve the negative product-cycle state and avoid substituting generic semiconductor-theme stocks.",
+    "measurableGap": "No positive direct A-share earnings gap exists.",
+    "evidenceRefs": [
+      "nand-oversupply-20180627"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "NAND Flash supply/demand and contract-price cycle",
+    "geographicScope": "global NAND market",
+    "customerScope": "smartphone/notebook/tablet/storage buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep NAND economics separate from broad semiconductor themes.",
+    "evidenceRefs": [
+      "nand-oversupply-20180627"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "contract prices already declined in 1H18",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "improving 3D NAND yields/output and weak demand imply further price declines",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "eventual supply discipline may stabilize later",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not average possible later stabilization into the current negative state.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No positive direct listed company engine is frozen.",
+    "evidenceRefs": [
+      "nand-oversupply-20180627"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "3D NAND yield/bit output relative to end-demand",
+      "observedDirection": "rising",
+      "opportunityImplication": "negative",
+      "economicRole": "determines future memory supply and clearing ASP",
+      "adjustmentLag": "weeks to months",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "NAND contract price",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "temporaryDistortion": "No positive lagging-flow contradiction; contract prices already reflect the oversupply state.",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "TrendForce tied improving layer yields/bit output and weak demand directly to continuing contract-price declines.",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "credible",
+      "rationale": "Weakness covered multiple NAND end markets rather than one isolated product.",
+      "evidenceRefs": [
+        "nand-oversupply-20180627"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [
+      "The resolved upstream implication is negative for NAND suppliers and no frozen positive direct A-share long expression exists."
+    ],
+    "falsifier": "Output discipline or demand acceleration reverses the supply-demand imbalance.",
+    "conclusion": "no_actionable_state_edge"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "negative_memory_supply_state",
+    "constraints": [
+      "falling NAND ASP",
+      "no positive direct long expression"
+    ]
+  },
+  "bearCase": "Generic semiconductor optimism obscures a still-deteriorating NAND product cycle.",
+  "invalidationConditions": [
+    {
+      "indicator": "NAND supply-demand and contract prices",
+      "observationMethod": "specialist market data",
+      "threshold": "clear stabilization/reversal"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a negative product-state control."
+  ]
+}
