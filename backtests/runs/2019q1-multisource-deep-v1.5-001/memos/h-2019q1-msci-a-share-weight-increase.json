@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-03-31T23:59:59+08:00",
+  "researchReadyAt": "2019-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q1-msci-a-share-weight-increase",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Index inclusion can affect prices around scheduled implementation dates, but absent a company earnings bridge the Skill does not create a long selection."
+  },
+  "changeHypothesis": {
+    "summary": "MSCI committed to raising the A-share inclusion factor from 5% to 20% in scheduled steps, creating broad index-linked capital flows but not a direct company earnings shock.",
+    "firstCredibleDate": "2019-02-28",
+    "valueChain": [
+      "index rule change",
+      "foreign/passive allocation",
+      "broad A-share demand",
+      "stock prices"
+    ],
+    "persistenceReason": "The inclusion schedule is explicit through 2019, but its primary transmission is portfolio flow rather than issuer revenue/profit.",
+    "disconfirmingEvidence": [
+      "The event is broad rather than company-specific.",
+      "No direct issuer earnings conversion is frozen.",
+      "A flow-induced price effect is not the Skill's required fundamental earnings bridge."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "msci-weight-20190228",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No listed expression meets the frozen earnings-conversion and expectation-gap requirements."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The inclusion increase was public and scheduled; broad A-share prices can react before each implementation step.",
+    "thesisExpectation": "A valid company selection would require direct monetization or an under-reflected issuer earnings mechanism, not just expected passive demand.",
+    "measurableGap": "No company-level fundamental expectation gap is demonstrated.",
+    "evidenceRefs": [
+      "msci-weight-20190228"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "broad A-share index inclusion/foreign flows",
+    "geographicScope": "China A shares accessible to international indexes",
+    "customerScope": "global passive/benchmark-linked investors",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The event is intentionally treated as a broad market-flow mechanism rather than mapped into arbitrary beneficiary stocks.",
+    "evidenceRefs": [
+      "msci-weight-20190228"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "scheduled passive/benchmark demand can support included shares",
+      "horizon": "weeks/months",
+      "evidenceRefs": [
+        "msci-weight-20190228"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "price flow may occur without issuer earnings change",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "msci-weight-20190228"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "greater international index inclusion broadens ownership",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "msci-weight-20190228"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not substitute broad price-flow demand for a company fundamental earnings bridge.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "The event is market-wide and no selected company engine is identified.",
+    "evidenceRefs": [
+      "msci-weight-20190228"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "broad_flow_event_without_fundamental_bridge",
+    "constraints": [
+      "no direct earnings conversion",
+      "diffuse beneficiaries"
+    ]
+  },
+  "bearCase": "The scheduled flow is fully anticipated or offset by other market flows; even if prices rise, no company earnings thesis exists.",
+  "invalidationConditions": [
+    {
+      "indicator": "issuer earnings conversion",
+      "observationMethod": "company filings/business evidence",
+      "threshold": "no direct monetization path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection. Preserve as a deliberate example that price-flow catalysts alone do not satisfy the Skill."
+  ]
+}
