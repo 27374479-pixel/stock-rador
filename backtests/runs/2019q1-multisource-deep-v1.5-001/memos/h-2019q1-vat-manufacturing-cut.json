@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-03-31T23:59:59+08:00",
+  "researchReadyAt": "2019-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q1-vat-manufacturing-cut",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The statutory change starts immediately after cutoff, but heterogeneous pass-through prevents a generic earnings horizon."
+  },
+  "changeHypothesis": {
+    "summary": "The manufacturing VAT rate was cut from 16% to 13% effective April 1, but economic benefit depends on invoice pricing, pass-through, supplier/customer bargaining and tax-credit structure rather than automatically becoming issuer profit.",
+    "firstCredibleDate": "2019-03-20",
+    "valueChain": [
+      "VAT rate cut",
+      "tax/price pass-through",
+      "supplier/customer bargaining",
+      "company margin/cash flow"
+    ],
+    "persistenceReason": "The tax-rate change is structural, but the direction and magnitude of company earnings transmission are heterogeneous.",
+    "disconfirmingEvidence": [
+      "A VAT cut can be passed through to customers.",
+      "Different industries have different input/output VAT structures.",
+      "No coherent company subset with a frozen direct retained-margin bridge was established."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "vat-reform-20190320",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No listed expression meets the frozen earnings-conversion and expectation-gap requirements."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The April 1 tax cut was publicly announced before cutoff and broadly discussed across manufacturing.",
+    "thesisExpectation": "Selection requires evidence that a specific company retains a material portion of the tax benefit rather than passing it through.",
+    "measurableGap": "No measurable company-specific retained-margin expectation gap is frozen.",
+    "evidenceRefs": [
+      "vat-reform-20190320"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "manufacturing/transport/construction VAT pass-through",
+    "geographicScope": "China",
+    "customerScope": "business buyers and end customers",
+    "decompositionNeeded": true,
+    "siblingHypothesisIds": [],
+    "rationale": "Different pricing-power/input-credit structures imply opposite earnings effects; without verified subgroups the aggregate cannot support selection.",
+    "evidenceRefs": [
+      "vat-reform-20190320"
+    ],
+    "conclusion": "split_required"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "tax rate changes immediately but price contracts/pass-through vary",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "vat-reform-20190320"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "margin/cash benefit depends on company-specific pricing power",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "vat-reform-20190320"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "lower statutory VAT burden can improve economic efficiency but not necessarily issuer margin",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "vat-reform-20190320"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Split by pricing power and input/output VAT structure before any company mapping; unresolved aggregate remains No selection.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No company-specific retained-benefit evidence is frozen.",
+    "evidenceRefs": [
+      "vat-reform-20190320"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "broad_policy_without_company_specific_transmission",
+    "constraints": [
+      "heterogeneous pass-through",
+      "unresolved decomposition"
+    ]
+  },
+  "bearCase": "Competitive pass-through transfers most of the tax reduction to customers, leaving little incremental profit.",
+  "invalidationConditions": [
+    {
+      "indicator": "company-specific retained VAT benefit",
+      "observationMethod": "pricing/margin/company guidance",
+      "threshold": "no verified retained-margin bridge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; future research must decompose by pricing power instead of buying a generic VAT-cut theme."
+  ]
+}
