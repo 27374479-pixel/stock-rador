@@ -1,0 +1,202 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-03-31T23:59:59+08:00",
+  "researchReadyAt": "2018-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q1-server-dram-tightness",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Server DRAM prices can stay firm over Q2, but no listed long can be evaluated without direct exposure."
+  },
+  "changeHypothesis": {
+    "summary": "Server DRAM pricing and China server demand remained strong into Q2, but the positive product-market state did not have a frozen direct A-share supplier earnings expression. Generic semiconductor proxies are therefore rejected.",
+    "firstCredibleDate": "2018-03-19",
+    "valueChain": [
+      "server demand",
+      "Server DRAM supply/contract price",
+      "memory supplier ASP/margin",
+      "server OEM input cost"
+    ],
+    "persistenceReason": "Server demand and supplier transition constraints can keep contract prices firm for quarters, but the listed-expression problem is separate from product-market validity.",
+    "disconfirmingEvidence": [
+      "The frozen source describes a global DRAM market, not a verified direct A-share DRAM supplier.",
+      "Using domestic memory/design names as proxies would conflate product markets and future localization narratives."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "server-dram-20180319",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the company-level earnings-conversion and expectation requirements."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Server DRAM product-market tightness is positive, but no A-share equity basket was frozen because direct exposure/earnings conversion was not established.",
+    "thesisExpectation": "Preserve the product-level signal without inventing a listed expression.",
+    "measurableGap": "No direct positive A-share earnings bridge is measurable.",
+    "evidenceRefs": [
+      "server-dram-20180319"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "Server DRAM contract-price cycle",
+    "geographicScope": "global DRAM market with China server demand",
+    "customerScope": "server OEM/cloud/data-center buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep Server DRAM separate from generic semiconductor and other memory products.",
+    "evidenceRefs": [
+      "server-dram-20180319"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "1Q contract prices and China server demand remain firm",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "Q2 server demand and supply transitions support prices",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "memory capacity eventually responds",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Retain product signal but require direct company exposure before selection.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No direct A-share DRAM supplier engine is frozen.",
+    "evidenceRefs": [
+      "server-dram-20180319"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "Server DRAM supply headroom relative to server demand",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines contract pricing power for memory suppliers",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "Server DRAM contract price",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "No lagging contradiction is present; product price already confirms tightness, but the listed-company mapping is missing.",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Tight supply versus server demand is already translating into rising contract prices.",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "insufficient",
+      "rationale": "No direct A-share DRAM supplier earnings cross-section is frozen.",
+      "evidenceRefs": [
+        "server-dram-20180319"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [
+      "No verified direct A-share DRAM supplier/expression with cutoff-valid earnings conversion."
+    ],
+    "falsifier": "A direct listed exposure with cutoff-valid product/earnings conversion is identified.",
+    "conclusion": "no_actionable_state_edge"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "positive_product_state_without_direct_a_share_expression",
+    "constraints": [
+      "no direct A-share DRAM supplier",
+      "proxy substitution prohibited"
+    ]
+  },
+  "bearCase": "The product signal is real but any generic A-share semiconductor proxy has different earnings drivers, making the trade mapping invalid.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct listed DRAM exposure",
+      "observationMethod": "company product/revenue evidence",
+      "threshold": "verified cutoff-valid earnings bridge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve Server DRAM as a valid product signal without hindsight proxy substitution."
+  ]
+}
