@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q2-multisource-deep-v1.6-001",
+  "label": "post_outcome_5g_regime_change_audit",
+  "diagnosticOnly": true,
+  "samePeriodMayTuneSkill": false,
+  "hypothesisId": "h-2018q2-5g-sa-standard",
+  "frozenCutoff": "2018-06-30",
+  "frozenDecision": "No selection",
+  "outcome": {
+    "basket20dExcess": 0.04595205843719611,
+    "positiveExcessBreadth20": 0.6666666666666666,
+    "basket60dExcess": 0.04561990223502266,
+    "positiveExcessBreadth60": 0.6666666666666666,
+    "basket120dExcess": 0.15173639594155475
+  },
+  "cutoffValidEvidence": {
+    "positive": [
+      {
+        "date": "2018-06-15",
+        "source": "新华社/中央网信办",
+        "claim": "5G NR standalone standard was approved, enabling conforming equipment to proceed into further testing.",
+        "implication": "Technical dependency was removed, but this did not itself create supplier revenue."
+      },
+      {
+        "date": "2018-06-27",
+        "source": "公开运营商试验计划",
+        "claim": "China Mobile and other operators had already disclosed multi-city 5G field-test plans, including >100 base stations per city for five China Mobile cities.",
+        "implication": "There was real trial-network activity before cutoff, so the theme was not purely narrative."
+      }
+    ],
+    "blocker": "The frozen pack still lacked broad listed-supplier order/earnings conversion. Technical standards and trial plans were one or more causal steps upstream of commercial procurement and reported earnings."
+  },
+  "postCutoffEvents": [
+    {
+      "date": "2018-07-13",
+      "source": "U.S. Department of Commerce / Reuters",
+      "event": "The U.S. supplier ban on ZTE was lifted, allowing ZTE to resume operations.",
+      "diagnosticMeaning": "This was new information after cutoff and materially changed the communication-equipment supply-chain state."
+    },
+    {
+      "date": "2018-07-16",
+      "source": "中国移动采购与招标网 / 证券时报 contemporaneous reporting",
+      "event": "ZTE appeared as first candidate in China Mobile GPON procurement shortly after the ban was lifted; contemporaneous reporting linked ZTE's recovery to broad 5G/communications-equipment stock gains, including FiberHome, Accelink and Zhongji Innolight.",
+      "diagnosticMeaning": "A major part of the basket's early post-cutoff rerating was tied to a new ZTE/telecom-procurement normalization event, not to evidence available on June 30."
+    }
+  ],
+  "diagnosis": {
+    "class": "post_cutoff_supply_chain_regime_change_confounder",
+    "conclusion": "not_a_clean_cutoff_valid_miss",
+    "explanation": "The June 30 No-selection correctly distinguished technical standardization/trial networks from broad supplier earnings conversion. The July ZTE ban-lift and procurement restart were new, material supply-chain information inside the 20d window and visibly repriced communications stocks. Therefore the later basket excess cannot be attributed solely to a missed June-30 earnings thesis."
+  },
+  "skillImplication": {
+    "changeV16FromThisOutcome": false,
+    "discoveryLesson": "Trial-network and standards evidence should still be retained as upstream state, but promotion requires supplier-specific order/revenue/earnings bridges.",
+    "monitoringLesson": "A material post-cutoff supply-chain unblock should trigger re-underwrite of a previously blocked industry hypothesis.",
+    "antiOverfit": "Do not create a ZTE-specific exception; the generic class is post-cutoff removal of a binding supply-chain/commercialization blocker."
+  }
+}
