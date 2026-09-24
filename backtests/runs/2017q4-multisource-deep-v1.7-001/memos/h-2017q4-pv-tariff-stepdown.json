@@ -1,0 +1,644 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.7.0",
+  "cutoffAt": "2017-12-31T23:59:59+08:00",
+  "researchReadyAt": "2017-12-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q4-pv-tariff-stepdown",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Cost/share leadership can offset the 2018 tariff step-down, but the whole frozen PV basket is already strongly rerated and Longi is simultaneously funding rapid capacity expansion."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601012.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Longi has strong realized profit growth and an explicit cost/share thesis, but 20d/60d price breadth is 100%, forward valuation is already around low-20s, and debt/capex/convertible-financing needs are rising.",
+      "evidenceRefs": [
+        "pv-price-20171222",
+        "longi-q3-20171031",
+        "longi-expectations-20171214",
+        "regime-pv-20171231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "2018 PV tariffs step down while leading manufacturers report strong earnings and rapid cost/capacity expansion; the key question is whether cost leadership is still underreflected after a broad rerating.",
+    "firstCredibleDate": "2017-10-31",
+    "valueChain": [
+      "regulated project tariff",
+      "system economics",
+      "module/wafer demand",
+      "low-cost manufacturer share/margin"
+    ],
+    "persistenceReason": "Cost leadership and scale can persist, but policy-driven project economics and technology price declines reset continuously.",
+    "disconfirmingEvidence": [
+      "NDRC cut 2018 tariffs/subsidies.",
+      "PV basket had 100% positive breadth over both 20d and 60d.",
+      "Longi receivables, inventory, fixed assets, construction-in-progress and debt rose with expansion.",
+      "A RMB2.8bn convertible financing had been approved."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pv-price-20171222",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "2018 regulated project revenue steps down."
+    },
+    {
+      "id": "longi-q3-20171031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Longi has strong realized earnings but aggressive capex/financing."
+    },
+    {
+      "id": "longi-expectations-20171214",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Contemporaneous valuation and cost-leadership expectations are already explicit."
+    },
+    {
+      "id": "tongwei-q3-20171023",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Peer PV earnings are also strong, so the theme is widely realized."
+    },
+    {
+      "id": "regime-pv-20171231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Broad PV equities have already rerated strongly."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "tariff/subsidy step-down",
+      "to": "project IRR and demand sensitivity",
+      "mechanism": "Lower regulated revenue raises the cost-performance bar for new projects.",
+      "evidenceRefs": [
+        "pv-price-20171222"
+      ],
+      "failureMode": "cost declines fully offset tariff cuts",
+      "lag": "months"
+    },
+    {
+      "from": "low-cost mono scale/technology",
+      "to": "relative share and earnings",
+      "mechanism": "Lower manufacturing cost can preserve customer economics and shift share toward leaders.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ],
+      "failureMode": "price competition or input costs erase cost advantage",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "lowest-cost wafer/module/cell leaders if cost declines outpace tariff cuts"
+    ],
+    "secondOrderWinners": [
+      "efficient inverter/system suppliers"
+    ],
+    "losers": [
+      "high-cost manufacturing capacity"
+    ],
+    "substitutes": [
+      "other generation technologies"
+    ],
+    "bottlenecks": [
+      "polysilicon cost",
+      "capacity execution",
+      "project IRR"
+    ],
+    "falseThemeMatches": [
+      "PV names without verified cost/share advantage"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "Mono wafer/module leader with strong earnings and capacity expansion.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong 2017 earnings and cost leadership.",
+        "favorable": "Cost declines/share gains offset tariff cuts.",
+        "adverse": "Price competition/input costs/capex funding compress returns."
+      },
+      "principalRisks": [
+        "high absorption",
+        "capex",
+        "debt/convertible financing"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Polysilicon/cell exposure with strong Q3 earnings.",
+      "evidenceRefs": [
+        "tongwei-q3-20171023"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong current earnings.",
+        "favorable": "Low-cost supply and cell demand persist.",
+        "adverse": "Expansion and financing pressure."
+      },
+      "principalRisks": [
+        "capex",
+        "borrowing",
+        "cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Major low-cost PV manufacturing peer with strong realized earnings and its own expansion/financing risk.",
+      "whySelectedCompanyShouldOutperform": "Longi has a clearer mono cost/share narrative, while both companies are already strongly rerated and investing aggressively.",
+      "evidenceRefs": [
+        "tongwei-q3-20171023",
+        "regime-pv-20171231"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only memo freezes one representative peer control; no Primary ranking claim is made.",
+  "selectionComparison": {
+    "selectedTicker": "601012.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600438.SH",
+        "selectedAdvantages": [
+          "clearer mono cost/share leadership"
+        ],
+        "selectedDisadvantages": [
+          "broad rerating already prices leadership",
+          "large expansion/financing requirement"
+        ],
+        "evidenceRefs": [
+          "pv-price-20171222",
+          "tongwei-q3-20171023",
+          "regime-pv-20171231"
+        ],
+        "switchCondition": "Prefer another PV leader only if it offers similar cost/share evidence with lower expectation and financing burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The structural company thesis is credible, but broad price absorption plus policy/capex risk keep Longi at Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PV basket was +8.92pp excess over 20d and +15.52pp over 60d with 100% positive breadth in both windows.",
+    "thesisExpectation": "Cost leaders can absorb the 2018 tariff cut better than high-cost peers.",
+    "measurableGap": "The market already recognizes cost leadership broadly; the remaining gap depends on future cost declines exceeding both policy and valuation burden.",
+    "evidenceRefs": [
+      "pv-price-20171222",
+      "regime-pv-20171231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Contemporaneous 2017E/2018E PE plus frozen broad price regime.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "December research cited roughly 25.7x 2017E and 21.1x 2018E PE while the sector had broad positive momentum.",
+    "thesisScenario": "Cost reductions and share gains keep earnings ahead of the post-tariff market baseline.",
+    "breakevenCondition": "Cost/share gains must offset tariff-induced demand/price pressure without relying on further rerating.",
+    "ordinaryScenarioFailure": "Tariff cuts and price competition compress returns faster than cost reduction.",
+    "catalystOrTimingBridge": "2018 product pricing, cost data, capacity ramp and demand after the new tariff schedule.",
+    "evidenceRefs": [
+      "pv-price-20171222",
+      "regime-pv-20171231"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Longi Q3 earnings doubled and cost/share expansion is explicit.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Reported 1-9M profit +104% confirms the operating engine.",
+      "evidenceRefs": [
+        "pv-price-20171222"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Longi and Tongwei both show strong earnings and the basket has full positive breadth.",
+      "evidenceRefs": [
+        "regime-pv-20171231",
+        "tongwei-q3-20171023"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "Contemporaneous research supplies explicit forward valuation/earnings expectations.",
+      "evidenceRefs": [
+        "pv-price-20171222"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Full-breadth positive 20d/60d sector rerating plus explicit cost-leadership consensus.",
+      "evidenceRefs": [
+        "regime-pv-20171231"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300",
+      "lookback20Excess": 0.08917774186829723,
+      "lookback60Excess": 0.1552470937874609,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-pv-20171231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Cost/share engine is strong but the tariff step-down is a new offset.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Multiple PV leaders show strong realized earnings.",
+      "evidenceRefs": [
+        "pv-price-20171222",
+        "tongwei-q3-20171023"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Cost leadership and tariff economics operate over several quarters.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Broad equity absorption is already very strong.",
+      "evidenceRefs": [
+        "regime-pv-20171231",
+        "pv-price-20171222"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Sector/company fundamentals are strong, but high absorption blocks a clean entry."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601012.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong earnings and positive operating cash support quality despite expansion.",
+      "evidenceRefs": [
+        "pv-price-20171222"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Cost/share gains could still lift future estimates.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Low-20s forward PE plus broad rerating leaves limited slack.",
+      "evidenceRefs": [
+        "pv-price-20171222",
+        "regime-pv-20171231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "2018 pricing/cost and capacity data arrive quickly.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Cost leadership helps, but tariff, capex and high absorption raise downside.",
+      "evidenceRefs": [
+        "pv-price-20171222",
+        "longi-q3-20171031",
+        "longi-expectations-20171214",
+        "regime-pv-20171231"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600438.SH",
+        "revisionAdvantage": "Both have strong earnings; Longi has the clearer mono cost/share engine.",
+        "valuationAdvantage": "No decisive low-burden edge is frozen.",
+        "qualityTradeoff": "Both are expanding aggressively and carry financing/capex risk.",
+        "catalystAdvantage": "Both face the 2018 tariff/cost reset.",
+        "downsideTradeoff": "Neither has clear downside containment after the broad rerating.",
+        "switchCondition": "Prefer another PV leader only if it offers similar cost/share evidence with lower expectation and financing burden.",
+        "evidenceRefs": [
+          "pv-price-20171222",
+          "tongwei-q3-20171023",
+          "regime-pv-20171231"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Tariff revenue steps down while manufacturing cost/share leadership improves.",
+    "earningsMechanism": "A low-cost leader can retain project competitiveness and gain share despite lower tariffs.",
+    "nextObservableMetric": "wafer/module pricing, cost, capacity utilization and 2018 demand",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "longi-q3-20171031",
+      "longi-expectations-20171214"
+    ],
+    "failureCondition": "Cost declines/share gains fail to offset tariff/price pressure."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Strong 2017 earnings and cost leadership are known.",
+      "nextPeriod": "2018 estimates already assume continued leadership and growth.",
+      "laterPeriod": "Policy support declines as technology costs fall.",
+      "rationale": "Use explicit forward forecasts rather than spot narrative.",
+      "evidenceRefs": [
+        "pv-price-20171222",
+        "regime-pv-20171231"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Cost reductions can absorb tariff pressure.",
+      "nextPeriodChange": "Share gains may keep earnings above baseline.",
+      "laterPeriodChange": "Sustainable advantage depends on cost discipline rather than subsidy.",
+      "mechanism": "Low-cost manufacturing converts policy pressure into consolidation/share gain.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Longi can plausibly outperform the sector baseline, but much of the thesis is already recognized.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Current valuation depends on continued multi-year cost/share execution.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "falsifier": "Pricing/input costs/capex returns deteriorate.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "mono wafer/module cost/share engine under 2018 tariff reset",
+    "geographicScope": "China PV manufacturing/project market",
+    "customerScope": "PV project developers and module buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate low-cost leader economics from the aggregate tariff shock.",
+    "evidenceRefs": [
+      "longi-q3-20171031",
+      "longi-expectations-20171214"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "strong earnings versus tariff step-down",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "cost/share consolidation",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "technology/cost leadership",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Retain Research until price/expectation burden offers more room.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Sector and leader fundamentals align; the blocker is absorption/capex rather than causal validity.",
+    "evidenceRefs": [
+      "pv-price-20171222",
+      "regime-pv-20171231"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Tariff reset is fresh but negative/known.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Q3 profit growth is realized.",
+      "evidenceRefs": [
+        "pv-price-20171222"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Forward estimates remain positive but already visible.",
+      "evidenceRefs": [
+        "pv-price-20171222",
+        "regime-pv-20171231"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "clear",
+      "rationale": "Cost/share leadership can persist.",
+      "evidenceRefs": [
+        "longi-q3-20171031",
+        "longi-expectations-20171214"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No further cost/share or earnings surprise beyond the known baseline.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "601012.SH",
+    "purestTicker": "601012.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Longi is preferred for cost/share quality, not thematic purity alone.",
+    "earningsQualityComparison": "Longi and Tongwei both have strong earnings.",
+    "downsideComparison": "Both have financing/capex exposure after a broad rerating.",
+    "evidenceRefs": [
+      "pv-price-20171222",
+      "tongwei-q3-20171023",
+      "regime-pv-20171231"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Debt and working-capital balances rose as capacity expanded.",
+        "evidenceRefs": [
+          "longi-q3-20171031"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Rapid fixed-asset and construction-in-progress expansion makes capital efficiency a first-order risk.",
+        "evidenceRefs": [
+          "longi-q3-20171031"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event was identified in the reviewed company evidence.",
+        "evidenceRefs": [
+          "longi-q3-20171031"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "A RMB2.8bn public convertible financing had been approved alongside rapid capacity expansion.",
+        "evidenceRefs": [
+          "longi-q3-20171031"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The company is strong, but the market already prices cost leadership while policy and capex financing create a high-expectation execution path.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Capacity returns, cost advantage or financing discipline deteriorate as tariffs fall.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: high-quality company engine survives the adversarial pass, but broad full-breadth rerating and tariff/capex expectation burden leave insufficient entry asymmetry.",
+    "alreadyPricedAssessment": "quality_leadership_highly_absorbed",
+    "constraints": [
+      "tariff step-down",
+      "high price absorption",
+      "capex/convertible financing"
+    ]
+  },
+  "bearCase": "Cost leadership is real but already capitalized; tariff cuts and expansion returns disappoint.",
+  "invalidationConditions": [
+    {
+      "indicator": "wafer/module cost and price",
+      "observationMethod": "company/industry data",
+      "threshold": "cost advantage narrows materially"
+    },
+    {
+      "indicator": "capex/financing returns",
+      "observationMethod": "company filings",
+      "threshold": "debt/working capital rises faster than earnings/cash"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Longi as Research; require fresh earnings/cost evidence or a lower expectation burden before promotion."
+  ]
+}
