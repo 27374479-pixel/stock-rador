@@ -1,0 +1,428 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2018q1-multisource-v1.6-001",
+  "cutoffAt": "2018-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2018Q1 replay built in September 2026 with current model/search weights. Only evidence available by 2018-03-31 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official trade-policy evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected USTR/White House Section 301 evidence; no exhaustive official-policy crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company mapping is intentionally deferred until after discovery lock."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "High-frequency unit demand and product-market states.",
+      "coverageStatus": "partial",
+      "limitations": "Excavator and electronics supply-demand data only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting.",
+      "coverageStatus": "partial",
+      "limitations": "Selected China Securities Journal, Reuters/Nikkei-syndicated and financial press."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Product-level electronics and component market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected MLCC/DRAM specialist sources; not exhaustive."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "mlcc-murata-20180305",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "MLCC或遭遇严重缺货 市场望迎涨价潮",
+      "publisher": "证券时报·e公司/中证网",
+      "url": "https://cs.com.cn/xwzx/201803/t20180305_5731363.html",
+      "publishedAt": "2018-03-05T18:49:00+08:00",
+      "availableAt": "2018-03-05T18:49:00+08:00",
+      "originGroup": "mlcc-murata-20180305",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Murata cut production capacity for legacy MLCC products with smaller substitutes to about 50% of 2017 capacity and planned further reductions.",
+        "The change followed Kyocera product exits and was expected to worsen MLCC shortages."
+      ],
+      "entities": [
+        "MLCC",
+        "Murata",
+        "passive components"
+      ],
+      "observedChanges": [
+        "legacy MLCC effective supply contracts materially"
+      ]
+    },
+    {
+      "itemId": "mlcc-price-20180327",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "MLCC持续涨价 需警惕价格操纵",
+      "publisher": "21世纪经济报道",
+      "url": "https://finance.sina.com.cn/roll/2018-03-27/doc-ifysrwcw3667732.shtml",
+      "publishedAt": "2018-03-27T07:00:00+08:00",
+      "availableAt": "2018-03-27T07:00:00+08:00",
+      "originGroup": "mlcc-price-20180327",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Japanese suppliers' product-mix shift was estimated to release roughly 20% of standard MLCC market demand to other suppliers.",
+        "Yageo was reported to plan another roughly 40-50% MLCC price increase from April after multiple earlier increases."
+      ],
+      "entities": [
+        "MLCC",
+        "Yageo",
+        "passive components"
+      ],
+      "observedChanges": [
+        "shortage translates into repeated realized supplier pricing"
+      ]
+    },
+    {
+      "itemId": "mlcc-yageo-20180322",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "传国巨4月起被动元件涨40~50%",
+      "publisher": "自由财经/工商时报信息",
+      "url": "https://ec.ltn.com.tw/article/breakingnews/2372825",
+      "publishedAt": "2018-03-22T09:24:00+08:00",
+      "availableAt": "2018-03-22T09:24:00+08:00",
+      "originGroup": "mlcc-yageo-20180322",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Channel reports said Yageo planned an April 1 all-series MLCC price increase averaging 40-50%, above February's 10-20%.",
+        "Industry participants said common specifications remained tight because major Japanese suppliers were reducing standard-product capacity."
+      ],
+      "entities": [
+        "MLCC",
+        "Yageo",
+        "channel inventory"
+      ],
+      "observedChanges": [
+        "supplier pricing power remains strong into the next quarter"
+      ]
+    },
+    {
+      "itemId": "cobalt-tight-20180203",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "供需失衡持续 金属钴2018年上涨态势将延续",
+      "publisher": "中国证券报·中证网",
+      "url": "https://www.cs.com.cn/sylm/cstop10/201802/t20180203_5698367.html",
+      "publishedAt": "2018-02-03T09:36:00+08:00",
+      "availableAt": "2018-02-03T09:36:00+08:00",
+      "originGroup": "cobalt-tight-20180203",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Domestic metal cobalt was about RMB575.7k/t on Feb 1, +7.7% YTD and nearly triple the July 2016 level.",
+        "Supply was highly concentrated globally and industry participants expected limited near-term supply growth."
+      ],
+      "entities": [
+        "cobalt",
+        "DRC",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "cobalt scarcity persists but price absorption is already extreme"
+      ]
+    },
+    {
+      "itemId": "excavator-q1-20180308",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "1-2月挖掘机销量21800台，增长14.3%",
+      "publisher": "中国路面机械网/行业协会数据",
+      "url": "https://news.lmjx.net/2018/201803/2018030814354291.shtml",
+      "publishedAt": "2018-03-08T14:35:00+08:00",
+      "availableAt": "2018-03-08T14:35:00+08:00",
+      "originGroup": "excavator-q1-20180308",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Feb excavator sales were 21,800 units, +14.3% YoY; exports were +108.25%.",
+        "Sany sold 4,571 excavators with 20.97% share, the largest among reported brands."
+      ],
+      "entities": [
+        "excavators",
+        "Sany",
+        "construction machinery"
+      ],
+      "observedChanges": [
+        "machinery demand remains positive from a high base and exports accelerate"
+      ]
+    },
+    {
+      "itemId": "iphone-x-cut-20180129",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Apple set to halve first-quarter iPhone X production target: Nikkei",
+      "publisher": "Reuters/Nikkei",
+      "url": "https://www.newindianexpress.com/business/2018/Jan/29/apple-set-to-halve-first-quarter-iphone-x-production-target-nikkei-1765136.html",
+      "publishedAt": "2018-01-29T16:57:00+08:00",
+      "availableAt": "2018-01-29T16:57:00+08:00",
+      "originGroup": "iphone-x-cut-20180129",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Nikkei reported Apple told suppliers it would cut Q1 iPhone X production target from more than 40m to around 20m units because holiday-season sales were weaker than expected."
+      ],
+      "entities": [
+        "Apple",
+        "iPhone X",
+        "smartphone components"
+      ],
+      "observedChanges": [
+        "premium-smartphone component demand is revised sharply lower"
+      ]
+    },
+    {
+      "itemId": "iphone-x-murata-contradiction-20180130",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "Apple supplier Murata says iPhone X output target cuts overstated in report",
+      "publisher": "Reuters",
+      "url": "https://www.investing.com/news/technology-news/apple-supplier-murata-says-iphone-x-output-target-cuts-overstated-in-report-1168832",
+      "publishedAt": "2018-01-30T04:30:00+00:00",
+      "availableAt": "2018-01-30T04:30:00+00:00",
+      "originGroup": "iphone-x-murata-contradiction-20180130",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Murata said its own iPhone X-related orders had not fallen by as much as the reported production-target cut, providing an explicit contradiction to the most extreme demand interpretation."
+      ],
+      "entities": [
+        "Apple",
+        "Murata",
+        "iPhone X components"
+      ],
+      "observedChanges": [
+        "smartphone-demand weakness is real enough to investigate but magnitude is disputed"
+      ]
+    },
+    {
+      "itemId": "server-dram-20180319",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Server DRAM Prices Will Continue to Rise as Server Demand from China Boosts in 2Q18",
+      "publisher": "DRAMeXchange/TrendForce",
+      "url": "https://www.dramexchange.com/WeeklyResearch/Post/2/4936.html",
+      "publishedAt": "2018-03-19T14:09:00+08:00",
+      "availableAt": "2018-03-19T14:09:00+08:00",
+      "originGroup": "server-dram-20180319",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "1Q18 server-DRAM quotes were expected about +4% QoQ and prices were expected to keep rising in Q2.",
+        "TrendForce expected China server demand to grow strongly in Q2, around 20%, while supplier transitions limited price increases but kept the market tight."
+      ],
+      "entities": [
+        "Server DRAM",
+        "China servers",
+        "memory"
+      ],
+      "observedChanges": [
+        "server-memory demand/price state remains positive into Q2"
+      ]
+    },
+    {
+      "itemId": "section301-20180322",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "President Trump Announces Strong Actions to Address China's Unfair Trade",
+      "publisher": "USTR",
+      "url": "https://ustr.gov/about-us/policy-offices/press-office/press-releases/2018/march/president-trump-announces-strong",
+      "publishedAt": "2018-03-22T00:00:00-04:00",
+      "availableAt": "2018-03-22T00:00:00-04:00",
+      "originGroup": "section301-20180322",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The U.S. announced Section 301 actions including a proposed tariff list, WTO action and investment restrictions.",
+        "The proposed tariff process would target Chinese goods after notice/comment rather than becoming immediate company-level earnings changes on March 22."
+      ],
+      "entities": [
+        "Section 301",
+        "China-US trade",
+        "technology/machinery"
+      ],
+      "observedChanges": [
+        "macro trade-policy risk rises abruptly without a stable company-level earnings mapping"
+      ]
+    },
+    {
+      "itemId": "section301-factsheet-20180322",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "Section 301 Fact Sheet",
+      "publisher": "USTR",
+      "url": "https://ustr.gov/about-us/policy-offices/press-office/fact-sheets/2018/march/section-301-fact-sheet",
+      "publishedAt": "2018-03-22T00:00:00-04:00",
+      "availableAt": "2018-03-22T00:00:00-04:00",
+      "originGroup": "section301-factsheet-20180322",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "USTR described proposed 25% duties on a future product list covering areas including aerospace, ICT and machinery; final products would follow a public process."
+      ],
+      "entities": [
+        "tariffs",
+        "ICT",
+        "machinery",
+        "China-US trade"
+      ],
+      "observedChanges": [
+        "policy uncertainty broadens but exact listed-company exposure is unresolved at cutoff"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2018q1-mlcc-supply-contraction",
+      "statement": "Major Japanese MLCC suppliers were withdrawing/reducing legacy standard-product capacity while Taiwanese suppliers repeatedly raised prices, creating a measurable upstream supply-state contraction before many downstream listed-company earnings reports fully reflected it.",
+      "changeType": "productive_capacity_contraction",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-03-05T18:49:00+08:00",
+      "memberItemIds": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327",
+        "mlcc-yageo-20180322"
+      ],
+      "independentOriginGroups": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327",
+        "mlcc-yageo-20180322"
+      ],
+      "affectedValueChain": [
+        "MLCC standard-product capacity",
+        "distributor inventory/lead times",
+        "supplier ASP",
+        "passive-component producer earnings"
+      ],
+      "contradictionSearchNotes": "The shortage is visible and price increases are repeated, but listed-company promotion must still prove direct MLCC exposure, realized earnings conversion and expectation room rather than treating all passive-component names as beneficiaries.",
+      "researchQuestion": "Can a listed A-share MLCC producer show cutoff-valid realized earnings plus a direct capacity/price bridge while the broader sector has not fully absorbed the supply contraction?"
+    },
+    {
+      "eventId": "event-2018q1-cobalt-scarcity-high-absorption",
+      "statement": "Cobalt remained supply-constrained and highly concentrated, but metal prices had already risen dramatically over 18 months, creating a useful high-absorption/late-cycle test.",
+      "changeType": "scarcity_with_extreme_price_absorption",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-02-03T09:36:00+08:00",
+      "memberItemIds": [
+        "cobalt-tight-20180203"
+      ],
+      "independentOriginGroups": [
+        "cobalt-tight-20180203"
+      ],
+      "affectedValueChain": [
+        "cobalt mining",
+        "refining",
+        "battery cathode materials"
+      ],
+      "contradictionSearchNotes": "Physical scarcity is real, but current commodity price may already capitalize much of the supply imbalance. Deep research must distinguish still-underreflected company earnings from chasing an extreme commodity rerating.",
+      "researchQuestion": "Does any A-share cobalt expression retain a clean earnings/valuation gap after the commodity's large prior move?"
+    },
+    {
+      "eventId": "event-2018q1-machinery-demand-high-base",
+      "statement": "Jan-Feb excavator sales remained positive on a very high prior-year base, exports more than doubled, and Sany retained leading market share.",
+      "changeType": "high_frequency_demand_persistence",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-03-08T14:35:00+08:00",
+      "memberItemIds": [
+        "excavator-q1-20180308"
+      ],
+      "independentOriginGroups": [
+        "excavator-q1-20180308"
+      ],
+      "affectedValueChain": [
+        "construction/replacement demand",
+        "excavator OEMs",
+        "hydraulic components"
+      ],
+      "contradictionSearchNotes": "February was down YoY because of holiday/high-base effects, so deep research must avoid treating one headline as a clean acceleration. Company earnings/valuation and March reacceleration must be cutoff-valid to promote.",
+      "researchQuestion": "Are leader company engines strong enough that high-base physical demand remains actionable by March 31?"
+    },
+    {
+      "eventId": "event-2018q1-iphone-x-demand-cut",
+      "statement": "Reports indicated a sharp Q1 iPhone X production-target reduction, but a major component supplier disputed the magnitude, creating a negative-demand signal with explicit uncertainty.",
+      "changeType": "end_demand_revision",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-01-29T16:57:00+08:00",
+      "memberItemIds": [
+        "iphone-x-cut-20180129",
+        "iphone-x-murata-contradiction-20180130"
+      ],
+      "independentOriginGroups": [
+        "iphone-x-cut-20180129",
+        "iphone-x-murata-contradiction-20180130"
+      ],
+      "affectedValueChain": [
+        "premium smartphones",
+        "OLED/components",
+        "Apple supply chain"
+      ],
+      "contradictionSearchNotes": "The production cut is reported rather than first-party Apple guidance and its magnitude is disputed. Do not map generic Apple-supply-chain shorts/longs without company-specific order/earnings evidence.",
+      "researchQuestion": "Does the smartphone-demand revision create any clear A-share earnings deterioration or is evidence too conflicted for selection?"
+    },
+    {
+      "eventId": "event-2018q1-server-dram-tightness",
+      "statement": "Server DRAM demand and prices remained firm into Q2, with China server demand expected to accelerate while supplier transitions kept supply tight.",
+      "changeType": "product_market_tightness",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-03-19T14:09:00+08:00",
+      "memberItemIds": [
+        "server-dram-20180319"
+      ],
+      "independentOriginGroups": [
+        "server-dram-20180319"
+      ],
+      "affectedValueChain": [
+        "server demand",
+        "Server DRAM",
+        "server OEMs",
+        "memory buyers/suppliers"
+      ],
+      "contradictionSearchNotes": "A positive global Server DRAM price state does not automatically map to A-share semiconductor beneficiaries; company exposure and earnings conversion must be verified.",
+      "researchQuestion": "Is there any direct A-share expression with measurable earnings conversion from server-memory tightness, or should the Skill fail closed?"
+    },
+    {
+      "eventId": "event-2018q1-section301-trade-risk",
+      "statement": "The March 22 Section 301 action sharply increased China-US trade-policy risk, but the exact tariff list and company-level earnings transmission were not yet final at cutoff.",
+      "changeType": "macro_policy_uncertainty",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-03-22T00:00:00-04:00",
+      "memberItemIds": [
+        "section301-20180322",
+        "section301-factsheet-20180322"
+      ],
+      "independentOriginGroups": [
+        "section301-20180322",
+        "section301-factsheet-20180322"
+      ],
+      "affectedValueChain": [
+        "China-US trade",
+        "ICT/machinery exporters",
+        "supply chains",
+        "equity risk premium"
+      ],
+      "contradictionSearchNotes": "The policy shock is large but cross-sectional company exposure is unresolved before the proposed tariff list. Treating broad exporters/import-substitution names as direct beneficiaries/losers would over-map a macro event.",
+      "researchQuestion": "Can any company-level earnings path be verified by cutoff, or should this remain a broad risk observation without selection?"
+    }
+  ]
+}
