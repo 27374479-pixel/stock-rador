@@ -1,0 +1,39 @@
+name: audit-v180-2017q3-frozen-baskets
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.8-2017q3-holdout-20260924
+    paths:
+      - .github/workflows/audit-v180-2017q3-frozen-baskets.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.8-2017q3-holdout-20260924
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Audit frozen no-selection baskets and aluminum alternate
+        run: |
+          rm -f backtests/runs/2017q3-multisource-deep-v1.8-001/postoutcome-frozen-basket-audit.json
+          node scripts/postoutcome-frozen-basket-audit.cjs \
+            backtests/runs/2017q3-multisource-deep-v1.8-001/lock.json \
+            backtests/runs/2017q3-multisource-deep-v1.8-001/postoutcome-frozen-basket-audit.json
+      - name: Commit diagnostic audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2017q3-multisource-deep-v1.8-001/postoutcome-frozen-basket-audit.json
+          git commit -m "backtest: audit v1.8 2017Q3 frozen no-selection baskets"
+          git pull --rebase origin ai-skill-v1.8-2017q3-holdout-20260924
+          git push origin HEAD:ai-skill-v1.8-2017q3-holdout-20260924
