@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2018q3-nev-battery",
+  "cutoffDate": "2018-09-30",
+  "fetchedAt": "2026-09-24T02:55:03.010Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "300750.SZ",
+    "002594.SZ"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2018-08-30",
+      "endDate": "2018-09-28",
+      "return": 0.02619147799671162
+    },
+    "60": {
+      "startDate": "2018-07-05",
+      "endDate": "2018-09-28",
+      "return": 0.02884718947834508
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "300750.SZ",
+        "startDate": "2018-08-30",
+        "endDate": "2018-09-28",
+        "return": 0.04300614373481926,
+        "benchmarkReturn": 0.02619147799671162,
+        "excessReturn": 0.016814665738107637
+      },
+      {
+        "ticker": "002594.SZ",
+        "startDate": "2018-08-30",
+        "endDate": "2018-09-28",
+        "return": 0.08964491866363478,
+        "benchmarkReturn": 0.02619147799671162,
+        "excessReturn": 0.06345344066692316
+      }
+    ],
+    "60": [
+      {
+        "ticker": "300750.SZ",
+        "startDate": "2018-07-05",
+        "endDate": "2018-09-28",
+        "return": 0.06089231216392954,
+        "benchmarkReturn": 0.02884718947834508,
+        "excessReturn": 0.03204512268558446
+      },
+      {
+        "ticker": "002594.SZ",
+        "startDate": "2018-07-05",
+        "endDate": "2018-09-28",
+        "return": 0.07928532755820261,
+        "benchmarkReturn": 0.02884718947834508,
+        "excessReturn": 0.05043813807985753
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": 0.040134053202515396,
+    "lookback60Excess": 0.041241630382720995,
+    "positiveBreadth20": 1,
+    "positiveBreadth60": 1
+  },
+  "conclusion": "favorable",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2018-04-03,2018-09-30,300,hfq",
+    "300750.SZ": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz300750,day,2018-04-03,2018-09-30,300,hfq",
+    "002594.SZ": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz002594,day,2018-04-03,2018-09-30,300,hfq"
+  }
+}
