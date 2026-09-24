@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "researchReadyAt": "2019-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q2-semiconductor-localization-pressure",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Localization pressure is structural, but a positive company earnings bridge must appear inside the base horizon before selection."
+  },
+  "changeHypothesis": {
+    "summary": "Huawei's Entity List restriction raised the strategic incentive for domestic semiconductor substitution, while foundry and memory demand simultaneously weakened. The investable unit is therefore domestic semiconductor equipment/localization, not generic electronics beta.",
+    "firstCredibleDate": "2019-05-15",
+    "valueChain": [
+      "external technology restriction",
+      "localization incentives",
+      "domestic equipment/design adoption",
+      "company orders/earnings"
+    ],
+    "persistenceReason": "Technology localization pressure can persist for years, but customer qualification and capex conversion are slow and near-term electronics demand was weak.",
+    "disconfirmingEvidence": [
+      "Top-ten foundry 2Q revenue was expected down about 8% YoY.",
+      "北方华创 Q1扣非 profit was negative and deteriorating despite headline revenue/profit growth.",
+      "Generic semiconductor price breadth was weak over 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "us-commerce-huawei-20190515",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-foundry-20190613",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "north-huachuang-q1-20190430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-semis-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "technology restriction",
+      "to": "domestic substitution pressure",
+      "mechanism": "Restricted access increases incentives to qualify domestic semiconductor equipment/components.",
+      "evidenceRefs": [
+        "us-commerce-huawei-20190515"
+      ],
+      "failureMode": "qualification remains too slow to affect orders",
+      "lag": "quarters to years"
+    },
+    {
+      "from": "localization pressure",
+      "to": "listed-company earnings",
+      "mechanism": "Only verified equipment orders, revenue and margin conversion can turn strategic substitution into earnings.",
+      "evidenceRefs": [
+        "north-huachuang-q1-20190430"
+      ],
+      "failureMode": "weak end demand/capex offsets localization",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "verified domestic semiconductor equipment suppliers"
+    ],
+    "secondOrderWinners": [
+      "domestic IC design/IP"
+    ],
+    "losers": [
+      "restricted imported suppliers"
+    ],
+    "substitutes": [
+      "inventory/alternative foreign suppliers"
+    ],
+    "bottlenecks": [
+      "qualification",
+      "fab capex",
+      "end demand"
+    ],
+    "falseThemeMatches": [
+      "generic semiconductor concepts without incremental orders"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002371.SZ",
+      "name": "北方华创",
+      "verifiedExposure": "Direct domestic semiconductor-equipment exposure, but Q1扣非 earnings did not show a clean post-restriction engine.",
+      "evidenceRefs": [
+        "north-huachuang-q1-20190430",
+        "regime-semis-20190630"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +30.5%, headline profit +29.7%, but扣非 loss widened.",
+        "favorable": "Localization converts into new fab/tool orders.",
+        "adverse": "Weak foundry capex and qualification delays dominate."
+      },
+      "principalRisks": [
+        "weak underlying earnings quality",
+        "slow qualification"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: long-run localization is real but cutoff-date company earnings/order conversion is not strong enough to offset weak physical semiconductor demand."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Semiconductor-theme basket was only neutral over 60d and price strength was concentrated; the localization narrative had already become visible after the May restriction.",
+    "thesisExpectation": "Require verified incremental customer qualification/orders rather than strategic narrative alone.",
+    "measurableGap": "No cutoff-valid order/earnings evidence establishes a measurable base-horizon expectation gap.",
+    "evidenceRefs": [
+      "us-commerce-huawei-20190515",
+      "trendforce-foundry-20190613",
+      "north-huachuang-q1-20190430",
+      "regime-semis-20190630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "domestic semiconductor equipment/localization",
+    "geographicScope": "China semiconductor fabs",
+    "customerScope": "domestic wafer fabs and equipment buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [
+      "h-2019q2-memory-downcycle"
+    ],
+    "rationale": "Separate structural localization from the memory/foundry demand shock; this memo only asks whether domestic equipment has a verified company-specific earnings engine.",
+    "evidenceRefs": [
+      "us-commerce-huawei-20190515",
+      "trendforce-foundry-20190613",
+      "north-huachuang-q1-20190430"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "foundry demand/inventory remained weak and Huawei restrictions added uncertainty",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "trendforce-foundry-20190613"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "localization may create orders but Q1 underlying earnings confirmation was weak",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "north-huachuang-q1-20190430"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "external restriction increases long-run localization incentives",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "us-commerce-huawei-20190515"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not let structural localization erase current demand weakness; wait for company-specific order/earnings conversion.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "mixed",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "mixed",
+    "rationale": "北方华创 headline revenue/profit grew, but扣非 earnings weakened while semiconductor end demand was soft.",
+    "evidenceRefs": [
+      "north-huachuang-q1-20190430",
+      "trendforce-foundry-20190613"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "structural_story_without_clean_base_horizon_bridge",
+    "constraints": [
+      "weak foundry demand",
+      "qualification lag",
+      "mixed underlying earnings"
+    ]
+  },
+  "bearCase": "Localization remains strategically important but takes too long to offset the current semiconductor downcycle.",
+  "invalidationConditions": [
+    {
+      "indicator": "incremental domestic tool orders/扣非 earnings",
+      "observationMethod": "company filings/order disclosures",
+      "threshold": "clear base-horizon acceleration"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a canonical structural-policy-vs-near-term-demand conflict."
+  ]
+}
