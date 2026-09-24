@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q2-multisource-deep-v1.6-001",
+  "label": "post_outcome_wastepaper_reunderwrite_audit",
+  "diagnosticOnly": true,
+  "samePeriodMayTuneSkill": false,
+  "hypothesisId": "h-2018q2-wastepaper-quota-concentration",
+  "frozenCutoff": "2018-06-30",
+  "frozenDecision": "High-priority selection",
+  "selectedTicker": "600567.SH",
+  "outcome": {
+    "netReturn20d": -0.03963123986773953,
+    "excessReturn20d": -0.04441657056062798,
+    "netReturn60d": -0.07510089437562828,
+    "excessReturn60d": -0.04828649215674141,
+    "winsAllControls60d": false
+  },
+  "postCutoffFundamentalChecks": [
+    {
+      "date": "2018-08-31",
+      "source": "山鹰纸业2018年半年度报告",
+      "claim": "H1 revenue RMB11.954bn +60.21%, attributable profit RMB1.706bn +106.48%, operating cash flow RMB2.422bn +995.48%; paper gross margin 26.06%, +1.13pp YoY.",
+      "diagnosticMeaning": "The pre-cutoff quota/cost thesis was not invalidated by the first subsequent operating report; realized earnings and paper margins strengthened."
+    },
+    {
+      "date": "2018-08-31",
+      "source": "山鹰纸业2018年半年度报告",
+      "claim": "In the first 17 quota batches Shanying received 2.0389m tons, 14.52% of total quota, with a quota-to-paper-capacity ratio above larger peers.",
+      "diagnosticMeaning": "The upstream access state identified before cutoff remained real and became more concentrated."
+    }
+  ],
+  "postCutoffRegimeChanges": [
+    {
+      "date": "2018-08-08",
+      "source": "国务院关税税则委员会",
+      "event": "China announced a 25% additional tariff on the adjusted second list of roughly USD16bn of US-origin imports, effective 2018-08-23.",
+      "thesisAttack": "The frozen thesis depended on low-cost imported recycled fiber; additional tariffs on US-origin waste-paper flows directly compress that input-cost advantage."
+    },
+    {
+      "date": "2018-08-23",
+      "source": "Official tariff implementation / contemporaneous paper-industry follow-up",
+      "event": "The 25% tariff took effect. Later 2018 paper-industry evidence showed US-waste-paper's pre-existing price advantage versus domestic waste paper was materially eroded/reversed by September-October.",
+      "thesisAttack": "A new cost regime can invalidate an otherwise-correct quota-access thesis without implying the original cutoff research was wrong."
+    }
+  ],
+  "causalDiagnosis": {
+    "discoveryQuality": "supported",
+    "causalChainQuality": "supported",
+    "companyMappingQuality": "supported_but_not_return_sufficient",
+    "promotionQuality": "not_cleanly_disproved",
+    "dominantIssue": "post_cutoff_thesis_attacking_regime_change_not_captured_by_static_holdout",
+    "explanation": "Cutoff-valid evidence correctly identified Shanying's relative quota/access advantage and low valuation. Subsequent H1 operations corroborated that mechanism. A new post-cutoff tariff shock attacked the key cost edge before the 60d exit. The static evaluator held mechanically and therefore tests entry quality plus unknown future policy, not whether the Skill would have re-underwritten and exited when its explicit raw-material-cost falsifier changed."
+  },
+  "skillImplication": {
+    "selectionRuleChange": false,
+    "v16CausalStateRuleChange": false,
+    "monitoringRequirement": "A selected thesis must be re-underwritten when a new event directly changes the frozen causal state variable, cost bridge, or falsifier.",
+    "replayRequirement": "Historical validation should add event-driven re-underwrite checkpoints rather than assuming fixed holding periods are the only valid behavior.",
+    "antiOverfit": "Do not create a paper-specific tariff exception. The generic rule is thesis-attacking state change -> immediate re-underwrite."
+  },
+  "classification": "post_cutoff_regime_change_and_static_reunderwrite_gap"
+}
