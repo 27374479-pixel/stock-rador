@@ -1,0 +1,624 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-09-30T23:59:59+08:00",
+  "researchReadyAt": "2018-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q3-pta-squeeze",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The PTA squeeze can affect segment margins quickly, but integrated chain offsets and recent price reversal require a 60d Research horizon rather than action."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000703.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Hengyi had direct PTA exposure and a contemporaneous positive PTA outlook at moderate forward PE, but its H1 PTA revenue fell and integrated polyester exposure makes the squeeze non-pure.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807",
+        "pta-stock-divergence-20180821",
+        "hengyi-h1-201808",
+        "hengyi-valuation-20180828",
+        "regime-pta-20180930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Low PTA inventory, PX/currency costs and strong polyester demand produced a rapid July-August PTA squeeze. By late September, however, the equity basket had already given back relative performance and integrated producers had offsetting downstream exposures.",
+    "firstCredibleDate": "2018-08-07",
+    "valueChain": [
+      "PX cost",
+      "PTA inventory/capacity",
+      "PTA price/spread",
+      "polyester downstream margins",
+      "integrated producer earnings"
+    ],
+    "persistenceReason": "Low inventory can sustain near-term PTA margins, but chain imbalances and downstream resistance can normalize quickly.",
+    "disconfirmingEvidence": [
+      "Contemporaneous reports warned against chasing high PTA levels.",
+      "Hengyi H1 PTA segment revenue was down 23.7% despite better margin.",
+      "All four frozen PTA-linked names lagged CSI300 over the final 20d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pta-low-inventory-20180807",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Low inventory and cost/demand forces drove the squeeze."
+    },
+    {
+      "id": "pta-stock-divergence-20180821",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Commodity and equity performance diverged while chain offsets mattered."
+    },
+    {
+      "id": "hengyi-h1-201808",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "PTA and polyester segment economics were mixed."
+    },
+    {
+      "id": "hengyi-valuation-20180828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Current forecast/valuation and PTA tightness view."
+    },
+    {
+      "id": "regime-pta-20180930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Final-20d equity regime was weak after strong 60d performance."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "low PTA inventory / cost-demand squeeze",
+      "to": "PTA price and processing spread",
+      "mechanism": "Tight inventory and strong polyester demand lift near-month PTA pricing.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ],
+      "failureMode": "inventory rebuilds/downstream cuts runs",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "PTA pricing",
+      "to": "Hengyi group earnings",
+      "mechanism": "PTA margin can improve, but integrated polyester/trade exposure creates offsets.",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "hengyi-valuation-20180828"
+      ],
+      "failureMode": "downstream margin compression offsets PTA benefit",
+      "lag": "weeks to quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost PTA producers"
+    ],
+    "secondOrderWinners": [
+      "integrated producers if chain margins remain balanced"
+    ],
+    "losers": [
+      "polyester/downstream buyers unable to pass through PTA cost"
+    ],
+    "substitutes": [
+      "inventory draw/imports"
+    ],
+    "bottlenecks": [
+      "PTA inventory",
+      "PX cost",
+      "polyester run rates"
+    ],
+    "falseThemeMatches": [
+      "integrated petrochemical names where downstream losses offset PTA gains"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000703.SZ",
+      "name": "恒逸石化",
+      "verifiedExposure": "Direct PTA plus polyester integration.",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "hengyi-valuation-20180828"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 PTA margin 8.74% but PTA revenue -23.7%; integrated polyester revenue grew strongly.",
+        "favorable": "PTA margin spike outweighs downstream offset.",
+        "adverse": "Polyester/downstream compression and squeeze normalization dominate."
+      },
+      "principalRisks": [
+        "chain offsets",
+        "finite squeeze"
+      ]
+    },
+    {
+      "ticker": "002493.SZ",
+      "name": "荣盛石化",
+      "verifiedExposure": "PTA/polyester peer in the same commodity chain.",
+      "evidenceRefs": [
+        "regime-pta-20180930"
+      ],
+      "earningsSensitivity": {
+        "base": "Same chain exposure.",
+        "favorable": "PTA spread persists.",
+        "adverse": "Integrated offsets/normalization."
+      },
+      "principalRisks": [
+        "chain complexity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002493.SZ",
+      "name": "荣盛石化",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Integrated PTA/polyester peer exposed to the same squeeze.",
+      "whySelectedCompanyShouldOutperform": "Hengyi has a frozen contemporaneous PTA tightness/valuation report and explicit segment data, but no decisive edge is claimed.",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "hengyi-valuation-20180828",
+        "regime-pta-20180930"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000703.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002493.SZ",
+        "selectedAdvantages": [
+          "explicit frozen PTA segment and valuation evidence"
+        ],
+        "selectedDisadvantages": [
+          "same integration offsets and finite squeeze"
+        ],
+        "evidenceRefs": [
+          "hengyi-h1-201808",
+          "hengyi-valuation-20180828",
+          "regime-pta-20180930"
+        ],
+        "switchCondition": "Prefer Rongsheng if cutoff-valid segment earnings/valuation show a cleaner PTA bridge.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Hengyi is usable for Research, not a clearly superior actionable expression."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PTA-linked basket had +11.11pp 60d excess but -5.37pp 20d excess; final-20d breadth was 0%.",
+    "thesisExpectation": "Some PTA margin benefit may remain if low inventory persists, but equity and chain economics already show normalization risk.",
+    "measurableGap": "Moderate forward valuation helps, but no clean residual PTA-only earnings gap is measurable after accounting for downstream exposure.",
+    "evidenceRefs": [
+      "pta-low-inventory-20180807",
+      "hengyi-h1-201808",
+      "hengyi-valuation-20180828",
+      "regime-pta-20180930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Segment economics plus contemporaneous forward PE.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "PTA squeeze was widely visible and equity basket had strong 60d prior performance.",
+    "thesisScenario": "PTA processing economics remain tight long enough to lift integrated earnings.",
+    "breakevenCondition": "PTA benefit must exceed downstream compression and already-observed commodity rerating.",
+    "ordinaryScenarioFailure": "Inventory rebuild/downstream cuts reverse PTA margins.",
+    "catalystOrTimingBridge": "Monthly PTA inventory/spreads and Q3 results are inside 60d.",
+    "evidenceRefs": [
+      "pta-low-inventory-20180807",
+      "hengyi-valuation-20180828",
+      "regime-pta-20180930"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Low inventory and cost/demand squeeze were physically visible.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "H1 segment data show direct PTA exposure but integrated offsets remain material.",
+      "evidenceRefs": [
+        "hengyi-h1-201808"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "60d strength reversed to 0% positive breadth over the final 20d.",
+      "evidenceRefs": [
+        "regime-pta-20180930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Late-August report provides current forecast/valuation.",
+      "evidenceRefs": [
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare strong 60d rerating and commodity squeeze with final-20d equity weakness.",
+      "evidenceRefs": [
+        "regime-pta-20180930",
+        "pta-stock-divergence-20180821"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen PTA-linked basket versus CSI300",
+      "lookback20Excess": -0.053716227844407355,
+      "lookback60Excess": 0.11105516916955105,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.75,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-pta-20180930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Low inventory supports near-term PTA pricing, but squeeze is already mature.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Integrated producer earnings sensitivity differs by chain position.",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "pta-stock-divergence-20180821"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "short_lived",
+      "rationale": "Commodity inventory squeezes can normalize quickly.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "A one-month ~40% futures move and final-20d equity reversal indicate mature absorption.",
+      "evidenceRefs": [
+        "pta-stock-divergence-20180821",
+        "regime-pta-20180930"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Physical squeeze is real but chain offsets and mature price behavior block Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000703.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Diversified integrated operations and direct PTA exposure pass basic quality.",
+      "evidenceRefs": [
+        "hengyi-h1-201808"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "PTA margin upside exists but downstream offsets are not fully resolved.",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Published 2018E/2019E PE was moderate.",
+      "evidenceRefs": [
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Inventory/spreads and Q3 results update quickly.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Moderate valuation helps, but commodity normalization risk remains.",
+      "evidenceRefs": [
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002493.SZ",
+        "revisionAdvantage": "No decisive frozen edge beyond better evidence granularity.",
+        "valuationAdvantage": "Hengyi has a current frozen valuation reference.",
+        "qualityTradeoff": "Both are integrated.",
+        "catalystAdvantage": "Same PTA squeeze.",
+        "downsideTradeoff": "No decisive edge.",
+        "switchCondition": "Switch if Rongsheng segment economics/valuation are cleaner.",
+        "evidenceRefs": [
+          "hengyi-h1-201808",
+          "hengyi-valuation-20180828",
+          "regime-pta-20180930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "PTA near-month prices rose sharply as inventory stayed low.",
+    "earningsMechanism": "PTA processing margins can improve, but integrated downstream exposure partially offsets the gain.",
+    "nextObservableMetric": "PTA inventory/spread, polyester run rates and Q3 segment earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "pta-low-inventory-20180807",
+      "hengyi-h1-201808"
+    ],
+    "failureCondition": "Inventory/spreads normalize or downstream losses offset PTA gains."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "PTA squeeze is already visible.",
+      "nextPeriod": "Forecast assumes tight PTA conditions and integrated expansion.",
+      "laterPeriod": "Commodity margins normalize as supply/inventory adjust.",
+      "rationale": "Use a current squeeze-aware baseline.",
+      "evidenceRefs": [
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Low inventory may keep PTA margins above baseline briefly.",
+      "nextPeriodChange": "Only if downstream margins remain viable does integrated profit improve.",
+      "laterPeriodChange": "No permanent squeeze is assumed.",
+      "mechanism": "Finite inventory tightness before normalization.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807",
+        "hengyi-h1-201808"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Residual PTA upside exists but chain offsets are unresolved.",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "regime-pta-20180930"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Commodity squeeze can reverse quickly.",
+      "evidenceRefs": [
+        "pta-stock-divergence-20180821"
+      ]
+    },
+    "falsifier": "PTA inventory/spreads normalize before Q3 earnings conversion.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "PTA margin separated from polyester/downstream exposure",
+    "geographicScope": "China PTA/polyester chain",
+    "customerScope": "polyester producers and integrated petrochemical firms",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo explicitly separates PTA benefit from downstream offsets rather than treating integrated names as pure PTA.",
+    "evidenceRefs": [
+      "pta-low-inventory-20180807",
+      "hengyi-h1-201808"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "low inventory and PTA price squeeze",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "integrated chain offsets and inventory normalization",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "hengyi-h1-201808",
+        "pta-stock-divergence-20180821"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "new projects/integration help but commodity margins normalize",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Treat PTA squeeze as finite and require segment earnings rather than extrapolating futures price.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "leader_lagging_sector",
+    "companyEvidenceConclusion": "mixed",
+    "rationale": "PTA commodity strength was stronger than the equity/segment evidence.",
+    "evidenceRefs": [
+      "pta-stock-divergence-20180821",
+      "hengyi-h1-201808",
+      "regime-pta-20180930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Low inventory is real.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "H1 segment data predate much of the squeeze and show chain offsets.",
+      "evidenceRefs": [
+        "hengyi-h1-201808"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Late-August forecast incorporates tight PTA conditions.",
+      "evidenceRefs": [
+        "hengyi-valuation-20180828"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Inventory squeeze lacks durable structural persistence.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No Q3 segment earnings conversion beyond the squeeze-aware baseline.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "000703.SZ",
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "No integrated producer is treated as pure PTA; segment offsets are co-equal.",
+    "earningsQualityComparison": "Hengyi offers direct frozen segment data.",
+    "downsideComparison": "Moderate PE helps but commodity normalization remains.",
+    "evidenceRefs": [
+      "hengyi-h1-201808",
+      "hengyi-valuation-20180828"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: V1.6 preserves the low-inventory state signal but does not promote because chain offsets, neutral timing and short duration remain unresolved.",
+    "alreadyPricedAssessment": "finite_squeeze_with_chain_offsets",
+    "constraints": [
+      "neutral price regime",
+      "integrated exposure",
+      "short duration"
+    ]
+  },
+  "bearCase": "The PTA squeeze is a late-cycle commodity spike; downstream demand cuts and inventory rebuild erase margins.",
+  "invalidationConditions": [
+    {
+      "indicator": "PTA inventory/spread",
+      "observationMethod": "industry/market data",
+      "threshold": "normalizes materially"
+    },
+    {
+      "indicator": "Hengyi PTA/polyester segment margins",
+      "observationMethod": "Q3 company results",
+      "threshold": "no incremental earnings conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Research selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Hengyi Research; use V1.6 state test to continue mapping but not to bypass chain-offset and timing blockers."
+  ],
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "inventory_cycle",
+    "upstreamState": {
+      "variable": "PTA inventory tightness",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "low inventory constrains immediately available supply and raises sensitivity to cost/demand shocks",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "PTA spot/futures price and integrated producer equity response",
+      "observedDirection": "mixed",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "PTA price rose sharply while integrated equities lagged because downstream polyester margins and chain offsets absorbed part of the benefit.",
+      "evidenceRefs": [
+        "pta-stock-divergence-20180821",
+        "regime-pta-20180930"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "credible",
+      "rationale": "Low inventory can lead company segment earnings, but integrated chain offsets delay/blur the equity flow response.",
+      "evidenceRefs": [
+        "pta-low-inventory-20180807",
+        "hengyi-h1-201808"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "60d basket strength existed but final-20d breadth collapsed.",
+      "evidenceRefs": [
+        "regime-pta-20180930"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "PTA inventory rebuilds or Q3 segment margins fail to improve.",
+    "conclusion": "state_leads_flow"
+  }
+}
