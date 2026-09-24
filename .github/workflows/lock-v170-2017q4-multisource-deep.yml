@@ -1,0 +1,38 @@
+name: lock-v170-2017q4-multisource-deep
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.7-2017q4-holdout-20260924
+    paths:
+      - .github/workflows/lock-v170-2017q4-multisource-deep.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.7-2017q4-holdout-20260924
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Validate and freeze run
+        run: |
+          node scripts/lock-skill-run-v170.cjs \
+            backtests/runs/2017q4-multisource-deep-v1.7-001/manifest.json \
+            backtests/runs/2017q4-multisource-deep-v1.7-001/lock.json
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2017q4-multisource-deep-v1.7-001/lock.json
+          git commit -m "backtest: lock v1.7 2017Q4 before outcome reveal"
+          git pull --rebase origin ai-skill-v1.7-2017q4-holdout-20260924
+          git push origin HEAD:ai-skill-v1.7-2017q4-holdout-20260924
