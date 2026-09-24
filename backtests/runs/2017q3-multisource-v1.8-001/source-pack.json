@@ -1,0 +1,446 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2017q3-multisource-v1.8-001",
+  "cutoffAt": "2017-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Current model/search can expose later historical context. Only sources provably public by 2017-09-30 are frozen; no selected-stock outcomes are opened before discovery lock.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official energy/industrial policy and program rules.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central/local official records only; not an exhaustive archive crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company mapping is intentionally deferred until after discovery freeze."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "High-frequency end-market and inventory/production evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected machinery, auto and metals physical data only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting on supply cuts, prices and market reversals.",
+      "coverageStatus": "partial",
+      "limitations": "Selected China Securities Journal/The Paper/financial reporting only."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Product-level semiconductor and materials market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected TrendForce memory-market evidence; not exhaustive."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "aluminum-cuts-20170810",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "山东清理违规电解铝产能321万吨 电解铝供需拐点将现",
+      "publisher": "中证网/界面",
+      "url": "https://www.cs.com.cn/xwzx/201708/t20170810_5418176.html",
+      "publishedAt": "2017-08-10T16:43:00+08:00",
+      "availableAt": "2017-08-10T16:43:00+08:00",
+      "originGroup": "aluminum-cuts-20170810",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Shandong ordered 3.21m tonnes of illegal electrolytic-aluminum capacity shut, close to 8% of nationwide operating capacity cited in the report.",
+        "The market had already reacted strongly: SHFE aluminum rose more than 11% from Aug-1 to Aug-10.",
+        "The policy mechanism was real capacity removal, but the price response was already substantial."
+      ],
+      "entities": [
+        "electrolytic aluminum",
+        "Shandong",
+        "illegal capacity",
+        "SHFE aluminum"
+      ],
+      "observedChanges": [
+        "large-scale policy-driven aluminum capacity removal becomes concrete while prices already rerate"
+      ]
+    },
+    {
+      "itemId": "aluminum-inventory-20170912",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "电解铝库存出现下降",
+      "publisher": "中证网/海通有色",
+      "url": "https://www.cs.com.cn/zzqh2020/201709/t20170912_5469076.html",
+      "publishedAt": "2017-09-12T08:17:00+08:00",
+      "availableAt": "2017-09-12T08:17:00+08:00",
+      "originGroup": "aluminum-inventory-20170912",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Seven-market aluminum inventory was 1.609m tonnes, down 32kt from Sep-8 and the first decline in about two months.",
+        "Inventory had remained unusually high and continued rising beforehand, creating doubt about whether supply-side reform was tightening the market quickly enough.",
+        "The report cited cumulative production cuts of about 3.459m tonnes by Sep-7, so capacity contraction and high inventory coexisted."
+      ],
+      "entities": [
+        "electrolytic aluminum",
+        "inventory",
+        "capacity cuts",
+        "SMM"
+      ],
+      "observedChanges": [
+        "upstream capacity is contracting but downstream inventory remains high, creating a state-flow conflict"
+      ]
+    },
+    {
+      "itemId": "rareearth-rally-20170804",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "稀土报价大幅上调 钨价有望持续上涨",
+      "publisher": "中证网/上海证券报",
+      "url": "https://www.cs.com.cn/ssgs/gsxw/201708/t20170804_5407826.html",
+      "publishedAt": "2017-08-04T08:49:00+08:00",
+      "availableAt": "2017-08-04T08:49:00+08:00",
+      "originGroup": "rareearth-rally-20170804",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Many rare-earth quotations rose sharply in early August; praseodymium-neodymium products had risen close to 60% year-to-date.",
+        "Contemporaneous commentary attributed tighter supply partly to crackdowns on illegal rare-earth activity and environmental inspections in major producing regions."
+      ],
+      "entities": [
+        "rare earth",
+        "praseodymium-neodymium",
+        "environmental inspection",
+        "illegal mining crackdown"
+      ],
+      "observedChanges": [
+        "rare-earth supply discipline and enforcement coincide with a sharp price rally"
+      ]
+    },
+    {
+      "itemId": "rareearth-reversal-20170929",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "行情逆转！中重稀土价格全面下跌，南方稀土联盟倡议停产挺价",
+      "publisher": "澎湃新闻",
+      "url": "https://www.thepaper.cn/newsDetail_forward_1811086",
+      "publishedAt": "2017-09-29T18:42:00+08:00",
+      "availableAt": "2017-09-29T18:42:00+08:00",
+      "originGroup": "rareearth-reversal-20170929",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "From late August into late September, rare-earth prices reversed from the earlier surge into broad declines.",
+        "Praseodymium-neodymium oxide was reported around RMB460k/t on Sep-28, about 19.5% below its prior high.",
+        "Industry participants described downstream resistance to the earlier rapid price increase, while a southern rare-earth alliance proposed a one-month shutdown to stabilize prices."
+      ],
+      "entities": [
+        "rare earth",
+        "praseodymium-neodymium",
+        "downstream demand",
+        "production suspension"
+      ],
+      "observedChanges": [
+        "a previously strong supply-tightness narrative is contradicted by demand resistance and a late-quarter price reversal"
+      ]
+    },
+    {
+      "itemId": "nev-aug-20170914",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "New energy vehicles kept rapid growth on yearly basis",
+      "publisher": "China Association of Automobile Manufacturers",
+      "url": "https://en.caam.org.cn/Index/show/catid/44/id/792.html",
+      "publishedAt": "2017-09-14T00:00:00+08:00",
+      "availableAt": "2017-09-14T00:00:00+08:00",
+      "originGroup": "nev-aug-20170914",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August NEV production reached about 72k units and sales about 68k, up 67.3% and 76.3% YoY respectively.",
+        "Battery-electric vehicle sales were about 56k, up 95.5% YoY."
+      ],
+      "entities": [
+        "new energy vehicles",
+        "BEV",
+        "China auto market"
+      ],
+      "observedChanges": [
+        "NEV end-demand accelerates sharply into late Q3"
+      ]
+    },
+    {
+      "itemId": "lithium-tight-20170919",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "碳酸锂价格继续上涨 上市公司密集扩产能",
+      "publisher": "中证网/每日经济新闻",
+      "url": "https://www.cs.com.cn/ssgs/gsxw/201709/t20170919_5481138.html",
+      "publishedAt": "2017-09-19T08:50:00+08:00",
+      "availableAt": "2017-09-19T08:50:00+08:00",
+      "originGroup": "lithium-tight-20170919",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Battery-grade lithium carbonate prices rose again in mid-September and had gained about 15.7% over the prior three months.",
+        "Contemporaneous analysis attributed the move to supply-demand imbalance: growing NEV/battery demand while near-term upstream supply expansion was constrained.",
+        "Multiple producers were simultaneously announcing capacity expansion, creating an eventual supply-response risk."
+      ],
+      "entities": [
+        "lithium carbonate",
+        "NEV",
+        "battery materials",
+        "capacity expansion"
+      ],
+      "observedChanges": [
+        "lithium demand and price are rising, but industry expansion creates a future normalization path"
+      ]
+    },
+    {
+      "itemId": "excavator-aug-20170911",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "金九银十 销量暴增 三一挖机再掀全国疯抢热潮！",
+      "publisher": "中国路面机械网代理商平台",
+      "url": "https://dealer.lmjx.net/hfxy/news_detail.php?id=165892",
+      "publishedAt": "2017-09-11T00:00:00+08:00",
+      "availableAt": "2017-09-11T00:00:00+08:00",
+      "originGroup": "excavator-aug-20170911",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August excavator sales were 8,714 units, +99.5% YoY; domestic sales were +106.1% and exports +49.6%.",
+        "The report attributed the boom to infrastructure, exports and replacement demand."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "infrastructure",
+        "replacement demand"
+      ],
+      "observedChanges": [
+        "construction-machinery physical demand remains extremely strong through the traditional summer off-season"
+      ]
+    },
+    {
+      "itemId": "pv-leader-20170922",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家能源局关于推进光伏发电“领跑者”计划实施和2017年领跑基地建设有关要求的通知 国能发新能[2017]54号",
+      "publisher": "国家能源局",
+      "url": "https://zfxxgk.nea.gov.cn/auto87/201709/t20170922_2971.htm",
+      "publishedAt": "2017-09-22T00:00:00+08:00",
+      "availableAt": "2017-09-22T00:00:00+08:00",
+      "originGroup": "pv-leader-20170922",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "2017 application-leader bases required module efficiency of at least 17% for multicrystalline and 17.8% for monocrystalline products.",
+        "Technology-leader bases required at least 18% multicrystalline and 18.9% monocrystalline module efficiency.",
+        "Application-base bidding required a proposed tariff at least 10% below the local benchmark tariff, simultaneously rewarding higher technology and increasing price pressure.",
+        "The program explicitly aimed to accelerate technology progress, remove lagging capacity and reduce costs/subsidy dependence."
+      ],
+      "entities": [
+        "PV",
+        "Leader program",
+        "module efficiency",
+        "competitive tariff"
+      ],
+      "observedChanges": [
+        "policy simultaneously raises technology thresholds and compresses project tariffs, favoring differentiated high-efficiency manufacturers over generic PV beta"
+      ]
+    },
+    {
+      "itemId": "dram-q3-20170831",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "DRAM Industry Analysis－3Q17",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/research/category/Semiconductors/DRAM/6?page=135",
+      "publishedAt": "2017-08-31T00:00:00+08:00",
+      "availableAt": "2017-08-31T00:00:00+08:00",
+      "originGroup": "dram-q3-20170831",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce reported Q2 global DRAM revenue up 16.9% QoQ as ASPs rose and supplier technology migrations progressed.",
+        "The Q3 market remained supported by strong pricing and tight supply."
+      ],
+      "entities": [
+        "DRAM",
+        "memory pricing",
+        "memory suppliers"
+      ],
+      "observedChanges": [
+        "DRAM tightness is already converting into higher supplier revenue and prices"
+      ]
+    },
+    {
+      "itemId": "server-dram-20170929",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Server DIMM Price Sep. 2017",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/research/download/RP170929HS",
+      "publishedAt": "2017-09-29T00:00:00+08:00",
+      "availableAt": "2017-09-29T00:00:00+08:00",
+      "originGroup": "server-dram-20170929",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "September server-DRAM contract prices remained elevated as demand continued to strain supply.",
+        "The product-state signal remained positive at quarter-end, but it was already visible in contract pricing."
+      ],
+      "entities": [
+        "server DRAM",
+        "DIMM",
+        "contract pricing"
+      ],
+      "observedChanges": [
+        "memory scarcity remains real but downstream pricing already confirms the state"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2017q3-aluminum-capacity-vs-inventory",
+      "statement": "Electrolytic-aluminum illegal capacity was being shut at material scale, but inventories remained historically high even as prices had already rerated sharply, creating a capacity-state versus inventory/price-flow conflict.",
+      "changeType": "capacity_contraction_with_inventory_conflict",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-08-10T16:43:00+08:00",
+      "memberItemIds": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912"
+      ],
+      "independentOriginGroups": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912"
+      ],
+      "affectedValueChain": [
+        "alumina/electricity inputs",
+        "electrolytic aluminum smelters",
+        "aluminum inventory",
+        "downstream fabricators"
+      ],
+      "contradictionSearchNotes": "Capacity removal is concrete, but high inventory and an already-strong commodity-price response can delay or fully absorb the earnings benefit; company compliance/cost/geography may matter more than broad aluminum beta.",
+      "researchQuestion": "Before declaring a broad aluminum opportunity or No selection, can company-level compliance, power cost, legal capacity and product mix identify a materially different earnings path?"
+    },
+    {
+      "eventId": "event-2017q3-rareearth-rally-reversal",
+      "statement": "Rare-earth prices surged on enforcement/supply-discipline expectations, then reversed sharply by late September as downstream users resisted earlier price increases and producers considered fresh shutdowns to stabilize the market.",
+      "changeType": "supply_discipline_price_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-08-04T08:49:00+08:00",
+      "memberItemIds": [
+        "rareearth-rally-20170804",
+        "rareearth-reversal-20170929"
+      ],
+      "independentOriginGroups": [
+        "rareearth-rally-20170804",
+        "rareearth-reversal-20170929"
+      ],
+      "affectedValueChain": [
+        "rare-earth mining",
+        "separation/refining",
+        "magnet/material producers",
+        "downstream industrial users"
+      ],
+      "contradictionSearchNotes": "Supply discipline is real, but the late-quarter price reversal demonstrates demand elasticity and speculative inventory risk; current high prices cannot be treated as a monotonic bullish signal.",
+      "researchQuestion": "Is there a listed company with a different cost/product/contract exposure that can sustain earnings through the price reversal, or should the sector remain Research/No selection?"
+    },
+    {
+      "eventId": "event-2017q3-lithium-nev-tightness",
+      "statement": "China NEV sales accelerated sharply in August while battery-grade lithium carbonate prices continued rising on near-term supply constraints, although producers were also announcing expansion.",
+      "changeType": "demand_acceleration_with_supply_response",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-09-14T00:00:00+08:00",
+      "memberItemIds": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ],
+      "independentOriginGroups": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ],
+      "affectedValueChain": [
+        "lithium resources",
+        "lithium carbonate",
+        "battery cathode/cell",
+        "NEV OEM demand"
+      ],
+      "contradictionSearchNotes": "Demand and price are both strong, but the commodity may already be highly absorbed and announced expansion creates a future normalization risk.",
+      "researchQuestion": "Can a listed lithium/battery-material company show underreflected realized earnings or cost/resource advantage after accounting for commodity-price absorption and expansion risk?"
+    },
+    {
+      "eventId": "event-2017q3-machinery-boom",
+      "statement": "Excavator demand remained exceptionally strong through August, with industry sales roughly doubling year on year despite the seasonal off-season.",
+      "changeType": "high_frequency_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-09-11T00:00:00+08:00",
+      "memberItemIds": [
+        "excavator-aug-20170911"
+      ],
+      "independentOriginGroups": [
+        "excavator-aug-20170911"
+      ],
+      "affectedValueChain": [
+        "construction/replacement demand",
+        "excavator OEMs",
+        "hydraulic/components",
+        "dealers"
+      ],
+      "contradictionSearchNotes": "The boom is real but increasingly well known after months of triple-digit growth; company cash conversion, receivables, debt and valuation must determine whether any residual opportunity remains.",
+      "researchQuestion": "Does any machinery leader still have a company-specific earnings/quality gap after the sector boom has become consensus?"
+    },
+    {
+      "eventId": "event-2017q3-pv-leader-bifurcation",
+      "statement": "The 2017 PV Leader program simultaneously raised module-efficiency thresholds and required aggressive tariff competition, explicitly accelerating advanced-technology adoption while pressuring generic project economics.",
+      "changeType": "technology_threshold_with_price_pressure",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-09-22T00:00:00+08:00",
+      "memberItemIds": [
+        "pv-leader-20170922"
+      ],
+      "independentOriginGroups": [
+        "pv-leader-20170922"
+      ],
+      "affectedValueChain": [
+        "high-efficiency wafers/cells/modules",
+        "low-efficiency capacity",
+        "PV project developers",
+        "system economics"
+      ],
+      "contradictionSearchNotes": "Sector-level effect is intrinsically mixed: lower tariffs pressure projects and commodity-like capacity, while stricter efficiency thresholds may create company exceptions among technology/cost leaders.",
+      "researchQuestion": "Does a listed manufacturer have cutoff-valid technology, cost and capacity evidence showing a different earnings path from the conflicted aggregate PV sector?"
+    },
+    {
+      "eventId": "event-2017q3-dram-tightness",
+      "statement": "Global DRAM tightness continued through Q3 and was already visible in rising supplier revenue and server contract prices at quarter-end.",
+      "changeType": "product_market_tightness_high_absorption",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-08-31T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ],
+      "independentOriginGroups": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ],
+      "affectedValueChain": [
+        "DRAM capacity",
+        "memory pricing",
+        "server/mobile buyers",
+        "memory-supplier earnings"
+      ],
+      "contradictionSearchNotes": "Product economics are strong but already confirmed by price/revenue; A-share mapping must not substitute generic semiconductor names for direct DRAM supplier earnings.",
+      "researchQuestion": "Is there a direct A-share expression with current DRAM earnings conversion and residual expectation room, or should mapping fail closed?"
+    }
+  ]
+}
