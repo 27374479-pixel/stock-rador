@@ -1600,7 +1600,7 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
   if (['1.6.0', '1.7.0'].includes(manifest?.skill?.version)) {
     const stateTest = memo?.causalStateVariableTest;
     if (!stateTest || typeof stateTest !== 'object') {
-      errors.push(`${memoPath} v1.6 requires causalStateVariableTest`);
+      errors.push(`${memoPath} v1.6+ requires causalStateVariableTest`);
     } else {
       if (typeof stateTest.applicable !== 'boolean') {
         errors.push(`${memoPath} causalStateVariableTest.applicable must be boolean`);
