@@ -1,0 +1,283 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.7.0",
+  "cutoffAt": "2017-12-31T23:59:59+08:00",
+  "researchReadyAt": "2017-12-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q4-steel-winter-curtailment",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Winter curtailment can support steel margins for a season, but construction restrictions simultaneously suppress demand and the frozen equity regime is adverse."
+  },
+  "changeHypothesis": {
+    "summary": "Northern winter environmental controls materially restrict steel capacity, but the same policy environment also restricts construction activity, creating a genuine supply-demand conflict rather than a simple bullish capacity state.",
+    "firstCredibleDate": "2017-10-11",
+    "valueChain": [
+      "steel blast-furnace/sintering capacity",
+      "steel supply",
+      "construction demand",
+      "steel prices/margins",
+      "producer earnings"
+    ],
+    "persistenceReason": "Heating-season restrictions last months, but both supply and end-demand effects move at the same time.",
+    "disconfirmingEvidence": [
+      "Construction earthworks were also halted.",
+      "Frozen steel basket is adverse over both 20d and 60d.",
+      "BaoSteel earnings are strong but do not isolate a relative allowed-capacity advantage."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "steel-curb-20171011",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Policy simultaneously constrains steel supply and construction demand."
+    },
+    {
+      "id": "steel-physical-20171130",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Blast-furnace utilization is materially constrained."
+    },
+    {
+      "id": "baosteel-q3-20171028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Large producer earnings are strong but not a clean geography/compliance edge."
+    },
+    {
+      "id": "regime-steel-20171231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Steel equity regime is mechanically adverse."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "winter environmental curtailment",
+      "to": "available steel supply",
+      "mechanism": "Sintering/blast-furnace operating restrictions cut effective production.",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "steel-physical-20171130"
+      ],
+      "failureMode": "demand falls as fast or faster",
+      "lag": "weeks"
+    },
+    {
+      "from": "construction restrictions",
+      "to": "steel demand",
+      "mechanism": "Earthwork/project restrictions reduce seasonal construction consumption.",
+      "evidenceRefs": [
+        "steel-curb-20171011"
+      ],
+      "failureMode": "other demand/export offsets construction slowdown",
+      "lag": "weeks"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "mills with verified allowed-capacity/product-mix advantage"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "mills more heavily curtailed"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "environmental compliance",
+      "allowed operating capacity"
+    ],
+    "falseThemeMatches": [
+      "generic steel beta without company-specific curtailment advantage"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Supply contraction is real, but demand offset and lack of a frozen company-specific allowed-capacity advantage make the opportunity unresolved."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Steel basket was -10.09pp excess over 20d and -4.47pp over 60d with weak breadth.",
+    "thesisExpectation": "Do not infer a broad steel long from a supply restriction that also suppresses construction demand.",
+    "measurableGap": "No company-level asymmetry is verified strongly enough to offset the conflicted state and adverse tape.",
+    "evidenceRefs": [
+      "steel-curb-20171011",
+      "steel-physical-20171130",
+      "baosteel-q3-20171028",
+      "regime-steel-20171231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "heating-season steel capacity and construction demand",
+    "geographicScope": "Northern China with national steel pricing spillovers",
+    "customerScope": "construction/manufacturing steel buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The broad event requires company geography/product/compliance decomposition before any selection.",
+    "evidenceRefs": [
+      "steel-curb-20171011",
+      "steel-physical-20171130",
+      "baosteel-q3-20171028",
+      "regime-steel-20171231"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "supply curtailment versus construction demand restriction",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "steel-physical-20171130",
+        "baosteel-q3-20171028",
+        "regime-steel-20171231"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "winter margin support versus demand normalization",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "steel-physical-20171130",
+        "baosteel-q3-20171028",
+        "regime-steel-20171231"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "environmental compliance reshapes costs/capacity but cycle remains commodity-driven",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "steel-physical-20171130",
+        "baosteel-q3-20171028",
+        "regime-steel-20171231"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Fail closed until a company-specific allowed-capacity/margin advantage is verified.",
+    "conclusion": "unresolved"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "BaoSteel earnings are strong but no clean curtailment-relative edge is frozen.",
+    "evidenceRefs": [
+      "steel-curb-20171011",
+      "steel-physical-20171130",
+      "baosteel-q3-20171028",
+      "regime-steel-20171231"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "allowed winter steel productive capacity",
+      "observedDirection": "falling",
+      "opportunityImplication": "mixed",
+      "economicRole": "sets available steel supply during heating-season controls",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "steel-physical-20171130"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "steel demand/margin flow",
+      "observedDirection": "mixed",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "Construction itself is restricted, so lower supply does not map monotonically to stronger producer earnings.",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "baosteel-q3-20171028"
+      ]
+    },
+    "stateFlowRelation": "conflicted_unresolved",
+    "causalLagBridge": {
+      "conclusion": "mixed",
+      "rationale": "Both supply and demand are policy-distorted in opposite directions.",
+      "evidenceRefs": [
+        "steel-curb-20171011",
+        "steel-physical-20171130"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "insufficient",
+      "rationale": "No company-specific allowed-capacity/compliance advantage is frozen.",
+      "evidenceRefs": [
+        "baosteel-q3-20171028",
+        "regime-steel-20171231"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_independent_blocker",
+    "independentBlockers": [
+      "Demand offset is material.",
+      "No verified company-specific allowed-capacity edge.",
+      "Pre-cutoff equity regime is adverse."
+    ],
+    "falsifier": "A producer with verified relative operating allowance/product-mix advantage and earnings conversion is identified.",
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "conflicted_supply_demand_state",
+    "constraints": [
+      "demand offset",
+      "no company asymmetry",
+      "adverse tape"
+    ]
+  },
+  "bearCase": "Supply restrictions are offset by weaker construction demand, leaving broad steel equities without a positive earnings gap.",
+  "invalidationConditions": [
+    {
+      "indicator": "steel demand and operating rates",
+      "observationMethod": "industry data",
+      "threshold": "demand remains strong while curtailment persists"
+    },
+    {
+      "indicator": "company allowed-capacity advantage",
+      "observationMethod": "company/local policy evidence",
+      "threshold": "verified relative production/margin edge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; require company-specific geography/compliance and demand evidence rather than a broad steel call."
+  ]
+}
