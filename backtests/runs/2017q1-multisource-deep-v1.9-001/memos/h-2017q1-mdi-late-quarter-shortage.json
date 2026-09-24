@@ -1,0 +1,775 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2017-03-31T23:59:59+08:00",
+  "researchReadyAt": "2017-03-31T15:00:00+08:00",
+  "actionableAt": "2017-03-31T15:00:00+08:00",
+  "hypothesisId": "h-2017q1-mdi-late-quarter-shortage",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The Mar-13 spot shortage is a fresh incremental price/margin driver on top of a Feb-14 frozen strong baseline; monthly list/spot prices and Q1/Q2 earnings can re-underwrite the thesis within 60 trading days."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "base_horizon_convexity",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600309.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Wanhua is the direct MDI producer with already-realized 2016 earnings/cash recovery. The Mar-13 physical shortage is a new incremental driver; Mar-15 valuation was about 16.8x TTM rather than an extreme multiple, although the stock had already outperformed over 60d and safety/cycle risk remains.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-q3-20161027",
+        "wanhua-baseline-20170214",
+        "wanhua-expectations-20170320",
+        "wanhua-safety-risk-20160921",
+        "regime-mdi-20170331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Wanhua's 2016 MDI recovery was already public by mid-February, then a distinct late-February/early-March spot shortage produced a new price acceleration. The thesis is specifically the incremental shortage, not a relabeling of the old MDI upcycle.",
+    "firstCredibleDate": "2017-03-13",
+    "valueChain": [
+      "global/domestic MDI supply availability",
+      "spot/list price",
+      "direct MDI producer unit margin",
+      "Wanhua earnings and cash flow"
+    ],
+    "persistenceReason": "Physical MDI supply is concentrated and capacity/outage normalization takes time, so a genuine spot shortage can affect producer margins for weeks to a quarter.",
+    "disconfirmingEvidence": [
+      "Wanhua's 2016 profit had already risen about 129%, so the old recovery was well known.",
+      "Wanhua itself had roughly +18.1pp 60d excess return by cutoff.",
+      "The Mar-15 target/market valuation snapshot showed less valuation slack than a distressed-cycle entry.",
+      "Operational/safety risk was demonstrated by the 2016 Yantai accident."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "mdi-shortage-20170313",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Fresh Mar-13 evidence shows physical MDI spot shortage and renewed price acceleration."
+    },
+    {
+      "id": "wanhua-q3-20161027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Wanhua's pre-event operating engine and cash conversion were already strong in 2016."
+    },
+    {
+      "id": "wanhua-baseline-20170214",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "The old MDI recovery baseline was already public before the fresh event."
+    },
+    {
+      "id": "wanhua-expectations-20170320",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid valuation/target expectations were measurable after the fresh event."
+    },
+    {
+      "id": "wanhua-safety-risk-20160921",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Operational/safety risk is real and must bound the cycle thesis."
+    },
+    {
+      "id": "regime-mdi-20170331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Broad MDI/adjacent-chain timing was neutral; Wanhua itself had positive 20d and strong 60d relative return."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "fresh MDI spot shortage",
+      "to": "MDI spot/list pricing",
+      "mechanism": "Low spot availability and supply constraints increase realized producer pricing power.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ],
+      "failureMode": "supply returns quickly or demand weakens enough to unwind spot tightness",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "higher MDI pricing",
+      "to": "Wanhua earnings/cash",
+      "mechanism": "Wanhua is a direct MDI producer whose 2016 results already showed material sensitivity to MDI pricing and strong cash realization.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-baseline-20170214"
+      ],
+      "failureMode": "volume outages, safety events, raw-material costs or downstream resistance offset the price gain",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "large integrated MDI producers"
+    ],
+    "secondOrderWinners": [
+      "upstream/adjacent polyurethane names only if economics transmit"
+    ],
+    "losers": [
+      "downstream users unable to pass through higher MDI cost"
+    ],
+    "substitutes": [
+      "alternative insulation/material systems over longer horizons"
+    ],
+    "bottlenecks": [
+      "MDI operating capacity",
+      "spot availability",
+      "downstream demand"
+    ],
+    "falseThemeMatches": [
+      "polyurethane-chain names without direct MDI margin exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600309.SH",
+      "name": "万华化学",
+      "verifiedExposure": "Direct large-scale MDI producer with realized pricing-sensitive earnings and cash flow.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-baseline-20170214",
+        "mdi-shortage-20170313"
+      ],
+      "earningsSensitivity": {
+        "base": "2016 earnings recovery is already realized and public.",
+        "favorable": "Fresh shortage sustains higher realized MDI prices into Q2.",
+        "adverse": "Supply normalizes, demand weakens or operational outages offset higher price."
+      },
+      "principalRisks": [
+        "cycle normalization",
+        "operational/safety risk",
+        "capital intensity"
+      ]
+    },
+    {
+      "ticker": "002064.SZ",
+      "name": "华峰氨纶",
+      "verifiedExposure": "Adjacent polyurethane-chain control used to test whether direct MDI exposure matters.",
+      "evidenceRefs": [
+        "regime-mdi-20170331"
+      ],
+      "earningsSensitivity": {
+        "base": "Adjacent-chain exposure only.",
+        "favorable": "Broader polyurethane cycle improves.",
+        "adverse": "Higher MDI can be an input-cost burden rather than a direct margin benefit."
+      },
+      "principalRisks": [
+        "indirect exposure",
+        "input cost"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002064.SZ",
+      "name": "华峰氨纶",
+      "controlType": "value_chain_control",
+      "fairCounterfactualReason": "Continuously traded adjacent polyurethane-chain name exposed to the same broad chemical demand environment but without Wanhua's direct MDI producer economics.",
+      "whySelectedCompanyShouldOutperform": "The new event is specifically an MDI supply shortage, so Wanhua has the cleaner direct price-to-margin bridge.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214",
+        "regime-mdi-20170331"
+      ]
+    }
+  ],
+  "matchedControlException": "One value-chain control is sufficient because the frozen hypothesis is product-specific; the purpose is to test direct MDI conversion rather than rank all chemicals.",
+  "selectionComparison": {
+    "selectedTicker": "600309.SH",
+    "pairwise": [
+      {
+        "controlTicker": "002064.SZ",
+        "selectedAdvantages": [
+          "direct MDI producer exposure",
+          "realized strong cash conversion",
+          "fresh price-to-margin bridge"
+        ],
+        "selectedDisadvantages": [
+          "Wanhua already has stronger 60d absorption",
+          "operational/safety concentration risk"
+        ],
+        "evidenceRefs": [
+          "mdi-shortage-20170313",
+          "wanhua-q3-20161027",
+          "wanhua-expectations-20170320",
+          "regime-mdi-20170331"
+        ],
+        "switchCondition": "Do not prefer the adjacent-chain control unless cutoff-valid evidence shows it receives an equal or better incremental earnings benefit with lower expectation burden.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "Wanhua is selected for direct incremental MDI economics, not because the entire chemical chain is strong."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The MDI basket was -7.70pp excess over 20d and +3.55pp over 60d, mechanically neutral. Wanhua itself was +1.48pp over 20d and +18.13pp over 60d. A Mar-15 snapshot placed it near RMB27.19 and about 16.8x TTM PE with a consensus target near RMB27.",
+    "thesisExpectation": "The Mar-13 physical shortage raises the next-quarter realized price/margin path above the strong but pre-existing Feb baseline.",
+    "measurableGap": "The company is not cheap on an untouched-cycle basis, but the new shortage was not part of the Feb-14 earnings baseline and can be observed quickly in list/spot prices and Q1/Q2 results.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-baseline-20170214",
+      "wanhua-expectations-20170320",
+      "regime-mdi-20170331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Contemporaneous Mar-15 TTM PE/target-price snapshot, frozen Wanhua relative-price absorption, and incremental MDI price/margin bridge.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2016 earnings recovery and a substantial 60d Wanhua rerating were already known; the new Mar shortage arrived after that baseline.",
+    "thesisScenario": "Spot tightness persists long enough for Q2 realized MDI pricing to exceed the pre-event earnings path.",
+    "breakevenCondition": "The fresh price/margin contribution must offset the already-positive expectations without requiring broad multiple expansion.",
+    "ordinaryScenarioFailure": "Spot tightness normalizes quickly and the old 2016 recovery was already fully priced.",
+    "catalystOrTimingBridge": "Monthly MDI list/spot prices and Q1/Q2 earnings arrive inside the registered 60d base horizon.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-baseline-20170214",
+      "wanhua-expectations-20170320",
+      "regime-mdi-20170331"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Mar-13 evidence documents a fresh supply shortage and renewed price acceleration after the frozen Feb baseline.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "2016 Q3 and full-year flash show large profit and cash conversion before the new event.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Wanhua is the direct producer while adjacent chain controls do not share the same direct margin bridge.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "regime-mdi-20170331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "The Feb-14 company baseline predates the Mar-13 shortage, allowing the new driver to be separated from the old recovery.",
+      "evidenceRefs": [
+        "wanhua-baseline-20170214",
+        "mdi-shortage-20170313"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Broad basket remains neutral, while Wanhua itself has meaningful 60d but only modest 20d relative strength.",
+      "evidenceRefs": [
+        "regime-mdi-20170331"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen MDI/adjacent-chain basket versus CSI300",
+      "lookback20Excess": -0.076977947533119,
+      "lookback60Excess": 0.0355055952454593,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-mdi-20170331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "A new late-quarter physical shortage is driving another step-up in MDI price.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "The incremental bridge is strongest for the direct producer rather than the whole adjacent chain.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Concentrated MDI supply and physical availability constraints can persist for weeks to quarters, but must be re-underwritten.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "The old cycle is already rerated at Wanhua, but broad timing is not euphoric and the incremental driver is new.",
+      "evidenceRefs": [
+        "wanhua-expectations-20170320",
+        "regime-mdi-20170331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Broad price confirmation is mixed; the only actionable route is the bounded fresh-incremental base-horizon path."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600309.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Wanhua had strong realized profit and operating cash flow before the new event.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "The fresh Mar shortage was not contained in the Feb-14 full-year baseline and can raise near-term margin expectations.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "About 16.8x TTM and meaningful 60d outperformance leave only bounded slack, not a cheap-cycle entry.",
+      "evidenceRefs": [
+        "wanhua-expectations-20170320",
+        "regime-mdi-20170331"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly MDI prices and Q1/Q2 reporting can test the incremental margin bridge inside 60 trading days.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong pre-event cash and moderate valuation help, but price normalization and operating/safety risk can reverse the incremental edge quickly.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-expectations-20170320",
+        "wanhua-safety-risk-20160921"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002064.SZ",
+        "revisionAdvantage": "Wanhua directly monetizes MDI price while the control is adjacent-chain exposure.",
+        "valuationAdvantage": "No decisive valuation advantage; this is not the reason to select Wanhua.",
+        "qualityTradeoff": "Wanhua has cutoff-valid realized profit/cash evidence.",
+        "catalystAdvantage": "MDI list/spot pricing is directly observable for Wanhua's product.",
+        "downsideTradeoff": "Wanhua has cycle and safety concentration; control has weaker causal upside.",
+        "switchCondition": "Switch only if the control shows a direct, lower-burden earnings benefit from the same event.",
+        "evidenceRefs": [
+          "mdi-shortage-20170313",
+          "wanhua-q3-20161027",
+          "regime-mdi-20170331"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Pure/polymeric MDI prices accelerated again from late February as spot supply tightened.",
+    "earningsMechanism": "Wanhua is a direct producer; higher realized MDI prices raise unit margin if volumes and operating continuity hold.",
+    "nextObservableMetric": "monthly MDI list/spot price, Wanhua Q1/Q2 polyurethane margin/earnings and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-baseline-20170214",
+      "wanhua-q3-20161027"
+    ],
+    "failureCondition": "MDI spot/list price falls materially or Wanhua volume/operational continuity prevents margin conversion."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "bridgeStatus": "quantitatively_bridged",
+    "freshIncrementalEvidence": {
+      "conclusion": "clear",
+      "rationale": "Mar-13 spot shortage is a distinct, dated event after the Feb-14 baseline.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "baseHorizonExpectationGap": {
+      "conclusion": "credible",
+      "rationale": "The market knows the old recovery, but the new shortage can lift the 60d realized margin path without requiring a long-duration multiple thesis.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-expectations-20170320"
+      ]
+    },
+    "catalystWithinBase": {
+      "conclusion": "clear",
+      "rationale": "Monthly MDI pricing and quarterly reporting arrive before the 60d thesis horizon.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "catalystLatestTradingDays": 20,
+    "reunderwriteTradingDays": 40,
+    "normalizationEarliestTradingDays": 60,
+    "normalizationRisk": "high",
+    "exitDiscipline": "Re-underwrite no later than 40 trading days; exit before the 60d base horizon if MDI spot/list prices loosen materially, supply normalizes, or the incremental earnings bridge fails.",
+    "falsifier": "The Mar shortage does not persist in observable pricing/margins or company operations fail to convert it.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-baseline-20170214",
+      "wanhua-expectations-20170320",
+      "wanhua-safety-risk-20160921"
+    ],
+    "conclusion": "credible_route"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2016 recovery and higher MDI profitability were already public by Feb-14.",
+      "nextPeriod": "Market expected continued strong operations but had not frozen the Mar-13 shortage into the earlier baseline.",
+      "laterPeriod": "MDI remains cyclical and normalization is possible.",
+      "rationale": "Separate the old recovery baseline from the new shortage rather than extrapolate the whole cycle.",
+      "evidenceRefs": [
+        "wanhua-baseline-20170214",
+        "wanhua-expectations-20170320"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Fresh shortage lifts spot/list MDI pricing above the pre-event path.",
+      "nextPeriodChange": "Direct producer margin can exceed the old baseline within Q2.",
+      "laterPeriodChange": "No assumption of permanent shortage; thesis expires as supply normalizes.",
+      "mechanism": "Dated incremental supply shock on top of already-realized direct producer economics.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "pathShape": "front_loaded",
+    "incrementalPathAdvantage": {
+      "conclusion": "clear",
+      "rationale": "The incremental edge is explicitly source-linked and near-term, not merely a repeated bullish narrative.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "MDI supply tightness can normalize abruptly, which is why the route is time-bounded.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-safety-risk-20160921"
+      ]
+    },
+    "falsifier": "Spot/list pricing and realized margin fail to stay above the Feb baseline.",
+    "overallConclusion": "credible_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "fresh March MDI supply shortage layered on an already-improved 2016 MDI baseline",
+    "geographicScope": "China MDI market with global supplier constraints",
+    "customerScope": "polyurethane downstream users in appliances, construction, auto and related applications",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo isolates the dated incremental MDI shortage rather than the full 2016-17 chemical cycle.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-baseline-20170214"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "fresh physical shortage and renewed MDI price acceleration",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "direct producer margin bridge if shortage persists",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "strong producer position versus cyclical supply normalization and operating risk",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "wanhua-baseline-20170214",
+        "wanhua-safety-risk-20160921"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Use a bounded base-horizon route and force re-underwrite as soon as supply/price data invalidate the fresh shortage.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Broad adjacent-chain timing is neutral, while the direct producer has a stronger event-specific price-to-margin bridge.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-baseline-20170214",
+      "regime-mdi-20170331"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "The Mar-13 shortage is new relative to the Feb-14 frozen earnings baseline.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Strong 2016 profit/cash conversion is already realized.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "The fresh price step can reset near-term margins, while valuation is measurable and already non-distressed.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-expectations-20170320"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Concentrated supply and physical spot shortage can persist through the base horizon but is explicitly not assumed permanent.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "No incremental pricing/margin evidence beyond the already-known 2016 recovery.",
+    "conclusion": "credible_continuation"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600309.SH",
+    "purestTicker": "600309.SH",
+    "purityIsDecisionDriver": true,
+    "expectationBurdenComparison": "Wanhua has more price absorption than adjacent controls, but it uniquely has direct MDI margin conversion.",
+    "earningsQualityComparison": "Wanhua has strong realized cash/profit evidence; the control is used only as adjacent-chain counterfactual.",
+    "downsideComparison": "Direct exposure raises both upside and cycle/safety concentration, requiring the bounded exit discipline.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-q3-20161027",
+      "wanhua-expectations-20170320",
+      "regime-mdi-20170331"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "available MDI spot supply/capacity headroom",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines producer pricing power in a concentrated supply market",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "pure/polymeric MDI spot and list prices",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "Spot scarcity may be temporary; price must remain elevated long enough to reach realized company margins.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "The supply shortage is already visible in product pricing, and Wanhua's prior results establish the price-to-earnings mechanism.",
+      "evidenceRefs": [
+        "mdi-shortage-20170313",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "credible",
+      "rationale": "The direct producer is a cleaner expression than adjacent-chain controls.",
+      "evidenceRefs": [
+        "regime-mdi-20170331",
+        "wanhua-baseline-20170214"
+      ]
+    },
+    "stateLeadDisposition": "continue_company_mapping",
+    "independentBlockers": [],
+    "falsifier": "Spot availability/pricing normalize before company margins respond.",
+    "conclusion": "flow_confirms_state"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "2016 Q3 operating cash flow was strong relative to profit, supporting current liquidity quality.",
+        "evidenceRefs": [
+          "wanhua-q3-20161027"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Wanhua is capital intensive and 2016 growth included petrochemical/new-project contribution; the thesis must not assume all expansion earns MDI-like returns.",
+        "evidenceRefs": [
+          "wanhua-baseline-20170214"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance/related-party event was identified in the frozen evidence set.",
+        "evidenceRefs": [
+          "wanhua-baseline-20170214"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Capital intensity and chemical-cycle volatility can increase financing needs even with strong current cash generation.",
+        "evidenceRefs": [
+          "wanhua-q3-20161027",
+          "wanhua-baseline-20170214"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The fresh spot shortage is brief and already capitalized into a stock that had rerated; supply normalization, downstream resistance or another operating/safety event erases the incremental margin before the base horizon.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Spot/list price loosens materially, physical supply normalizes, or operating continuity/cash conversion worsens.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2017q1-mdi-late-quarter-shortage",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2017-03-13T08:07:00+08:00",
+    "baselineAsOfAt": "2017-02-14T18:51:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "mdi-shortage-20170313"
+    ],
+    "baselineEvidenceRefs": [
+      "wanhua-q3-20161027",
+      "wanhua-baseline-20170214"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "credible",
+      "rationale": "The route is limited to 60 trading days with mandatory 40d re-underwrite; strong pre-event cash and measured valuation help, while cycle/safety risk remains explicit rather than waived.",
+      "evidenceRefs": [
+        "wanhua-q3-20161027",
+        "wanhua-expectations-20170320",
+        "wanhua-safety-risk-20160921"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Re-underwrite by 40 trading days and exit before/at 60d if the March shortage, pricing or earnings bridge does not persist; do not roll the trade into a generic long-duration MDI thesis.",
+    "falsifier": "The March shortage fails to create incremental realized MDI pricing/margin beyond the Feb baseline.",
+    "evidenceRefs": [
+      "mdi-shortage-20170313",
+      "wanhua-q3-20161027",
+      "wanhua-baseline-20170214",
+      "wanhua-expectations-20170320",
+      "wanhua-safety-risk-20160921"
+    ],
+    "conclusion": "credible_route"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Primary only through the V1.9 bounded fresh-incremental route: the old cycle is known, the Mar shortage is new, valuation is measurable but tight, and the decision expires if price/margin confirmation fails.",
+    "alreadyPricedAssessment": "old_recovery_partly_absorbed_fresh_shortage_not_fully_in_baseline",
+    "constraints": [
+      "cycle normalization",
+      "operational/safety risk",
+      "meaningful 60d Wanhua rerating"
+    ]
+  },
+  "bearCase": "The March shortage is a short-lived spot squeeze layered on a fully recognized 2016 recovery; MDI supply/demand normalizes before incremental earnings are realized.",
+  "invalidationConditions": [
+    {
+      "indicator": "MDI spot/list price and spot availability",
+      "observationMethod": "monthly/weekly industry pricing and producer list prices",
+      "threshold": "clear normalization inconsistent with the March shortage thesis"
+    },
+    {
+      "indicator": "Wanhua operating continuity and cash/margin conversion",
+      "observationMethod": "company filings/announcements",
+      "threshold": "operating disruption or margins/cash fail to reflect higher MDI pricing"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [
+    "Exact realized contract/spot mix inside Q2 is unknown at cutoff and must be re-underwritten."
+  ],
+  "nextResearchActions": [
+    "Lock Wanhua as the sole fresh-route Primary candidate for the MDI event; do not generalize the signal to the broader chemical chain."
+  ]
+}
