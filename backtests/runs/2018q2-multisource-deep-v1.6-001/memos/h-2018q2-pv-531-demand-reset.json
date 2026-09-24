@@ -1,0 +1,270 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-06-30T23:59:59+08:00",
+  "researchReadyAt": "2018-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q2-pv-531-demand-reset",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The policy shock affects project demand immediately and company orders/ASP over the next quarters."
+  },
+  "changeHypothesis": {
+    "summary": "The June 1 '531' policy abruptly reduced the 2018 subsidized domestic PV construction path. Long-run cost decline/grid parity may create later opportunities, but by June 30 the current demand and equity-price state was strongly negative.",
+    "firstCredibleDate": "2018-06-01",
+    "valueChain": [
+      "subsidized PV project quota",
+      "module/wafer/polysilicon demand",
+      "utilization/ASP",
+      "company earnings"
+    ],
+    "persistenceReason": "Project demand can reset for quarters until policy, export demand or cost reductions rebalance the chain.",
+    "disconfirmingEvidence": [
+      "PV basket was -26.8pp 20d and -28.5pp 60d excess with 0% breadth.",
+      "No cutoff-valid company engine strong enough to offset the shock is frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pv-531-20180601",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "pv-531-qa-20180601",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pv-20180630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "Direct PV wafer/module leader but no frozen post-531 positive earnings bridge.",
+      "evidenceRefs": [
+        "pv-531-20180601",
+        "regime-pv-20180630"
+      ],
+      "earningsSensitivity": {
+        "base": "Current policy demand path reset lower.",
+        "favorable": "Cost/share gains eventually offset demand shock.",
+        "adverse": "ASP/utilization fall faster than costs."
+      },
+      "principalRisks": [
+        "policy demand",
+        "margin reset"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Upstream/polysilicon and solar exposure under the same demand reset.",
+      "evidenceRefs": [
+        "pv-531-qa-20180601",
+        "regime-pv-20180630"
+      ],
+      "earningsSensitivity": {
+        "base": "Near-term domestic subsidized demand reduced.",
+        "favorable": "Low-cost share gains emerge later.",
+        "adverse": "Upstream price pressure."
+      },
+      "principalRisks": [
+        "upstream price pressure"
+      ]
+    },
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "verifiedExposure": "Inverter/system exposure to PV project demand.",
+      "evidenceRefs": [
+        "pv-531-20180601",
+        "regime-pv-20180630"
+      ],
+      "earningsSensitivity": {
+        "base": "Domestic project demand path reduced.",
+        "favorable": "Export/low-cost projects offset.",
+        "adverse": "Domestic order slowdown."
+      },
+      "principalRisks": [
+        "project timing"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the required earnings-conversion, expectation and downside gates."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PV equities were already extremely adverse after the policy shock: -26.8pp 20d and -28.5pp 60d excess with zero positive breadth.",
+    "thesisExpectation": "Wait for a verified low-cost/company earnings turn rather than using structural grid-parity optimism to override a current negative demand state.",
+    "measurableGap": "No positive company-specific earnings gap is frozen.",
+    "evidenceRefs": [
+      "pv-531-20180601",
+      "pv-531-qa-20180601",
+      "regime-pv-20180630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "post-531 PV demand and upstream/downstream economics",
+    "geographicScope": "China PV market",
+    "customerScope": "PV developers/manufacturers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep the current subsidized-demand reset separate from later grid-parity recovery.",
+    "evidenceRefs": [
+      "pv-531-20180601",
+      "pv-531-qa-20180601"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "subsidized project quota abruptly reduced",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "pv-531-20180601"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "utilization/ASP reset can continue before supply rationalizes",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "pv-531-qa-20180601",
+        "regime-pv-20180630"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "cost decline/grid parity may support later demand",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "pv-531-qa-20180601"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not use structural optimism to override the current negative physical earnings path.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No cutoff-valid company engine is frozen strongly enough to offset the policy shock.",
+    "evidenceRefs": [
+      "regime-pv-20180630"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "effective subsidized PV project demand relative to installed supply",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "economicRole": "determines future industry utilization and clearing prices",
+      "adjustmentLag": "weeks to months",
+      "evidenceRefs": [
+        "pv-531-20180601",
+        "pv-531-qa-20180601"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "PV equity/industry pricing",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "temporaryDistortion": "No opposite temporary distortion is established; downstream market pricing already confirms the adverse demand state.",
+      "evidenceRefs": [
+        "regime-pv-20180630"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "The demand quota shock immediately reduces the projects available to absorb industry output.",
+      "evidenceRefs": [
+        "pv-531-20180601"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "clear",
+      "rationale": "All three frozen PV expressions lagged CSI300 over 20d and 60d.",
+      "evidenceRefs": [
+        "regime-pv-20180630"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [],
+    "falsifier": "A cutoff-valid company cost/share engine with realized earnings clearly offsets the current demand reset.",
+    "conclusion": "no_actionable_state_edge"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "negative_policy_demand_state_with_adverse_price_confirmation",
+    "constraints": [
+      "adverse price regime",
+      "no clean positive company engine"
+    ]
+  },
+  "bearCase": "For a long thesis, later structural recovery arrives too late to offset the current demand/earnings reset.",
+  "invalidationConditions": [
+    {
+      "indicator": "PV demand/utilization/company earnings",
+      "observationMethod": "policy/industry/company data",
+      "threshold": "verified positive company turn"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; wait for company-specific cost/share and earnings confirmation."
+  ]
+}
