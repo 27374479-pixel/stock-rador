@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q1-multisource-deep-v1.6-001",
+  "label": "post_outcome_mlcc_reunderwrite_audit",
+  "diagnosticOnly": true,
+  "samePeriodMayTuneSkill": false,
+  "hypothesisId": "h-2018q1-mlcc-supply-contraction",
+  "frozenCutoff": "2018-03-31",
+  "frozenDecision": "Research selection",
+  "frozenReason": "The upstream capacity/price state was strong, but Fenghua's current-quarter earnings magnitude was not yet public and provisional valuation/price absorption was high.",
+  "outcome": {
+    "fenghua60dNetReturn": 0.09007762118979645,
+    "fenghua60dExcess": 0.1891356169352526,
+    "fenghuaWinsFrozenControl60d": true,
+    "torch60dNetReturn": -0.07173348326911866,
+    "torch60dExcess": 0.027324512476337492
+  },
+  "postCutoffEvidence": [
+    {
+      "date": "2018-04-10",
+      "source": "风华高科2018年第一季度业绩预告",
+      "event": "Company guided 2018Q1 attributable profit to RMB110-120m, +304.57% to +341.35% YoY, citing strong passive-component markets, orders exceeding supply, investment ramp and product/customer-mix improvement.",
+      "diagnosticMeaning": "This directly resolves one of the frozen Research blockers: listed-company current-quarter earnings conversion."
+    },
+    {
+      "date": "2018-04-28",
+      "source": "风华高科2018年第一季度报告",
+      "event": "Q1 revenue grew 35.17%; the company again said MLCC and chip-resistor orders exceeded supply, while operating cash flow improved sharply. H1 profit was guided to RMB280-320m, +150.70% to +186.51%.",
+      "diagnosticMeaning": "A second dated checkpoint further confirmed that the upstream capacity/price state was translating into company earnings and cash flow."
+    }
+  ],
+  "diagnosis": {
+    "entryResearch": "supported",
+    "frozenResearchRestraint": "defensible",
+    "dynamicReunderwriteCandidate": "strong",
+    "explanation": "The Skill discovered the causal state before the strongest company earnings confirmation existed. It correctly avoided using April information at the March cutoff. Once April 10 evidence arrived, the main missing earnings bridge changed materially. A dynamic research system should re-underwrite at that date rather than wait mechanically for a fixed 60d outcome."
+  },
+  "requiredReplayDesign": {
+    "rule": "Freeze the March 31 thesis and blockers. At each dated checkpoint, feed only evidence newly public by that date. Recompute evidence strength, expectation burden, price absorption and downside without seeing later returns.",
+    "firstCheckpoint": "2018-04-10",
+    "secondCheckpoint": "2018-04-28",
+    "prohibited": "Do not automatically promote because later return was positive; the re-underwrite must independently re-check valuation/price absorption and company risks as of the checkpoint."
+  },
+  "classification": "research_to_reunderwrite_success_candidate"
+}
