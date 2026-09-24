@@ -1,0 +1,687 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.8.0",
+  "cutoffAt": "2017-06-30T23:59:59+08:00",
+  "researchReadyAt": "2017-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q2-vitamin-d3-price-spike",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The direct producer can convert a D3 price spike quickly, but spot prices and the stock had already moved violently by cutoff and the company itself warned of cyclicality."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "300401.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Garden Bio has direct D3 exposure, Q1 revenue/profit growth, new product mix and low leverage, but D3 spot pricing and published earnings expectations had already exploded before cutoff.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629",
+        "garden-q1-20170422",
+        "garden-expectations-20170627",
+        "regime-vitamind3-20170630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Vitamin D3 spot prices jumped several-fold in June while Garden Bio had direct product exposure, strong Q1 growth and low leverage, but the stock had already risen sharply and both the company and contemporaneous reporting flagged cyclicality/speculation.",
+    "firstCredibleDate": "2017-06-27",
+    "valueChain": [
+      "D3 supply/environmental constraints",
+      "spot price",
+      "specialist producer sales/margin",
+      "published earnings expectations",
+      "equity price"
+    ],
+    "persistenceReason": "If supply constraints persist, a direct low-cost producer can realize a large near-term earnings uplift; however the spot move can also reverse quickly.",
+    "disconfirmingEvidence": [
+      "D3 moved from roughly RMB69/kg to RMB450-600/kg within June.",
+      "Garden Bio shares had already risen more than 30% in the month.",
+      "The company explicitly warned vitamin prices are highly volatile/cyclical.",
+      "A June-27 report had already raised earnings expectations aggressively."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "vitamind3-spike-20170629",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "The D3 price shock is real but accompanied by speculation and equity rerating."
+    },
+    {
+      "id": "garden-q1-20170422",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Garden has direct current exposure, strong Q1 earnings growth, new product mix and low leverage."
+    },
+    {
+      "id": "garden-expectations-20170627",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "The earnings-upside narrative had already entered published forecasts and target prices."
+    },
+    {
+      "id": "regime-vitamind3-20170630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "The direct name had already substantially rerated over 20d and 60d."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "D3 supply shock",
+      "to": "D3 selling price",
+      "mechanism": "Environmental/supply constraints plus tight availability drive spot quotations sharply higher.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ],
+      "failureMode": "speculation unwinds or supply returns",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "higher D3 price",
+      "to": "Garden earnings",
+      "mechanism": "Direct D3 production provides price sensitivity, while Q1 already showed profitable operations and new product contributions.",
+      "evidenceRefs": [
+        "garden-q1-20170422"
+      ],
+      "failureMode": "price duration is too short or volumes/contracts do not capture spot",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "direct vitamin D3 producers"
+    ],
+    "secondOrderWinners": [
+      "upstream intermediates if supply-constrained"
+    ],
+    "losers": [
+      "feed/pharma buyers unable to pass cost"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "environmental compliance",
+      "effective D3 capacity",
+      "inventory"
+    ],
+    "falseThemeMatches": [
+      "generic vitamin names without direct D3 exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300401.SZ",
+      "name": "花园生物",
+      "verifiedExposure": "Direct D3 specialist with Q1 earnings growth and new product mix.",
+      "evidenceRefs": [
+        "garden-q1-20170422"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profitable direct producer with low leverage.",
+        "favorable": "D3 price stays elevated long enough to realize margin uplift.",
+        "adverse": "Spot spike mean-reverts before contracts/volumes convert."
+      },
+      "principalRisks": [
+        "extreme price absorption",
+        "commodity cyclicality",
+        "spot-to-realized duration"
+      ]
+    },
+    {
+      "ticker": "600216.SH",
+      "name": "浙江医药",
+      "verifiedExposure": "Vitamin-sector control in the frozen basket.",
+      "evidenceRefs": [
+        "regime-vitamind3-20170630"
+      ],
+      "earningsSensitivity": {
+        "base": "Broader vitamin exposure.",
+        "favorable": "Vitamin price cycle broadens.",
+        "adverse": "D3-specific shock does not translate."
+      },
+      "principalRisks": [
+        "mapping purity"
+      ]
+    },
+    {
+      "ticker": "002001.SZ",
+      "name": "新和成",
+      "verifiedExposure": "Vitamin-sector control in the frozen basket.",
+      "evidenceRefs": [
+        "regime-vitamind3-20170630"
+      ],
+      "earningsSensitivity": {
+        "base": "Broader vitamin exposure.",
+        "favorable": "Broader vitamin tightness.",
+        "adverse": "D3-specific rally fades."
+      },
+      "principalRisks": [
+        "mapping purity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600216.SH",
+      "name": "浙江医药",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Broader vitamin producer exposed to the same industry narrative.",
+      "whySelectedCompanyShouldOutperform": "Garden has the clearest direct D3 sensitivity and stronger direct event mapping.",
+      "evidenceRefs": [
+        "garden-q1-20170422",
+        "vitamind3-spike-20170629",
+        "regime-vitamind3-20170630"
+      ]
+    },
+    {
+      "ticker": "002001.SZ",
+      "name": "新和成",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large vitamin producer and same-theme alternative.",
+      "whySelectedCompanyShouldOutperform": "Garden is the more direct D3 expression and had documented current product contribution.",
+      "evidenceRefs": [
+        "garden-q1-20170422",
+        "regime-vitamind3-20170630"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300401.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600216.SH",
+        "selectedAdvantages": [
+          "direct D3 exposure",
+          "low leverage",
+          "strong Q1 profit growth"
+        ],
+        "selectedDisadvantages": [
+          "much higher recent absorption"
+        ],
+        "evidenceRefs": [
+          "garden-q1-20170422",
+          "regime-vitamind3-20170630"
+        ],
+        "switchCondition": "Prefer Zhejiang Medicine only if cutoff-valid direct D3 earnings sensitivity is stronger than currently documented.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "002001.SZ",
+        "selectedAdvantages": [
+          "direct D3 exposure",
+          "specialist product sensitivity"
+        ],
+        "selectedDisadvantages": [
+          "more concentrated/cyclical exposure and higher absorption"
+        ],
+        "evidenceRefs": [
+          "garden-q1-20170422",
+          "regime-vitamind3-20170630"
+        ],
+        "switchCondition": "Prefer NHU if its direct D3 sensitivity and expectation burden become superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "Garden is the direct company expression, but the company selection edge does not make the highly absorbed entry Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Garden Bio was +18.82pp excess over 20d and +12.66pp over 60d; contemporaneous reporting said the stock had risen more than 30% in the month. D3 spot quotes had multiplied several times and a June-27 report had already published a large earnings upgrade.",
+    "thesisExpectation": "If D3 remains elevated, Garden's direct exposure and low leverage can convert into earnings quickly.",
+    "measurableGap": "The causal company bridge is strong, but the expectation gap is not clean because both price and forecasts have already reset aggressively.",
+    "evidenceRefs": [
+      "vitamind3-spike-20170629",
+      "garden-q1-20170422",
+      "garden-expectations-20170627",
+      "regime-vitamind3-20170630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cutoff-valid published forecast/target plus selected-name price absorption and explicit product cyclicality.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "A June-27 report already projected very large 2017 profit upside and a higher target price after the D3 spike.",
+    "thesisScenario": "Elevated D3 pricing persists long enough for direct producer earnings to beat the reset baseline.",
+    "breakevenCondition": "The spike must persist and be realized, not merely quoted, because the equity/forecast baseline already assumes major upside.",
+    "ordinaryScenarioFailure": "Spot prices retrace quickly or realized sales lag quoted prices.",
+    "catalystOrTimingBridge": "Product quotations and H1/Q3 results arrive inside the base horizon.",
+    "evidenceRefs": [
+      "garden-expectations-20170627",
+      "vitamind3-spike-20170629",
+      "regime-vitamind3-20170630"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "D3 spot pricing has accelerated violently.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Q1 direct company growth and low leverage are realized.",
+      "evidenceRefs": [
+        "garden-q1-20170422"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Broad vitamin peers do not uniformly confirm the D3-specific move.",
+      "evidenceRefs": [
+        "regime-vitamind3-20170630"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "A June-27 report already reset Garden earnings expectations upward.",
+      "evidenceRefs": [
+        "garden-expectations-20170627"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Garden had already materially outperformed over 20d/60d and was reported up >30% in the month.",
+      "evidenceRefs": [
+        "regime-vitamind3-20170630",
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen vitamin producer basket versus CSI300",
+      "lookback20Excess": 0.08059782508595863,
+      "lookback60Excess": -0.04020540098051206,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-vitamind3-20170630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Spot D3 pricing is accelerating sharply.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Garden-specific expectations reset higher, but broad vitamin peers do not confirm equally.",
+      "evidenceRefs": [
+        "garden-expectations-20170627",
+        "regime-vitamind3-20170630"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "short_lived",
+      "rationale": "The product spike can be economically important but is explicitly volatile/cyclical.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Spot and selected-equity price have already moved violently.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629",
+        "regime-vitamind3-20170630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Causal earnings sensitivity is strong, but entry timing is high-risk after extreme spot/equity repricing."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "300401.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Low leverage, profitable Q1 growth and current direct product exposure support quality.",
+      "evidenceRefs": [
+        "garden-q1-20170422"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "The spot price can still lift earnings, but a large revision is already published.",
+      "evidenceRefs": [
+        "garden-expectations-20170627"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Recent stock rerating plus the published earnings reset reduce slack.",
+      "evidenceRefs": [
+        "garden-expectations-20170627",
+        "regime-vitamind3-20170630"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Spot quotes and H1/Q3 results are near-term.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low leverage helps, but a reversal in a highly cyclical product can dominate.",
+      "evidenceRefs": [
+        "garden-q1-20170422",
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600216.SH",
+        "revisionAdvantage": "Garden has clearer direct D3 sensitivity.",
+        "valuationAdvantage": "Garden has higher absorption, not a valuation advantage.",
+        "qualityTradeoff": "Garden low leverage is documented.",
+        "catalystAdvantage": "Garden maps more directly to D3 spot.",
+        "downsideTradeoff": "Garden concentration increases cyclicality.",
+        "switchCondition": "Switch only if the control has stronger direct D3 economics with lower burden.",
+        "evidenceRefs": [
+          "garden-q1-20170422",
+          "regime-vitamind3-20170630"
+        ],
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "002001.SZ",
+        "revisionAdvantage": "Garden has clearer direct D3 sensitivity.",
+        "valuationAdvantage": "No decisive frozen valuation advantage.",
+        "qualityTradeoff": "Garden direct company data is clearer.",
+        "catalystAdvantage": "Garden is the direct event expression.",
+        "downsideTradeoff": "Garden is more concentrated and absorbed.",
+        "switchCondition": "Switch if NHU direct D3 sensitivity is independently stronger.",
+        "evidenceRefs": [
+          "garden-q1-20170422",
+          "regime-vitamind3-20170630"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "D3 spot quotes rose from roughly RMB69/kg to RMB450-600/kg during June.",
+    "earningsMechanism": "A direct specialist producer can convert sustained price increases into gross profit; Q1 already proves current profitable operations.",
+    "nextObservableMetric": "realized D3 selling price/volume and H1/Q3 profit/cash",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "vitamind3-spike-20170629",
+      "garden-q1-20170422"
+    ],
+    "failureCondition": "Spot price collapses or realized selling price/volume fails to follow quotes."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "The market already sees the D3 spike and stock rerating.",
+      "nextPeriod": "Published research already assumes a large 2017 earnings lift.",
+      "laterPeriod": "Vitamin price cycles tend to normalize.",
+      "rationale": "Use the reset forecast rather than the old low-price earnings base.",
+      "evidenceRefs": [
+        "garden-expectations-20170627",
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Direct exposure can still realize higher prices.",
+      "nextPeriodChange": "Low leverage and product mix can convert the spike cleanly.",
+      "laterPeriodChange": "Normalization risk remains high.",
+      "mechanism": "Direct product sensitivity plus company quality, offset by extreme expectation reset.",
+      "evidenceRefs": [
+        "garden-q1-20170422",
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Direct company sensitivity is real, but incremental upside beyond the reset baseline is uncertain.",
+      "evidenceRefs": [
+        "garden-q1-20170422",
+        "garden-expectations-20170627"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "The company itself warns vitamin prices are volatile/cyclical.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "falsifier": "D3 spot/realized price retraces before earnings conversion.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "vitamin D3 price spike and direct specialist producer earnings",
+    "geographicScope": "China/global vitamin D3 market",
+    "customerScope": "feed/pharma buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate the direct D3 specialist from generic vitamin names and speculative spot extrapolation.",
+    "evidenceRefs": [
+      "vitamind3-spike-20170629",
+      "garden-q1-20170422",
+      "regime-vitamind3-20170630"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "extreme D3 spot-price spike",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "direct earnings conversion versus expectation/price absorption",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "garden-q1-20170422",
+        "garden-expectations-20170627",
+        "regime-vitamind3-20170630"
+      ]
+    },
+    "structural": {
+      "direction": "negative",
+      "driver": "explicit product-price cyclicality and supply response",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Retain Research until realized earnings exceed the already-reset baseline or price burden improves.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Garden has direct D3 sensitivity while broad vitamin peers do not uniformly confirm.",
+    "evidenceRefs": [
+      "garden-q1-20170422",
+      "regime-vitamind3-20170630"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "The D3 spot spike is fresh.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Garden Q1 operations/profit are realized.",
+      "evidenceRefs": [
+        "garden-q1-20170422"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "clear",
+      "rationale": "A June-27 report explicitly reset earnings expectations higher.",
+      "evidenceRefs": [
+        "garden-expectations-20170627"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Supply constraints can persist, but the company itself warns of cyclicality.",
+      "evidenceRefs": [
+        "vitamind3-spike-20170629"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No realized earnings surprise beyond the already published reset.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "300401.SZ",
+    "purestTicker": "300401.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Garden is the purest D3 expression but also the most obviously rerated.",
+    "earningsQualityComparison": "Garden low leverage and Q1 profit support quality.",
+    "downsideComparison": "Direct exposure increases both upside and cyclicality.",
+    "evidenceRefs": [
+      "garden-q1-20170422",
+      "regime-vitamind3-20170630"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Q1 total liabilities were low relative to assets and short-term borrowings were modest.",
+        "evidenceRefs": [
+          "garden-q1-20170422"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid M&A/goodwill event was identified; current product expansion is the relevant operating risk.",
+        "evidenceRefs": [
+          "garden-q1-20170422"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event was identified in the reviewed Q1 evidence.",
+        "evidenceRefs": [
+          "garden-q1-20170422"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "clear",
+        "rationale": "Low leverage reduces immediate refinancing risk.",
+        "evidenceRefs": [
+          "garden-q1-20170422"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The company is sound, but the commodity move is speculative/late and the market has already capitalized a very large earnings reset.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Spot or realized D3 price reverses before earnings beat the reset baseline.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: excellent causal mapping and company quality, but extreme product/equity/forecast absorption makes the entry asymmetric in the wrong direction.",
+    "alreadyPricedAssessment": "direct_company_edge_highly_absorbed",
+    "constraints": [
+      "extreme spot spike",
+      "equity rerating",
+      "published earnings reset",
+      "cyclicality"
+    ]
+  },
+  "bearCase": "D3 spot pricing is a speculative late-cycle spike; the company is good but the entry price already discounts a large earnings windfall.",
+  "invalidationConditions": [
+    {
+      "indicator": "D3 realized/spot price",
+      "observationMethod": "industry/company data",
+      "threshold": "rapid retracement or failure to convert"
+    },
+    {
+      "indicator": "Garden earnings versus reset baseline",
+      "observationMethod": "company filing",
+      "threshold": "no upside beyond June-27 expectations"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Garden as Research only; require either sustained realized earnings above the reset baseline or a lower price burden before Primary."
+  ]
+}
