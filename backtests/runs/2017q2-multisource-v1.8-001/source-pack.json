@@ -1,0 +1,398 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2017q2-multisource-v1.8-001",
+  "cutoffAt": "2017-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Current model/search can expose later historical context. Only sources provably public by 2017-06-30 are frozen; no selected-stock outcomes are opened before discovery lock.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy, planning and market-structure announcements.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central/local official records and official index-provider announcement; not an exhaustive archive crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company mapping is intentionally deferred until after discovery freeze."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "High-frequency end-market sales and industrial supply evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected machinery and aluminum physical evidence only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Contemporaneous independent reporting on policy execution and product-price shocks.",
+      "coverageStatus": "partial",
+      "limitations": "Selected Xinhua/China Securities Journal/Securities Daily coverage only."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Product-level semiconductor supply/pricing evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected TrendForce DRAM evidence; not exhaustive."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "xiongan-establish-20170401",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "受权发布：中共中央、国务院决定设立河北雄安新区",
+      "publisher": "新华社/中国雄安官网",
+      "url": "https://www.xiongan.gov.cn/2017-04/01/c_129769132.htm",
+      "publishedAt": "2017-04-01T18:22:54+08:00",
+      "availableAt": "2017-04-01T18:22:54+08:00",
+      "originGroup": "xiongan-establish-20170401",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The central government established Xiongan New Area as a national-level strategic project.",
+        "The initial development area was about 100 sq km, medium-term about 200 sq km and long-term control area about 2,000 sq km.",
+        "The plan emphasized high-standard planning, ecological development, innovation and coordinated Beijing-Tianjin-Hebei development rather than immediate generic construction."
+      ],
+      "entities": [
+        "Xiongan New Area",
+        "Beijing-Tianjin-Hebei",
+        "urban planning",
+        "infrastructure"
+      ],
+      "observedChanges": [
+        "a very large long-duration regional-development state becomes official"
+      ]
+    },
+    {
+      "itemId": "xiongan-controls-20170511",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "雄安新区规划建设筹备工作热点三问",
+      "publisher": "新华社",
+      "url": "https://www.xinhuanet.com/politics/2017-05/11/c_1120955950.htm",
+      "publishedAt": "2017-05-11T00:00:00+08:00",
+      "availableAt": "2017-05-11T00:00:00+08:00",
+      "originGroup": "xiongan-controls-20170511",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "All real-estate projects in the new area had been frozen while planning work was still being prepared.",
+        "Authorities had closed all 176 sales offices/intermediaries and were strictly suppressing land/property speculation.",
+        "Policy explicitly rejected large-scale land leasing, land-finance dependence and unrestricted commercial-property development."
+      ],
+      "entities": [
+        "Xiongan New Area",
+        "real estate",
+        "land",
+        "planning controls"
+      ],
+      "observedChanges": [
+        "near-term physical/property monetization is deliberately constrained while the long-run strategic state remains strong"
+      ]
+    },
+    {
+      "itemId": "aluminum-cuts-20170627",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "电解铝产能退出有望超预期",
+      "publisher": "中国证券报·中证网",
+      "url": "https://www.cs.com.cn/ssgs/gsxw/201706/t20170627_5343700.html",
+      "publishedAt": "2017-06-27T10:18:00+08:00",
+      "availableAt": "2017-06-27T10:18:00+08:00",
+      "originGroup": "aluminum-cuts-20170627",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Xinjiang Jiarun was cutting 150kt of electrolytic-aluminum capacity and expected shutdown completion by June 30.",
+        "Shandong Weiqiao began a 250kt production cut on June 20.",
+        "Industry estimates cited roughly 6.22m tonnes of non-compliant capacity and expected at least 2-3m tonnes to be removed in 2017.",
+        "The local verification stage of the illegal-capacity cleanup ended June 30, making the policy state increasingly concrete."
+      ],
+      "entities": [
+        "electrolytic aluminum",
+        "illegal capacity",
+        "Xinjiang",
+        "Shandong",
+        "Weiqiao"
+      ],
+      "observedChanges": [
+        "aluminum supply-side reform changes from expectation to observable shutdowns late in Q2"
+      ]
+    },
+    {
+      "itemId": "excavator-may-20170620",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "5月挖掘机销量同比增长翻番，三一稳坐“头把交椅”",
+      "publisher": "中国路面机械网",
+      "url": "https://news.lmjx.net/2017/201706/2017062008583596.shtml",
+      "publishedAt": "2017-06-20T08:58:35+08:00",
+      "availableAt": "2017-06-20T08:58:35+08:00",
+      "originGroup": "excavator-may-20170620",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May domestic excavator sales were about 11,271 units, +105.6% YoY; Jan-May cumulative sales were about 66,135, +100.5% YoY.",
+        "Sany sold 2,261 excavators in May, +121% YoY, with about 20% market share."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "Sany",
+        "market share"
+      ],
+      "observedChanges": [
+        "machinery physical demand remains exceptionally strong after several months of rebound"
+      ]
+    },
+    {
+      "itemId": "msci-a-share-20170620",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "RESULTS OF MSCI 2017 MARKET CLASSIFICATION REVIEW",
+      "publisher": "MSCI",
+      "url": "https://app2.msci.com/webapp/index_ann/DocGet?format=html&lang=en&pub_key=qmTkbZqRZxA%3D",
+      "publishedAt": "2017-06-20T20:38:00Z",
+      "availableAt": "2017-06-21T04:38:00+08:00",
+      "originGroup": "msci-a-share-20170620",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MSCI announced that China A shares would enter the MSCI Emerging Markets and ACWI indexes beginning in June 2018.",
+        "The initial plan covered 222 China A Large Cap stocks.",
+        "The pro-forma A-share weight in MSCI Emerging Markets was only about 0.73%, so the structural accessibility change was real but immediate mechanical flow was limited and delayed about one year."
+      ],
+      "entities": [
+        "MSCI Emerging Markets",
+        "China A shares",
+        "Stock Connect",
+        "large caps"
+      ],
+      "observedChanges": [
+        "global benchmark inclusion becomes official, but implementation is delayed and initially small"
+      ]
+    },
+    {
+      "itemId": "dram-q2-price-20170413",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "TrendForce Estimates Average Contract Price of 4GB DDR4 DRAM Modules to Climb 12.5% Entering 2Q17",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20170413-9703.html",
+      "publishedAt": "2017-04-13T00:00:00+08:00",
+      "availableAt": "2017-04-13T00:00:00+08:00",
+      "originGroup": "dram-q2-price-20170413",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce expected the average Q2 contract price of 4GB DDR4 modules to rise about 12.5% QoQ from US$24 to around US$27.",
+        "Tight supply was compounded by quality/process-transition issues at leading-edge nodes."
+      ],
+      "entities": [
+        "DRAM",
+        "DDR4",
+        "memory contract price",
+        "process migration"
+      ],
+      "observedChanges": [
+        "global DRAM supply remains tight and pricing power is already visible"
+      ]
+    },
+    {
+      "itemId": "dram-revenue-20170518",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "1Q17 Global DRAM Revenue Rose by 13.4% From Prior Quarter Due to a 30% Hike in PC DRAM Contract Price",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20170518-9752.html",
+      "publishedAt": "2017-05-18T00:00:00+08:00",
+      "availableAt": "2017-05-18T00:00:00+08:00",
+      "originGroup": "dram-revenue-20170518",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Global DRAM revenue reached a new record in Q1 2017, +13.4% QoQ.",
+        "PC DRAM contract prices had risen at least 30% QoQ and mobile DRAM prices nearly 10%, demonstrating that scarcity was already flowing into supplier revenue."
+      ],
+      "entities": [
+        "DRAM",
+        "PC DRAM",
+        "mobile DRAM",
+        "supplier revenue"
+      ],
+      "observedChanges": [
+        "DRAM tightness is already highly confirmed by product prices and global supplier revenue"
+      ]
+    },
+    {
+      "itemId": "vitamind3-spike-20170629",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "维生素D3火箭式提价 花园生物股价月涨幅超3成遭力捧",
+      "publisher": "证券日报/中证网",
+      "url": "https://www.cs.com.cn/ssgs/gsxw/201706/t20170629_5348164.html",
+      "publishedAt": "2017-06-29T09:38:00+08:00",
+      "availableAt": "2017-06-29T09:38:00+08:00",
+      "originGroup": "vitamind3-spike-20170629",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Vitamin D3 public quotations had risen from roughly RMB69/kg in early June to RMB450/kg and in some quotations as high as RMB600/kg by late June.",
+        "The report attributed the move to factors including tighter environmental controls and speculative activity.",
+        "Garden Bio itself warned that vitamin-industry prices are highly volatile and cyclical.",
+        "The article title noted Garden Bio shares had already risen more than 30% over the month."
+      ],
+      "entities": [
+        "vitamin D3",
+        "Garden Bio",
+        "environmental controls",
+        "speculation"
+      ],
+      "observedChanges": [
+        "an extreme product-price spike is already accompanied by equity rerating and explicit cyclicality/speculation warnings"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2017q2-xiongan-long-state-short-flow",
+      "statement": "Xiongan was established as a very large national strategic development project, but near-term land, construction and real-estate activity was deliberately frozen or tightly controlled while planning was prepared.",
+      "changeType": "long_duration_policy_state_with_near_term_execution_control",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-04-01T18:22:54+08:00",
+      "memberItemIds": [
+        "xiongan-establish-20170401",
+        "xiongan-controls-20170511"
+      ],
+      "independentOriginGroups": [
+        "xiongan-establish-20170401",
+        "xiongan-controls-20170511"
+      ],
+      "affectedValueChain": [
+        "regional planning",
+        "transport/ecology/infrastructure",
+        "construction materials/equipment",
+        "real estate/land",
+        "high-tech/public services"
+      ],
+      "contradictionSearchNotes": "The long-run project scale is huge, but authorities explicitly froze property projects and prioritized planning. The Skill must not translate a national strategy directly into immediate cement/property/construction earnings.",
+      "researchQuestion": "Can any listed company show a cutoff-valid, near/base-horizon earnings bridge to early Xiongan implementation rather than generic geographic/theme association?"
+    },
+    {
+      "eventId": "event-2017q2-aluminum-cuts-begin",
+      "statement": "Electrolytic-aluminum supply-side reform moved from policy expectation to observable shutdowns at major Xinjiang and Shandong producers just before the June-30 local verification deadline.",
+      "changeType": "upstream_capacity_state_change",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-06-27T10:18:00+08:00",
+      "memberItemIds": [
+        "aluminum-cuts-20170627"
+      ],
+      "independentOriginGroups": [
+        "aluminum-cuts-20170627"
+      ],
+      "affectedValueChain": [
+        "illegal/noncompliant smelting capacity",
+        "legal aluminum smelters",
+        "aluminum price/inventory",
+        "downstream fabricators"
+      ],
+      "contradictionSearchNotes": "Capacity removal is an upstream state variable; downstream inventory/price/earnings may lag. Do not veto it solely because full flow confirmation is absent, but do not assume every aluminum company benefits equally.",
+      "researchQuestion": "Does the new capacity state support a credible listed-company path after checking legal capacity, cost curve, geography and expectation absorption?"
+    },
+    {
+      "eventId": "event-2017q2-machinery-boom",
+      "statement": "Excavator demand remained extraordinarily strong in May 2017, roughly doubling year on year, with the leading OEM maintaining about 20% share.",
+      "changeType": "high_frequency_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-06-20T08:58:35+08:00",
+      "memberItemIds": [
+        "excavator-may-20170620"
+      ],
+      "independentOriginGroups": [
+        "excavator-may-20170620"
+      ],
+      "affectedValueChain": [
+        "infrastructure/replacement demand",
+        "excavator OEMs",
+        "hydraulic/components",
+        "dealers"
+      ],
+      "contradictionSearchNotes": "The physical rebound is already several months old and headline growth is enormous. Company cash conversion, balance sheet and price absorption must determine whether there is residual equity opportunity.",
+      "researchQuestion": "Is there still an underreflected, high-quality company engine after several months of machinery recovery?"
+    },
+    {
+      "eventId": "event-2017q2-msci-a-share-inclusion",
+      "statement": "MSCI formally decided to add 222 China A Large Cap stocks to major global indexes, improving structural international accessibility, but implementation was about one year away and initial EM weight was only about 0.73%.",
+      "changeType": "market_structure_accessibility_change_with_delayed_flow",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-06-21T04:38:00+08:00",
+      "memberItemIds": [
+        "msci-a-share-20170620"
+      ],
+      "independentOriginGroups": [
+        "msci-a-share-20170620"
+      ],
+      "affectedValueChain": [
+        "large-cap A shares",
+        "Stock Connect",
+        "foreign institutional allocation",
+        "index-linked flows",
+        "broker/custody infrastructure"
+      ],
+      "contradictionSearchNotes": "Structural accessibility improves, but immediate passive flow is small and delayed. The Skill must separate quality/foreign-ownership beneficiaries from generic 'MSCI concept' chasing.",
+      "researchQuestion": "Is there a listed large-cap expression whose ownership/quality/valuation path can improve before formal inclusion, or is the announcement mainly a long-duration state without a base-horizon edge?"
+    },
+    {
+      "eventId": "event-2017q2-dram-tightness",
+      "statement": "Global DRAM scarcity remained severe into Q2, with further contract-price increases and record supplier revenue already confirming the product-market state.",
+      "changeType": "product_market_tightness_high_absorption",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-04-13T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-q2-price-20170413",
+        "dram-revenue-20170518"
+      ],
+      "independentOriginGroups": [
+        "dram-q2-price-20170413",
+        "dram-revenue-20170518"
+      ],
+      "affectedValueChain": [
+        "DRAM capacity",
+        "contract pricing",
+        "global memory suppliers",
+        "PC/server/mobile buyers",
+        "domestic semiconductor proxies"
+      ],
+      "contradictionSearchNotes": "The product thesis is strong but already price/revenue-confirmed. A-share mapping must require direct current DRAM supplier earnings and must not substitute generic semiconductor names.",
+      "researchQuestion": "Is there any direct current A-share DRAM supplier earnings expression with residual expectation room, or should the product signal fail closed at mapping?"
+    },
+    {
+      "eventId": "event-2017q2-vitamin-d3-price-spike",
+      "statement": "Vitamin D3 prices exploded in June amid environmental constraints and speculation while the most obvious listed exposure had already rerated sharply and explicitly warned that vitamin prices are volatile and cyclical.",
+      "changeType": "extreme_product_price_spike_with_speculation",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-06-29T09:38:00+08:00",
+      "memberItemIds": [
+        "vitamind3-spike-20170629"
+      ],
+      "independentOriginGroups": [
+        "vitamind3-spike-20170629"
+      ],
+      "affectedValueChain": [
+        "vitamin D3 production",
+        "feed/pharma buyers",
+        "inventory/traders",
+        "specialist producers"
+      ],
+      "contradictionSearchNotes": "A real supply/price shock can still be a bad equity entry when spot prices and the obvious stock have already exploded. Deep research must distinguish realized earnings sensitivity from speculative price extrapolation.",
+      "researchQuestion": "Does any listed producer have a durable underreflected earnings bridge after accounting for a >30% equity rerating, extreme spot-price jump and explicit cyclicality?"
+    }
+  ]
+}
