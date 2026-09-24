@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q1-multisource-deep-v1.5-001",
+  "label": "post_outcome_diagnostic_not_clean_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "version": "1.5.0",
+  "headline": {
+    "conclusion": "v15_base_horizon_convexity_receives_independent_historical_mechanism_support",
+    "caveat": "This remains a contaminated historical replay, not clean forward alpha validation."
+  },
+  "primaryResults": [
+    {
+      "hypothesisId": "h-2019q1-xiangshui-dye-supply-shock",
+      "timingRoute": "base_horizon_convexity",
+      "frozenBaseTradingDays": 20,
+      "baseNetReturn": 0.07216478669669724,
+      "baseBenchmarkReturn": -0.0002153200193788507,
+      "baseExcessReturn": 0.07238010671607609,
+      "beatAllFrozenControlsAtBase": true,
+      "earliest10d": {
+        "netReturn": 0.14226323966699472,
+        "excessReturn": 0.1232048546184068
+      },
+      "later60d": {
+        "netReturn": -0.11831824382031153,
+        "excessReturn": -0.09894456874334745
+      },
+      "later120d": {
+        "netReturn": -0.14828966717510317,
+        "excessReturn": -0.145595603599304
+      },
+      "diagnosis": "The opportunity was real at its frozen short base horizon and decayed badly when mechanically extended. This is the intended V1.5 failure-class fix: finite-duration earnings convexity should neither be rejected for lacking 60/120d durability nor be carried beyond its forced re-underwrite."
+    },
+    {
+      "hypothesisId": "h-2019q1-excavator-demand-acceleration",
+      "timingRoute": "sector_confirmed",
+      "frozenBaseTradingDays": 60,
+      "baseNetReturn": 0.0022321393703759185,
+      "baseBenchmarkReturn": -0.01937367507696408,
+      "baseExcessReturn": 0.02160581444734,
+      "beatAllFrozenControlsAtBase": false,
+      "bestFrozenControl": {
+        "ticker": "000157.SZ",
+        "netReturn": 0.24022742330463132
+      },
+      "later120d": {
+        "netReturn": 0.11635752130539712,
+        "excessReturn": 0.11905158488119627
+      },
+      "diagnosis": "Opportunity direction and benchmark-relative expression adequacy succeeded, while exact peer ranking did not. This supports the V1.3+ opportunity-first contract: exact future-best peer selection is secondary to capturing the right opportunity with a sound expression."
+    }
+  ],
+  "researchResult": {
+    "hypothesisId": "h-2019q1-broker-earnings-inflection",
+    "ticker": "600030.SH",
+    "frozenDecision": "Research selection",
+    "result60d": {
+      "netReturn": -0.03543242333471108,
+      "excessReturn": -0.016058748257747002
+    },
+    "result20d": {
+      "netReturn": -0.06294186619894249,
+      "excessReturn": -0.06272654617956364
+    },
+    "diagnosis": "The Skill correctly resisted promoting realized broker earnings after a large prior rerating and above-average valuation burden. This is a direct counterexample to indiscriminate base-horizon promotion."
+  },
+  "noSelectionAudit": {
+    "porkPreconfirmation": {
+      "frozenDecision": "No selection",
+      "preCutoffContext": "Latest frozen official February pork price was still -4.8% YoY while hog equities had already rerated dramatically.",
+      "horizon20": {
+        "basketNetReturn": 0.02191354758214222,
+        "basketExcessReturn": 0.02212886760152107,
+        "positiveExcessBreadth": 0.3333333333333333
+      },
+      "horizon60": {
+        "basketNetReturn": 0.020208316614137096,
+        "basketExcessReturn": 0.03958199169110118,
+        "positiveExcessBreadth": 0.3333333333333333
+      },
+      "horizon120": {
+        "basketNetReturn": 0.12444491582228308,
+        "basketExcessReturn": 0.12713897939808225,
+        "positiveExcessBreadth": 0.6666666666666666
+      },
+      "diagnosis": "At the base-relevant 20/60d horizons, this was not a broad clean missed opportunity: only one of three frozen expressions beat the benchmark and two direct hog leaders were negative at 60d. Later 120d strength occurs after the original information set and does not justify importing later scarcity confirmation backward."
+    },
+    "msci": "Unauditable by stock basket because no company-specific earnings expression was frozen; do not hindsight invent beneficiaries.",
+    "vat": "Unauditable because the aggregate hypothesis was explicitly split_required and no company basket was frozen."
+  },
+  "evaluatorFinding": {
+    "failureClass": "heterogeneous_base_horizon_aggregation_bug",
+    "impact": "Reporting only. Legacy opportunityFirstBase common-60d aggregation is invalid for V1.5 heterogeneous base horizons.",
+    "canonicalMetric": "Use per-result thesisBaseOutcome and the separate variable-base-horizon audit.",
+    "selectionImpact": "none"
+  },
+  "crossWindowEvidence": {
+    "q2": "No V1.5 route case qualified for Primary; this showed fail-closed safety but did not validate the new route.",
+    "q1": "A true short-lived, quantitatively bridged supply shock qualified and succeeded at the frozen 20d base, then decayed at 60/120d. This independently supports the mechanism that Q3 diagnostics motivated.",
+    "interpretation": "Q1 supplies the first untouched historical mechanism support for V1.5. Because all historical runs remain current-model contaminated, one successful holdout is not proof of live alpha."
+  },
+  "versionDecision": {
+    "keepV15SelectionRulesImmutable": true,
+    "createV16Immediately": false,
+    "reasons": [
+      "V1.5 now has one independent historical mechanism-support window and one fail-closed safety window; changing promotion rules now would overfit.",
+      "The newly discovered corporate-action discovery blind spot from 2019Q2 is orthogonal to V1.5 promotion and should not be mixed into the same version change.",
+      "The evaluator common-horizon bug is a reporting compatibility issue and can be fixed independently."
+    ],
+    "nextValidation": "Run unchanged V1.5 on another untouched historical window (2018Q4) or, preferably in parallel, freeze a forward validation window. Track corporate-action discovery as a separate future V1.6 candidate rather than enabling it mid-validation."
+  },
+  "prohibitedInferences": [
+    "Do not infer that every short-lived supply shock should be bought.",
+    "Do not infer that high absorption is harmless; the dye case required a fresh quantified earnings bridge, non-extreme baseline burden and forced 20d re-underwrite.",
+    "Do not use the dye 10d peak to shorten the rule post-hoc; the registered base was 20d and it succeeded there.",
+    "Do not extend a base_horizon_convexity thesis to 60/120d without a new frozen re-underwrite.",
+    "Do not demote the machinery opportunity solely because a frozen control later outperformed the preferred expression.",
+    "Do not tune V1.5 from 2019Q1 outcomes."
+  ]
+}
