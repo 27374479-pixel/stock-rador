@@ -1,0 +1,717 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.7.0",
+  "cutoffAt": "2017-12-31T23:59:59+08:00",
+  "researchReadyAt": "2017-12-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q4-wastepaper-import-tightening",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Regulatory input-access changes can affect paper margins over quarters, but Shan Ying's cutoff-valid acquisition/financing/governance risks independently block Primary."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600567.SH",
+      "role": "preferred",
+      "directExposure": "credible",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "insufficient",
+      "conclusion": "acceptable",
+      "rationale": "Shan Ying is directly exposed to packaging paper and the imported-fiber regime, but a RMB1.9bn cash acquisition at a large valuation premium plus financing complexity and a finance-chief CSRC investigation make the equity expression incomplete.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "shany-q3-20171019",
+        "shany-governance-20171013",
+        "shany-liansheng-20171221",
+        "shany-liansheng-clarification-20171228",
+        "regime-wastepaper-20171231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Imported-waste-paper rules tightened materially, potentially favoring large compliant mills, but the company-level expression must survive raw-material inflation and capital-allocation/governance risks.",
+    "firstCredibleDate": "2017-10-23",
+    "valueChain": [
+      "imported recycled fiber access",
+      "domestic waste-paper cost",
+      "packaging-paper mill margin",
+      "company financing/capital allocation"
+    ],
+    "persistenceReason": "Import-regulation changes can persist across quarters and reshape relative input access.",
+    "disconfirmingEvidence": [
+      "Domestic waste-paper prices were already volatile/elevated.",
+      "Shan Ying announced a RMB1.9bn cash acquisition with a large valuation premium.",
+      "The finance chief was under CSRC investigation.",
+      "Peer paper companies had strong earnings but mixed cash-conversion quality."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "wastepaper-final-20171214",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Imported-waste-paper regulation became effective."
+    },
+    {
+      "id": "shany-q3-20171019",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Company was already funding expansion and faced self-funded project needs."
+    },
+    {
+      "id": "shany-governance-20171013",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Finance chief received a CSRC investigation notice."
+    },
+    {
+      "id": "shany-liansheng-20171221",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "RMB1.9bn cash acquisition adds first-order financing/capital-allocation risk."
+    },
+    {
+      "id": "shany-liansheng-clarification-20171228",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Transaction price carried a substantial premium to book and appraised values."
+    },
+    {
+      "id": "sunpaper-q3-20171030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Peer paper profits were strong but cash conversion did not improve proportionally."
+    },
+    {
+      "id": "regime-wastepaper-20171231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Paper basket was already deeply adverse over 60d."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "tighter imported-waste-paper access",
+      "to": "relative fiber availability/cost",
+      "mechanism": "Compliance/scale requirements change imported-fiber access across mills.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214"
+      ],
+      "failureMode": "domestic fiber inflation overwhelms relative access advantage",
+      "lag": "weeks to months"
+    },
+    {
+      "from": "relative fiber access",
+      "to": "paper-mill margin/earnings",
+      "mechanism": "Mills with better access may face lower marginal input stress.",
+      "evidenceRefs": [
+        "paper-price-20171205",
+        "shany-q3-20171019"
+      ],
+      "failureMode": "financing/capital allocation dominates operating benefit",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "large compliant paper mills with superior imported-fiber access"
+    ],
+    "secondOrderWinners": [
+      "domestic recycling channels"
+    ],
+    "losers": [
+      "mills with weak imported-fiber access"
+    ],
+    "substitutes": [
+      "domestic recovered paper",
+      "virgin pulp"
+    ],
+    "bottlenecks": [
+      "import quota/compliance",
+      "domestic recovered-paper supply"
+    ],
+    "falseThemeMatches": [
+      "paper companies without verified input-access advantage"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600567.SH",
+      "name": "山鹰纸业",
+      "verifiedExposure": "Packaging-paper mill exposed to imported recycled-fiber policy.",
+      "evidenceRefs": [
+        "shany-q3-20171019",
+        "wastepaper-final-20171214"
+      ],
+      "earningsSensitivity": {
+        "base": "Policy may improve relative access.",
+        "favorable": "Input access advantage outweighs domestic fiber inflation.",
+        "adverse": "Acquisition/financing/governance risks dominate."
+      },
+      "principalRisks": [
+        "large cash acquisition",
+        "financing complexity",
+        "governance investigation"
+      ]
+    },
+    {
+      "ticker": "002078.SZ",
+      "name": "太阳纸业",
+      "verifiedExposure": "Large paper producer with strong earnings but different product/input mix.",
+      "evidenceRefs": [
+        "sunpaper-q3-20171030"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong paper pricing.",
+        "favorable": "Industry profitability persists.",
+        "adverse": "Cash conversion remains weaker than profit."
+      },
+      "principalRisks": [
+        "cash conversion",
+        "input cost"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002078.SZ",
+      "name": "太阳纸业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large paper peer exposed to the same pricing environment but without the same frozen Shan Ying transaction/governance package.",
+      "whySelectedCompanyShouldOutperform": "Shan Ying may have more direct regulatory-input-access torque, but Sun Paper has cleaner frozen capital-allocation/governance evidence.",
+      "evidenceRefs": [
+        "sunpaper-q3-20171030",
+        "regime-wastepaper-20171231"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only memo freezes one representative peer control; no Primary ranking claim is made.",
+  "selectionComparison": {
+    "selectedTicker": "600567.SH",
+    "pairwise": [
+      {
+        "controlTicker": "002078.SZ",
+        "selectedAdvantages": [
+          "more direct packaging/recycled-fiber policy mapping"
+        ],
+        "selectedDisadvantages": [
+          "large acquisition premium",
+          "governance investigation",
+          "financing complexity"
+        ],
+        "evidenceRefs": [
+          "wastepaper-final-20171214",
+          "sunpaper-q3-20171030",
+          "regime-wastepaper-20171231"
+        ],
+        "switchCondition": "Prefer a peer if direct input-access advantage can be verified without equivalent capital-allocation/governance blockers.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The upstream state is worth following, but V1.7 adversarial evidence blocks Primary and even weakens the preferred expression."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Wastepaper/paper basket was -2.71pp excess over 20d and -18.33pp over 60d with zero positive 60d breadth.",
+    "thesisExpectation": "Regulatory input access can create relative winners even inside a weak paper tape.",
+    "measurableGap": "The weak tape is not sufficient evidence of cheapness because company-specific acquisition, governance and financing risks are simultaneously visible.",
+    "evidenceRefs": [
+      "wastepaper-final-20171214",
+      "regime-wastepaper-20171231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Relative price regime plus transaction/capital-allocation burden rather than a single PE screen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Sector equities are weak despite strong prior operating conditions; the market may be discounting both cycle normalization and company-specific risk.",
+    "thesisScenario": "Input-access advantage improves margin relative to peers while the acquisition integrates without funding stress.",
+    "breakevenCondition": "Operating benefit must exceed acquisition financing/integration costs and governance risk.",
+    "ordinaryScenarioFailure": "Domestic fiber inflation and transaction risk overwhelm the regulatory advantage.",
+    "catalystOrTimingBridge": "Next quota/import disclosures and financing/integration updates.",
+    "evidenceRefs": [
+      "wastepaper-final-20171214",
+      "regime-wastepaper-20171231"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Regulation moved from draft to final and raw-material conditions remain tight.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Operating exposure exists, but company-specific transaction/governance evidence cuts against a clean conversion story.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Peers have strong earnings but divergent cash-quality and no proven identical input-access edge.",
+      "evidenceRefs": [
+        "regime-wastepaper-20171231",
+        "sunpaper-q3-20171030"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "mixed",
+      "rationale": "No clean forward baseline separates regulatory benefit from transaction risk.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "unresolved",
+      "checkMethod": "Adverse price regime could represent opportunity or rational discount for company risk; do not assume mean reversion.",
+      "evidenceRefs": [
+        "regime-wastepaper-20171231"
+      ]
+    },
+    "unresolvedReason": "evidence_conflict",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300",
+      "lookback20Excess": -0.027070252719607057,
+      "lookback60Excess": -0.18332099195380736,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-wastepaper-20171231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Regulatory change is persistent, though input pricing is volatile.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Paper earnings are strong across peers but cash/quality differ and the specific regulatory edge is unresolved.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "sunpaper-q3-20171030"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Import rules persist beyond one quarter.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Paper pricing had already surged and then corrected, while equities are weak.",
+      "evidenceRefs": [
+        "regime-wastepaper-20171231",
+        "wastepaper-final-20171214"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "A valid regulatory state is overwhelmed by weak tape and unresolved company-specific risk."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600567.SH",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "Operating business is viable, but transaction/governance evidence materially weakens quality confidence.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Relative input access could improve future margins if confirmed.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "Weak price alone cannot establish room under acquisition/financing uncertainty.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "regime-wastepaper-20171231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Quota, financing and integration disclosures should arrive within quarters.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "insufficient",
+      "rationale": "Large cash acquisition and governance uncertainty reduce downside containment.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "shany-q3-20171019",
+        "shany-governance-20171013",
+        "shany-liansheng-20171221",
+        "shany-liansheng-clarification-20171228",
+        "regime-wastepaper-20171231"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002078.SZ",
+        "revisionAdvantage": "Shan Ying may have more direct recycled-fiber policy sensitivity.",
+        "valuationAdvantage": "Weak Shan Ying price is not a clean valuation advantage.",
+        "qualityTradeoff": "Sun Paper has stronger frozen cash/transaction quality despite slower cash-flow growth.",
+        "catalystAdvantage": "Both are exposed to paper pricing; Shan Ying also has acquisition/integration catalysts.",
+        "downsideTradeoff": "Sun Paper has fewer frozen governance/capital-allocation blockers.",
+        "switchCondition": "Prefer a peer if direct input-access advantage can be verified without equivalent capital-allocation/governance blockers.",
+        "evidenceRefs": [
+          "wastepaper-final-20171214",
+          "sunpaper-q3-20171030",
+          "regime-wastepaper-20171231"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Imported-fiber access rules tighten and may redistribute input availability.",
+    "earningsMechanism": "Relative input access can improve margin versus disadvantaged mills.",
+    "nextObservableMetric": "import quota/access, domestic waste-paper cost and company margin/financing",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "wastepaper-draft-20171023",
+      "wastepaper-final-20171214",
+      "paper-price-20171205"
+    ],
+    "failureCondition": "No verified relative input advantage or acquisition/financing stress rises."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Paper profitability is strong but raw-material volatility is high.",
+      "nextPeriod": "Regulation may redistribute margin while acquisitions alter the company baseline.",
+      "laterPeriod": "Industry supply/input conditions normalize and integration quality becomes decisive.",
+      "rationale": "Separate policy state from company transaction path.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "regime-wastepaper-20171231"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Regulation supports relative input access.",
+      "nextPeriodChange": "Operating benefit could improve earnings if transaction risk is contained.",
+      "laterPeriodChange": "Sustainable advantage depends on integration and financing discipline.",
+      "mechanism": "Policy advantage competes with company-specific capital-allocation risk.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Regulatory benefit is real but company path is not clean.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Acquisition/integration and financing can dominate multiple quarters.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "falsifier": "No relative input-cost advantage or acquisition/financing stress worsens.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "packaging-paper recycled-fiber input access",
+    "geographicScope": "China imported/domestic recycled-fiber market",
+    "customerScope": "packaging-paper buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep the regulatory state separate from company acquisition/governance risk.",
+    "evidenceRefs": [
+      "wastepaper-draft-20171023",
+      "wastepaper-final-20171214",
+      "paper-price-20171205"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "regulatory benefit versus elevated raw-material cost",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "input-access edge versus acquisition financing/integration",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "scale/compliance advantage versus capital-allocation quality",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Remain Research until company risk is resolved rather than averaging it away.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "mixed",
+    "rationale": "Industry state is valid but company-specific risks prevent a clean leader thesis.",
+    "evidenceRefs": [
+      "wastepaper-final-20171214",
+      "regime-wastepaper-20171231"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Final import rule is fresh.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "Company exposure exists but transaction risk clouds earnings quality.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No clean forward earnings reset is frozen.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "regime-wastepaper-20171231"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Regulatory regime persists.",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Input-access advantage fails to appear.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600567.SH",
+    "purestTicker": "600567.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Direct policy exposure does not compensate for unresolved company risk.",
+    "earningsQualityComparison": "Peer paper earnings are strong; Shan Ying does not have a clean company-quality edge.",
+    "downsideComparison": "Shan Ying has worse frozen transaction/governance downside.",
+    "evidenceRefs": [
+      "wastepaper-final-20171214",
+      "sunpaper-q3-20171030",
+      "regime-wastepaper-20171231"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "regulated access to imported recycled fiber",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "relative access determines input availability/cost across compliant mills",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "wastepaper-draft-20171023",
+        "wastepaper-final-20171214"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "domestic waste-paper price and listed-mill margin",
+      "observedDirection": "mixed",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "Domestic recovered-paper prices are volatile and can initially offset the relative import-access benefit.",
+      "evidenceRefs": [
+        "paper-price-20171205",
+        "shany-q3-20171019"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "credible",
+      "rationale": "Regulatory access changes precede full quarterly margin differentiation.",
+      "evidenceRefs": [
+        "wastepaper-final-20171214",
+        "paper-price-20171205"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "Peer earnings are strong, but a clean company-specific import-access edge is not yet verified.",
+      "evidenceRefs": [
+        "sunpaper-q3-20171030",
+        "chenming-q3-20171026"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "No relative input-access advantage emerges or company financing/integration risk dominates.",
+    "conclusion": "state_leads_flow"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Large expansion and self-funding needs make liquidity/financing relevant.",
+        "evidenceRefs": [
+          "shany-q3-20171019"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "material_risk",
+        "rationale": "RMB1.9bn cash acquisition was priced far above Liansheng book value and above the cited income-approach valuation.",
+        "evidenceRefs": [
+          "shany-liansheng-20171221",
+          "shany-liansheng-clarification-20171228"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "material_risk",
+        "rationale": "Finance chief was under a cutoff-valid CSRC investigation for suspected securities-law violations.",
+        "evidenceRefs": [
+          "shany-governance-20171013"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Expansion plus a large cash acquisition increase funding and refinancing burden.",
+        "evidenceRefs": [
+          "shany-q3-20171019",
+          "shany-liansheng-20171221"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The policy thesis may be right while the chosen equity expression is impaired by acquisition financing, capital-allocation and governance risk.",
+    "counterThesisSeverity": "high",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "Financing/integration burden falls materially and governance concerns are resolved with no deterioration in cash conversion.",
+    "conclusion": "research_only"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: V1.7 finds a plausible upstream policy state but independently blocks Primary on company-specific acquisition/governance/financing evidence.",
+    "alreadyPricedAssessment": "weak_price_not_automatically_cheap",
+    "constraints": [
+      "capital allocation",
+      "governance",
+      "financing",
+      "raw-material volatility"
+    ]
+  },
+  "bearCase": "The regulatory story is correct but Shan Ying is the wrong equity expression because company-specific risks dominate.",
+  "invalidationConditions": [
+    {
+      "indicator": "Liansheng acquisition financing/integration",
+      "observationMethod": "company disclosures",
+      "threshold": "funding stress or earnings dilution"
+    },
+    {
+      "indicator": "governance investigation",
+      "observationMethod": "regulatory/company disclosure",
+      "threshold": "adverse finding or control weakness"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep the regulatory thesis in Research, but do not promote Shan Ying unless company-specific blockers are resolved."
+  ]
+}
