@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q2-multisource-deep-v1.8-001",
+  "skillVersion": "1.8.0",
+  "validationClass": "exploratory_contaminated_untouched_holdout_at_repo_level",
+  "samePeriodMayTuneSkill": false,
+  "lockedBeforeReveal": true,
+  "lockCommit": "ab906ab5391ab020ceab681bc3c8030080c9d4c0",
+  "revealCommit": "b0f44df36f98494ffb60ff8722a090dab2690499",
+  "frozenDecisionSummary": [
+    {
+      "hypothesisId": "h-2017q2-aluminum-cuts-begin",
+      "selectionState": "Research selection",
+      "ticker": "600219.SH",
+      "alternateAcceptableExpression": "000807.SZ"
+    },
+    {
+      "hypothesisId": "h-2017q2-machinery-boom",
+      "selectionState": "Research selection",
+      "ticker": "600031.SH"
+    },
+    {
+      "hypothesisId": "h-2017q2-vitamin-d3-price-spike",
+      "selectionState": "Research selection",
+      "ticker": "300401.SZ"
+    },
+    {
+      "hypothesisId": "h-2017q2-xiongan-long-state-short-flow",
+      "selectionState": "No selection"
+    },
+    {
+      "hypothesisId": "h-2017q2-msci-a-share-inclusion",
+      "selectionState": "No selection"
+    },
+    {
+      "hypothesisId": "h-2017q2-dram-tightness",
+      "selectionState": "No selection"
+    }
+  ],
+  "outcomeFindings": [
+    {
+      "findingId": "research-aluminum-captured-direction-not-best-expression",
+      "status": "supported_with_expression_gap",
+      "evidence": {
+        "selectedTicker": "600219.SH",
+        "selectedExcess20": 0.0240197009423051,
+        "selectedExcess60": 0.15100723388158266,
+        "selectedExcess120": -0.05903244771176497,
+        "alternateTicker": "000807.SZ",
+        "alternateExcess60": 0.8894463204293475,
+        "broadControlTicker": "000933.SZ",
+        "broadControlExcess60": 0.5874823825117603
+      },
+      "interpretation": "The frozen aluminum Research decision captured the correct base-horizon industry direction, but the safer preferred expression materially lagged both the purer compliant/cost-advantaged Yunlu alternate and the broad-cycle control. This does not invalidate the user-level objective because the direction was captured and no bad Primary was forced, but it shows that company-expression conservatism can sacrifice substantial convexity.",
+      "tuningImplication": "diagnostic_only"
+    },
+    {
+      "findingId": "research-machinery-restraint-was-useful",
+      "status": "supported",
+      "evidence": {
+        "ticker": "600031.SH",
+        "excess20": -0.0015215045170371422,
+        "excess60": -0.1221055096819752,
+        "excess120": -0.08455591661320794,
+        "bestControl60Ticker": "601100.SH",
+        "bestControl60Return": 0.07993105406287548
+      },
+      "interpretation": "Sany had excellent Q1 fundamentals and a credible valuation baseline, but the Q2 signal was continuation rather than a fresh reset and the broad price regime was only neutral. Keeping it Research rather than Primary avoided a poor base-horizon entry. This is a critical counterexample against simply relaxing timing/expectation gates for strong companies.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "research-vitamin-d3-fresh-reset-captured",
+      "status": "supported_with_open_escalation_question",
+      "evidence": {
+        "ticker": "300401.SZ",
+        "excess20": -0.0037696161994060784,
+        "excess60": 0.1546743120671945,
+        "excess120": 0.09392886648613552
+      },
+      "interpretation": "Garden Bio remained Research because the D3 price move and published estimates had already reset sharply, yet the fresh product-price shock plus direct exposure and sound balance sheet produced strong base/long-horizon excess. This adds a second holdout example where a genuinely fresh incremental driver remained actionable despite visible absorption.",
+      "tuningImplication": "future_version_only"
+    },
+    {
+      "findingId": "xiongan-no-selection-blocked-macro-theme-overreach",
+      "status": "supported",
+      "evidence": {
+        "basketMeanExcess20": 0.011944851766012676,
+        "basketMeanExcess60": -0.02132248112847331,
+        "basketMeanExcess120": -0.20819498585905583,
+        "positiveExcessBreadth60": 0.3333333333333333,
+        "positiveExcessBreadth120": 0
+      },
+      "interpretation": "The Skill correctly refused to convert a major national strategy into an immediate listed-company earnings claim while planning/property execution was frozen. The base horizon was weak and the available 120d controls were strongly negative.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "msci-no-selection-correct-at-base-horizon-but-long-duration-quality-rally-followed",
+      "status": "supported_for_registered_horizon",
+      "evidence": {
+        "basketMeanExcess20": -0.016005941577670286,
+        "basketMeanExcess60": -0.01971338394030912,
+        "basketMeanExcess120": 0.17448736730565906,
+        "positiveExcessBreadth120": 1
+      },
+      "interpretation": "The MSCI announcement did not provide a clean 20/60d event-specific edge after the quality-large-cap basket had already rerated. A strong 120d quality rally followed, but formal MSCI implementation was still roughly one year away and the company engines predated the event; the later move should not be retroactively attributed entirely to the MSCI announcement.",
+      "tuningImplication": "future_long_duration_archetype_audit_only"
+    },
+    {
+      "findingId": "dram-causal-purity-vs-theme-reflexivity-repeats",
+      "status": "causal_gate_supported_market_proxy_miss_repeats",
+      "evidence": {
+        "proxyMeanExcess20": -0.06934580778346833,
+        "proxyMeanExcess60": 0.3775881001047092,
+        "valid60Count": 2,
+        "giga60Excess": 0.6432820713169349
+      },
+      "interpretation": "At cutoff no direct current A-share commodity-DRAM supplier earnings bridge existed, so No selection was causally correct. Nevertheless domestic semiconductor/memory proxies rallied strongly by 60d. Combined with 2017Q3, this is repeated evidence that market theme/reflexivity can create returns without a clean causal earnings mapping. That is a separate opportunity archetype and should not be smuggled into the current fundamental-causal gate.",
+      "tuningImplication": "separate_future_archetype_only"
+    }
+  ],
+  "crossHoldoutSynthesis": {
+    "comparedHoldouts": [
+      "2017Q3 V1.8 untouched holdout",
+      "2017Q2 V1.8 untouched holdout"
+    ],
+    "supportedPrinciples": [
+      "Do not require the absolute best related stock to call a direction-capture decision useful.",
+      "Research classification is valuable protection: strong company fundamentals alone do not justify Primary when the signal is stale/continuation or timing is weak.",
+      "No-selection discipline blocks major narrative errors such as early Xiongan theme mapping without an earnings bridge.",
+      "Company-level heterogeneity is real and worth searching, but finding an exception does not itself create an entry."
+    ],
+    "repeatedOpenPattern": {
+      "label": "fresh_incremental_driver_can_survive_visible_absorption",
+      "positiveExamples": [
+        "2017Q3 Longi: fresh high-efficiency policy/company exception, +19.27pp base-horizon excess while frozen as Research.",
+        "2017Q2 Garden Bio: fresh D3 product-price shock with direct company exposure, +15.47pp base-horizon excess while frozen as Research.",
+        "2017Q2 aluminum: fresh observable shutdown state; preferred Nanshan +15.10pp base excess and alternate Yunlu +88.94pp."
+      ],
+      "counterExample": [
+        "2017Q2 Sany: excellent realized fundamentals but continuation rather than fresh incremental reset; -12.21pp base-horizon excess."
+      ],
+      "hypothesis": "A narrow escalation route may be justified only when the incremental driver is genuinely new at the cutoff, causally maps to current company earnings, has a reachable base-horizon catalyst, and is not merely repetition of an already-known strong company/industry story."
+    }
+  },
+  "v18Assessment": {
+    "companyExceptionRecall": "supported_but_trigger_not_exercised_in_aluminum_time_horizon_conflict",
+    "oneWayRecallProperty": "supported",
+    "inheritedPrimaryDiscipline": "supported",
+    "finalVersionDecision": "retain_unchanged_as_validated_recall_layer_not_final_alpha_policy",
+    "rationale": "Two untouched holdouts support V1.8 as a safe company-recall layer and show that it does not automatically loosen Primary. However the combined holdouts also reveal a repeated under-promotion pattern for genuinely fresh incremental drivers, while the Sany counterexample proves that broad relaxation would be unsafe."
+  },
+  "nextVersionResearchTarget": {
+    "provisionalName": "fresh_incremental_escalation",
+    "scope": "A narrow pre-entry escalation route for Research selections with genuinely new cutoff-valid drivers; not dynamic re-underwrite and not a relaxation for continuation signals.",
+    "mustRequire": [
+      "event/discovery novelty is new rather than continuation",
+      "fresh incremental evidence is clear or credible and dated near cutoff",
+      "direct current company exposure and earnings-conversion bridge are clear/credible",
+      "base-horizon catalyst is reachable",
+      "company quality/downside gates from V1.7 remain intact",
+      "expectation absorption is explicitly measured rather than ignored",
+      "no proxy substitution or generic theme association",
+      "same-period Q2/Q3 outcomes may design the rule but may not validate it"
+    ],
+    "validationRequirement": "Freeze the new candidate before opening a fully untouched earlier window, preferably 2017Q1 if repository-history checks confirm it has never been used."
+  },
+  "dynamicReunderwriteStatus": "separate_future_capability_not_combined"
+}
