@@ -1,0 +1,493 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2017q4-multisource-v1.7-001",
+  "cutoffAt": "2017-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Current model/search can expose later historical context. Only sources provably public by 2017-12-31 are frozen; no selected-stock outcomes are opened before discovery lock.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official environmental, energy and pricing policy/state evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected NDRC and MEP documents; not an exhaustive government archive crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company mapping is intentionally deferred until after discovery lock."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "High-frequency machinery and commodity supply/demand evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected excavator and steel physical data only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting on physical shortages, prices and policy execution.",
+      "coverageStatus": "partial",
+      "limitations": "Selected Caixin, Reuters-syndicated, China Securities Journal and financial press."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Product-level semiconductor and industrial market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected TrendForce/SMM evidence; not exhaustive."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "lng-shortage-20171205",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "华北液化天然气价格暴涨 发改委价监局要求市场主体自律",
+      "publisher": "财新",
+      "url": "https://china.caixin.com/m/2017-12-05/101180456.html",
+      "publishedAt": "2017-12-05T10:16:00+08:00",
+      "availableAt": "2017-12-05T10:16:00+08:00",
+      "originGroup": "lng-shortage-20171205",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "North China LNG delivered prices had risen roughly RMB3,000-4,000/t over about three months and roughly doubled.",
+        "NDRC price-supervision authorities convened major producers, import terminals, storage/sales firms and local regulators to restrain abnormal winter price volatility."
+      ],
+      "entities": [
+        "LNG",
+        "natural gas",
+        "North China",
+        "NDRC"
+      ],
+      "observedChanges": [
+        "winter gas shortage is already producing extreme spot-price stress and policy intervention"
+      ]
+    },
+    {
+      "itemId": "gas-imbalance-20171226",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于加大清洁煤供应确保群众温暖过冬的通知",
+      "publisher": "国家发展改革委/国家能源局",
+      "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201712/t20171226_962628.html",
+      "publishedAt": "2017-12-26T00:00:00+08:00",
+      "availableAt": "2017-12-26T00:00:00+08:00",
+      "originGroup": "gas-imbalance-20171226",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Official policy acknowledged structural, seasonal and regional natural-gas supply-demand imbalances during the winter heating peak.",
+        "Authorities increased clean-coal supply as an emergency substitute to relieve heating pressure."
+      ],
+      "entities": [
+        "natural gas",
+        "clean coal",
+        "winter heating",
+        "NDRC"
+      ],
+      "observedChanges": [
+        "gas scarcity is real but government substitution/intervention can shorten the price shock"
+      ]
+    },
+    {
+      "itemId": "wastepaper-draft-20171023",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于公开征求《进口废纸环境保护管理规定（征求意见稿）》意见的通知",
+      "publisher": "环境保护部",
+      "url": "https://www.mee.gov.cn/gkml/hbb/bgth/201710/t20171030_424282.htm",
+      "publishedAt": "2017-10-23T00:00:00+08:00",
+      "availableAt": "2017-10-23T00:00:00+08:00",
+      "originGroup": "wastepaper-draft-20171023",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MEP proposed tighter environmental management for imported waste paper and higher scale requirements for importing/processing enterprises.",
+        "The rule implemented the broader foreign-waste import reform and could change imported-fiber access across mills."
+      ],
+      "entities": [
+        "imported waste paper",
+        "paper mills",
+        "MEP"
+      ],
+      "observedChanges": [
+        "regulatory access to imported recycled fiber is tightening and may become scale/compliance dependent"
+      ]
+    },
+    {
+      "itemId": "paper-price-20171205",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "双十一过后废纸价格整体回调30% 料维持上涨态势",
+      "publisher": "中国证券报",
+      "url": "https://finance.sina.com.cn/chanjing/cyxw/2017-12-05/doc-ifyphtze4353835.shtml",
+      "publishedAt": "2017-12-05T01:20:00+08:00",
+      "availableAt": "2017-12-05T01:20:00+08:00",
+      "originGroup": "paper-price-20171205",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Domestic waste-paper prices had corrected about 30% after the Double-11 recovery peak but many mills were again raising purchase prices.",
+        "Industry participants expected tighter import policy and year-end demand to keep waste-paper prices elevated."
+      ],
+      "entities": [
+        "waste paper",
+        "packaging paper",
+        "paper mills"
+      ],
+      "observedChanges": [
+        "raw-material price is volatile and already elevated, so import restriction is not automatically positive for every mill"
+      ]
+    },
+    {
+      "itemId": "wastepaper-final-20171214",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于发布《进口废纸环境保护管理规定》的公告",
+      "publisher": "环境保护部",
+      "url": "https://www.mee.gov.cn/gkml/hbb/bwj/201712/t20171218_428134.htm",
+      "publishedAt": "2017-12-15T00:00:00+08:00",
+      "availableAt": "2017-12-15T00:00:00+08:00",
+      "originGroup": "wastepaper-final-20171214",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MEP formally issued the imported-waste-paper environmental management regulation, effective immediately.",
+        "The rule made the earlier regulatory tightening concrete before year-end."
+      ],
+      "entities": [
+        "imported waste paper",
+        "MEP",
+        "paper mills"
+      ],
+      "observedChanges": [
+        "imported recycled-fiber access changes from proposal to implemented rule"
+      ]
+    },
+    {
+      "itemId": "excavator-nov-20171206",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "2017年11月销售挖掘机13822台，同比涨107.4%",
+      "publisher": "中国路面机械网/中国工程机械工业协会挖掘机械分会",
+      "url": "https://news.lmjx.net/2017/201712/2017120613234069.shtml",
+      "publishedAt": "2017-12-06T13:23:40+08:00",
+      "availableAt": "2017-12-06T13:23:40+08:00",
+      "originGroup": "excavator-nov-20171206",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November excavator sales were 13,822 units, +107.4% YoY; Jan-Nov sales were 126,298, +99.2% YoY.",
+        "Domestic sales rose 117.2% YoY in November and exports rose 27.3%."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "CCMA"
+      ],
+      "observedChanges": [
+        "equipment physical demand remains exceptionally strong late in the year"
+      ]
+    },
+    {
+      "itemId": "sany-share-20171214",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "11月挖掘机数据发布，三一销量稳居榜首",
+      "publisher": "中国路面机械网",
+      "url": "https://news.lmjx.net/2017/201712/2017121409595091.shtml",
+      "publishedAt": "2017-12-14T09:59:50+08:00",
+      "availableAt": "2017-12-14T09:59:50+08:00",
+      "originGroup": "sany-share-20171214",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Sany sold 3,099 excavators in November, +118.86% YoY, with about 22.42% monthly market share.",
+        "Sany's share exceeded the combined share of the second- and third-ranked brands in the cited data."
+      ],
+      "entities": [
+        "Sany",
+        "excavators",
+        "market share"
+      ],
+      "observedChanges": [
+        "leader share strengthens inside an already-booming machinery cycle"
+      ]
+    },
+    {
+      "itemId": "dram-mobile-20171012",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Mobile DRAM Prices to Go Up by 10~15% in 4Q17",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20171012-9882.html",
+      "publishedAt": "2017-10-12T00:00:00+08:00",
+      "availableAt": "2017-10-12T00:00:00+08:00",
+      "originGroup": "dram-mobile-20171012",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce expected 4Q17 mobile DRAM prices to rise 10-15% QoQ.",
+        "Large-scale new DRAM capacity was unlikely in 2018 and server/datacenter demand was rising, supporting continued tight supply."
+      ],
+      "entities": [
+        "DRAM",
+        "mobile DRAM",
+        "server DRAM",
+        "datacenters"
+      ],
+      "observedChanges": [
+        "DRAM supply remains structurally tight but downstream prices are already rising"
+      ]
+    },
+    {
+      "itemId": "dram-q3-20171113",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "TrendForce Reports 3Q17 DRAM Revenue Hit a New High",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20171113-9912.html",
+      "publishedAt": "2017-11-13T00:00:00+08:00",
+      "availableAt": "2017-11-13T00:00:00+08:00",
+      "originGroup": "dram-q3-20171113",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Global DRAM industry revenue reached a new high in 3Q17, +16.2% QoQ.",
+        "4Q17 DRAM prices were expected to rise about 10% on average as supply stayed tight."
+      ],
+      "entities": [
+        "DRAM",
+        "memory suppliers"
+      ],
+      "observedChanges": [
+        "product tightness has already converted into record industry revenue and higher contract pricing"
+      ]
+    },
+    {
+      "itemId": "pv-price-20171222",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家发展改革委制定2018年光伏发电价格政策促进产业健康可持续发展",
+      "publisher": "国家发展改革委",
+      "url": "https://www.ndrc.gov.cn/xwdt/xwfb/201712/t20171222_954759.html",
+      "publishedAt": "2017-12-22T00:00:00+08:00",
+      "availableAt": "2017-12-22T00:00:00+08:00",
+      "originGroup": "pv-price-20171222",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "For projects commissioned after 2018-01-01, benchmark PV tariffs were cut RMB0.10/kWh across resource regions.",
+        "Distributed self-consumption subsidy was reduced by RMB0.05/kWh to RMB0.37/kWh, while poverty-alleviation PV tariffs/subsidies were preserved."
+      ],
+      "entities": [
+        "PV",
+        "feed-in tariff",
+        "distributed solar",
+        "NDRC"
+      ],
+      "observedChanges": [
+        "2018 project economics face a known subsidy/tariff step-down, partly justified by rapid cost declines"
+      ]
+    },
+    {
+      "itemId": "steel-curb-20171011",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "唐山钢铁限产提前至10月12日 建筑工地停工",
+      "publisher": "中证网/凤凰财经综合",
+      "url": "https://www.cs.com.cn/xwzx/201710/t20171011_5509059.html",
+      "publishedAt": "2017-10-11T18:12:00+08:00",
+      "availableAt": "2017-10-11T18:12:00+08:00",
+      "originGroup": "steel-curb-20171011",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Tangshan advanced steel winter-curtailment measures to October 12 and required 50% shutdown of sintering/pelletizing equipment until detailed plans applied.",
+        "Construction earthworks were also halted through the winter period, creating both steel-supply and end-demand effects."
+      ],
+      "entities": [
+        "Tangshan",
+        "steel",
+        "winter curtailment",
+        "construction"
+      ],
+      "observedChanges": [
+        "environmental policy creates a simultaneous supply restriction and demand offset"
+      ]
+    },
+    {
+      "itemId": "steel-physical-20171130",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "北方限产不抵淡季需求热情 钢铁PMI连续7月处扩张区间",
+      "publisher": "每日经济新闻",
+      "url": "https://www.nbd.com.cn/articles/2017-11-30/1166879.html",
+      "publishedAt": "2017-11-30T00:00:00+08:00",
+      "availableAt": "2017-11-30T00:00:00+08:00",
+      "originGroup": "steel-physical-20171130",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Tangshan's planned heating-season steel curtailment ratio was 50%, with an estimated 18.21m tons of blast-furnace iron impact over four months.",
+        "Reported Tangshan blast-furnace operating rate was about 56.82%; other provinces also joined production curbs, tightening supply."
+      ],
+      "entities": [
+        "steel",
+        "Tangshan",
+        "blast furnaces",
+        "winter curtailment"
+      ],
+      "observedChanges": [
+        "physical capacity utilization is visibly constrained, but construction demand is also seasonally/policy affected"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2017q4-gas-winter-shortage",
+      "statement": "North China entered a severe winter gas imbalance: LNG delivered prices roughly doubled while official policy acknowledged structural/seasonal/regional gas shortages and deployed substitute clean-coal supply.",
+      "changeType": "energy_supply_bottleneck",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-12-05T10:16:00+08:00",
+      "memberItemIds": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226"
+      ],
+      "independentOriginGroups": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226"
+      ],
+      "affectedValueChain": [
+        "gas production/import",
+        "LNG liquefaction/terminals",
+        "gas distribution",
+        "industrial gas users",
+        "winter heating substitutes"
+      ],
+      "contradictionSearchNotes": "Spot LNG price has already doubled, authorities are intervening, and clean coal is being deployed as a substitute; deep research must not equate a real shortage with an unpriced gas-equity opportunity.",
+      "researchQuestion": "Is there a listed company with verified supply/access or throughput leverage whose earnings can still improve after accounting for extreme spot-price absorption and policy substitution?"
+    },
+    {
+      "eventId": "event-2017q4-wastepaper-import-tightening",
+      "statement": "Imported-waste-paper regulation moved from draft to final implementation while domestic waste-paper and packaging-paper prices were already highly volatile and elevated, potentially redistributing raw-material access toward larger compliant mills.",
+      "changeType": "regulatory_input_access",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-10-23T00:00:00+08:00",
+      "memberItemIds": [
+        "wastepaper-draft-20171023",
+        "paper-price-20171205",
+        "wastepaper-final-20171214"
+      ],
+      "independentOriginGroups": [
+        "wastepaper-draft-20171023",
+        "paper-price-20171205",
+        "wastepaper-final-20171214"
+      ],
+      "affectedValueChain": [
+        "imported recycled fiber",
+        "domestic waste paper",
+        "packaging paper mills",
+        "paper pricing/margins"
+      ],
+      "contradictionSearchNotes": "Tighter import access can help compliant scale leaders relative to peers but can also raise raw-material costs for the whole industry; current paper prices have already risen substantially.",
+      "researchQuestion": "Can deep research verify a relative input-access advantage at a listed mill, and does it survive company balance-sheet/capital-allocation risk under V1.7?"
+    },
+    {
+      "eventId": "event-2017q4-machinery-boom",
+      "statement": "Excavator demand remained extraordinarily strong late in 2017, with November sales +107.4% YoY and Sany's leader share strengthening.",
+      "changeType": "high_frequency_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-12-06T13:23:40+08:00",
+      "memberItemIds": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ],
+      "independentOriginGroups": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ],
+      "affectedValueChain": [
+        "construction/replacement demand",
+        "excavator OEMs",
+        "hydraulic/components",
+        "dealer inventory"
+      ],
+      "contradictionSearchNotes": "The physical cycle is extremely strong but already mature after a full-year boom; deep research must search financing, receivables, dealer/channel and leverage risks as aggressively as unit-growth evidence.",
+      "researchQuestion": "Do leader earnings, cash conversion and valuation still leave a company-specific opportunity after explicit V1.7 adversarial-risk review?"
+    },
+    {
+      "eventId": "event-2017q4-dram-tightness",
+      "statement": "DRAM supply remained tight and contract pricing/revenue kept rising into 4Q17, with limited large-scale capacity additions expected, but the favorable product state was already visible in prices and industry revenue.",
+      "changeType": "product_market_tightness_high_absorption",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-10-12T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-mobile-20171012",
+        "dram-q3-20171113"
+      ],
+      "independentOriginGroups": [
+        "dram-mobile-20171012",
+        "dram-q3-20171113"
+      ],
+      "affectedValueChain": [
+        "DRAM capacity",
+        "memory contract pricing",
+        "server/mobile buyers",
+        "memory supplier earnings"
+      ],
+      "contradictionSearchNotes": "Product economics are strong but already flow-confirmed; A-share mapping must not substitute generic semiconductor names for direct DRAM supplier earnings.",
+      "researchQuestion": "Is there any direct A-share expression with cutoff-valid earnings conversion and residual expectation room, or should the Skill fail closed?"
+    },
+    {
+      "eventId": "event-2017q4-pv-2018-tariff-stepdown",
+      "statement": "NDRC formally cut 2018 PV benchmark tariffs and distributed subsidy levels, creating a known step-down in project revenue while explicitly arguing that technology/cost declines could preserve project attractiveness.",
+      "changeType": "regulated_price_stepdown",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-12-22T00:00:00+08:00",
+      "memberItemIds": [
+        "pv-price-20171222"
+      ],
+      "independentOriginGroups": [
+        "pv-price-20171222"
+      ],
+      "affectedValueChain": [
+        "PV project IRR",
+        "module/wafer demand",
+        "low-cost manufacturers",
+        "developers"
+      ],
+      "contradictionSearchNotes": "The tariff cut is negative in isolation but may be offset by rapid cost decline; deep research must decompose low-cost leaders from high-cost capacity instead of treating the whole PV chain as one direction.",
+      "researchQuestion": "Does any listed company have a verified cost/share engine that makes the 2018 tariff step-down an opportunity rather than a demand-risk event?"
+    },
+    {
+      "eventId": "event-2017q4-steel-winter-curtailment",
+      "statement": "Heating-season environmental controls materially constrained northern steel operating capacity while simultaneously restricting construction activity, creating a supply-demand conflict rather than a simple steel-price bullish signal.",
+      "changeType": "regulated_capacity_contraction_with_demand_offset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-10-11T18:12:00+08:00",
+      "memberItemIds": [
+        "steel-curb-20171011",
+        "steel-physical-20171130"
+      ],
+      "independentOriginGroups": [
+        "steel-curb-20171011",
+        "steel-physical-20171130"
+      ],
+      "affectedValueChain": [
+        "steel operating capacity",
+        "steel prices/margins",
+        "iron ore/coke demand",
+        "construction steel demand"
+      ],
+      "contradictionSearchNotes": "Supply is constrained but construction itself is also restricted; company-specific geography/compliance and product mix can dominate broad steel beta.",
+      "researchQuestion": "Can a listed producer show a verified relative allowed-capacity or margin advantage after decomposing demand offsets and company-specific risk?"
+    }
+  ]
+}
