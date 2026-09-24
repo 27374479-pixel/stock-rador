@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q2-multisource-deep-v1.5-001",
+  "label": "post_outcome_diagnostic_not_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "baseHorizonTradingDays": 60,
+  "v15RouteAssessment": {
+    "usedByAnyPrimary": false,
+    "highPrioritySelectionCount": 0,
+    "conclusion": "not_validated_not_disproven",
+    "interpretation": "The first V1.5 holdout did not produce a single High-priority base_horizon_convexity selection. Therefore this window cannot validate the new promotion route. It does show the route did not automatically promote a heavily absorbed finite-cycle ETC setup when cutoff-valid realized earnings evidence was still insufficient."
+  },
+  "researchSelections": {
+    "hypothesis60d": [
+      {
+        "hypothesisId": "h-2019q2-5g-commercial-license",
+        "netReturn": -0.025120696401014442,
+        "benchmarkExcess": -0.022897237499100553,
+        "assessment": "correctly_blocked_from_primary_and_weak_base_result"
+      },
+      {
+        "hypothesisId": "h-2019q2-etc-national-buildout",
+        "netReturn": 0.8903485051350898,
+        "benchmarkExcess": 0.8925719640370037,
+        "assessment": "very_large_research_false_negative_but_cutoff_primary_evidence_incomplete"
+      },
+      {
+        "hypothesisId": "h-2019q2-pv-policy-restart",
+        "netReturn": 0.053396555499766574,
+        "benchmarkExcess": 0.05562001440168046,
+        "assessment": "direction_right_mixed_expression_quality"
+      },
+      {
+        "hypothesisId": "h-2019q2-pork-scarcity-emergence",
+        "netReturn": 0.21900075592495272,
+        "benchmarkExcess": 0.2212242148268666,
+        "assessment": "early_physical_signal_direction_right_before_realized_earnings"
+      }
+    ],
+    "keyExpressionNotes": [
+      "ETC both frozen direct expressions produced very large 60d excess, but cutoff-valid H1 realized earnings confirmation was not yet available and the direct names had already rerated sharply.",
+      "PV opportunity direction was positive at the basket level: Longi produced positive 60d benchmark excess while Tongwei was negative, reinforcing opportunity-first expression adequacy rather than exact peer ranking.",
+      "5G licensing did not produce positive 60d selected-company excess for ZTE, supporting continued caution on policy triggers without incremental order/earnings confirmation."
+    ]
+  },
+  "noSelectionAudit": {
+    "rareearth": {
+      "basket60dNetReturn": -0.10809771522811977,
+      "benchmarkExcess": -0.10587425632620588,
+      "positiveExcessBreadth": 0,
+      "assessment": "correct_fail_closed_policy_repricing_without_earnings_bridge"
+    },
+    "semiconductorLocalization": {
+      "basket60dNetReturn": 0.674636493055063,
+      "benchmarkExcess": 0.6768599519569768,
+      "positiveExcessBreadth": 1,
+      "assessment": "apparent_miss_requires_corporate_action_decomposition",
+      "diagnosis": "The basket included GigaDevice and Will Semiconductor, both of which had separate pre-cutoff transformative M&A/regulatory catalysts. Treating this as a pure generic-localization miss would be causally wrong."
+    },
+    "memoryDowncycle": {
+      "basket60dNetReturn": 1.074390475349713,
+      "benchmarkExcess": 1.0766139342516268,
+      "positiveExcessBreadth": 1,
+      "assessment": "audit_basket_not_causally_equivalent_to_dram_nand_hypothesis",
+      "diagnosis": "GigaDevice and Beijing Junzheng carried company/product/corporate-action theses distinct from generic DRAM/NAND pricing. This result diagnoses discovery/candidate-unit mismatch, not that falling DRAM/NAND was itself bullish."
+    }
+  },
+  "crossWindowImplications": {
+    "v15BaseHorizonConvexity": "Needs another untouched window because 2019Q2 generated no eligible Primary route case.",
+    "hypothesisGranularity": "Still supported. Product and company-specific causal units must remain separated from broad industry baskets.",
+    "corporateActionDiscovery": "New candidate failure class. Issuer-specific transformative M&A/restructuring events can dominate returns while broad sector fundamentals remain weak.",
+    "antiOverfit": "Do not add GigaDevice, Will Semiconductor, Beijing Junzheng or semiconductor-specific exceptions. If implemented later, the rule must be a generic issuer-event discovery lane."
+  },
+  "versionDecision": {
+    "keepV15Immutable": true,
+    "createV16Now": false,
+    "nextAction": "Run unchanged V1.5 on another untouched historical window before altering promotion rules. Keep the corporate-action blind spot as a separately tracked future discovery candidate.",
+    "reason": "Changing discovery and promotion simultaneously would confound attribution. V1.5's new route remains untested rather than failed."
+  },
+  "prohibitedUses": [
+    "Do not treat the 2019Q2 semiconductor/memory basket returns as proof that negative DRAM/NAND physical data should have been ignored.",
+    "Do not retroactively promote ETC using the July H1 guidance upgrade that was unavailable at the June 30 cutoff.",
+    "Do not add named-stock or named-sector exceptions.",
+    "Do not claim V1.5 is validated from a window with zero Primary selections.",
+    "Do not tune V1.5 using 2019Q2 outcomes."
+  ]
+}
