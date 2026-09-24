@@ -700,11 +700,13 @@ test('v1.6 base-horizon route still requires acceptable downside containment', (
   assert.ok(errors.some((x) => x.includes('requires clear/credible downsideContainment')));
 });
 
-test('v1.6 does not allow base-horizon route under older skill version', () => {
+test('v1.6 does not backport base-horizon route before v1.5', () => {
   const m = baseHorizonMemo();
+  m.skillVersion = '1.4.0';
+  delete m.causalStateVariableTest;
   const oldManifest = manifest();
-  oldManifest.skill.version = '1.5.0';
-  oldManifest.skill.path = 'skills/stock-rador/versions/1.5.0/SKILL.md';
+  oldManifest.skill.version = '1.4.0';
+  oldManifest.skill.path = 'skills/stock-rador/versions/1.4.0/SKILL.md';
   const errors = validateOpportunityMemo(m, 'memo.json', oldManifest);
   assert.ok(errors.some((x) => x.includes('timingRoute is invalid for skill version')));
 });
@@ -720,6 +722,11 @@ function stateLeadMemo(selectionState = 'Research selection') {
     ? '2024-12-31T14:30:00+08:00'
     : null;
   m.timingRoute = selectionState === 'High-priority selection' ? 'sector_confirmed' : 'research_only';
+  if (selectionState === 'No selection') {
+    m.selectionComparison = { selectedTicker: null };
+    m.matchedControls = [];
+    m.acceptableExpressionSet = [];
+  }
   m.causalStateVariableTest = {
     applicable: true,
     systemType: 'inventory_cycle',
@@ -805,6 +812,7 @@ test('v1.6 permits No selection when the upstream state itself is not actionable
   m.actionableAt = null;
   m.acceptableExpressionSet = [];
   m.matchedControls = [];
+  m.selectionComparison = { selectedTicker: null };
   m.causalStateVariableTest = {
     applicable: true,
     systemType: 'capacity_constrained',
