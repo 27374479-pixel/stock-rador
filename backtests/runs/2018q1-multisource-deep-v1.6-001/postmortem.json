@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q1-multisource-deep-v1.6-001",
+  "label": "post_outcome_diagnostic_not_clean_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "version": "1.6.0",
+  "headline": {
+    "conclusion": "v16_research_discovery_and_restraint_strongly_supported",
+    "principle": "Success is defined first by whether the Skill found the right evidence, causal variable, company mapping and counter-evidence under the cutoff—not by maximizing backtest returns."
+  },
+  "primaryAssessment": {
+    "hypothesisId": "h-2018q1-machinery-demand-high-base",
+    "ticker": "600031.SH",
+    "netReturn60d": 0.11332519107355776,
+    "benchmarkExcess60d": 0.2123831868190139,
+    "excessVsBestControl60d": 0.14019379372261953,
+    "winsAllControls60d": true,
+    "assessment": "validated_company_engine_primary",
+    "diagnosis": "Sany combined persistent physical demand, realized earnings, valuation room and company-specific price dislocation. The Primary route produced both absolute and benchmark-relative returns and beat both frozen peers."
+  },
+  "researchAssessment": [
+    {
+      "hypothesisId": "h-2018q1-mlcc-supply-contraction",
+      "assessment": "research_discovery_success_promotion_restraint_defensible",
+      "details": {
+        "fenghua60dExcess": 0.1891356169352526,
+        "torch60dExcess": 0.027324512476337492,
+        "fenghuaWinsControl": true,
+        "torchWinsControl": false
+      },
+      "processDiagnosis": "The upstream capacity contraction and repeated price increases were real and mapped correctly. Expression results were heterogeneous, and Fenghua's strongest Q1 earnings confirmation was not public until April 10. Keeping the March 31 state at Research was therefore defensible even though Fenghua later performed strongly.",
+      "keyLesson": "Research recall can be correct without immediate Primary promotion."
+    },
+    {
+      "hypothesisId": "h-2018q1-cobalt-scarcity-high-absorption",
+      "assessment": "correct_high_absorption_restraint",
+      "details": {
+        "huayou60dExcess": -0.08059613277135136,
+        "hanrui60dExcess": -0.20522671953925908
+      },
+      "processDiagnosis": "Physical scarcity and company earnings were real, but extreme commodity/equity absorption and peak-cycle downside dominated. This validates the Skill's separation of 'true good news' from 'good entry opportunity'."
+    }
+  ],
+  "noSelectionAssessment": [
+    {
+      "hypothesisId": "h-2018q1-iphone-x-demand-cut",
+      "assessment": "correct_fail_closed",
+      "metrics": {
+        "basket20dExcess": -0.08857452216619104,
+        "basket60dExcess": -0.0409663327756804,
+        "basket120dExcess": -0.11225703934756819,
+        "positiveExcessBreadth60": 0.3333333333333333
+      },
+      "diagnosis": "The Skill respected contradictory supplier evidence and heterogeneous exposure instead of over-mapping a reported iPhone-X production cut. The frozen basket subsequently underperformed across all horizons."
+    },
+    {
+      "hypothesisId": "h-2018q1-server-dram-tightness",
+      "assessment": "mapping_discipline_supported",
+      "diagnosis": "The product-level signal was positive, but no direct A-share DRAM supplier with cutoff-valid earnings conversion was frozen. No hindsight proxy substitution."
+    },
+    {
+      "hypothesisId": "h-2018q1-section301-trade-risk",
+      "assessment": "mapping_discipline_supported",
+      "diagnosis": "The macro policy shock was real, but final tariff lists and company earnings exposure were unresolved. No arbitrary winner/loser basket was created."
+    }
+  ],
+  "causalStateVariableAssessment": {
+    "mlcc": {
+      "stateDiscovery": "supported",
+      "causalLagBridge": "supported",
+      "companyMapping": "partially_supported",
+      "immediatePromotion": "not_required",
+      "dynamicReunderwrite": "strong_candidate",
+      "explanation": "V1.6 found productive-capacity contraction before full downstream listed-company earnings recognition, which is exactly the intended generalization from the 2018Q4 hog failure."
+    },
+    "cobalt": {
+      "stateFlowRelation": "aligned",
+      "lesson": "When downstream price/earnings already fully confirm a state and market absorption is extreme, the state variable must not be treated as an early signal."
+    },
+    "overall": "V1.6 state-variable research capability now has a strong independent non-agricultural positive example, but the cleanest success is at Research/discovery level rather than a new automatic promotion route."
+  },
+  "crossWindowInterpretation": {
+    "2018Q4": "Missing breeding-stock capacity showed why upstream state variables matter.",
+    "2018Q3": "PTA/steel showed the state test can continue causal mapping without unsafe promotion.",
+    "2018Q2": "Wastepaper showed positive state discovery can coexist with incomplete adversarial company-risk research; one-sided evidence search remains a separate issue.",
+    "2018Q1": "MLCC independently validates upstream capacity-state discovery, while cobalt and Apple-chain cases validate expectation/contradiction restraint."
+  },
+  "researchCapabilityStatus": {
+    "evidenceDiscovery": "improving_and_independently_supported",
+    "causalReasoning": "supported",
+    "opportunityVsGoodNewsSeparation": "strongly_supported",
+    "companyMapping": "supported_but_still_requires_adversarial_risk_completeness",
+    "dynamicReunderwrite": "not_yet_implemented_but_now_has_clean_test_cases"
+  },
+  "versionDecision": {
+    "keepV16Immutable": true,
+    "createV17From2018Q1": false,
+    "v16Status": "research_discovery_validated_promotion_discipline_supported",
+    "nextAction": "Do not tune V1.6 selection thresholds from 2018Q1. The highest-value next development is a generic research-completeness/re-underwrite framework: prospective Primary candidates need adversarial company-risk search, and Research hypotheses need dated re-underwrite when new evidence resolves a frozen blocker. Develop and validate these separately from return optimization.",
+    "reason": "The cross-window evidence now points to research workflow quality—balanced evidence retrieval and dynamic updating—as the bottleneck, not a need for looser buy thresholds."
+  },
+  "prohibitedInferences": [
+    "Do not retroactively label Fenghua Primary on March 31 using its April 10 Q1 forecast.",
+    "Do not create an MLCC-specific exception or buy rule.",
+    "Do not weaken high-absorption controls because cobalt fundamentals were strong.",
+    "Do not equate product-state correctness with a generic semiconductor stock proxy.",
+    "Do not tune V1.6 on 2018Q1 outcomes."
+  ]
+}
