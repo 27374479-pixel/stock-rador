@@ -1,0 +1,59 @@
+name: freeze-v190-candidate
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.9-fresh-incremental-20260924
+    paths:
+      - .github/workflows/freeze-v190-candidate.yml
+
+permissions:
+  contents: write
+
+jobs:
+  freeze:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.9-fresh-incremental-20260924
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Freeze V1.9 candidate hashes
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'), crypto=require('crypto');
+          const paths=[
+            'skills/stock-rador/versions/1.9.0/SKILL.md',
+            'scripts/backtest-core-v190.cjs',
+            'scripts/lock-skill-run-v190.cjs',
+            'scripts/evaluate-skill-run-v190.cjs',
+            'tests/backtest-core-v190-fresh.test.js'
+          ];
+          const files=paths.map(path=>({
+            path,
+            sha256:crypto.createHash('sha256').update(fs.readFileSync(path)).digest('hex')
+          }));
+          const out={
+            schemaVersion:'1.0',
+            candidateVersion:'1.9.0',
+            parentFrozenVersion:'1.8.0',
+            purpose:'source-linked fresh-incremental escalation candidate; 2017Q2/Q3 may design but not validate',
+            validationWindowsUsedForRuleDesign:['2017Q2','2017Q3'],
+            untouchedValidationWindowsOpenedAfterThisLock:[],
+            files
+          };
+          fs.writeFileSync('skills/stock-rador/versions/1.9.0/CANDIDATE_LOCK.json',JSON.stringify(out,null,2)+'\n');
+          NODE
+      - name: Commit candidate lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add skills/stock-rador/versions/1.9.0/CANDIDATE_LOCK.json
+          git commit -m "skill: freeze v1.9 candidate before untouched validation"
+          git pull --rebase origin ai-skill-v1.9-fresh-incremental-20260924
+          git push origin HEAD:ai-skill-v1.9-fresh-incremental-20260924
