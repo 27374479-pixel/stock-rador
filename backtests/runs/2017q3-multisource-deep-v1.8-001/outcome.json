@@ -1,0 +1,1171 @@
+{
+  "schemaVersion": "1.1",
+  "evaluatorVersion": "1.8-company-exception-recall",
+  "runId": "2017q3-multisource-deep-v1.8-001",
+  "evaluatedAt": "2026-09-24T13:50:16.738Z",
+  "frozenLockSha256": "9c1494e0e42c586c42a836e2530648f540880f67b4493bc2090f97e6d01be88b",
+  "priceSource": {
+    "provider": "Tencent public daily hfq + raw kline",
+    "fetchedAt": "2026-09-24T13:50:11.321Z",
+    "path": "backtests/runs/2017q3-multisource-deep-v1.8-001/prices.json"
+  },
+  "hypothesisMemoSummary": {
+    "count": 6,
+    "highPriorityHypothesisCount": 4,
+    "researchHypothesisCount": 2,
+    "noSelectionCount": 2,
+    "researchSelectionCount": 3,
+    "highPrioritySelectionCount": 1,
+    "rows": [
+      {
+        "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-aluminum-capacity-vs-inventory.json",
+        "hypothesisId": "h-2017q3-aluminum-capacity-vs-inventory",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-rareearth-rally-reversal.json",
+        "hypothesisId": "h-2017q3-rareearth-rally-reversal",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-lithium-nev-tightness.json",
+        "hypothesisId": "h-2017q3-lithium-nev-tightness",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-machinery-boom.json",
+        "hypothesisId": "h-2017q3-machinery-boom",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "High-priority selection",
+        "actionableAt": "2017-09-29T15:00:00+08:00"
+      },
+      {
+        "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-pv-leader-bifurcation.json",
+        "hypothesisId": "h-2017q3-pv-leader-bifurcation",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-dram-tightness.json",
+        "hypothesisId": "h-2017q3-dram-tightness",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      }
+    ]
+  },
+  "results": [
+    {
+      "hypothesisId": "h-2017q3-machinery-boom",
+      "ticker": "600031.SH",
+      "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-machinery-boom.json",
+      "state": "High-priority selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "High-priority selection",
+      "selectionComparison": {
+        "selectedTicker": "600031.SH",
+        "pairwise": [
+          {
+            "controlTicker": "601100.SH",
+            "selectedAdvantages": [
+              "much stronger cash conversion",
+              "direct OEM leader share",
+              "lower frozen valuation burden"
+            ],
+            "selectedDisadvantages": [
+              "Hengli has faster component revenue/profit growth"
+            ],
+            "evidenceRefs": [
+              "sany-h1-20170830",
+              "hengli-h1-20170815",
+              "sany-expectations-20170904"
+            ],
+            "switchCondition": "Prefer Hengli if its cash conversion and financing quality improve enough to offset the valuation/quality gap.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "000157.SZ",
+            "selectedAdvantages": [
+              "explicit leading share",
+              "strong realized profit and cash conversion"
+            ],
+            "selectedDisadvantages": [
+              "same mature-cycle exposure"
+            ],
+            "evidenceRefs": [
+              "sany-h1-20170830",
+              "excavator-aug-20170911"
+            ],
+            "switchCondition": "Prefer Zhonglian only if cutoff-valid company earnings/quality become independently superior.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "Sany is not selected because the sector is strong; it is selected because the company engine is strong while its own price and sector breadth are weak."
+      },
+      "isPrimarySignal": true,
+      "researchReadyAt": "2017-09-29T15:00:00+08:00",
+      "actionableAt": "2017-09-29T15:00:00+08:00",
+      "entryAnchorAt": "2017-09-29T15:00:00+08:00",
+      "entryDate": "2017-10-09",
+      "entryAdjustedOpen": 331.953,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "August physical demand, H1 realized company engine and a contemporaneous earnings/valuation baseline give a 60d window to test whether Sany's de-rated equity catches up with fundamentals."
+      },
+      "matchedControls": [
+        {
+          "ticker": "601100.SH",
+          "name": "恒立液压",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct hydraulic-component exposure to the same excavator cycle.",
+          "whySelectedCompanyShouldOutperform": "Sany has vastly stronger absolute cash conversion and a cheaper contemporaneous 2018E valuation burden while both share the same physical demand.",
+          "evidenceRefs": [
+            "sany-h1-20170830",
+            "hengli-h1-20170815",
+            "sany-expectations-20170904",
+            "regime-machinery-20170930"
+          ]
+        },
+        {
+          "ticker": "000157.SZ",
+          "name": "中联重科",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct large-OEM peer exposed to the same demand cycle.",
+          "whySelectedCompanyShouldOutperform": "Sany has cutoff-valid leading excavator share plus stronger realized earnings/cash evidence.",
+          "evidenceRefs": [
+            "sany-h1-20170830",
+            "excavator-aug-20170911",
+            "regime-machinery-20170930"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.009150326797385588
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-11-03",
+          "netReturn": 0.016413532875200865,
+          "benchmarkReturn": 0.021122167918549595,
+          "excessReturn": -0.00470863504334873,
+          "matchedControlBasketReturn": 0.099158602742967,
+          "matchedControlExcess": -0.08274506986776614,
+          "bestControlTicker": "601100.SH",
+          "bestControlReturn": 0.21213835313824747,
+          "excessVsBestControl": -0.1957248202630466,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "601100.SH",
+              "controlType": "peer",
+              "netReturn": 0.21213835313824747
+            },
+            {
+              "ticker": "000157.SZ",
+              "controlType": "peer",
+              "netReturn": -0.013821147652313459
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.051650069444054036,
+            "peakDate": "2017-10-26",
+            "troughDate": "2017-11-02"
+          }
+        },
+        "60": {
+          "exitDate": "2017-12-29",
+          "netReturn": 0.15564249760054616,
+          "benchmarkReturn": 0.030878926679811958,
+          "excessReturn": 0.1247635709207342,
+          "matchedControlBasketReturn": 0.23338939678773424,
+          "matchedControlExcess": -0.07774689918718808,
+          "bestControlTicker": "601100.SH",
+          "bestControlReturn": 0.48059994122778193,
+          "excessVsBestControl": -0.3249574436272358,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "601100.SH",
+              "controlType": "peer",
+              "netReturn": 0.48059994122778193
+            },
+            {
+              "ticker": "000157.SZ",
+              "controlType": "peer",
+              "netReturn": -0.013821147652313459
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.08916645094486142,
+            "peakDate": "2017-11-29",
+            "troughDate": "2017-12-20"
+          }
+        },
+        "120": {
+          "exitDate": "2018-04-02",
+          "netReturn": 0.05093365753459245,
+          "benchmarkReturn": -0.0059307794409876324,
+          "excessReturn": 0.05686443697558008,
+          "matchedControlBasketReturn": 0.30146255330930233,
+          "matchedControlExcess": -0.2505288957747099,
+          "bestControlTicker": "601100.SH",
+          "bestControlReturn": 0.6572888056874953,
+          "excessVsBestControl": -0.6063551481529028,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "601100.SH",
+              "controlType": "peer",
+              "netReturn": 0.6572888056874953
+            },
+            {
+              "ticker": "000157.SZ",
+              "controlType": "peer",
+              "netReturn": -0.0543636990688906
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.1934870373892298,
+            "peakDate": "2018-01-08",
+            "troughDate": "2018-03-28"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-12-29",
+        "netReturn": 0.15564249760054616,
+        "benchmarkReturn": 0.030878926679811958,
+        "excessReturn": 0.1247635709207342,
+        "matchedControlBasketReturn": 0.23338939678773424,
+        "matchedControlExcess": -0.07774689918718808,
+        "bestControlTicker": "601100.SH",
+        "bestControlReturn": 0.48059994122778193,
+        "excessVsBestControl": -0.3249574436272358,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 3,
+        "rankPercentile": 0.5,
+        "controlReturns": [
+          {
+            "ticker": "601100.SH",
+            "controlType": "peer",
+            "netReturn": 0.48059994122778193
+          },
+          {
+            "ticker": "000157.SZ",
+            "controlType": "peer",
+            "netReturn": -0.013821147652313459
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.08916645094486142,
+          "peakDate": "2017-11-29",
+          "troughDate": "2017-12-20"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q3-aluminum-capacity-vs-inventory",
+      "ticker": "600219.SH",
+      "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-aluminum-capacity-vs-inventory.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "600219.SH",
+        "pairwise": [
+          {
+            "controlTicker": "000933.SZ",
+            "selectedAdvantages": [
+              "high-value product mix",
+              "integrated chain",
+              "positive operating cash flow"
+            ],
+            "selectedDisadvantages": [
+              "less pure commodity upside than a smelter"
+            ],
+            "evidenceRefs": [
+              "nanshan-h1-20170826",
+              "regime-aluminum-20170930"
+            ],
+            "switchCondition": "Prefer a broad-cycle peer only if it demonstrates superior cutoff-valid legal capacity/cost and earnings quality.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "mixed",
+        "rationale": "Nanshan is preferred for lower absorption and product differentiation, but Yunlu remains an acceptable Research expression; no Primary ranking claim is made."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2017-09-29T15:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2017-09-29T15:00:00+08:00",
+      "entryDate": "2017-10-09",
+      "entryAdjustedOpen": 23.06,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Capacity removal is real and may differentiate compliant low-cost producers over a quarter, but high inventory and large prior aluminum-equity rerating make the timing/expectation gap unresolved."
+      },
+      "matchedControls": [
+        {
+          "ticker": "000933.SZ",
+          "name": "神火股份",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Broad aluminum-cycle peer in the same frozen regime basket.",
+          "whySelectedCompanyShouldOutperform": "Nanshan/Yunlu have explicit product/cost heterogeneity rather than only generic aluminum beta.",
+          "evidenceRefs": [
+            "nanshan-h1-20170826",
+            "yunlu-h1-20170828",
+            "regime-aluminum-20170930"
+          ]
+        }
+      ],
+      "matchedControlException": "Research-only memo uses one broad-cycle control; the purpose is recall of company exceptions rather than a Primary ranking.",
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.012531328320801949
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-11-03",
+          "netReturn": -0.0474404173450137,
+          "benchmarkReturn": 0.021122167918549595,
+          "excessReturn": -0.06856258526356329,
+          "matchedControlBasketReturn": -0.19080806828944485,
+          "matchedControlExcess": 0.14336765094443116,
+          "bestControlTicker": "000933.SZ",
+          "bestControlReturn": -0.19080806828944485,
+          "excessVsBestControl": 0.14336765094443116,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "000933.SZ",
+              "controlType": "peer",
+              "netReturn": -0.19080806828944485
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.0474404173450137,
+            "peakDate": "entry",
+            "troughDate": "2017-11-03"
+          }
+        },
+        "60": {
+          "exitDate": "2017-12-29",
+          "netReturn": -0.07989928545002245,
+          "benchmarkReturn": 0.030878926679811958,
+          "excessReturn": -0.11077821212983441,
+          "matchedControlBasketReturn": -0.11702843745791836,
+          "matchedControlExcess": 0.037129152007895905,
+          "bestControlTicker": "000933.SZ",
+          "bestControlReturn": -0.11702843745791836,
+          "excessVsBestControl": 0.037129152007895905,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "000933.SZ",
+              "controlType": "peer",
+              "netReturn": -0.11702843745791836
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.11884992717603282,
+            "peakDate": "entry",
+            "troughDate": "2017-12-21"
+          }
+        },
+        "120": {
+          "exitDate": "2018-04-02",
+          "netReturn": -0.18593158792638398,
+          "benchmarkReturn": -0.0059307794409876324,
+          "excessReturn": -0.18000080848539635,
+          "matchedControlBasketReturn": -0.3209150664558712,
+          "matchedControlExcess": 0.13498347852948722,
+          "bestControlTicker": "000933.SZ",
+          "bestControlReturn": -0.3209150664558712,
+          "excessVsBestControl": 0.13498347852948722,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "000933.SZ",
+              "controlType": "peer",
+              "netReturn": -0.3209150664558712
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.20757083332972315,
+            "peakDate": "entry",
+            "troughDate": "2018-02-09"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-12-29",
+        "netReturn": -0.07989928545002245,
+        "benchmarkReturn": 0.030878926679811958,
+        "excessReturn": -0.11077821212983441,
+        "matchedControlBasketReturn": -0.11702843745791836,
+        "matchedControlExcess": 0.037129152007895905,
+        "bestControlTicker": "000933.SZ",
+        "bestControlReturn": -0.11702843745791836,
+        "excessVsBestControl": 0.037129152007895905,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 2,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "000933.SZ",
+            "controlType": "peer",
+            "netReturn": -0.11702843745791836
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.11884992717603282,
+          "peakDate": "entry",
+          "troughDate": "2017-12-21"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q3-lithium-nev-tightness",
+      "ticker": "002466.SZ",
+      "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-lithium-nev-tightness.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "002466.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "002460.SZ",
+            "selectedAdvantages": [
+              "positive operating cash flow",
+              "lower frozen price absorption",
+              "direct upstream resource exposure"
+            ],
+            "selectedDisadvantages": [
+              "slower reported profit growth"
+            ],
+            "evidenceRefs": [
+              "tianqi-h1-20170818",
+              "ganfeng-h1-20170902",
+              "regime-lithium-20170930"
+            ],
+            "switchCondition": "Prefer Ganfeng only if its cash conversion normalizes enough to justify the much higher absorption.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "mixed",
+        "rationale": "Tianqi is the cleaner Research expression, but the whole lithium trade is too absorbed for Primary."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2017-09-29T15:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2017-09-29T15:00:00+08:00",
+      "entryDate": "2017-10-09",
+      "entryAdjustedOpen": 408.628,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "NEV demand and lithium pricing can remain strong for another quarter, but the listed basket already had extreme 60d rerating and producers were announcing supply expansion."
+      },
+      "matchedControls": [
+        {
+          "ticker": "002460.SZ",
+          "name": "赣锋锂业",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct lithium peer exposed to the same price/demand cycle.",
+          "whySelectedCompanyShouldOutperform": "Tianqi has cleaner H1 cash conversion and substantially lower 60d price absorption, even though Ganfeng's accounting growth is faster.",
+          "evidenceRefs": [
+            "tianqi-h1-20170818",
+            "ganfeng-h1-20170902",
+            "regime-lithium-20170930"
+          ]
+        }
+      ],
+      "matchedControlException": "Research-only memo uses one close direct lithium peer; no Primary ranking claim is made.",
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.015222649025465884
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-11-03",
+          "netReturn": 0.055496748814387376,
+          "benchmarkReturn": 0.021122167918549595,
+          "excessReturn": 0.03437458089583778,
+          "matchedControlBasketReturn": -0.01571559853802984,
+          "matchedControlExcess": 0.07121234735241722,
+          "bestControlTicker": "002460.SZ",
+          "bestControlReturn": -0.01571559853802984,
+          "excessVsBestControl": 0.07121234735241722,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002460.SZ",
+              "controlType": "peer",
+              "netReturn": -0.01571559853802984
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.06840235099923597,
+            "peakDate": "entry",
+            "troughDate": "2017-10-18"
+          }
+        },
+        "60": {
+          "exitDate": "2017-12-29",
+          "netReturn": -0.16751186155387532,
+          "benchmarkReturn": 0.030878926679811958,
+          "excessReturn": -0.19839078823368728,
+          "matchedControlBasketReturn": -0.18842238776330067,
+          "matchedControlExcess": 0.02091052620942535,
+          "bestControlTicker": "002460.SZ",
+          "bestControlReturn": -0.18842238776330067,
+          "excessVsBestControl": 0.02091052620942535,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002460.SZ",
+              "controlType": "peer",
+              "netReturn": -0.18842238776330067
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.25788620216988145,
+            "peakDate": "2017-11-08",
+            "troughDate": "2017-12-07"
+          }
+        },
+        "120": {
+          "exitDate": "2018-04-02",
+          "netReturn": -0.09108421459019067,
+          "benchmarkReturn": -0.0059307794409876324,
+          "excessReturn": -0.08515343514920304,
+          "matchedControlBasketReturn": -0.16469769210800633,
+          "matchedControlExcess": 0.07361347751781566,
+          "bestControlTicker": "002460.SZ",
+          "bestControlReturn": -0.16469769210800633,
+          "excessVsBestControl": 0.07361347751781566,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "002460.SZ",
+              "controlType": "peer",
+              "netReturn": -0.16469769210800633
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.29183651528861576,
+            "peakDate": "2017-11-08",
+            "troughDate": "2018-02-06"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-12-29",
+        "netReturn": -0.16751186155387532,
+        "benchmarkReturn": 0.030878926679811958,
+        "excessReturn": -0.19839078823368728,
+        "matchedControlBasketReturn": -0.18842238776330067,
+        "matchedControlExcess": 0.02091052620942535,
+        "bestControlTicker": "002460.SZ",
+        "bestControlReturn": -0.18842238776330067,
+        "excessVsBestControl": 0.02091052620942535,
+        "winsAllControls": true,
+        "selectedRank": 1,
+        "matchedSetSize": 2,
+        "rankPercentile": 1,
+        "controlReturns": [
+          {
+            "ticker": "002460.SZ",
+            "controlType": "peer",
+            "netReturn": -0.18842238776330067
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.25788620216988145,
+          "peakDate": "2017-11-08",
+          "troughDate": "2017-12-07"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q3-pv-leader-bifurcation",
+      "ticker": "601012.SH",
+      "memoPath": "backtests/runs/2017q3-multisource-deep-v1.8-001/memos/h-2017q3-pv-leader-bifurcation.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "601012.SH",
+        "pairwise": [
+          {
+            "controlTicker": "600438.SH",
+            "selectedAdvantages": [
+              "direct mono/PERC efficiency-threshold fit",
+              "purer technology mapping"
+            ],
+            "selectedDisadvantages": [
+              "weaker H1 OCF",
+              "heavy capex and working-capital expansion",
+              "very high price absorption"
+            ],
+            "evidenceRefs": [
+              "pv-leader-20170922",
+              "longi-h1-20170830",
+              "tongwei-h1-20170822",
+              "regime-pv-20170930"
+            ],
+            "switchCondition": "Prefer another leader only if it has similar efficiency/cost evidence with lower financing and expectation burden.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "mixed",
+        "rationale": "V1.8 finds a credible company exception, but high absorption and financing/cash risks keep it Research."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2017-09-29T15:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2017-09-29T15:00:00+08:00",
+      "entryDate": "2017-10-09",
+      "entryAdjustedOpen": 161.529,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Higher efficiency thresholds can favor mono/PERC leaders over a quarter, but lower tariff bidding and an extreme broad PV rerating leave entry asymmetry unresolved."
+      },
+      "matchedControls": [
+        {
+          "ticker": "600438.SH",
+          "name": "通威股份",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large PV manufacturing peer with strong earnings and expansion risk.",
+          "whySelectedCompanyShouldOutperform": "Longi has the clearer direct mono/PERC efficiency-threshold match, though both are highly absorbed.",
+          "evidenceRefs": [
+            "longi-h1-20170830",
+            "tongwei-h1-20170822",
+            "pv-leader-20170922",
+            "regime-pv-20170930"
+          ]
+        }
+      ],
+      "matchedControlException": "Research-only memo uses one representative PV manufacturing peer; no Primary ranking claim is made.",
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.0071258907363420665
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-11-03",
+          "netReturn": 0.0740713143439593,
+          "benchmarkReturn": 0.021122167918549595,
+          "excessReturn": 0.05294914642540971,
+          "matchedControlBasketReturn": 0.000988537646891885,
+          "matchedControlExcess": 0.07308277669706742,
+          "bestControlTicker": "600438.SH",
+          "bestControlReturn": 0.000988537646891885,
+          "excessVsBestControl": 0.07308277669706742,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "600438.SH",
+              "controlType": "peer",
+              "netReturn": 0.000988537646891885
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.07338169130474692,
+            "peakDate": "2017-10-09",
+            "troughDate": "2017-10-16"
+          }
+        },
+        "60": {
+          "exitDate": "2017-12-29",
+          "netReturn": 0.22354084820886477,
+          "benchmarkReturn": 0.030878926679811958,
+          "excessReturn": 0.19266192152905282,
+          "matchedControlBasketReturn": 0.2578309471077551,
+          "matchedControlExcess": -0.03429009889889034,
+          "bestControlTicker": "600438.SH",
+          "bestControlReturn": 0.2578309471077551,
+          "excessVsBestControl": -0.03429009889889034,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 2,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "600438.SH",
+              "controlType": "peer",
+              "netReturn": 0.2578309471077551
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.24217353290443822,
+            "peakDate": "2017-11-21",
+            "troughDate": "2017-11-30"
+          }
+        },
+        "120": {
+          "exitDate": "2018-04-02",
+          "netReturn": 0.1434678836383796,
+          "benchmarkReturn": -0.0059307794409876324,
+          "excessReturn": 0.14939866307936722,
+          "matchedControlBasketReturn": 0.11149050450796105,
+          "matchedControlExcess": 0.03197737913041854,
+          "bestControlTicker": "600438.SH",
+          "bestControlReturn": 0.11149050450796105,
+          "excessVsBestControl": 0.03197737913041854,
+          "winsAllControls": true,
+          "selectedRank": 1,
+          "matchedSetSize": 2,
+          "rankPercentile": 1,
+          "controlReturns": [
+            {
+              "ticker": "600438.SH",
+              "controlType": "peer",
+              "netReturn": 0.11149050450796105
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.26519293758400664,
+            "peakDate": "2017-11-21",
+            "troughDate": "2018-02-09"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-12-29",
+        "netReturn": 0.22354084820886477,
+        "benchmarkReturn": 0.030878926679811958,
+        "excessReturn": 0.19266192152905282,
+        "matchedControlBasketReturn": 0.2578309471077551,
+        "matchedControlExcess": -0.03429009889889034,
+        "bestControlTicker": "600438.SH",
+        "bestControlReturn": 0.2578309471077551,
+        "excessVsBestControl": -0.03429009889889034,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 2,
+        "rankPercentile": 0,
+        "controlReturns": [
+          {
+            "ticker": "600438.SH",
+            "controlType": "peer",
+            "netReturn": 0.2578309471077551
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.24217353290443822,
+          "peakDate": "2017-11-21",
+          "troughDate": "2017-11-30"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "tickerLevel": {
+      "20": {
+        "count": 4,
+        "meanNetReturn": 0.024635294672133462,
+        "medianNetReturn": 0.03595514084479412,
+        "meanExcessReturn": 0.0035131267535838673,
+        "medianExcessReturn": 0.014832972926244525,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.75,
+        "matchedControlCount": 4,
+        "meanMatchedControlExcess": 0.05122942628153741,
+        "medianMatchedControlExcess": 0.07214756202474232,
+        "matchedControlHitRate": 0.75,
+        "bestControlCount": 4,
+        "meanExcessVsBestControl": 0.022984488682717297,
+        "medianExcessVsBestControl": 0.07214756202474232,
+        "winsAllControlsRate": 0.75,
+        "meanRankPercentile": 0.875,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 4,
+        "meanNetReturn": 0.03294304970137829,
+        "medianNetReturn": 0.037871606075261854,
+        "meanExcessReturn": 0.002064123021566333,
+        "medianExcessReturn": 0.006992679395449897,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.5,
+        "matchedControlCount": 4,
+        "meanMatchedControlExcess": -0.013499329967189291,
+        "medianMatchedControlExcess": -0.006689786344732496,
+        "matchedControlHitRate": 0.5,
+        "bestControlCount": 4,
+        "meanExcessVsBestControl": -0.07530196607720122,
+        "medianExcessVsBestControl": -0.006689786344732496,
+        "winsAllControlsRate": 0.5,
+        "meanRankPercentile": 0.625,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 4,
+        "meanNetReturn": -0.020653565335900653,
+        "medianNetReturn": -0.020075278527799112,
+        "meanExcessReturn": -0.01472278589491302,
+        "medianExcessReturn": -0.01414449908681148,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.5,
+        "matchedControlCount": 4,
+        "meanMatchedControlExcess": -0.002488640149247115,
+        "medianMatchedControlExcess": 0.0527954283241171,
+        "matchedControlHitRate": 0.75,
+        "bestControlCount": 4,
+        "meanExcessVsBestControl": -0.09144520324379535,
+        "medianExcessVsBestControl": 0.0527954283241171,
+        "winsAllControlsRate": 0.75,
+        "meanRankPercentile": 0.875,
+        "blockedEntryCount": 0
+      }
+    },
+    "hypothesisLevel": {
+      "20": {
+        "count": 4,
+        "meanNetReturn": 0.024635294672133462,
+        "medianNetReturn": 0.03595514084479412,
+        "meanExcessReturn": 0.0035131267535838673,
+        "medianExcessReturn": 0.014832972926244525,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.75
+      },
+      "60": {
+        "count": 4,
+        "meanNetReturn": 0.03294304970137829,
+        "medianNetReturn": 0.037871606075261854,
+        "meanExcessReturn": 0.002064123021566333,
+        "medianExcessReturn": 0.006992679395449897,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.5
+      },
+      "120": {
+        "count": 4,
+        "meanNetReturn": -0.020653565335900653,
+        "medianNetReturn": -0.020075278527799112,
+        "meanExcessReturn": -0.01472278589491302,
+        "medianExcessReturn": -0.01414449908681148,
+        "excessHitRate": 0.5,
+        "positiveReturnRate": 0.5
+      }
+    },
+    "primaryTickerLevel": {
+      "20": {
+        "count": 1,
+        "meanNetReturn": 0.016413532875200865,
+        "medianNetReturn": 0.016413532875200865,
+        "meanExcessReturn": -0.00470863504334873,
+        "medianExcessReturn": -0.00470863504334873,
+        "excessHitRate": 0,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 1,
+        "meanMatchedControlExcess": -0.08274506986776614,
+        "medianMatchedControlExcess": -0.08274506986776614,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 1,
+        "meanExcessVsBestControl": -0.1957248202630466,
+        "medianExcessVsBestControl": -0.1957248202630466,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 1,
+        "meanNetReturn": 0.15564249760054616,
+        "medianNetReturn": 0.15564249760054616,
+        "meanExcessReturn": 0.1247635709207342,
+        "medianExcessReturn": 0.1247635709207342,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 1,
+        "meanMatchedControlExcess": -0.07774689918718808,
+        "medianMatchedControlExcess": -0.07774689918718808,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 1,
+        "meanExcessVsBestControl": -0.3249574436272358,
+        "medianExcessVsBestControl": -0.3249574436272358,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 1,
+        "meanNetReturn": 0.05093365753459245,
+        "medianNetReturn": 0.05093365753459245,
+        "meanExcessReturn": 0.05686443697558008,
+        "medianExcessReturn": 0.05686443697558008,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 1,
+        "meanMatchedControlExcess": -0.2505288957747099,
+        "medianMatchedControlExcess": -0.2505288957747099,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 1,
+        "meanExcessVsBestControl": -0.6063551481529028,
+        "medianExcessVsBestControl": -0.6063551481529028,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.5,
+        "blockedEntryCount": 0
+      }
+    },
+    "primaryHypothesisLevel": {
+      "20": {
+        "count": 1,
+        "meanNetReturn": 0.016413532875200865,
+        "medianNetReturn": 0.016413532875200865,
+        "meanExcessReturn": -0.00470863504334873,
+        "medianExcessReturn": -0.00470863504334873,
+        "excessHitRate": 0,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 1,
+        "meanNetReturn": 0.15564249760054616,
+        "medianNetReturn": 0.15564249760054616,
+        "meanExcessReturn": 0.1247635709207342,
+        "medianExcessReturn": 0.1247635709207342,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      },
+      "120": {
+        "count": 1,
+        "meanNetReturn": 0.05093365753459245,
+        "medianNetReturn": 0.05093365753459245,
+        "meanExcessReturn": 0.05686443697558008,
+        "medianExcessReturn": 0.05686443697558008,
+        "excessHitRate": 1,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryThesisBase": {
+      "count": 1,
+      "pendingBaseCount": 0,
+      "meanNetReturn": 0.15564249760054616,
+      "medianNetReturn": 0.15564249760054616,
+      "meanExcessReturn": 0.1247635709207342,
+      "medianExcessReturn": 0.1247635709207342,
+      "excessHitRate": 1,
+      "matchedControlCount": 1,
+      "meanMatchedControlExcess": -0.07774689918718808,
+      "medianMatchedControlExcess": -0.07774689918718808,
+      "matchedControlHitRate": 0,
+      "bestControlCount": 1,
+      "meanExcessVsBestControl": -0.3249574436272358,
+      "medianExcessVsBestControl": -0.3249574436272358,
+      "winsAllControlsRate": 0,
+      "meanRankPercentile": 0.5
+    },
+    "opportunityFirstBase": {
+      "count": 1,
+      "directionCaptureRate": 1,
+      "positiveBasketRate": 1,
+      "meanOpportunityExcessReturn": 0.1247635709207342,
+      "medianOpportunityExcessReturn": 0.1247635709207342
+    }
+  },
+  "hypothesisResults": [
+    {
+      "hypothesisId": "h-2017q3-machinery-boom",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.016413532875200865,
+          "excessReturn": -0.00470863504334873
+        },
+        "60": {
+          "netReturn": 0.15564249760054616,
+          "excessReturn": 0.1247635709207342
+        },
+        "120": {
+          "netReturn": 0.05093365753459245,
+          "excessReturn": 0.05686443697558008
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q3-aluminum-capacity-vs-inventory",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": -0.0474404173450137,
+          "excessReturn": -0.06856258526356329
+        },
+        "60": {
+          "netReturn": -0.07989928545002245,
+          "excessReturn": -0.11077821212983441
+        },
+        "120": {
+          "netReturn": -0.18593158792638398,
+          "excessReturn": -0.18000080848539635
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q3-lithium-nev-tightness",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.055496748814387376,
+          "excessReturn": 0.03437458089583778
+        },
+        "60": {
+          "netReturn": -0.16751186155387532,
+          "excessReturn": -0.19839078823368728
+        },
+        "120": {
+          "netReturn": -0.09108421459019067,
+          "excessReturn": -0.08515343514920304
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q3-pv-leader-bifurcation",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.0740713143439593,
+          "excessReturn": 0.05294914642540971
+        },
+        "60": {
+          "netReturn": 0.22354084820886477,
+          "excessReturn": 0.19266192152905282
+        },
+        "120": {
+          "netReturn": 0.1434678836383796,
+          "excessReturn": 0.14939866307936722
+        }
+      }
+    }
+  ],
+  "primaryHypothesisResults": [
+    {
+      "hypothesisId": "h-2017q3-machinery-boom",
+      "states": [
+        "High-priority selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "High-priority selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.016413532875200865,
+          "excessReturn": -0.00470863504334873
+        },
+        "60": {
+          "netReturn": 0.15564249760054616,
+          "excessReturn": 0.1247635709207342
+        },
+        "120": {
+          "netReturn": 0.05093365753459245,
+          "excessReturn": 0.05686443697558008
+        }
+      }
+    }
+  ]
+}
