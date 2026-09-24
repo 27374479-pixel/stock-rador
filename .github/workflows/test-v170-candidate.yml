@@ -1,0 +1,25 @@
+name: test-v170-candidate
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.7-adversarial-risk-20260924
+    paths:
+      - .github/workflows/test-v170-candidate.yml
+      - skills/stock-rador/versions/1.7.0/SKILL.md
+      - scripts/backtest-core-v170.cjs
+      - scripts/lock-skill-run-v170.cjs
+      - scripts/evaluate-skill-run-v170.cjs
+      - tests/backtest-core-v170.test.js
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.7-adversarial-risk-20260924
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
