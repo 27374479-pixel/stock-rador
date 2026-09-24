@@ -1,0 +1,262 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.8.0",
+  "cutoffAt": "2017-09-30T23:59:59+08:00",
+  "researchReadyAt": "2017-09-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q3-dram-tightness",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Global DRAM tightness can persist, but no cutoff-valid A-share company maps directly to current commodity-DRAM supplier earnings and domestic semiconductor proxies are already rerated."
+  },
+  "changeHypothesis": {
+    "summary": "Global DRAM pricing and supplier revenue remained strong into Q3, but obvious A-share memory names were NOR/SLC NAND/smart-chip exposures rather than current commodity-DRAM suppliers.",
+    "firstCredibleDate": "2017-08-31",
+    "valueChain": [
+      "DRAM capacity",
+      "contract price",
+      "global DRAM suppliers",
+      "server/mobile buyers",
+      "domestic memory proxies"
+    ],
+    "persistenceReason": "Capacity additions and process migrations take time, so global tightness can persist.",
+    "disconfirmingEvidence": [
+      "GigaDevice filing describes NOR Flash and SLC NAND rather than material commodity DRAM supply.",
+      "Unigroup does not provide a verified current commodity-DRAM earnings bridge.",
+      "Frozen domestic proxy basket was +27.91pp 60d excess and GigaDevice alone +49.85pp."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-q3-20170831",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Global DRAM revenue/pricing remained strong in Q3."
+    },
+    {
+      "id": "server-dram-20170929",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Server DRAM pricing remained elevated at quarter-end."
+    },
+    {
+      "id": "giga-h1-20170828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "GigaDevice is a memory name but its current product exposure is NOR/SLC NAND, not commodity DRAM."
+    },
+    {
+      "id": "unigroup-h1-20170822",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Another A-share memory proxy lacks a direct current commodity-DRAM earnings bridge."
+    },
+    {
+      "id": "regime-dram-20170930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Domestic memory/semiconductor proxy equities were already strongly rerated."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [
+      "global DRAM manufacturers"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "memory buyers unable to pass through higher prices"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "wafer capacity",
+      "process migration"
+    ],
+    "falseThemeMatches": [
+      "A-share memory/semiconductor names without current commodity-DRAM supplier earnings"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No direct current A-share DRAM supplier survives causal mapping; proxy substitution remains prohibited."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Frozen DRAM proxy basket was +11.84pp 20d and +27.91pp 60d excess; GigaDevice was +32.01pp 20d and +49.85pp 60d.",
+    "thesisExpectation": "Preserve the global DRAM product signal but fail closed on A-share equity mapping.",
+    "measurableGap": "No direct listed-company current earnings gap is measurable.",
+    "evidenceRefs": [
+      "dram-q3-20170831",
+      "server-dram-20170929",
+      "giga-h1-20170828",
+      "unigroup-h1-20170822",
+      "regime-dram-20170930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "global commodity/server/mobile DRAM",
+    "geographicScope": "global suppliers with China demand",
+    "customerScope": "server/mobile OEM and data-center buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate current global DRAM supply from domestic Flash/IC proxy narratives.",
+    "evidenceRefs": [
+      "dram-q3-20170831",
+      "server-dram-20170929",
+      "giga-h1-20170828",
+      "unigroup-h1-20170822",
+      "regime-dram-20170930"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "DRAM pricing and supplier revenue are rising",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "capacity remains constrained",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "future capacity/process response eventually normalizes tightness",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep the product signal but require direct current listed supplier earnings before selection.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "Domestic proxies do not map to current commodity-DRAM supplier earnings.",
+    "evidenceRefs": [
+      "giga-h1-20170828",
+      "unigroup-h1-20170822",
+      "regime-dram-20170930"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "DRAM supply headroom relative to demand",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines DRAM supplier pricing power",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "DRAM contract price/supplier revenue",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "No product-level contradiction; the blocker is listed-company mapping.",
+      "evidenceRefs": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Tight supply already translates to price/revenue.",
+      "evidenceRefs": [
+        "dram-q3-20170831",
+        "server-dram-20170929"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "insufficient",
+      "rationale": "A-share proxies lack current DRAM supplier earnings.",
+      "evidenceRefs": [
+        "giga-h1-20170828",
+        "unigroup-h1-20170822"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [
+      "No direct current A-share commodity-DRAM supplier.",
+      "Domestic proxies are other memory/IC exposures.",
+      "Proxy equities are already strongly rerated."
+    ],
+    "falsifier": "A direct listed current DRAM supplier with cutoff-valid material earnings is identified.",
+    "conclusion": "no_actionable_state_edge"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "valid_global_product_state_without_direct_a_share_expression",
+    "constraints": [
+      "no direct exposure",
+      "proxy substitution risk",
+      "high thematic absorption"
+    ]
+  },
+  "bearCase": "The DRAM thesis is right globally, but buying unrelated domestic memory proxies is a causally wrong and already crowded expression.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct listed DRAM supplier exposure",
+      "observationMethod": "company product/revenue filing",
+      "threshold": "verified current material commodity-DRAM earnings bridge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve product signal but do not substitute Flash/IC proxies for DRAM supplier earnings."
+  ],
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  }
+}
