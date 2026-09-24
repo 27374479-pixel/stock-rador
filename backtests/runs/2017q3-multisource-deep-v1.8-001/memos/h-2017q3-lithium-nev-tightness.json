@@ -1,0 +1,648 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.8.0",
+  "cutoffAt": "2017-09-30T23:59:59+08:00",
+  "researchReadyAt": "2017-09-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q3-lithium-nev-tightness",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "NEV demand and lithium pricing can remain strong for another quarter, but the listed basket already had extreme 60d rerating and producers were announcing supply expansion."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002466.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Tianqi has upstream resource exposure, H1 profit +23.7% and operating cash flow +28.5%, with much cleaner cash conversion and far lower frozen 60d absorption than Ganfeng.",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919",
+        "tianqi-h1-20170818",
+        "ganfeng-h1-20170902",
+        "regime-lithium-20170930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "NEV sales accelerated sharply and battery-grade lithium carbonate continued rising, but the equity market had already strongly rerated lithium names and producers were actively expanding capacity.",
+    "firstCredibleDate": "2017-09-14",
+    "valueChain": [
+      "NEV demand",
+      "battery demand",
+      "lithium carbonate/ore balance",
+      "resource producer volume/price",
+      "earnings/cash"
+    ],
+    "persistenceReason": "Resource supply additions take time while NEV demand is growing rapidly, but announced capacity creates a later normalization path.",
+    "disconfirmingEvidence": [
+      "Lithium basket had about +41.5pp 60d excess.",
+      "Ganfeng had about +72.7pp 60d excess.",
+      "Capacity expansion announcements were already widespread.",
+      "Ganfeng H1 operating cash flow turned materially negative despite +118% profit growth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nev-aug-20170914",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "August NEV demand accelerated sharply."
+    },
+    {
+      "id": "lithium-tight-20170919",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Lithium carbonate pricing remained tight but supply expansion was already being announced."
+    },
+    {
+      "id": "tianqi-h1-20170818",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Tianqi had direct resource exposure and positive operating-cash conversion."
+    },
+    {
+      "id": "ganfeng-h1-20170902",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Ganfeng grew faster but cash conversion deteriorated sharply."
+    },
+    {
+      "id": "regime-lithium-20170930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Lithium equities were already highly rerated by cutoff."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "NEV volume growth",
+      "to": "battery lithium demand",
+      "mechanism": "Higher BEV/NEV production raises cathode and lithium demand.",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ],
+      "failureMode": "subsidy/demand slowdown",
+      "lag": "weeks"
+    },
+    {
+      "from": "tight lithium balance",
+      "to": "Tianqi earnings/cash",
+      "mechanism": "Resource ownership and lithium product volumes/pricing translate into producer earnings and cash.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ],
+      "failureMode": "new supply or price correction",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost lithium resource producers"
+    ],
+    "secondOrderWinners": [
+      "battery materials if able to pass costs"
+    ],
+    "losers": [
+      "high-cost converters when raw material outruns pass-through"
+    ],
+    "substitutes": [
+      "alternative battery chemistries over longer horizons"
+    ],
+    "bottlenecks": [
+      "resource supply",
+      "conversion capacity",
+      "NEV demand"
+    ],
+    "falseThemeMatches": [
+      "battery names without direct lithium economics"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002466.SZ",
+      "name": "天齐锂业",
+      "verifiedExposure": "Direct lithium-resource/product exposure with positive H1 profit and operating cash flow.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit RMB924m and OCF RMB1.17bn.",
+        "favorable": "Lithium price/volume stay tight into Q4.",
+        "adverse": "Supply expansion or price normalization."
+      },
+      "principalRisks": [
+        "commodity absorption",
+        "new supply",
+        "cycle"
+      ]
+    },
+    {
+      "ticker": "002460.SZ",
+      "name": "赣锋锂业",
+      "verifiedExposure": "Direct lithium-product exposure with faster H1 profit growth but negative operating cash flow.",
+      "evidenceRefs": [
+        "ganfeng-h1-20170902"
+      ],
+      "earningsSensitivity": {
+        "base": "High accounting growth.",
+        "favorable": "Pricing and volume remain strong.",
+        "adverse": "Cash conversion and high absorption unwind."
+      },
+      "principalRisks": [
+        "cash conversion",
+        "high absorption",
+        "expansion"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002460.SZ",
+      "name": "赣锋锂业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct lithium peer exposed to the same price/demand cycle.",
+      "whySelectedCompanyShouldOutperform": "Tianqi has cleaner H1 cash conversion and substantially lower 60d price absorption, even though Ganfeng's accounting growth is faster.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818",
+        "ganfeng-h1-20170902",
+        "regime-lithium-20170930"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only memo uses one close direct lithium peer; no Primary ranking claim is made.",
+  "selectionComparison": {
+    "selectedTicker": "002466.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002460.SZ",
+        "selectedAdvantages": [
+          "positive operating cash flow",
+          "lower frozen price absorption",
+          "direct upstream resource exposure"
+        ],
+        "selectedDisadvantages": [
+          "slower reported profit growth"
+        ],
+        "evidenceRefs": [
+          "tianqi-h1-20170818",
+          "ganfeng-h1-20170902",
+          "regime-lithium-20170930"
+        ],
+        "switchCondition": "Prefer Ganfeng only if its cash conversion normalizes enough to justify the much higher absorption.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Tianqi is the cleaner Research expression, but the whole lithium trade is too absorbed for Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Lithium basket was +4.28pp excess over 20d and +41.51pp over 60d with 100% positive 60d breadth; Ganfeng alone was +72.69pp 60d excess.",
+    "thesisExpectation": "Near-term lithium tightness and NEV growth can sustain Tianqi earnings, but much of the commodity story is already priced.",
+    "measurableGap": "Tianqi's cleaner cash and lower absorption preserve research value, not a sufficiently asymmetric Primary entry.",
+    "evidenceRefs": [
+      "nev-aug-20170914",
+      "lithium-tight-20170919",
+      "tianqi-h1-20170818",
+      "regime-lithium-20170930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen price absorption plus realized earnings/cash and supply-response risk.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Broad lithium equities already price sustained NEV/lithium tightness.",
+    "thesisScenario": "Demand remains strong and near-term resource tightness persists, allowing Tianqi profit/cash to continue.",
+    "breakevenCondition": "Earnings must beat an already bullish market path without relying on further rerating.",
+    "ordinaryScenarioFailure": "New supply or policy/demand normalization causes lithium price and margins to peak.",
+    "catalystOrTimingBridge": "Q3 results and lithium/NEV monthly data arrive within the base horizon.",
+    "evidenceRefs": [
+      "nev-aug-20170914",
+      "lithium-tight-20170919",
+      "tianqi-h1-20170818",
+      "regime-lithium-20170930"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "NEV sales and lithium price are both accelerating.",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Tianqi has positive realized H1 profit and OCF.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Multiple lithium names show strong fundamentals and full positive 60d breadth.",
+      "evidenceRefs": [
+        "ganfeng-h1-20170902",
+        "regime-lithium-20170930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "mixed",
+      "rationale": "No clean forward consensus gap is frozen beyond the known tightness narrative.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818",
+        "regime-lithium-20170930"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "60d sector excess +41.5pp and Ganfeng +72.7pp indicate a crowded narrative.",
+      "evidenceRefs": [
+        "regime-lithium-20170930"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen lithium basket versus CSI300",
+      "lookback20Excess": 0.04276299822722022,
+      "lookback60Excess": 0.4150604765366639,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-lithium-20170930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "NEV units and lithium pricing are accelerating.",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Tianqi and Ganfeng both report strong earnings, although cash quality differs.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818",
+        "ganfeng-h1-20170902"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Resource supply additions take time, but eventual expansion is visible.",
+      "evidenceRefs": [
+        "lithium-tight-20170919"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The 60d rerating is already extreme.",
+      "evidenceRefs": [
+        "regime-lithium-20170930"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Fundamentals are favorable, but high absorption blocks Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002466.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Tianqi has positive H1 operating cash flow and direct resource exposure.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Tightness can persist near term but market expectations are already high.",
+      "evidenceRefs": [
+        "lithium-tight-20170919",
+        "regime-lithium-20170930"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Price absorption is high even if Tianqi is less extreme than Ganfeng.",
+      "evidenceRefs": [
+        "regime-lithium-20170930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q3 and monthly lithium/NEV data arrive quickly.",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Cash quality helps, but commodity normalization can dominate.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818",
+        "regime-lithium-20170930"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002460.SZ",
+        "revisionAdvantage": "Ganfeng has faster profit growth; Tianqi has cleaner cash quality.",
+        "valuationAdvantage": "Tianqi has much lower frozen 60d absorption.",
+        "qualityTradeoff": "Tianqi operating cash flow is positive while Ganfeng is negative.",
+        "catalystAdvantage": "Both share the same lithium/NEV catalysts.",
+        "downsideTradeoff": "Tianqi has less crowded price geometry and better cash conversion.",
+        "switchCondition": "Switch only if Ganfeng cash conversion normalizes enough to justify higher absorption.",
+        "evidenceRefs": [
+          "tianqi-h1-20170818",
+          "ganfeng-h1-20170902",
+          "regime-lithium-20170930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Battery-grade lithium price continues rising on NEV demand and near-term supply constraints.",
+    "earningsMechanism": "Upstream resource/product exposure converts lithium price and volume into producer earnings; Tianqi already shows positive cash realization.",
+    "nextObservableMetric": "lithium carbonate price, Q3 sales/profit/OCF and NEV monthly volume",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "nev-aug-20170914",
+      "lithium-tight-20170919",
+      "tianqi-h1-20170818"
+    ],
+    "failureCondition": "Lithium price or company cash conversion turns down as new supply arrives."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Tight lithium and strong NEV demand are known.",
+      "nextPeriod": "Market already expects strong producer earnings.",
+      "laterPeriod": "Capacity expansion should normalize tightness.",
+      "rationale": "Do not extrapolate spot tightness indefinitely.",
+      "evidenceRefs": [
+        "lithium-tight-20170919",
+        "regime-lithium-20170930"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Tianqi cash-backed earnings can persist.",
+      "nextPeriodChange": "Resource exposure may beat generic battery proxies.",
+      "laterPeriodChange": "Supply response limits duration.",
+      "mechanism": "Cleaner resource/cash expression within an already strong commodity cycle.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818",
+        "ganfeng-h1-20170902"
+      ]
+    },
+    "pathShape": "cyclical_normalization",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Tianqi's cleaner cash gives relative quality, but not enough unpriced upside for Primary.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818",
+        "regime-lithium-20170930"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Supply expansion can normalize a highly priced cycle.",
+      "evidenceRefs": [
+        "lithium-tight-20170919",
+        "regime-lithium-20170930"
+      ]
+    },
+    "falsifier": "Lithium price/cash conversion turns down as capacity comes online.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "lithium resource/product tightness under NEV demand growth",
+    "geographicScope": "China/global lithium supply into China battery demand",
+    "customerScope": "battery/cathode producers and NEV chain",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate clean upstream cash conversion from generic battery/lithium momentum.",
+    "evidenceRefs": [
+      "nev-aug-20170914",
+      "lithium-tight-20170919",
+      "tianqi-h1-20170818",
+      "ganfeng-h1-20170902"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "NEV demand and lithium price rising",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "resource tightness and producer earnings",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "announced supply expansion eventually normalizes the cycle",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "lithium-tight-20170919"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Retain Research until high price absorption clears or earnings reset higher than the market baseline.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Tianqi fundamentals align with the sector; the blocker is absorption, not causal validity.",
+    "evidenceRefs": [
+      "tianqi-h1-20170818",
+      "regime-lithium-20170930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "August NEV and September lithium price data are fresh but reinforce an existing narrative.",
+      "evidenceRefs": [
+        "nev-aug-20170914",
+        "lithium-tight-20170919"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Tianqi H1 earnings/cash are realized.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Tianqi guided positive 1-9M profit growth, but no large unpriced reset is frozen.",
+      "evidenceRefs": [
+        "tianqi-h1-20170818"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Resource tightness can persist near term but supply expansion limits duration.",
+      "evidenceRefs": [
+        "lithium-tight-20170919"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No earnings/cash surprise beyond the already-priced lithium tightness.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002466.SZ",
+    "purestTicker": "002466.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Tianqi is preferred for cleaner cash and lower absorption, not thematic purity alone.",
+    "earningsQualityComparison": "Tianqi has positive OCF while Ganfeng H1 OCF is negative.",
+    "downsideComparison": "Tianqi is less absorbed but remains commodity-cyclical.",
+    "evidenceRefs": [
+      "tianqi-h1-20170818",
+      "ganfeng-h1-20170902",
+      "regime-lithium-20170930"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Positive H1 OCF supports current liquidity quality.",
+        "evidenceRefs": [
+          "tianqi-h1-20170818"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Resource/capacity expansion creates capital-allocation and cycle risk.",
+        "evidenceRefs": [
+          "tianqi-h1-20170818",
+          "lithium-tight-20170919"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event was identified in the reviewed filing.",
+        "evidenceRefs": [
+          "tianqi-h1-20170818"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Commodity expansion requires capital and can increase financing burden if prices normalize.",
+        "evidenceRefs": [
+          "tianqi-h1-20170818",
+          "lithium-tight-20170919"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The lithium tightness thesis is right but already crowded; supply expansion and mean reversion can overwhelm even a high-quality producer.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Lithium price or Tianqi cash conversion weakens while capacity expands.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: direct resource economics and clean cash survive, but high sector absorption and supply-response risk block Primary.",
+    "alreadyPricedAssessment": "lithium_tightness_highly_absorbed",
+    "constraints": [
+      "high price absorption",
+      "commodity cycle",
+      "new capacity"
+    ]
+  },
+  "bearCase": "The market has already capitalized lithium scarcity; new supply and price normalization cause a rapid de-rating.",
+  "invalidationConditions": [
+    {
+      "indicator": "lithium price and Tianqi OCF",
+      "observationMethod": "industry price/company filing",
+      "threshold": "price rolls over or OCF materially decouples from profit"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Tianqi as Research; require a fresh earnings reset or materially lower expectation burden before Primary."
+  ],
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  }
+}
