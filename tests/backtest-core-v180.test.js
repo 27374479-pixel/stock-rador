@@ -923,7 +923,7 @@ test('v1.8 requires an adversarialEvidenceTest on every selected memo', () => {
   const m = baseMemo();
   delete m.adversarialEvidenceTest;
   const errors = validateOpportunityMemo(m, 'memo.json', manifest());
-  assert.ok(errors.some((x) => x.includes('v1.8 selected memo requires adversarialEvidenceTest')));
+  assert.ok(errors.some((x) => x.includes('selected memo requires adversarialEvidenceTest')));
 });
 
 test('v1.8 Primary requires complete adversarial search', () => {
@@ -1092,6 +1092,8 @@ test('v1.8 allows a conflicted aggregate to continue as Research when a credible
   m.selectionState = 'Research selection';
   m.hypothesisState = 'High-priority hypothesis';
   m.timingRoute = 'research_only';
+  m.evidenceHorizonMatrix.conclusion = 'decomposed';
+  m.evidenceHorizonMatrix.resolutionRule = 'The aggregate conflict is resolved into a company-specific exception path; the company remains Research pending full underwriting.';
   m.acceptableExpressionSet = [{
     ticker: '000004.SZ', role: 'preferred', directExposure: 'clear', earningsConversion: 'credible',
     balanceSheetOrSurvival: 'pass', expectationFit: 'mixed', downsideContainment: 'mixed',
