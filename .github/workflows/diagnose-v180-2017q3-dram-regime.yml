@@ -1,0 +1,29 @@
+name: diagnose-v180-2017q3-dram-regime
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.8-2017q3-holdout-20260924
+    paths:
+      - .github/workflows/diagnose-v180-2017q3-dram-regime.yml
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Count cutoff-valid Tencent hfq rows
+        run: |
+          node - <<'NODE'
+          for (const [t, q] of [['603986.SH','sh603986'],['002049.SZ','sz002049'],['300223.SZ','sz300223'],['300327.SZ','sz300327'],['600584.SH','sh600584']]) {
+            const u = 'https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=' + q + ',day,2017-05-01,2017-09-30,300,hfq';
+            const r = await fetch(u);
+            const j = await r.json();
+            const v = Object.values(j.data || {})[0] || {};
+            const rows = v.hfqday || v.day || [];
+            console.log(t, rows.length, rows[0]?.[0], rows.at(-1)?.[0]);
+          }
+          NODE
