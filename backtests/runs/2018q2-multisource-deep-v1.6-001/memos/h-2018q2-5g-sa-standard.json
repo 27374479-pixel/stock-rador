@@ -1,0 +1,173 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-06-30T23:59:59+08:00",
+  "researchReadyAt": "2018-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q2-5g-sa-standard",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Technical standardization can enable deployment over quarters, but no base-horizon supplier earnings bridge is frozen."
+  },
+  "changeHypothesis": {
+    "summary": "Completion of the 5G standalone standard removed a technical dependency and enabled further testing, but operator commercial capex/orders remained a separate later step. Supplier equities were adverse and no direct earnings bridge was frozen.",
+    "firstCredibleDate": "2018-06-15",
+    "valueChain": [
+      "technical standard",
+      "equipment testing",
+      "operator capex/orders",
+      "supplier earnings"
+    ],
+    "persistenceReason": "5G deployment is structural, but standards completion precedes commercial spending and supplier revenue by multiple stages.",
+    "disconfirmingEvidence": [
+      "5G supplier basket was -3.59pp 20d and -9.65pp 60d excess, with zero 60d positive breadth.",
+      "No cutoff-valid order/revenue bridge is frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "5g-sa-20180615",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-5g-20180630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the required earnings-conversion, expectation and downside gates."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "5G supplier basket was adverse over both lookbacks despite the standard milestone.",
+    "thesisExpectation": "Require operator capex/orders and supplier earnings conversion rather than buying standardization beta.",
+    "measurableGap": "No company-level earnings gap is measurable.",
+    "evidenceRefs": [
+      "5g-sa-20180615",
+      "regime-5g-20180630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "5G standalone network equipment/testing before commercial capex",
+    "geographicScope": "China/global standard",
+    "customerScope": "telecom operators",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate technical-standard completion from later commercial orders.",
+    "evidenceRefs": [
+      "5g-sa-20180615"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "standard enables testing but not revenue",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "5g-sa-20180615"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "orders depend on operator testing/capex decisions",
+      "horizon": "next 60-120 trading days",
+      "evidenceRefs": [
+        "5g-sa-20180615"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "5G commercialization is multi-year",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "5g-sa-20180615"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not translate a structural technical milestone directly into supplier earnings.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No company order/earnings engine is frozen.",
+    "evidenceRefs": [
+      "regime-5g-20180630"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "structural_milestone_without_earnings_bridge",
+    "constraints": [
+      "no operator order bridge",
+      "adverse supplier price regime"
+    ]
+  },
+  "bearCase": "Equity investors price the technical milestone long before commercial supplier revenue materializes.",
+  "invalidationConditions": [
+    {
+      "indicator": "operator capex/orders",
+      "observationMethod": "operator/company disclosures",
+      "threshold": "no direct order conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; wait for commercial order and earnings evidence."
+  ]
+}
