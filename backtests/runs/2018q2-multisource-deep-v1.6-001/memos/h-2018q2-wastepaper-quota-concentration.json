@@ -1,0 +1,831 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-06-30T23:59:59+08:00",
+  "researchReadyAt": "2018-06-30T15:00:00+08:00",
+  "actionableAt": "2018-06-30T15:00:00+08:00",
+  "hypothesisId": "h-2018q2-wastepaper-quota-concentration",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Quota concentration is an upstream cost state that can affect packaging-paper margins over multiple procurement/inventory cycles; Q2/H1 results and subsequent quota/price data are observable within 60d."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "company_engine_override",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600567.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "realized",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "clear",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Shanying had a large share of import-waste-paper quota, an estimated >RMB500/t imported-vs-domestic fiber cost gap, Q1 revenue +60.6% and profit +39.9%, and a ~7x 2018E PE. The company was mechanically early-turning while the broader wastepaper basket remained weak over 60d.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508",
+        "shanying-quota-margin-20180412",
+        "shanying-q1-20180412",
+        "shanying-valuation-20180615",
+        "regime-wastepaper-20180630"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Tighter imported-waste-paper standards and sharply lower national quota volumes created an industry-wide recycled-fiber shortage, but quota became concentrated in leaders. For quota-rich Shanying, imported-fiber access became a relative raw-material cost advantage before sector-wide paper margins and stock prices fully reflected the difference.",
+    "firstCredibleDate": "2018-04-12",
+    "valueChain": [
+      "import standard/quota",
+      "imported recycled-fiber access",
+      "raw-material cost gap",
+      "packaging-paper margin",
+      "company earnings/cash flow"
+    ],
+    "persistenceReason": "Import standards and quota concentration are regulatory/operational states that can persist across multiple procurement cycles; the advantage lasts while imported fiber remains cheaper and quota access stays concentrated.",
+    "disconfirmingEvidence": [
+      "Industry-wide domestic waste-paper prices were rising sharply and could still pressure all packaging-paper producers.",
+      "Shanying Q1 operating cash flow remained slightly negative despite large improvement.",
+      "The broader paper basket was weak over 60d, so the thesis requires company-specific divergence rather than sector momentum."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "mee-wastepaper-standard-20180301",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Imported-waste-paper standards tightened and made access more compliance-sensitive."
+    },
+    {
+      "id": "paper-quota-20180422",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "National quota fell sharply while Shanying held a material share."
+    },
+    {
+      "id": "paper-cost-gap-20180508",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Quota concentration created a relative raw-material cost advantage for leaders."
+    },
+    {
+      "id": "shanying-quota-margin-20180412",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Imported waste paper was estimated >RMB500/t cheaper than domestic waste paper and Shanying had large quota access."
+    },
+    {
+      "id": "shanying-q1-20180412",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Shanying had already realized strong Q1 revenue/profit growth."
+    },
+    {
+      "id": "shanying-valuation-20180615",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Forward valuation was low relative to sector while forecast earnings remained positive."
+    },
+    {
+      "id": "paper-leader-valuation-20180528",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Independent research corroborated quota concentration, low valuation and leader cost advantage."
+    },
+    {
+      "id": "jingxing-q1-20180428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "A lower-quota peer explicitly reported gross-margin pressure from higher-priced domestic waste paper."
+    },
+    {
+      "id": "regime-wastepaper-20180630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Broad paper price regime was neutral while Shanying showed an early-turn pattern."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "tighter import standards and quota contraction",
+      "to": "relative imported-fiber access",
+      "mechanism": "Total imported recycled-fiber quota fell sharply and allocation concentrated in a few large groups.",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508"
+      ],
+      "failureMode": "quota policy loosens broadly or imported-vs-domestic cost gap closes",
+      "lag": "weeks"
+    },
+    {
+      "from": "relative imported-fiber access",
+      "to": "Shanying raw-material cost advantage",
+      "mechanism": "Imported waste paper was estimated >RMB500/t cheaper than domestic waste paper; quota-rich mills can substitute a larger low-cost fiber share while quota-poor peers rely on expensive domestic OCC.",
+      "evidenceRefs": [
+        "shanying-quota-margin-20180412",
+        "jingxing-q1-20180428"
+      ],
+      "failureMode": "logistics/quality costs erase the gap or domestic OCC falls sharply",
+      "lag": "procurement cycle"
+    },
+    {
+      "from": "raw-material cost advantage",
+      "to": "relative margin/earnings resilience",
+      "mechanism": "Packaging-paper pricing may be industry-wide, but lower fiber cost preserves gross margin and earnings relative to quota-poor peers.",
+      "evidenceRefs": [
+        "shanying-q1-20180412",
+        "jingxing-q1-20180428",
+        "shanying-valuation-20180615"
+      ],
+      "failureMode": "downstream demand weakens enough to overwhelm the cost advantage",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "quota-rich packaging-paper leaders"
+    ],
+    "secondOrderWinners": [
+      "downstream customers if stable leader supply limits paper-price spikes"
+    ],
+    "losers": [
+      "quota-poor mills reliant on higher-cost domestic waste paper"
+    ],
+    "substitutes": [
+      "domestic OCC",
+      "virgin fiber"
+    ],
+    "bottlenecks": [
+      "import quota",
+      "foreign-waste quality compliance",
+      "domestic OCC availability"
+    ],
+    "falseThemeMatches": [
+      "paper companies without packaging-paper/recycled-fiber exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600567.SH",
+      "name": "山鹰纸业",
+      "verifiedExposure": "Packaging-paper leader with large import-waste-paper quota and direct recycled-fiber cost exposure.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "shanying-quota-margin-20180412",
+        "shanying-q1-20180412"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue +60.6%, attributable profit +39.9%; 2018E EPS RMB0.57 and about 7x PE in mid-June.",
+        "favorable": "Quota concentration and >RMB500/t imported-fiber discount persist, supporting relative margins.",
+        "adverse": "Domestic OCC costs or downstream weakness overwhelm the quota advantage."
+      },
+      "principalRisks": [
+        "paper-demand cyclicality",
+        "raw-material volatility",
+        "Q1 operating cash flow still negative"
+      ]
+    },
+    {
+      "ticker": "002067.SZ",
+      "name": "景兴纸业",
+      "verifiedExposure": "Packaging-paper peer with explicit Q1 evidence that quota constraints forced more expensive domestic-waste-paper use.",
+      "evidenceRefs": [
+        "jingxing-q1-20180428",
+        "regime-wastepaper-20180630"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 margin pressured by high domestic waste-paper costs; H1 profit guidance ranged -15.3% to +5.9%.",
+        "favorable": "Domestic OCC prices fall or quota access improves.",
+        "adverse": "Quota disadvantage persists."
+      },
+      "principalRisks": [
+        "relative raw-material disadvantage"
+      ]
+    },
+    {
+      "ticker": "600308.SH",
+      "name": "华泰股份",
+      "verifiedExposure": "Paper-sector control in the frozen wastepaper basket.",
+      "evidenceRefs": [
+        "regime-wastepaper-20180630"
+      ],
+      "earningsSensitivity": {
+        "base": "Sector exposure without the same frozen quota-cost bridge.",
+        "favorable": "Paper pricing improves broadly.",
+        "adverse": "Fiber costs and demand weaken margins."
+      },
+      "principalRisks": [
+        "less direct frozen quota evidence"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002067.SZ",
+      "name": "景兴纸业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct recycled-packaging-paper peer facing the same domestic OCC and import-quota environment.",
+      "whySelectedCompanyShouldOutperform": "Shanying has materially stronger quota access, explicit imported-fiber cost advantage, stronger Q1 earnings and much stronger current earnings guidance/valuation support.",
+      "evidenceRefs": [
+        "shanying-quota-margin-20180412",
+        "shanying-q1-20180412",
+        "jingxing-q1-20180428",
+        "shanying-valuation-20180615"
+      ]
+    },
+    {
+      "ticker": "600308.SH",
+      "name": "华泰股份",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Frozen paper-sector expression exposed to the same macro/paper-price environment.",
+      "whySelectedCompanyShouldOutperform": "Shanying has the specific quota/access state and direct earnings evidence rather than generic paper beta.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "shanying-q1-20180412",
+        "regime-wastepaper-20180630"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600567.SH",
+    "pairwise": [
+      {
+        "controlTicker": "002067.SZ",
+        "selectedAdvantages": [
+          "large frozen quota share",
+          "explicit >RMB500/t imported-fiber cost gap",
+          "stronger realized Q1 profit growth",
+          "~7x forward PE"
+        ],
+        "selectedDisadvantages": [
+          "operating cash flow remained slightly negative"
+        ],
+        "evidenceRefs": [
+          "paper-quota-20180422",
+          "shanying-quota-margin-20180412",
+          "shanying-q1-20180412",
+          "jingxing-q1-20180428",
+          "shanying-valuation-20180615"
+        ],
+        "switchCondition": "Prefer Jingxing only if cutoff-valid quota access or realized margin evidence reverses the raw-material disadvantage.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "600308.SH",
+        "selectedAdvantages": [
+          "specific quota/access engine",
+          "realized company earnings",
+          "measured low valuation"
+        ],
+        "selectedDisadvantages": [
+          "paper demand remains cyclical"
+        ],
+        "evidenceRefs": [
+          "paper-quota-20180422",
+          "shanying-q1-20180412",
+          "shanying-valuation-20180615",
+          "regime-wastepaper-20180630"
+        ],
+        "switchCondition": "Prefer Huatai only if direct cutoff-valid quota/cost/earnings evidence becomes superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "clear",
+    "rationale": "The company difference is not thematic purity: Shanying has a frozen upstream input-access advantage and realized earnings while a peer explicitly reports the opposite raw-material condition."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The wastepaper basket was -7.86pp excess over 60d with zero positive breadth, while Shanying itself had -1.43pp 60d excess but +3.68pp 20d excess, an early-turn company pattern rather than sector-confirmed strength.",
+    "thesisExpectation": "The market still treats packaging paper largely as a squeezed commodity sector, while quota-rich Shanying has a measurable relative input-cost state and realized Q1 earnings that can diverge from quota-poor peers.",
+    "measurableGap": "Two cutoff-valid reports put Shanying around 7.0-7.6x 2018E PE while Q1 profit was already +39.9%; the cost-state advantage was visible but broad sector pricing remained weak.",
+    "evidenceRefs": [
+      "shanying-q1-20180412",
+      "shanying-valuation-20180615",
+      "paper-leader-valuation-20180528",
+      "regime-wastepaper-20180630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cutoff-valid 2018E EPS/PE plus realized Q1 earnings and measured imported-vs-domestic waste-paper cost gap.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Mid/late-May-June reports valued Shanying at roughly 7.0-7.6x 2018E PE despite industry raw-material pressure.",
+    "thesisScenario": "Quota-rich imported-fiber access preserves relative gross margin and lets Shanying deliver the current earnings forecast while quota-poor peers face higher domestic OCC costs.",
+    "breakevenCondition": "The import-fiber cost advantage must remain meaningful through the H1/Q3 procurement cycle and support margins rather than being fully competed away in paper prices.",
+    "ordinaryScenarioFailure": "Domestic OCC prices fall sharply, quota access broadens, or packaging demand weakens enough that the relative input advantage does not translate to earnings.",
+    "catalystOrTimingBridge": "Further quota batches, domestic/import waste-paper price spreads and H1 results are observable inside 60 trading days.",
+    "evidenceRefs": [
+      "paper-quota-20180422",
+      "paper-cost-gap-20180508",
+      "shanying-quota-margin-20180412",
+      "shanying-valuation-20180615"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "A new regulatory input-access regime sharply reduced industry quota while concentrating access in leaders.",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Shanying Q1 revenue rose 60.6% and attributable profit 39.9% despite sector cost pressure.",
+      "evidenceRefs": [
+        "shanying-q1-20180412"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Jingxing explicitly reported the opposite condition—quota limits forced higher-priced domestic waste paper and pressured gross margin.",
+      "evidenceRefs": [
+        "jingxing-q1-20180428",
+        "shanying-quota-margin-20180412"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "June forecasts provide a current earnings baseline that can be tested against the newly concentrated quota/cost state.",
+      "evidenceRefs": [
+        "shanying-valuation-20180615",
+        "paper-leader-valuation-20180528"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Compare the company-specific cost/earnings divergence with a weak 60d sector regime and Shanying's only modest 20d relative turn.",
+      "evidenceRefs": [
+        "regime-wastepaper-20180630",
+        "shanying-valuation-20180615"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen wastepaper basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.010803738553178288,
+      "lookback60Excess": -0.07859832090011325,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-wastepaper-20180630"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Quota concentration and imported-fiber cost advantage persist across procurement cycles rather than a one-day event.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Shanying's earnings path is positive while Jingxing's H1 guidance and margin evidence are weak, confirming company-level divergence rather than broad sector revisions.",
+      "evidenceRefs": [
+        "shanying-q1-20180412",
+        "shanying-valuation-20180615",
+        "jingxing-q1-20180428"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Import standards/quota allocation and raw-material procurement effects persist across multiple quarters unless policy or cost spreads reverse.",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "The company is not being promoted on a mature price rally; the sector's 60d relative regime is still weak.",
+      "evidenceRefs": [
+        "regime-wastepaper-20180630"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Broad timing is neutral, but the selected company's fundamental engine is independently stronger and mechanically early-turning."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600567.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Q1 revenue/profit growth and improving cash burn support an operating quality floor.",
+      "evidenceRefs": [
+        "shanying-q1-20180412"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Quota/access advantage is a company-specific cost state not shared by quota-poor peers and current forecasts remain low-multiple.",
+      "evidenceRefs": [
+        "paper-cost-gap-20180508",
+        "shanying-valuation-20180615",
+        "jingxing-q1-20180428"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Cutoff-valid reports put Shanying around 7.0-7.6x 2018E PE, below the cited sector average.",
+      "evidenceRefs": [
+        "shanying-valuation-20180615",
+        "paper-leader-valuation-20180528"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Quota batches, waste-paper spreads and H1 reporting occur within 60d.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "shanying-valuation-20180615"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low forward PE and already-realized Q1 earnings offset some paper-cycle/raw-material risk, though operating cash flow remained slightly negative.",
+      "evidenceRefs": [
+        "shanying-q1-20180412",
+        "shanying-valuation-20180615"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002067.SZ",
+        "revisionAdvantage": "Shanying has direct quota/cost advantage while Jingxing reported quota-driven cost pressure.",
+        "valuationAdvantage": "Shanying has a measured ~7x forward PE with stronger earnings path.",
+        "qualityTradeoff": "Shanying has stronger Q1 revenue/profit; cash flow is not perfect but Jingxing margin pressure is explicit.",
+        "catalystAdvantage": "Further quota allocations and H1 margins directly test the divergence.",
+        "downsideTradeoff": "Both face paper demand risk, but Shanying's input state and low valuation provide more protection.",
+        "switchCondition": "Switch only if Jingxing gains equivalent quota/cost advantage before reveal.",
+        "evidenceRefs": [
+          "shanying-quota-margin-20180412",
+          "shanying-q1-20180412",
+          "jingxing-q1-20180428",
+          "shanying-valuation-20180615"
+        ],
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "600308.SH",
+        "revisionAdvantage": "Shanying has a specific leading raw-material state and measured forecast support; Huatai only generic paper exposure is frozen.",
+        "valuationAdvantage": "Shanying's low PE is explicitly frozen.",
+        "qualityTradeoff": "Shanying's Q1 earnings conversion is directly evidenced.",
+        "catalystAdvantage": "Quota and fiber-cost spread directly affect Shanying.",
+        "downsideTradeoff": "Generic paper beta lacks the same company-specific state advantage.",
+        "switchCondition": "Switch if Huatai obtains superior cutoff-valid quota/cost/earnings evidence.",
+        "evidenceRefs": [
+          "paper-quota-20180422",
+          "shanying-q1-20180412",
+          "shanying-valuation-20180615",
+          "regime-wastepaper-20180630"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "clear_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "cost",
+    "driverChange": "Imported waste-paper quota shrank sharply industry-wide but concentrated in Shanying and other leaders; imported fiber was estimated >RMB500/t cheaper than domestic waste paper.",
+    "earningsMechanism": "Higher access to cheaper imported recycled fiber lowers Shanying's relative furnish cost and protects packaging-paper gross margin versus quota-poor mills.",
+    "nextObservableMetric": "import quota share, imported-vs-domestic waste-paper spread, Q2/H1 gross margin and profit",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "shanying-quota-margin-20180412",
+      "shanying-q1-20180412",
+      "jingxing-q1-20180428"
+    ],
+    "failureCondition": "Quota advantage disappears, cost gap closes, or H1 margin/profit fails to diverge positively from quota-poor peers."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overrideMode": "fundamental_price_divergence",
+    "realizedEngine": {
+      "conclusion": "clear",
+      "rationale": "Shanying already realized Q1 revenue +60.6% and profit +39.9% while the relative input-cost state is favorable.",
+      "evidenceRefs": [
+        "shanying-q1-20180412",
+        "shanying-quota-margin-20180412"
+      ]
+    },
+    "independentFundamentalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Quota data, cost-gap research and Jingxing's explicit quota-related margin pressure independently confirm the company-level raw-material divergence.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508",
+        "jingxing-q1-20180428"
+      ]
+    },
+    "fundamentalPriceDivergence": {
+      "conclusion": "clear",
+      "rationale": "Shanying has strong earnings/low valuation and a favorable company state while the broader wastepaper basket remains negative over 60d.",
+      "evidenceRefs": [
+        "shanying-q1-20180412",
+        "shanying-valuation-20180615",
+        "regime-wastepaper-20180630"
+      ]
+    },
+    "nextCatalystWithinBase": {
+      "conclusion": "clear",
+      "rationale": "Further quota batches, fiber spreads and H1 results are observable inside 60 trading days.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "shanying-valuation-20180615"
+      ]
+    },
+    "engineHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Import standards/quota concentration and procurement-cost effects can persist across multiple quarters.",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-cost-gap-20180508"
+      ]
+    },
+    "priceWeaknessAttribution": {
+      "conclusion": "non_company_fundamental",
+      "rationale": "The weak 60d sector tape is consistent with industry-wide domestic OCC inflation and packaging-paper margin pressure; Shanying's quota access and Q1 earnings are comparatively stronger rather than deteriorating.",
+      "evidenceRefs": [
+        "shanying-quota-margin-20180412",
+        "jingxing-q1-20180428",
+        "regime-wastepaper-20180630"
+      ]
+    },
+    "companyPriceDislocation": {
+      "selected20Excess": 0.03679345104659859,
+      "selected60Excess": -0.014257792467944452,
+      "conclusion": "early_turn",
+      "evidenceRefs": [
+        "regime-wastepaper-20180630"
+      ]
+    },
+    "falsifier": "Shanying loses relative quota/cost advantage or H1 margins fail to outperform quota-poor peers.",
+    "evidenceRefs": [
+      "paper-quota-20180422",
+      "shanying-q1-20180412",
+      "jingxing-q1-20180428",
+      "regime-wastepaper-20180630"
+    ],
+    "overallConclusion": "clear_override"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q1 earnings are already positive while sector raw-material costs are high.",
+      "nextPeriod": "June forecasts expect 2018/2019 EPS RMB0.57/0.69 at low multiples.",
+      "laterPeriod": "Packaging-paper margins remain cyclical and quota policy can evolve.",
+      "rationale": "Use the current forecast and realized Q1 base, not an assumption of permanent paper-price strength.",
+      "evidenceRefs": [
+        "shanying-q1-20180412",
+        "shanying-valuation-20180615"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Quota concentration should let Shanying source more low-cost imported fiber than quota-poor peers.",
+      "nextPeriodChange": "Relative gross-margin/earnings resilience should become visible in H1/Q3 results.",
+      "laterPeriodChange": "No permanent cost gap is assumed if regulation, quota or OCC spreads normalize.",
+      "mechanism": "Upstream input-access state leads relative margin/earnings flow.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "shanying-quota-margin-20180412",
+        "jingxing-q1-20180428"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "clear",
+      "rationale": "The baseline forecast does not need sector-wide paper-price inflation; the company can win through relative raw-material economics.",
+      "evidenceRefs": [
+        "shanying-valuation-20180615",
+        "paper-cost-gap-20180508"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "The regulatory/input state can last quarters but paper demand and quota policy remain cyclical.",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422"
+      ]
+    },
+    "falsifier": "H1/Q3 margins do not show a relative benefit despite quota access.",
+    "overallConclusion": "clear_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "recycled packaging paper with imported-vs-domestic waste-paper furnish economics",
+    "geographicScope": "China packaging-paper market",
+    "customerScope": "boxboard/corrugated-paper buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo separates industry-wide fiber scarcity from relative quota access at company level.",
+    "evidenceRefs": [
+      "paper-quota-20180422",
+      "shanying-quota-margin-20180412",
+      "jingxing-q1-20180428"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "quota-rich leader has cheaper imported-fiber access while quota-poor peers face domestic OCC pressure",
+      "horizon": "current procurement/Q2 cycle",
+      "evidenceRefs": [
+        "shanying-quota-margin-20180412",
+        "jingxing-q1-20180428"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "quota concentration and cost gap can support H1/Q3 relative margins",
+      "horizon": "next 60-120 trading days",
+      "evidenceRefs": [
+        "paper-cost-gap-20180508",
+        "shanying-valuation-20180615"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "tighter import standards favor scale/compliance, but quota and fiber spreads can change",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Evaluate the quota-rich company engine separately from weak sector-wide raw-material economics; do not require the whole sector price regime to turn first.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Sector-wide fiber scarcity hurts margins, while Shanying has quota/cost access and realized Q1 earnings that differentiate it from Jingxing.",
+    "evidenceRefs": [
+      "shanying-q1-20180412",
+      "jingxing-q1-20180428",
+      "regime-wastepaper-20180630"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "Quota concentration and cost-gap evidence are current and company-specific.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Q1 earnings are realized.",
+      "evidenceRefs": [
+        "shanying-q1-20180412"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "June forecasts remain positive at low valuation.",
+      "evidenceRefs": [
+        "shanying-valuation-20180615"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Input-access regulation can persist across multiple quarters.",
+      "evidenceRefs": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "No relative margin benefit appears by H1/Q3.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600567.SH",
+    "purestTicker": "600567.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preference comes from quota access, earnings and low valuation rather than paper thematic purity.",
+    "earningsQualityComparison": "Shanying's Q1 earnings are stronger than the quota-poor peer's H1 guidance/margin setup.",
+    "downsideComparison": "Low PE and relative input advantage improve downside, although paper demand remains cyclical.",
+    "evidenceRefs": [
+      "shanying-q1-20180412",
+      "jingxing-q1-20180428",
+      "shanying-valuation-20180615"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "imported recycled-fiber quota/access",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "economicRole": "determines how much lower-cost imported waste paper a packaging-paper mill can procure relative to expensive domestic OCC",
+      "adjustmentLag": "weeks to quarter",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508",
+        "shanying-quota-margin-20180412"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "packaging-paper gross margin and reported earnings",
+      "observedDirection": "mixed",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "Industry-wide domestic OCC inflation squeezes current margins, so the relative quota advantage can exist before downstream paper margins visibly diverge.",
+      "evidenceRefs": [
+        "shanying-quota-margin-20180412",
+        "jingxing-q1-20180428",
+        "shanying-q1-20180412"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Raw-material access affects procurement cost first; gross margin and reported H1/Q3 earnings respond after inventory turns and paper shipments.",
+      "evidenceRefs": [
+        "paper-cost-gap-20180508",
+        "shanying-quota-margin-20180412"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "clear",
+      "rationale": "Shanying has large quota access while Jingxing explicitly reports quota-related use of higher-cost domestic waste paper and margin pressure.",
+      "evidenceRefs": [
+        "paper-quota-20180422",
+        "jingxing-q1-20180428"
+      ]
+    },
+    "stateLeadDisposition": "continue_research",
+    "independentBlockers": [],
+    "falsifier": "Quota access/cost gap fails to produce relative margin or earnings resilience by H1/Q3.",
+    "conclusion": "state_leads_flow"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Primary through the pre-existing company-engine override, not through V1.6 itself. V1.6 only ensures the upstream quota/access state is not discarded because current sector margins/prices are mixed.",
+    "alreadyPricedAssessment": "company_engine_underreflected_inside_weak_sector",
+    "constraints": [
+      "paper demand cyclicality",
+      "negative Q1 operating cash flow",
+      "regulatory quota can change"
+    ]
+  },
+  "bearCase": "Industry demand weakens or domestic/import fiber spreads normalize so quickly that quota concentration never produces a durable relative margin advantage.",
+  "invalidationConditions": [
+    {
+      "indicator": "Shanying share of imported-waste-paper quota and imported-vs-domestic cost spread",
+      "observationMethod": "official quota batches/industry price data",
+      "threshold": "relative access or cost advantage disappears"
+    },
+    {
+      "indicator": "H1/Q3 packaging-paper gross margin/profit",
+      "observationMethod": "company filings",
+      "threshold": "fails to show relative resilience despite quota advantage"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Primary is frozen before post-cutoff returns."
+    ]
+  },
+  "unknowns": [
+    "Exact realized imported-fiber mix by mill is not disclosed in the frozen pack; the thesis relies on quota share and observed cost-gap evidence."
+  ],
+  "nextResearchActions": [
+    "Freeze Shanying as Primary via company_engine_override; keep V1.6 causal-state test diagnostic/anti-veto rather than a promotion route."
+  ]
+}
