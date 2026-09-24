@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q4-multisource-deep-v1.5-001",
+  "label": "post_outcome_diagnostic_not_clean_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "version": "1.5.0",
+  "headline": {
+    "conclusion": "v15_selection_discipline_holds_but_discovery_causal_variable_selection_has_a_major_miss",
+    "caveat": "Historical replay remains current-model/search contaminated and is diagnostic rather than clean forward alpha validation."
+  },
+  "primaryResult": {
+    "hypothesisId": "h-2018q4-infra-machinery-late-cycle",
+    "frozenBaseTradingDays": 60,
+    "expressions": [
+      {
+        "ticker": "600031.SH",
+        "netReturn": 0.454549191577549,
+        "excessReturn": 0.13827545580078549,
+        "winsAllControls": true
+      },
+      {
+        "ticker": "601100.SH",
+        "netReturn": 0.6067377417535147,
+        "excessReturn": 0.29046400597675115,
+        "winsAllControls": true
+      }
+    ],
+    "basketNetReturn": 0.5306434666655319,
+    "basketExcessReturn": 0.21436973088876832,
+    "diagnosis": "The mature-cycle machinery thesis remained a valid opportunity because realized earnings/share and low valuation outweighed cycle-age concerns. Both acceptable expressions beat the benchmark and frozen control."
+  },
+  "researchResults": [
+    {
+      "hypothesisId": "h-2018q4-nev-auto-divergence",
+      "ticker": "300750.SZ",
+      "result60d": {
+        "netReturn": 0.14222504767959343,
+        "excessReturn": -0.1740486880971701,
+        "beatFrozenControl": true
+      },
+      "diagnosis": "Research rather than Primary was appropriate. CATL's company engine was real and it beat BYD, but the stock materially lagged the rapidly rising benchmark. Tight valuation and the late-reversal price pattern correctly blocked a strict company-engine override."
+    },
+    {
+      "hypothesisId": "h-2018q4-cement-high-price-profits",
+      "ticker": "600585.SH",
+      "result60d": {
+        "netReturn": 0.3063246475068655,
+        "excessReturn": -0.009949088269898043,
+        "beatFrozenControl": false
+      },
+      "result120d": {
+        "netReturn": 0.4362062949263732,
+        "excessReturn": 0.13124154435711244
+      },
+      "diagnosis": "Low PE and exceptional trailing profits were not enough for a 60d Primary call. The adverse price regime and peak-profit normalization warning were informative; later 120d value realization does not retroactively validate a 60d Primary."
+    }
+  ],
+  "noSelectionAudit": {
+    "fiveG": {
+      "horizon20": {
+        "basketExcessReturn": -0.06668715925555017,
+        "positiveExcessBreadth": 0
+      },
+      "horizon60": {
+        "basketExcessReturn": -0.052511766660191674,
+        "positiveExcessBreadth": 0.3333333333333333
+      },
+      "horizon120": {
+        "basketExcessReturn": -0.07156963872399102,
+        "positiveExcessBreadth": 0.3333333333333333
+      },
+      "assessment": "correct_fail_closed"
+    },
+    "pork": {
+      "horizon20": {
+        "basketExcessReturn": 0.04544147265791687,
+        "positiveExcessBreadth": 1
+      },
+      "horizon60": {
+        "basketExcessReturn": 0.5918767002546416,
+        "positiveExcessBreadth": 1
+      },
+      "horizon120": {
+        "basketExcessReturn": 0.6608208009042408,
+        "positiveExcessBreadth": 1
+      },
+      "assessment": "major_real_miss",
+      "failureClass": "stock_flow_lead_lag_veto_error",
+      "explanation": "Pre-cutoff breeding-sow inventory and ASF spread provided leading capacity evidence that the frozen discovery/source pack omitted, while the process over-weighted temporarily weak spot pork prices."
+    },
+    "dram": "Unauditable without a frozen direct positive A-share DRAM expression; no hindsight proxy substitution.",
+    "privateEnterpriseSupport": "Unauditable because no coherent company subset was frozen."
+  },
+  "crossWindowInterpretation": {
+    "2019Q2": "V1.5 route did not fire; safety held, while corporate-action discovery blind spot was identified.",
+    "2019Q1": "Base-horizon convexity route received first independent mechanism support; short-horizon dye thesis succeeded at its frozen 20d base and decayed later.",
+    "2018Q4": "Normal Primary selection performed strongly, Research restraint on CATL/cement was useful, but pork exposed a different upstream discovery/causal-variable failure."
+  },
+  "versionDecision": {
+    "keepV15SelectionRulesImmutable": true,
+    "v15Status": "selection_and_promotion_rules_receive_additional_support_but_discovery_is_incomplete",
+    "createV16Candidate": true,
+    "v16Scope": "Add a generic causal_state_variable_test / stock-flow lead-lag diagnostic without changing V1.5 promotion thresholds. Do not simultaneously enable the separate corporate-action discovery lane.",
+    "nextValidation": "Freeze V1.6 before running a different untouched window such as 2018Q3. 2018Q4 cannot validate the new state-variable mechanism."
+  },
+  "prohibitedInferences": [
+    "Do not infer that strong equity breadth alone justifies buying a theme.",
+    "Do not add a pork or ASF special case.",
+    "Do not infer the later magnitude of pork-price inflation from the November sow-inventory decline.",
+    "Do not weaken the requirement for company/value-chain expression quality.",
+    "Do not retroactively change the locked 2018Q4 No-selection decision.",
+    "Do not tune V1.6 on 2018Q4 outcomes after implementation."
+  ]
+}
