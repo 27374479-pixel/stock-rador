@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q4-multisource-deep-v1.5-001",
+  "label": "post_outcome_leading_capacity_vs_lagging_price_audit",
+  "samePeriodMayTuneSkill": false,
+  "diagnosticOnly": true,
+  "failureClass": "leading_capacity_vs_lagging_price_blind_spot",
+  "frozenDecision": "No selection",
+  "hypothesisId": "h-2018q4-pork-asf-no-price-confirmation",
+  "outcome": {
+    "basket60dNetReturn": 0.9081504360314051,
+    "basket60dBenchmarkExcess": 0.5918767002546416,
+    "positiveExcessBreadth60": 1,
+    "basket120dNetReturn": 0.9657855514735015,
+    "basket120dBenchmarkExcess": 0.6608208009042408,
+    "positiveExcessBreadth120": 1
+  },
+  "cutoffValidEvidenceMissedByDiscovery": [
+    {
+      "id": "moa-hog-inventory-201811",
+      "publishedAt": "2018-12-14",
+      "source": "农业农村部畜牧兽医局",
+      "url": "https://scs.moa.gov.cn/jcyj/201812/t20181214_6410497.htm",
+      "claim": "November 2018 monitored hog inventory was -0.7% MoM and -2.9% YoY; breeding-sow inventory was -1.3% MoM and -6.9% YoY.",
+      "diagnosticMeaning": "Breeding-sow inventory is a leading production-capacity state variable. A large YoY contraction can precede consumer pork-price inflation by biological production lags."
+    },
+    {
+      "id": "moa-asf-weekly-20181220",
+      "publishedAt": "2018-12-20",
+      "source": "农业农村部",
+      "url": "https://xmsyj.moa.gov.cn/gzdt/201904/t20190429_6287040.htm",
+      "claim": "Additional ASF outbreaks continued to be confirmed in multiple provinces during mid-December.",
+      "diagnosticMeaning": "The supply shock was still propagating rather than clearly resolved at cutoff."
+    },
+    {
+      "id": "moa-asf-weekly-20181227",
+      "publishedAt": "2018-12-27",
+      "source": "农业农村部",
+      "url": "https://xmsyj.moa.gov.cn/gzdt/201904/t20190429_6287053.htm",
+      "claim": "Additional ASF outbreaks were still being confirmed through late December, including in large farms/production regions.",
+      "diagnosticMeaning": "Persistent disease events reinforced the capacity-risk interpretation before the Dec 31 cutoff."
+    }
+  ],
+  "causalDiagnosis": {
+    "observedError": "Discovery treated weak current pork prices as the dominant physical confirmation test and did not freeze breeding-sow/hog inventory as separate leading state variables.",
+    "whyPriceWasLagging": "Accelerated slaughter can temporarily increase near-term supply and depress spot pork prices even while breeding capacity is being destroyed. The biological production cycle means capacity contraction can lead future finished-hog scarcity by months.",
+    "missedCausalChain": [
+      "persistent ASF shock",
+      "breeding-sow / productive-capacity contraction",
+      "future piglet / finished-hog supply contraction",
+      "later pork-price and producer-margin expansion"
+    ],
+    "implication": "For supply shocks, discovery must identify the causal state variable that controls future supply rather than requiring contemporaneous output/spot-price confirmation."
+  },
+  "genericRuleCandidate": {
+    "name": "state_variable_hierarchy_for_supply_shocks",
+    "scope": "Generic across biological, commodity, industrial and capacity-constrained markets.",
+    "rule": "When the hypothesis is a supply contraction, search separately for leading capacity/stock variables, current flow/output variables, and lagging spot-price/margin variables. Do not let a temporarily weak lagging price veto a verified collapse in productive capacity.",
+    "examplesOfStateVariables": [
+      "breeding stock / productive herd",
+      "installed capacity / operating capacity",
+      "inventories / work-in-process",
+      "utilization / shutdowns",
+      "order backlog / lead times",
+      "future supply additions / cancellations"
+    ],
+    "antiOverfit": "Do not promote solely because a capacity variable falls. Selection still requires causal persistence, listed-company exposure, earnings conversion, expectation burden and downside tests."
+  },
+  "versionImplication": {
+    "v15PromotionLogicAtFault": false,
+    "discoveryRecallAtFault": true,
+    "changeV15AfterThisWindow": false,
+    "candidateForFutureVersion": true,
+    "reason": "The relevant leading evidence never entered the frozen source pack, so downstream V1.5 selection logic could not evaluate it. Same-period outcomes cannot validate a new rule."
+  }
+}
