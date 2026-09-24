@@ -1,0 +1,629 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2017-03-31T23:59:59+08:00",
+  "researchReadyAt": "2017-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q1-tio2-price-cycle",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Repeated TiO2 price increases can sustain producer earnings over a quarter, but the upcycle and company rerating were already well established before cutoff."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002601.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Longmang Baili is a direct large TiO2 producer with cost/resource scale and a cutoff-valid 2017 earnings forecast, but Q1 is explicitly a continuation of repeated 2016/2017 price hikes and the stock already had +27.52pp 60d excess.",
+      "evidenceRefs": [
+        "tio2-price-20170221",
+        "tio2-fourth-hike-20170329",
+        "longmang-research-20170124",
+        "regime-tio2-20170331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "TiO2 prices kept rising and Longmang Baili announced a fourth 2017 hike, but the industry upcycle had already been running through 2016. The company economics are valid; the incremental entry question is not.",
+    "firstCredibleDate": "2017-02-21",
+    "valueChain": [
+      "TiO2 supply/environmental constraints",
+      "producer price",
+      "resource/cost position",
+      "producer earnings"
+    ],
+    "persistenceReason": "Supply discipline, exports and low inventories can persist, but repeated hikes are already embedded in market expectations.",
+    "disconfirmingEvidence": [
+      "The event is frozen as continuation.",
+      "Longmang already had +27.52pp 60d excess by cutoff.",
+      "A Jan-24 report already forecast strong 2017 earnings and ~18x PE.",
+      "The fourth 2017 hike is confirmation of an existing cycle rather than a new source-linked reset."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tio2-price-20170221",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "TiO2 pricing continued higher in February."
+    },
+    {
+      "id": "tio2-fourth-hike-20170329",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Longmang announced its fourth 2017 TiO2 price increase."
+    },
+    {
+      "id": "longmang-research-20170124",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Scale/cost advantage, 2017 earnings forecast and valuation were already known before the latest hike."
+    },
+    {
+      "id": "regime-tio2-20170331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Broad TiO2 timing was neutral while Longmang itself was highly rerated over 60d."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "TiO2 supply discipline and repeated hikes",
+      "to": "Longmang realized selling price",
+      "mechanism": "Direct producer price increases can lift unit revenue/margin when demand and costs hold.",
+      "evidenceRefs": [
+        "tio2-price-20170221",
+        "tio2-fourth-hike-20170329"
+      ],
+      "failureMode": "supply returns or downstream resistance reverses price",
+      "lag": "weeks"
+    },
+    {
+      "from": "realized TiO2 price",
+      "to": "company earnings",
+      "mechanism": "Large direct capacity and resource/cost advantages translate the product price cycle into profit.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ],
+      "failureMode": "raw material/integration or demand offsets price gains",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "large low-cost TiO2 producers"
+    ],
+    "secondOrderWinners": [
+      "resource-integrated producers"
+    ],
+    "losers": [
+      "high-cost producers or downstream buyers without pass-through"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "ore/feedstock",
+      "environmental compliance",
+      "inventory"
+    ],
+    "falseThemeMatches": [
+      "chemical names without direct TiO2 earnings"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002601.SZ",
+      "name": "龙蟒佰利",
+      "verifiedExposure": "Direct ~560kt TiO2 producer with resource/cost advantages.",
+      "evidenceRefs": [
+        "longmang-research-20170124",
+        "tio2-fourth-hike-20170329"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong 2017 earnings already forecast.",
+        "favorable": "Repeated price hikes persist.",
+        "adverse": "Price cycle reverses after high absorption."
+      },
+      "principalRisks": [
+        "continuation absorption",
+        "commodity cycle",
+        "integration"
+      ]
+    },
+    {
+      "ticker": "002136.SZ",
+      "name": "安纳达",
+      "verifiedExposure": "Direct TiO2 peer in frozen basket.",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ],
+      "earningsSensitivity": {
+        "base": "Same product-price cycle.",
+        "favorable": "Industry price holds.",
+        "adverse": "cycle reverses."
+      },
+      "principalRisks": [
+        "cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002136.SZ",
+      "name": "安纳达",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct TiO2 producer exposed to the same repeated price-hike cycle.",
+      "whySelectedCompanyShouldOutperform": "Longmang has cutoff-valid scale/resource advantages, but the edge is insufficient for Primary after strong rerating.",
+      "evidenceRefs": [
+        "longmang-research-20170124",
+        "regime-tio2-20170331"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only direct-product comparison.",
+  "selectionComparison": {
+    "selectedTicker": "002601.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002136.SZ",
+        "selectedAdvantages": [
+          "larger scale",
+          "resource/cost advantage",
+          "published earnings forecast"
+        ],
+        "selectedDisadvantages": [
+          "much higher 60d absorption"
+        ],
+        "evidenceRefs": [
+          "longmang-research-20170124",
+          "regime-tio2-20170331"
+        ],
+        "switchCondition": "Prefer the control if its cutoff-valid earnings/valuation quality becomes clearly superior at lower burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Longmang is a strong company expression, but the continuation/absorption burden prevents Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "TiO2 basket was -4.24pp excess over 20d and +8.74pp over 60d. Longmang itself was +4.92pp over 20d and +27.52pp over 60d. A Jan-24 report already forecast ~RMB1.391bn 2017 profit and ~18x PE.",
+    "thesisExpectation": "Repeated price hikes can sustain strong earnings but are not new information under V1.9.",
+    "measurableGap": "No sufficiently fresh expectation gap is frozen to justify escalation.",
+    "evidenceRefs": [
+      "tio2-price-20170221",
+      "tio2-fourth-hike-20170329",
+      "longmang-research-20170124",
+      "regime-tio2-20170331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Contemporaneous ~18x 2017E plus frozen 20/60d absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Strong 2017 profit and the TiO2 price upcycle were already explicitly forecast in January.",
+    "thesisScenario": "Price hikes persist and earnings meet/beat the strong baseline.",
+    "breakevenCondition": "Earnings must exceed an already-bullish baseline without further rerating.",
+    "ordinaryScenarioFailure": "Price/inventory normalizes after repeated hikes.",
+    "catalystOrTimingBridge": "Subsequent price notices and quarterly earnings can confirm, but they would mainly validate a continuation thesis.",
+    "evidenceRefs": [
+      "longmang-research-20170124",
+      "tio2-fourth-hike-20170329",
+      "regime-tio2-20170331"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Price hikes persist, but this is continuation.",
+      "evidenceRefs": [
+        "tio2-price-20170221",
+        "tio2-fourth-hike-20170329"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Company scale/cost and strong forecast are documented.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Direct producer basket has positive 60d breadth but recent divergence.",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "Strong 2017 earnings and valuation were already frozen in January.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Longmang has +27.52pp 60d excess.",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen TiO2 basket versus CSI300",
+      "lookback20Excess": -0.04242816363202021,
+      "lookback60Excess": 0.08742627941826608,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Repeated price increases persist.",
+      "evidenceRefs": [
+        "tio2-price-20170221",
+        "tio2-fourth-hike-20170329"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Producer economics are supported by the industry upcycle.",
+      "evidenceRefs": [
+        "longmang-research-20170124",
+        "regime-tio2-20170331"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "The cycle began in 2016 and persists into 2017.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Repeated hikes and high Longmang absorption indicate mature-cycle risk.",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Real product economics but mature continuation."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002601.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Scale/resource advantages and profitable forecast support quality.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Further hikes can lift earnings, but baseline is already bullish.",
+      "evidenceRefs": [
+        "tio2-fourth-hike-20170329",
+        "longmang-research-20170124"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "~18x 2017E is not extreme but high price absorption limits slack.",
+      "evidenceRefs": [
+        "longmang-research-20170124",
+        "regime-tio2-20170331"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Product-price and quarterly earnings data are near-term.",
+      "evidenceRefs": [
+        "tio2-fourth-hike-20170329"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Scale helps but commodity reversal after repeated hikes can be abrupt.",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002136.SZ",
+        "revisionAdvantage": "Longmang has scale/resource advantages.",
+        "valuationAdvantage": "No decisive edge after absorption.",
+        "qualityTradeoff": "Longmang company evidence is stronger.",
+        "catalystAdvantage": "Direct price notices are observable.",
+        "downsideTradeoff": "Higher absorption raises reversal risk.",
+        "switchCondition": "Switch if peer has clearly better earnings/valuation asymmetry.",
+        "evidenceRefs": [
+          "longmang-research-20170124",
+          "regime-tio2-20170331"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Repeated TiO2 selling-price hikes.",
+    "earningsMechanism": "Direct producer pricing can lift unit margin.",
+    "nextObservableMetric": "TiO2 quotes, company price notices and quarterly gross profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "tio2-price-20170221",
+      "tio2-fourth-hike-20170329",
+      "longmang-research-20170124"
+    ],
+    "failureCondition": "Price or margin reverses."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Strong TiO2 cycle and Longmang earnings were already expected.",
+      "nextPeriod": "Continued price hikes can support forecasts.",
+      "laterPeriod": "Cycle normalization eventually arrives.",
+      "rationale": "Do not relabel repeated hikes as fresh.",
+      "evidenceRefs": [
+        "longmang-research-20170124",
+        "tio2-fourth-hike-20170329"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Further price hikes sustain earnings.",
+      "nextPeriodChange": "Scale/cost advantages can preserve relative margins.",
+      "laterPeriodChange": "No permanent commodity-price assumption.",
+      "mechanism": "Direct product-price conversion.",
+      "evidenceRefs": [
+        "tio2-fourth-hike-20170329",
+        "longmang-research-20170124"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Company can still compound near-term earnings, but without a new source-linked reset.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Mature commodity cycle and high absorption.",
+      "evidenceRefs": [
+        "regime-tio2-20170331"
+      ]
+    },
+    "falsifier": "TiO2 price/margin stops rising.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "TiO2 repeated price-hike cycle",
+    "geographicScope": "China/global export market",
+    "customerScope": "coatings/plastics/paper users",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "A direct product cycle with no need to split by new event.",
+    "evidenceRefs": [
+      "tio2-price-20170221",
+      "tio2-fourth-hike-20170329"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "fourth 2017 price hike",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "tio2-fourth-hike-20170329"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "price-to-margin conversion",
+      "horizon": "60d",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "resource/cost advantages versus commodity normalization",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "longmang-research-20170124",
+        "regime-tio2-20170331"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Remain Research because current economics are strong but novelty/absorption is not sufficient for Primary.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Company and product cycle align; blocker is continuation/expectation burden.",
+    "evidenceRefs": [
+      "longmang-research-20170124",
+      "regime-tio2-20170331"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "insufficient",
+      "rationale": "The fourth hike repeats an existing 2016-17 price cycle.",
+      "evidenceRefs": [
+        "tio2-fourth-hike-20170329",
+        "longmang-research-20170124"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Strong 2017 earnings are forecast with scale/cost support.",
+      "evidenceRefs": [
+        "longmang-research-20170124"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Another hike may lift estimates but baseline was already bullish.",
+      "evidenceRefs": [
+        "tio2-fourth-hike-20170329",
+        "longmang-research-20170124"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Supply/environmental/export supports can persist.",
+      "evidenceRefs": [
+        "tio2-price-20170221"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No additional earnings surprise beyond already priced hikes.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002601.SZ",
+    "purestTicker": "002601.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Direct exposure is excellent but already highly absorbed.",
+    "earningsQualityComparison": "Scale/resource advantage supports quality.",
+    "downsideComparison": "Commodity reversal is the main risk.",
+    "evidenceRefs": [
+      "longmang-research-20170124",
+      "regime-tio2-20170331"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "No cutoff-valid liquidity blocker was identified in the frozen company evidence.",
+        "evidenceRefs": [
+          "longmang-research-20170124"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "The post-combination scale benefit requires successful integration.",
+        "evidenceRefs": [
+          "longmang-research-20170124"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance blocker was identified in the frozen evidence.",
+        "evidenceRefs": [
+          "longmang-research-20170124"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Commodity/integration capital needs remain a caveat.",
+        "evidenceRefs": [
+          "longmang-research-20170124"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The fourth hike is late-cycle confirmation after the company and commodity already rerated.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Product price/margin or estimates stop rising.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: direct earnings conversion is good, but the event is continuation and price/expectation absorption is high.",
+    "alreadyPricedAssessment": "continuation_highly_absorbed",
+    "constraints": [
+      "repeated price hikes",
+      "high 60d absorption",
+      "commodity normalization"
+    ]
+  },
+  "bearCase": "Repeated price hikes are already capitalized and the commodity cycle reverses.",
+  "invalidationConditions": [
+    {
+      "indicator": "TiO2 price/margin",
+      "observationMethod": "industry quotes/company results",
+      "threshold": "price or gross margin rolls over"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Longmang Research; V1.9 escalation prohibited because event novelty is continuation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
