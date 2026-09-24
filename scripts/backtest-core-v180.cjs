@@ -1608,7 +1608,7 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
     const allowedAxisConclusions = ['clear', 'credible_risk', 'material_risk', 'unresolved'];
 
     if (!adversarial || typeof adversarial !== 'object') {
-      errors.push(memoPath + ' v1.7 selected memo requires adversarialEvidenceTest');
+      errors.push(memoPath + ' v1.7+ selected memo requires adversarialEvidenceTest');
     } else {
       if (!['complete', 'partial', 'insufficient'].includes(adversarial.searchCompleteness)) {
         errors.push(memoPath + ' adversarialEvidenceTest.searchCompleteness is invalid');
