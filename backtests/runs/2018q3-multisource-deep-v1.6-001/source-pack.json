@@ -1,0 +1,646 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2018q3-multisource-deep-v1.6-001",
+  "cutoffAt": "2018-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2018Q3 replay built in September 2026 with current model/search weights. Only evidence available by 2018-09-30 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official fiscal/infrastructure, energy and environmental-policy evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected State Council, NDRC/NEA and Tangshan-policy sources; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer operating evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected cutoff-valid H1 issuer reports and contemporaneous research used only after event discovery."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "High-frequency demand, product price, inventory and capacity conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Excavator, battery-installation, silicon and petrochemical-chain evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting and cross-checking.",
+      "coverageStatus": "partial",
+      "limitations": "Selected People's Daily, China Securities Journal/Securities Times and First Financial sources."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist supply/demand and technology-cycle evidence.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce memory evidence and selected industry-chain research."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "statecouncil-effective-investment-20180723",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "李克强主持召开国务院常务会议 部署更好发挥财政金融政策作用等",
+      "publisher": "中国政府网/新华社",
+      "url": "https://app.www.gov.cn/govdata/gov/201807/23/427213/article.html",
+      "publishedAt": "2018-07-23T00:00:00+08:00",
+      "availableAt": "2018-07-23T00:00:00+08:00",
+      "originGroup": "statecouncil-effective-investment-20180723",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The State Council called for a more proactive fiscal stance, targeted rather than flood-style stimulus, and measures to expand effective investment in infrastructure/public-service bottlenecks."
+      ],
+      "entities": [
+        "infrastructure",
+        "effective investment",
+        "fiscal policy"
+      ],
+      "observedChanges": [
+        "policy emphasis shifts toward infrastructure bottleneck investment and domestic-demand support"
+      ]
+    },
+    {
+      "itemId": "excavator-20180910",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "2018年8月挖掘机销量11588台",
+      "publisher": "中国工程机械工业协会数据/第一工程机械网",
+      "url": "https://news.d1cm.com/2018091098913.shtml",
+      "publishedAt": "2018-09-10T20:18:00+08:00",
+      "availableAt": "2018-09-10T20:18:00+08:00",
+      "originGroup": "ccma-excavator-201808",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August excavator sales were 11,588 units, about +33% YoY; Jan-Aug sales were 142,834, +56.2% YoY, and exports +115.6% YoY."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "exports"
+      ],
+      "observedChanges": [
+        "physical machinery demand remains very strong despite slower infrastructure investment growth"
+      ]
+    },
+    {
+      "itemId": "people-excavator-20180919",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "挖掘机销量再创新高",
+      "publisher": "人民网",
+      "url": "https://industry.people.com.cn/n1/2018/0919/c413883-30302247.html",
+      "publishedAt": "2018-09-19T00:00:00+08:00",
+      "availableAt": "2018-09-19T00:00:00+08:00",
+      "originGroup": "people-excavator-20180919",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August excavator sales reached a historical August high, supported by replacement demand, infrastructure/municipal activity and exports; market participants expected September-October growth to remain positive."
+      ],
+      "entities": [
+        "excavators",
+        "replacement cycle",
+        "infrastructure"
+      ],
+      "observedChanges": [
+        "independent reporting corroborates strong physical demand and tight equipment availability"
+      ]
+    },
+    {
+      "itemId": "pta-low-inventory-20180807",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "PTA近月强势延续 高位追涨存风险",
+      "publisher": "中国证券报/国投安信期货",
+      "url": "https://www.cs.com.cn/zzqh2020/201808/t20180807_5854165.html",
+      "publishedAt": "2018-08-07T08:21:00+08:00",
+      "availableAt": "2018-08-07T08:21:00+08:00",
+      "originGroup": "pta-low-inventory-20180807",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "PTA rose sharply from mid-July as PX/currency costs increased, polyester demand remained strong and PTA inventory was low; the report explicitly warned that chain-profit imbalance made high-level chasing risky."
+      ],
+      "entities": [
+        "PTA",
+        "PX",
+        "polyester",
+        "inventory"
+      ],
+      "observedChanges": [
+        "low inventory and cost/demand support drive a rapid PTA price squeeze"
+      ]
+    },
+    {
+      "itemId": "pta-stock-divergence-20180821",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "PTA期货一月飙升40% A股龙头为何不跟涨",
+      "publisher": "证券时报网/人民网",
+      "url": "https://money.people.com.cn/n1/2018/0821/c42877-30241978.html",
+      "publishedAt": "2018-08-21T14:11:00+08:00",
+      "availableAt": "2018-08-21T14:11:00+08:00",
+      "originGroup": "pta-stock-divergence-20180821",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Near-month PTA futures had risen roughly 40% in a month while several listed PTA/polyester leaders did not follow; the physical move was attributed to both supply and demand factors."
+      ],
+      "entities": [
+        "PTA",
+        "listed petrochemical producers"
+      ],
+      "observedChanges": [
+        "physical commodity price and listed-equity response diverge materially"
+      ]
+    },
+    {
+      "itemId": "dram-leading-spot-20180926",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "DRAM Products May Experience Steeper Price Decline of 5% QoQ in 4Q18",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com/presscenter/news/20180926-10055.html",
+      "publishedAt": "2018-09-26T00:00:00+08:00",
+      "availableAt": "2018-09-26T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20180926",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DRAM spot prices had been sliding since early 2018 and were about 10% below contract prices by late September; TrendForce explicitly described this as an early indicator of broader contract-price declines.",
+        "Bit supply was increasing while demand growth was limited; 4Q contract prices were forecast to decline around 5%."
+      ],
+      "entities": [
+        "DRAM",
+        "spot prices",
+        "contract prices",
+        "inventory/supply"
+      ],
+      "observedChanges": [
+        "a leading market-clearing price signal turns down before the slower contract-price flow fully resets"
+      ]
+    },
+    {
+      "itemId": "pv-post531-silicon-20180927",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "前八月工业硅、多晶硅价格先扬后抑",
+      "publisher": "国家能源局转载/证券日报",
+      "url": "https://www.nea.gov.cn/2018-09/27/c_137496466.htm",
+      "publishedAt": "2018-09-27T00:00:00+08:00",
+      "availableAt": "2018-09-27T00:00:00+08:00",
+      "originGroup": "nea-pv-silicon-20180927",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "After the 531 policy, solar-grade polysilicon demand weakened sharply; spot prices fell from RMB126k/t at end-May to RMB87.8k/t by mid-July (-30.3%), then recovered only about 3.5% by end-August.",
+        "The report described short-term profit pressure across silicon/polysilicon/wafer chains while noting longer-run grid-parity potential."
+      ],
+      "entities": [
+        "polysilicon",
+        "photovoltaics",
+        "531 policy"
+      ],
+      "observedChanges": [
+        "PV demand shock and upstream price collapse are already physically visible, with only a small rebound by late Q3"
+      ]
+    },
+    {
+      "itemId": "nev-battery-install-20180919",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "8月动力电池装机量达4.17GWh 宁德时代位列榜首",
+      "publisher": "集邦新能源网",
+      "url": "https://www.energytrend.cn/news/20180919-38266.html",
+      "publishedAt": "2018-09-19T00:00:00+08:00",
+      "availableAt": "2018-09-19T00:00:00+08:00",
+      "originGroup": "battery-install-201808",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "August China power-battery installations reached about 4.17GWh, +44% YoY; CATL ranked first and industry leaders retained concentrated share."
+      ],
+      "entities": [
+        "power batteries",
+        "CATL",
+        "NEV"
+      ],
+      "observedChanges": [
+        "battery physical demand and leader concentration remain strong"
+      ]
+    },
+    {
+      "itemId": "tangshan-ultralow-20180705",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "唐山市钢铁、焦化超低排放和燃煤电厂深度减排实施方案",
+      "publisher": "唐山市政府/中国大气网转载",
+      "url": "https://www.chndaqi.com/news/277301.html",
+      "publishedAt": "2018-07-05T14:10:00+08:00",
+      "availableAt": "2018-07-05T14:10:00+08:00",
+      "originGroup": "tangshan-ultralow-20180705",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Tangshan required steel and coke producers to complete ultra-low-emission upgrades by fixed deadlines, with non-compliant facilities subject to suspension; compliant plants could receive preferential environmental dispatch later."
+      ],
+      "entities": [
+        "steel",
+        "environmental compliance",
+        "Tangshan"
+      ],
+      "observedChanges": [
+        "environmental compliance becomes a capacity-availability state that can differentiate producers"
+      ]
+    },
+    {
+      "itemId": "tangshan-differentiated-20180919",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "唐山下月起实行差异化冬季错峰生产",
+      "publisher": "第一财经",
+      "url": "https://www.yicai.com/news/100029424.html",
+      "publishedAt": "2018-09-19T19:35:00+08:00",
+      "availableAt": "2018-09-19T19:35:00+08:00",
+      "originGroup": "tangshan-differentiated-20180919",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Tangshan shifted toward differentiated winter production restrictions: higher-compliance A-class mills could avoid curtailment while lower classes faced roughly 30%, 50% or 70% curtailment."
+      ],
+      "entities": [
+        "steel mills",
+        "environmental compliance",
+        "winter production"
+      ],
+      "observedChanges": [
+        "compliance status maps directly to future allowed production capacity rather than a uniform sector cut"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2018q3-infra-machinery-support",
+      "statement": "A July shift toward targeted effective investment coincided with still-very-strong August excavator demand and exports, creating a measurable machinery earnings setup despite high-base concerns.",
+      "changeType": "policy_support_plus_physical_demand",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-07-23T00:00:00+08:00",
+      "memberItemIds": [
+        "statecouncil-effective-investment-20180723",
+        "excavator-20180910",
+        "people-excavator-20180919"
+      ],
+      "independentOriginGroups": [
+        "statecouncil-effective-investment-20180723",
+        "ccma-excavator-201808",
+        "people-excavator-20180919"
+      ],
+      "affectedValueChain": [
+        "infrastructure projects",
+        "construction machinery OEMs",
+        "hydraulic components",
+        "exports"
+      ],
+      "contradictionSearchNotes": "Industry growth is already high and replacement demand can mature. Company earnings, valuation and prior absorption must be checked rather than extrapolating unit growth.",
+      "researchQuestion": "Which machinery leaders converted the physical demand into earnings/cash flow with enough expectation room by September 30?"
+    },
+    {
+      "eventId": "event-2018q3-pta-squeeze",
+      "statement": "PTA experienced a rapid low-inventory/cost/demand squeeze in July-August, while listed producers did not uniformly follow and downstream margin pressure increased.",
+      "changeType": "commodity_price_squeeze",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-08-07T08:21:00+08:00",
+      "memberItemIds": [
+        "pta-low-inventory-20180807",
+        "pta-stock-divergence-20180821"
+      ],
+      "independentOriginGroups": [
+        "pta-low-inventory-20180807",
+        "pta-stock-divergence-20180821"
+      ],
+      "affectedValueChain": [
+        "PX",
+        "PTA",
+        "polyester",
+        "integrated petrochemical producers"
+      ],
+      "contradictionSearchNotes": "High PTA prices can help pure PTA margins but hurt downstream polyester; integrated companies require segment-level mapping. The move may be finite and already known.",
+      "researchQuestion": "Is there a listed expression with direct residual PTA margin convexity rather than offsetting downstream exposure or already-priced commodity momentum?"
+    },
+    {
+      "eventId": "event-2018q3-dram-leading-downturn",
+      "statement": "DRAM spot prices were already about 10% below slower-moving contract prices by late September as supply rose and demand weakened, providing a leading signal of the coming contract-price downcycle.",
+      "changeType": "leading_state_flow_cycle_turn",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-09-26T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-leading-spot-20180926"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20180926"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory modules",
+        "PC/server/smartphone OEMs"
+      ],
+      "contradictionSearchNotes": "Do not wait for reported revenue or contract prices to fall if the leading spot/inventory state already implies future deterioration. Conversely, do not invent a positive A-share expression if direct exposure is missing.",
+      "researchQuestion": "Can V1.6 preserve the leading negative state signal without substituting generic semiconductor-theme stocks?"
+    },
+    {
+      "eventId": "event-2018q3-pv-post531-reset",
+      "statement": "The post-531 domestic PV demand shock had already driven polysilicon prices down roughly 30% before only a small late-summer rebound, creating sharp divergence between near-term upstream economics and long-run grid-parity optimism.",
+      "changeType": "policy_demand_shock_and_price_reset",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-09-27T00:00:00+08:00",
+      "memberItemIds": [
+        "pv-post531-silicon-20180927"
+      ],
+      "independentOriginGroups": [
+        "nea-pv-silicon-20180927"
+      ],
+      "affectedValueChain": [
+        "polysilicon",
+        "wafers",
+        "cells",
+        "modules",
+        "PV developers"
+      ],
+      "contradictionSearchNotes": "Long-run grid parity must not erase the current price/demand collapse. Deep research should separate low-cost survivors/beneficiaries from upstream producers whose earnings are still falling.",
+      "researchQuestion": "Did any listed PV leader already possess a company-specific cost/share engine strong enough to overcome the current physical price reset?"
+    },
+    {
+      "eventId": "event-2018q3-nev-battery-leader",
+      "statement": "Power-battery installations remained strongly positive and concentrated in August, potentially creating leader-specific earnings/share opportunities before broad auto conditions were fully clear.",
+      "changeType": "segment_demand_and_share_concentration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-09-19T00:00:00+08:00",
+      "memberItemIds": [
+        "nev-battery-install-20180919"
+      ],
+      "independentOriginGroups": [
+        "battery-install-201808"
+      ],
+      "affectedValueChain": [
+        "NEV sales",
+        "power batteries",
+        "battery materials",
+        "OEM customers"
+      ],
+      "contradictionSearchNotes": "Physical battery installations alone do not prove stock expectation room. Company H1 earnings/cash flow and valuation must be frozen.",
+      "researchQuestion": "Does a battery leader show a measurable company engine and acceptable valuation at September 30?"
+    },
+    {
+      "eventId": "event-2018q3-steel-compliance-capacity",
+      "statement": "Tangshan environmental policy increasingly made future production availability conditional on plant-level ultra-low-emission compliance, shifting from uniform curtailment toward differentiated capacity access.",
+      "changeType": "compliance_driven_capacity_differentiation",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-07-05T14:10:00+08:00",
+      "memberItemIds": [
+        "tangshan-ultralow-20180705",
+        "tangshan-differentiated-20180919"
+      ],
+      "independentOriginGroups": [
+        "tangshan-ultralow-20180705",
+        "tangshan-differentiated-20180919"
+      ],
+      "affectedValueChain": [
+        "steel capacity",
+        "environmental capex",
+        "mill utilization",
+        "steel prices"
+      ],
+      "contradictionSearchNotes": "Sector steel prices may not reveal which producers retain allowed capacity. Deep research must verify plant compliance and listed-company exposure rather than buy generic steel beta.",
+      "researchQuestion": "Is compliant capacity an actionable company-specific state variable with verified A-share exposure and expectation room?"
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "sany-h1-20180827",
+      "title": "三一重工2018年半年度报告",
+      "publisher": "三一重工",
+      "publishedAt": "2018-08-27T00:00:00+08:00",
+      "availableAt": "2018-08-27T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4694437&stockid=600031",
+      "normalizedClaims": [
+        "2018H1 revenue RMB28.12bn +46.42% YoY, attributable profit RMB3.39bn +192.09%, operating cash flow RMB6.22bn +5.55%.",
+        "Company attributed growth to infrastructure demand, replacement, labor substitution and environmental drivers."
+      ]
+    },
+    {
+      "id": "sany-valuation-20180904",
+      "title": "三一重工：工程机械高景气延续",
+      "publisher": "研究报告（2018-09-04）",
+      "publishedAt": "2018-09-04T00:00:00+08:00",
+      "availableAt": "2018-09-04T00:00:00+08:00",
+      "url": "https://img3.gelonghui.com/pdf201809/pdf20180906152920696.pdf",
+      "normalizedClaims": [
+        "Forecast 2018/2019/2020 net profit RMB5.64/6.70/8.26bn and EPS RMB0.72/0.86/1.06; target RMB10.59 corresponded to about 16x 2018E PE.",
+        "Report cited high project activity, replacement demand and industry strength while acknowledging a high base."
+      ]
+    },
+    {
+      "id": "hengli-h1-201808",
+      "title": "恒立液压2018年半年度报告",
+      "publisher": "恒立液压",
+      "publishedAt": "2018-08-28T00:00:00+08:00",
+      "availableAt": "2018-08-28T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4662434&stockid=601100",
+      "normalizedClaims": [
+        "2018H1 revenue RMB2.164bn +59.23%, attributable profit RMB463m +186.65%, ex-item profit +185.39%, operating cash flow RMB192m +439.77%.",
+        "Growth was driven by excavator cylinders and main-control pump/valve sales."
+      ]
+    },
+    {
+      "id": "catl-h1-20180824",
+      "title": "宁德时代2018年半年度报告",
+      "publisher": "宁德时代",
+      "publishedAt": "2018-08-24T00:00:00+08:00",
+      "availableAt": "2018-08-24T00:00:00+08:00",
+      "url": "https://www.catl.com/uploads/1/file/public/2018/08/24/153510194722488s7m1.pdf",
+      "normalizedClaims": [
+        "2018H1 revenue RMB9.36bn +48.69%; attributable profit RMB911m -49.70% because prior-period investment income was high, while ex-item profit RMB697m +36.55%.",
+        "Operating cash flow turned to RMB1.058bn from negative RMB620m, +270.8%; company cited rapid NEV growth and higher market share."
+      ]
+    },
+    {
+      "id": "catl-valuation-20180825",
+      "title": "宁德时代中报点评：全球锂电龙头稳步成长",
+      "publisher": "广发证券",
+      "publishedAt": "2018-08-25T00:00:00+08:00",
+      "availableAt": "2018-08-25T00:00:00+08:00",
+      "url": "https://img3.gelonghui.com/pdf201808/pdf20180827153216208.pdf",
+      "normalizedClaims": [
+        "At RMB68.80, forecast 2018/2019/2020 EPS RMB1.42/1.94/2.61 with PE about 48.6x/35.5x/26.3x.",
+        "Report cited OEM customer qualification and international expansion, but battery-price and NEV-demand risks remained."
+      ]
+    },
+    {
+      "id": "byd-h1-20180830",
+      "title": "比亚迪2018年半年度报告",
+      "publisher": "比亚迪",
+      "publishedAt": "2018-08-30T00:00:00+08:00",
+      "availableAt": "2018-08-30T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4721098&stockid=002594",
+      "normalizedClaims": [
+        "2018H1 revenue RMB54.15bn +20.23%, attributable profit RMB479m -72.19%, operating cash flow remained negative RMB1.61bn.",
+        "Automotive revenue grew but automotive gross margin fell 7.87pp YoY."
+      ]
+    },
+    {
+      "id": "byd-valuation-20180928",
+      "title": "比亚迪2018-09-28研究报告",
+      "publisher": "研究机构",
+      "publishedAt": "2018-09-28T00:00:00+08:00",
+      "availableAt": "2018-09-28T00:00:00+08:00",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201809291204781963_1.pdf?1601214620000.pdf=",
+      "normalizedClaims": [
+        "Forecast 2018/2019/2020 attributable profit growth -26.7%/+37.0%/+29.9%, with PE about 44.9x/32.8x/25.2x.",
+        "The forecast illustrates that sector unit growth had not yet converted into a clean current-year earnings profile for BYD."
+      ]
+    },
+    {
+      "id": "hengyi-h1-201808",
+      "title": "恒逸石化2018年半年度报告",
+      "publisher": "恒逸石化",
+      "publishedAt": "2018-08-29T00:00:00+08:00",
+      "availableAt": "2018-08-29T00:00:00+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4703694&stockid=000703",
+      "normalizedClaims": [
+        "2018H1 revenue RMB39.78bn +39.74%.",
+        "PTA segment revenue RMB5.98bn -23.67% with 8.74% gross margin; polyester segment revenue RMB8.84bn +57.35% with 11.08% gross margin, showing material chain offsets."
+      ]
+    },
+    {
+      "id": "hengyi-valuation-20180828",
+      "title": "恒逸石化：PTA景气与一体化扩张",
+      "publisher": "开源证券",
+      "publishedAt": "2018-08-28T00:00:00+08:00",
+      "availableAt": "2018-08-28T00:00:00+08:00",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201808281183755540_1.pdf",
+      "normalizedClaims": [
+        "Forecast 2018/2019/2020 net profit RMB2.823/4.138/5.085bn and PE about 13.8x/9.4x/7.7x.",
+        "Report expected PTA supply-demand tightness but highlighted project, oil-price and FX risks."
+      ]
+    },
+    {
+      "id": "longi-h1-20180920",
+      "title": "隆基股份2018年半年度报告（修订版）",
+      "publisher": "隆基股份",
+      "publishedAt": "2018-09-20T00:00:00+08:00",
+      "availableAt": "2018-09-20T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4763377&stockid=601012",
+      "normalizedClaims": [
+        "2018H1 revenue RMB10.00bn +59.36%, attributable profit RMB1.307bn +5.73%, ex-item profit +1.75%, operating cash flow RMB1.169bn +925.81%.",
+        "Large revenue growth with nearly flat ex-item profit shows substantial margin pressure around the post-531 reset."
+      ]
+    },
+    {
+      "id": "tongwei-h1-201808",
+      "title": "通威股份2018年半年度报告",
+      "publisher": "通威股份",
+      "publishedAt": "2018-08-08T00:00:00+08:00",
+      "availableAt": "2018-08-08T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4655641&stockid=600438",
+      "normalizedClaims": [
+        "2018H1 revenue RMB12.46bn +12.24%, attributable profit RMB919m +16.14%, ex-item profit +15.85%, operating cash flow -12.69%.",
+        "Company cited increased PV industry production/sales, while financing costs increased."
+      ]
+    },
+    {
+      "id": "shougang-h1-201808",
+      "title": "首钢股份2018年半年度报告",
+      "publisher": "首钢股份",
+      "publishedAt": "2018-08-23T00:00:00+08:00",
+      "availableAt": "2018-08-23T00:00:00+08:00",
+      "url": "https://www.shougang.com.cn/u/cms/www/201808/231331233qpb.pdf",
+      "normalizedClaims": [
+        "2018H1 revenue RMB31.54bn +11.61%, attributable profit RMB1.424bn +50.12%, operating cash flow RMB5.898bn +361.42%.",
+        "Report stated main processes had passed special-emission-limit acceptance and additional sintering desulfurization/denitrification projects were under construction; production still fell due to environmental curtailment."
+      ]
+    },
+    {
+      "id": "hegang-h1-201808",
+      "title": "河钢股份2018年半年度报告",
+      "publisher": "河钢股份",
+      "publishedAt": "2018-08-31T00:00:00+08:00",
+      "availableAt": "2018-08-31T00:00:00+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4717894&stockid=000709",
+      "normalizedClaims": [
+        "2018H1 crude steel output fell 7.97% and steel-product output fell 10.69% due to environmental curtailment; attributable profit was RMB1.822bn.",
+        "Company used scrap, product mix and pricing to offset curtailed output."
+      ]
+    },
+    {
+      "id": "baosteel-h1-201808",
+      "title": "宝钢股份2018年半年度报告",
+      "publisher": "宝钢股份",
+      "publishedAt": "2018-08-28T00:00:00+08:00",
+      "availableAt": "2018-08-28T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=4701059&stockid=600019",
+      "normalizedClaims": [
+        "2018H1 attributable profit RMB10.01bn +62.23%, ex-item profit +52.30%, operating cash flow RMB19.47bn +197.63%.",
+        "Baosteel provides a profitable steel control but does not share Tangshan's plant-level compliance classification."
+      ]
+    },
+    {
+      "id": "regime-machinery-20180930",
+      "title": "Frozen 2018Q3 machinery price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "publishedAt": "2018-09-30T15:00:00+08:00",
+      "availableAt": "2018-09-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Machinery basket was neutral: -5.87pp 20d excess and +4.71pp 60d excess; all three names lagged CSI300 over the final 20d."
+      ]
+    },
+    {
+      "id": "regime-pta-20180930",
+      "title": "Frozen 2018Q3 PTA price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "publishedAt": "2018-09-30T15:00:00+08:00",
+      "availableAt": "2018-09-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "PTA-linked basket was neutral: -5.37pp 20d excess but +11.11pp 60d excess; 20d breadth was 0%."
+      ]
+    },
+    {
+      "id": "regime-pv-20180930",
+      "title": "Frozen 2018Q3 PV price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "publishedAt": "2018-09-30T15:00:00+08:00",
+      "availableAt": "2018-09-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "PV basket was neutral: +2.37pp 20d excess but -7.13pp 60d excess; breadth 67%/33%."
+      ]
+    },
+    {
+      "id": "regime-nev-20180930",
+      "title": "Frozen 2018Q3 NEV price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "publishedAt": "2018-09-30T15:00:00+08:00",
+      "availableAt": "2018-09-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "NEV leader basket was favorable: +4.01pp 20d and +4.12pp 60d excess with full breadth."
+      ]
+    },
+    {
+      "id": "regime-steel-20180930",
+      "title": "Frozen 2018Q3 steel price regime",
+      "publisher": "Stock Rador deterministic snapshot",
+      "publishedAt": "2018-09-30T15:00:00+08:00",
+      "availableAt": "2018-09-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Steel basket was neutral: +0.96pp 20d and +5.46pp 60d excess; 20d breadth only 33%."
+      ]
+    }
+  ]
+}
