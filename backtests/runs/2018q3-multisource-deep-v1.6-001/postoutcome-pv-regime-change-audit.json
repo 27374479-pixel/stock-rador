@@ -1,0 +1,51 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q3-multisource-deep-v1.6-001",
+  "label": "post_outcome_pv_regime_change_audit",
+  "diagnosticOnly": true,
+  "samePeriodMayTuneSkill": false,
+  "frozenDecision": "No selection",
+  "hypothesisId": "h-2018q3-pv-post531-reset",
+  "frozenCutoff": "2018-09-30",
+  "outcome": {
+    "basket20dNetReturn": 0.04518542635283126,
+    "basket20dBenchmarkExcess": 0.06639879157612046,
+    "positiveExcessBreadth20": 0.6666666666666666,
+    "basket60dNetReturn": 0.2647205646134083,
+    "basket60dBenchmarkExcess": 0.3691095982763504,
+    "positiveExcessBreadth60": 1,
+    "basket120dNetReturn": 0.9252726342493937,
+    "basket120dBenchmarkExcess": 0.7438895859027927,
+    "positiveExcessBreadth120": 1
+  },
+  "postCutoffEvents": [
+    {
+      "date": "2018-10-09",
+      "source": "国家发展改革委/财政部/国家能源局",
+      "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201810/t20181009_962291_ext.html",
+      "event": "Three ministries clarified implementation of the 2018 PV policy, preserving prior tariff treatment for specified pre-531/pre-630 projects.",
+      "diagnosticMeaning": "This was new policy information after the frozen cutoff and inside the 20d outcome window."
+    },
+    {
+      "date": "2018-11-02",
+      "source": "国家能源局 solar-plan midterm evaluation meeting, reported contemporaneously by 中国证券报",
+      "url": "https://www.cs.com.cn/cj2020/201811/t20181105_5888996.html",
+      "event": "A solar 13th Five-Year Plan midterm evaluation meeting signaled continued subsidy support, possible upward revision of the PV construction target, household-PV separate management and faster 2019 policy formation.",
+      "diagnosticMeaning": "Contemporaneous reporting explicitly linked this post-cutoff meeting to the November 5 PV-sector limit-up rally."
+    }
+  ],
+  "preCutoffContext": {
+    "structuralSurvivorSignal": "Pre-cutoff policy commentary already argued the 531 reset could favor low-cost, high-efficiency firms and accelerate grid parity.",
+    "limitation": "The frozen deep company evidence still showed Longi ex-item profit nearly flat and Tongwei only moderate profit growth/weaker operating cash flow, so no clean positive company earnings bridge was available by September 30."
+  },
+  "diagnosis": {
+    "class": "post_cutoff_regime_change_confounder",
+    "conclusion": "not_a_clean_same_cutoff_discovery_miss",
+    "explanation": "The very strong 60d/120d PV outcome materially incorporates policy information that did not exist at the September 30 cutoff. The 20d window also contains the October 9 clarification and ends on the November 2 meeting date. These returns therefore cannot be used to claim the frozen No-selection decision was predictably wrong from cutoff-valid evidence alone."
+  },
+  "versionImplication": {
+    "changeV16FromThisOutcome": false,
+    "keepFrozenDecision": true,
+    "rule": "Do not tune discovery/promotion on outcome windows dominated by identifiable post-cutoff regime-changing information."
+  }
+}
