@@ -1,0 +1,397 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2018q4-multisource-v1.5-001",
+  "cutoffAt": "2018-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2018Q4 replay built in September 2026 with current model/search weights. Only evidence available by 2018-12-31 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official telecom, infrastructure, macro and policy evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central-government/MIIT/NBS policy and data; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/company operating evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected Sany first-party industry/company disclosure; deeper issuer mapping deferred until after discovery lock."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable unit sales, product prices and industry economics.",
+      "coverageStatus": "partial",
+      "limitations": "Excavator, auto/NEV, pork and cement conditions; no exhaustive physical-industry crawl."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting.",
+      "coverageStatus": "partial",
+      "limitations": "Government/Xinhua reposts and contemporaneous financial reporting used selectively."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist product/commodity market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "TrendForce memory and China Cement market data."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "miit-5g-spectrum-20181212",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "工业和信息化部向基础电信运营企业发放5G系统试验频率使用许可",
+      "publisher": "工业和信息化部（中央网信办转载）",
+      "url": "https://www.cac.gov.cn/2018-12/12/c_1123840460.htm",
+      "publishedAt": "2018-12-12T13:33:00+08:00",
+      "availableAt": "2018-12-12T13:33:00+08:00",
+      "originGroup": "miit-5g-spectrum-20181212",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MIIT issued 5G mid/low-band trial-frequency permits to China Telecom, China Mobile and China Unicom, enabling trial base-station deployment and signaling a concrete next step in 5G industrialization."
+      ],
+      "entities": [
+        "5G",
+        "China Mobile",
+        "China Telecom",
+        "China Unicom"
+      ],
+      "observedChanges": [
+        "5G moves from generic policy expectation to operator-specific trial spectrum and deployment."
+      ]
+    },
+    {
+      "itemId": "statecouncil-infra-20181011",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国务院办公厅关于保持基础设施领域补短板力度的指导意见",
+      "publisher": "国务院办公厅（财政部公开）",
+      "url": "https://www.mof.gov.cn/zhengwuxinxi/caizhengxinwen/201811/t20181101_3058986.htm",
+      "publishedAt": "2018-10-11T00:00:00+08:00",
+      "availableAt": "2018-11-01T00:00:00+08:00",
+      "originGroup": "statecouncil-infra-20181011",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The State Council called for maintaining infrastructure short-board investment while explicitly retaining local-government debt and project-cash-flow constraints."
+      ],
+      "entities": [
+        "infrastructure",
+        "transport",
+        "local-government investment"
+      ],
+      "observedChanges": [
+        "policy stance shifts toward supporting infrastructure while keeping financing discipline."
+      ]
+    },
+    {
+      "itemId": "sany-excavator-20181214",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "国内挖掘机销售18万台创新高，三一独占鳌头",
+      "publisher": "三一集团",
+      "url": "https://www.sanygroup.com/news/2489.html",
+      "publishedAt": "2018-12-14T00:00:00+08:00",
+      "availableAt": "2018-12-14T00:00:00+08:00",
+      "originGroup": "sany-excavator-20181214",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Nov excavator industry sales reached roughly 185k units; November sales rose 14.9% YoY.",
+        "Sany Jan-Nov excavator sales were 43,036, about +54% YoY; November Sany sales +25% and share about 24.3%.",
+        "The industry described 2019 as moving from high growth toward high-base steady growth, i.e. a later-cycle state."
+      ],
+      "entities": [
+        "excavators",
+        "三一重工",
+        "construction machinery"
+      ],
+      "observedChanges": [
+        "physical demand remains positive while cycle maturity becomes explicit."
+      ]
+    },
+    {
+      "itemId": "xinhua-nev-20181212",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "1至11月我国新能源汽车产销保持稳步增长",
+      "publisher": "新华社（中国政府网）",
+      "url": "https://app.www.gov.cn/govdata/gov/201812/12/432982/article.html",
+      "publishedAt": "2018-12-12T00:00:00+08:00",
+      "availableAt": "2018-12-12T00:00:00+08:00",
+      "originGroup": "xinhua-nev-20181212",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Nov overall auto sales fell 1.65% YoY and passenger-vehicle sales fell 2.77%, while NEV sales grew 68% to roughly 1.03m.",
+        "November NEV sales were roughly 169k, +37.6% YoY, showing clear product-level divergence from the weak broad auto market."
+      ],
+      "entities": [
+        "automobiles",
+        "NEV",
+        "EV",
+        "BYD"
+      ],
+      "observedChanges": [
+        "NEV demand remains strong while the broad auto market contracts."
+      ]
+    },
+    {
+      "itemId": "trendforce-dram-20181204",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "第四季DRAM合約價二次下修，2019年第一季跌幅持續擴大",
+      "publisher": "TrendForce",
+      "url": "https://www.trendforce.com.tw/presscenter/news/20181204-3791.html",
+      "publishedAt": "2018-12-04T00:00:00+08:00",
+      "availableAt": "2018-12-04T00:00:00+08:00",
+      "originGroup": "trendforce-dram-20181204",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DRAM prices had officially reversed downward in Q4; November contract prices were revised lower again.",
+        "Q4 average selling prices were down roughly 8%, with standard/server/specialty DRAM declines near 10%, and 2019Q1 declines were expected to widen."
+      ],
+      "entities": [
+        "DRAM",
+        "server memory",
+        "PC memory"
+      ],
+      "observedChanges": [
+        "the DRAM super-cycle rolls into an oversupply/price-downcycle."
+      ]
+    },
+    {
+      "itemId": "nbs-pork-20181209",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "2018年11月份居民消费价格同比上涨2.2%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900162.html",
+      "publishedAt": "2018-12-09T09:30:00+08:00",
+      "availableAt": "2018-12-09T09:30:00+08:00",
+      "originGroup": "nbs-pork-201811",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "November pork prices were -1.1% YoY and -0.6% MoM.",
+        "NBS attributed part of the monthly decline to ASF-affected producing regions accelerating hog sales, so the later scarcity price regime was not yet present."
+      ],
+      "entities": [
+        "pork",
+        "ASF",
+        "hog supply"
+      ],
+      "observedChanges": [
+        "disease narrative exists but realized consumer pork pricing remains weak."
+      ]
+    },
+    {
+      "itemId": "cement-market-20181209",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "1400亿！全国均价上涨超百元 行业利润创新高 2018“石头”很疯狂！",
+      "publisher": "中国水泥网",
+      "url": "https://www.ccement.com/news/content/44356172305735.html",
+      "publishedAt": "2018-12-09T09:43:00+08:00",
+      "availableAt": "2018-12-09T09:43:00+08:00",
+      "originGroup": "cement-market-20181209",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Through Nov 20, the national average cement price was about RMB430/t, +31% YoY, and the national cement price index reached a historical high.",
+        "Industry profits through August were already RMB96.3bn, +1.5x YoY and above full-year 2017 profits, while East-China winter supply controls pushed some local prices above RMB600/t."
+      ],
+      "entities": [
+        "cement",
+        "East China",
+        "environmental supply controls"
+      ],
+      "observedChanges": [
+        "cement pricing/profits are at very high levels with additional winter supply restriction."
+      ]
+    },
+    {
+      "itemId": "private-economy-20181101",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "在民营企业座谈会上的讲话",
+      "publisher": "新华社/人民网",
+      "url": "https://politics.people.com.cn/n1/2018/1101/c1024-30377094.html",
+      "publishedAt": "2018-11-01T00:00:00+08:00",
+      "availableAt": "2018-11-01T00:00:00+08:00",
+      "originGroup": "private-economy-20181101",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Policy called for substantial tax reductions, lower social-insurance burden, addressing private-enterprise financing difficulty, expanding financing channels and allowing local relief funds for viable firms under stress."
+      ],
+      "entities": [
+        "private enterprises",
+        "tax cuts",
+        "financing",
+        "equity pledge"
+      ],
+      "observedChanges": [
+        "policy support for private-enterprise financing and tax burden becomes explicit."
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2018q4-5g-trial-spectrum",
+      "statement": "China issued operator-specific 5G trial-frequency permits, converting a generic 5G roadmap into a concrete spectrum/deployment prerequisite but not yet proving commercial capex or supplier earnings.",
+      "changeType": "commercialization_precondition",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-12-12T13:33:00+08:00",
+      "memberItemIds": [
+        "miit-5g-spectrum-20181212"
+      ],
+      "independentOriginGroups": [
+        "miit-5g-spectrum-20181212"
+      ],
+      "affectedValueChain": [
+        "telecom operators",
+        "base stations",
+        "telecom equipment",
+        "optical transmission"
+      ],
+      "contradictionSearchNotes": "Trial spectrum is a real operational step but remains one stage before commercial licenses and broad capex. Deep research must require supplier order/earnings evidence and account for any prior 5G thematic rerating.",
+      "researchQuestion": "Did any A-share 5G supplier have a measurable company earnings/order bridge by Dec 31, or should spectrum allocation remain Research/No selection?"
+    },
+    {
+      "eventId": "event-2018q4-infra-machinery-late-cycle",
+      "statement": "Infrastructure support policy strengthened while November excavator sales remained +14.9% and Sany +25%, but the industry itself described a shift from high growth toward high-base steady growth.",
+      "changeType": "policy_supported_late_cycle_demand",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-11-01T00:00:00+08:00",
+      "memberItemIds": [
+        "statecouncil-infra-20181011",
+        "sany-excavator-20181214"
+      ],
+      "independentOriginGroups": [
+        "statecouncil-infra-20181011",
+        "sany-excavator-20181214"
+      ],
+      "affectedValueChain": [
+        "infrastructure",
+        "excavator OEMs",
+        "hydraulic components"
+      ],
+      "contradictionSearchNotes": "Physical demand remains positive, but cycle maturity and high 2018 growth make expectation/duration tests critical. Do not assume infrastructure support recreates an early-cycle setup.",
+      "researchQuestion": "Can leader share/earnings and valuation still justify selection despite explicit cycle maturity?"
+    },
+    {
+      "eventId": "event-2018q4-nev-auto-divergence",
+      "statement": "Broad auto/passenger-vehicle sales were contracting while NEV sales remained strongly positive, so the aggregate auto signal must be decomposed into conventional-auto weakness and NEV-specific demand.",
+      "changeType": "product_market_divergence",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-12-12T00:00:00+08:00",
+      "memberItemIds": [
+        "xinhua-nev-20181212"
+      ],
+      "independentOriginGroups": [
+        "xinhua-nev-20181212"
+      ],
+      "affectedValueChain": [
+        "conventional autos",
+        "NEVs",
+        "power batteries",
+        "EV OEMs"
+      ],
+      "contradictionSearchNotes": "NEV growth can be subsidy/policy sensitive and not every supplier converts sector units into earnings. Deep research must separate product demand from company quality/valuation.",
+      "researchQuestion": "Do NEV leaders show company-specific earnings/share evidence strong enough to overcome broad-auto weakness?"
+    },
+    {
+      "eventId": "event-2018q4-dram-downcycle",
+      "statement": "DRAM contract prices had clearly reversed into decline by Q4, with November pricing revised down again and 2019Q1 deterioration expected to deepen.",
+      "changeType": "product_price_downcycle",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-12-04T00:00:00+08:00",
+      "memberItemIds": [
+        "trendforce-dram-20181204"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20181204"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory modules",
+        "servers",
+        "PCs"
+      ],
+      "contradictionSearchNotes": "Keep a negative physical memory signal separate from any domestic-semiconductor narrative; positive selection requires a distinct company/product engine.",
+      "researchQuestion": "Should generic A-share memory exposure fail closed at Dec 31?"
+    },
+    {
+      "eventId": "event-2018q4-pork-asf-no-price-confirmation",
+      "statement": "ASF was disrupting the hog market, but November pork prices remained negative YoY/MoM and accelerated slaughter in affected regions temporarily increased supply.",
+      "changeType": "disease_narrative_without_positive_price_bridge",
+      "noveltyAssessment": "uncertain",
+      "firstAvailableAt": "2018-12-09T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pork-20181209"
+      ],
+      "independentOriginGroups": [
+        "nbs-pork-201811"
+      ],
+      "affectedValueChain": [
+        "hog producers",
+        "pork prices",
+        "feed",
+        "meat processing"
+      ],
+      "contradictionSearchNotes": "Future scarcity is plausible but not yet reflected in the frozen physical price signal; do not leak 2019 outcomes backward.",
+      "researchQuestion": "Is there any producer-specific pre-cutoff earnings/ASP evidence strong enough to override weak physical pork pricing?"
+    },
+    {
+      "eventId": "event-2018q4-cement-high-price-profits",
+      "statement": "Cement prices and industry profits were already at historical highs while winter supply restrictions tightened East-China availability, creating strong current earnings but also obvious peak-cycle/expectation risk.",
+      "changeType": "commodity_peak_profitability",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-12-09T09:43:00+08:00",
+      "memberItemIds": [
+        "cement-market-20181209"
+      ],
+      "independentOriginGroups": [
+        "cement-market-20181209"
+      ],
+      "affectedValueChain": [
+        "cement producers",
+        "clinker",
+        "construction"
+      ],
+      "contradictionSearchNotes": "High spot prices/profits may already be fully known and winter supply controls are seasonal. Deep research must test whether valuation/earnings gap remains rather than equating record profit with a buy signal.",
+      "researchQuestion": "Did any efficient cement leader retain under-reflected earnings/valuation room at Dec 31?"
+    },
+    {
+      "eventId": "event-2018q4-private-enterprise-support",
+      "statement": "Central policy explicitly intensified tax, financing and relief support for private enterprises under stress, but the event is broad and company outcomes depend on leverage, pledge risk and business quality.",
+      "changeType": "broad_financing_policy_support",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-11-01T00:00:00+08:00",
+      "memberItemIds": [
+        "private-economy-20181101"
+      ],
+      "independentOriginGroups": [
+        "private-economy-20181101"
+      ],
+      "affectedValueChain": [
+        "private enterprises",
+        "banks",
+        "credit",
+        "equity-pledge relief"
+      ],
+      "contradictionSearchNotes": "Broad support does not create equal earnings improvement. Do not map indiscriminately to distressed private stocks.",
+      "researchQuestion": "Is there a coherent investable subset with measurable financing-cost/survival-to-earnings transmission, or should the broad event remain unselected?"
+    }
+  ]
+}
