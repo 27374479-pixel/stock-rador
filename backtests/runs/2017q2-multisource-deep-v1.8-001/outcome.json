@@ -1,0 +1,980 @@
+{
+  "schemaVersion": "1.1",
+  "evaluatorVersion": "1.8-company-exception-recall",
+  "runId": "2017q2-multisource-deep-v1.8-001",
+  "evaluatedAt": "2026-09-24T14:14:53.924Z",
+  "frozenLockSha256": "3751b80da52b4e6b747e2015d2e2d793ef5809688d6601ee409ff6a915748529",
+  "priceSource": {
+    "provider": "Tencent public daily hfq + raw kline",
+    "fetchedAt": "2026-09-24T14:14:49.752Z",
+    "path": "backtests/runs/2017q2-multisource-deep-v1.8-001/prices.json"
+  },
+  "hypothesisMemoSummary": {
+    "count": 6,
+    "highPriorityHypothesisCount": 3,
+    "researchHypothesisCount": 3,
+    "noSelectionCount": 3,
+    "researchSelectionCount": 3,
+    "highPrioritySelectionCount": 0,
+    "rows": [
+      {
+        "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-xiongan-long-state-short-flow.json",
+        "hypothesisId": "h-2017q2-xiongan-long-state-short-flow",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-aluminum-cuts-begin.json",
+        "hypothesisId": "h-2017q2-aluminum-cuts-begin",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-machinery-boom.json",
+        "hypothesisId": "h-2017q2-machinery-boom",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-msci-a-share-inclusion.json",
+        "hypothesisId": "h-2017q2-msci-a-share-inclusion",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-dram-tightness.json",
+        "hypothesisId": "h-2017q2-dram-tightness",
+        "hypothesisState": "Research hypothesis",
+        "selectionState": "No selection",
+        "actionableAt": null
+      },
+      {
+        "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-vitamin-d3-price-spike.json",
+        "hypothesisId": "h-2017q2-vitamin-d3-price-spike",
+        "hypothesisState": "High-priority hypothesis",
+        "selectionState": "Research selection",
+        "actionableAt": null
+      }
+    ]
+  },
+  "results": [
+    {
+      "hypothesisId": "h-2017q2-aluminum-cuts-begin",
+      "ticker": "600219.SH",
+      "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-aluminum-cuts-begin.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "600219.SH",
+        "pairwise": [
+          {
+            "controlTicker": "000933.SZ",
+            "selectedAdvantages": [
+              "higher-value product mix",
+              "integrated chain",
+              "lower recent absorption than the strongest pure-cycle name"
+            ],
+            "selectedDisadvantages": [
+              "less pure upside to a sharp commodity rally"
+            ],
+            "evidenceRefs": [
+              "nanshan-annual-20170420",
+              "regime-aluminum-20170630"
+            ],
+            "switchCondition": "Prefer a broad-cycle control only if cutoff-valid company earnings/cost quality clearly exceeds Nanshan's differentiated path.",
+            "netEdge": "mixed"
+          }
+        ],
+        "selectionEdgeConclusion": "mixed",
+        "rationale": "Nanshan is preferred as a cleaner Research expression, while Yunlu remains an acceptable alternate; the early state change is not yet a Primary-quality entry."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2017-06-30T15:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2017-06-30T15:00:00+08:00",
+      "entryDate": "2017-07-03",
+      "entryAdjustedOpen": 19.51,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Observable illegal-capacity shutdowns can lead inventory/price/earnings by weeks to months, but company-level earnings confirmation is incomplete at cutoff."
+      },
+      "matchedControls": [
+        {
+          "ticker": "000933.SZ",
+          "name": "神火股份",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Broad aluminum-cycle peer exposed to the same commodity state.",
+          "whySelectedCompanyShouldOutperform": "Nanshan/Yunlu have explicit product/cost heterogeneity beyond generic commodity beta.",
+          "evidenceRefs": [
+            "nanshan-annual-20170420",
+            "yunlu-annual-20170407",
+            "regime-aluminum-20170630"
+          ]
+        }
+      ],
+      "matchedControlException": "Research-only company-mapping memo uses one broad-cycle control; no Primary ranking claim is made.",
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": -0.002949852507374673
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-07-28",
+          "netReturn": 0.03892468372222346,
+          "benchmarkReturn": 0.014904982779918363,
+          "excessReturn": 0.0240197009423051,
+          "matchedControlBasketReturn": 0.3817643575436491,
+          "matchedControlExcess": -0.34283967382142566,
+          "bestControlTicker": "000933.SZ",
+          "bestControlReturn": 0.3817643575436491,
+          "excessVsBestControl": -0.34283967382142566,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 2,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "000933.SZ",
+              "controlType": "peer",
+              "netReturn": 0.3817643575436491
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.037896731406916295,
+            "peakDate": "2017-07-19",
+            "troughDate": "2017-07-28"
+          }
+        },
+        "60": {
+          "exitDate": "2017-09-22",
+          "netReturn": 0.19750009088809706,
+          "benchmarkReturn": 0.0464928570065144,
+          "excessReturn": 0.15100723388158266,
+          "matchedControlBasketReturn": 0.6339752395182747,
+          "matchedControlExcess": -0.43647514863017767,
+          "bestControlTicker": "000933.SZ",
+          "bestControlReturn": 0.6339752395182747,
+          "excessVsBestControl": -0.43647514863017767,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 2,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "000933.SZ",
+              "controlType": "peer",
+              "netReturn": 0.6339752395182747
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.11517893870835028,
+            "peakDate": "2017-08-08",
+            "troughDate": "2017-08-23"
+          }
+        },
+        "120": {
+          "exitDate": "2017-12-22",
+          "netReturn": 0.046597687294765766,
+          "benchmarkReturn": 0.10563013500653073,
+          "excessReturn": -0.05903244771176497,
+          "matchedControlBasketReturn": 0.11868667404105882,
+          "matchedControlExcess": -0.07208898674629305,
+          "bestControlTicker": "000933.SZ",
+          "bestControlReturn": 0.11868667404105882,
+          "excessVsBestControl": -0.07208898674629305,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 2,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "000933.SZ",
+              "controlType": "peer",
+              "netReturn": 0.11868667404105882
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.16248457424927998,
+            "peakDate": "2017-08-08",
+            "troughDate": "2017-12-21"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-09-22",
+        "netReturn": 0.19750009088809706,
+        "benchmarkReturn": 0.0464928570065144,
+        "excessReturn": 0.15100723388158266,
+        "matchedControlBasketReturn": 0.6339752395182747,
+        "matchedControlExcess": -0.43647514863017767,
+        "bestControlTicker": "000933.SZ",
+        "bestControlReturn": 0.6339752395182747,
+        "excessVsBestControl": -0.43647514863017767,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 2,
+        "rankPercentile": 0,
+        "controlReturns": [
+          {
+            "ticker": "000933.SZ",
+            "controlType": "peer",
+            "netReturn": 0.6339752395182747
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.11517893870835028,
+          "peakDate": "2017-08-08",
+          "troughDate": "2017-08-23"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q2-machinery-boom",
+      "ticker": "600031.SH",
+      "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-machinery-boom.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "600031.SH",
+        "pairwise": [
+          {
+            "controlTicker": "601100.SH",
+            "selectedAdvantages": [
+              "realized Q1 earnings",
+              "lower short-term debt",
+              "direct leader share"
+            ],
+            "selectedDisadvantages": [
+              "component supplier may have higher operating leverage"
+            ],
+            "evidenceRefs": [
+              "sany-q1-20170428",
+              "excavator-may-20170620",
+              "regime-machinery-20170630"
+            ],
+            "switchCondition": "Prefer Hengli if cutoff-valid company revisions and quality become clearly superior.",
+            "netEdge": "mixed"
+          },
+          {
+            "controlTicker": "000157.SZ",
+            "selectedAdvantages": [
+              "clearer leader share",
+              "stronger frozen company confirmation"
+            ],
+            "selectedDisadvantages": [
+              "same cyclical exposure"
+            ],
+            "evidenceRefs": [
+              "sany-q1-20170428",
+              "excavator-may-20170620"
+            ],
+            "switchCondition": "Prefer Zhonglian if its company evidence becomes clearly superior.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "credible",
+        "rationale": "Sany is the strongest Research expression, but broad timing is neutral and its own price is already positive, so no strict Primary route is invoked."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2017-06-30T15:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2017-06-30T15:00:00+08:00",
+      "entryDate": "2017-07-03",
+      "entryAdjustedOpen": 347.645,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Q1 earnings and May physical sales show a real company engine, but by cutoff Sany's own price had already turned positive and the broad sector regime remained only neutral."
+      },
+      "matchedControls": [
+        {
+          "ticker": "601100.SH",
+          "name": "恒立液压",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Direct component exposure to the same machinery cycle.",
+          "whySelectedCompanyShouldOutperform": "Sany has cutoff-valid realized Q1 profit, debt reduction and direct leader share; no equally complete control evidence is frozen.",
+          "evidenceRefs": [
+            "sany-q1-20170428",
+            "excavator-may-20170620",
+            "regime-machinery-20170630"
+          ]
+        },
+        {
+          "ticker": "000157.SZ",
+          "name": "中联重科",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large OEM peer exposed to the same demand cycle.",
+          "whySelectedCompanyShouldOutperform": "Sany's leader share and realized company engine are clearer at cutoff.",
+          "evidenceRefs": [
+            "sany-q1-20170428",
+            "excavator-may-20170620",
+            "regime-machinery-20170630"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.0012300123001229846
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-07-28",
+          "netReturn": 0.013383478262881221,
+          "benchmarkReturn": 0.014904982779918363,
+          "excessReturn": -0.0015215045170371422,
+          "matchedControlBasketReturn": 0.10685718379863718,
+          "matchedControlExcess": -0.09347370553575596,
+          "bestControlTicker": "601100.SH",
+          "bestControlReturn": 0.18248972855634804,
+          "excessVsBestControl": -0.16910625029346682,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "601100.SH",
+              "controlType": "peer",
+              "netReturn": 0.18248972855634804
+            },
+            {
+              "ticker": "000157.SZ",
+              "controlType": "peer",
+              "netReturn": 0.031224639040926316
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.051929366337921,
+            "peakDate": "2017-07-10",
+            "troughDate": "2017-07-13"
+          }
+        },
+        "60": {
+          "exitDate": "2017-09-22",
+          "netReturn": -0.0756126526754608,
+          "benchmarkReturn": 0.0464928570065144,
+          "excessReturn": -0.1221055096819752,
+          "matchedControlBasketReturn": 0.05208091876106791,
+          "matchedControlExcess": -0.1276935714365287,
+          "bestControlTicker": "601100.SH",
+          "bestControlReturn": 0.07993105406287548,
+          "excessVsBestControl": -0.15554370673833628,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "601100.SH",
+              "controlType": "peer",
+              "netReturn": 0.07993105406287548
+            },
+            {
+              "ticker": "000157.SZ",
+              "controlType": "peer",
+              "netReturn": 0.02423078345926033
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.14440585732923417,
+            "peakDate": "2017-08-07",
+            "troughDate": "2017-09-22"
+          }
+        },
+        "120": {
+          "exitDate": "2017-12-22",
+          "netReturn": 0.021074218393322797,
+          "benchmarkReturn": 0.10563013500653073,
+          "excessReturn": -0.08455591661320794,
+          "matchedControlBasketReturn": 0.33052352812344893,
+          "matchedControlExcess": -0.30944930973012613,
+          "bestControlTicker": "601100.SH",
+          "bestControlReturn": 0.6787794062776347,
+          "excessVsBestControl": -0.6577051878843119,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "601100.SH",
+              "controlType": "peer",
+              "netReturn": 0.6787794062776347
+            },
+            {
+              "ticker": "000157.SZ",
+              "controlType": "peer",
+              "netReturn": -0.01773235003073681
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.1586426428660631,
+            "peakDate": "2017-08-07",
+            "troughDate": "2017-09-25"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-09-22",
+        "netReturn": -0.0756126526754608,
+        "benchmarkReturn": 0.0464928570065144,
+        "excessReturn": -0.1221055096819752,
+        "matchedControlBasketReturn": 0.05208091876106791,
+        "matchedControlExcess": -0.1276935714365287,
+        "bestControlTicker": "601100.SH",
+        "bestControlReturn": 0.07993105406287548,
+        "excessVsBestControl": -0.15554370673833628,
+        "winsAllControls": false,
+        "selectedRank": 3,
+        "matchedSetSize": 3,
+        "rankPercentile": 0,
+        "controlReturns": [
+          {
+            "ticker": "601100.SH",
+            "controlType": "peer",
+            "netReturn": 0.07993105406287548
+          },
+          {
+            "ticker": "000157.SZ",
+            "controlType": "peer",
+            "netReturn": 0.02423078345926033
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.14440585732923417,
+          "peakDate": "2017-08-07",
+          "troughDate": "2017-09-22"
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q2-vitamin-d3-price-spike",
+      "ticker": "300401.SZ",
+      "memoPath": "backtests/runs/2017q2-multisource-deep-v1.8-001/memos/h-2017q2-vitamin-d3-price-spike.json",
+      "state": "Research selection",
+      "hypothesisState": "High-priority hypothesis",
+      "selectionState": "Research selection",
+      "selectionComparison": {
+        "selectedTicker": "300401.SZ",
+        "pairwise": [
+          {
+            "controlTicker": "600216.SH",
+            "selectedAdvantages": [
+              "direct D3 exposure",
+              "low leverage",
+              "strong Q1 profit growth"
+            ],
+            "selectedDisadvantages": [
+              "much higher recent absorption"
+            ],
+            "evidenceRefs": [
+              "garden-q1-20170422",
+              "regime-vitamind3-20170630"
+            ],
+            "switchCondition": "Prefer Zhejiang Medicine only if cutoff-valid direct D3 earnings sensitivity is stronger than currently documented.",
+            "netEdge": "selected"
+          },
+          {
+            "controlTicker": "002001.SZ",
+            "selectedAdvantages": [
+              "direct D3 exposure",
+              "specialist product sensitivity"
+            ],
+            "selectedDisadvantages": [
+              "more concentrated/cyclical exposure and higher absorption"
+            ],
+            "evidenceRefs": [
+              "garden-q1-20170422",
+              "regime-vitamind3-20170630"
+            ],
+            "switchCondition": "Prefer NHU if its direct D3 sensitivity and expectation burden become superior.",
+            "netEdge": "selected"
+          }
+        ],
+        "selectionEdgeConclusion": "clear",
+        "rationale": "Garden is the direct company expression, but the company selection edge does not make the highly absorbed entry Primary."
+      },
+      "isPrimarySignal": false,
+      "researchReadyAt": "2017-06-30T15:00:00+08:00",
+      "actionableAt": null,
+      "entryAnchorAt": "2017-06-30T15:00:00+08:00",
+      "entryDate": "2017-07-03",
+      "entryAdjustedOpen": 74.47,
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "The direct producer can convert a D3 price spike quickly, but spot prices and the stock had already moved violently by cutoff and the company itself warned of cyclicality."
+      },
+      "matchedControls": [
+        {
+          "ticker": "600216.SH",
+          "name": "浙江医药",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Broader vitamin producer exposed to the same industry narrative.",
+          "whySelectedCompanyShouldOutperform": "Garden has the clearest direct D3 sensitivity and stronger direct event mapping.",
+          "evidenceRefs": [
+            "garden-q1-20170422",
+            "vitamind3-spike-20170629",
+            "regime-vitamind3-20170630"
+          ]
+        },
+        {
+          "ticker": "002001.SZ",
+          "name": "新和成",
+          "controlType": "peer",
+          "fairCounterfactualReason": "Large vitamin producer and same-theme alternative.",
+          "whySelectedCompanyShouldOutperform": "Garden is the more direct D3 expression and had documented current product contribution.",
+          "evidenceRefs": [
+            "garden-q1-20170422",
+            "regime-vitamind3-20170630"
+          ]
+        }
+      ],
+      "matchedControlException": null,
+      "execution": {
+        "status": "unverified",
+        "reason": "daily bars cannot prove open-price fill",
+        "suspended": false,
+        "onePriceLimitUp": false,
+        "moveFromPreviousClose": 0.0018893387314440346
+      },
+      "horizons": {
+        "20": {
+          "exitDate": "2017-07-28",
+          "netReturn": 0.011135366580512285,
+          "benchmarkReturn": 0.014904982779918363,
+          "excessReturn": -0.0037696161994060784,
+          "matchedControlBasketReturn": 0.010675988679043236,
+          "matchedControlExcess": 0.0004593779014690491,
+          "bestControlTicker": "600216.SH",
+          "bestControlReturn": 0.02640852848453723,
+          "excessVsBestControl": -0.015273161904024946,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600216.SH",
+              "controlType": "peer",
+              "netReturn": 0.02640852848453723
+            },
+            {
+              "ticker": "002001.SZ",
+              "controlType": "peer",
+              "netReturn": -0.005056551126450759
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.10915722287351826,
+            "peakDate": "2017-07-05",
+            "troughDate": "2017-07-17"
+          }
+        },
+        "60": {
+          "exitDate": "2017-09-22",
+          "netReturn": 0.2011671690737089,
+          "benchmarkReturn": 0.0464928570065144,
+          "excessReturn": 0.1546743120671945,
+          "matchedControlBasketReturn": 0.14048853240841286,
+          "matchedControlExcess": 0.06067863666529605,
+          "bestControlTicker": "002001.SZ",
+          "bestControlReturn": 0.22658519438580238,
+          "excessVsBestControl": -0.025418025312093473,
+          "winsAllControls": false,
+          "selectedRank": 2,
+          "matchedSetSize": 3,
+          "rankPercentile": 0.5,
+          "controlReturns": [
+            {
+              "ticker": "600216.SH",
+              "controlType": "peer",
+              "netReturn": 0.05439187043102334
+            },
+            {
+              "ticker": "002001.SZ",
+              "controlType": "peer",
+              "netReturn": 0.22658519438580238
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.13259668508287292,
+            "peakDate": "2017-07-31",
+            "troughDate": "2017-08-24"
+          }
+        },
+        "120": {
+          "exitDate": "2017-12-22",
+          "netReturn": 0.19955900149266625,
+          "benchmarkReturn": 0.10563013500653073,
+          "excessReturn": 0.09392886648613552,
+          "matchedControlBasketReturn": 0.5766939628448179,
+          "matchedControlExcess": -0.37713496135215163,
+          "bestControlTicker": "002001.SZ",
+          "bestControlReturn": 0.866877143233695,
+          "excessVsBestControl": -0.6673181417410288,
+          "winsAllControls": false,
+          "selectedRank": 3,
+          "matchedSetSize": 3,
+          "rankPercentile": 0,
+          "controlReturns": [
+            {
+              "ticker": "600216.SH",
+              "controlType": "peer",
+              "netReturn": 0.28651078245594075
+            },
+            {
+              "ticker": "002001.SZ",
+              "controlType": "peer",
+              "netReturn": 0.866877143233695
+            }
+          ],
+          "closePathMaxDrawdown": {
+            "value": -0.15303587399383856,
+            "peakDate": "2017-11-13",
+            "troughDate": "2017-11-27"
+          }
+        }
+      },
+      "pendingHorizons": [],
+      "thesisBaseOutcome": {
+        "exitDate": "2017-09-22",
+        "netReturn": 0.2011671690737089,
+        "benchmarkReturn": 0.0464928570065144,
+        "excessReturn": 0.1546743120671945,
+        "matchedControlBasketReturn": 0.14048853240841286,
+        "matchedControlExcess": 0.06067863666529605,
+        "bestControlTicker": "002001.SZ",
+        "bestControlReturn": 0.22658519438580238,
+        "excessVsBestControl": -0.025418025312093473,
+        "winsAllControls": false,
+        "selectedRank": 2,
+        "matchedSetSize": 3,
+        "rankPercentile": 0.5,
+        "controlReturns": [
+          {
+            "ticker": "600216.SH",
+            "controlType": "peer",
+            "netReturn": 0.05439187043102334
+          },
+          {
+            "ticker": "002001.SZ",
+            "controlType": "peer",
+            "netReturn": 0.22658519438580238
+          }
+        ],
+        "closePathMaxDrawdown": {
+          "value": -0.13259668508287292,
+          "peakDate": "2017-07-31",
+          "troughDate": "2017-08-24"
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "tickerLevel": {
+      "20": {
+        "count": 3,
+        "meanNetReturn": 0.021147842855205656,
+        "medianNetReturn": 0.013383478262881221,
+        "meanExcessReturn": 0.006242860075287293,
+        "medianExcessReturn": -0.0015215045170371422,
+        "excessHitRate": 0.3333333333333333,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 3,
+        "meanMatchedControlExcess": -0.1452846671519042,
+        "medianMatchedControlExcess": -0.09347370553575596,
+        "matchedControlHitRate": 0.3333333333333333,
+        "bestControlCount": 3,
+        "meanExcessVsBestControl": -0.17573969533963915,
+        "medianExcessVsBestControl": -0.16910625029346682,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.16666666666666666,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 3,
+        "meanNetReturn": 0.10768486909544839,
+        "medianNetReturn": 0.19750009088809706,
+        "meanExcessReturn": 0.06119201208893399,
+        "medianExcessReturn": 0.15100723388158266,
+        "excessHitRate": 0.6666666666666666,
+        "positiveReturnRate": 0.6666666666666666,
+        "matchedControlCount": 3,
+        "meanMatchedControlExcess": -0.1678300278004701,
+        "medianMatchedControlExcess": -0.1276935714365287,
+        "matchedControlHitRate": 0.3333333333333333,
+        "bestControlCount": 3,
+        "meanExcessVsBestControl": -0.20581229356020248,
+        "medianExcessVsBestControl": -0.15554370673833628,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.16666666666666666,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 3,
+        "meanNetReturn": 0.0890769690602516,
+        "medianNetReturn": 0.046597687294765766,
+        "meanExcessReturn": -0.01655316594627913,
+        "medianExcessReturn": -0.05903244771176497,
+        "excessHitRate": 0.3333333333333333,
+        "positiveReturnRate": 1,
+        "matchedControlCount": 3,
+        "meanMatchedControlExcess": -0.252891085942857,
+        "medianMatchedControlExcess": -0.30944930973012613,
+        "matchedControlHitRate": 0,
+        "bestControlCount": 3,
+        "meanExcessVsBestControl": -0.46570410545721125,
+        "medianExcessVsBestControl": -0.6577051878843119,
+        "winsAllControlsRate": 0,
+        "meanRankPercentile": 0.16666666666666666,
+        "blockedEntryCount": 0
+      }
+    },
+    "hypothesisLevel": {
+      "20": {
+        "count": 3,
+        "meanNetReturn": 0.021147842855205656,
+        "medianNetReturn": 0.013383478262881221,
+        "meanExcessReturn": 0.006242860075287293,
+        "medianExcessReturn": -0.0015215045170371422,
+        "excessHitRate": 0.3333333333333333,
+        "positiveReturnRate": 1
+      },
+      "60": {
+        "count": 3,
+        "meanNetReturn": 0.10768486909544839,
+        "medianNetReturn": 0.19750009088809706,
+        "meanExcessReturn": 0.06119201208893399,
+        "medianExcessReturn": 0.15100723388158266,
+        "excessHitRate": 0.6666666666666666,
+        "positiveReturnRate": 0.6666666666666666
+      },
+      "120": {
+        "count": 3,
+        "meanNetReturn": 0.0890769690602516,
+        "medianNetReturn": 0.046597687294765766,
+        "meanExcessReturn": -0.01655316594627913,
+        "medianExcessReturn": -0.05903244771176497,
+        "excessHitRate": 0.3333333333333333,
+        "positiveReturnRate": 1
+      }
+    },
+    "primaryTickerLevel": {
+      "20": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      },
+      "60": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      },
+      "120": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null,
+        "matchedControlCount": 0,
+        "meanMatchedControlExcess": null,
+        "medianMatchedControlExcess": null,
+        "matchedControlHitRate": null,
+        "bestControlCount": 0,
+        "meanExcessVsBestControl": null,
+        "medianExcessVsBestControl": null,
+        "winsAllControlsRate": null,
+        "meanRankPercentile": null,
+        "blockedEntryCount": 0
+      }
+    },
+    "primaryHypothesisLevel": {
+      "20": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      },
+      "60": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      },
+      "120": {
+        "count": 0,
+        "meanNetReturn": null,
+        "medianNetReturn": null,
+        "meanExcessReturn": null,
+        "medianExcessReturn": null,
+        "excessHitRate": null,
+        "positiveReturnRate": null
+      }
+    },
+    "primaryThesisBase": {
+      "count": 0,
+      "pendingBaseCount": 0,
+      "meanNetReturn": null,
+      "medianNetReturn": null,
+      "meanExcessReturn": null,
+      "medianExcessReturn": null,
+      "excessHitRate": null,
+      "matchedControlCount": 0,
+      "meanMatchedControlExcess": null,
+      "medianMatchedControlExcess": null,
+      "matchedControlHitRate": null,
+      "bestControlCount": 0,
+      "meanExcessVsBestControl": null,
+      "medianExcessVsBestControl": null,
+      "winsAllControlsRate": null,
+      "meanRankPercentile": null
+    },
+    "opportunityFirstBase": {
+      "count": 0,
+      "directionCaptureRate": null,
+      "positiveBasketRate": null,
+      "meanOpportunityExcessReturn": null,
+      "medianOpportunityExcessReturn": null
+    }
+  },
+  "hypothesisResults": [
+    {
+      "hypothesisId": "h-2017q2-aluminum-cuts-begin",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.03892468372222346,
+          "excessReturn": 0.0240197009423051
+        },
+        "60": {
+          "netReturn": 0.19750009088809706,
+          "excessReturn": 0.15100723388158266
+        },
+        "120": {
+          "netReturn": 0.046597687294765766,
+          "excessReturn": -0.05903244771176497
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q2-machinery-boom",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.013383478262881221,
+          "excessReturn": -0.0015215045170371422
+        },
+        "60": {
+          "netReturn": -0.0756126526754608,
+          "excessReturn": -0.1221055096819752
+        },
+        "120": {
+          "netReturn": 0.021074218393322797,
+          "excessReturn": -0.08455591661320794
+        }
+      }
+    },
+    {
+      "hypothesisId": "h-2017q2-vitamin-d3-price-spike",
+      "states": [
+        "Research selection"
+      ],
+      "hypothesisStates": [
+        "High-priority hypothesis"
+      ],
+      "selectionStates": [
+        "Research selection"
+      ],
+      "tickerCount": 1,
+      "horizons": {
+        "20": {
+          "netReturn": 0.011135366580512285,
+          "excessReturn": -0.0037696161994060784
+        },
+        "60": {
+          "netReturn": 0.2011671690737089,
+          "excessReturn": 0.1546743120671945
+        },
+        "120": {
+          "netReturn": 0.19955900149266625,
+          "excessReturn": 0.09392886648613552
+        }
+      }
+    }
+  ],
+  "primaryHypothesisResults": []
+}
