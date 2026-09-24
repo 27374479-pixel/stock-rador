@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-06-30T23:59:59+08:00",
+  "researchReadyAt": "2019-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q2-memory-downcycle",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "DRAM/NAND pricing and device demand can affect suppliers within one to two quarters, but the frozen physical direction is adverse rather than a positive opportunity."
+  },
+  "changeHypothesis": {
+    "summary": "DRAM and NAND prices remained in a pronounced downcycle, with Huawei restrictions worsening smartphone/server uncertainty. This physical product cycle is deliberately separated from long-run semiconductor localization.",
+    "firstCredibleDate": "2019-06-06",
+    "valueChain": [
+      "device/server demand",
+      "DRAM/NAND inventory and pricing",
+      "memory supplier revenue/margins"
+    ],
+    "persistenceReason": "Inventory clearing and weak device demand can persist for quarters until supply cuts/restocking emerge.",
+    "disconfirmingEvidence": [
+      "DRAM 3Q decline forecast widened to 10-15%.",
+      "NAND prices had fallen about 20% QoQ for two quarters with no 3Q rebound expected.",
+      "兆易 Q1 revenue -15.7% and profit -55.6%."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "trendforce-dram-20190606",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "trendforce-nand-20190620",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "giga-q1-20190430",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-memory-20190630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "weak smartphone/server/notebook demand",
+      "to": "memory prices",
+      "mechanism": "High inventory and soft procurement drive DRAM/NAND contract-price declines.",
+      "evidenceRefs": [
+        "trendforce-dram-20190606",
+        "trendforce-nand-20190620"
+      ],
+      "failureMode": "rapid supply cuts/restocking reverse pricing",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "memory prices",
+      "to": "A-share memory earnings",
+      "mechanism": "Direct memory exposure should show weaker revenue/margins while the downcycle persists.",
+      "evidenceRefs": [
+        "giga-q1-20190430"
+      ],
+      "failureMode": "different product mix/localization offsets the physical cycle",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "downstream buyers if lower input cost is retained"
+    ],
+    "losers": [
+      "memory suppliers"
+    ],
+    "substitutes": [
+      "other storage technologies/suppliers"
+    ],
+    "bottlenecks": [
+      "inventory clearance",
+      "device demand"
+    ],
+    "falseThemeMatches": [
+      "generic domestic-substitution semiconductor stocks used as a positive memory thesis"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "verifiedExposure": "Memory/MCU exposure, but frozen Q1 revenue and profit were sharply down.",
+      "evidenceRefs": [
+        "giga-q1-20190430",
+        "regime-memory-20190630"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue -15.7%, profit -55.6%.",
+        "favorable": "A different product cycle/localization offsets DRAM/NAND weakness.",
+        "adverse": "Broad memory downcycle continues."
+      },
+      "principalRisks": [
+        "weak earnings",
+        "product-mapping differences"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No long selection: the physical memory signal and frozen company earnings are both adverse."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Generic memory-theme basket was -5.83pp relative over 60d and neither frozen name beat CSI300.",
+    "thesisExpectation": "Wait for product-level stabilization or a separate verified company engine; do not let localization narrative overwrite the negative memory cycle.",
+    "measurableGap": "There is no positive base-horizon earnings gap to buy.",
+    "evidenceRefs": [
+      "trendforce-dram-20190606",
+      "trendforce-nand-20190620",
+      "giga-q1-20190430",
+      "regime-memory-20190630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "DRAM/NAND physical pricing and inventory downcycle",
+    "geographicScope": "global memory market with Huawei/device demand shock",
+    "customerScope": "smartphone/server/notebook OEM procurement",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [
+      "h-2019q2-semiconductor-localization-pressure"
+    ],
+    "rationale": "Keep physical memory pricing separate from structural domestic substitution; this memo asks only whether the current DRAM/NAND cycle supports a positive selection.",
+    "evidenceRefs": [
+      "trendforce-dram-20190606",
+      "trendforce-nand-20190620"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "DRAM/NAND prices and device demand remain weak",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "trendforce-dram-20190606",
+        "trendforce-nand-20190620"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "inventory clearing and weak device/server demand pressure earnings",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "trendforce-dram-20190606",
+        "giga-q1-20190430"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "future supply discipline/localization may improve later but is not the current product cycle",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "us-commerce-huawei-20190515",
+        "trendforce-nand-20190620"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not average future localization with current product-price weakness; current positive selection remains fail-closed.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "negative",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Physical market data and GigaDevice Q1 earnings both point to weakness.",
+    "evidenceRefs": [
+      "trendforce-dram-20190606",
+      "trendforce-nand-20190620",
+      "giga-q1-20190430"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "negative_physical_and_company_regime",
+    "constraints": [
+      "falling memory prices",
+      "weak device demand",
+      "Huawei uncertainty"
+    ]
+  },
+  "bearCase": "A generic semiconductor rebound tempts a false long while memory fundamentals remain deteriorating.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM/NAND price and supplier earnings",
+      "observationMethod": "TrendForce/company results",
+      "threshold": "clear product-level stabilization plus earnings improvement"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a negative physical-cycle control."
+  ]
+}
