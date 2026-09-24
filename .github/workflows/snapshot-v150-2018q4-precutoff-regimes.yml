@@ -1,0 +1,40 @@
+name: snapshot-v150-2018q4-precutoff-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.5-2018q4-holdout-20260924
+    paths:
+      - .github/workflows/snapshot-v150-2018q4-precutoff-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  snapshot:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.5-2018q4-holdout-20260924
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Freeze v1.5 2018Q4 pre-cutoff regimes
+        run: |
+          for n in 5g machinery nev pork cement; do
+            node scripts/fetch-precutoff-regime-hfq.cjs \
+              backtests/runs/2018q4-multisource-deep-v1.5-001/regime/${n}-20181231.json \
+              backtests/runs/2018q4-multisource-deep-v1.5-001/regime/${n}-20181231.snapshot.json
+          done
+      - name: Commit regime snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2018q4-multisource-deep-v1.5-001/regime/*.snapshot.json
+          git commit -m "backtest: freeze v1.5 2018Q4 pre-cutoff regimes"
+          git pull --rebase origin ai-skill-v1.5-2018q4-holdout-20260924
+          git push origin HEAD:ai-skill-v1.5-2018q4-holdout-20260924
