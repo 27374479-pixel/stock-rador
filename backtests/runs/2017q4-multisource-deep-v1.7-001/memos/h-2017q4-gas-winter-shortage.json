@@ -1,0 +1,338 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.7.0",
+  "cutoffAt": "2017-12-31T23:59:59+08:00",
+  "researchReadyAt": "2017-12-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q4-gas-winter-shortage",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The physical winter shortage can persist for weeks, but already-extreme spot prices, policy substitution/intervention and mixed company financing profiles prevent a clean listed-equity selection."
+  },
+  "changeHypothesis": {
+    "summary": "North China gas/LNG shortage is real and severe, but spot prices already roughly doubled and authorities are actively substituting clean coal and restraining abnormal price moves.",
+    "firstCredibleDate": "2017-12-05",
+    "valueChain": [
+      "gas supply/import",
+      "LNG spot price",
+      "distribution/throughput",
+      "industrial/heating demand",
+      "policy substitutes"
+    ],
+    "persistenceReason": "Winter heating imbalance can persist through the season, but emergency substitution and policy intervention shorten the monetization window.",
+    "disconfirmingEvidence": [
+      "LNG spot prices had already roughly doubled.",
+      "NDRC intervention and clean-coal substitution directly cap shock duration.",
+      "New Hope? direct gas names show financing/capex burdens rather than a clean spot-price pass-through."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "lng-shortage-20171205",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Severe LNG price/supply stress is contemporaneously visible."
+    },
+    {
+      "id": "gas-imbalance-20171226",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "Policy substitutes and intervention can shorten the shortage monetization window."
+    },
+    {
+      "id": "newao-q3-20171030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "A direct gas-related company has stronger earnings but rising liabilities/capex."
+    },
+    {
+      "id": "guanghui-q3-20171020",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Another direct energy expression carries high finance/lease obligations."
+    },
+    {
+      "id": "regime-gas-20171231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Gas equities already show favorable pre-cutoff absorption."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "winter gas supply imbalance",
+      "to": "LNG spot prices",
+      "mechanism": "Peak heating demand exceeds regional/seasonal supply.",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226"
+      ],
+      "failureMode": "weather/substitution/import response eases imbalance",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "high LNG prices",
+      "to": "listed-company earnings",
+      "mechanism": "Only companies with verified supply/throughput pricing leverage can monetize the shortage.",
+      "evidenceRefs": [
+        "newao-q3-20171030",
+        "guanghui-q3-20171020"
+      ],
+      "failureMode": "contract structure, capex or financing prevents spot-price pass-through",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "producers/importers with unhedged supply and throughput leverage"
+    ],
+    "secondOrderWinners": [
+      "substitute fuel suppliers"
+    ],
+    "losers": [
+      "industrial gas users"
+    ],
+    "substitutes": [
+      "clean coal",
+      "alternative fuels"
+    ],
+    "bottlenecks": [
+      "winter supply",
+      "terminal/storage capacity"
+    ],
+    "falseThemeMatches": [
+      "gas names without verified spot-price earnings leverage"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600803.SH",
+      "name": "新奥股份",
+      "verifiedExposure": "Gas/energy exposure but not a clean frozen spot-LNG pass-through.",
+      "evidenceRefs": [
+        "newao-q3-20171030"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong current earnings.",
+        "favorable": "Supply/throughput leverage persists.",
+        "adverse": "Capex/liabilities and intervention dilute benefit."
+      },
+      "principalRisks": [
+        "capex",
+        "liabilities",
+        "policy intervention"
+      ]
+    },
+    {
+      "ticker": "600256.SH",
+      "name": "广汇能源",
+      "verifiedExposure": "Direct energy/LNG exposure with material financing obligations.",
+      "evidenceRefs": [
+        "guanghui-q3-20171020"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong operating exposure.",
+        "favorable": "High prices lift realization.",
+        "adverse": "Finance/lease burden and price intervention."
+      },
+      "principalRisks": [
+        "finance expense",
+        "lease obligations",
+        "high absorption"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "The product shortage is real, but no frozen company offers a clean underabsorbed earnings bridge after policy substitution and financing/capex review."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Gas basket was +2.01pp excess over 20d and +5.10pp over 60d with majority positive breadth.",
+    "thesisExpectation": "Preserve the shortage as a valid physical state without inventing an underpriced equity expression.",
+    "measurableGap": "No clear company-level gap remains once spot-price absorption, intervention and company financing are incorporated.",
+    "evidenceRefs": [
+      "lng-shortage-20171205",
+      "gas-imbalance-20171226",
+      "newao-q3-20171030",
+      "guanghui-q3-20171020",
+      "regime-gas-20171231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "winter natural-gas/LNG shortage",
+    "geographicScope": "North China/China winter heating market",
+    "customerScope": "heating and industrial gas users",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep gas shortage separate from individual company contract/financing structures.",
+    "evidenceRefs": [
+      "lng-shortage-20171205",
+      "gas-imbalance-20171226",
+      "newao-q3-20171030",
+      "guanghui-q3-20171020",
+      "regime-gas-20171231"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "severe shortage and high spot prices",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226",
+        "newao-q3-20171030",
+        "guanghui-q3-20171020",
+        "regime-gas-20171231"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "policy substitution and company contract/capex differences",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226",
+        "newao-q3-20171030",
+        "guanghui-q3-20171020",
+        "regime-gas-20171231"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "supply infrastructure responds over time",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226",
+        "newao-q3-20171030",
+        "guanghui-q3-20171020",
+        "regime-gas-20171231"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not map a short-lived spot shock into a generic gas-equity long.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "mixed",
+    "rationale": "Product-market scarcity is clear but company monetization is heterogeneous.",
+    "evidenceRefs": [
+      "lng-shortage-20171205",
+      "gas-imbalance-20171226",
+      "newao-q3-20171030",
+      "guanghui-q3-20171020",
+      "regime-gas-20171231"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "winter regional gas supply headroom",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines scarcity and spot pricing",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "LNG spot price",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "Price already reflects acute scarcity and is subject to policy intervention/substitution.",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Supply imbalance is already translating into spot-price stress.",
+      "evidenceRefs": [
+        "lng-shortage-20171205",
+        "gas-imbalance-20171226"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "Listed company exposure exists but financing/capex and contract structures differ.",
+      "evidenceRefs": [
+        "newao-q3-20171030",
+        "guanghui-q3-20171020"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [
+      "Spot price already extremely absorbed.",
+      "Policy substitution/intervention shortens event half-life.",
+      "No clean underabsorbed company earnings bridge."
+    ],
+    "falsifier": "A company with verified incremental supply/throughput earnings leverage and acceptable financing emerges.",
+    "conclusion": "no_actionable_state_edge"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "real_shortage_high_absorption_policy_capped",
+    "constraints": [
+      "spot-price absorption",
+      "policy intervention",
+      "financing/capex heterogeneity"
+    ]
+  },
+  "bearCase": "The shortage is temporary and equity prices already capitalize the winter shock.",
+  "invalidationConditions": [
+    {
+      "indicator": "gas supply balance",
+      "observationMethod": "official/industry data",
+      "threshold": "scarcity normalizes"
+    },
+    {
+      "indicator": "company earnings bridge",
+      "observationMethod": "company filings",
+      "threshold": "no incremental shortage-linked earnings"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve gas scarcity as a valid state but require a fresh company-specific earnings gap in a later dated re-underwrite."
+  ]
+}
