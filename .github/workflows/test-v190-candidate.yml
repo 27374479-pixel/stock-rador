@@ -1,0 +1,23 @@
+name: test-v190-candidate
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.9-fresh-incremental-20260924
+    paths:
+      - .github/workflows/test-v190-candidate.yml
+      - scripts/backtest-core-v190.cjs
+      - scripts/lock-skill-run-v190.cjs
+      - scripts/evaluate-skill-run-v190.cjs
+      - skills/stock-rador/versions/1.9.0/SKILL.md
+      - tests/backtest-core-v190-fresh.test.js
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
