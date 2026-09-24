@@ -1,0 +1,38 @@
+name: audit-v150-2019q1-variable-base
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.5-2019q1-holdout-20260924
+    paths:
+      - .github/workflows/audit-v150-2019q1-variable-base.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.5-2019q1-holdout-20260924
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Audit heterogeneous frozen base horizons
+        run: |
+          node scripts/audit-variable-base-horizon.cjs \
+            backtests/runs/2019q1-multisource-deep-v1.5-001/outcome.json \
+            backtests/runs/2019q1-multisource-deep-v1.5-001/variable-base-horizon-audit.json
+      - name: Commit audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2019q1-multisource-deep-v1.5-001/variable-base-horizon-audit.json
+          git commit -m "backtest: audit v1.5 2019Q1 variable base horizons"
+          git pull --rebase origin ai-skill-v1.5-2019q1-holdout-20260924
+          git push origin HEAD:ai-skill-v1.5-2019q1-holdout-20260924
