@@ -1,0 +1,529 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2017q1-multisource-v1.9-001",
+  "cutoffAt": "2017-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Untouched V1.9 holdout. Only sources public by 2017-03-31 are frozen before company mapping or post-cutoff outcome reveal.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy and regulatory changes.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central-government NEV policy records; not exhaustive."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Intentionally deferred until discovery freeze."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Physical unit-sales and product-price evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected machinery and product-market observations."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Contemporaneous independent reporting.",
+      "coverageStatus": "partial",
+      "limitations": "Selected People's Daily/China Securities Journal/First Financial/Daily Economic News."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist product-market evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected TrendForce DRAM evidence."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Historical community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time community archive was available."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "nev-policy-reset-20170109",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "official_commentary",
+      "title": "新能源车补贴又有新变化",
+      "publisher": "财政部转载人民日报",
+      "url": "https://www.mof.gov.cn/zhengwuxinxi/caijingshidian/renminwang/201701/t20170109_2516584.htm",
+      "publishedAt": "2017-01-09T00:00:00+08:00",
+      "availableAt": "2017-01-09T00:00:00+08:00",
+      "originGroup": "nev-policy-reset-20170109",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The revised NEV subsidy policy took effect on 2017-01-01.",
+        "Subsidy amounts stepped down by about 20% and technical thresholds for energy use, range, battery performance and safety were tightened.",
+        "The policy ended a broad universal-subsidy approach and increased technology/quality differentiation across vehicles and batteries."
+      ],
+      "entities": [
+        "new energy vehicles",
+        "subsidy",
+        "battery energy density",
+        "vehicle catalog"
+      ],
+      "observedChanges": [
+        "a new policy regime reduces aggregate subsidy while increasing technical-quality thresholds"
+      ]
+    },
+    {
+      "itemId": "nev-january-crash-20170220",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "1月份新能源汽车产销量断崖式下跌",
+      "publisher": "中国能源报/人民网",
+      "url": "https://paper.people.com.cn/zgnyb/html/2017-02/20/content_1752033.htm",
+      "publishedAt": "2017-02-20T00:00:00+08:00",
+      "availableAt": "2017-02-20T00:00:00+08:00",
+      "originGroup": "nev-january-crash-20170220",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "January NEV production and sales fell about 69.1% and 74.4% YoY.",
+        "The report linked the abrupt decline to the subsidy reset and re-approval of recommended models.",
+        "The aggregate demand shock was especially severe in electric buses."
+      ],
+      "entities": [
+        "new energy vehicles",
+        "passenger EV",
+        "electric bus",
+        "recommended model catalog"
+      ],
+      "observedChanges": [
+        "new policy causes a severe near-term aggregate demand air pocket"
+      ]
+    },
+    {
+      "itemId": "nev-february-rebound-20170313",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "2月新能源车销量反弹 进入稳定增长阶段",
+      "publisher": "第一财经",
+      "url": "https://www.yicai.com/news/5244690.html",
+      "publishedAt": "2017-03-13T09:01:00+08:00",
+      "availableAt": "2017-03-13T09:01:00+08:00",
+      "originGroup": "nev-february-rebound-20170313",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "February NEV sales recovered to about 18,000 units, +145% MoM and +30.3% YoY.",
+        "Jan-Feb cumulative production and sales were still down roughly one-third YoY.",
+        "The first 2017 recommended-model catalog was released on January 23, allowing some normalization after the policy/catalog air pocket."
+      ],
+      "entities": [
+        "new energy vehicles",
+        "recommended model catalog",
+        "EV demand"
+      ],
+      "observedChanges": [
+        "aggregate demand begins to normalize but remains below prior-year cumulative volume"
+      ]
+    },
+    {
+      "itemId": "mdi-shortage-20170313",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "现货紧缺 MDI易涨难跌",
+      "publisher": "中国证券报·中证网",
+      "url": "https://www.cs.com.cn/zzqh/201703/t20170313_5204152.html",
+      "publishedAt": "2017-03-13T08:07:00+08:00",
+      "availableAt": "2017-03-13T08:07:00+08:00",
+      "originGroup": "mdi-shortage-20170313",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "From late February, pure MDI rose about 10.86% and polymeric MDI about 8.33%.",
+        "March list prices from major suppliers clustered around RMB25,500-26,000/t while spot offers could be substantially higher.",
+        "The immediate driver was sustained tight physical supply and low spot availability."
+      ],
+      "entities": [
+        "MDI",
+        "polymeric MDI",
+        "pure MDI",
+        "polyurethane"
+      ],
+      "observedChanges": [
+        "a fresh late-quarter spot-supply shortage creates incremental MDI pricing pressure"
+      ]
+    },
+    {
+      "itemId": "machinery-feb-20170220",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "CMI指数提示旺季来临，预计2月挖掘机销量增幅超六成",
+      "publisher": "三一集团官网行业资讯",
+      "url": "https://m.sanygroup.com/industryNews/2793.html",
+      "publishedAt": "2017-02-20T00:00:00+08:00",
+      "availableAt": "2017-02-20T00:00:00+08:00",
+      "originGroup": "machinery-feb-20170220",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "January domestic excavator sales were up about 57.9% YoY.",
+        "The source explicitly said excavator growth had remained high since September 2016.",
+        "The rebound was linked to mining, rural, municipal, railway and highway demand as well as a low prior-year base."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "infrastructure"
+      ],
+      "observedChanges": [
+        "construction-machinery recovery continues from a pre-existing 2016H2 rebound"
+      ]
+    },
+    {
+      "itemId": "machinery-record-20170326",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "industry_data",
+      "title": "挖掘机销量创新高 工程机械行业持续复苏",
+      "publisher": "每日经济新闻转载中证信息",
+      "url": "https://www.nbd.com.cn/articles/2017-03-26/1088514.html",
+      "publishedAt": "2017-03-26T23:25:48+08:00",
+      "availableAt": "2017-03-26T23:25:48+08:00",
+      "originGroup": "machinery-record-20170326",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Jan-Feb excavator sales were about 19,077 units, +188.9% YoY.",
+        "February sales were about 14,540 units, +298% YoY, a record monthly growth rate.",
+        "Infrastructure/PPP and replacement demand were cited as important supports."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery",
+        "replacement demand",
+        "PPP"
+      ],
+      "observedChanges": [
+        "the existing machinery recovery accelerates dramatically but remains a continuation signal"
+      ]
+    },
+    {
+      "itemId": "dram-q1-price-20170104",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "DRAM Price Will Achieve Record Increase for Off-Peak Season in First Quarter of 2017",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20170104-9629.html",
+      "publishedAt": "2017-01-04T00:00:00+08:00",
+      "availableAt": "2017-01-04T00:00:00+08:00",
+      "originGroup": "dram-q1-price-20170104",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "DRAM price upswing began in the second half of 2016 and was expected to persist through Q1 2017.",
+        "PC and server DRAM contract prices were expected to rise roughly 30% QoQ in Q1.",
+        "The signal was strong but explicitly a continuation of a pre-existing H2 2016 supply cycle."
+      ],
+      "entities": [
+        "DRAM",
+        "PC DRAM",
+        "server DRAM"
+      ],
+      "observedChanges": [
+        "global DRAM tightness continues rather than begins in Q1"
+      ]
+    },
+    {
+      "itemId": "dram-server-20170110",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Tight Supply Causes Contract Prices of Server DRAM Modules to Rise Over 25% Sequentially in First Quarter of 2017",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20170110-9634.html",
+      "publishedAt": "2017-01-10T00:00:00+08:00",
+      "availableAt": "2017-01-10T00:00:00+08:00",
+      "originGroup": "dram-server-20170110",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Server DRAM module contract prices had already risen more than 25% sequentially at the start of Q1.",
+        "High-density modules saw increases near 30%, confirming severe tightness."
+      ],
+      "entities": [
+        "server DRAM",
+        "DDR4",
+        "memory contract price"
+      ],
+      "observedChanges": [
+        "downstream contract pricing strongly confirms the continuing DRAM supply shortage"
+      ]
+    },
+    {
+      "itemId": "dram-revenue-20170214",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Global DRAM Revenue Jumped 18.2% Sequentially in Fourth Quarter of 2016",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20170214-9652.html",
+      "publishedAt": "2017-02-14T00:00:00+08:00",
+      "availableAt": "2017-02-14T00:00:00+08:00",
+      "originGroup": "dram-revenue-20170214",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Global DRAM revenue had already risen 18.2% QoQ in Q4 2016.",
+        "PC DRAM contract prices had risen more than 30% in Q4 and server DRAM was expected to catch up in Q1.",
+        "The product-market earnings state was already strongly realized before the Q1 cutoff."
+      ],
+      "entities": [
+        "DRAM",
+        "global suppliers",
+        "PC DRAM",
+        "server DRAM"
+      ],
+      "observedChanges": [
+        "supplier revenue already reflects much of the continuing global DRAM tightness"
+      ]
+    },
+    {
+      "itemId": "tio2-price-20170221",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "钛白粉今年每吨涨了2000元企业还要提价",
+      "publisher": "每日经济新闻",
+      "url": "https://www.nbd.com.cn/articles/2017-02-21/1078066.html",
+      "publishedAt": "2017-02-21T21:14:37+08:00",
+      "availableAt": "2017-02-21T21:14:37+08:00",
+      "originGroup": "tio2-price-20170221",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "By February 16 titanium-dioxide prices had risen from about RMB14,913/t at year start to about RMB16,940/t, roughly +13.6%.",
+        "Listed and private producers were continuing to raise prices.",
+        "Supply-demand imbalance, environmental pressure and exports were cited as supports."
+      ],
+      "entities": [
+        "titanium dioxide",
+        "TiO2",
+        "coatings",
+        "exports"
+      ],
+      "observedChanges": [
+        "titanium-dioxide price upcycle continues into 2017"
+      ]
+    },
+    {
+      "itemId": "tio2-fourth-hike-20170329",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "company_price_notice",
+      "title": "龙蟒佰利：钛白粉价格再度上调1000元/吨",
+      "publisher": "中证网/全景网",
+      "url": "https://www.cs.com.cn/ssgs/gsxw/201703/t20170329_5224618.html",
+      "publishedAt": "2017-03-29T10:44:00+08:00",
+      "availableAt": "2017-03-29T10:44:00+08:00",
+      "originGroup": "tio2-fourth-hike-20170329",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Longmang Baili raised TiO2 prices another RMB1,000/t domestically and US$100/t internationally.",
+        "This was already the company's fourth announced price increase in 2017.",
+        "The underlying industry had also experienced repeated increases during 2016, so Q1 is continuation rather than a first-time shock."
+      ],
+      "entities": [
+        "Longmang Baili",
+        "titanium dioxide",
+        "price increase"
+      ],
+      "observedChanges": [
+        "repeated company price hikes reinforce an already-established TiO2 cycle"
+      ]
+    },
+    {
+      "itemId": "cobalt-spike-20170301",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "钴价暴涨背后：炒钴还是炒股",
+      "publisher": "中国证券报·中证网",
+      "url": "https://www.cs.com.cn/zzqh/201703/t20170301_5191380.html",
+      "publishedAt": "2017-03-01T10:05:00+08:00",
+      "availableAt": "2017-03-01T10:05:00+08:00",
+      "originGroup": "cobalt-spike-20170301",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Cobalt prices had risen more than 125% over roughly one year.",
+        "Related A-share concept stocks had also risen sharply; Huayou Cobalt was reported up nearly threefold over roughly a year.",
+        "A widely circulated hoarding rumor was denied, while market participants raised concerns about commodity/equity speculation."
+      ],
+      "entities": [
+        "cobalt",
+        "Huayou Cobalt",
+        "Luoyang Molybdenum",
+        "battery materials"
+      ],
+      "observedChanges": [
+        "a real cobalt cycle is accompanied by extreme price/equity absorption and speculative narratives"
+      ]
+    },
+    {
+      "itemId": "cobalt-cycle-20170302",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "有色化工涨价此起彼伏 A股轮番炒作周期表行情",
+      "publisher": "证券时报/中证网",
+      "url": "https://www.cs.com.cn/gppd/201703/t20170302_5192356_2.html",
+      "publishedAt": "2017-03-02T07:56:00+08:00",
+      "availableAt": "2017-03-02T07:56:00+08:00",
+      "originGroup": "cobalt-cycle-20170302",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Cobalt had already started a large rally around October 2016 and was up roughly 80% over four months.",
+        "The broader market was actively trading price-increase/cyclical themes.",
+        "This makes Q1 cobalt an explicit continuation/high-absorption case rather than a fresh unrecognized driver."
+      ],
+      "entities": [
+        "cobalt",
+        "cyclical commodities",
+        "A-share price-increase theme"
+      ],
+      "observedChanges": [
+        "cobalt's fundamental cycle and market narrative are already mature by early March"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2017q1-nev-policy-reset",
+      "statement": "A new 2017 NEV subsidy/catalog regime sharply reduced January demand but simultaneously raised technical thresholds, followed by a partial February normalization.",
+      "changeType": "new_policy_reset_with_company_quality_filter",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-01-09T00:00:00+08:00",
+      "memberItemIds": [
+        "nev-policy-reset-20170109",
+        "nev-january-crash-20170220",
+        "nev-february-rebound-20170313"
+      ],
+      "independentOriginGroups": [
+        "nev-policy-reset-20170109",
+        "nev-january-crash-20170220",
+        "nev-february-rebound-20170313"
+      ],
+      "affectedValueChain": [
+        "vehicle OEMs",
+        "battery/cell suppliers",
+        "high-energy-density technology",
+        "electric buses/passenger EVs"
+      ],
+      "contradictionSearchNotes": "Aggregate demand was damaged, but tighter technical thresholds can redistribute share toward qualified products. Do not average those two paths together.",
+      "researchQuestion": "Does any listed company have a cutoff-valid technology/quality exception whose earnings path improves under the new thresholds despite the aggregate demand reset?"
+    },
+    {
+      "eventId": "event-2017q1-mdi-late-quarter-shortage",
+      "statement": "MDI experienced a fresh late-February/early-March spot shortage and renewed price acceleration on top of an already-improved 2016 baseline.",
+      "changeType": "fresh_incremental_supply_shortage",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2017-03-13T08:07:00+08:00",
+      "memberItemIds": [
+        "mdi-shortage-20170313"
+      ],
+      "independentOriginGroups": [
+        "mdi-shortage-20170313"
+      ],
+      "affectedValueChain": [
+        "MDI producers",
+        "polyurethane processors",
+        "appliance/construction/auto downstream users"
+      ],
+      "contradictionSearchNotes": "MDI had already risen in 2016, so the company case must prove that the late-Q1 shortage changes the frozen earnings path rather than merely repeating the old story.",
+      "researchQuestion": "Is the late-Q1 supply shortage a source-linked incremental earnings reset for a direct producer after measuring the pre-event baseline and price absorption?"
+    },
+    {
+      "eventId": "event-2017q1-machinery-record-recovery",
+      "statement": "Excavator sales accelerated to record growth in February, but the recovery had already been running at high growth since September 2016.",
+      "changeType": "high_frequency_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-02-20T00:00:00+08:00",
+      "memberItemIds": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ],
+      "independentOriginGroups": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ],
+      "affectedValueChain": [
+        "excavator OEMs",
+        "hydraulic/components",
+        "infrastructure/replacement demand"
+      ],
+      "contradictionSearchNotes": "Record February growth is powerful confirmation but not a new thesis. V1.9 must not relabel it as fresh merely because the data point is spectacular.",
+      "researchQuestion": "Can machinery pass an inherited V1.8/V1.5 route on its own, without using the V1.9 fresh relaxation?"
+    },
+    {
+      "eventId": "event-2017q1-dram-tightness",
+      "statement": "Global DRAM prices and supplier revenue continued a supply-driven upcycle that had already begun in 2016H2.",
+      "changeType": "product_market_tightness_high_absorption",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-01-04T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-q1-price-20170104",
+        "dram-server-20170110",
+        "dram-revenue-20170214"
+      ],
+      "independentOriginGroups": [
+        "dram-q1-price-20170104",
+        "dram-server-20170110",
+        "dram-revenue-20170214"
+      ],
+      "affectedValueChain": [
+        "global DRAM suppliers",
+        "PC/server/mobile buyers",
+        "domestic semiconductor proxies"
+      ],
+      "contradictionSearchNotes": "Product economics are strongly confirmed but the cycle predates Q1. Direct current A-share supplier earnings are still required; proxy substitution remains prohibited.",
+      "researchQuestion": "Is there a direct current A-share DRAM earnings expression, and if not should the signal remain No selection despite the strong global cycle?"
+    },
+    {
+      "eventId": "event-2017q1-tio2-price-cycle",
+      "statement": "Titanium-dioxide producers repeatedly raised prices through Q1, extending an industry upcycle that had already produced many hikes in 2016.",
+      "changeType": "repeated_product_price_increase",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-02-21T21:14:37+08:00",
+      "memberItemIds": [
+        "tio2-price-20170221",
+        "tio2-fourth-hike-20170329"
+      ],
+      "independentOriginGroups": [
+        "tio2-price-20170221",
+        "tio2-fourth-hike-20170329"
+      ],
+      "affectedValueChain": [
+        "TiO2 producers",
+        "titanium ore",
+        "coatings/plastics/paper downstream"
+      ],
+      "contradictionSearchNotes": "The price cycle is real but repeated. Strong company earnings may still justify an inherited route, but V1.9 fresh escalation is forbidden.",
+      "researchQuestion": "After multiple prior price hikes, is there residual expectation/valuation room under inherited rules, or is this a continuation trade?"
+    },
+    {
+      "eventId": "event-2017q1-cobalt-high-absorption",
+      "statement": "Cobalt's supply/demand cycle remained strong, but by early March both the commodity and obvious A-share proxies had already rerated dramatically and speculative narratives were widespread.",
+      "changeType": "mature_product_cycle_with_speculation",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2017-03-01T10:05:00+08:00",
+      "memberItemIds": [
+        "cobalt-spike-20170301",
+        "cobalt-cycle-20170302"
+      ],
+      "independentOriginGroups": [
+        "cobalt-spike-20170301",
+        "cobalt-cycle-20170302"
+      ],
+      "affectedValueChain": [
+        "cobalt miners/refiners",
+        "battery materials",
+        "EV batteries",
+        "commodity traders"
+      ],
+      "contradictionSearchNotes": "A true commodity bull market can still be a bad incremental equity entry after extreme product/equity absorption. Rumors must not substitute for supply-demand evidence.",
+      "researchQuestion": "Does any direct producer retain measurable earnings/valuation asymmetry under inherited rules, without using V1.9 fresh escalation?"
+    }
+  ]
+}
