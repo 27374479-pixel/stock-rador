@@ -73,7 +73,7 @@ It records:
 - `causalLagBridge`: clear / credible / mixed / insufficient;
 - `crossSectionalCorroboration`: clear / credible / mixed / insufficient;
 - `stateLeadDisposition`: continue_company_mapping / research_only /
-  no_selection_independent_blocker / not_applicable;
+  no_selection_independent_blocker / no_selection_state_not_actionable / not_applicable;
 - `independentBlockers`;
 - falsifier;
 - conclusion: state_leads_flow / flow_confirms_state / no_actionable_state_edge /
@@ -90,8 +90,9 @@ When the frozen evidence supports `state_leads_flow`:
 3. the current downstream flow **may not by itself force No selection**;
 4. the hypothesis must continue to company/value-chain mapping unless an independent
    blocker exists;
-5. a No-selection memo is allowed only when it freezes at least one independent blocker
-   unrelated to the lagging flow variable.
+5. a No-selection memo is allowed only when either the upstream state itself is not an
+   actionable opportunity, or the memo freezes at least one independent blocker unrelated
+   to the lagging flow variable.
 
 Independent blockers may include:
 - no investable listed expression;
