@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q3-multisource-deep-v1.8-001",
+  "skillVersion": "1.8.0",
+  "validationClass": "exploratory_contaminated_untouched_holdout_at_repo_level",
+  "samePeriodMayTuneSkill": false,
+  "lockedBeforeReveal": true,
+  "lockCommit": "add3daf852bd89f0e4407638cec4d8e4e8891224",
+  "evaluationMethodNote": {
+    "issue": "The original locked evaluator rejected Tianqi because six interior suspension dates produced only 54 stock bars for a 60-benchmark-day path.",
+    "handling": "A generic suspension-aware price alignment rule was written, tested and separately hashed before any return values were inspected. Interior suspension dates carry the previous actual close; entry and target exit dates are never synthesized.",
+    "evaluationMethodLockCommit": "64bc34194e68",
+    "skillRuleChanged": false
+  },
+  "frozenDecisionSummary": [
+    {
+      "hypothesisId": "h-2017q3-machinery-boom",
+      "selectionState": "High-priority selection",
+      "ticker": "600031.SH"
+    },
+    {
+      "hypothesisId": "h-2017q3-aluminum-capacity-vs-inventory",
+      "selectionState": "Research selection",
+      "ticker": "600219.SH",
+      "alternateResearchExpression": "000807.SZ"
+    },
+    {
+      "hypothesisId": "h-2017q3-lithium-nev-tightness",
+      "selectionState": "Research selection",
+      "ticker": "002466.SZ"
+    },
+    {
+      "hypothesisId": "h-2017q3-pv-leader-bifurcation",
+      "selectionState": "Research selection",
+      "ticker": "601012.SH"
+    },
+    {
+      "hypothesisId": "h-2017q3-rareearth-rally-reversal",
+      "selectionState": "No selection"
+    },
+    {
+      "hypothesisId": "h-2017q3-dram-tightness",
+      "selectionState": "No selection"
+    }
+  ],
+  "outcomeFindings": [
+    {
+      "findingId": "primary-direction-capture-without-best-expression",
+      "status": "supported",
+      "evidence": {
+        "ticker": "600031.SH",
+        "excess20": -0.00470863504334873,
+        "excess60": 0.1247635709207342,
+        "excess120": 0.05686443697558008,
+        "bestControl": "601100.SH",
+        "bestControlReturn60": 0.48059994122778193
+      },
+      "interpretation": "Sany captured the machinery opportunity at the 60d base horizon and remained positive versus CSI300 at 120d, while Hengli performed much better. This supports the project principle that a valid decision need not identify the single best related stock, provided it captures the correct direction and avoids a bad expression.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "research-gate-protected-high-absorption-lithium",
+      "status": "supported",
+      "evidence": {
+        "ticker": "002466.SZ",
+        "excess20": 0.03437458089583778,
+        "excess60": -0.19839078823368728,
+        "excess120": -0.08515343514920304,
+        "controlTicker": "002460.SZ",
+        "excessVsControl60": 0.02091052620942535
+      },
+      "interpretation": "Tianqi was the cleaner relative expression and beat Ganfeng at all three horizons, but the highly absorbed lithium trade still produced poor base/long-horizon absolute excess. Keeping it Research rather than Primary was useful.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "company-exception-recall-does-not-waive-entry-discipline",
+      "status": "supported",
+      "evidence": {
+        "preferredTicker": "600219.SH",
+        "preferredExcess60": -0.11077821212983441,
+        "broadControlTicker": "000933.SZ",
+        "broadControlExcess60": -0.14790736413773042,
+        "pureAlternateTicker": "000807.SZ",
+        "pureAlternateExcess60": -0.2898516470693747
+      },
+      "interpretation": "V1.8 correctly continued research inside a conflicted aluminum aggregate and found differentiated companies, but inherited absorption/financing gates prevented an automatic buy. Nanshan was materially better than both the broad-cycle control and the purer Yunlu expression, validating the emphasis on product/cash/expectation quality rather than thematic purity.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "rareearth-no-selection",
+      "status": "strongly_supported",
+      "evidence": {
+        "basketMeanExcess20": -0.18458636668708048,
+        "basketMeanExcess60": -0.16778057808319569,
+        "basketMeanExcess120": -0.21879509677281206,
+        "positiveExcessBreadth20": 0,
+        "positiveExcessBreadth60": 0,
+        "positiveExcessBreadth120": 0
+      },
+      "interpretation": "The late-quarter product-price reversal and weak company cash quality were actionable warnings. No selection avoided a broad and persistent drawdown.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "pv-company-exception-recall",
+      "status": "supported_with_open_question",
+      "evidence": {
+        "ticker": "601012.SH",
+        "excess20": 0.05294914642540971,
+        "excess60": 0.19266192152905282,
+        "excess120": 0.14939866307936722,
+        "controlTicker": "600438.SH",
+        "excessVsControl20": 0.07308277669706742,
+        "excessVsControl60": -0.03429009889889034,
+        "excessVsControl120": 0.03197737913041854
+      },
+      "interpretation": "V1.8 successfully recovered a real company-specific high-efficiency exception from a mixed PV policy state. Research classification captured the direction without claiming a clean Primary entry. The strong base/long-horizon excess raises a narrow question about whether some fresh structural company exceptions can remain actionable despite high prior absorption.",
+      "tuningImplication": "future_holdout_only"
+    },
+    {
+      "findingId": "dram-no-selection-causal-purity",
+      "status": "supported_but_proxy_diagnostic_mixed",
+      "evidence": {
+        "proxyMeanExcess20": -0.04115003870151035,
+        "proxyMeanExcess60": -0.027541563479560494,
+        "proxyMeanExcess120": 0.1585956849440702,
+        "giga120Excess": 0.565147422925819,
+        "giga20Status": "missing_exit",
+        "giga60Status": "missing_exit"
+      },
+      "interpretation": "At cutoff there was still no direct current A-share commodity-DRAM supplier earnings bridge. Short/base-horizon continuously traded proxies did not support a clean buy. A later large GigaDevice move does not retroactively validate DRAM causal mapping because its frozen filing showed NOR/SLC NAND rather than current commodity DRAM exposure.",
+      "tuningImplication": "future_mapping_audit_only"
+    }
+  ],
+  "v18Assessment": {
+    "companyExceptionRecall": "supported_in_first_untouched_holdout",
+    "oneWayRecallProperty": "supported",
+    "inheritedPrimaryDiscipline": "supported",
+    "primaryDirectionCapture": "supported_in_single_primary_case",
+    "evidenceAgainstRequiringBestRelatedStock": "supported",
+    "finalVersionDecision": "not_yet_eligible",
+    "rationale": "One untouched holdout is insufficient for a final rule decision. V1.8 must be replicated on at least one additional untouched historical window before formal freeze."
+  },
+  "nextHoldoutQuestions": [
+    {
+      "id": "fresh-structural-exception-under-high-absorption",
+      "question": "When aggregate price absorption is high, can a newly documented company-specific structural advantage still justify Primary if the company edge is fresh, causal, and independently earnings-relevant?",
+      "origin": "2017Q3 Longi was kept Research yet generated +19.27pp base excess and +14.94pp 120d excess.",
+      "ruleChangeAllowedNow": false,
+      "validationRequirement": "Test unchanged V1.8 on an untouched window containing at least one naturally occurring high-absorption company exception."
+    },
+    {
+      "id": "proxy-theme-vs-causal-company-mapping",
+      "question": "Can later proxy-theme rallies be distinguished from direct causal earnings expressions without relaxing the current direct-exposure gate?",
+      "origin": "2017Q3 DRAM proxies were mixed; GigaDevice later rallied despite lacking frozen direct commodity-DRAM earnings exposure.",
+      "ruleChangeAllowedNow": false,
+      "validationRequirement": "Use future untouched cases; do not backfit semiconductor-specific rules."
+    }
+  ],
+  "nextStep": "Keep V1.8 unchanged and run a second untouched historical holdout, preferably 2017Q2 if repository history confirms it remains unused. Dynamic re-underwrite remains a separate future capability."
+}
