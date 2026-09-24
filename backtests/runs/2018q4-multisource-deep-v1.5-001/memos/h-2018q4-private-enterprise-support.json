@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2018-12-31T23:59:59+08:00",
+  "researchReadyAt": "2018-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q4-private-enterprise-support",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Financing relief can affect survival/cost of capital over quarters, but no coherent company subset with a frozen earnings bridge is identified."
+  },
+  "changeHypothesis": {
+    "summary": "Central policy explicitly intensified tax and financing support for private firms under stress, but the beneficiaries are heterogeneous and depend on leverage, pledge risk and viable business economics.",
+    "firstCredibleDate": "2018-11-01",
+    "valueChain": [
+      "policy support",
+      "financing access/cost",
+      "survival/deleveraging",
+      "earnings"
+    ],
+    "persistenceReason": "Policy support can persist for quarters, but transmission varies sharply by firm quality and balance sheet.",
+    "disconfirmingEvidence": [
+      "Broad support does not distinguish viable firms from structurally weak firms.",
+      "No frozen candidate set with direct financing-cost-to-earnings conversion was established."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "private-economy-20181101",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: the event is too broad and company transmission is unresolved."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Policy support is public and broad; distressed private-company beta is not a valid substitute for company-specific earnings transmission.",
+    "thesisExpectation": "Require a coherent subset with measured financing-cost/survival/earnings benefit.",
+    "measurableGap": "No such frozen subset is available.",
+    "evidenceRefs": [
+      "private-economy-20181101"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "private-enterprise financing/tax support",
+    "geographicScope": "China",
+    "customerScope": "private firms and lenders",
+    "decompositionNeeded": true,
+    "siblingHypothesisIds": [],
+    "rationale": "Beneficiary quality, leverage and pledge risk must be decomposed before selection.",
+    "evidenceRefs": [
+      "private-economy-20181101"
+    ],
+    "conclusion": "split_required"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "policy signaling can ease financing sentiment before actual earnings transmission",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "private-economy-20181101"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "financing access may improve for viable firms but not all distressed firms",
+      "horizon": "next 60-120 trading days",
+      "evidenceRefs": [
+        "private-economy-20181101"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "lower financing/tax burden can support private-sector health",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "private-economy-20181101"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Split by balance sheet/business quality and measure direct financing-to-earnings transmission before selection.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No company-specific engine is frozen.",
+    "evidenceRefs": [
+      "private-economy-20181101"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "broad_policy_without_company_mapping",
+    "constraints": [
+      "heterogeneous beneficiaries",
+      "balance-sheet risk",
+      "no frozen earnings bridge"
+    ]
+  },
+  "bearCase": "Relief improves sentiment but weak firms remain weak and equity-pledge problems persist.",
+  "invalidationConditions": [
+    {
+      "indicator": "company financing cost/survival/earnings",
+      "observationMethod": "company financing disclosures/results",
+      "threshold": "no measurable benefit"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; future discovery may create narrower financing-relief hypotheses only with company-level evidence."
+  ]
+}
