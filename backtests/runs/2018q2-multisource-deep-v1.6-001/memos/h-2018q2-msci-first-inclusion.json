@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-06-30T23:59:59+08:00",
+  "researchReadyAt": "2018-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q2-msci-first-inclusion",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Index flows can affect prices around implementation dates, but absent a company earnings bridge they do not support a stock selection."
+  },
+  "changeHypothesis": {
+    "summary": "MSCI implemented the first partial A-share inclusion step, creating benchmark-linked foreign flows but no direct change to issuer operating earnings.",
+    "firstCredibleDate": "2018-05-14",
+    "valueChain": [
+      "index inclusion rule",
+      "benchmark/passive flows",
+      "share demand",
+      "issuer price"
+    ],
+    "persistenceReason": "Scheduled index inclusion can recur, but its direct mechanism is portfolio flow rather than operating earnings.",
+    "disconfirmingEvidence": [
+      "The initial inclusion factor was only 2.5%.",
+      "No direct company-level monetization or earnings conversion is frozen."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "msci-may-review-20180514",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the required earnings-conversion, expectation and downside gates."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The inclusion schedule was public and mechanically implementable by benchmark investors.",
+    "thesisExpectation": "A stock selection requires a company earnings mechanism, not merely passive demand for shares.",
+    "measurableGap": "No company operating earnings gap is demonstrated.",
+    "evidenceRefs": [
+      "msci-may-review-20180514"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "broad A-share index inclusion/foreign flows",
+    "geographicScope": "China A shares in MSCI indexes",
+    "customerScope": "global benchmark/passive investors",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Treat as a market-flow event rather than arbitrarily mapping beneficiaries.",
+    "evidenceRefs": [
+      "msci-may-review-20180514"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "scheduled benchmark demand can support included shares",
+      "horizon": "days/weeks",
+      "evidenceRefs": [
+        "msci-may-review-20180514"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "price flow may dissipate without issuer earnings change",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "msci-may-review-20180514"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "greater international index inclusion broadens ownership",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "msci-may-review-20180514"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not substitute share-demand flows for company earnings conversion.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No selected company engine is identified.",
+    "evidenceRefs": [
+      "msci-may-review-20180514"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "broad_flow_event_without_fundamental_bridge",
+    "constraints": [
+      "no direct earnings conversion",
+      "diffuse beneficiaries"
+    ]
+  },
+  "bearCase": "Scheduled index demand is anticipated or offset by other market flows; even a price rise does not validate a company earnings thesis.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct issuer earnings conversion",
+      "observationMethod": "company/business evidence",
+      "threshold": "no direct monetization path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a price-flow versus fundamentals control."
+  ]
+}
