@@ -1,0 +1,29 @@
+name: diagnose-v170-2017q4-pv-regime
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.7-2017q4-holdout-20260924
+    paths:
+      - .github/workflows/diagnose-v170-2017q4-pv-regime.yml
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Count cutoff-valid Tencent hfq rows
+        run: |
+          node - <<'NODE'
+          for (const [t, q] of [['601012.SH','sh601012'],['600438.SH','sh600438'],['002129.SZ','sz002129']]) {
+            const u = 'https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=' + q + ',day,2017-08-01,2017-12-31,300,hfq';
+            const r = await fetch(u);
+            const j = await r.json();
+            const v = Object.values(j.data || {})[0] || {};
+            const rows = v.hfqday || v.day || [];
+            console.log(t, rows.length, rows[0]?.[0], rows.at(-1)?.[0]);
+          }
+          NODE
