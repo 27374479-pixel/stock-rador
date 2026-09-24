@@ -1,0 +1,587 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2018-12-31T23:59:59+08:00",
+  "researchReadyAt": "2018-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q4-cement-high-price-profits",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Realized high cement prices/profits and very low valuation can be tested through annual/Q1 earnings, but adverse price regime and peak-profit normalization risk block Primary."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "deep_cycle_turnaround",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600585.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Conch had 1-9M revenue +55%, profit +111%, ex-item +149%, cash flow +134%, and ~5.5x 2019E PE; however sector price regime was adverse and spot profits were already at historical highs.",
+      "evidenceRefs": [
+        "cement-market-20181209",
+        "conch-q3-20181025",
+        "cement-valuation-20181209",
+        "regime-cement-20181231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Cement spot prices and industry profits were at historical highs, while Conch and Huaxin converted that cycle into exceptional earnings/cash flow and traded near 5.5x forward earnings. The problem is not whether profits are real, but whether peak conditions leave a fresh residual expectation gap while sector equities are already underperforming.",
+    "firstCredibleDate": "2018-10-25",
+    "valueChain": [
+      "supply discipline/winter controls",
+      "cement/clinker pricing",
+      "producer margins",
+      "earnings/cash flow/dividend"
+    ],
+    "persistenceReason": "Supply discipline and regional concentration can support profits across seasons, but winter constraints and record prices create explicit normalization risk.",
+    "disconfirmingEvidence": [
+      "National cement prices/profits were already at historical highs.",
+      "Late report said further price upside was limited as winter shortage eased.",
+      "Frozen cement price regime was adverse over both 20d and 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "cement-market-20181209",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Physical cement prices/profits were already at record levels."
+    },
+    {
+      "id": "conch-q3-20181025",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Conch converted the cycle into strong profit/cash flow."
+    },
+    {
+      "id": "huaxin-q3-20181026",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Huaxin also realized strong sector earnings."
+    },
+    {
+      "id": "cement-valuation-20181209",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Forward PE was very low but report also expected prices to settle from peaks."
+    },
+    {
+      "id": "regime-cement-20181231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Sector equities were adverse relative to CSI300 despite strong fundamentals."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "supply discipline/winter restrictions",
+      "to": "cement prices",
+      "mechanism": "Regional supply constraints lift spot cement/clinker pricing.",
+      "evidenceRefs": [
+        "cement-market-20181209"
+      ],
+      "failureMode": "winter shortage eases or demand weakens",
+      "lag": "weeks"
+    },
+    {
+      "from": "cement prices",
+      "to": "producer profit/cash flow",
+      "mechanism": "High ASP and operating leverage raise margins/cash generation.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "huaxin-q3-20181026"
+      ],
+      "failureMode": "price normalization overwhelms volume/cost discipline",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "efficient regional cement producers"
+    ],
+    "secondOrderWinners": [
+      "shareholders via cash/dividends"
+    ],
+    "losers": [
+      "construction buyers during price spikes"
+    ],
+    "substitutes": [
+      "regional imports/cross-region supply"
+    ],
+    "bottlenecks": [
+      "kiln utilization",
+      "environmental restrictions",
+      "construction demand"
+    ],
+    "falseThemeMatches": [
+      "building-material names without cement pricing exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600585.SH",
+      "name": "海螺水泥",
+      "verifiedExposure": "Efficient direct cement leader with strong realized profit/cash flow.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "cement-valuation-20181209",
+        "regime-cement-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "1-9M profit +111%, cash flow +134%, 2019E PE ~5.5x.",
+        "favorable": "Supply discipline sustains high margins and valuation re-rates.",
+        "adverse": "Spot prices normalize from historical highs."
+      },
+      "principalRisks": [
+        "peak-cycle earnings",
+        "adverse price regime"
+      ]
+    },
+    {
+      "ticker": "600801.SH",
+      "name": "华新水泥",
+      "verifiedExposure": "Direct cement peer with even faster frozen profit growth.",
+      "evidenceRefs": [
+        "huaxin-q3-20181026",
+        "cement-valuation-20181209",
+        "regime-cement-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "1-9M profit +225%, cash flow +157%, 2019E PE ~5.4x.",
+        "favorable": "High regional prices/margins persist.",
+        "adverse": "Normalization and regional demand weaken."
+      },
+      "principalRisks": [
+        "peak-cycle earnings",
+        "regional cyclicality"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600801.SH",
+      "name": "华新水泥",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct cement peer exposed to the same high-price cycle.",
+      "whySelectedCompanyShouldOutperform": "Conch has larger scale, strong cash flow and similarly low valuation; exact future winner is not assumed.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "huaxin-q3-20181026",
+        "cement-valuation-20181209",
+        "regime-cement-20181231"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600585.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600801.SH",
+        "selectedAdvantages": [
+          "large scale/cash-flow quality",
+          "similar low valuation"
+        ],
+        "selectedDisadvantages": [
+          "Huaxin had faster frozen profit growth"
+        ],
+        "evidenceRefs": [
+          "conch-q3-20181025",
+          "huaxin-q3-20181026",
+          "cement-valuation-20181209"
+        ],
+        "switchCondition": "Prefer Huaxin if regional persistence/downside and revisions are independently superior.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Both are valid high-profit expressions, but adverse sector pricing and peak-cycle risk prevent Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Cement equities were adverse despite record physical profits: basket -1.86pp 20d and -1.46pp 60d excess, with 0% 20d positive breadth.",
+    "thesisExpectation": "Very low valuation and cash generation may provide downside/value support even if spot prices settle from peaks.",
+    "measurableGap": "~5.4-5.5x forward PE leaves valuation room, but no fresh evidence proves peak profits will persist beyond what is already known.",
+    "evidenceRefs": [
+      "cement-market-20181209",
+      "cement-valuation-20181209",
+      "regime-cement-20181231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Realized Q3 cash earnings plus current forward PE under explicit peak-price normalization.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Record industry prices/profits and ~5.5x forward PE coexist with adverse equity performance.",
+    "thesisScenario": "Prices settle but remain high enough for cash earnings/dividends to support value.",
+    "breakevenCondition": "Earnings normalize slowly enough that low PE is not simply a peak-earnings trap.",
+    "ordinaryScenarioFailure": "Spot prices normalize rapidly and low PE proves illusory.",
+    "catalystOrTimingBridge": "Annual results/dividends and Q1 pricing are inside the base horizon.",
+    "evidenceRefs": [
+      "conch-q3-20181025",
+      "cement-valuation-20181209",
+      "regime-cement-20181231"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "persistent",
+      "rationale": "Physical prices/profits remain high, but incremental acceleration is limited.",
+      "evidenceRefs": [
+        "cement-market-20181209"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Conch/Huaxin profit and cash-flow conversion are strong.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "huaxin-q3-20181026"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "insufficient",
+      "rationale": "Equity price breadth is adverse despite company earnings.",
+      "evidenceRefs": [
+        "regime-cement-20181231"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Current low forward PE anchors the known peak-profit baseline.",
+      "evidenceRefs": [
+        "cement-valuation-20181209"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Equities have not absorbed physical profits positively; underperformance may instead reflect peak-cycle discounting.",
+      "evidenceRefs": [
+        "regime-cement-20181231"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen cement basket versus CSI300",
+      "lookback20Excess": -0.018585159088450893,
+      "lookback60Excess": -0.014632831174535918,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-cement-20181231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "High prices/profits persist but are near historical peaks.",
+      "evidenceRefs": [
+        "cement-market-20181209"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Conch/Huaxin realized strong profits and low forward PEs.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "huaxin-q3-20181026",
+        "cement-valuation-20181209"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Supply discipline can persist beyond winter, but exact spot peak cannot.",
+      "evidenceRefs": [
+        "cement-market-20181209",
+        "cement-valuation-20181209"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Record physical pricing/profits and expected settling imply peak-cycle risk.",
+      "evidenceRefs": [
+        "cement-market-20181209",
+        "cement-valuation-20181209"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Fundamentals are strong, but price regime and peak-cycle timing do not support Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600585.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit/cash flow and scale.",
+      "evidenceRefs": [
+        "conch-q3-20181025"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Low valuation helps but record profits leave limited incremental earnings surprise.",
+      "evidenceRefs": [
+        "cement-market-20181209",
+        "cement-valuation-20181209"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Forward PE ~5.5x is very low.",
+      "evidenceRefs": [
+        "cement-valuation-20181209"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Annual results/dividend and spring pricing are near-term.",
+      "evidenceRefs": [
+        "cement-valuation-20181209"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Cash flow and low valuation help, but peak-earnings normalization is substantial.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "cement-valuation-20181209"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600801.SH",
+        "revisionAdvantage": "Huaxin has faster profit growth; Conch has stronger scale/quality.",
+        "valuationAdvantage": "Both are similarly cheap.",
+        "qualityTradeoff": "Conch scale/cash quality versus Huaxin growth.",
+        "catalystAdvantage": "Both share industry pricing/dividend catalysts.",
+        "downsideTradeoff": "No decisive edge.",
+        "switchCondition": "Switch if Huaxin persistence/downside evidence becomes superior.",
+        "evidenceRefs": [
+          "conch-q3-20181025",
+          "huaxin-q3-20181026",
+          "cement-valuation-20181209"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "National cement prices and industry profits were at historical highs.",
+    "earningsMechanism": "High realized cement ASP converts directly into producer profit/cash flow.",
+    "nextObservableMetric": "annual profit/dividend and spring cement prices",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "cement-market-20181209",
+      "conch-q3-20181025",
+      "huaxin-q3-20181026"
+    ],
+    "failureCondition": "Spot prices and margins normalize rapidly."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "1-9M profit/cash flow are already exceptionally strong.",
+      "nextPeriod": "Forward PE ~5.5x reflects market skepticism of durability.",
+      "laterPeriod": "Spot prices expected to settle from record highs.",
+      "rationale": "Treat current record profitability as the baseline, not as fresh upside.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "cement-valuation-20181209"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Low valuation/cash generation can support returns if normalization is slower than feared.",
+      "nextPeriodChange": "Annual dividend and spring pricing can reveal durability.",
+      "laterPeriodChange": "No permanent record pricing is assumed.",
+      "mechanism": "Value comes from slower-than-feared mean reversion, not from extrapolating peak prices.",
+      "evidenceRefs": [
+        "cement-valuation-20181209"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "There is valuation room but limited fresh evidence of slower normalization.",
+      "evidenceRefs": [
+        "cement-valuation-20181209",
+        "regime-cement-20181231"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Record spot prices/profits can normalize quickly.",
+      "evidenceRefs": [
+        "cement-market-20181209"
+      ]
+    },
+    "falsifier": "Spring pricing and annual outlook confirm rapid normalization.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "cement/clinker producer profitability under high prices and supply discipline",
+    "geographicScope": "China with regional supply controls",
+    "customerScope": "construction/infrastructure cement demand",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Direct cement producers share one coherent commodity cycle; regional persistence is handled in expression quality.",
+    "evidenceRefs": [
+      "cement-market-20181209",
+      "conch-q3-20181025"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "record spot profits and realized company cash earnings",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "cement-market-20181209",
+        "conch-q3-20181025"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "low valuation versus expected price normalization",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "cement-valuation-20181209"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "supply discipline supports industry but record spot pricing cannot be permanent",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "cement-market-20181209",
+        "cement-valuation-20181209"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not equate record current profit with a fresh earnings path; wait for evidence that normalization is slower than discounted.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Sector physical profits and company earnings point in the same direction; the conflict is valuation/timing, not company divergence.",
+    "evidenceRefs": [
+      "cement-market-20181209",
+      "conch-q3-20181025",
+      "huaxin-q3-20181026"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "Physical profits are high but not a fresh post-rerating surprise.",
+      "evidenceRefs": [
+        "cement-market-20181209"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Company profits/cash flow are realized.",
+      "evidenceRefs": [
+        "conch-q3-20181025",
+        "huaxin-q3-20181026"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "Forward valuation is low but new upward revision evidence is limited.",
+      "evidenceRefs": [
+        "cement-valuation-20181209"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Supply discipline can persist while winter peak prices normalize.",
+      "evidenceRefs": [
+        "cement-market-20181209"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "No evidence appears that normalization is slower than feared.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600585.SH",
+    "purestTicker": "600585.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preference reflects scale/cash quality and valuation, not thematic purity.",
+    "earningsQualityComparison": "Conch and Huaxin both have strong realized earnings; Conch has larger scale.",
+    "downsideComparison": "Both are cheap but exposed to peak-cycle normalization.",
+    "evidenceRefs": [
+      "conch-q3-20181025",
+      "huaxin-q3-20181026",
+      "cement-valuation-20181209"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: exceptional realized cash earnings and ~5.5x PE, but adverse sector price regime and explicit peak-profit normalization risk block Primary.",
+    "alreadyPricedAssessment": "cheap_peak_earnings_with_adverse_price_confirmation",
+    "constraints": [
+      "adverse 20/60d regime",
+      "record spot profit",
+      "normalization risk"
+    ]
+  },
+  "bearCase": "Low PE is a peak-earnings trap; cement prices normalize rapidly and equities continue to de-rate despite strong trailing profits.",
+  "invalidationConditions": [
+    {
+      "indicator": "cement prices/margins",
+      "observationMethod": "industry data/company results",
+      "threshold": "rapid normalization"
+    },
+    {
+      "indicator": "relative price breadth",
+      "observationMethod": "frozen/regime updates",
+      "threshold": "no improvement from adverse"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Research selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Conch Research. Do not override adverse timing without a distinct company-specific engine."
+  ]
+}
