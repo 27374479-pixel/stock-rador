@@ -1,0 +1,584 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2018-12-31T23:59:59+08:00",
+  "researchReadyAt": "2018-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q4-nev-auto-divergence",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "NEV demand and CATL's realized company engine can be tested over the next reporting cycle, but current price/valuation geometry blocks Primary."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "300750.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "CATL had Q3 revenue +72%, profit +93%, ex-item profit +138%, 1-9M cash flow +423%, and direct battery exposure; however 2019E PE around 34x and a late-reversal price pattern do not satisfy the strict company-engine override.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-q3-20181026",
+        "catl-valuation-20181227",
+        "regime-nev-20181231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Broad auto demand was contracting while NEV units remained strongly positive. CATL's Q3 earnings/cash flow materially outpaced the broad auto sector, creating a real company/segment divergence, but its valuation and price path prevent a strict Primary override.",
+    "firstCredibleDate": "2018-10-26",
+    "valueChain": [
+      "NEV unit growth",
+      "power-battery demand/share",
+      "CATL shipments/customer lock-in",
+      "earnings/cash flow"
+    ],
+    "persistenceReason": "EV adoption and OEM battery partnerships can persist for multiple quarters even while broad autos weaken.",
+    "disconfirmingEvidence": [
+      "CATL's 2019E PE was still about 34x.",
+      "CATL had positive 60d excess but negative 20d excess, mechanically a late-reversal rather than de-rated/early-turn setup.",
+      "BYD's own earnings remained weak despite strong NEV units."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "xinhua-nev-20181212",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "NEV demand diverged positively from broad auto sales."
+    },
+    {
+      "id": "catl-q3-20181026",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "CATL realized strong revenue/profit/cash-flow growth."
+    },
+    {
+      "id": "byd-q3-20181030",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Not every NEV exposure converted demand into earnings; BYD earnings remained weak."
+    },
+    {
+      "id": "catl-valuation-20181227",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Cutoff-valid valuation and OEM-partnership evidence."
+    },
+    {
+      "id": "regime-nev-20181231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "NEV basket had strong 60d but weak 20d relative performance."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "NEV unit growth",
+      "to": "battery demand",
+      "mechanism": "Higher EV production increases power-battery shipments.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212"
+      ],
+      "failureMode": "subsidy/policy demand reverses",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "battery demand/share",
+      "to": "CATL earnings/cash flow",
+      "mechanism": "Customer lock-in and scale convert battery shipments into revenue/profit/cash.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "catl-valuation-20181227"
+      ],
+      "failureMode": "pricing pressure/capex destroys conversion",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "power-battery leaders with OEM customer lock-in"
+    ],
+    "secondOrderWinners": [
+      "battery materials"
+    ],
+    "losers": [
+      "conventional auto-only suppliers"
+    ],
+    "substitutes": [
+      "other battery chemistries/suppliers"
+    ],
+    "bottlenecks": [
+      "subsidy policy",
+      "battery pricing",
+      "capex"
+    ],
+    "falseThemeMatches": [
+      "generic auto suppliers without NEV earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "verifiedExposure": "Direct power-battery leader with strong realized Q3 earnings/cash flow and OEM partnerships.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "catl-valuation-20181227",
+        "regime-nev-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "Q3 revenue +72%, profit +93%; 2019E PE ~34x.",
+        "favorable": "NEV growth and OEM lock-in sustain share/earnings.",
+        "adverse": "Valuation/price pressure or battery pricing compresses returns."
+      },
+      "principalRisks": [
+        "valuation premium",
+        "policy/subsidy risk"
+      ]
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Integrated NEV OEM/battery exposure but weaker frozen earnings conversion.",
+      "evidenceRefs": [
+        "byd-q3-20181030",
+        "regime-nev-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "1-9M profit -45%, despite Q4 NEV optimism.",
+        "favorable": "NEV sales/battery bottleneck easing restore profit.",
+        "adverse": "Auto weakness and cost structure delay recovery."
+      },
+      "principalRisks": [
+        "weak current earnings",
+        "integrated complexity"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct NEV leader exposed to the same product-demand divergence.",
+      "whySelectedCompanyShouldOutperform": "CATL has far stronger frozen Q3 profit/ex-item profit/cash-flow conversion.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "byd-q3-20181030",
+        "regime-nev-20181231"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "300750.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "selectedAdvantages": [
+          "much stronger realized profit/cash flow",
+          "clear battery leader customer engine"
+        ],
+        "selectedDisadvantages": [
+          "higher valuation"
+        ],
+        "evidenceRefs": [
+          "catl-q3-20181026",
+          "byd-q3-20181030",
+          "catl-valuation-20181227"
+        ],
+        "switchCondition": "Prefer BYD only if earnings conversion and valuation become clearly superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "CATL is the cleaner expression, but strict Primary override rules are not satisfied."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "NEV basket had +14.91pp 60d excess with full breadth but -3.98pp 20d excess with zero breadth; CATL itself had +13.55pp 60d and -2.68pp 20d excess.",
+    "thesisExpectation": "CATL's realized company engine can remain stronger than broad autos because battery demand/share and OEM partnerships are segment-specific.",
+    "measurableGap": "The engine is real, but ~34x 2019E PE and a late-reversal price pattern leave an insufficiently clean residual expectation gap for Primary.",
+    "evidenceRefs": [
+      "xinhua-nev-20181212",
+      "catl-q3-20181026",
+      "catl-valuation-20181227",
+      "regime-nev-20181231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Realized Q3 earnings/cash flow versus cutoff 2019E PE and price dislocation.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "2019E PE ~34x with strong 60d relative performance already present.",
+    "thesisScenario": "NEV demand and OEM lock-in sustain above-sector growth.",
+    "breakevenCondition": "Earnings/share growth must stay high enough to support a premium valuation.",
+    "ordinaryScenarioFailure": "Broad auto/policy weakness or battery price pressure compresses the premium.",
+    "catalystOrTimingBridge": "Annual/Q1 results and continuing NEV sales are inside the base horizon.",
+    "evidenceRefs": [
+      "catl-q3-20181026",
+      "catl-valuation-20181227",
+      "regime-nev-20181231"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "NEV units +68% Jan-Nov while broad autos contracted.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "CATL Q3 profit/ex-item profit and 1-9M operating cash flow accelerated sharply.",
+      "evidenceRefs": [
+        "catl-q3-20181026"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Both NEV leaders beat CSI300 over 60d but both lagged over 20d.",
+      "evidenceRefs": [
+        "regime-nev-20181231"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "Late-December CATL forecast provides a current valuation/earnings baseline.",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare strong 60d relative performance and premium PE against fresh company earnings.",
+      "evidenceRefs": [
+        "regime-nev-20181231",
+        "catl-valuation-20181227"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen NEV leader basket versus CSI300",
+      "lookback20Excess": -0.03981017300784767,
+      "lookback60Excess": 0.1490628939525206,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-nev-20181231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "NEV demand and CATL realized earnings/cash flow are accelerating.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-q3-20181026"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "CATL has strong earnings while BYD remains weak.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "byd-q3-20181030"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "EV adoption and battery/OEM partnerships can persist for multiple quarters.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-valuation-20181227"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Long-run segment growth is structural but valuation and recent 60d strength create risk.",
+      "evidenceRefs": [
+        "catl-valuation-20181227",
+        "regime-nev-20181231"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Company fundamentals are strong but broad price pattern/valuation do not support normal sector-confirmed Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "300750.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit/ex-item profit and cash-flow conversion.",
+      "evidenceRefs": [
+        "catl-q3-20181026"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "NEV growth and OEM partnerships support revisions.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-valuation-20181227"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "2019E PE around 34x requires continued strong growth.",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "NEV monthly sales and annual/Q1 results are near-term.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Cash-flow quality/customer lock-in help, but valuation premium remains material.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "catl-valuation-20181227"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "revisionAdvantage": "CATL earnings/cash-flow conversion is much stronger.",
+        "valuationAdvantage": "BYD may look cheaper but has weaker current earnings quality.",
+        "qualityTradeoff": "CATL has clearer operating quality.",
+        "catalystAdvantage": "Battery demand maps directly to CATL.",
+        "downsideTradeoff": "CATL premium valuation offsets better quality.",
+        "switchCondition": "Switch if BYD's frozen earnings recovery becomes clearly superior.",
+        "evidenceRefs": [
+          "catl-q3-20181026",
+          "byd-q3-20181030",
+          "catl-valuation-20181227"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "NEV sales +68% Jan-Nov despite broad auto contraction.",
+    "earningsMechanism": "Higher battery shipments/customer share convert into CATL revenue/profit/cash flow.",
+    "nextObservableMetric": "monthly NEV sales and CATL annual/Q1 revenue/profit/cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "xinhua-nev-20181212",
+      "catl-q3-20181026"
+    ],
+    "failureCondition": "NEV demand or CATL earnings/cash flow decelerate materially."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Q3 CATL earnings/cash flow already accelerated.",
+      "nextPeriod": "2019 forecast implies net profit +29% at ~34x PE.",
+      "laterPeriod": "Structural EV growth supports duration but premium valuation requires execution.",
+      "rationale": "Use current strong company baseline, not weak broad-auto data as the CATL baseline.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "catl-valuation-20181227"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "NEV/battery demand remains decoupled from conventional auto weakness.",
+      "nextPeriodChange": "OEM partnerships/share support company earnings.",
+      "laterPeriodChange": "Longer-run growth remains structural but valuation can compress.",
+      "mechanism": "Segment/company engine outruns aggregate auto weakness.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-valuation-20181227"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Realized CATL engine is stronger than the broad-auto baseline.",
+      "evidenceRefs": [
+        "catl-q3-20181026",
+        "xinhua-nev-20181212"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Structural demand helps duration, but premium valuation remains a risk.",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "falsifier": "CATL earnings/share fail to remain decoupled from weak broad auto demand.",
+    "overallConclusion": "credible_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "NEV/power batteries separated from conventional auto",
+    "geographicScope": "China auto market",
+    "customerScope": "NEV OEMs and battery buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The event is already decomposed into strong NEV demand versus weak broad autos; CATL is evaluated only on the battery/NEV chain.",
+    "evidenceRefs": [
+      "xinhua-nev-20181212",
+      "catl-q3-20181026"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "NEV units and CATL Q3 engine",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-q3-20181026"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "battery share/OEM partnerships and earnings conversion",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "EV adoption and customer lock-in",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Evaluate CATL on its segment/company engine rather than aggregate auto weakness, but retain valuation and price-pattern constraints.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Broad autos contracted while CATL revenue/profit/cash flow accelerated.",
+    "evidenceRefs": [
+      "xinhua-nev-20181212",
+      "catl-q3-20181026"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "November NEV units and late-December OEM partnership evidence remain supportive.",
+      "evidenceRefs": [
+        "xinhua-nev-20181212",
+        "catl-valuation-20181227"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Q3 earnings/cash flow are realized.",
+      "evidenceRefs": [
+        "catl-q3-20181026"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "2019 earnings forecast remains positive.",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "clear",
+      "rationale": "EV adoption/customer partnerships are multi-quarter.",
+      "evidenceRefs": [
+        "catl-valuation-20181227"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Company earnings/share cease to diverge positively.",
+    "conclusion": "credible_continuation"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "300750.SZ",
+    "purestTicker": "300750.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preference is based on realized earnings/cash flow and customer engine, not thematic purity.",
+    "earningsQualityComparison": "CATL materially exceeds BYD on frozen earnings conversion.",
+    "downsideComparison": "CATL quality is better but valuation premium is higher.",
+    "evidenceRefs": [
+      "catl-q3-20181026",
+      "byd-q3-20181030",
+      "catl-valuation-20181227"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong company engine and segment divergence, but premium valuation and late-reversal price pattern block strict Primary override.",
+    "alreadyPricedAssessment": "strong_engine_with_tight_valuation_and_late_reversal",
+    "constraints": [
+      "~34x 2019E PE",
+      "60d relative strength already positive",
+      "20d price weakness not a clean de-rating"
+    ]
+  },
+  "bearCase": "NEV demand stays strong but battery pricing/valuation compression means company earnings growth does not translate into stock excess return.",
+  "invalidationConditions": [
+    {
+      "indicator": "CATL earnings/cash flow",
+      "observationMethod": "company filings",
+      "threshold": "material deceleration"
+    },
+    {
+      "indicator": "NEV unit sales",
+      "observationMethod": "industry data",
+      "threshold": "loss of segment divergence"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Research selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep CATL Research. Do not misuse base_horizon_convexity or company_engine_override to bypass the frozen valuation/price-pattern rules."
+  ]
+}
