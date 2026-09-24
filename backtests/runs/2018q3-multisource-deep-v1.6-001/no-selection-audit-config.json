@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q3-multisource-deep-v1.6-001",
+  "cutoffDate": "2018-09-30",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "samePeriodMayTuneSkill": false,
+  "baskets": [
+    {
+      "basketId": "pv-post531-reset",
+      "label": "Frozen PV leader basket during post-531 physical demand and price reset",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ"
+      ]
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2018q3-dram-leading-downturn",
+      "reason": "The frozen state signal is negative for DRAM suppliers and no positive direct A-share DRAM long expression was frozen; do not hindsight-substitute generic semiconductor names."
+    }
+  ]
+}
