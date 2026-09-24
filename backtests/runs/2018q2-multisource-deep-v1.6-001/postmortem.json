@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q2-multisource-deep-v1.6-001",
+  "label": "post_outcome_diagnostic_not_clean_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "version": "1.6.0",
+  "headline": {
+    "conclusion": "v16_research_process_supported_return_recall_not_yet_validated",
+    "principle": "The purpose of the holdout is to test whether the Skill can find the relevant evidence and reason through the causal chain under the historical cutoff, not to optimize for attractive backtest returns."
+  },
+  "frozenDecisionSummary": {
+    "highPriorityHypothesisCount": 2,
+    "highPrioritySelectionCount": 2,
+    "researchSelectionCount": 0,
+    "noSelectionCount": 4
+  },
+  "primaryAssessment": [
+    {
+      "hypothesisId": "h-2018q2-wastepaper-quota-concentration",
+      "ticker": "600567.SH",
+      "baseHorizonTradingDays": 60,
+      "netReturn": -0.07510089437562828,
+      "benchmarkExcess": -0.04828649215674141,
+      "excessVsBestControl": -0.03339149676217168,
+      "assessment": "return_failure_but_cutoff_research_chain_operationally_supported",
+      "processDiagnosis": {
+        "evidenceDiscovery": "supported",
+        "causalStateIdentification": "supported",
+        "companyMapping": "supported",
+        "expectationPromotion": "not_cleanly_validated",
+        "dynamicMonitoring": "missing_from_static_evaluator"
+      },
+      "laterOperatingCorroboration": [
+        "Subsequent H1 report showed revenue +60.21%, attributable profit +106.48%, operating cash flow +995.48% and paper gross margin +1.13pp YoY.",
+        "Subsequent H1 report showed import-waste-paper quota remained highly concentrated and Shanying received 14.52% of the first 17 batches."
+      ],
+      "postCutoffConfounder": "On 2018-08-08 a new tariff action was announced, effective 2018-08-23, that directly attacked US-origin imported-fiber economics. Later paper-industry evidence showed the pre-existing US-waste-paper cost advantage versus domestic waste paper was materially eroded/reversed in September-October.",
+      "conclusion": "The 60d stock-return failure does not establish that the cutoff research was wrong. It instead exposes that fixed-horizon evaluation mixes entry quality with unforeseeable thesis-attacking post-cutoff events. A Skill-level re-underwrite should be tested separately."
+    },
+    {
+      "hypothesisId": "h-2018q2-machinery-high-demand",
+      "acceptableExpressions": [
+        "600031.SH",
+        "601100.SH"
+      ],
+      "basket60dNetReturn": 0.011668245139126565,
+      "benchmark60dReturn": -0.026814402218886868,
+      "basket60dExcess": 0.03848264735801343,
+      "bothBeatFrozenControl": true,
+      "assessment": "validated_direction_and_expression_set",
+      "diagnosis": "The conventional physical-flow route worked: record unit demand plus realized company earnings/cash flow and reasonable valuation identified a robust machinery opportunity without requiring the future-best peer."
+    }
+  ],
+  "causalStateVariableAssessment": {
+    "wastepaper": {
+      "status": "research_process_supported",
+      "explanation": "The Skill found a non-obvious upstream state—relative imported-fiber quota/access—rather than relying only on current paper prices. Independent peer evidence showed quota-poor Jingxing was forced toward expensive domestic waste paper, while Shanying had large quota access and realized earnings.",
+      "returnValidation": "not_validated",
+      "reason": "A post-cutoff tariff shock changed the state variable before the 60d exit."
+    },
+    "nand": {
+      "status": "negative_control_supported",
+      "explanation": "The Skill recognized improving NAND bit supply/yields relative to weak demand as a negative state and did not invent a generic semiconductor long proxy."
+    },
+    "pv": {
+      "status": "negative_control_supported_at_base_horizon",
+      "explanation": "The 531 demand shock was correctly treated as adverse; the frozen PV basket lost 17.34% at 60d and lagged CSI300 by 14.65pp with 0% positive-excess breadth."
+    },
+    "overall": "V1.6 demonstrates that state-variable discovery can generalize beyond agriculture, but a clean positive-return recall success remains pending."
+  },
+  "noSelectionAssessment": [
+    {
+      "hypothesisId": "h-2018q2-pv-531-demand-reset",
+      "assessment": "correct_fail_closed_at_20d_60d",
+      "metrics": {
+        "basket20dExcess": -0.04911813997565273,
+        "basket60dExcess": -0.14654758925189157,
+        "positiveExcessBreadth60": 0
+      },
+      "note": "120d reversal is later-horizon/post-cutoff information and cannot rewrite the June 30 decision."
+    },
+    {
+      "hypothesisId": "h-2018q2-5g-sa-standard",
+      "assessment": "no_clean_fundamental_miss",
+      "metrics": {
+        "basket60dExcess": 0.04561990223502266,
+        "positiveExcessBreadth60": 0.6666666666666666
+      },
+      "cutoffEvidence": "Optical supplier fundamentals were mixed/weak: Guangxun Q1 revenue -4.75%, profit -19.38%, ex-item profit -37.73% and H1 guidance -30% to +20%; Fiberhome Q1 revenue +20.63% but profit only +0.47% with worsening operating cash flow.",
+      "diagnosis": "Some suppliers later produced relative returns, but cutoff-valid evidence did not provide a broad order/earnings bridge from SA-standard completion. Do not equate long-duration thematic anticipation with a clean missed fundamental opportunity."
+    },
+    {
+      "hypothesisId": "h-2018q2-nand-oversupply",
+      "assessment": "not_long_auditable",
+      "diagnosis": "Negative product state with no frozen positive direct long expression; no hindsight proxy substitution."
+    },
+    {
+      "hypothesisId": "h-2018q2-msci-first-inclusion",
+      "assessment": "not_company_earnings_auditable",
+      "diagnosis": "Broad benchmark-flow event intentionally froze no company basket."
+    }
+  ],
+  "newValidationInsight": {
+    "failureClass": "static_holdout_vs_dynamic_reunderwrite_gap",
+    "definition": "A fixed 20/60/120d holdout can misclassify a sound cutoff thesis as an entry failure when a new, thesis-attacking event appears after entry. The correct Skill behavior is to retrieve the new evidence, map it to the frozen causal variable/falsifier, and re-underwrite.",
+    "requiredFutureTest": "Build a historical event-driven re-underwrite replay that freezes the entry thesis first, then feeds only newly available post-entry evidence at dated checkpoints. It must be evaluated separately from entry selection and must never use future return data to decide exits."
+  },
+  "crossWindowInterpretation": {
+    "2019Q1": "V1.5 base-horizon convexity directly supported by a correctly time-bounded dye opportunity.",
+    "2018Q4": "The missed hog opportunity exposed the leading-state/lagging-price blind spot that motivated V1.6.",
+    "2018Q3": "V1.6 anti-veto behavior was safe; state-leading PTA/steel cases were not automatically promoted.",
+    "2018Q2": "V1.6 successfully discovered and analyzed a non-agricultural positive state-leading company divergence, but fixed-horizon return validation was confounded by a new post-cutoff tariff shock."
+  },
+  "versionDecision": {
+    "keepV16Immutable": true,
+    "createV17FromReturnOutcome": false,
+    "v16Status": "research_capability_supported_positive_return_recall_pending",
+    "nextAction": "Run unchanged V1.6 on another untouched historical window. Separately develop a re-underwrite replay harness as evaluation tooling, not as a new selection rule.",
+    "reason": "Changing V1.6 based on this outcome would confuse research-process validation, new post-cutoff information, and entry-rule tuning."
+  },
+  "prohibitedInferences": [
+    "Do not weaken V1.6 because Shanying's 60d stock return was negative.",
+    "Do not claim Shanying validates V1.6 positive alpha.",
+    "Do not retroactively use the August tariff when judging the June 30 entry evidence.",
+    "Do not treat 5G supplier relative returns as proof that technical-standard completion alone was an actionable earnings thesis.",
+    "Do not tune V1.6 on 2018Q2 outcomes."
+  ]
+}
