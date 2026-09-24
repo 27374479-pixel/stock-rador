@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-03-31T23:59:59+08:00",
+  "researchReadyAt": "2018-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q1-section301-trade-risk",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Risk premium can move immediately, but operating earnings impact requires later product/company-specific policy details."
+  },
+  "changeHypothesis": {
+    "summary": "The March 22 Section 301 action sharply increased trade-policy risk, but at cutoff the tariff list and company-level earnings transmission were still proposed/unresolved. Mapping broad ICT/machinery names into winners or losers would be premature.",
+    "firstCredibleDate": "2018-03-22",
+    "valueChain": [
+      "Section 301 policy process",
+      "future tariff/product list",
+      "company export/import exposure",
+      "revenue/cost/earnings"
+    ],
+    "persistenceReason": "Trade-policy uncertainty can persist for quarters, but company effects depend on the final product list, rates, exemptions, sourcing and retaliation.",
+    "disconfirmingEvidence": [
+      "The March 22 action launched a proposed process rather than a final company-specific tariff map.",
+      "Potential impacts differ by exporter/importer/supply chain and cannot be inferred from sector labels alone."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "section301-20180322",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "section301-factsheet-20180322",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the company-level earnings-conversion and expectation requirements."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The macro event was large and immediately visible, but company-level economic exposure was not yet frozen.",
+    "thesisExpectation": "Require final product exposure and company revenue/cost sensitivity before selection.",
+    "measurableGap": "No coherent company-specific earnings path is measurable at cutoff.",
+    "evidenceRefs": [
+      "section301-20180322",
+      "section301-factsheet-20180322"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "proposed US tariffs on Chinese ICT/machinery and other goods",
+    "geographicScope": "China-US trade",
+    "customerScope": "exporters/importers and downstream buyers",
+    "decompositionNeeded": true,
+    "siblingHypothesisIds": [],
+    "rationale": "Final product coverage and company trade exposure are heterogeneous and unresolved.",
+    "evidenceRefs": [
+      "section301-20180322",
+      "section301-factsheet-20180322"
+    ],
+    "conclusion": "split_required"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "risk premium rises before final tariff list",
+      "horizon": "days/weeks",
+      "evidenceRefs": [
+        "section301-20180322"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "unresolved",
+      "driver": "company earnings depend on final list/exemptions/retaliation",
+      "horizon": "next 60-120 trading days",
+      "evidenceRefs": [
+        "section301-factsheet-20180322"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "trade/supply-chain reconfiguration can create winners and losers",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "section301-20180322"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Do not map broad sectors until product/company exposure is finalized and quantified.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No frozen company-level earnings bridge exists.",
+    "evidenceRefs": [
+      "section301-20180322",
+      "section301-factsheet-20180322"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "large_macro_event_without_stable_company_mapping",
+    "constraints": [
+      "proposed not final product list",
+      "heterogeneous company exposure",
+      "retaliation unresolved"
+    ]
+  },
+  "bearCase": "A broad thematic trade based on sector labels misidentifies actual company exposure once final tariff details emerge.",
+  "invalidationConditions": [
+    {
+      "indicator": "final tariff/product list and company trade exposure",
+      "observationMethod": "official tariff notices/company disclosures",
+      "threshold": "company-level revenue/cost bridge becomes measurable"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a macro risk event until final product/company mapping is available."
+  ]
+}
