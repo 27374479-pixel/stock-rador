@@ -1,0 +1,634 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-03-31T23:59:59+08:00",
+  "researchReadyAt": "2019-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2019q1-broker-earnings-inflection",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Turnover and monthly broker profit are already observable, but sustainability and residual valuation room need confirmation over the next one to two reporting cycles."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600030.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "CITIC had realized February profit acceleration and a current 2019 earnings forecast, but its PB had already moved above the report's cited five-year average and the sector had strongly rerated over 60d.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "citic-research-20190330",
+        "regime-brokers-20190331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "A-share turnover and risk appetite rebounded sharply and had already converted into January-February broker earnings, creating a real cyclical earnings inflection. The unresolved question is whether the earnings acceleration still exceeds the market rerating by late March.",
+    "firstCredibleDate": "2019-03-06",
+    "valueChain": [
+      "market turnover/risk appetite",
+      "broker commissions/financing/proprietary results",
+      "monthly broker profit",
+      "quarterly earnings"
+    ],
+    "persistenceReason": "Market activity can remain elevated for months but is reflexive and can normalize quickly; structural capital-market reform is a separate longer-horizon driver.",
+    "disconfirmingEvidence": [
+      "The broker sector had already risen more than 50% YTD by a cutoff-valid report.",
+      "20d relative breadth had weakened to 25%.",
+      "CITIC's current PB was already above its cited five-year average."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "citic-feb-20190306",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "CITIC February earnings inflection was first-party and realized."
+    },
+    {
+      "id": "cs-broker-20190312",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Listed-broker February profit acceleration was broad."
+    },
+    {
+      "id": "21cbh-broker-20190321",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Turnover and Jan-Feb sector profit growth were strong while sector prices had already rerated."
+    },
+    {
+      "id": "citic-research-20190330",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Cutoff-valid current forecast and PB/PE burden for CITIC."
+    },
+    {
+      "id": "regime-brokers-20190331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Recent 20d price breadth weakened despite strong 60d rerating."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "higher market turnover/risk appetite",
+      "to": "broker revenue",
+      "mechanism": "Higher trading, financing and proprietary-market activity lift commissions, spreads and investment results.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321",
+        "cs-broker-20190312"
+      ],
+      "failureMode": "turnover/risk appetite reverses",
+      "lag": "immediate to monthly"
+    },
+    {
+      "from": "broker revenue",
+      "to": "CITIC profit",
+      "mechanism": "February monthly financial data already show profit conversion.",
+      "evidenceRefs": [
+        "citic-feb-20190306"
+      ],
+      "failureMode": "February proves a one-month spike or proprietary results reverse",
+      "lag": "monthly to quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "large diversified brokers"
+    ],
+    "secondOrderWinners": [
+      "exchange/capital-market service providers"
+    ],
+    "losers": [],
+    "substitutes": [
+      "other financial intermediaries"
+    ],
+    "bottlenecks": [
+      "market turnover",
+      "risk appetite",
+      "proprietary volatility"
+    ],
+    "falseThemeMatches": [
+      "financial stocks without direct brokerage earnings sensitivity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600030.SH",
+      "name": "中信证券",
+      "verifiedExposure": "Large diversified broker with first-party monthly data and broad capital-market exposure.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "citic-research-20190330"
+      ],
+      "earningsSensitivity": {
+        "base": "February parent net profit RMB815m; 2019 forecast net profit RMB14.33bn, +52.6%.",
+        "favorable": "High turnover and market gains persist into Q1/Q2.",
+        "adverse": "Turnover/proprietary results normalize after the rally."
+      },
+      "principalRisks": [
+        "market reflexivity",
+        "valuation absorption"
+      ]
+    },
+    {
+      "ticker": "600837.SH",
+      "name": "海通证券",
+      "verifiedExposure": "Large broker peer exposed to same turnover/proprietary cycle.",
+      "evidenceRefs": [
+        "cs-broker-20190312",
+        "regime-brokers-20190331"
+      ],
+      "earningsSensitivity": {
+        "base": "Broad sector earnings recovery.",
+        "favorable": "Turnover persists.",
+        "adverse": "Market activity normalizes."
+      },
+      "principalRisks": [
+        "cyclical earnings"
+      ]
+    },
+    {
+      "ticker": "601688.SH",
+      "name": "华泰证券",
+      "verifiedExposure": "Large broker peer.",
+      "evidenceRefs": [
+        "regime-brokers-20190331"
+      ],
+      "earningsSensitivity": {
+        "base": "Same broad broker cycle.",
+        "favorable": "Market activity persists.",
+        "adverse": "De-rating."
+      },
+      "principalRisks": [
+        "valuation/market cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600837.SH",
+      "name": "海通证券",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large broker with the same turnover/proprietary earnings cycle.",
+      "whySelectedCompanyShouldOutperform": "CITIC has direct first-party February earnings evidence and broader leadership, but no decisive frozen valuation edge.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "regime-brokers-20190331"
+      ]
+    },
+    {
+      "ticker": "601688.SH",
+      "name": "华泰证券",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large broker exposed to the same market-activity recovery.",
+      "whySelectedCompanyShouldOutperform": "CITIC has clearer frozen monthly earnings and current forecast evidence.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "citic-research-20190330",
+        "regime-brokers-20190331"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600030.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600837.SH",
+        "selectedAdvantages": [
+          "first-party February profit evidence",
+          "broad business leadership"
+        ],
+        "selectedDisadvantages": [
+          "Haitong had stronger 20/60d relative price performance"
+        ],
+        "evidenceRefs": [
+          "citic-feb-20190306",
+          "regime-brokers-20190331"
+        ],
+        "switchCondition": "Prefer Haitong if cutoff-valid earnings/valuation evidence shows a larger residual gap.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "601688.SH",
+        "selectedAdvantages": [
+          "clearer frozen monthly earnings and current forecast"
+        ],
+        "selectedDisadvantages": [
+          "no decisive valuation edge"
+        ],
+        "evidenceRefs": [
+          "citic-feb-20190306",
+          "citic-research-20190330",
+          "regime-brokers-20190331"
+        ],
+        "switchCondition": "Prefer Huatai if its direct earnings revisions and valuation are superior.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The opportunity is real enough for Research, but exact company asymmetry and remaining expectation room are not strong enough for Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The broker basket had +9.72pp 60d excess with full 60d breadth, while 20d basket excess was -2.39pp and breadth only 25%, consistent with a large earlier rerating followed by consolidation.",
+    "thesisExpectation": "If high turnover persists, Q1/Q2 broker earnings can exceed the stale 2018 run rate.",
+    "measurableGap": "CITIC's March 30 report already forecast +52.6% 2019 profit growth and valued it near 1.9-2.0x PB, above the cited five-year mean; much of the earnings rebound is visible.",
+    "evidenceRefs": [
+      "citic-feb-20190306",
+      "21cbh-broker-20190321",
+      "citic-research-20190330",
+      "regime-brokers-20190331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Current PB/PE and published 2019 profit forecast versus realized monthly earnings.",
+    "referencePriceAtCutoff": 24.78,
+    "marketBaseline": "March 30 report already forecasts 2019 profit +52.6%, EPS RMB1.18, ~21x PE and roughly 1.9-2.0x PB; current PB is above its cited five-year average.",
+    "thesisScenario": "Elevated turnover persists long enough for Q1/Q2 earnings to beat the already-positive forecast.",
+    "breakevenCondition": "Incremental earnings must outpace the already-large YTD sector rerating and above-average PB.",
+    "ordinaryScenarioFailure": "Market activity normalizes while valuation de-rates toward historical mean.",
+    "catalystOrTimingBridge": "March/April monthly data and Q1 results are near-term.",
+    "evidenceRefs": [
+      "citic-feb-20190306",
+      "citic-research-20190330",
+      "regime-brokers-20190331"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Turnover and Jan-Feb broker profits accelerated sharply.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321",
+        "cs-broker-20190312"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "CITIC February parent net profit was first-party and realized.",
+      "evidenceRefs": [
+        "citic-feb-20190306"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "60d breadth was broad, but only one-quarter of the frozen broker basket beat CSI300 over the final 20d.",
+      "evidenceRefs": [
+        "regime-brokers-20190331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "mixed",
+      "rationale": "A March 30 report already incorporates much of the expected 2019 earnings rebound.",
+      "evidenceRefs": [
+        "citic-research-20190330"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare realized monthly earnings with +50% YTD sector rerating, 60d excess and above-average CITIC PB.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321",
+        "citic-research-20190330",
+        "regime-brokers-20190331"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen broker basket versus CSI300 using hfq history",
+      "lookback20Excess": -0.023892528949213704,
+      "lookback60Excess": 0.09720204745726552,
+      "positiveBreadth20": 0.25,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-brokers-20190331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Turnover and monthly broker profits accelerated.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "21cbh-broker-20190321"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Broad listed-broker February profit acceleration and current CITIC forecast support positive revisions.",
+      "evidenceRefs": [
+        "cs-broker-20190312",
+        "citic-research-20190330"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "short_lived",
+      "rationale": "Trading activity and proprietary gains can normalize quickly even if reform is structural.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The sector had already rerated strongly before cutoff.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321",
+        "regime-brokers-20190331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Earnings are real, but expectation absorption and reflexive market duration prevent Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600030.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "CITIC is profitable, liquid and directly exposed with first-party monthly data.",
+      "evidenceRefs": [
+        "citic-feb-20190306"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "High turnover can still lift Q1/Q2 results, but the published forecast already assumes a major rebound.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321",
+        "citic-research-20190330"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "PB is already above the cited five-year average, though below the analyst target multiple.",
+      "evidenceRefs": [
+        "citic-research-20190330"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly operating data and Q1 results are near-term.",
+      "evidenceRefs": [
+        "citic-feb-20190306"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong franchise quality is offset by market-sensitive earnings and above-average PB after a large rally.",
+      "evidenceRefs": [
+        "citic-research-20190330",
+        "regime-brokers-20190331"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600837.SH",
+        "revisionAdvantage": "CITIC has clearer first-party monthly data; no decisive broad revision edge.",
+        "valuationAdvantage": "No decisive cutoff valuation edge is frozen.",
+        "qualityTradeoff": "Both are large diversified brokers.",
+        "catalystAdvantage": "Same market catalyst.",
+        "downsideTradeoff": "Haitong had stronger recent relative price, not necessarily better downside.",
+        "switchCondition": "Switch if Haitong shows superior cutoff-valid earnings/valuation evidence.",
+        "evidenceRefs": [
+          "citic-feb-20190306",
+          "regime-brokers-20190331"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "601688.SH",
+        "revisionAdvantage": "CITIC has clearer current earnings forecast and monthly data.",
+        "valuationAdvantage": "No decisive edge.",
+        "qualityTradeoff": "Both pass broad quality.",
+        "catalystAdvantage": "Same market catalyst.",
+        "downsideTradeoff": "No decisive edge.",
+        "switchCondition": "Switch if Huatai's frozen revisions/valuation are superior.",
+        "evidenceRefs": [
+          "citic-research-20190330",
+          "regime-brokers-20190331"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "other",
+    "driverChange": "A-share daily turnover and market risk appetite rose sharply, with listed brokers already reporting stronger February profits.",
+    "earningsMechanism": "Higher commissions, financing activity and proprietary-market results lift monthly/quarterly broker profit.",
+    "nextObservableMetric": "March monthly broker financial data and Q1 earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "citic-feb-20190306",
+      "cs-broker-20190312",
+      "21cbh-broker-20190321"
+    ],
+    "failureCondition": "Turnover/proprietary gains normalize before Q1/Q2 earnings beat the current forecast."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "February earnings are already strong.",
+      "nextPeriod": "March 30 forecast already embeds 2019 profit +52.6%.",
+      "laterPeriod": "Broker earnings remain market-sensitive and normalize with turnover/asset prices.",
+      "rationale": "Use the current strong forecast rather than a depressed 2018 baseline.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "citic-research-20190330"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "March/Q1 activity may remain stronger than the report baseline.",
+      "nextPeriodChange": "Q2 benefit persists only if turnover/risk appetite remain elevated.",
+      "laterPeriodChange": "No permanent cyclical earnings uplift is assumed.",
+      "mechanism": "Market activity converts quickly but is reflexive.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "There is further earnings upside if activity persists, but much of the rebound is already in price and forecasts.",
+      "evidenceRefs": [
+        "citic-research-20190330",
+        "regime-brokers-20190331"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Turnover and proprietary gains can reverse quickly.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321"
+      ]
+    },
+    "falsifier": "Monthly activity/profit falls back toward 2018 run rate.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "listed broker earnings sensitivity to A-share market activity",
+    "geographicScope": "China A-share capital market",
+    "customerScope": "broker trading/financing/investment clients",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep cyclical turnover earnings separate from long-run capital-market reform valuation narratives.",
+    "evidenceRefs": [
+      "citic-feb-20190306",
+      "21cbh-broker-20190321"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "turnover and February profits",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "21cbh-broker-20190321"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "earnings stay high only if turnover/proprietary gains persist",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "citic-research-20190330"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "capital-market reform may help leading brokers but is not the same as the cyclical earnings trade",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "citic-research-20190330"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not capitalize structural reform to excuse a high-absorption short-cycle earnings trade.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Broad broker profits improved and CITIC monthly profit confirmed the same direction.",
+    "evidenceRefs": [
+      "cs-broker-20190312",
+      "citic-feb-20190306"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "February profit and March turnover are fresh operating evidence.",
+      "evidenceRefs": [
+        "citic-feb-20190306",
+        "21cbh-broker-20190321"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "February company earnings are realized.",
+      "evidenceRefs": [
+        "citic-feb-20190306"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "March 30 forecast reflects strong 2019 profit growth.",
+      "evidenceRefs": [
+        "citic-research-20190330"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Market activity can persist but is reflexive and can normalize abruptly.",
+      "evidenceRefs": [
+        "21cbh-broker-20190321"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "March/Q1 activity and earnings do not exceed the now-visible baseline.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600030.SH",
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "CITIC is preferred for evidence quality, not because it is a purer market-beta trade.",
+    "earningsQualityComparison": "First-party monthly data and diversified franchise support quality.",
+    "downsideComparison": "Above-average PB and market-sensitive earnings prevent a downside advantage claim.",
+    "evidenceRefs": [
+      "citic-feb-20190306",
+      "citic-research-20190330"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": 24.78,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: earnings inflection is real and already measured, but current forecast/valuation and earlier sector rerating leave insufficient residual asymmetry.",
+    "alreadyPricedAssessment": "substantial_earnings_recovery_already_visible",
+    "constraints": [
+      "above-average PB",
+      "sector YTD rerating",
+      "market-activity reflexivity"
+    ]
+  },
+  "bearCase": "The February profit surge and March turnover are peak reflexivity; market activity normalizes and valuation mean-reverts.",
+  "invalidationConditions": [
+    {
+      "indicator": "A-share turnover",
+      "observationMethod": "exchange/market data",
+      "threshold": "sustained normalization from March levels"
+    },
+    {
+      "indicator": "broker monthly/Q1 profit",
+      "observationMethod": "company monthly data/filings",
+      "threshold": "fails to exceed the current strong baseline"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep CITIC as Research; do not use V1.5 short-horizon Primary route because residual expectation gap/downside are not clear enough."
+  ]
+}
