@@ -1,0 +1,265 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2017-03-31T23:59:59+08:00",
+  "researchReadyAt": "2017-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q1-dram-tightness",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Global DRAM tightness can persist, but the direct A-share DRAM expression is not executable at the cutoff and proxy substitution remains prohibited."
+  },
+  "changeHypothesis": {
+    "summary": "Global DRAM tightness and supplier revenue were strongly realized, and unlike later windows a direct A-share DRAM business could be verified at Unigroup. However its shares were not trading at the Mar-31 cutoff, so the direct expression failed execution while generic semiconductor proxies remained causally wrong substitutes.",
+    "firstCredibleDate": "2017-01-04",
+    "valueChain": [
+      "DRAM supply",
+      "contract pricing",
+      "global supplier revenue",
+      "direct domestic DRAM products",
+      "listed execution"
+    ],
+    "persistenceReason": "Global capacity tightness can persist, but listed execution is independently required.",
+    "disconfirmingEvidence": [
+      "The global cycle already began in 2016H2, so it is continuation.",
+      "Unigroup's last available pre-cutoff daily bar was Feb-17, not Mar-31.",
+      "The continuously traded proxy basket does not establish direct commodity-DRAM earnings exposure."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-q1-price-20170104",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Global DRAM price upcycle continued into Q1."
+    },
+    {
+      "id": "dram-server-20170110",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Server DRAM contract prices confirmed severe tightness."
+    },
+    {
+      "id": "dram-revenue-20170214",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Global supplier revenue had already strongly realized the cycle."
+    },
+    {
+      "id": "unigroup-annual-20170325",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Unigroup had real DRAM/memory-module products and memory revenue."
+    },
+    {
+      "id": "unigroup-trading-status-20170331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "The direct DRAM-listed expression was not executable at cutoff."
+    },
+    {
+      "id": "regime-dram-20170331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Continuously traded semiconductor proxies were only a thematic price basket, not direct DRAM supplier expressions."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [
+      "global DRAM suppliers",
+      "direct domestic DRAM producers if tradable"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "memory buyers unable to pass higher cost"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "DRAM capacity",
+      "process migration",
+      "listed execution"
+    ],
+    "falseThemeMatches": [
+      "tradable semiconductor proxies without current commodity-DRAM earnings"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "A direct causal A-share DRAM business exists but is not executable at cutoff; proxy substitution is prohibited."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Global DRAM prices/revenue strongly confirmed the cycle. The frozen continuously traded semiconductor proxy basket was neutral (+2.46pp 60d excess), but that basket is not a direct earnings expression.",
+    "thesisExpectation": "Preserve the valid global/direct-company product thesis without pretending an untradeable security or unrelated proxy is executable.",
+    "measurableGap": "No executable direct listed-company position exists at the registered decision time.",
+    "evidenceRefs": [
+      "dram-q1-price-20170104",
+      "dram-server-20170110",
+      "dram-revenue-20170214",
+      "unigroup-annual-20170325",
+      "unigroup-trading-status-20170331",
+      "regime-dram-20170331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "global commodity DRAM plus direct domestic DRAM business",
+    "geographicScope": "global suppliers/China listed market",
+    "customerScope": "PC/server/mobile/industrial memory buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate product economics from listed execution and from generic semiconductor proxies.",
+    "evidenceRefs": [
+      "dram-q1-price-20170104",
+      "unigroup-annual-20170325",
+      "unigroup-trading-status-20170331"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "DRAM contract prices and supply tightness",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "dram-q1-price-20170104",
+        "dram-server-20170110"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "supplier revenue/pricing persistence",
+      "horizon": "60d",
+      "evidenceRefs": [
+        "dram-revenue-20170214"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "future capacity/process response and listed execution",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "dram-revenue-20170214",
+        "unigroup-trading-status-20170331"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "No selection until a direct DRAM expression is executable; do not substitute proxies.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Unigroup has real DRAM exposure, but execution rather than causal mapping blocks selection.",
+    "evidenceRefs": [
+      "unigroup-annual-20170325",
+      "unigroup-trading-status-20170331"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "DRAM supply headroom",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "drives supplier pricing power",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "dram-q1-price-20170104",
+        "dram-server-20170110"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "DRAM contract price/global supplier revenue",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "No product contradiction; listed execution is the independent blocker.",
+      "evidenceRefs": [
+        "dram-server-20170110",
+        "dram-revenue-20170214"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Tight supply is already reflected in product price/revenue.",
+      "evidenceRefs": [
+        "dram-q1-price-20170104",
+        "dram-revenue-20170214"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "clear",
+      "rationale": "Unigroup filing verifies actual DRAM products.",
+      "evidenceRefs": [
+        "unigroup-annual-20170325"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_independent_blocker",
+    "independentBlockers": [
+      "Direct DRAM expression 002049.SZ was not executable at cutoff.",
+      "Generic semiconductor proxies cannot substitute current DRAM earnings."
+    ],
+    "falsifier": "A direct current DRAM expression is both verified and executable at the cutoff.",
+    "conclusion": "flow_confirms_state"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection because direct exposure is not executable, not because the DRAM thesis is false.",
+    "alreadyPricedAssessment": "valid_product_thesis_with_execution_blocker",
+    "constraints": [
+      "direct security unavailable",
+      "continuation event",
+      "proxy substitution prohibited"
+    ]
+  },
+  "bearCase": "Buying an unrelated semiconductor proxy produces returns disconnected from the verified DRAM earnings mechanism.",
+  "invalidationConditions": [
+    {
+      "indicator": "direct DRAM expression trading status",
+      "observationMethod": "exchange/daily bars",
+      "threshold": "verified direct producer becomes executable with current cutoff-valid earnings exposure"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve direct DRAM thesis and wait for an executable expression."
+  ]
+}
