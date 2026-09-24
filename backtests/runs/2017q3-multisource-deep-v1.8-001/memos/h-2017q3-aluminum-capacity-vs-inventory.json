@@ -1,0 +1,854 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.8.0",
+  "cutoffAt": "2017-09-30T23:59:59+08:00",
+  "researchReadyAt": "2017-09-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q3-aluminum-capacity-vs-inventory",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Capacity removal is real and may differentiate compliant low-cost producers over a quarter, but high inventory and large prior aluminum-equity rerating make the timing/expectation gap unresolved."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600219.SH",
+      "role": "preferred",
+      "directExposure": "credible",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Nanshan combines an integrated aluminum chain with aerospace/auto high-value product mix and positive cash flow; 60d absorption was much lower than Yunlu, although short-term debt rose materially.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912",
+        "nanshan-h1-20170826",
+        "regime-aluminum-20170930"
+      ]
+    },
+    {
+      "ticker": "000807.SZ",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Yunlu has a hydropower-integrated smelting cost advantage and strong H1 earnings/cash, but 60d excess was already +55.3pp and short-term borrowings remained large.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912",
+        "yunlu-h1-20170828",
+        "regime-aluminum-20170930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Illegal aluminum capacity was being removed at material scale, but inventories remained high and aluminum prices/equities had already rerated. Company heterogeneity in legal capacity, power cost and high-value product mix may still create exceptions.",
+    "firstCredibleDate": "2017-08-10",
+    "valueChain": [
+      "policy/legal capacity",
+      "electrolytic aluminum supply",
+      "inventory and price",
+      "integrated producer margin",
+      "high-value downstream mix"
+    ],
+    "persistenceReason": "Legal capacity and power-cost advantages can persist beyond a temporary inventory overhang.",
+    "disconfirmingEvidence": [
+      "Seven-market inventories remained historically high.",
+      "Aluminum prices and major smelter equities had already rerated sharply over 60d.",
+      "Both Yunlu and Nanshan carried material short-term borrowing/expansion risk."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "aluminum-cuts-20170810",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Material illegal aluminum capacity removal became concrete."
+    },
+    {
+      "id": "aluminum-inventory-20170912",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "High inventory remained a downstream-flow offset despite cumulative capacity cuts."
+    },
+    {
+      "id": "yunlu-h1-20170828",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Yunlu has a hydropower-integrated cost structure with strong H1 profit/cash, but large debt."
+    },
+    {
+      "id": "nanshan-h1-20170826",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Nanshan has integrated upstream plus differentiated aerospace/auto product mix and positive cash flow, but rising short debt."
+    },
+    {
+      "id": "regime-aluminum-20170930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "The aluminum basket had +30.3pp 60d excess despite weaker 20d performance."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "illegal capacity removal",
+      "to": "available legal aluminum supply",
+      "mechanism": "Administrative shutdowns reduce effective high-cost/noncompliant capacity.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810"
+      ],
+      "failureMode": "new/idle legal capacity or inventories offset cuts",
+      "lag": "weeks to months"
+    },
+    {
+      "from": "legal supply and inventory",
+      "to": "company margin",
+      "mechanism": "Low-cost/legal producers can retain output and benefit from tighter supply if inventory normalizes; high-value downstream mix can reduce commodity volatility.",
+      "evidenceRefs": [
+        "aluminum-inventory-20170912",
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ],
+      "failureMode": "inventory remains high or price retraces",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "legal low-cost integrated smelters",
+      "high-value integrated aluminum processors"
+    ],
+    "secondOrderWinners": [
+      "downstream high-value processors with pricing power"
+    ],
+    "losers": [
+      "illegal/high-cost curtailed capacity"
+    ],
+    "substitutes": [
+      "recycled aluminum"
+    ],
+    "bottlenecks": [
+      "legal capacity",
+      "power cost",
+      "inventory"
+    ],
+    "falseThemeMatches": [
+      "generic aluminum names without verified legal capacity/cost or product advantage"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600219.SH",
+      "name": "南山铝业",
+      "verifiedExposure": "Integrated aluminum chain with aerospace/auto high-value product mix.",
+      "evidenceRefs": [
+        "nanshan-h1-20170826"
+      ],
+      "earningsSensitivity": {
+        "base": "Positive cash flow and product upgrading.",
+        "favorable": "Commodity tightness plus high-value mix improve margins.",
+        "adverse": "Debt/product ramp or aluminum-price normalization."
+      },
+      "principalRisks": [
+        "short-term borrowing",
+        "project ramp",
+        "commodity price"
+      ]
+    },
+    {
+      "ticker": "000807.SZ",
+      "name": "云铝股份",
+      "verifiedExposure": "Hydropower-integrated aluminum producer with resource/power cost advantage.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit/cash already improved.",
+        "favorable": "Legal capacity and low power cost benefit from supply reform.",
+        "adverse": "High absorption and leverage offset gains."
+      },
+      "principalRisks": [
+        "short-term borrowing",
+        "high prior rerating",
+        "capex"
+      ]
+    },
+    {
+      "ticker": "000933.SZ",
+      "name": "神火股份",
+      "verifiedExposure": "Frozen aluminum-cycle peer/proxy.",
+      "evidenceRefs": [
+        "regime-aluminum-20170930"
+      ],
+      "earningsSensitivity": {
+        "base": "Broad commodity cycle exposure.",
+        "favorable": "Aluminum price persists.",
+        "adverse": "Inventory/price reversal."
+      },
+      "principalRisks": [
+        "commodity cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "000933.SZ",
+      "name": "神火股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Broad aluminum-cycle peer in the same frozen regime basket.",
+      "whySelectedCompanyShouldOutperform": "Nanshan/Yunlu have explicit product/cost heterogeneity rather than only generic aluminum beta.",
+      "evidenceRefs": [
+        "nanshan-h1-20170826",
+        "yunlu-h1-20170828",
+        "regime-aluminum-20170930"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only memo uses one broad-cycle control; the purpose is recall of company exceptions rather than a Primary ranking.",
+  "selectionComparison": {
+    "selectedTicker": "600219.SH",
+    "pairwise": [
+      {
+        "controlTicker": "000933.SZ",
+        "selectedAdvantages": [
+          "high-value product mix",
+          "integrated chain",
+          "positive operating cash flow"
+        ],
+        "selectedDisadvantages": [
+          "less pure commodity upside than a smelter"
+        ],
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "regime-aluminum-20170930"
+        ],
+        "switchCondition": "Prefer a broad-cycle peer only if it demonstrates superior cutoff-valid legal capacity/cost and earnings quality.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Nanshan is preferred for lower absorption and product differentiation, but Yunlu remains an acceptable Research expression; no Primary ranking claim is made."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Aluminum basket was -6.58pp excess over 20d but +30.32pp over 60d; Yunlu itself was +55.33pp over 60d while Nanshan was +8.21pp.",
+    "thesisExpectation": "Legal-capacity/cost/product differences may create company-level earnings paths even while high inventory complicates the aggregate sector.",
+    "measurableGap": "Company exceptions are credible, but the aggregate commodity rerating means residual expectation room is not clean enough for Primary.",
+    "evidenceRefs": [
+      "aluminum-cuts-20170810",
+      "aluminum-inventory-20170912",
+      "yunlu-h1-20170828",
+      "nanshan-h1-20170826",
+      "regime-aluminum-20170930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Pre-cutoff price absorption plus realized company cash/earnings; no single PE is treated as sufficient.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The sector has already rerated heavily over 60d while inventories remain high.",
+    "thesisScenario": "Inventory normalizes and differentiated legal/low-cost/high-value producers sustain earnings better than generic aluminum beta.",
+    "breakevenCondition": "Company-specific margin/product advantages must persist without another large commodity rerating.",
+    "ordinaryScenarioFailure": "Capacity cuts are offset by inventory/new supply and aluminum price falls.",
+    "catalystOrTimingBridge": "Q3 earnings and inventory/production data provide the next check.",
+    "evidenceRefs": [
+      "aluminum-inventory-20170912",
+      "yunlu-h1-20170828",
+      "nanshan-h1-20170826",
+      "regime-aluminum-20170930"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Capacity cuts are real but inventory is only starting to fall.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Yunlu and Nanshan both have positive realized company cash/earnings evidence.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "The two candidates have different cost/product mechanisms from generic aluminum beta.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "mixed",
+      "rationale": "No clean forward-consensus baseline is frozen for the company exceptions.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare large 60d sector/Yunlu rerating with weaker recent 20d breadth and Nanshan's lower absorption.",
+      "evidenceRefs": [
+        "regime-aluminum-20170930"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen aluminum basket versus CSI300",
+      "lookback20Excess": -0.06578278658297942,
+      "lookback60Excess": 0.30322791295880164,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-aluminum-20170930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Capacity removal is ongoing while inventory has only recently begun to decline.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Company H1 results are positive but aggregate inventory/price state is conflicted.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826",
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Legal capacity and cost/product advantages persist beyond one month.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "60d aluminum-equity rerating is substantial.",
+      "evidenceRefs": [
+        "regime-aluminum-20170930"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "The recent tape cooled, but prior rerating and inventory conflict prevent clean Primary timing."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600219.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Nanshan has positive cash flow and integrated/high-value operations.",
+      "evidenceRefs": [
+        "nanshan-h1-20170826"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Product mix can improve earnings quality but the commodity baseline is already strong.",
+      "evidenceRefs": [
+        "nanshan-h1-20170826",
+        "regime-aluminum-20170930"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "Lower price absorption than Yunlu is not equivalent to a proven valuation gap.",
+      "evidenceRefs": [
+        "regime-aluminum-20170930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Q3 results and inventory/production data arrive inside the base horizon.",
+      "evidenceRefs": [
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Product mix and cash help, but rising short debt and commodity normalization remain.",
+      "evidenceRefs": [
+        "nanshan-h1-20170826"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "000933.SZ",
+        "revisionAdvantage": "Nanshan has differentiated high-value product mix.",
+        "valuationAdvantage": "No decisive frozen valuation advantage.",
+        "qualityTradeoff": "Nanshan positive OCF is explicit.",
+        "catalystAdvantage": "Both share aluminum cycle; Nanshan adds product ramp.",
+        "downsideTradeoff": "Product mix may cushion commodity downside, but debt rose.",
+        "switchCondition": "Switch if a control demonstrates superior company-specific earnings/quality.",
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "regime-aluminum-20170930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Legal capacity is reduced while Nanshan/Yunlu show differentiated product/cost structures.",
+    "earningsMechanism": "Compliant low-cost or high-value integrated producers may sustain margins better than the aggregate sector.",
+    "nextObservableMetric": "inventory, Q3 margin/cash flow and production utilization",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "aluminum-cuts-20170810",
+      "aluminum-inventory-20170912",
+      "yunlu-h1-20170828",
+      "nanshan-h1-20170826"
+    ],
+    "failureCondition": "Inventory stays high and company margins/cash fail to differentiate."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Supply cuts and high inventory coexist.",
+      "nextPeriod": "Market already expects some supply-reform benefit.",
+      "laterPeriod": "New/legal capacity and demand determine normalization.",
+      "rationale": "Freeze aggregate conflict rather than assume one-direction commodity upside.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912",
+        "regime-aluminum-20170930"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Company exceptions can outperform aggregate margin pressure.",
+      "nextPeriodChange": "Low-cost/high-value mix may preserve earnings if inventory normalizes.",
+      "laterPeriodChange": "Advantage persists only if cost/product differentiation remains.",
+      "mechanism": "Cross-sectional heterogeneity, not broad aluminum beta.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "pathShape": "cyclical_normalization",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Company-level cost/product differentiation improves the path versus a generic smelter.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Commodity normalization and capacity response can dominate later.",
+      "evidenceRefs": [
+        "aluminum-inventory-20170912",
+        "regime-aluminum-20170930"
+      ]
+    },
+    "falsifier": "Company margins/cash do not differentiate as inventory normalizes.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "electrolytic aluminum supply reform with integrated/high-value company exceptions",
+    "geographicScope": "China, with Shandong supply cuts and national aluminum pricing",
+    "customerScope": "industrial aluminum users and high-value aerospace/auto customers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Aggregate capacity/inventory conflict is decomposed into company-specific cost/product paths.",
+    "evidenceRefs": [
+      "aluminum-cuts-20170810",
+      "aluminum-inventory-20170912",
+      "yunlu-h1-20170828",
+      "nanshan-h1-20170826"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "large capacity cuts versus still-high inventory and cooled 20d tape",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912",
+        "regime-aluminum-20170930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "company-specific cost/product advantages if inventory normalizes",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "legal capacity/cost advantages versus new capacity and commodity normalization",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Continue to company exceptions but keep them Research until expectation/valuation and inventory path become clearer.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Aggregate inventory/price state is conflicted while Nanshan/Yunlu show company-specific operating advantages.",
+    "evidenceRefs": [
+      "aluminum-inventory-20170912",
+      "yunlu-h1-20170828",
+      "nanshan-h1-20170826"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Inventory's first decline after two months is fresh but not yet a full reset.",
+      "evidenceRefs": [
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Candidate H1 earnings/cash are realized.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No clean forward estimate reset is frozen.",
+      "evidenceRefs": [
+        "regime-aluminum-20170930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Cost/product differentiation can persist.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No company-specific earnings differentiation beyond the already-priced commodity move.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600219.SH",
+    "purestTicker": "000807.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Yunlu is purer supply-reform exposure but far more absorbed; Nanshan has lower absorption and differentiated products.",
+    "earningsQualityComparison": "Both have positive OCF; Nanshan product mix is less commodity-pure while Yunlu leverage is heavier.",
+    "downsideComparison": "Both carry debt/cycle risk; Nanshan's high-value mix may cushion downside.",
+    "evidenceRefs": [
+      "yunlu-h1-20170828",
+      "nanshan-h1-20170826",
+      "regime-aluminum-20170930"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "legal/operating electrolytic-aluminum productive capacity",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines available supply after illegal-capacity shutdowns",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "visible aluminum inventory",
+      "observedDirection": "mixed",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "Inventory remained very high even after material capacity cuts, delaying the flow confirmation.",
+      "evidenceRefs": [
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "credible",
+      "rationale": "Capacity removal can precede visible inventory draw and quarterly margin differentiation.",
+      "evidenceRefs": [
+        "aluminum-cuts-20170810",
+        "aluminum-inventory-20170912"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "credible",
+      "rationale": "Yunlu/Nanshan provide distinct company cost/product mechanisms.",
+      "evidenceRefs": [
+        "yunlu-h1-20170828",
+        "nanshan-h1-20170826"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "Inventory fails to normalize or company margins/cash do not improve.",
+    "conclusion": "state_leads_flow"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Both preferred/alternate expressions carry rising or large short-term borrowings despite positive operating cash.",
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "yunlu-h1-20170828"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Both are capital-intensive and expanding/upgrading production, so project returns remain first-order risks.",
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "yunlu-h1-20170828"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event was identified in the reviewed H1 filings.",
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "yunlu-h1-20170828"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Short-term debt and capital intensity make refinancing a material caveat.",
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "yunlu-h1-20170828"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The supply-reform thesis is already heavily priced and high inventory plus capital intensity can erase the company exception before earnings differentiate.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Debt/capex rises faster than operating cash or inventory remains high while aluminum price falls.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_multi_axis_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Shandong illegal-capacity cuts do not affect all legal producers equally; candidates with legal capacity remain able to operate.",
+        "searchTrace": [
+          "legal capacity geography aluminum shutdown company filings"
+        ],
+        "evidenceRefs": [
+          "aluminum-cuts-20170810",
+          "yunlu-h1-20170828",
+          "nanshan-h1-20170826"
+        ]
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Legal/compliant integrated producers can have a different capacity path from curtailed illegal capacity.",
+        "searchTrace": [
+          "compliance legal capacity smelter operating status"
+        ],
+        "evidenceRefs": [
+          "aluminum-cuts-20170810",
+          "yunlu-h1-20170828",
+          "nanshan-h1-20170826"
+        ]
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Nanshan's aerospace/auto high-value products create an earnings path different from generic commodity smelting.",
+        "searchTrace": [
+          "aerospace auto aluminum product mix H1 filing"
+        ],
+        "evidenceRefs": [
+          "nanshan-h1-20170826"
+        ]
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Yunlu's hydropower/resource integration supports a lower-cost path.",
+        "searchTrace": [
+          "hydropower aluminum power cost resource integration"
+        ],
+        "evidenceRefs": [
+          "yunlu-h1-20170828"
+        ]
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No cutoff-valid contract-pricing structure was found that independently creates a stronger exception.",
+        "searchTrace": [
+          "aluminum contract pricing customer pricing filing"
+        ],
+        "evidenceRefs": []
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Nanshan serves aerospace/auto/rail and other high-value end markets beyond generic commodity demand.",
+        "searchTrace": [
+          "customer end market aerospace auto rail aluminum"
+        ],
+        "evidenceRefs": [
+          "nanshan-h1-20170826"
+        ]
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Both candidates have positive OCF, but debt growth differentiates quality and prevents automatic promotion.",
+        "searchTrace": [
+          "operating cash flow short term borrowings H1"
+        ],
+        "evidenceRefs": [
+          "yunlu-h1-20170828",
+          "nanshan-h1-20170826"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "No additional generic heterogeneity lane is required beyond the audited mechanisms.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "600219.SH",
+        "exceptionMechanism": "Integrated chain plus high-value aerospace/auto product mix creates a less commodity-pure earnings path.",
+        "directExposure": "credible",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "Company-specific differentiation is credible but valuation and financing burden remain unresolved.",
+        "evidenceRefs": [
+          "nanshan-h1-20170826",
+          "regime-aluminum-20170930"
+        ]
+      },
+      {
+        "ticker": "000807.SZ",
+        "exceptionMechanism": "Hydropower/resource integration creates a lower-cost compliant smelting path.",
+        "directExposure": "clear",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "Operating exception is clear, but 60d absorption and leverage prevent Primary.",
+        "evidenceRefs": [
+          "yunlu-h1-20170828",
+          "regime-aluminum-20170930"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "The aggregate capacity/inventory conflict contains real company-level exceptions, so the hypothesis must continue at Research rather than terminate at sector No selection.",
+    "falsifierOrEscalationTrigger": "Company cost/product advantages fail to produce margin/cash differentiation or debt/capex overwhelms the benefit."
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: V1.8 successfully finds company exceptions, but high 60d absorption, inventory conflict and financing risk leave no clean Primary entry.",
+    "alreadyPricedAssessment": "company_exceptions_exist_but_sector_rerating_is_large",
+    "constraints": [
+      "high inventory",
+      "60d rerating",
+      "short-term debt",
+      "capital intensity"
+    ]
+  },
+  "bearCase": "Capacity reform is real but already priced; inventory/new supply causes aluminum prices and smelter margins to normalize before company exceptions compound.",
+  "invalidationConditions": [
+    {
+      "indicator": "visible aluminum inventory",
+      "observationMethod": "industry inventory data",
+      "threshold": "fails to normalize despite cuts"
+    },
+    {
+      "indicator": "candidate cash/debt",
+      "observationMethod": "company filings",
+      "threshold": "debt/capex rises materially faster than OCF/earnings"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep both Nanshan and Yunlu as Research expressions; do not promote until inventory/expectation burden and financing risk improve."
+  ]
+}
