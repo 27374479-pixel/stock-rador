@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q4-multisource-deep-v1.7-001",
+  "label": "post_outcome_diagnostic_not_clean_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "version": "1.7.0",
+  "headline": {
+    "conclusion": "v17_adversarial_research_layer_supported_with_separate_company_exception_recall_gap",
+    "principle": "Judge the Skill first by whether it found the right state, mapped companies honestly, searched counter-evidence and avoided false promotion. Research and No-selection can be correct outcomes; same-period returns diagnose process gaps but may not tune V1.7."
+  },
+  "frozenStateSummary": {
+    "highPrioritySelectionCount": 0,
+    "researchSelectionCount": 3,
+    "noSelectionCount": 3,
+    "researchSelections": [
+      "600031.SH Sany",
+      "600567.SH Shan Ying",
+      "601012.SH Longi"
+    ],
+    "noSelections": [
+      "gas winter shortage",
+      "DRAM tightness",
+      "steel winter curtailment"
+    ]
+  },
+  "researchAssessment": [
+    {
+      "hypothesisId": "h-2017q4-machinery-boom",
+      "assessment": "promotion_restraint_supported_expression_ranking_imperfect",
+      "metrics": {
+        "sany60dExcess": -0.06135276223049735,
+        "hengli60dNet": 0.1210931925217642,
+        "sanyVsControl60d": -0.22157618532125545
+      },
+      "diagnosis": "Sany's company quality and physical-demand thesis were real, but year-end timing/absorption was not clean enough for Primary. The peer control did much better, showing that strong company fundamentals did not justify forcing an action."
+    },
+    {
+      "hypothesisId": "h-2017q4-wastepaper-import-tightening",
+      "assessment": "adversarial_layer_success_direction_retained_bad_expression_not_promoted",
+      "metrics": {
+        "shanYing60dExcess": 0.07170475088123596,
+        "sunPaper60dNet": 0.12957724983387986,
+        "shanYingVsControl60d": -0.0970027295216378
+      },
+      "diagnosis": "The regulatory input-access thesis was worth preserving as Research, but acquisition financing, capital-allocation and governance counter-evidence correctly blocked Primary. Shan Ying beat the benchmark yet lagged the cleaner frozen peer at every audited horizon, demonstrating why 'direction right' and 'company safe to promote' must remain separate."
+    },
+    {
+      "hypothesisId": "h-2017q4-pv-tariff-stepdown",
+      "assessment": "high_absorption_and_policy_restraint_supported",
+      "metrics": {
+        "longi60dExcess": -0.037247433981310474,
+        "longi120dExcess": -0.23070226769409607,
+        "longiVsTongwei60d": 0.04796871598468111
+      },
+      "diagnosis": "Longi was the better frozen expression versus Tongwei, but broad prior rerating, tariff step-down and capex/financing burden justified Research rather than Primary. Later sector weakness must not be imported back into the original decision."
+    }
+  ],
+  "noSelectionAssessment": [
+    {
+      "hypothesisId": "h-2017q4-gas-winter-shortage",
+      "assessment": "correct_good_news_not_buy_signal",
+      "metrics": {
+        "basket20dExcess": -0.08090595734520167,
+        "valid60dDirectExcess": -0.16266278784832366
+      },
+      "diagnosis": "The shortage and spot-price spike were real, but intervention/substitution and high absorption prevented a clean listed-company opportunity at the base horizon."
+    },
+    {
+      "hypothesisId": "h-2017q4-dram-tightness",
+      "assessment": "mapping_discipline_supported",
+      "diagnosis": "Global DRAM tightness was real, but no direct current A-share DRAM supplier was frozen. The pre-cutoff proxy basket showed extreme thematic absorption and must not be converted into hindsight acceptable expressions."
+    },
+    {
+      "hypothesisId": "h-2017q4-steel-winter-curtailment",
+      "assessment": "aggregate_no_selection_contains_company_level_recall_miss",
+      "metrics": {
+        "basket60dExcess": 0.09167280585936947,
+        "fangda60dExcess": 0.2894680732845837
+      },
+      "diagnosis": "The aggregate supply-demand conflict was real, but cutoff-valid Fangda evidence already showed strong earnings/cash conversion, product differentiation, geographic/compliance resilience and contemporaneous research explicitly describing it as not constrained by northern winter cuts. The Skill should likely have continued to company-level Research rather than terminating the entire steel hypothesis.",
+      "auditPath": "backtests/runs/2017q4-multisource-deep-v1.7-001/postoutcome-steel-company-exception-audit.json"
+    }
+  ],
+  "adversarialSearchAssessment": {
+    "conclusion": "supported",
+    "strongestExample": "Shan Ying wastepaper",
+    "explanation": "V1.7's adversarial layer changed the research decision without erasing a valid upstream thesis: company-specific financing/M&A/governance evidence blocked Primary while Research remained available.",
+    "nonExample": "Sany/Longi show adversarial review is not a universal rejection engine; their company-risk reviews were manageable, while timing/absorption—not hidden balance-sheet failure—kept them at Research."
+  },
+  "newlyObservedBottleneck": {
+    "name": "company_exception_recall_under_conflicted_aggregate_state",
+    "explanation": "When sector-level evidence contains simultaneous positive and negative forces, the current process can stop at 'mixed' too early. It needs a deliberate cross-sectional exception search before final No selection.",
+    "examplesOfGenericHeterogeneityToSearch": [
+      "geography/regulatory exposure",
+      "environmental/compliance status",
+      "product mix",
+      "cost curve",
+      "contract structure",
+      "capacity allowance",
+      "customer mix",
+      "working-capital/cash quality"
+    ],
+    "notASelectionThresholdChange": true
+  },
+  "crossWindowInterpretation": {
+    "2018Q4": "Find upstream state variables instead of relying on lagging downstream price.",
+    "2018Q3": "A correct state does not automatically justify promotion.",
+    "2018Q2": "Positive state discovery can coexist with missed company-specific downside evidence; adversarial search was needed.",
+    "2018Q1": "Independent MLCC case supported cross-industry state discovery and Research restraint.",
+    "2017Q4": "Adversarial company-risk search is useful, but aggregate conflicts can still hide company-level exceptions if mapping stops too early."
+  },
+  "versionDecision": {
+    "keepFrozenV17Immutable": true,
+    "tuneV17From2017Q4": false,
+    "v17Status": "adversarial_layer_supported_holdout_closed_with_recall_diagnostic",
+    "nextAction": "Do not alter V1.7 from this period. Register company-exception search as a separate candidate research-recall capability and validate it on an untouched window. Keep dated re-underwrite as a separate subsequent capability so retrieval recall and dynamic updating remain independently attributable.",
+    "reason": "2017Q4 supports adversarial company-risk retrieval but reveals a different recall failure class. Mixing it immediately with dynamic re-underwrite would make later validation uninterpretable."
+  },
+  "prohibitedInferences": [
+    "Do not retroactively label Fangda Primary on 2017-12-31 because it later outperformed.",
+    "Do not create a steel-specific, Fangda-specific or southern-mill rule.",
+    "Do not remove Shan Ying from Research merely because a cleaner peer later did better.",
+    "Do not weaken Longi high-absorption controls because it beat Tongwei.",
+    "Do not hindsight-substitute DRAM proxy stocks for a direct supplier.",
+    "Do not tune V1.7 on 2017Q4 outcomes."
+  ]
+}
