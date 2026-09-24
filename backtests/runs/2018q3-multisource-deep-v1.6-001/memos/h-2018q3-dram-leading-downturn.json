@@ -1,0 +1,235 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-09-30T23:59:59+08:00",
+  "researchReadyAt": "2018-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q3-dram-leading-downturn",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Spot/contract divergence can lead supplier ASP and earnings deterioration by weeks to months, but the frozen implication is negative rather than a long opportunity."
+  },
+  "changeHypothesis": {
+    "summary": "By late September DRAM spot prices were already about 10% below slower-moving contract prices as bit supply increased and demand growth weakened. The leading market-clearing signal pointed to a coming contract-price downcycle.",
+    "firstCredibleDate": "2018-09-26",
+    "valueChain": [
+      "bit supply/inventory",
+      "spot price",
+      "contract ASP",
+      "supplier revenue/margin"
+    ],
+    "persistenceReason": "Memory oversupply and contract resets can persist for multiple quarters until inventory/supply adjusts.",
+    "disconfirmingEvidence": [
+      "No positive direct A-share DRAM long expression was frozen.",
+      "The state signal itself is negative for DRAM suppliers."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-leading-spot-20180926",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Spot prices led slower contract prices lower while supply rose and demand weakened."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "rising DRAM bit supply and weaker demand",
+      "to": "spot-contract discount",
+      "mechanism": "Spot prices clear marginal inventory sooner than negotiated contract prices.",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ],
+      "failureMode": "demand rebounds or supply discipline tightens before contracts reset",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "persistent spot discount",
+      "to": "contract ASP and supplier margins",
+      "mechanism": "Contract prices are renegotiated after the leading market-clearing signal deteriorates.",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ],
+      "failureMode": "spot weakness proves temporary",
+      "lag": "weeks to months"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "memory buyers if lower input cost is retained"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "DRAM suppliers exposed to falling ASP"
+    ],
+    "substitutes": [
+      "alternative memory suppliers/products"
+    ],
+    "bottlenecks": [
+      "inventory",
+      "wafer starts",
+      "end demand"
+    ],
+    "falseThemeMatches": [
+      "generic semiconductor stocks without direct DRAM economics"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No positive direct A-share long expression with frozen DRAM exposure/earnings conversion is available."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The frozen evidence is a negative physical state signal rather than a positive long thesis.",
+    "thesisExpectation": "Preserve the leading deterioration signal and avoid substituting generic semiconductor-theme stocks.",
+    "measurableGap": "No positive A-share earnings gap is established.",
+    "evidenceRefs": [
+      "dram-leading-spot-20180926"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "DRAM spot and contract-price cycle",
+    "geographicScope": "global DRAM market",
+    "customerScope": "PC/server/mobile memory buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep DRAM product economics separate from broader semiconductor narratives.",
+    "evidenceRefs": [
+      "dram-leading-spot-20180926"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "spot prices already below contract prices",
+      "horizon": "days to weeks",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "Q4 contract prices expected to decline as supply rises",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "eventual supply discipline can stabilize the cycle later",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not average possible later stabilization into the current negative state/flow signal.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "No positive direct listed company engine is frozen.",
+    "evidenceRefs": [
+      "dram-leading-spot-20180926"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "inventory_cycle",
+    "upstreamState": {
+      "variable": "DRAM spot-contract spread plus bit-supply/demand balance",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "economicRole": "acts as an early market-clearing indicator of future negotiated ASP and supplier margin",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "DRAM contract price and reported supplier revenue/margin",
+      "observedDirection": "stable",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "Contract prices reset more slowly than spot prices, so reported ASP/revenue can remain temporarily firm after marginal market pricing has turned.",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "TrendForce explicitly described the lower spot market as an early indicator of coming contract-price declines.",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "credible",
+      "rationale": "The same source expected weakness across standard, server and specialty DRAM categories rather than one isolated SKU.",
+      "evidenceRefs": [
+        "dram-leading-spot-20180926"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_independent_blocker",
+    "independentBlockers": [
+      "The resolved upstream implication is negative for direct DRAM suppliers and no frozen positive direct A-share long expression exists."
+    ],
+    "falsifier": "Spot-contract discount closes because demand strengthens or supply discipline tightens before contract ASP resets.",
+    "conclusion": "state_leads_flow"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: V1.6 preserves the leading negative state signal but there is no positive direct long expression.",
+    "alreadyPricedAssessment": "negative_product_cycle_without_positive_long_expression",
+    "constraints": [
+      "negative upstream implication",
+      "no frozen positive direct A-share expression"
+    ]
+  },
+  "bearCase": "For a long thesis, the physical cycle is adverse; generic semiconductor optimism would mask falling DRAM ASP.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM spot-contract spread and supply-demand balance",
+      "observationMethod": "specialist market data",
+      "threshold": "clear stabilization or reversal"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No generic semiconductor proxy substitution after reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as a non-agricultural V1.6 state-leading negative control."
+  ]
+}
