@@ -1,0 +1,638 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.7.0",
+  "cutoffAt": "2017-12-31T23:59:59+08:00",
+  "researchReadyAt": "2017-12-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q4-machinery-boom",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Exceptional unit demand and Sany's realized earnings/cash recovery can persist into the next reporting cycle, but the 60d rerating and mature-cycle geometry keep action at Research."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600031.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Sany has direct OEM leader exposure, 1-9M profit +932.6% and operating cash flow +238.1%; however the stock already outperformed CSI300 by about 11.7pp over 60 trading days and the cycle is mature.",
+      "evidenceRefs": [
+        "sany-q3-20171031",
+        "sany-share-20171214",
+        "excavator-nov-20171206",
+        "regime-machinery-20171231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Late-2017 excavator demand remained exceptionally strong and Sany strengthened leader share while reported profit and cash conversion had already recovered sharply.",
+    "firstCredibleDate": "2017-10-31",
+    "valueChain": [
+      "construction/replacement demand",
+      "excavator unit sales/share",
+      "Sany shipments/mix",
+      "earnings and operating cash flow"
+    ],
+    "persistenceReason": "Replacement demand, exports and leader share can persist for more than one month even as the 2017 rebound matures.",
+    "disconfirmingEvidence": [
+      "The machinery basket already had strong 60d excess performance.",
+      "Hengli showed even faster component growth but also rising receivables, borrowings and impairment.",
+      "The industry is a mature cyclical rebound rather than a fresh hidden state."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "sany-q3-20171031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Realized Sany earnings and cash conversion are strong."
+    },
+    {
+      "id": "excavator-nov-20171206",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Physical demand remains exceptionally strong."
+    },
+    {
+      "id": "sany-share-20171214",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Sany retains leading and strengthening excavator share."
+    },
+    {
+      "id": "hengli-q3-20171031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Peer growth is real but comes with greater working-capital/financing pressure."
+    },
+    {
+      "id": "regime-machinery-20171231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "60d equity absorption is already substantial while 20d momentum has stalled."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "strong equipment demand",
+      "to": "Sany unit/share growth",
+      "mechanism": "Leader OEM captures high industry unit volumes.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ],
+      "failureMode": "replacement cycle rolls over",
+      "lag": "weeks"
+    },
+    {
+      "from": "unit/share growth",
+      "to": "earnings/cash flow",
+      "mechanism": "Scale and improved collections convert volume into profit and cash.",
+      "evidenceRefs": [
+        "sany-q3-20171031"
+      ],
+      "failureMode": "margins or collections reverse",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "leading excavator OEMs"
+    ],
+    "secondOrderWinners": [
+      "hydraulic-component suppliers"
+    ],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [
+      "component capacity",
+      "dealer/channel working capital"
+    ],
+    "falseThemeMatches": [
+      "industrial names without construction-machinery exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600031.SH",
+      "name": "三一重工",
+      "verifiedExposure": "Leading excavator OEM with strengthening share.",
+      "evidenceRefs": [
+        "sany-share-20171214",
+        "sany-q3-20171031"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong realized 2017 earnings/cash recovery.",
+        "favorable": "Demand/share persist.",
+        "adverse": "Cycle normalizes sharply."
+      },
+      "principalRisks": [
+        "mature cycle",
+        "prior rerating"
+      ]
+    },
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "verifiedExposure": "Direct hydraulic component exposure.",
+      "evidenceRefs": [
+        "hengli-q3-20171031"
+      ],
+      "earningsSensitivity": {
+        "base": "Very strong realized component growth.",
+        "favorable": "Cylinder/pump-valve localization persists.",
+        "adverse": "Receivables/borrowing growth weakens quality."
+      },
+      "principalRisks": [
+        "working capital",
+        "financing",
+        "higher absorption"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct hydraulic-component peer exposed to the same excavator cycle.",
+      "whySelectedCompanyShouldOutperform": "Sany has cleaner cash conversion and less working-capital/financing stress, while Hengli's faster growth comes with receivables and debt expansion.",
+      "evidenceRefs": [
+        "hengli-q3-20171031",
+        "regime-machinery-20171231"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only memo freezes one representative peer control; no Primary ranking claim is made.",
+  "selectionComparison": {
+    "selectedTicker": "600031.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601100.SH",
+        "selectedAdvantages": [
+          "cleaner cash conversion",
+          "direct OEM leader share",
+          "less aggressive working-capital expansion"
+        ],
+        "selectedDisadvantages": [
+          "Hengli has faster component revenue/profit growth"
+        ],
+        "evidenceRefs": [
+          "sany-q3-20171031",
+          "hengli-q3-20171031",
+          "regime-machinery-20171231"
+        ],
+        "switchCondition": "Prefer Hengli if receivable/borrowing growth normalizes while its earnings revision advantage remains superior.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The company engine is strong, but the late-cycle/60d absorption evidence is not clean enough for Primary at year-end."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Machinery basket was neutral over 20d but +16.84pp excess over 60d; Sany itself was roughly flat over 20d and +11.67pp excess over 60d.",
+    "thesisExpectation": "Sany's leader share and already-realized earnings/cash recovery can persist beyond the market's short-term pause.",
+    "measurableGap": "There is still a company-quality edge, but the 60d rerating and mid-20s contemporaneous forward PE make residual expectation room only mixed.",
+    "evidenceRefs": [
+      "sany-q3-20171031",
+      "regime-machinery-20171231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Contemporaneous forward-earnings snapshot plus frozen 20/60d relative-return regime.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Public research around Oct 31 cited roughly mid-20s 2017E PE and low-20s 2018E PE, with strong 60d relative performance by year-end.",
+    "thesisScenario": "Demand slows from 2017's surge but remains positive; Sany share and cash conversion sustain earnings.",
+    "breakevenCondition": "Earnings must keep improving without requiring another broad cyclical rerating.",
+    "ordinaryScenarioFailure": "The 2017 rebound is peak-cycle and unit growth decelerates faster than earnings expectations.",
+    "catalystOrTimingBridge": "December/January unit data and the 2017 annual-results update are the next observable checks.",
+    "evidenceRefs": [
+      "sany-q3-20171031",
+      "regime-machinery-20171231"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "November unit demand +107.4% and Sany share +118.9% YoY remain exceptional.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "1-9M profit and operating cash flow both improved dramatically.",
+      "evidenceRefs": [
+        "sany-q3-20171031"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Peer Hengli also shows real demand conversion, but with more working-capital/financing stress.",
+      "evidenceRefs": [
+        "regime-machinery-20171231",
+        "hengli-q3-20171031"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "A contemporaneous research snapshot gives a usable earnings/valuation baseline.",
+      "evidenceRefs": [
+        "sany-q3-20171031"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Compare stalled 20d relative return with still-strong 60d rerating and valuation baseline.",
+      "evidenceRefs": [
+        "regime-machinery-20171231"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300",
+      "lookback20Excess": -0.0050756791793641716,
+      "lookback60Excess": 0.16838027007528822,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-machinery-20171231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Physical demand remains strong late in the year.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Sany and Hengli both show strong realized company earnings.",
+      "evidenceRefs": [
+        "sany-q3-20171031",
+        "hengli-q3-20171031"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Replacement/share/export drivers can persist across quarters.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The cycle has already rerated substantially over 60d.",
+      "evidenceRefs": [
+        "regime-machinery-20171231",
+        "sany-q3-20171031"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fundamentals remain strong, but late-cycle absorption prevents clean Primary timing."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600031.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Profit plus operating cash flow and debt repayment support quality.",
+      "evidenceRefs": [
+        "sany-q3-20171031"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Leader share and strong demand can still support near-term estimates.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Forward valuation is not extreme but no longer cheap after the 2017 rebound.",
+      "evidenceRefs": [
+        "sany-q3-20171031",
+        "regime-machinery-20171231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales and annual-results data arrive quickly.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Cash conversion and leader share help, but cycle/valuation risk remain.",
+      "evidenceRefs": [
+        "sany-q3-20171031",
+        "sany-share-20171214",
+        "excavator-nov-20171206",
+        "regime-machinery-20171231"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601100.SH",
+        "revisionAdvantage": "Hengli has faster growth; Sany has stronger cash-quality evidence.",
+        "valuationAdvantage": "No decisive frozen peer valuation edge.",
+        "qualityTradeoff": "Sany cleaner; Hengli has more receivable/borrow pressure.",
+        "catalystAdvantage": "Both share the same machinery data cadence.",
+        "downsideTradeoff": "Sany's cash profile is more defensive.",
+        "switchCondition": "Prefer Hengli if receivable/borrowing growth normalizes while its earnings revision advantage remains superior.",
+        "evidenceRefs": [
+          "sany-q3-20171031",
+          "hengli-q3-20171031",
+          "regime-machinery-20171231"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Excavator unit sales and Sany market share remain very strong.",
+    "earningsMechanism": "High unit volume/share plus scale improve profit and operating cash flow.",
+    "nextObservableMetric": "next monthly excavator sales/share and annual-results update",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "excavator-nov-20171206",
+      "sany-share-20171214"
+    ],
+    "failureCondition": "Demand/share or cash conversion roll over."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2017 profit recovery is already visible.",
+      "nextPeriod": "2018 estimates assume continued normalization rather than another 9x profit jump.",
+      "laterPeriod": "Machinery growth normalizes from the 2017 rebound.",
+      "rationale": "Use cutoff-valid valuation/earnings and physical demand.",
+      "evidenceRefs": [
+        "sany-q3-20171031",
+        "regime-machinery-20171231"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Late-year unit/share strength supports continued earnings.",
+      "nextPeriodChange": "Leader share/cash conversion can outperform a slowing sector.",
+      "laterPeriodChange": "No perpetual hypergrowth is assumed.",
+      "mechanism": "Company-quality persistence beyond the mature aggregate cycle.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Company quality may still exceed the market's mature-cycle baseline.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Cyclical normalization is the main duration risk.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "falsifier": "Monthly demand or annual earnings/cash conversion deteriorate.",
+    "overallConclusion": "credible_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "Sany excavator/OEM engine within machinery demand",
+    "geographicScope": "China plus exports",
+    "customerScope": "construction/infrastructure equipment buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Separate Sany quality from the aggregate machinery cycle.",
+    "evidenceRefs": [
+      "excavator-nov-20171206",
+      "sany-share-20171214"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "strong unit/share and realized earnings",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "cash conversion and leader share",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "cyclical normalization offsets durable leader share",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep as Research until absorption/cycle risk improves.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Sector and company fundamentals align; the blocker is timing/absorption.",
+    "evidenceRefs": [
+      "sany-q3-20171031",
+      "regime-machinery-20171231"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "November sales/share remain fresh.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Q3 earnings/cash are realized.",
+      "evidenceRefs": [
+        "sany-q3-20171031"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Near-term demand remains supportive but not a fresh reset.",
+      "evidenceRefs": [
+        "sany-q3-20171031",
+        "regime-machinery-20171231"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Leader share/replacement can persist.",
+      "evidenceRefs": [
+        "excavator-nov-20171206",
+        "sany-share-20171214"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "No further earnings/share confirmation.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600031.SH",
+    "purestTicker": "600031.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Sany is preferred for quality/cash, not purest thematic exposure.",
+    "earningsQualityComparison": "Hengli has faster growth but more financing/working-capital risk.",
+    "downsideComparison": "Sany has better downside quality but both are cyclical.",
+    "evidenceRefs": [
+      "sany-q3-20171031",
+      "hengli-q3-20171031",
+      "regime-machinery-20171231"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Q3 cash conversion improved sharply and debt repayment increased.",
+        "evidenceRefs": [
+          "sany-q3-20171031"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "clear",
+        "rationale": "No cutoff-valid acquisition/goodwill event was identified as a first-order thesis breaker in the reviewed Q3 filing.",
+        "evidenceRefs": [
+          "sany-q3-20171031"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Governance was reviewed through the issuer filing; no acute cutoff event was found, but this is not treated as proof of zero governance risk.",
+        "evidenceRefs": [
+          "sany-q3-20171031"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "clear",
+        "rationale": "Operating cash flow materially exceeded profit and the company reported substantial loan repayment, reducing near-term refinancing concern.",
+        "evidenceRefs": [
+          "sany-q3-20171031"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The bigger risk is mature-cycle expectation absorption rather than hidden company financing or governance stress.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Receivables/debt expand or operating cash conversion deteriorates while industry growth slows.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong company quality survives the adversarial pass, but late-cycle price/valuation absorption is not clean enough for Primary.",
+    "alreadyPricedAssessment": "strong_company_engine_partly_absorbed",
+    "constraints": [
+      "mature cycle",
+      "60d rerating",
+      "tight expectation slack"
+    ]
+  },
+  "bearCase": "The strong 2017 cash/earnings rebound is peak-cycle and the market has already capitalized most continuation.",
+  "invalidationConditions": [
+    {
+      "indicator": "monthly excavator sales/share",
+      "observationMethod": "industry data",
+      "threshold": "material rollover"
+    },
+    {
+      "indicator": "Sany cash conversion",
+      "observationMethod": "company filing",
+      "threshold": "operating cash flow/working capital deteriorates materially"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Sany as preferred Research; do not promote until timing/absorption improves or new earnings evidence resets expectations."
+  ]
+}
