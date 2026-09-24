@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q2-multisource-deep-v1.6-001",
+  "cutoffDate": "2018-06-30",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "samePeriodMayTuneSkill": false,
+  "baskets": [
+    {
+      "basketId": "pv-531-reset",
+      "label": "Frozen PV leader basket after the 531 demand shock",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ"
+      ]
+    },
+    {
+      "basketId": "5g-sa-standard",
+      "label": "Frozen 5G supplier basket after standalone-standard completion without an order bridge",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "600498.SH",
+        "002281.SZ",
+        "300308.SZ"
+      ]
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2018q2-nand-oversupply",
+      "reason": "Frozen state implication was negative for NAND suppliers and no positive direct A-share long expression was frozen; do not substitute generic semiconductor names."
+    },
+    {
+      "hypothesisId": "h-2018q2-msci-first-inclusion",
+      "reason": "The frozen event was a broad benchmark-flow observation without a company earnings bridge; no company basket was frozen and no hindsight beneficiary basket should be created."
+    }
+  ]
+}
