@@ -1,0 +1,686 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-09-30T23:59:59+08:00",
+  "researchReadyAt": "2018-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q3-steel-compliance-capacity",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Differentiated winter curtailment begins immediately after cutoff, so plant compliance can affect allowed capacity inside 60d; final company classification is not yet frozen."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000959.SZ",
+      "role": "preferred",
+      "directExposure": "credible",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Shougang H1 disclosed main processes had passed special emission-limit acceptance and further ultra-low-emission projects were underway, with strong profit/cash flow. Final Tangshan A/B/C/D winter rating was not public by cutoff.",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705",
+        "tangshan-differentiated-20180919",
+        "shougang-h1-201808",
+        "regime-steel-20180930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Tangshan shifted from broad curtailment toward plant-level differentiated winter production based on environmental compliance. Compliance therefore became an upstream state variable for future allowed capacity, but the final company ratings were not public by September 30.",
+    "firstCredibleDate": "2018-07-05",
+    "valueChain": [
+      "emission-compliance state",
+      "winter curtailment class",
+      "allowed production capacity",
+      "shipment/profit"
+    ],
+    "persistenceReason": "Environmental upgrades can persist across the winter and differentiate operating availability for months.",
+    "disconfirmingEvidence": [
+      "Final A/B/C/D company ratings were not public by cutoff.",
+      "Shougang H1 output still reflected environmental curtailment.",
+      "Steel-equity price regime was only neutral."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tangshan-ultralow-20180705",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Compliance upgrades were linked to future production treatment."
+    },
+    {
+      "id": "tangshan-differentiated-20180919",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "A/B/C/D compliance classes were tied to differentiated winter curtailment rates."
+    },
+    {
+      "id": "shougang-h1-201808",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Shougang had strong H1 earnings/cash flow and explicit environmental-readiness evidence."
+    },
+    {
+      "id": "hegang-h1-201808",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Hegang output was already materially affected by environmental curtailment."
+    },
+    {
+      "id": "baosteel-h1-201808",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Baosteel provides a strong generic steel control outside the same Tangshan classification mechanism."
+    },
+    {
+      "id": "regime-steel-20180930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Frozen steel price regime was neutral."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "plant-level ultra-low-emission compliance",
+      "to": "winter allowed production capacity",
+      "mechanism": "Tangshan's announced A/B/C/D framework assigns lower curtailment to higher-compliance mills.",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705",
+        "tangshan-differentiated-20180919"
+      ],
+      "failureMode": "final classification differs from inferred readiness or enforcement changes",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "allowed production capacity",
+      "to": "company shipments/profit",
+      "mechanism": "Higher winter operating availability can preserve volumes and fixed-cost absorption relative to lower-compliance peers.",
+      "evidenceRefs": [
+        "shougang-h1-201808",
+        "hegang-h1-201808"
+      ],
+      "failureMode": "steel demand/prices fall enough to offset the utilization advantage",
+      "lag": "weeks to quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "high-compliance steel mills with lower winter curtailment"
+    ],
+    "secondOrderWinners": [
+      "customers needing stable supply"
+    ],
+    "losers": [
+      "lower-compliance mills facing larger curtailment"
+    ],
+    "substitutes": [
+      "cross-region steel supply"
+    ],
+    "bottlenecks": [
+      "official classification",
+      "policy enforcement",
+      "end demand"
+    ],
+    "falseThemeMatches": [
+      "steel companies outside the relevant differentiated-curtailment geography"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000959.SZ",
+      "name": "首钢股份",
+      "verifiedExposure": "Shougang had disclosed pre-cutoff environmental compliance work and strong H1 earnings, but final winter rating was not yet public.",
+      "evidenceRefs": [
+        "shougang-h1-201808",
+        "tangshan-differentiated-20180919"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 revenue +11.61%, profit +50.12%, operating cash flow +361.42%; output still affected by curtailment.",
+        "favorable": "Higher compliance produces lower winter curtailment than peers.",
+        "adverse": "Final classification or enforcement provides no capacity advantage."
+      },
+      "principalRisks": [
+        "classification uncertainty",
+        "steel price/demand"
+      ]
+    },
+    {
+      "ticker": "000709.SZ",
+      "name": "河钢股份",
+      "verifiedExposure": "Tangshan-linked producer whose H1 production was already reduced by environmental restrictions.",
+      "evidenceRefs": [
+        "hegang-h1-201808"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 attributable profit RMB1.822bn with output down under curtailment.",
+        "favorable": "Improved compliance reduces winter cuts.",
+        "adverse": "Higher curtailment persists."
+      },
+      "principalRisks": [
+        "curtailment intensity",
+        "demand"
+      ]
+    },
+    {
+      "ticker": "600019.SH",
+      "name": "宝钢股份",
+      "verifiedExposure": "Profitable steel control not tied to the same Tangshan plant-classification state.",
+      "evidenceRefs": [
+        "baosteel-h1-201808"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit +62.23%, operating cash flow +197.63%.",
+        "favorable": "Sector profitability persists.",
+        "adverse": "Steel prices weaken."
+      },
+      "principalRisks": [
+        "sector cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "000709.SZ",
+      "name": "河钢股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Tangshan-linked steel peer directly exposed to environmental curtailment.",
+      "whySelectedCompanyShouldOutperform": "Shougang has more explicit pre-cutoff environmental-acceptance/upgrading evidence, though final A/B/C/D status is still unknown.",
+      "evidenceRefs": [
+        "shougang-h1-201808",
+        "hegang-h1-201808",
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    {
+      "ticker": "600019.SH",
+      "name": "宝钢股份",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "High-quality steel company with strong earnings but without the same Tangshan compliance-capacity state.",
+      "whySelectedCompanyShouldOutperform": "If differentiated curtailment matters, a Tangshan high-compliance expression can preserve more winter capacity than a generic steel proxy.",
+      "evidenceRefs": [
+        "baosteel-h1-201808",
+        "tangshan-differentiated-20180919"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000959.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "000709.SZ",
+        "selectedAdvantages": [
+          "more explicit pre-cutoff environmental acceptance/upgrades",
+          "strong H1 profit/cash flow"
+        ],
+        "selectedDisadvantages": [
+          "final winter class not public"
+        ],
+        "evidenceRefs": [
+          "shougang-h1-201808",
+          "hegang-h1-201808",
+          "tangshan-differentiated-20180919"
+        ],
+        "switchCondition": "Prefer Hegang if cutoff-valid final compliance/classification evidence shows a better allowed-capacity state.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "600019.SH",
+        "selectedAdvantages": [
+          "direct exposure to Tangshan differentiated-curtailment mechanism"
+        ],
+        "selectedDisadvantages": [
+          "Baosteel has strong generic steel earnings and no Tangshan classification uncertainty"
+        ],
+        "evidenceRefs": [
+          "shougang-h1-201808",
+          "baosteel-h1-201808"
+        ],
+        "switchCondition": "Prefer Baosteel if policy differentiation proves non-material or the generic steel cycle dominates.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "V1.6 correctly continues company mapping on the leading state variable, but final classification uncertainty prevents actionable asymmetry."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Steel basket had +5.46pp 60d excess but only +0.96pp 20d excess and 33% final-20d breadth.",
+    "thesisExpectation": "A higher-compliance Tangshan mill may retain more winter capacity than lower-ranked peers once differentiated curtailment begins.",
+    "measurableGap": "The mechanism is concrete, but final plant classification is not cutoff-valid, so the company-specific expectation gap is not fully measurable.",
+    "evidenceRefs": [
+      "tangshan-differentiated-20180919",
+      "shougang-h1-201808",
+      "regime-steel-20180930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Company earnings quality plus potential relative allowed-capacity advantage; no final class is assumed.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Differentiated-curtailment policy is public, but final company ratings are not.",
+    "thesisScenario": "Shougang's documented environmental readiness translates into lower winter curtailment.",
+    "breakevenCondition": "Final compliance treatment must actually preserve meaningful capacity relative to peers.",
+    "ordinaryScenarioFailure": "Final rating is not advantaged or steel demand/price falls.",
+    "catalystOrTimingBridge": "Official classification and winter operating rates arrive immediately after cutoff and inside 60d.",
+    "evidenceRefs": [
+      "tangshan-differentiated-20180919",
+      "shougang-h1-201808"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "The policy changes future allowed-capacity economics rather than current steel demand.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Shougang H1 profits/cash flow were strong and environmental upgrades were underway.",
+      "evidenceRefs": [
+        "shougang-h1-201808"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Steel breadth was weak in the final 20d.",
+      "evidenceRefs": [
+        "regime-steel-20180930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "none",
+      "conclusion": "insufficient",
+      "rationale": "No cutoff-valid final compliance rating or company-specific capacity schedule exists.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Compare the policy mechanism with neutral steel breadth while refusing to use later final classifications.",
+      "evidenceRefs": [
+        "regime-steel-20180930"
+      ]
+    },
+    "unresolvedReason": "missing_baseline",
+    "conclusion": "insufficient"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen steel basket versus CSI300",
+      "lookback20Excess": 0.009562542336280436,
+      "lookback60Excess": 0.05464560553740124,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 1,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-steel-20180930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Compliance-driven allowed-capacity differentiation begins next quarter.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Steel H1 earnings are strong, but compliance-specific revisions are not frozen.",
+      "evidenceRefs": [
+        "shougang-h1-201808",
+        "hegang-h1-201808",
+        "baosteel-h1-201808"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Winter curtailment spans months and environmental upgrades are durable.",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705",
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Steel cycle remains important and policy benefit is not the only return driver.",
+      "evidenceRefs": [
+        "regime-steel-20180930"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "State-variable mechanism is real, but company-specific classification remains unresolved."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000959.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "H1 profit/cash flow are strong.",
+      "evidenceRefs": [
+        "shougang-h1-201808"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Potential compliance capacity advantage is not yet quantified.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No current frozen valuation baseline is available.",
+      "evidenceRefs": [
+        "shougang-h1-201808"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Winter classification/operating treatment begins immediately after cutoff.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Strong H1 earnings help, but steel cyclicality and classification uncertainty remain.",
+      "evidenceRefs": [
+        "shougang-h1-201808"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "000709.SZ",
+        "revisionAdvantage": "Potential environmental-readiness advantage is not yet quantified.",
+        "valuationAdvantage": "Unresolved.",
+        "qualityTradeoff": "Both profitable; Shougang has stronger frozen cash-flow growth.",
+        "catalystAdvantage": "Shougang has more explicit pre-cutoff compliance evidence.",
+        "downsideTradeoff": "Both remain steel-cycle sensitive.",
+        "switchCondition": "Switch if Hegang final classification is superior.",
+        "evidenceRefs": [
+          "shougang-h1-201808",
+          "hegang-h1-201808"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "600019.SH",
+        "revisionAdvantage": "Only Shougang is directly tied to the differentiated-capacity state.",
+        "valuationAdvantage": "Unresolved.",
+        "qualityTradeoff": "Baosteel has stronger generic sector scale/earnings.",
+        "catalystAdvantage": "Tangshan winter policy is more direct for Shougang.",
+        "downsideTradeoff": "Baosteel has less classification uncertainty.",
+        "switchCondition": "Switch if the compliance advantage is not verified.",
+        "evidenceRefs": [
+          "shougang-h1-201808",
+          "baosteel-h1-201808"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "utilization",
+    "driverChange": "Differentiated environmental ratings can change winter curtailment from no cut to 30%, 50% or 70% depending on class.",
+    "earningsMechanism": "Higher allowed utilization preserves steel volumes and fixed-cost absorption relative to lower-compliance peers.",
+    "nextObservableMetric": "official company classification, winter operating rates and Q4 shipments",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "tangshan-differentiated-20180919",
+      "shougang-h1-201808"
+    ],
+    "failureCondition": "Selected company is not classified advantageously or utilization does not improve relative to peers."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "other",
+      "nearTerm": "H1 steel earnings are strong but current output remains affected by environmental limits.",
+      "nextPeriod": "Winter curtailment policy will become differentiated by compliance.",
+      "laterPeriod": "Environmental-upgrade advantages can persist but the steel cycle remains dominant.",
+      "rationale": "The key missing baseline is company-specific final class, which is not public at cutoff.",
+      "evidenceRefs": [
+        "shougang-h1-201808",
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "If Shougang's compliance readiness earns a better class, allowed utilization improves relative to peers.",
+      "nextPeriodChange": "Higher winter output can preserve earnings.",
+      "laterPeriodChange": "No permanent sector-price advantage is assumed.",
+      "mechanism": "Compliance state affects permitted capacity before output/profit flow responds.",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705",
+        "shougang-h1-201808"
+      ]
+    },
+    "pathShape": "stable_compound",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Mechanism is strong but selected-company final state is not yet frozen.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919",
+        "shougang-h1-201808"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Winter policy spans months, but steel prices/demand can dominate.",
+      "evidenceRefs": [
+        "regime-steel-20180930"
+      ]
+    },
+    "falsifier": "Final classification or winter operating data show no Shougang capacity advantage.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "steel capacity differentiated by environmental compliance",
+    "geographicScope": "Tangshan winter curtailment system",
+    "customerScope": "steel buyers exposed to mill output availability",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo separates compliance-driven capacity from generic steel-price beta.",
+    "evidenceRefs": [
+      "tangshan-differentiated-20180919",
+      "shougang-h1-201808"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "policy makes higher compliance economically valuable for future capacity",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "company classification is not yet public; winter output will test the state advantage",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "shougang-h1-201808"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "environmental upgrades can preserve future operating flexibility",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Continue company mapping on the state variable, but do not infer the final class from later information.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Shougang has stronger frozen environmental-readiness evidence than generic steel, but the final advantage is unresolved.",
+    "evidenceRefs": [
+      "shougang-h1-201808",
+      "regime-steel-20180930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "Differentiated winter production rule is new.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "H1 earnings/cash flow are realized.",
+      "evidenceRefs": [
+        "shougang-h1-201808"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "insufficient",
+      "rationale": "No company-specific compliance revision is frozen.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Environmental upgrades can affect multiple months of capacity.",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "Final class or operating rates do not confirm advantage.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "000959.SZ",
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Shougang is researched because of pre-cutoff compliance evidence, not thematic purity.",
+    "earningsQualityComparison": "Shougang H1 profit/cash flow are strong; Baosteel has strong generic sector quality.",
+    "downsideComparison": "Classification uncertainty prevents a clear downside edge.",
+    "evidenceRefs": [
+      "shougang-h1-201808",
+      "baosteel-h1-201808"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "plant-level environmental compliance / qualification for lower winter curtailment",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "economicRole": "determines the share of installed steel capacity legally allowed to operate during differentiated winter controls",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "tangshan-ultralow-20180705",
+        "shougang-h1-201808"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "current steel output and company profit",
+      "observedDirection": "mixed",
+      "opportunityImplication": "mixed",
+      "temporaryDistortion": "Current H1 output still reflects older broad curtailment; differentiated rules start October 1 before current output fully reflects future allowed capacity.",
+      "evidenceRefs": [
+        "hegang-h1-201808",
+        "shougang-h1-201808"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "The announced A/B/C/D framework explicitly maps compliance state to future curtailment rates starting October 1.",
+      "evidenceRefs": [
+        "tangshan-differentiated-20180919",
+        "tangshan-ultralow-20180705"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "Company environmental readiness differs, but final public classifications are not available by cutoff.",
+      "evidenceRefs": [
+        "shougang-h1-201808",
+        "hegang-h1-201808"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "Final classification or winter operating data show no relative allowed-capacity benefit.",
+    "conclusion": "state_leads_flow"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: V1.6 correctly refuses to let current output be the only gate and continues mapping the compliance state, but missing final company classification and valuation prevent action.",
+    "alreadyPricedAssessment": "leading_capacity_state_without_final_company_classification",
+    "constraints": [
+      "final rating unavailable",
+      "neutral price regime",
+      "valuation baseline missing"
+    ]
+  },
+  "bearCase": "The compliance state fails to translate into a relative capacity advantage, or steel demand/prices overwhelm any utilization benefit.",
+  "invalidationConditions": [
+    {
+      "indicator": "official winter compliance class",
+      "observationMethod": "Tangshan/company disclosures",
+      "threshold": "selected company not advantaged"
+    },
+    {
+      "indicator": "winter utilization/shipments",
+      "observationMethod": "company/industry data",
+      "threshold": "no relative capacity preservation"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Final post-cutoff company classification is explicitly excluded."
+    ]
+  },
+  "unknowns": [
+    "Final A/B/C/D rating was not public by September 30."
+  ],
+  "nextResearchActions": [
+    "Continue company mapping as Research under V1.6; do not infer October classification backward."
+  ]
+}
