@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q1-multisource-deep-v1.5-001",
+  "label": "post_outcome_evaluator_semantics_audit",
+  "diagnosticOnly": true,
+  "frozenCoreModified": false,
+  "issue": {
+    "failureClass": "heterogeneous_base_horizon_aggregation_bug",
+    "affectedField": "outcome.aggregate.opportunityFirstBase",
+    "description": "The locked V1.5 evaluator re-aggregates Primary hypotheses at a common 60-trading-day horizon whenever 60 is in outcomePolicy, even when individual memos pre-register different baseTradingDays.",
+    "codeBehavior": "primaryOpportunityLevel is called with 60 when manifest.outcomePolicy.holdingTradingDays includes 60, then opportunityFirstBase reads each hypothesis at that common horizon.",
+    "consequence": "The 20d Xiangshui dye thesis is correctly stored in thesisBaseOutcome but is incorrectly treated at 60d by legacy opportunityFirstBase, turning a +7.24pp base-horizon success into a -9.89pp common-horizon failure."
+  },
+  "canonicalMetricsForV15": {
+    "source": "Each primary result.thesisBaseOutcome keyed to expectedRealization.baseTradingDays.",
+    "hypotheses": [
+      {
+        "hypothesisId": "h-2019q1-xiangshui-dye-supply-shock",
+        "baseTradingDays": 20,
+        "netReturn": 0.07216478669669724,
+        "excessReturn": 0.07238010671607609
+      },
+      {
+        "hypothesisId": "h-2019q1-excavator-demand-acceleration",
+        "baseTradingDays": 60,
+        "netReturn": 0.0022321393703759185,
+        "excessReturn": 0.02160581444734
+      }
+    ],
+    "correctedOpportunityFirstBase": {
+      "count": 2,
+      "directionCaptureRate": 1,
+      "positiveBasketRate": 1,
+      "meanOpportunityNetReturn": 0.03719846303353658,
+      "meanOpportunityExcessReturn": 0.04699296058170804
+    }
+  },
+  "remediation": {
+    "selectionRulesChangeRequired": false,
+    "lockedOutcomeRewriteAllowed": false,
+    "action": "Keep locked outcome immutable. Add a separate heterogeneous-base audit/reporting tool and use primaryThesisBase / per-memo thesisBaseOutcome as canonical V1.5 base metrics.",
+    "futureCoreChange": "A future evaluator revision may replace the common-60d opportunityFirstBase aggregation with grouping on each memo's frozen base horizon, but that is a reporting compatibility change, not a selection-rule change."
+  }
+}
