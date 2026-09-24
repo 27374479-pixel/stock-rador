@@ -1,0 +1,274 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-03-31T23:59:59+08:00",
+  "researchReadyAt": "2018-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q1-iphone-x-demand-cut",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A true production cut can affect supplier orders within weeks, but company-level transmission remains unresolved at cutoff."
+  },
+  "changeHypothesis": {
+    "summary": "Reports suggested a sharp iPhone X Q1 production-target cut, but Murata disputed the magnitude based on its own orders. The demand signal was material but conflicted, and the frozen A-share supply-chain basket had only mixed relative performance.",
+    "firstCredibleDate": "2018-01-29",
+    "valueChain": [
+      "iPhone X production target",
+      "component orders",
+      "supplier utilization/revenue",
+      "supplier earnings"
+    ],
+    "persistenceReason": "A real smartphone production cut can affect component orders for a quarter, but the magnitude and supplier-by-supplier exposure vary with content share, model mix and inventory.",
+    "disconfirmingEvidence": [
+      "Murata explicitly said its own order decline was smaller than the headline production-cut report.",
+      "Frozen Apple-chain equities were mixed rather than broadly confirming a severe supplier earnings shock.",
+      "No cutoff-valid company order/earnings downgrade was frozen for a specific A-share supplier."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "iphone-x-cut-20180129",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "iphone-x-murata-contradiction-20180130",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-applechain-20180331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002475.SZ",
+      "name": "立讯精密",
+      "verifiedExposure": "Apple/smartphone component exposure, but no cutoff-valid order/earnings deterioration bridge is frozen.",
+      "evidenceRefs": [
+        "iphone-x-cut-20180129",
+        "regime-applechain-20180331"
+      ],
+      "earningsSensitivity": {
+        "base": "Potential order weakness from iPhone X production revision.",
+        "favorable": "Other products/models offset the cut.",
+        "adverse": "Supplier orders decline materially."
+      },
+      "principalRisks": [
+        "customer concentration",
+        "headline-to-company mapping uncertainty"
+      ]
+    },
+    {
+      "ticker": "300136.SZ",
+      "name": "信维通信",
+      "verifiedExposure": "Smartphone RF/component exposure with weak frozen 60d price behavior, but no cutoff-valid earnings bridge from the iPhone report.",
+      "evidenceRefs": [
+        "iphone-x-cut-20180129",
+        "regime-applechain-20180331"
+      ],
+      "earningsSensitivity": {
+        "base": "Potential smartphone demand pressure.",
+        "favorable": "Content/model mix offsets.",
+        "adverse": "Orders/utilization fall."
+      },
+      "principalRisks": [
+        "company-specific mix unknown"
+      ]
+    },
+    {
+      "ticker": "002456.SZ",
+      "name": "欧菲科技",
+      "verifiedExposure": "Smartphone optical/touch component exposure, but no specific cutoff-valid iPhone X order bridge is frozen.",
+      "evidenceRefs": [
+        "iphone-x-cut-20180129",
+        "regime-applechain-20180331"
+      ],
+      "earningsSensitivity": {
+        "base": "Potential end-demand pressure.",
+        "favorable": "Other customers/models offset.",
+        "adverse": "Apple/smartphone weakness transmits to orders."
+      },
+      "principalRisks": [
+        "exposure ambiguity"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No frozen listed expression satisfies the company-level earnings-conversion and expectation requirements."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Apple-chain basket was neutral: -0.41pp 20d and -3.66pp 60d excess, with a very mixed cross-section.",
+    "thesisExpectation": "Require supplier-specific order or earnings confirmation before acting on a reported handset production cut.",
+    "measurableGap": "The magnitude of the upstream order state and its company mapping are unresolved.",
+    "evidenceRefs": [
+      "iphone-x-cut-20180129",
+      "iphone-x-murata-contradiction-20180130",
+      "regime-applechain-20180331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "iPhone X/premium-smartphone component demand",
+    "geographicScope": "global Apple supply chain",
+    "customerScope": "Apple and smartphone OEMs",
+    "decompositionNeeded": true,
+    "siblingHypothesisIds": [],
+    "rationale": "Different suppliers have different model/content exposure; one headline production target cannot be mapped uniformly.",
+    "evidenceRefs": [
+      "iphone-x-cut-20180129",
+      "iphone-x-murata-contradiction-20180130"
+    ],
+    "conclusion": "split_required"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "reported production-target cut",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "iphone-x-cut-20180129"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "supplier order magnitude and model/customer offsets are disputed",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "iphone-x-murata-contradiction-20180130"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "smartphone content growth can offset unit weakness for some suppliers",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "iphone-x-murata-contradiction-20180130"
+      ]
+    },
+    "conflictType": "multi_axis_conflict",
+    "resolutionRule": "Split by supplier-specific order/content evidence; unresolved aggregate remains No selection.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "The headline demand shock is contradicted in magnitude and frozen stock behavior is mixed.",
+    "evidenceRefs": [
+      "iphone-x-cut-20180129",
+      "iphone-x-murata-contradiction-20180130",
+      "regime-applechain-20180331"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "backlog_orderbook",
+    "upstreamState": {
+      "variable": "iPhone X supplier production/order target",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "economicRole": "drives component order backlog and supplier utilization",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "iphone-x-cut-20180129"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "supplier-specific component orders and earnings",
+      "observedDirection": "unresolved",
+      "opportunityImplication": "unresolved",
+      "temporaryDistortion": "A major supplier said its own order decline was smaller than the headline production-target cut, so aggregate unit guidance does not map cleanly into each supplier's flow.",
+      "evidenceRefs": [
+        "iphone-x-murata-contradiction-20180130",
+        "regime-applechain-20180331"
+      ]
+    },
+    "stateFlowRelation": "conflicted_unresolved",
+    "causalLagBridge": {
+      "conclusion": "mixed",
+      "rationale": "A production-target cut can lead supplier orders, but the reported magnitude is disputed and supplier content exposure differs.",
+      "evidenceRefs": [
+        "iphone-x-cut-20180129",
+        "iphone-x-murata-contradiction-20180130"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "Frozen Apple-chain stock behavior is highly dispersed rather than broad.",
+      "evidenceRefs": [
+        "regime-applechain-20180331"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [],
+    "falsifier": "Supplier-specific cutoff-valid order/earnings evidence resolves the magnitude and mapping.",
+    "conclusion": "unresolved"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "conflicted_end_demand_signal_without_company_bridge",
+    "constraints": [
+      "source magnitude disputed",
+      "company exposure heterogeneous",
+      "neutral mixed price regime"
+    ]
+  },
+  "bearCase": "The headline production cut is over-interpreted and supplier-specific content/mix offsets make generic supply-chain mapping wrong.",
+  "invalidationConditions": [
+    {
+      "indicator": "supplier-specific orders/earnings",
+      "observationMethod": "company guidance/filings",
+      "threshold": "clear company-level deterioration or resilience"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; wait for supplier-specific order/earnings evidence rather than trading the aggregate headline."
+  ]
+}
