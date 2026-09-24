@@ -1,0 +1,133 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q3-multisource-deep-v1.6-001",
+  "label": "post_outcome_no_selection_miss_audit",
+  "samePeriodMayTuneSkill": false,
+  "diagnosticOnly": true,
+  "lockVerified": true,
+  "lockRunId": "2018q3-multisource-deep-v1.6-001",
+  "cutoffDate": "2018-09-30",
+  "entryDate": "2018-10-08",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "baskets": [
+    {
+      "basketId": "pv-post531-reset",
+      "label": "Frozen PV leader basket during post-531 physical demand and price reset",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "601012.SH",
+        "600438.SH",
+        "300274.SZ"
+      ],
+      "tickerResults": [
+        {
+          "ticker": "601012.SH",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2018-11-02",
+              "netReturn": 0.14669499536753694,
+              "benchmarkReturn": -0.021213365223289204,
+              "excessReturn": 0.16790836059082614
+            },
+            "60": {
+              "exitDate": "2018-12-28",
+              "netReturn": 0.25573278040971403,
+              "benchmarkReturn": -0.10438903366294217,
+              "excessReturn": 0.3601218140726562
+            },
+            "120": {
+              "exitDate": "2019-04-02",
+              "netReturn": 1.0048641355547518,
+              "benchmarkReturn": 0.18138304834660102,
+              "excessReturn": 0.8234810872081508
+            }
+          }
+        },
+        {
+          "ticker": "600438.SH",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2018-11-02",
+              "netReturn": 0.0656865625723757,
+              "benchmarkReturn": -0.021213365223289204,
+              "excessReturn": 0.08689992779566491
+            },
+            "60": {
+              "exitDate": "2018-12-28",
+              "netReturn": 0.2383512681090536,
+              "benchmarkReturn": -0.10438903366294217,
+              "excessReturn": 0.34274030177199577
+            },
+            "120": {
+              "exitDate": "2019-04-02",
+              "netReturn": 1.0022199254033168,
+              "benchmarkReturn": 0.18138304834660102,
+              "excessReturn": 0.8208368770567158
+            }
+          }
+        },
+        {
+          "ticker": "300274.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2018-11-02",
+              "netReturn": -0.07682527888141888,
+              "benchmarkReturn": -0.021213365223289204,
+              "excessReturn": -0.055611913658129675
+            },
+            "60": {
+              "exitDate": "2018-12-28",
+              "netReturn": 0.3000776453214573,
+              "benchmarkReturn": -0.10438903366294217,
+              "excessReturn": 0.4044666789843995
+            },
+            "120": {
+              "exitDate": "2019-04-02",
+              "netReturn": 0.7687338417901126,
+              "benchmarkReturn": 0.18138304834660102,
+              "excessReturn": 0.5873507934435116
+            }
+          }
+        }
+      ],
+      "horizons": {
+        "20": {
+          "count": 3,
+          "meanNetReturn": 0.04518542635283126,
+          "benchmarkReturn": -0.021213365223289204,
+          "meanExcessReturn": 0.06639879157612046,
+          "positiveExcessBreadth": 0.6666666666666666
+        },
+        "60": {
+          "count": 3,
+          "meanNetReturn": 0.2647205646134083,
+          "benchmarkReturn": -0.10438903366294217,
+          "meanExcessReturn": 0.3691095982763504,
+          "positiveExcessBreadth": 1
+        },
+        "120": {
+          "count": 3,
+          "meanNetReturn": 0.9252726342493937,
+          "benchmarkReturn": 0.18138304834660102,
+          "meanExcessReturn": 0.7438895859027927,
+          "positiveExcessBreadth": 1
+        }
+      }
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2018q3-dram-leading-downturn",
+      "reason": "The frozen state signal is negative for DRAM suppliers and no positive direct A-share DRAM long expression was frozen; do not hindsight-substitute generic semiconductor names."
+    }
+  ]
+}
