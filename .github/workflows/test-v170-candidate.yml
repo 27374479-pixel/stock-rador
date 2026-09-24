@@ -1,0 +1,20 @@
+name: test-v170-candidate
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.7-candidate-20260924
+    paths:
+      - .github/workflows/test-v170-candidate.yml
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.7-candidate-20260924
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
