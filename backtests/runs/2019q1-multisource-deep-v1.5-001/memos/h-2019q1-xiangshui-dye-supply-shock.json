@@ -1,0 +1,711 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-03-31T23:59:59+08:00",
+  "researchReadyAt": "2019-03-31T15:00:00+08:00",
+  "actionableAt": "2019-03-31T15:00:00+08:00",
+  "hypothesisId": "h-2019q1-xiangshui-dye-supply-shock",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 10,
+    "baseTradingDays": 20,
+    "latestTradingDays": 60,
+    "rationale": "The supply shock and product-price bridge are immediate; this thesis is explicitly underwritten only through a 20-trading-day base horizon and must be re-underwritten rather than carried as a long-duration compounder."
+  },
+  "decisionValidityTradingDays": 20,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "base_horizon_convexity",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600352.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Longsheng entered the event with strong 2018 earnings, had the clearest integrated m-phenylenediamine/dye exposure and disclosed a major capacity advantage; even after the sharp rerating, a stale pre-event 2019 EPS baseline implied a non-extreme multiple while the new physical price bridge was large.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126",
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328",
+        "regime-dye-20190331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "The Xiangshui explosion abruptly removed a meaningful m-phenylenediamine/intermediate supplier and was followed within days by a roughly doubling of quoted m-phenylenediamine prices. An unaffected integrated leader can realize a finite price/margin windfall before substitute supply or restarts normalize the market.",
+    "firstCredibleDate": "2019-03-22",
+    "valueChain": [
+      "chemical-park outage",
+      "m-phenylenediamine/intermediate shortage",
+      "dye/intermediate price increase",
+      "integrated producer gross profit/net profit"
+    ],
+    "persistenceReason": "Safety inspections and concentrated capacity can keep near-term supply tight, but alternative supply/restarts make this explicitly finite rather than structural.",
+    "disconfirmingEvidence": [
+      "Longsheng had already rerated sharply before cutoff.",
+      "The exact persistence of the outage and downstream demand response were uncertain.",
+      "A pre-event earnings baseline is stale and therefore only a conservative reference, not current consensus."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "mem-xiangshui-20190322",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Major accident and immediate supply disruption occurred before cutoff."
+    },
+    {
+      "id": "stcn-dye-20190324",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Intermediate prices and producer quotations repriced sharply after the accident."
+    },
+    {
+      "id": "swhy-dye-20190325",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Specialist contemporaneous evidence supported broader dye/intermediate supply tightness."
+    },
+    {
+      "id": "longsheng-guidance-20190126",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Longsheng entered the event with strong realized 2018 earnings."
+    },
+    {
+      "id": "longsheng-baseline-20180902",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Auditable pre-event 2019 earnings baseline for expectation-burden arithmetic."
+    },
+    {
+      "id": "longsheng-shock-20190328",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Capacity, price and earnings-sensitivity evidence arrived after the accident and before cutoff."
+    },
+    {
+      "id": "regime-dye-20190331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Price absorption was already very high by cutoff and must be explicitly overcome."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Xiangshui capacity outage",
+      "to": "m-phenylenediamine/dye-intermediate scarcity",
+      "mechanism": "The accident removed a concentrated supplier and triggered broader safety inspections.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "stcn-dye-20190324"
+      ],
+      "failureMode": "capacity restarts or substitutes appear rapidly",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "intermediate scarcity",
+      "to": "realized producer pricing",
+      "mechanism": "Quoted m-phenylenediamine prices rose from roughly RMB45-50k/t to around RMB100k/t by March 27.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328"
+      ],
+      "failureMode": "quoted prices do not convert to realized sales",
+      "lag": "days to weeks"
+    },
+    {
+      "from": "realized pricing",
+      "to": "Longsheng earnings",
+      "mechanism": "Integrated sellable capacity creates direct margin leverage; contemporaneous sensitivity estimated about RMB300m net-profit uplift per RMB10k/t price increase on a 50kt Q2-Q4 volume assumption.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328"
+      ],
+      "failureMode": "sales volume falls, costs rise or price spike reverses before shipment",
+      "lag": "weeks to one quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "unaffected integrated m-phenylenediamine/dye producers"
+    ],
+    "secondOrderWinners": [
+      "other compliant dye/intermediate producers"
+    ],
+    "losers": [
+      "downstream dye users if unable to pass through costs"
+    ],
+    "substitutes": [
+      "alternative intermediate suppliers/imports"
+    ],
+    "bottlenecks": [
+      "safety approvals",
+      "effective sellable capacity",
+      "downstream acceptance"
+    ],
+    "falseThemeMatches": [
+      "chemical names without direct affected-product capacity"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600352.SH",
+      "name": "浙江龙盛",
+      "verifiedExposure": "Integrated dye/intermediate leader with roughly 6.5kt? no: 6.5万吨 m-phenylenediamine capacity cited contemporaneously and strong 2018 earnings baseline.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126",
+        "longsheng-shock-20190328"
+      ],
+      "earningsSensitivity": {
+        "base": "2018 attributable profit guided RMB4.0-4.2bn; pre-event 2019 forecast net profit RMB4.593bn.",
+        "favorable": "A meaningful part of the post-accident price increase converts to Q2 shipments/margins.",
+        "adverse": "Quoted spike normalizes or sales volume/cost offsets the price gain."
+      },
+      "principalRisks": [
+        "extreme recent rerating",
+        "quoted-versus-realized price gap",
+        "finite supply shock"
+      ]
+    },
+    {
+      "ticker": "002440.SZ",
+      "name": "闰土股份",
+      "verifiedExposure": "Direct dye producer exposed to the same supply/price environment but with a less explicit frozen upstream earnings bridge.",
+      "evidenceRefs": [
+        "stcn-dye-20190324",
+        "regime-dye-20190331"
+      ],
+      "earningsSensitivity": {
+        "base": "Benefits from dye pricing if supply remains tight.",
+        "favorable": "Dye prices rise and operations remain unaffected.",
+        "adverse": "Input costs rise faster or price spike reverses."
+      },
+      "principalRisks": [
+        "less explicit upstream capacity bridge"
+      ]
+    },
+    {
+      "ticker": "603980.SH",
+      "name": "吉华集团",
+      "verifiedExposure": "Dye producer used as a sector control for the same shock.",
+      "evidenceRefs": [
+        "regime-dye-20190331"
+      ],
+      "earningsSensitivity": {
+        "base": "Sector price exposure.",
+        "favorable": "Broad dye repricing.",
+        "adverse": "Weaker direct earnings torque."
+      },
+      "principalRisks": [
+        "less direct evidence"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002440.SZ",
+      "name": "闰土股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct listed dye peer exposed to the same industry price shock.",
+      "whySelectedCompanyShouldOutperform": "Longsheng has the clearest frozen upstream capacity/earnings-sensitivity evidence and stronger pre-event earnings base.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328",
+        "regime-dye-20190331"
+      ]
+    },
+    {
+      "ticker": "603980.SH",
+      "name": "吉华集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed dye peer exposed to the same industry event.",
+      "whySelectedCompanyShouldOutperform": "Longsheng's integrated intermediate position maps more directly to the disrupted product.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328",
+        "regime-dye-20190331"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600352.SH",
+    "pairwise": [
+      {
+        "controlTicker": "002440.SZ",
+        "selectedAdvantages": [
+          "clear upstream m-phenylenediamine capacity",
+          "quantified earnings sensitivity",
+          "strong pre-event earnings"
+        ],
+        "selectedDisadvantages": [
+          "larger prior rerating"
+        ],
+        "evidenceRefs": [
+          "longsheng-guidance-20190126",
+          "longsheng-shock-20190328",
+          "regime-dye-20190331"
+        ],
+        "switchCondition": "Prefer Runtu if cutoff-valid evidence shows equal or better direct capacity, earnings conversion and lower expectation burden.",
+        "netEdge": "selected"
+      },
+      {
+        "controlTicker": "603980.SH",
+        "selectedAdvantages": [
+          "clearer direct product exposure and earnings bridge"
+        ],
+        "selectedDisadvantages": [
+          "larger prior rerating"
+        ],
+        "evidenceRefs": [
+          "longsheng-shock-20190328",
+          "regime-dye-20190331"
+        ],
+        "switchCondition": "Prefer Jihua if direct affected-product economics and downside become independently superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "Opportunity-first selection prefers Longsheng for the clearest direct earnings bridge, not because it must be the future-best peer."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The opportunity basket was already strongly rerated: +25.30pp 20d and +20.78pp 60d excess with full breadth; Longsheng itself had +46.70pp 20d excess.",
+    "thesisExpectation": "The market rerating is large, but the post-accident physical price jump and sellable capacity create an incremental near-term earnings bridge that can still matter over the next 20 trading days.",
+    "measurableGap": "Using the published pre-event 2019 EPS baseline of RMB1.412 and the March 28 observed price near RMB16.47 implies roughly 11.7x baseline 2019E earnings before crediting the accident windfall. The new sensitivity is therefore large enough to preserve a credible—but not wide—base-horizon gap after the rerating.",
+    "evidenceRefs": [
+      "longsheng-baseline-20180902",
+      "longsheng-shock-20190328",
+      "regime-dye-20190331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Observed March 28 price versus a frozen pre-event 2019 EPS baseline, plus explicit incremental net-profit sensitivity from the accident.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Pre-event published 2019 net-profit/EPS baseline was RMB4.593bn/RMB1.412; March 28 observed price was about RMB16.47 after three limit-up days in four sessions.",
+    "thesisScenario": "Only a portion of the quoted m-phenylenediamine price shock needs to persist through early Q2 to lift near-term earnings above the frozen baseline.",
+    "breakevenCondition": "Realized price/margin uplift must survive long enough to offset the already-large stock rerating; no long-run permanent scarcity is assumed.",
+    "ordinaryScenarioFailure": "Quoted prices collapse before shipments, or volume/cost effects offset the incremental margin.",
+    "catalystOrTimingBridge": "Price realization, company operating updates and the next reporting cycle arrive inside the 20-day base/re-underwrite horizon.",
+    "evidenceRefs": [
+      "longsheng-guidance-20190126",
+      "longsheng-baseline-20180902",
+      "longsheng-shock-20190328",
+      "regime-dye-20190331"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "A sudden physical supply loss drove a measured product-price jump before cutoff.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Longsheng entered the event with strong 2018 attributable and ex-item profit growth, reducing dependence on a weak baseline.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "All three frozen dye/intermediate expressions beat CSI300 over both 20d and 60d.",
+      "evidenceRefs": [
+        "regime-dye-20190331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "The frozen 2019 earnings forecast predates the accident and therefore cannot include the new price shock.",
+      "evidenceRefs": [
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare the post-accident physical earnings bridge with full-breadth 20/60d relative rerating.",
+      "evidenceRefs": [
+        "regime-dye-20190331",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "credible_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.2529688920754339,
+      "lookback60Excess": 0.20775039453056565,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-dye-20190331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Physical supply disappeared abruptly and quoted intermediate prices roughly doubled within days.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "A direct quantified earnings bridge exists for the preferred integrated leader, while peer-level earnings revision evidence is less complete.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328",
+        "longsheng-guidance-20190126"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "short_lived",
+      "rationale": "This is a supply disruption and safety-inspection cycle, not a permanent structural growth assumption.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "swhy-dye-20190325"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "The stock/basket had already rerated sharply by cutoff.",
+      "evidenceRefs": [
+        "regime-dye-20190331"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Physical price/earnings impulse is unusually strong, but only a short base horizon is warranted because absorption and normalization risk are high."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600352.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong 2018 attributable and ex-item profit growth provide a sound operating baseline.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "The pre-event forecast cannot contain the accident-driven price shock, and contemporaneous sensitivity is material.",
+      "evidenceRefs": [
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "The stock rerated sharply, but the observed price remained around 11.7x the frozen pre-event 2019 EPS baseline before crediting the shock.",
+      "evidenceRefs": [
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328",
+        "regime-dye-20190331"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Product-price realization and operating/reporting updates occur within weeks.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "The preferred company had strong pre-event earnings and a non-extreme baseline multiple; the thesis also forces re-underwriting after 20 trading days.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126",
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002440.SZ",
+        "revisionAdvantage": "Longsheng has an explicit upstream capacity and net-profit sensitivity bridge.",
+        "valuationAdvantage": "Runtu has less frozen valuation evidence; no claim of a broad valuation advantage.",
+        "qualityTradeoff": "Both are direct sector participants, but Longsheng has stronger frozen company earnings evidence.",
+        "catalystAdvantage": "The disrupted m-phenylenediamine product maps directly to Longsheng.",
+        "downsideTradeoff": "Longsheng rerated more, offset partly by stronger baseline earnings.",
+        "switchCondition": "Switch if Runtu's cutoff-valid direct earnings bridge/downside is superior.",
+        "evidenceRefs": [
+          "longsheng-guidance-20190126",
+          "longsheng-shock-20190328",
+          "regime-dye-20190331"
+        ],
+        "netAsymmetry": "selected"
+      },
+      {
+        "controlTicker": "603980.SH",
+        "revisionAdvantage": "Longsheng has the clearer quantified product bridge.",
+        "valuationAdvantage": "No decisive valuation advantage is claimed.",
+        "qualityTradeoff": "Longsheng has stronger frozen pre-event earnings evidence.",
+        "catalystAdvantage": "Direct integrated intermediate capacity.",
+        "downsideTradeoff": "Longsheng's stronger rerating raises risk, but baseline earnings and forced short validity contain it.",
+        "switchCondition": "Switch if Jihua shows a superior direct bridge before reveal.",
+        "evidenceRefs": [
+          "longsheng-guidance-20190126",
+          "longsheng-shock-20190328",
+          "regime-dye-20190331"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "m-phenylenediamine quoted prices rose from roughly RMB45-50k/t to around RMB100k/t after a major competitor outage.",
+    "earningsMechanism": "Longsheng's integrated sellable capacity converts sustained realized price increases into gross profit and net profit; contemporaneous sensitivity estimated ~RMB300m net profit per RMB10k/t uplift on 50kt Q2-Q4 volume.",
+    "nextObservableMetric": "realized intermediate/dye selling prices, sales volume and the next company operating/reporting update",
+    "realizationWindowTradingDays": 20,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "longsheng-shock-20190328"
+    ],
+    "failureCondition": "Quoted prices fail to convert to realized shipments or reverse materially before the first re-underwrite."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2018 earnings were already strong; frozen pre-event 2019 net profit baseline RMB4.593bn.",
+      "nextPeriod": "Without the accident, 2019 earnings were expected to grow only modestly from the high 2018 base.",
+      "laterPeriod": "No permanent scarcity premium is assumed.",
+      "rationale": "Use the last auditable pre-event forecast as the baseline and explicitly avoid importing post-cutoff earnings.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126",
+        "longsheng-baseline-20180902"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "The accident creates an immediate price/margin windfall on affected intermediates/dyes.",
+      "nextPeriodChange": "Only shipments before rapid normalization are underwritten.",
+      "laterPeriodChange": "The advantage is assumed to fade as supply adjusts.",
+      "mechanism": "Finite supply shock raises realized price before normalization.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "The pre-event baseline omits a quantified product-price shock large enough to change near-term earnings.",
+      "evidenceRefs": [
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Supply normalization can erase the windfall quickly; no long-duration continuation is assumed.",
+      "evidenceRefs": [
+        "swhy-dye-20190325",
+        "regime-dye-20190331"
+      ]
+    },
+    "falsifier": "Realized product pricing/shipments fail to preserve a material incremental margin by the 20-trading-day re-underwrite.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "m-phenylenediamine and directly linked dye/intermediate pricing after Xiangshui",
+    "geographicScope": "China domestic supply with import/substitution risk explicit",
+    "customerScope": "dye/intermediate buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo isolates the affected intermediate/dye chain rather than broad chemicals.",
+    "evidenceRefs": [
+      "mem-xiangshui-20190322",
+      "longsheng-shock-20190328"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "abrupt outage and immediate product-price spike",
+      "horizon": "days to weeks",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "earnings windfall can persist into early Q2 but depends on realized shipments before normalization",
+      "horizon": "next 20-60 trading days",
+      "evidenceRefs": [
+        "longsheng-shock-20190328",
+        "swhy-dye-20190325"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "safety regulation may tighten but substitute/restart supply prevents assuming permanent scarcity",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "swhy-dye-20190325"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Underwrite only the short realized-price window and force re-underwriting at 20 trading days; do not capitalize the shock as permanent growth.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Sector pricing rose broadly while Longsheng had the clearest direct capacity advantage and strong pre-event earnings.",
+    "evidenceRefs": [
+      "longsheng-guidance-20190126",
+      "longsheng-shock-20190328",
+      "regime-dye-20190331"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "extreme",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "The accident, disclosed capacity loss and product-price jump all arrived after the pre-event earnings baseline.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Pre-event company earnings were strongly realized, although the accident windfall itself is only quantitatively bridged.",
+      "evidenceRefs": [
+        "longsheng-guidance-20190126",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "The new price sensitivity is materially above the stale pre-event earnings path, but broad analyst revision evidence is incomplete.",
+      "evidenceRefs": [
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "Safety-related supply disruption is real but finite and timing of normalization is uncertain.",
+      "evidenceRefs": [
+        "swhy-dye-20190325"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No new realized pricing/volume evidence supports the incremental earnings bridge by re-underwrite.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600352.SH",
+    "purestTicker": "600352.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Preferred status comes from direct capacity plus earnings/valuation bridge, not thematic purity alone.",
+    "earningsQualityComparison": "Longsheng has the strongest frozen pre-event earnings baseline among the mapped names.",
+    "downsideComparison": "Its larger rerating is explicitly offset against baseline earnings and a 20-day validity limit.",
+    "evidenceRefs": [
+      "longsheng-guidance-20190126",
+      "longsheng-shock-20190328",
+      "regime-dye-20190331"
+    ],
+    "conclusion": "balanced"
+  },
+  "baseHorizonConvexityTest": {
+    "bridgeStatus": "quantitatively_bridged",
+    "freshIncrementalEvidence": {
+      "conclusion": "clear",
+      "rationale": "The accident, capacity loss and measured product-price shock were new information arriving within the final trading week.",
+      "evidenceRefs": [
+        "mem-xiangshui-20190322",
+        "longsheng-shock-20190328"
+      ]
+    },
+    "baseHorizonExpectationGap": {
+      "conclusion": "credible",
+      "rationale": "Despite the rerating, March 28 price was roughly 11.7x the frozen pre-event 2019 EPS baseline before crediting the incremental accident bridge.",
+      "evidenceRefs": [
+        "longsheng-baseline-20180902",
+        "longsheng-shock-20190328",
+        "regime-dye-20190331"
+      ]
+    },
+    "catalystWithinBase": {
+      "conclusion": "clear",
+      "rationale": "Realized product pricing and the first company operating/reporting confirmation are observable within the 20-day base horizon.",
+      "evidenceRefs": [
+        "longsheng-shock-20190328"
+      ]
+    },
+    "catalystLatestTradingDays": 10,
+    "reunderwriteTradingDays": 20,
+    "normalizationEarliestTradingDays": 20,
+    "normalizationRisk": "high",
+    "exitDiscipline": "Re-underwrite no later than 20 trading days. Do not carry the supply-shock thesis beyond that point without a new frozen memo showing realized price/volume persistence.",
+    "falsifier": "By the re-underwrite point, realized prices/shipments do not support a material incremental earnings bridge or the price shock has normalized.",
+    "evidenceRefs": [
+      "mem-xiangshui-20190322",
+      "longsheng-shock-20190328",
+      "regime-dye-20190331"
+    ],
+    "conclusion": "credible_route"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Short-horizon Primary only: extreme price absorption is accepted solely because a fresh, quantitatively bridged physical earnings shock arrived after the old earnings baseline and the validity horizon is capped at 20 trading days.",
+    "alreadyPricedAssessment": "high_absorption_but_credible_short_horizon_residual_gap",
+    "constraints": [
+      "extreme recent rerating",
+      "finite supply shock",
+      "stale pre-event forecast baseline"
+    ]
+  },
+  "bearCase": "The market capitalizes a transient quoted-price spike faster than Longsheng can realize shipments; normalization begins before the earnings bridge is recognized.",
+  "invalidationConditions": [
+    {
+      "indicator": "realized m-phenylenediamine/dye price",
+      "observationMethod": "company/industry price and sales updates",
+      "threshold": "material reversal before re-underwrite"
+    },
+    {
+      "indicator": "volume and margin conversion",
+      "observationMethod": "company operating/reporting update",
+      "threshold": "no measurable earnings conversion by 20 trading days"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection is frozen before post-cutoff outcomes."
+    ]
+  },
+  "unknowns": [
+    "Exact cutoff-day current consensus after the accident is unavailable; the baseline forecast is intentionally stale and this uncertainty is reflected in tight rather than room expectation burden."
+  ],
+  "nextResearchActions": [
+    "Freeze as a 20-trading-day base_horizon_convexity Primary. Re-underwrite at day 20 rather than extending duration."
+  ]
+}
