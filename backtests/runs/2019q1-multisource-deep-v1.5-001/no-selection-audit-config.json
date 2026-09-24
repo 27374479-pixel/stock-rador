@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q1-multisource-deep-v1.5-001",
+  "cutoffDate": "2019-03-31",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "samePeriodMayTuneSkill": false,
+  "baskets": [
+    {
+      "basketId": "pork-preconfirmation",
+      "label": "Frozen hog-producer diagnostic basket before physical scarcity confirmation",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "002714.SZ",
+        "300498.SZ",
+        "000876.SZ"
+      ]
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2019q1-msci-a-share-weight-increase",
+      "reason": "No company-specific frozen earnings expression was mapped; do not invent a post-hoc beneficiary basket."
+    },
+    {
+      "hypothesisId": "h-2019q1-vat-manufacturing-cut",
+      "reason": "Aggregate VAT hypothesis explicitly required decomposition and froze no company basket; do not hindsight-map beneficiaries."
+    }
+  ]
+}
