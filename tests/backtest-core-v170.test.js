@@ -575,6 +575,9 @@ test('v1.7 supports up to three acceptable expressions and one optional preferre
       conclusion: 'acceptable', rationale: 'Good-enough expression of the same opportunity.', evidenceRefs: ['e1']
     }
   ];
+  const secondReview = JSON.parse(JSON.stringify(m.adversarialCompanyRiskTest.companyReviews[0]));
+  secondReview.ticker = '000004.SZ';
+  m.adversarialCompanyRiskTest.companyReviews.push(secondReview);
   assert.deepEqual(validateOpportunityMemo(m, 'memo.json', manifest()), []);
 });
 
@@ -802,7 +805,7 @@ test('v1.7 requires a causalStateVariableTest on every memo', () => {
   const m = baseMemo();
   delete m.causalStateVariableTest;
   const errors = validateOpportunityMemo(m, 'memo.json', manifest());
-  assert.ok(errors.some((x) => x.includes('v1.7 requires causalStateVariableTest')));
+  assert.ok(errors.some((x) => x.includes('requires causalStateVariableTest')));
 });
 
 test('v1.7 accepts an explicit non-applicable state-variable audit', () => {
