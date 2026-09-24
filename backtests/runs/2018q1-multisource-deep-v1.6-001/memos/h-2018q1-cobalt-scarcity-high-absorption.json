@@ -1,0 +1,706 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-03-31T23:59:59+08:00",
+  "researchReadyAt": "2018-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q1-cobalt-scarcity-high-absorption",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Cobalt scarcity and company earnings can remain strong for several quarters, but after a very large commodity/equity rerating the base-horizon decision must focus on residual expectation room rather than physical tightness alone."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "603799.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Huayou had direct cobalt exposure, 2017 profit guided +2283% to +2644%, and a current March forecast implying ~22.3x 2018E PE, but its 60d benchmark excess was already ~48.7pp and cobalt spot had nearly tripled from July 2016.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "huayou-guidance-20180122",
+        "huayou-valuation-20180322",
+        "regime-cobalt-20180331"
+      ]
+    },
+    {
+      "ticker": "300618.SZ",
+      "role": "acceptable",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Hanrui had direct cobalt exposure and a cutoff-valid 2018Q1 profit forecast +395% to +425%, but its equity had also already rerated materially over 60d.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "hanrui-q1-guidance-20180213",
+        "regime-cobalt-20180331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Cobalt supply remained concentrated and constrained while battery demand supported pricing. Direct A-share producers already showed extraordinary realized/forecast earnings, but commodity and equity prices had rerated so strongly that the key question was no longer whether scarcity existed, but whether any residual expectation gap remained.",
+    "firstCredibleDate": "2018-01-22",
+    "valueChain": [
+      "cobalt supply concentration",
+      "cobalt price",
+      "producer capacity/realized ASP",
+      "producer earnings"
+    ],
+    "persistenceReason": "Mine/refining supply responds slowly and battery demand can sustain tightness across quarters.",
+    "disconfirmingEvidence": [
+      "Domestic cobalt price was already nearly triple its July 2016 level.",
+      "Huayou 60d benchmark excess was about +48.7pp and all frozen cobalt expressions beat CSI300 over 20d and 60d.",
+      "Current forecasts already embedded very large 2018 profit growth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "cobalt-tight-20180203",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Physical cobalt scarcity and extreme commodity-price appreciation were both visible before cutoff."
+    },
+    {
+      "id": "huayou-guidance-20180122",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Huayou had extraordinary realized 2017 earnings acceleration."
+    },
+    {
+      "id": "huayou-valuation-20180322",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "A current March earnings/valuation baseline already incorporated strong 2018 growth."
+    },
+    {
+      "id": "hanrui-q1-guidance-20180213",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Hanrui had cutoff-valid Q1 earnings acceleration tied to cobalt economics."
+    },
+    {
+      "id": "regime-cobalt-20180331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Equity price absorption was already very high and broad."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "concentrated/slow cobalt supply",
+      "to": "high realized cobalt price",
+      "mechanism": "Limited near-term supply growth and concentrated production support tight market pricing.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203"
+      ],
+      "failureMode": "supply projects ramp faster or demand slows",
+      "lag": "months"
+    },
+    {
+      "from": "high cobalt price and capacity growth",
+      "to": "producer earnings",
+      "mechanism": "Direct producers realize higher ASP and volume, lifting margins and profit.",
+      "evidenceRefs": [
+        "huayou-guidance-20180122",
+        "hanrui-q1-guidance-20180213"
+      ],
+      "failureMode": "cobalt price reverses or cost/capex offsets ASP",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "cobalt miners/refiners with rising sellable volume"
+    ],
+    "secondOrderWinners": [
+      "integrated cathode-material producers with secure feedstock"
+    ],
+    "losers": [
+      "battery/cathode buyers unable to pass through cobalt cost"
+    ],
+    "substitutes": [
+      "lower-cobalt chemistries",
+      "recycling"
+    ],
+    "bottlenecks": [
+      "mine/refining supply",
+      "DRC concentration",
+      "project ramp"
+    ],
+    "falseThemeMatches": [
+      "battery names without direct cobalt earnings exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "603799.SH",
+      "name": "华友钴业",
+      "verifiedExposure": "Direct cobalt producer/refiner with strong realized 2017 earnings and current 2018 forecast.",
+      "evidenceRefs": [
+        "huayou-guidance-20180122",
+        "huayou-valuation-20180322"
+      ],
+      "earningsSensitivity": {
+        "base": "2017 profit RMB1.65-1.90bn; 2018 forecast net profit RMB3.255bn, +81.8%.",
+        "favorable": "Cobalt price and new capacity remain strong.",
+        "adverse": "Commodity price mean reverts before capacity/earnings catch up."
+      },
+      "principalRisks": [
+        "commodity-price reversal",
+        "high prior rerating",
+        "project execution"
+      ]
+    },
+    {
+      "ticker": "300618.SZ",
+      "name": "寒锐钴业",
+      "verifiedExposure": "Direct cobalt producer with cutoff-valid Q1 profit +395% to +425%.",
+      "evidenceRefs": [
+        "hanrui-q1-guidance-20180213"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit RMB246-261m.",
+        "favorable": "Cobalt price/capacity stay strong.",
+        "adverse": "Price/valuation mean reversion."
+      },
+      "principalRisks": [
+        "high valuation/absorption",
+        "commodity cyclicality"
+      ]
+    },
+    {
+      "ticker": "603993.SH",
+      "name": "洛阳钼业",
+      "verifiedExposure": "Diversified miner with cobalt exposure used as a frozen control.",
+      "evidenceRefs": [
+        "regime-cobalt-20180331"
+      ],
+      "earningsSensitivity": {
+        "base": "Cobalt contributes within a diversified mining portfolio.",
+        "favorable": "High cobalt price supports earnings.",
+        "adverse": "Diversification dilutes direct torque."
+      },
+      "principalRisks": [
+        "less pure cobalt exposure"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300618.SZ",
+      "name": "寒锐钴业",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct listed cobalt producer exposed to the same scarcity/price cycle.",
+      "whySelectedCompanyShouldOutperform": "Huayou has a current detailed 2018 earnings forecast and larger integrated scale; Hanrui has stronger Q1 growth but also substantial absorption.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322",
+        "hanrui-q1-guidance-20180213",
+        "regime-cobalt-20180331"
+      ]
+    },
+    {
+      "ticker": "603993.SH",
+      "name": "洛阳钼业",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Diversified miner with cobalt exposure during the same commodity cycle.",
+      "whySelectedCompanyShouldOutperform": "Huayou has more direct cobalt earnings torque and a quantified current-year forecast.",
+      "evidenceRefs": [
+        "huayou-guidance-20180122",
+        "huayou-valuation-20180322",
+        "regime-cobalt-20180331"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "603799.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300618.SZ",
+        "selectedAdvantages": [
+          "larger integrated scale",
+          "detailed current-year forecast"
+        ],
+        "selectedDisadvantages": [
+          "Hanrui has stronger cutoff-valid Q1 growth"
+        ],
+        "evidenceRefs": [
+          "huayou-valuation-20180322",
+          "hanrui-q1-guidance-20180213"
+        ],
+        "switchCondition": "Prefer Hanrui if its valuation/downside burden is demonstrably lower after adjusting for faster Q1 growth.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "603993.SH",
+        "selectedAdvantages": [
+          "more direct cobalt exposure",
+          "higher earnings sensitivity"
+        ],
+        "selectedDisadvantages": [
+          "洛钼 diversification may reduce downside"
+        ],
+        "evidenceRefs": [
+          "huayou-guidance-20180122",
+          "regime-cobalt-20180331"
+        ],
+        "switchCondition": "Prefer 洛钼 if diversified downside protection dominates direct cobalt torque.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The opportunity remains economically real, but exact expression and residual expectation room are not strong enough for Primary after the large rerating."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Cobalt basket had +32.55pp 60d excess and +2.10pp 20d excess with 100% breadth. Huayou itself had +48.67pp 60d excess.",
+    "thesisExpectation": "Cobalt scarcity can keep 2018 producer earnings strong, but commodity/equity prices already reflect a large part of the cycle.",
+    "measurableGap": "Huayou's March forecast implied ~22.3x 2018E PE on +81.8% profit growth, which is not obviously fully priced, but the commodity has already nearly tripled from mid-2016 and the stock rerated sharply.",
+    "evidenceRefs": [
+      "cobalt-tight-20180203",
+      "huayou-valuation-20180322",
+      "regime-cobalt-20180331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Current 2018E/2019E PE and profit forecast versus realized commodity/equity rerating.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Huayou ~22.3x 2018E and ~17.1x 2019E PE on March 21, with forecast 2018 profit +81.8%; cobalt spot and equities had already risen dramatically.",
+    "thesisScenario": "Cobalt remains tight long enough for forecast earnings and capacity growth to be realized without a major commodity de-rating.",
+    "breakevenCondition": "Earnings delivery must offset commodity/equity multiple mean reversion; no further cobalt price spike is required.",
+    "ordinaryScenarioFailure": "Cobalt price normalizes while the market has capitalized peak-cycle earnings.",
+    "catalystOrTimingBridge": "Q1/half-year results and cobalt-price/capacity updates occur inside 60d.",
+    "evidenceRefs": [
+      "huayou-valuation-20180322",
+      "cobalt-tight-20180203"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Cobalt scarcity and high producer earnings are real.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "huayou-guidance-20180122",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Huayou 2017 and Hanrui Q1 earnings confirm company conversion.",
+      "evidenceRefs": [
+        "huayou-guidance-20180122",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "All three frozen cobalt names beat CSI300 over 20d and 60d.",
+      "evidenceRefs": [
+        "regime-cobalt-20180331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "March Huayou forecast provides a current baseline.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare current forecast/valuation against nearly tripled cobalt price and +48.7pp 60d Huayou excess.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "regime-cobalt-20180331"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen cobalt basket versus CSI300",
+      "lookback20Excess": 0.021047711925836876,
+      "lookback60Excess": 0.3255172115068385,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-cobalt-20180331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Supply tightness and producer earnings remain strong.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "huayou-guidance-20180122"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Huayou and Hanrui both have strong cutoff-valid earnings paths.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Mine/refining supply responds slowly.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Commodity and equity prices have already experienced a large, broad rerating.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "regime-cobalt-20180331"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Operating cycle is favorable, but late-cycle/high-absorption risk prevents Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "603799.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Large realized profit growth and direct cobalt exposure.",
+      "evidenceRefs": [
+        "huayou-guidance-20180122"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "2018 earnings can still grow strongly if cobalt stays tight.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "22.3x 2018E is not extreme versus growth, but commodity peak risk compresses effective slack.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q1 and cobalt-price/capacity data are near-term.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Direct earnings torque is strong, but downside is exposed to commodity and valuation mean reversion.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "regime-cobalt-20180331"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300618.SZ",
+        "revisionAdvantage": "Both strong; Hanrui Q1 growth is faster while Huayou has detailed current-year scale/forecast.",
+        "valuationAdvantage": "No decisive frozen valuation advantage.",
+        "qualityTradeoff": "Huayou larger integrated scale; Hanrui faster current-quarter growth.",
+        "catalystAdvantage": "Same cobalt catalyst.",
+        "downsideTradeoff": "Both carry high absorption risk.",
+        "switchCondition": "Switch if Hanrui valuation/downside proves superior.",
+        "evidenceRefs": [
+          "huayou-valuation-20180322",
+          "hanrui-q1-guidance-20180213"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "603993.SH",
+        "revisionAdvantage": "Huayou has clearer direct cobalt earnings torque.",
+        "valuationAdvantage": "No decisive frozen edge.",
+        "qualityTradeoff": "洛钼 diversification lowers purity and possibly downside.",
+        "catalystAdvantage": "Huayou maps more directly to cobalt pricing.",
+        "downsideTradeoff": "洛钼 may be more defensive.",
+        "switchCondition": "Switch if diversification/downside dominates.",
+        "evidenceRefs": [
+          "huayou-guidance-20180122",
+          "regime-cobalt-20180331"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Cobalt spot remained elevated after a multi-year scarcity rerating.",
+    "earningsMechanism": "Direct producers convert high realized cobalt ASP plus capacity growth into profit.",
+    "nextObservableMetric": "Q1 producer earnings, cobalt price and capacity/project delivery",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "huayou-guidance-20180122",
+      "hanrui-q1-guidance-20180213"
+    ],
+    "failureCondition": "Cobalt price falls materially or forecast earnings/capacity do not convert."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2017/Q1 earnings already reflect high cobalt economics.",
+      "nextPeriod": "2018 forecasts assume continued strong prices/capacity.",
+      "laterPeriod": "Commodity prices normalize as supply responds.",
+      "rationale": "Treat current high earnings as the baseline, not fresh surprise.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Tight supply can keep current earnings elevated.",
+      "nextPeriodChange": "New capacity can support volume even without further price rises.",
+      "laterPeriodChange": "No permanent cobalt supercycle is assumed.",
+      "mechanism": "Producer volume plus high ASP sustain earnings before normalization.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "huayou-valuation-20180322"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "Strong current earnings are visible but residual upside beyond a high baseline is not clearly under-reflected.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322",
+        "regime-cobalt-20180331"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Commodity price/cycle normalization can be abrupt.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203"
+      ]
+    },
+    "falsifier": "Cobalt price or company earnings roll over faster than the current forecast.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "cobalt producer economics under concentrated supply",
+    "geographicScope": "global cobalt market with DRC concentration",
+    "customerScope": "battery/cathode buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo isolates direct cobalt earnings rather than broad battery themes.",
+    "evidenceRefs": [
+      "cobalt-tight-20180203",
+      "huayou-guidance-20180122"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "tight cobalt pricing and strong company earnings",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "capacity growth and 2018 earnings forecasts",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "huayou-valuation-20180322"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "supply concentration supports prices but new supply/substitution eventually responds",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "cobalt-tight-20180203"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep earnings/scarcity positive while treating high commodity/equity absorption as a separate action blocker.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Commodity, company earnings and equity prices all align positively; the problem is absorption, not causal inconsistency.",
+    "evidenceRefs": [
+      "cobalt-tight-20180203",
+      "huayou-guidance-20180122",
+      "regime-cobalt-20180331"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "extreme",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Current producer earnings/capacity remain strong, but no new March supply shock resets expectations.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Company earnings are strongly realized/forecast.",
+      "evidenceRefs": [
+        "huayou-guidance-20180122",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "2018 forecast remains strong.",
+      "evidenceRefs": [
+        "huayou-valuation-20180322"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Supply is slow to respond, but cycle normalization remains likely later.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No new earnings/capacity surprise appears while cobalt/equity rerating stalls.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "603799.SH",
+    "purestTicker": "300618.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Purity is not enough to justify chasing the most rerated cobalt name.",
+    "earningsQualityComparison": "Both Huayou/Hanrui have very strong cutoff-valid earnings.",
+    "downsideComparison": "All direct expressions carry high commodity absorption risk; diversified 洛钼 may have less torque but more downside protection.",
+    "evidenceRefs": [
+      "huayou-guidance-20180122",
+      "hanrui-q1-guidance-20180213",
+      "regime-cobalt-20180331"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "effective cobalt mine/refining supply relative to battery demand",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines commodity scarcity and producer ASP",
+      "adjustmentLag": "quarters",
+      "evidenceRefs": [
+        "cobalt-tight-20180203"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "cobalt price and producer earnings",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "There is no lagging contradiction; downstream price and earnings already strongly confirm the scarcity state.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "huayou-guidance-20180122",
+        "hanrui-q1-guidance-20180213"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Scarce supply has already translated into high cobalt price and producer earnings.",
+      "evidenceRefs": [
+        "cobalt-tight-20180203",
+        "huayou-guidance-20180122"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "clear",
+      "rationale": "Direct producer earnings and equity breadth are broadly positive.",
+      "evidenceRefs": [
+        "hanrui-q1-guidance-20180213",
+        "regime-cobalt-20180331"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "Cobalt supply/demand balance or producer earnings reverse.",
+    "conclusion": "flow_confirms_state"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: causal state and earnings are strong, but high commodity/equity absorption and mixed downside leave insufficient action asymmetry.",
+    "alreadyPricedAssessment": "strong_cycle_high_absorption",
+    "constraints": [
+      "commodity nearly tripled from mid-2016",
+      "broad equity rerating",
+      "peak-cycle risk"
+    ]
+  },
+  "bearCase": "Cobalt scarcity remains real but the stock market has already capitalized peak earnings, so any price normalization causes de-rating.",
+  "invalidationConditions": [
+    {
+      "indicator": "cobalt price/supply",
+      "observationMethod": "commodity/industry data",
+      "threshold": "material normalization"
+    },
+    {
+      "indicator": "producer earnings/capacity",
+      "observationMethod": "company filings",
+      "threshold": "misses current forecast"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Research selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Huayou preferred and Hanrui acceptable as Research; do not relax late-cycle/absorption discipline."
+  ]
+}
