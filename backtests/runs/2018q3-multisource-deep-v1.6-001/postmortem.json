@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q3-multisource-deep-v1.6-001",
+  "label": "post_outcome_diagnostic_not_clean_alpha_validation",
+  "evaluatedAfterReveal": true,
+  "samePeriodMayTuneSkill": false,
+  "validationClass": "exploratory_contaminated",
+  "version": "1.6.0",
+  "headline": {
+    "conclusion": "v16_anti_veto_process_is_safe_but_positive_recall_not_yet_validated",
+    "caveat": "Historical replay remains current-model/search contaminated and is diagnostic rather than clean forward alpha validation."
+  },
+  "frozenDecisionSummary": {
+    "highPrioritySelectionCount": 0,
+    "researchSelectionCount": 4,
+    "noSelectionCount": 2,
+    "interpretation": "Zero Primary was deliberate: V1.6 state-leading evidence was allowed to continue mapping but did not bypass V1.5 valuation, timing, company-quality or expectation gates."
+  },
+  "researchResults": [
+    {
+      "hypothesisId": "h-2018q3-infra-machinery-support",
+      "expressions": [
+        {
+          "ticker": "600031.SH",
+          "netReturn60d": -0.04339948020931872,
+          "excessReturn60d": 0.060989553453623446
+        },
+        {
+          "ticker": "601100.SH",
+          "netReturn60d": -0.092650432069044,
+          "excessReturn60d": 0.011738601593898168
+        }
+      ],
+      "assessment": "research_restraint_supported",
+      "diagnosis": "Both expressions beat the falling benchmark at 60d but lost money and lagged the frozen OEM control. Neutral late-reversal timing was a meaningful blocker; later 120d strength does not retroactively create a 60d Primary."
+    },
+    {
+      "hypothesisId": "h-2018q3-nev-battery-leader",
+      "ticker": "300750.SZ",
+      "netReturn60d": 0.024659814309230255,
+      "excessReturn60d": 0.12904884797217242,
+      "excessVsFrozenControl60d": -0.0569689641521276,
+      "assessment": "direction_right_premium_burden_kept_primary_off",
+      "diagnosis": "CATL delivered benchmark-relative strength, but BYD was stronger over the base horizon. Keeping a premium-valuation leader at Research avoided overclaiming company-specific asymmetry while still preserving the correct NEV direction."
+    },
+    {
+      "hypothesisId": "h-2018q3-pta-squeeze",
+      "ticker": "000703.SZ",
+      "netReturn60d": -0.293898364530644,
+      "excessReturn60d": -0.18950933086770183,
+      "excessVsFrozenControl60d": -0.21546887148847504,
+      "assessment": "v16_state_lead_did_not_overpromote",
+      "diagnosis": "V1.6 correctly preserved the low-inventory upstream state and continued company mapping, but chain offsets, finite duration and neutral timing kept the memo at Research. The later poor outcome supports keeping the causal-state test diagnostic rather than a promotion route."
+    },
+    {
+      "hypothesisId": "h-2018q3-steel-compliance-capacity",
+      "ticker": "000959.SZ",
+      "netReturn60d": -0.08412106482198811,
+      "excessReturn60d": 0.020267968840954054,
+      "matchedControlExcess60d": 0.006804958533596639,
+      "excessVsBestControl60d": -0.005158127286989167,
+      "assessment": "state_mapping_useful_but_not_validation",
+      "diagnosis": "The compliance state produced slight benchmark/matched-basket relative value, but the selected company did not beat the best frozen peer and absolute return was negative. Excluding the post-cutoff final A/B/C/D classification was correct."
+    }
+  ],
+  "causalStateVariableAssessment": {
+    "positiveStateLeadCases": [
+      {
+        "hypothesisId": "h-2018q3-pta-squeeze",
+        "disposition": "research_only",
+        "outcomeInterpretation": "Bad outcome demonstrates anti-veto did not become an unsafe promotion shortcut."
+      },
+      {
+        "hypothesisId": "h-2018q3-steel-compliance-capacity",
+        "disposition": "research_only",
+        "outcomeInterpretation": "Mechanism remained plausible but outcome is too weak/confounded by missing cutoff classification to validate positive state-leading recall."
+      }
+    ],
+    "negativeStateLeadCase": {
+      "hypothesisId": "h-2018q3-dram-leading-downturn",
+      "disposition": "no_selection_independent_blocker",
+      "interpretation": "V1.6 captured a non-agricultural leading state/flow structure while correctly refusing to invent a positive long A-share proxy."
+    },
+    "status": "safety_supported_recall_not_yet_validated"
+  },
+  "noSelectionAudit": {
+    "pv": {
+      "basket60dNetReturn": 0.2647205646134083,
+      "basket60dBenchmarkExcess": 0.3691095982763504,
+      "positiveExcessBreadth60": 1,
+      "assessment": "post_cutoff_regime_change_confounder",
+      "explanation": "October 9 policy clarification and especially the November 2 solar-plan meeting were new information after cutoff; contemporaneous reporting linked the latter to a broad PV rally. Do not score the full 60d move as a clean September-30 discovery miss."
+    },
+    "dram": {
+      "assessment": "not_long_auditable",
+      "explanation": "The frozen state implication was negative for DRAM suppliers and no positive direct A-share DRAM long basket was frozen; no hindsight proxy substitution."
+    }
+  },
+  "toolingAudit": {
+    "issue": "suspension_alignment_bug",
+    "affectedTicker": "000703.SZ",
+    "missingBenchmarkDates": 6,
+    "fix": "Post-lock diagnostic adapter forward-filled only internal suspension dates at prior close with zero volume, never synthesized entry dates, and retained raw prices plus a separate audit.",
+    "semanticImpact": "none",
+    "tuningImpact": "none",
+    "recommendation": "Port suspension-aware mark-to-market handling into future evaluator tooling with explicit non-executable-exit metadata, separately from skill semantics."
+  },
+  "crossWindowInterpretation": {
+    "2019Q2": "V1.5 promotion safety held; issuer-specific corporate-action discovery blind spot identified.",
+    "2019Q1": "V1.5 base-horizon convexity received direct mechanism support on the 20d dye case.",
+    "2018Q4": "V1.5 selection discipline worked, while pork exposed the stock-flow lead-lag discovery failure that motivated V1.6.",
+    "2018Q3": "V1.6 did not overpromote state-leading signals, but this window does not yet provide a clean positive recall success case."
+  },
+  "versionDecision": {
+    "keepV16Immutable": true,
+    "createV17Now": false,
+    "v16Status": "safety_supported_recall_not_yet_validated",
+    "nextAction": "Run unchanged V1.6 on another untouched window, preferably 2018Q2, and specifically look for a cutoff-valid positive upstream state that conflicts with a lagging downstream flow. Do not force such a case if none exists.",
+    "separateFutureWork": [
+      "After causal-state validation, independently test the issuer-specific corporate-action discovery lane; do not mix both changes in one candidate.",
+      "Upstream the suspension-aware evaluator fix as tooling only, with tests for internal suspension, suspended entry and suspended exit."
+    ]
+  },
+  "prohibitedInferences": [
+    "Do not claim V1.6 positive recall is validated from 2018Q3.",
+    "Do not promote state_leads_flow into an automatic buy route.",
+    "Do not use October steel classifications in the September 30 memo.",
+    "Do not classify the full PV 60d rally as a clean cutoff-valid miss.",
+    "Do not tune V1.6 on 2018Q3 outcomes."
+  ]
+}
