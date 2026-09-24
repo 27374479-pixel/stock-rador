@@ -1,0 +1,809 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2017-03-31T23:59:59+08:00",
+  "researchReadyAt": "2017-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q1-nev-policy-reset",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The 2017 policy reset can redistribute battery share toward technically qualified suppliers, but the Q1 demand/earnings air pocket and financing burden require confirmation."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002074.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Guoxuan has cutoff-valid high-density LFP/ternary technology, NCM mass production and a large 2017 battery contract, but Q1 profit was expected to fall 28%-41% and a RMB3.6bn rights issue adds dilution/capital risk.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320",
+        "regime-nev-20170331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "The 2017 subsidy/catalog reset hurt aggregate NEV demand while raising technical thresholds. Guoxuan is a credible company exception because its battery technology matches the new quality filter, but the near-term earnings hit remains real.",
+    "firstCredibleDate": "2017-01-09",
+    "valueChain": [
+      "subsidy/catalog rules",
+      "vehicle qualification and demand",
+      "battery technology thresholds",
+      "qualified supplier share",
+      "orders and earnings"
+    ],
+    "persistenceReason": "Technical qualification and customer relationships can affect share for multiple quarters after the policy air pocket normalizes.",
+    "disconfirmingEvidence": [
+      "January demand collapsed.",
+      "Jan-Feb cumulative demand remained weak.",
+      "Guoxuan Q1 profit was expected to fall materially.",
+      "RMB3.6bn rights-issue financing creates dilution/capital risk."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nev-policy-reset-20170109",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "New policy reduced subsidies while raising technical thresholds."
+    },
+    {
+      "id": "nev-january-crash-20170220",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "Aggregate January NEV demand collapsed."
+    },
+    {
+      "id": "nev-february-rebound-20170313",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "February demand partially normalized."
+    },
+    {
+      "id": "guoxuan-baseline-20160823",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Strong pre-event battery growth was already known."
+    },
+    {
+      "id": "guoxuan-annual-20170318",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "High-density LFP/ternary technology and NCM mass production support a company exception."
+    },
+    {
+      "id": "guoxuan-expectations-20170320",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Forward valuation, order bridge, Q1 earnings decline and financing risk were measurable."
+    },
+    {
+      "id": "regime-nev-20170331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Broad NEV timing was neutral."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "higher technical thresholds",
+      "to": "qualified battery share",
+      "mechanism": "Higher energy-density/performance requirements can shift mix toward technologically stronger suppliers.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-annual-20170318"
+      ],
+      "failureMode": "aggregate demand loss overwhelms share redistribution",
+      "lag": "months"
+    },
+    {
+      "from": "qualification and orders",
+      "to": "Guoxuan earnings",
+      "mechanism": "Ternary/LFP capacity plus contracted deliveries can convert qualification into shipments after catalogs normalize.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320",
+        "nev-february-rebound-20170313"
+      ],
+      "failureMode": "battery price cuts, weak vehicle sales or financing burden offset gains",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "technically qualified battery suppliers"
+    ],
+    "secondOrderWinners": [
+      "qualified NEV OEMs"
+    ],
+    "losers": [
+      "low-density/non-qualifying capacity"
+    ],
+    "substitutes": [
+      "other qualified battery chemistries"
+    ],
+    "bottlenecks": [
+      "catalog approval",
+      "energy density",
+      "battery price",
+      "vehicle demand"
+    ],
+    "falseThemeMatches": [
+      "generic NEV names without qualified product/order evidence"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002074.SZ",
+      "name": "国轩高科",
+      "verifiedExposure": "Battery supplier with high-density LFP/ternary technology and contracted demand.",
+      "evidenceRefs": [
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320"
+      ],
+      "earningsSensitivity": {
+        "base": "Weak Q1 during policy adjustment.",
+        "favorable": "Catalog normalization plus ternary/order ramp.",
+        "adverse": "Demand/price/dilution offsets share gain."
+      },
+      "principalRisks": [
+        "policy demand",
+        "battery price",
+        "rights-issue dilution",
+        "capex"
+      ]
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Integrated NEV/battery control from the frozen basket.",
+      "evidenceRefs": [
+        "regime-nev-20170331"
+      ],
+      "earningsSensitivity": {
+        "base": "Broad integrated exposure.",
+        "favorable": "Demand normalizes.",
+        "adverse": "Subsidy/price pressure."
+      },
+      "principalRisks": [
+        "integrated exposure",
+        "policy"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large integrated NEV/battery exposure to the same policy reset.",
+      "whySelectedCompanyShouldOutperform": "Guoxuan is the cleaner battery-technology threshold expression, but evidence is insufficient for a Primary ranking.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320",
+        "regime-nev-20170331"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only comparison; no claim that Guoxuan must outperform every qualified NEV expression.",
+  "selectionComparison": {
+    "selectedTicker": "002074.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "selectedAdvantages": [
+          "purer battery-threshold exposure",
+          "high-density product evidence",
+          "contracted order bridge"
+        ],
+        "selectedDisadvantages": [
+          "Q1 earnings decline",
+          "rights-issue/dilution burden"
+        ],
+        "evidenceRefs": [
+          "guoxuan-annual-20170318",
+          "guoxuan-expectations-20170320",
+          "regime-nev-20170331"
+        ],
+        "switchCondition": "Prefer the control if it shows a cleaner qualification/earnings path with lower financing burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Guoxuan is the credible company exception, but risk/earnings timing prevents Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "NEV basket was -2.10pp excess over 20d and -0.60pp over 60d. Guoxuan was -1.94pp over 20d and +1.31pp over 60d. Mar-20 research implied about 19.2x 2017E PE while forecasting Q1 profit down 28%-41%.",
+    "thesisExpectation": "Higher technical thresholds can redistribute battery share toward Guoxuan as demand normalizes.",
+    "measurableGap": "A credible company path exists, but near-term earnings/dilution risk is not bounded enough for Primary.",
+    "evidenceRefs": [
+      "nev-policy-reset-20170109",
+      "nev-february-rebound-20170313",
+      "guoxuan-annual-20170318",
+      "guoxuan-expectations-20170320",
+      "regime-nev-20170331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Mar-20 forward PE/earnings forecast plus frozen relative-price absorption and explicit Q1 earnings decline.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The market already recognizes Guoxuan as a battery leader and expects recovery beyond a weak Q1.",
+    "thesisScenario": "Qualification, ternary ramp and orders lift Q2/Q3 shipments enough to offset price/subsidy pressure.",
+    "breakevenCondition": "Share/order gains must exceed Q1 weakness and rights-issue dilution without multiple expansion.",
+    "ordinaryScenarioFailure": "Demand stays weak or battery prices fall faster than costs.",
+    "catalystOrTimingBridge": "Catalog normalization, monthly NEV sales and order delivery are observable within 60d.",
+    "evidenceRefs": [
+      "guoxuan-expectations-20170320",
+      "nev-february-rebound-20170313",
+      "regime-nev-20170331"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Policy creates a new technology filter, but aggregate demand only partially recovered.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "nev-february-rebound-20170313"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "2016 company quality is strong, but 2017Q1 profit is expected lower.",
+      "evidenceRefs": [
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Guoxuan has direct high-density technology while broad timing is neutral.",
+      "evidenceRefs": [
+        "guoxuan-annual-20170318",
+        "regime-nev-20170331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "Pre-event high growth is frozen separately from the new policy regime.",
+      "evidenceRefs": [
+        "guoxuan-baseline-20160823",
+        "nev-policy-reset-20170109"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Guoxuan is near-flat versus CSI300 over 60d and negative over 20d.",
+      "evidenceRefs": [
+        "regime-nev-20170331"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen NEV basket versus CSI300",
+      "lookback20Excess": -0.02096990459463381,
+      "lookback60Excess": -0.005996163823682695,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-nev-20170331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "February demand rebounded but cumulative demand remained weak.",
+      "evidenceRefs": [
+        "nev-january-crash-20170220",
+        "nev-february-rebound-20170313"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Technology-qualified companies can improve relative share while aggregate pressure remains.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "New subsidy/technical rules persist beyond one quarter.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "Price absorption is not the blocker.",
+      "evidenceRefs": [
+        "regime-nev-20170331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Company mapping is required because aggregate demand and technology effects diverge."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002074.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "2016 profitability/R&D/technology support quality.",
+      "evidenceRefs": [
+        "guoxuan-baseline-20160823",
+        "guoxuan-annual-20170318"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Ternary ramp and contracted orders can improve the post-Q1 path.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "~19x 2017E is not extreme, but real execution is required.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales/catalog and order delivery provide near-term evidence.",
+      "evidenceRefs": [
+        "nev-february-rebound-20170313",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low price absorption helps, but Q1 earnings decline and rights-issue dilution are material.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320",
+        "regime-nev-20170331"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "revisionAdvantage": "Guoxuan is a purer technology exception.",
+        "valuationAdvantage": "No decisive edge frozen.",
+        "qualityTradeoff": "Technology is explicit but financing/Q1 earnings are risks.",
+        "catalystAdvantage": "Order delivery is directly measurable.",
+        "downsideTradeoff": "Rights issue and battery pricing weaken containment.",
+        "switchCondition": "Switch if BYD shows cleaner qualification economics at lower burden.",
+        "evidenceRefs": [
+          "guoxuan-annual-20170318",
+          "guoxuan-expectations-20170320",
+          "regime-nev-20170331"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "market_share",
+    "driverChange": "Technical thresholds increase the value of battery energy density and qualification.",
+    "earningsMechanism": "High-density LFP/ternary products plus orders can shift shipments/share toward Guoxuan after the air pocket.",
+    "nextObservableMetric": "monthly catalog/sales, ternary ramp, contract delivery and Q2 earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "nev-policy-reset-20170109",
+      "guoxuan-annual-20170318",
+      "guoxuan-expectations-20170320"
+    ],
+    "failureCondition": "Orders/shipments fail to offset battery-price/subsidy pressure."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Pre-event high battery growth was already known.",
+      "nextPeriod": "New policy creates a Q1 air pocket and technology requalification.",
+      "laterPeriod": "Qualified technology may regain growth as catalogs normalize.",
+      "rationale": "Separate old high growth from the new cross-sectional reset.",
+      "evidenceRefs": [
+        "guoxuan-baseline-20160823",
+        "nev-policy-reset-20170109",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Q1 remains weak.",
+      "nextPeriodChange": "Ternary/high-density products and orders can improve Q2/Q3 share.",
+      "laterPeriodChange": "Financing/capacity must earn adequate returns.",
+      "mechanism": "Technology qualification offsets part, not all, of subsidy pressure.",
+      "evidenceRefs": [
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "pathShape": "delayed_acceleration",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "The policy creates relative technology winners, but benefit is delayed.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-annual-20170318"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Policy persists, but battery pricing/capex can erode returns.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "falsifier": "Catalog/shipments do not improve after Q1 or battery economics deteriorate.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "qualified power batteries under the 2017 subsidy/catalog reset",
+    "geographicScope": "China NEV market",
+    "customerScope": "qualified passenger/commercial NEV OEMs",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Aggregate demand and technical-threshold effects diverge, requiring company-level mapping.",
+    "evidenceRefs": [
+      "nev-policy-reset-20170109",
+      "nev-january-crash-20170220",
+      "guoxuan-annual-20170318"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "policy/catalog air pocket and expected Q1 profit decline",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "nev-january-crash-20170220",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "technology qualification, ternary ramp and orders",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "persistent higher technical thresholds favor capable suppliers",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-annual-20170318"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Continue Guoxuan as Research but require earnings/dilution containment before Primary.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Aggregate NEV demand is weak while Guoxuan has a technology/order path.",
+    "evidenceRefs": [
+      "nev-january-crash-20170220",
+      "guoxuan-annual-20170318",
+      "guoxuan-expectations-20170320"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "The policy reset is fresh, but company benefit is delayed by Q1 weakness.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "2016 earnings are realized but Q1 is expected lower.",
+      "evidenceRefs": [
+        "guoxuan-annual-20170318",
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "Orders support Q2+, but near-term forecast is down.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Higher technical thresholds persist.",
+      "evidenceRefs": [
+        "nev-policy-reset-20170109"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "No post-Q1 order/ship recovery.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002074.SZ",
+    "purestTicker": "002074.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Cleaner battery-threshold expression but financing/earnings burden remains.",
+    "earningsQualityComparison": "Strong 2016 quality is offset by expected Q1 decline.",
+    "downsideComparison": "Low price absorption helps; rights-issue and policy risk remain.",
+    "evidenceRefs": [
+      "guoxuan-annual-20170318",
+      "guoxuan-expectations-20170320",
+      "regime-nev-20170331"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Large expansion and rights-issue financing create capital needs.",
+        "evidenceRefs": [
+          "guoxuan-expectations-20170320"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "RMB3.6bn capacity program must earn returns during battery-price pressure.",
+        "evidenceRefs": [
+          "guoxuan-expectations-20170320"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event identified.",
+        "evidenceRefs": [
+          "guoxuan-annual-20170318"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Rights issue is a direct dilution/capital-raising risk.",
+        "evidenceRefs": [
+          "guoxuan-expectations-20170320"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "Technology advantage is too slow: Q1 earnings fall and dilution/capex consume the benefit before share gains materialize.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Q2 catalogs/orders/shipments fail to rebound or financing burden dominates.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_company_sector_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "National policy reset.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Catalog/technical qualification acts as an eligibility filter.",
+        "searchTrace": [
+          "2017 subsidy catalog qualification battery thresholds"
+        ],
+        "evidenceRefs": [
+          "nev-policy-reset-20170109",
+          "guoxuan-annual-20170318"
+        ]
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "High-density LFP and ternary products create differentiation.",
+        "searchTrace": [
+          "Guoxuan LFP ternary energy density"
+        ],
+        "evidenceRefs": [
+          "guoxuan-annual-20170318"
+        ]
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No standalone cost advantage sufficiently offsets price pressure.",
+        "searchTrace": [
+          "battery cost raw materials 2017"
+        ],
+        "evidenceRefs": []
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Large Zhongtong battery contract provides order bridge.",
+        "searchTrace": [
+          "Guoxuan Zhongtong 2017 battery contract"
+        ],
+        "evidenceRefs": [
+          "guoxuan-expectations-20170320"
+        ]
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Ternary ramp opens passenger-car customers beyond legacy buses.",
+        "searchTrace": [
+          "Guoxuan ternary passenger customers"
+        ],
+        "evidenceRefs": [
+          "guoxuan-expectations-20170320"
+        ]
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Strong 2016 earnings but financing needs prevent a full downside shield.",
+        "searchTrace": [
+          "Guoxuan earnings rights issue"
+        ],
+        "evidenceRefs": [
+          "guoxuan-annual-20170318",
+          "guoxuan-expectations-20170320"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "No additional material lane.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "002074.SZ",
+        "exceptionMechanism": "High-density battery technology, qualification and orders create a path different from aggregate demand weakness.",
+        "directExposure": "clear",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "Credible exception, but Q1 earnings decline and dilution risk block Primary.",
+        "evidenceRefs": [
+          "nev-policy-reset-20170109",
+          "guoxuan-annual-20170318",
+          "guoxuan-expectations-20170320"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "Aggregate weakness should not terminate company research, but risk gates still block Primary.",
+    "falsifierOrEscalationTrigger": "Technology/order advantage fails to improve post-Q1 earnings."
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: new technology-filter event plus credible company exception, but near-term earnings/dilution risk is not bounded enough for escalation.",
+    "alreadyPricedAssessment": "company_exception_underabsorbed_but_near_term_risk_uncontained",
+    "constraints": [
+      "Q1 earnings decline",
+      "battery price pressure",
+      "rights-issue dilution",
+      "policy demand"
+    ]
+  },
+  "bearCase": "The policy mainly destroys demand/pricing rather than redistributing profitable share, leaving Guoxuan with weaker earnings plus financing needs.",
+  "invalidationConditions": [
+    {
+      "indicator": "NEV catalog/sales and Guoxuan order delivery",
+      "observationMethod": "official monthly sales/catalog and company evidence",
+      "threshold": "no material post-Q1 normalization"
+    },
+    {
+      "indicator": "battery economics/financing",
+      "observationMethod": "company results/financing progress",
+      "threshold": "price/margin compression or dilution exceeds share gains"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Guoxuan Research; require post-Q1 earnings/shipments to bound downside before escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2017q1-nev-policy-reset",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2017-01-09T00:00:00+08:00",
+    "baselineAsOfAt": "2016-08-23T11:30:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "nev-policy-reset-20170109",
+      "nev-january-crash-20170220",
+      "nev-february-rebound-20170313"
+    ],
+    "baselineEvidenceRefs": [
+      "guoxuan-baseline-20160823"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "mixed",
+      "rationale": "Low price absorption and strong technology help, but Q1 earnings decline plus RMB3.6bn rights issue leave risk unbounded for Primary.",
+      "evidenceRefs": [
+        "guoxuan-expectations-20170320",
+        "regime-nev-20170331"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Remain Research until post-Q1 catalog/order/earnings evidence shows technology share gains outweigh subsidy/price/dilution pressure.",
+    "falsifier": "Post-Q1 shipments/earnings do not improve despite qualification and orders.",
+    "evidenceRefs": [
+      "nev-policy-reset-20170109",
+      "guoxuan-baseline-20160823",
+      "guoxuan-annual-20170318",
+      "guoxuan-expectations-20170320",
+      "regime-nev-20170331"
+    ],
+    "conclusion": "no_route"
+  }
+}
