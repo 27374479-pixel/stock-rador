@@ -1,0 +1,305 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-09-30T23:59:59+08:00",
+  "researchReadyAt": "2018-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q3-pv-post531-reset",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Post-531 demand and polysilicon-price reset can affect upstream earnings within quarters; no positive company engine is strong enough at cutoff to override the adverse physical state."
+  },
+  "changeHypothesis": {
+    "summary": "The 531 policy shock had already pushed solar-grade polysilicon prices down about 30% from end-May to mid-July, with only a small rebound by end-August. Long-run grid-parity optimism did not erase the current upstream margin reset.",
+    "firstCredibleDate": "2018-09-20",
+    "valueChain": [
+      "policy-adjusted domestic PV demand",
+      "polysilicon/wafer prices",
+      "utilization/margins",
+      "PV company earnings"
+    ],
+    "persistenceReason": "Demand-policy resets and upstream overcapacity can pressure pricing for quarters until supply/demand rebalances.",
+    "disconfirmingEvidence": [
+      "Longi H1 revenue grew strongly but ex-item profit was nearly flat.",
+      "Tongwei H1 profit grew only moderately and operating cash flow weakened.",
+      "PV basket 60d breadth was only 33%."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pv-post531-silicon-20180927",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Polysilicon demand and spot prices reset sharply after 531."
+    },
+    {
+      "id": "longi-h1-20180920",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Longi revenue growth did not translate into strong ex-item profit growth."
+    },
+    {
+      "id": "tongwei-h1-201808",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Tongwei had only moderate profit growth and weaker operating cash flow."
+    },
+    {
+      "id": "regime-pv-20180930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "PV equity price regime was neutral and mixed across horizons."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "post-531 demand reset",
+      "to": "polysilicon/wafer price pressure",
+      "mechanism": "Weaker domestic demand reduces upstream utilization and pricing power.",
+      "evidenceRefs": [
+        "pv-post531-silicon-20180927"
+      ],
+      "failureMode": "export demand or supply shutdowns rebalance faster than expected",
+      "lag": "weeks"
+    },
+    {
+      "from": "lower upstream prices/margins",
+      "to": "company earnings",
+      "mechanism": "Upstream producers face margin pressure while low-cost downstream leaders may benefit only if cost reductions outpace ASP declines.",
+      "evidenceRefs": [
+        "longi-h1-20180920",
+        "tongwei-h1-201808"
+      ],
+      "failureMode": "cost/share advantages dominate the physical reset",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "potential low-cost survivors only if share/cost gains exceed ASP decline"
+    ],
+    "secondOrderWinners": [
+      "developers benefiting from lower module costs"
+    ],
+    "losers": [
+      "high-cost upstream producers"
+    ],
+    "substitutes": [
+      "imports/export demand"
+    ],
+    "bottlenecks": [
+      "domestic demand",
+      "capacity rationalization",
+      "cash flow"
+    ],
+    "falseThemeMatches": [
+      "PV names supported only by long-run grid-parity narrative while current earnings deteriorate"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "Leading wafer/module company with strong H1 revenue but nearly flat ex-item profit.",
+      "evidenceRefs": [
+        "longi-h1-20180920",
+        "regime-pv-20180930"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 revenue +59.36%, ex-item profit +1.75%.",
+        "favorable": "Cost/share gains outrun industry ASP decline.",
+        "adverse": "Price reset compresses margins faster than costs fall."
+      },
+      "principalRisks": [
+        "margin pressure",
+        "policy demand"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "Polysilicon/solar exposure with H1 profit +16.14% and weaker operating cash flow.",
+      "evidenceRefs": [
+        "tongwei-h1-201808",
+        "regime-pv-20180930"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit +16.14%, OCF -12.69%.",
+        "favorable": "Low-cost capacity gains share.",
+        "adverse": "Polysilicon price collapse compresses earnings."
+      },
+      "principalRisks": [
+        "upstream price pressure",
+        "cash flow"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No positive listed expression has a strong enough frozen cost/share/earnings bridge to overcome the current physical reset."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PV basket had +2.37pp 20d but -7.13pp 60d excess, with only one-third positive 60d breadth.",
+    "thesisExpectation": "Do not let long-run grid-parity optimism erase the current demand/price reset; require a verified company cost/share engine first.",
+    "measurableGap": "No sufficiently measured positive company-specific gap is frozen.",
+    "evidenceRefs": [
+      "pv-post531-silicon-20180927",
+      "longi-h1-20180920",
+      "tongwei-h1-201808",
+      "regime-pv-20180930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "multi_product_split",
+    "productMarketScope": "post-531 polysilicon/wafer/module economics separated by cost position",
+    "geographicScope": "China PV market with export offset possible",
+    "customerScope": "PV manufacturers and developers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo preserves near-term upstream price pressure separately from long-run grid parity and potential low-cost survivor benefits.",
+    "evidenceRefs": [
+      "pv-post531-silicon-20180927",
+      "longi-h1-20180920",
+      "tongwei-h1-201808"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "post-531 demand shock and polysilicon price collapse",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "pv-post531-silicon-20180927"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "supply rationalization and company cost/share differences may emerge",
+      "horizon": "next 60-120 trading days",
+      "evidenceRefs": [
+        "longi-h1-20180920",
+        "tongwei-h1-201808"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "grid parity can expand long-run demand after industry reset",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "pv-post531-silicon-20180927"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not use structural grid-parity optimism to override the current negative physical earnings path without a company-specific bridge.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "mixed",
+    "rationale": "Company cost/share advantages are not yet strong enough in frozen H1 earnings to establish a clean positive divergence.",
+    "evidenceRefs": [
+      "longi-h1-20180920",
+      "tongwei-h1-201808",
+      "regime-pv-20180930"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "effective PV demand relative to upstream productive capacity",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "economicRole": "determines future upstream utilization, clearing price and producer margin",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "pv-post531-silicon-20180927"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "polysilicon spot price and current producer earnings",
+      "observedDirection": "falling",
+      "opportunityImplication": "negative",
+      "temporaryDistortion": "No opposite temporary distortion is established; the downstream price move already confirms the adverse upstream demand/capacity state.",
+      "evidenceRefs": [
+        "pv-post531-silicon-20180927",
+        "longi-h1-20180920",
+        "tongwei-h1-201808"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Post-531 weaker demand had already translated into a roughly 30% polysilicon price reset.",
+      "evidenceRefs": [
+        "pv-post531-silicon-20180927"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "PV equities and company earnings are mixed rather than showing a broad positive survivor engine.",
+      "evidenceRefs": [
+        "regime-pv-20180930",
+        "longi-h1-20180920",
+        "tongwei-h1-201808"
+      ]
+    },
+    "stateLeadDisposition": "no_selection_state_not_actionable",
+    "independentBlockers": [],
+    "falsifier": "Demand/capacity balance improves enough that prices and low-cost leader earnings show a verified positive turn.",
+    "conclusion": "no_actionable_state_edge"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection: upstream demand/capacity and downstream prices are aligned negatively; no verified positive company engine overrides the reset.",
+    "alreadyPricedAssessment": "negative_physical_reset_without_clean_positive_company_engine",
+    "constraints": [
+      "post-531 demand shock",
+      "upstream price collapse",
+      "mixed company earnings"
+    ]
+  },
+  "bearCase": "For a long thesis, structural grid-parity optimism arrives before the current physical reset and company margins have stabilized.",
+  "invalidationConditions": [
+    {
+      "indicator": "polysilicon/wafer pricing and low-cost leader margins",
+      "observationMethod": "industry and company data",
+      "threshold": "clear positive stabilization with company earnings conversion"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No later PV recovery is imported into the cutoff."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; wait for a verified company-specific cost/share earnings turn."
+  ]
+}
