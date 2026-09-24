@@ -1,0 +1,664 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2017-03-31T23:59:59+08:00",
+  "researchReadyAt": "2017-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q1-machinery-record-recovery",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Excavator data can remain strong for a quarter, but this is a continuation recovery and Sany's last cutoff-valid filing still had negative recurring profit."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "deep_cycle_turnaround",
+  "expressionArchetype": "turning_point_convexity",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600031.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Sany is the direct OEM leader and physical demand is extremely strong, but the event is explicitly a continuation and the last pre-cutoff filing still showed negative ex-item profit despite strong cash improvement.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326",
+        "sany-q3-20161031",
+        "regime-machinery-20170331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Excavator sales accelerated further to record growth in early 2017, but the recovery had already been visible since 2016H2. The question is whether Sany's operating turnaround is sufficiently realized before April filings.",
+    "firstCredibleDate": "2017-02-20",
+    "valueChain": [
+      "infrastructure/replacement demand",
+      "excavator sales",
+      "OEM share/volume",
+      "earnings and cash"
+    ],
+    "persistenceReason": "Replacement/infrastructure demand can persist across quarters, but continuation strength is not a fresh V1.9 driver.",
+    "disconfirmingEvidence": [
+      "Recovery had already run for months.",
+      "Sany 2016 1-9M revenue was still down 11%.",
+      "Ex-item profit remained negative in the last cutoff-valid filing.",
+      "Sany itself had already outperformed CSI300 over 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "machinery-feb-20170220",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "February excavator demand accelerated sharply."
+    },
+    {
+      "id": "machinery-record-20170326",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Record machinery recovery remained visible near cutoff."
+    },
+    {
+      "id": "sany-q3-20161031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Sany cash improved materially but recurring earnings were not yet fully repaired."
+    },
+    {
+      "id": "regime-machinery-20170331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Broad machinery timing was neutral and Sany had positive 60d relative strength."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "record excavator demand",
+      "to": "Sany shipments/share",
+      "mechanism": "Sany is a direct OEM beneficiary of industry unit demand.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ],
+      "failureMode": "cycle rolls over or share slips",
+      "lag": "weeks"
+    },
+    {
+      "from": "shipments",
+      "to": "earnings/cash",
+      "mechanism": "Higher volume should improve operating leverage, but last cutoff-valid recurring profit had not yet confirmed full repair.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ],
+      "failureMode": "discounting, credit or working capital absorbs the volume benefit",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "leading excavator OEMs"
+    ],
+    "secondOrderWinners": [
+      "hydraulic/component suppliers"
+    ],
+    "losers": [
+      "share-losing OEMs"
+    ],
+    "substitutes": [
+      "used equipment"
+    ],
+    "bottlenecks": [
+      "project demand",
+      "replacement pace",
+      "credit"
+    ],
+    "falseThemeMatches": [
+      "industrial names without direct equipment earnings"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600031.SH",
+      "name": "三一重工",
+      "verifiedExposure": "Direct excavator OEM exposure to record physical demand.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326",
+        "sany-q3-20161031"
+      ],
+      "earningsSensitivity": {
+        "base": "Cash recovery but incomplete recurring-profit repair.",
+        "favorable": "Record demand persists and operating leverage converts.",
+        "adverse": "Cycle/credit normalizes before earnings fully recover."
+      },
+      "principalRisks": [
+        "continuation-cycle maturity",
+        "credit",
+        "incomplete earnings confirmation"
+      ]
+    },
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "verifiedExposure": "Hydraulic component control in frozen basket.",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ],
+      "earningsSensitivity": {
+        "base": "Component cycle exposure.",
+        "favorable": "OEM demand persists.",
+        "adverse": "cycle or valuation weakens."
+      },
+      "principalRisks": [
+        "cycle",
+        "component concentration"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct hydraulic component exposure to the same excavator cycle.",
+      "whySelectedCompanyShouldOutperform": "Sany has direct OEM leader exposure but cutoff-valid evidence is not strong enough for a Primary ranking.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "sany-q3-20161031",
+        "regime-machinery-20170331"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only comparison; no Primary superiority claim.",
+  "selectionComparison": {
+    "selectedTicker": "600031.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601100.SH",
+        "selectedAdvantages": [
+          "direct OEM leader exposure",
+          "improving operating cash"
+        ],
+        "selectedDisadvantages": [
+          "last recurring profit still negative",
+          "continuation signal rather than fresh event"
+        ],
+        "evidenceRefs": [
+          "sany-q3-20161031",
+          "regime-machinery-20170331"
+        ],
+        "switchCondition": "Prefer the control if cutoff-valid component earnings quality and valuation become clearly superior.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Direction is worth Research, but cutoff-valid company confirmation is incomplete."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Machinery basket was -0.96pp excess over 20d and +2.02pp over 60d, neutral. Sany itself was +0.30pp over 20d and +11.15pp over 60d.",
+    "thesisExpectation": "Record demand may continue to repair Sany earnings, but the recovery is already a continuation narrative.",
+    "measurableGap": "No clean pre-cutoff forward earnings reset or fresh incremental event justifies Primary.",
+    "evidenceRefs": [
+      "machinery-feb-20170220",
+      "machinery-record-20170326",
+      "sany-q3-20161031",
+      "regime-machinery-20170331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen price absorption plus last cutoff-valid recurring earnings/cash status.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The machinery recovery is already recognized and Sany has positive 60d relative performance.",
+    "thesisScenario": "Record demand persists until recurring earnings fully recover.",
+    "breakevenCondition": "Operating leverage must convert before the cycle slows.",
+    "ordinaryScenarioFailure": "Strong physical data prove late rather than early cycle.",
+    "catalystOrTimingBridge": "April/Q2 company reporting would provide needed confirmation, but is post-cutoff and therefore not assumed.",
+    "evidenceRefs": [
+      "sany-q3-20161031",
+      "regime-machinery-20170331"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Physical demand continues to accelerate, but the event is continuation.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Cash improved but recurring profit was still negative in the last cutoff-valid filing.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Broad machinery names participate unevenly in the neutral basket.",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "mixed",
+      "rationale": "No clean pre-cutoff forward consensus reset is frozen.",
+      "evidenceRefs": [
+        "sany-q3-20161031",
+        "regime-machinery-20170331"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Sany has +11.15pp 60d excess while broad basket is neutral.",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ]
+    },
+    "unresolvedReason": "measurement_gap_only",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen machinery basket versus CSI300",
+      "lookback20Excess": -0.0095966,
+      "lookback60Excess": 0.02015,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Excavator unit growth remains extreme.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Physical demand is clear but cutoff-valid company earnings confirmation is incomplete.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Replacement/infrastructure cycle can persist across quarters.",
+      "evidenceRefs": [
+        "machinery-record-20170326"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Recovery has already been running since 2016H2.",
+      "evidenceRefs": [
+        "machinery-record-20170326",
+        "regime-machinery-20170331"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Strong physical continuation without a fresh source-linked reset."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600031.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Cash recovery is substantial despite incomplete recurring-profit repair.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Record physical demand can improve later earnings.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No cutoff-valid forward valuation baseline is frozen.",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Company results and monthly sales are near-term observables.",
+      "evidenceRefs": [
+        "machinery-record-20170326"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Cash helps, but incomplete recurring earnings and cycle maturity remain.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601100.SH",
+        "revisionAdvantage": "Both share cycle upside.",
+        "valuationAdvantage": "No decisive frozen edge.",
+        "qualityTradeoff": "Sany has improving cash but incomplete recurring profit.",
+        "catalystAdvantage": "Direct OEM sales data are visible.",
+        "downsideTradeoff": "Same cyclical risk.",
+        "switchCondition": "Switch if control shows cleaner cutoff-valid earnings/valuation.",
+        "evidenceRefs": [
+          "sany-q3-20161031",
+          "regime-machinery-20170331"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Record excavator demand.",
+    "earningsMechanism": "Higher OEM shipments can lift operating leverage.",
+    "nextObservableMetric": "monthly excavator sales and next company results",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "machinery-feb-20170220",
+      "machinery-record-20170326",
+      "sany-q3-20161031"
+    ],
+    "failureCondition": "Demand rolls over or recurring profit/cash fails to improve."
+  },
+  "turningPointConvexityTest": {
+    "survivalFloor": {
+      "conclusion": "pass",
+      "rationale": "Positive cash generation supports survival/quality.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "inflectionEvidence": {
+      "conclusion": "credible",
+      "rationale": "Physical demand inflection is strong but not fresh.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ]
+    },
+    "operatingLeverage": {
+      "conclusion": "credible",
+      "rationale": "Volume can improve earnings from a low base.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "normalizationRisk": "moderate",
+    "evidenceRefs": [
+      "sany-q3-20161031",
+      "machinery-record-20170326"
+    ],
+    "overallConclusion": "credible"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Machinery recovery has been visible since 2016H2.",
+      "nextPeriod": "Market expects continued equipment recovery.",
+      "laterPeriod": "Cycle will eventually normalize.",
+      "rationale": "This is continuation, not fresh reset.",
+      "evidenceRefs": [
+        "machinery-record-20170326",
+        "regime-machinery-20170331"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Record units support continued company repair.",
+      "nextPeriodChange": "Recurring earnings could turn materially positive.",
+      "laterPeriodChange": "No permanent high-growth assumption.",
+      "mechanism": "Operating leverage from volume recovery.",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "sany-q3-20161031"
+      ]
+    },
+    "pathShape": "delayed_acceleration",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Strong units can improve earnings but do not constitute a new event.",
+      "evidenceRefs": [
+        "machinery-record-20170326"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "The cycle is already underway.",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ]
+    },
+    "falsifier": "Recurring earnings/cash fail to improve despite record units.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "excavator OEM recovery",
+    "geographicScope": "China plus exports",
+    "customerScope": "construction/infrastructure equipment buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The event is a mature continuation of the same equipment recovery.",
+    "evidenceRefs": [
+      "machinery-feb-20170220",
+      "machinery-record-20170326"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "record unit sales",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "machinery-feb-20170220",
+        "machinery-record-20170326"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "operating leverage if recurring profit repairs",
+      "horizon": "60d",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "leader position versus cyclical normalization",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "sany-q3-20161031",
+        "regime-machinery-20170331"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep Research until company earnings/valuation confirmation catches up with the mature physical cycle.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Physical sector data are strong, while company recurring earnings were not yet fully repaired in the last filing.",
+    "evidenceRefs": [
+      "machinery-record-20170326",
+      "sany-q3-20161031"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "insufficient",
+      "rationale": "Record growth is a continuation of a recovery already underway since 2016H2.",
+      "evidenceRefs": [
+        "machinery-record-20170326"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "Cash improved but recurring profit remained negative.",
+      "evidenceRefs": [
+        "sany-q3-20161031"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No clean cutoff-valid forward reset is frozen.",
+      "evidenceRefs": [
+        "regime-machinery-20170331"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Replacement/infrastructure can persist.",
+      "evidenceRefs": [
+        "machinery-record-20170326"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No fresh company earnings reset appears.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600031.SH",
+    "purestTicker": "600031.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Direct OEM exposure does not overcome continuation/earnings-confirmation burden.",
+    "earningsQualityComparison": "Cash recovery is positive; recurring profit still weak.",
+    "downsideComparison": "Cycle normalization is the main risk.",
+    "evidenceRefs": [
+      "sany-q3-20161031",
+      "regime-machinery-20170331"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Operating cash flow improved materially.",
+        "evidenceRefs": [
+          "sany-q3-20161031"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Cyclical OEM remains capital/working-capital sensitive.",
+        "evidenceRefs": [
+          "sany-q3-20161031"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event identified.",
+        "evidenceRefs": [
+          "sany-q3-20161031"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Cycle/credit exposure remains a financing caveat.",
+        "evidenceRefs": [
+          "sany-q3-20161031"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The extraordinary physical growth is late-cycle confirmation and the stock already discounts much of the recovery before recurring earnings fully repair.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Fresh cutoff-valid earnings reset appears with acceptable valuation burden.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: strong continuation signal without a new source-linked driver or fully realized recurring earnings.",
+    "alreadyPricedAssessment": "continuation_partly_absorbed",
+    "constraints": [
+      "continuation signal",
+      "incomplete recurring earnings",
+      "cycle maturity"
+    ]
+  },
+  "bearCase": "Record unit data mark a mature cycle rather than a new earnings reset.",
+  "invalidationConditions": [
+    {
+      "indicator": "Sany recurring earnings and cash",
+      "observationMethod": "company filings",
+      "threshold": "fails to repair despite record units"
+    },
+    {
+      "indicator": "excavator sales",
+      "observationMethod": "industry data",
+      "threshold": "clear rollover"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff outcome used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Sany Research; V1.9 fresh escalation is prohibited because discovery novelty is continuation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
