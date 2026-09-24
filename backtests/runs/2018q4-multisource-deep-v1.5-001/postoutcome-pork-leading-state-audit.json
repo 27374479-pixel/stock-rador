@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q4-multisource-deep-v1.5-001",
+  "label": "post_outcome_pork_stock_flow_lead_lag_audit",
+  "diagnosticOnly": true,
+  "samePeriodMayTuneSkill": false,
+  "frozenDecision": "No selection",
+  "outcomeSummary": {
+    "horizon20": {
+      "basketNetReturn": 0.10407451730056683,
+      "benchmarkExcess": 0.04544147265791687,
+      "positiveExcessBreadth": 1
+    },
+    "horizon60": {
+      "basketNetReturn": 0.9081504360314051,
+      "benchmarkExcess": 0.5918767002546416,
+      "positiveExcessBreadth": 1
+    },
+    "horizon120": {
+      "basketNetReturn": 0.9657855514735015,
+      "benchmarkExcess": 0.6608208009042408,
+      "positiveExcessBreadth": 1
+    }
+  },
+  "preCutoffEvidenceAvailableButMissingFromFrozenDiscovery": [
+    {
+      "id": "post-moa-hog-inventory-201811",
+      "availableByCutoff": true,
+      "publishedAt": "2018-12-14",
+      "source": "农业农村部畜牧兽医局",
+      "url": "https://scs.moa.gov.cn/jcyj/201812/t20181214_6410497.htm",
+      "claim": "November 2018 monitored hog inventory was -2.9% YoY and breeding-sow inventory was -6.9% YoY; sow inventory also fell -1.3% MoM.",
+      "causalRole": "leading_state_variable",
+      "whyItMatters": "Breeding-sow inventory is upstream productive capacity. It can deteriorate months before pork spot prices rise, especially when disease initially accelerates slaughter."
+    },
+    {
+      "id": "post-moa-asf-spread-20181218",
+      "availableByCutoff": true,
+      "publishedAt": "2018-12-18",
+      "source": "农业农村部/公安部/市场监管总局",
+      "url": "https://xmsyj.moa.gov.cn/gzdt/201812/t20181218_6165133.htm",
+      "claim": "Since August, 89 ASF outbreaks had occurred across 22 provinces; controls restricted inter-provincial live-hog transport in affected and adjacent provinces.",
+      "causalRole": "capacity_and_logistics_shock",
+      "whyItMatters": "The disease and transport controls affected both future productive capacity and regional supply chains even while accelerated slaughter temporarily weighed on current prices."
+    }
+  ],
+  "frozenEvidenceConflict": {
+    "currentFlowSignal": "November pork CPI was -1.1% YoY and -0.6% MoM; NBS attributed part of weakness to accelerated slaughter in ASF-affected producing regions.",
+    "leadingStateSignal": "By Dec 14, monitored breeding-sow inventory was already -6.9% YoY and continuing to fall.",
+    "equitySignal": "Frozen hog-equity basket had +8.79pp 20d and +26.47pp 60d excess with full breadth.",
+    "diagnosis": "The frozen process allowed the current spot-price/flow signal to veto the upstream capacity state and broad cross-sectional equity confirmation. That was a causal lead-lag error."
+  },
+  "failureClass": {
+    "name": "stock_flow_lead_lag_veto_error",
+    "description": "In slow-replenishment or capacity-constrained systems, a current flow variable such as spot price, revenue or shipment may temporarily move opposite to a deteriorating upstream state variable such as breeding stock, installed capacity, inventory, backlog or qualified supply. Treating the flow signal as a mandatory confirmation can cause the Skill to enter only after the opportunity is already widely priced.",
+    "notSectorSpecific": true
+  },
+  "proposedFutureMechanism": {
+    "name": "causal_state_variable_test",
+    "status": "candidate_only_not_enabled_in_v1.5",
+    "requirements": [
+      "Identify the economically upstream stock/state variable and the downstream flow/price variable separately.",
+      "Freeze the causal lag between state deterioration/improvement and downstream earnings.",
+      "When state and flow conflict, explain whether the flow can be temporarily distorted by liquidation, destocking, channel filling, backlog burn, accelerated slaughter or similar one-off release.",
+      "Require at least one independent state-variable source plus company/value-chain mapping; equity price strength alone is never sufficient.",
+      "Use cross-sectional price breadth as corroboration, not as the fundamental proof.",
+      "Do not infer the magnitude of the later price move from the state signal; only recognize a directional/convexity opportunity if the earnings bridge and expression quality pass."
+    ],
+    "antiOverfit": "Do not add a pork/ASF exception or fixed sow-inventory threshold from this window."
+  },
+  "relationshipToOtherFindings": {
+    "v15BaseHorizonConvexity": "Orthogonal. The 2018Q4 miss occurred before promotion: the hypothesis itself was incorrectly fail-closed because the wrong physical variable was treated as the gate.",
+    "corporateActionDiscovery": "Also orthogonal. 2019Q2 corporate-action blind spot concerns issuer-event discovery, while this failure concerns causal variable selection inside an already-detected macro/industry event."
+  }
+}
