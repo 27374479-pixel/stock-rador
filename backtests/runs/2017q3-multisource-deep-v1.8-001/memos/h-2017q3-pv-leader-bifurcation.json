@@ -1,0 +1,745 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.8.0",
+  "cutoffAt": "2017-09-30T23:59:59+08:00",
+  "researchReadyAt": "2017-09-29T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q3-pv-leader-bifurcation",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Higher efficiency thresholds can favor mono/PERC leaders over a quarter, but lower tariff bidding and an extreme broad PV rerating leave entry asymmetry unresolved."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601012.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Longi directly matches the high-efficiency mono/PERC policy path, but H1 OCF fell 78.5% while receivables/inventory/capex/financing grew, and its 60d excess was already +55.2pp.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830",
+        "tongwei-h1-20170822",
+        "regime-pv-20170930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "The PV Leader program simultaneously raised module-efficiency thresholds and required tariffs at least 10% below local benchmarks, creating a conflicted aggregate sector but a potential technology/cost exception among high-efficiency manufacturers.",
+    "firstCredibleDate": "2017-09-22",
+    "valueChain": [
+      "policy efficiency threshold",
+      "project tariff competition",
+      "high-efficiency cell/module share",
+      "leader capacity/earnings"
+    ],
+    "persistenceReason": "Technology and scale advantages can persist across projects, but tariff and price competition continuously compress returns.",
+    "disconfirmingEvidence": [
+      "The PV basket had +31.5pp 20d and +49.5pp 60d excess with 100% positive breadth.",
+      "Longi H1 operating cash flow fell 78.5%.",
+      "Receivables, inventory, fixed assets/CIP and financing increased with expansion.",
+      "Tongwei also showed strong earnings, indicating the theme was broad rather than hidden."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pv-leader-20170922",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Leader policy raises efficiency thresholds while forcing lower bid tariffs."
+    },
+    {
+      "id": "longi-h1-20170830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Longi has 2GW high-efficiency mono PERC capacity and strong profit, but weak OCF/capex risk."
+    },
+    {
+      "id": "tongwei-h1-20170822",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Another PV leader also has strong earnings but weak cash conversion, showing broad theme realization."
+    },
+    {
+      "id": "regime-pv-20170930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "PV equities were already extremely rerated before the policy cutoff."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "higher efficiency thresholds",
+      "to": "relative demand for high-efficiency mono/PERC products",
+      "mechanism": "Leader projects explicitly require higher module efficiency, favoring qualified high-efficiency supply.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ],
+      "failureMode": "competitors rapidly meet the same threshold and erase differentiation",
+      "lag": "quarters"
+    },
+    {
+      "from": "lower bid tariffs",
+      "to": "project cost pressure",
+      "mechanism": "At least 10% lower proposed tariffs increase pressure for cost reductions and can hurt high-cost capacity.",
+      "evidenceRefs": [
+        "pv-leader-20170922"
+      ],
+      "failureMode": "technology cost decline more than offsets tariff pressure",
+      "lag": "months"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "high-efficiency low-cost cell/module/wafer leaders"
+    ],
+    "secondOrderWinners": [
+      "efficient inverters/system suppliers"
+    ],
+    "losers": [
+      "low-efficiency high-cost capacity"
+    ],
+    "substitutes": [
+      "other generation technologies"
+    ],
+    "bottlenecks": [
+      "technology yield",
+      "cost reduction",
+      "project IRR"
+    ],
+    "falseThemeMatches": [
+      "PV names without verified efficiency/cost advantage"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "High-efficiency mono/PERC leader with 2GW PERC capacity already in regular production.",
+      "evidenceRefs": [
+        "longi-h1-20170830"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong profit but weak H1 OCF and heavy expansion.",
+        "favorable": "Efficiency thresholds shift share toward mono/PERC leaders.",
+        "adverse": "Tariff competition, price cuts and capex funding overwhelm share gains."
+      },
+      "principalRisks": [
+        "high absorption",
+        "capex",
+        "working capital",
+        "tariff pressure"
+      ]
+    },
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "verifiedExposure": "PV cell/polysilicon exposure with strong H1 earnings but mixed business and falling OCF.",
+      "evidenceRefs": [
+        "tongwei-h1-20170822"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong current earnings.",
+        "favorable": "High-efficiency cell demand persists.",
+        "adverse": "Expansion/cash pressure and price competition."
+      },
+      "principalRisks": [
+        "cash conversion",
+        "capex",
+        "mixed business"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600438.SH",
+      "name": "通威股份",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large PV manufacturing peer with strong earnings and expansion risk.",
+      "whySelectedCompanyShouldOutperform": "Longi has the clearer direct mono/PERC efficiency-threshold match, though both are highly absorbed.",
+      "evidenceRefs": [
+        "longi-h1-20170830",
+        "tongwei-h1-20170822",
+        "pv-leader-20170922",
+        "regime-pv-20170930"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only memo uses one representative PV manufacturing peer; no Primary ranking claim is made.",
+  "selectionComparison": {
+    "selectedTicker": "601012.SH",
+    "pairwise": [
+      {
+        "controlTicker": "600438.SH",
+        "selectedAdvantages": [
+          "direct mono/PERC efficiency-threshold fit",
+          "purer technology mapping"
+        ],
+        "selectedDisadvantages": [
+          "weaker H1 OCF",
+          "heavy capex and working-capital expansion",
+          "very high price absorption"
+        ],
+        "evidenceRefs": [
+          "pv-leader-20170922",
+          "longi-h1-20170830",
+          "tongwei-h1-20170822",
+          "regime-pv-20170930"
+        ],
+        "switchCondition": "Prefer another leader only if it has similar efficiency/cost evidence with lower financing and expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "V1.8 finds a credible company exception, but high absorption and financing/cash risks keep it Research."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "PV basket was +31.52pp 20d and +49.53pp 60d excess with 100% positive breadth; Longi alone was +55.25pp 60d excess.",
+    "thesisExpectation": "Higher efficiency requirements can improve Longi's relative share even while tariff competition pressures the aggregate sector.",
+    "measurableGap": "The company exception is real, but the market already strongly prices PV technology leadership.",
+    "evidenceRefs": [
+      "pv-leader-20170922",
+      "longi-h1-20170830",
+      "regime-pv-20170930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen price absorption plus realized H1 earnings/cash/capex and policy economics.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Full-breadth PV rerating already assumes rapid technology/cost progress.",
+    "thesisScenario": "Longi wins share through high-efficiency mono/PERC while cost declines offset tariff pressure.",
+    "breakevenCondition": "Share/cost gains must exceed lower tariff and financing/working-capital burden without another rerating.",
+    "ordinaryScenarioFailure": "Competitors catch up on efficiency while lower tariffs and price competition compress returns.",
+    "catalystOrTimingBridge": "Leader-base awards, product pricing and Q3 results arrive inside the base horizon.",
+    "evidenceRefs": [
+      "pv-leader-20170922",
+      "longi-h1-20170830",
+      "regime-pv-20170930"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "The new policy explicitly raises technology thresholds.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Longi profit is strong and 2GW PERC production is realized, but OCF is weak.",
+      "evidenceRefs": [
+        "longi-h1-20170830"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "PV peers are strong and price breadth is 100%, confirming broad market recognition.",
+      "evidenceRefs": [
+        "tongwei-h1-20170822",
+        "regime-pv-20170930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "mixed",
+      "rationale": "No fresh low-burden forward consensus gap is frozen; the market already prices leadership.",
+      "evidenceRefs": [
+        "regime-pv-20170930"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Full positive breadth and roughly +50pp 60d basket excess.",
+      "evidenceRefs": [
+        "regime-pv-20170930"
+      ]
+    },
+    "unresolvedReason": "price_absorption_unresolved",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen PV basket versus CSI300",
+      "lookback20Excess": 0.3151940088151654,
+      "lookback60Excess": 0.4953267651264583,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-pv-20170930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Technology policy supports high-efficiency share but tariff competition offsets sector economics.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Longi/Tongwei earnings are strong and market breadth is full.",
+      "evidenceRefs": [
+        "longi-h1-20170830",
+        "tongwei-h1-20170822",
+        "regime-pv-20170930"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Efficiency/cost competition persists across future project rounds.",
+      "evidenceRefs": [
+        "pv-leader-20170922"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Broad PV equity absorption is extreme.",
+      "evidenceRefs": [
+        "regime-pv-20170930"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Technology signal is favorable for leaders, but high absorption blocks Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601012.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Longi has strong profit and operating technology assets, although OCF/capex are caveats.",
+      "evidenceRefs": [
+        "longi-h1-20170830"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Leader policy can shift share, but the market already recognizes high-efficiency leadership.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "regime-pv-20170930"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Extreme pre-cutoff price absorption leaves limited slack.",
+      "evidenceRefs": [
+        "regime-pv-20170930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Policy awards and Q3 product/earnings data arrive quickly.",
+      "evidenceRefs": [
+        "pv-leader-20170922"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Technology leadership helps but weak OCF, capex and tariff pressure limit downside protection.",
+      "evidenceRefs": [
+        "longi-h1-20170830",
+        "pv-leader-20170922"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600438.SH",
+        "revisionAdvantage": "Longi is the clearer mono/PERC policy fit.",
+        "valuationAdvantage": "Neither has a low-absorption edge.",
+        "qualityTradeoff": "Longi has weak OCF; Tongwei also has weak OCF and a mixed business.",
+        "catalystAdvantage": "Longi maps more directly to module-efficiency thresholds.",
+        "downsideTradeoff": "Both carry expansion/cash and high-absorption risk.",
+        "switchCondition": "Switch if a peer shows comparable efficiency advantage with materially lower financing/expectation burden.",
+        "evidenceRefs": [
+          "pv-leader-20170922",
+          "longi-h1-20170830",
+          "tongwei-h1-20170822",
+          "regime-pv-20170930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "mix",
+    "driverChange": "Leader policy raises efficiency thresholds while lowering tariff bids.",
+    "earningsMechanism": "High-efficiency mono/PERC capacity can gain relative share and preserve project economics better than lower-efficiency peers.",
+    "nextObservableMetric": "leader project awards, product pricing, Q3 profit/OCF and capacity utilization",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "pv-leader-20170922",
+      "longi-h1-20170830"
+    ],
+    "failureCondition": "Share gains/cost declines fail to offset tariff and price pressure."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "PV leadership and growth are already well known.",
+      "nextPeriod": "Market expects continued technology/cost progress.",
+      "laterPeriod": "Tariff pressure forces ongoing cost declines.",
+      "rationale": "Do not confuse a valid technology edge with an unpriced equity edge.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "regime-pv-20170930"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Leader thresholds benefit mono/PERC capacity.",
+      "nextPeriodChange": "Longi may gain relative share.",
+      "laterPeriodChange": "Returns still depend on cost and capex discipline.",
+      "mechanism": "Company-specific technology path within conflicted sector economics.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ]
+    },
+    "pathShape": "long_duration_growth",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Technology thresholds credibly improve Longi's relative path, but not enough to overcome current expectations.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Current price requires sustained cost/share execution amid heavy capex.",
+      "evidenceRefs": [
+        "longi-h1-20170830",
+        "regime-pv-20170930"
+      ]
+    },
+    "falsifier": "Efficiency/cost advantage narrows or OCF/capex returns worsen.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "high-efficiency mono/PERC manufacturing within Leader-program tariff pressure",
+    "geographicScope": "China PV projects/manufacturing",
+    "customerScope": "PV project developers and module buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Decompose aggregate lower-tariff pressure into technology/cost company exceptions.",
+    "evidenceRefs": [
+      "pv-leader-20170922",
+      "longi-h1-20170830",
+      "tongwei-h1-20170822"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "higher efficiency threshold versus lower tariff bidding",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "pv-leader-20170922"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "high-efficiency mono/PERC share gain for qualified leader",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "technology leadership versus continual price/capex pressure",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "longi-h1-20170830",
+        "regime-pv-20170930"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Continue Longi as a company-specific Research exception; do not promote until expectation/cash burden improves.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Aggregate project economics are mixed while Longi has a directly matching high-efficiency technology path.",
+    "evidenceRefs": [
+      "pv-leader-20170922",
+      "longi-h1-20170830"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Leader rules are fresh, but they reinforce an already expensive technology narrative.",
+      "evidenceRefs": [
+        "pv-leader-20170922"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Longi H1 profit and PERC capacity are realized.",
+      "evidenceRefs": [
+        "longi-h1-20170830"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Technology threshold can shift share, but no low-burden forecast reset is frozen.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "regime-pv-20170930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "clear",
+      "rationale": "Efficiency/cost advantages can persist across multiple project rounds.",
+      "evidenceRefs": [
+        "pv-leader-20170922",
+        "longi-h1-20170830"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No additional share/cost/earnings surprise beyond the already-priced technology story.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "601012.SH",
+    "purestTicker": "601012.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Longi is the cleanest policy-technology match but also highly absorbed.",
+    "earningsQualityComparison": "Longi profit is strong but OCF weak; Tongwei also has weak OCF.",
+    "downsideComparison": "Both face financing/capex and tariff pressure.",
+    "evidenceRefs": [
+      "longi-h1-20170830",
+      "tongwei-h1-20170822",
+      "regime-pv-20170930"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Longi H1 OCF fell sharply while working capital and financing needs rose.",
+        "evidenceRefs": [
+          "longi-h1-20170830"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Rapid fixed-asset/PERC expansion makes capital efficiency a first-order risk.",
+        "evidenceRefs": [
+          "longi-h1-20170830"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance event was identified in the reviewed H1 filing.",
+        "evidenceRefs": [
+          "longi-h1-20170830"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Expansion and short-term financing create refinancing/capital-market dependence.",
+        "evidenceRefs": [
+          "longi-h1-20170830"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The company exception is real but already fully capitalized; tariff pressure and weak cash conversion make further rerating fragile.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "OCF/capex returns worsen or efficiency advantage narrows.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: V1.8 finds the high-efficiency company exception but refuses to chase an already +55pp 60d relative move with weak OCF/capex risk.",
+    "alreadyPricedAssessment": "technology_exception_highly_absorbed",
+    "constraints": [
+      "extreme price absorption",
+      "lower tariff bids",
+      "weak OCF",
+      "capex/financing"
+    ]
+  },
+  "bearCase": "Efficiency leadership is real but already overcapitalized; tariff competition and capex needs compress returns.",
+  "invalidationConditions": [
+    {
+      "indicator": "Longi efficiency/share and OCF",
+      "observationMethod": "company/project data",
+      "threshold": "no share/cost gain or OCF/capex worsens"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Longi as Research exception; require lower expectation burden or stronger cash confirmation before Primary."
+  ],
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_company_sector_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "The Leader policy is national; no material geographic exception was found.",
+        "searchTrace": [
+          "Leader base geography and manufacturer exposure"
+        ],
+        "evidenceRefs": []
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Efficiency qualification acts like a capacity/qualification filter favoring high-efficiency supply.",
+        "searchTrace": [
+          "module efficiency threshold qualified capacity"
+        ],
+        "evidenceRefs": [
+          "pv-leader-20170922",
+          "longi-h1-20170830"
+        ]
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Longi's mono/PERC product mix directly matches the higher-efficiency thresholds.",
+        "searchTrace": [
+          "mono PERC module cell efficiency H1 capacity"
+        ],
+        "evidenceRefs": [
+          "longi-h1-20170830"
+        ]
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "High-efficiency technology can lower system cost per output and improve tariff resilience.",
+        "searchTrace": [
+          "efficiency cost competitiveness Leader program"
+        ],
+        "evidenceRefs": [
+          "pv-leader-20170922",
+          "longi-h1-20170830"
+        ]
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No company-specific contract structure was found that removes the lower-tariff pressure.",
+        "searchTrace": [
+          "PV tariff bid contract pricing company filing"
+        ],
+        "evidenceRefs": []
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Leader projects specifically demand higher-efficiency products, creating a differentiated customer/project mix.",
+        "searchTrace": [
+          "Leader base project procurement module efficiency"
+        ],
+        "evidenceRefs": [
+          "pv-leader-20170922"
+        ]
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Longi's weak H1 OCF is a negative differentiator that prevents the technology exception from becoming Primary.",
+        "searchTrace": [
+          "H1 operating cash receivables inventory financing"
+        ],
+        "evidenceRefs": [
+          "longi-h1-20170830"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "No additional material heterogeneity lane is needed.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "601012.SH",
+        "exceptionMechanism": "High-efficiency mono/PERC capacity directly benefits from Leader-program efficiency thresholds relative to generic PV capacity.",
+        "directExposure": "clear",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "Technology exception is credible, but high absorption, weak OCF and capex/financing risk block Primary.",
+        "evidenceRefs": [
+          "pv-leader-20170922",
+          "longi-h1-20170830",
+          "regime-pv-20170930"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "The mixed sector policy contains a credible technology leader exception, so V1.8 correctly continues company-level Research instead of stopping at aggregate conflict.",
+    "falsifierOrEscalationTrigger": "Longi fails to gain share/cost advantage or cash/capex quality deteriorates."
+  }
+}
