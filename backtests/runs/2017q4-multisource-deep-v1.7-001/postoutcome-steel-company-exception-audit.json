@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q4-multisource-deep-v1.7-001",
+  "label": "post_outcome_steel_company_exception_recall_audit",
+  "evaluatedAfterReveal": true,
+  "diagnosticOnly": true,
+  "samePeriodMayTuneSkill": false,
+  "frozenDecision": "No selection",
+  "frozenHypothesisId": "h-2017q4-steel-winter-curtailment",
+  "outcomeDiagnostic": {
+    "basket20dExcess": 0.048584738173450916,
+    "basket60dExcess": 0.09167280585936947,
+    "basket120dExcess": 0.056946742032768095,
+    "fangdaTicker": "600507.SH",
+    "fangda20dExcess": 0.12031612187250618,
+    "fangda60dExcess": 0.2894680732845837,
+    "fangda120dExcess": 0.10282818527433346,
+    "interpretation": "The aggregate No-selection decision contains a company-level recall miss candidate because one frozen constituent materially outperformed at every audited horizon. Outcome alone is not sufficient to modify the frozen decision."
+  },
+  "cutoffValidEvidence": [
+    {
+      "evidenceId": "fangda-q3-20171024-postoutcome-audit",
+      "availableAt": "2017-10-24T00:00:00+08:00",
+      "sourceType": "issuer_filing",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=3819497&stockid=600507",
+      "claims": [
+        "1-9M revenue RMB10.127bn, +67.80% YoY.",
+        "1-9M attributable profit RMB1.540bn, +232.56% YoY; ex-item profit +238.66%.",
+        "1-9M operating cash flow RMB1.574bn, +78.98% YoY, showing earnings were substantially cash-backed.",
+        "Company attributed the profit increase to rising steel prices plus refined/lean management and improved profitability.",
+        "Cash was about RMB1.976bn and short-term borrowings about RMB2.039bn at Sep-30; long-term borrowings were zero in the consolidated balance sheet.",
+        "The controlling shareholder had 482m shares pledged out of 525.4m shares held, so pledge/governance risk was visible and should have been adversarially reviewed."
+      ],
+      "cutoffDisposition": "usable_before_cutoff"
+    },
+    {
+      "evidenceId": "fangda-dec2017-research-postoutcome-audit",
+      "availableAt": "2017-12-06T09:02:00+08:00",
+      "sourceType": "independent_research_republication",
+      "url": "https://www.chnfund.com/article/AR13813853",
+      "claims": [
+        "Contemporaneous research described Fangda as a regional long-products leader and niche special-steel oligopolist with strong product pricing power.",
+        "It explicitly argued the company was not constrained by the northern heating-season production cuts and would benefit from the resulting market conditions.",
+        "It cited improving leverage/cost control and forecast roughly 11x/10x/9x PE for 2017-2019, indicating the company-specific thesis was not dependent on an extreme valuation."
+      ],
+      "cutoffDisposition": "usable_before_cutoff"
+    },
+    {
+      "evidenceId": "fangda-h1-201708-postoutcome-audit",
+      "availableAt": "2017-08-00T00:00:00+08:00",
+      "sourceType": "issuer_filing",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=3648404&stockid=600507",
+      "claims": [
+        "H1 revenue RMB6.272bn, +65.37% YoY; attributable profit RMB704.6m, +172.18%.",
+        "Company reported stable production, cost reduction through operational coordination and continued environmental/safety investment.",
+        "Automotive leaf-spring output rose 36.5%, providing product-mix exposure beyond generic construction steel."
+      ],
+      "cutoffDisposition": "usable_before_cutoff",
+      "note": "Exact publication day is not reasserted here; the H1 filing was publicly available well before the 2017-12-31 cutoff."
+    },
+    {
+      "evidenceId": "fangda-environmental-position-20170607-postoutcome-audit",
+      "availableAt": "2017-06-07T00:00:00+08:00",
+      "sourceType": "company_trade_publication",
+      "url": "https://www.jxfangda-steels.com/index/article/id/374.html",
+      "claims": [
+        "Fangda was located in Nanchang and had full-process steel operations with about 3.6m tonnes capacity.",
+        "The company reported more than RMB2bn of cumulative technical/environmental upgrade investment since 2010.",
+        "It was among MIIT's first batch of companies meeting Steel Industry Standard Conditions and the first such Jiangxi steel company, providing a pre-cutoff reason to investigate compliance/geographic resilience rather than treating all steel producers alike."
+      ],
+      "cutoffDisposition": "usable_before_cutoff",
+      "caveat": "First-party/group source; should be corroborated rather than treated as sufficient on its own."
+    },
+    {
+      "evidenceId": "fangda-precutoff-adverse-risk-postoutcome-audit",
+      "availableAt": "2017-12-08T00:00:00+08:00",
+      "sourceType": "market_event_and_regulatory_records",
+      "urls": [
+        "https://data.eastmoney.com/stockcalendar/600507.html",
+        "https://vip.stock.finance.sina.com.cn/corp/go.php/vGP_GetOutOfLine/stockid/600507.phtml"
+      ],
+      "claims": [
+        "By Dec-8, total pledged shares were reported at about 28.85% of total shares, so ownership/pledge risk was visible.",
+        "Pre-cutoff safety/environmental administrative penalties existed, including a Sep-2017 fatal-work-accident safety penalty and environmental penalties involving the company/subsidiaries.",
+        "These adverse facts argue for Research/adversarial review, not hindsight promotion to automatic Primary."
+      ],
+      "cutoffDisposition": "usable_before_cutoff"
+    }
+  ],
+  "causalDiagnosis": {
+    "aggregateStateAtCutoff": "conflicted_supply_and_demand",
+    "originalReasonForNoSelection": "Winter curtailment reduced supply but construction restrictions also reduced demand; no company-specific allowed-capacity/product-mix edge was frozen.",
+    "newlyConfirmedProcessFailure": "The research process stopped too early at the aggregate conflict. It did not systematically search for company exceptions with geography outside the constrained region, environmental/compliance resilience, differentiated product mix, strong realized earnings/cash conversion and acceptable valuation.",
+    "whyThisIsNotAHindsightBuyRule": "Fangda also had visible pledge, safety and environmental risks. Pre-cutoff evidence supports at least a company-level Research candidate, not an automatic Primary signal.",
+    "failureClass": "conflicted_aggregate_state_company_exception_recall"
+  },
+  "candidateGeneralizationForFutureValidation": {
+    "name": "company_exception_search_after_aggregate_conflict",
+    "ruleIntent": "Before final No selection on a mixed/conflicted industry state, test whether heterogeneity in geography, compliance, product mix, cost curve, contract structure or capacity allowance creates a listed-company exception with a different earnings path.",
+    "oneWayProperty": "The search can surface Research/company-mapping candidates but cannot waive existing timing, valuation, downside, adversarial-risk or earnings-conversion gates.",
+    "antiOverfit": [
+      "Do not create a Fangda-specific, steel-specific, southern-mill or environmental-exemption rule.",
+      "Do not assume a company outside the regulated region is a winner without earnings and valuation evidence.",
+      "Do not promote a company merely because its peer basket later outperformed.",
+      "Do not use 2018 returns to decide which 2017 evidence should count.",
+      "Validate the capability on a different untouched window before changing the production Skill."
+    ]
+  },
+  "conclusion": "real_recall_gap_at_research_company_mapping_level_not_primary_threshold_failure"
+}
