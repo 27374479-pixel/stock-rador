@@ -1,0 +1,639 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2019-03-31T23:59:59+08:00",
+  "researchReadyAt": "2019-03-31T15:00:00+08:00",
+  "actionableAt": "2019-03-31T15:00:00+08:00",
+  "hypothesisId": "h-2019q1-excavator-demand-acceleration",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "High-priority selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Jan-Feb physical demand acceleration plus a strong 2018 company base should convert through monthly sales and the next reporting cycle; 60d is the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "sector_confirmed",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600031.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "clear",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Sany combined direct OEM exposure, 2018 profit guidance +182% to +202%, fresh Jan-Feb excavator sales +39.9%, and a March 20 published 2019E PE around 13.65x.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "people-excavator-20190324",
+        "machinery-valuation-20190320",
+        "regime-machinery-20190331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Construction-machinery demand remained stronger than a simple post-2018 normalization: Jan-Feb excavator sales accelerated nearly 40% YoY while the leading OEM entered 2019 with sharply higher profit and market-share momentum.",
+    "firstCredibleDate": "2019-01-26",
+    "valueChain": [
+      "infrastructure/replacement/export demand",
+      "excavator and machinery unit sales",
+      "OEM shipment/share",
+      "profit/cash generation"
+    ],
+    "persistenceReason": "Replacement, infrastructure demand and leader share gains can persist for multiple quarters even if the industry is already mature.",
+    "disconfirmingEvidence": [
+      "The industry was already well into a strong cycle.",
+      "The machinery basket had already rerated versus CSI300.",
+      "Hengli carried a much richer forward valuation than Sany."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "sany-guidance-20190126",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Sany's 2018 profit and operating drivers were already strongly realized."
+    },
+    {
+      "id": "people-excavator-20190324",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Fresh Jan-Feb industry unit sales accelerated strongly."
+    },
+    {
+      "id": "machinery-valuation-20190320",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Cutoff-valid forward EPS/PE comparison anchors expectation burden and peer valuation."
+    },
+    {
+      "id": "regime-machinery-20190331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "The sector had already rerated, so continuation requires fresh operating evidence."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "infrastructure/replacement/export demand",
+      "to": "excavator unit sales",
+      "mechanism": "Jan-Feb equipment purchases translate macro/replacement demand into observable machinery volumes.",
+      "evidenceRefs": [
+        "people-excavator-20190324"
+      ],
+      "failureMode": "orders reverse after the early-year surge",
+      "lag": "weeks"
+    },
+    {
+      "from": "unit sales and share",
+      "to": "Sany earnings",
+      "mechanism": "Higher shipments plus market-share gains and operating efficiency lift revenue/profit.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320"
+      ],
+      "failureMode": "price competition, credit losses or cost pressure offset volumes",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "leading construction-machinery OEMs"
+    ],
+    "secondOrderWinners": [
+      "hydraulic components"
+    ],
+    "losers": [
+      "share-losing OEMs"
+    ],
+    "substitutes": [
+      "used equipment"
+    ],
+    "bottlenecks": [
+      "project demand",
+      "customer credit"
+    ],
+    "falseThemeMatches": [
+      "general industrial names without machinery shipment exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600031.SH",
+      "name": "三一重工",
+      "verifiedExposure": "Leading construction-machinery OEM with strong frozen earnings and direct excavator exposure.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "people-excavator-20190324",
+        "machinery-valuation-20190320"
+      ],
+      "earningsSensitivity": {
+        "base": "2018 attributable profit guided +182% to +202%; March 20 2019E EPS RMB0.96 at ~13.65x PE.",
+        "favorable": "Jan-Feb +39.9% excavator growth and share gains persist into Q1/Q2.",
+        "adverse": "Industry rolls over or price/credit pressure offsets volume."
+      },
+      "principalRisks": [
+        "cycle maturity",
+        "macro demand",
+        "credit/price competition"
+      ]
+    },
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "verifiedExposure": "Direct hydraulic component supplier to the same equipment cycle.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320",
+        "regime-machinery-20190331"
+      ],
+      "earningsSensitivity": {
+        "base": "March 20 2019E EPS RMB1.21 at ~27.67x PE.",
+        "favorable": "Hydraulic localization/share gains amplify OEM demand.",
+        "adverse": "Premium valuation de-rates if equipment growth slows."
+      },
+      "principalRisks": [
+        "valuation premium",
+        "cycle maturity"
+      ]
+    },
+    {
+      "ticker": "000157.SZ",
+      "name": "中联重科",
+      "verifiedExposure": "Direct machinery OEM peer.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320",
+        "regime-machinery-20190331"
+      ],
+      "earningsSensitivity": {
+        "base": "March 20 2019E PE ~13.85x.",
+        "favorable": "Broad machinery demand continues.",
+        "adverse": "Slower share/earnings conversion."
+      },
+      "principalRisks": [
+        "peer execution"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601100.SH",
+      "name": "恒立液压",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct high-quality component expression for the same physical equipment cycle.",
+      "whySelectedCompanyShouldOutperform": "Sany has a much lower frozen forward multiple and stronger first-party 2018 profit confirmation; Hengli may have more share/localization upside but greater valuation burden.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320",
+        "regime-machinery-20190331"
+      ]
+    },
+    {
+      "ticker": "000157.SZ",
+      "name": "中联重科",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct OEM peer exposed to the same demand cycle.",
+      "whySelectedCompanyShouldOutperform": "Sany has stronger frozen company earnings/share evidence at similar forward valuation.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "600031.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601100.SH",
+        "selectedAdvantages": [
+          "stronger first-party profit confirmation",
+          "much lower forward PE"
+        ],
+        "selectedDisadvantages": [
+          "Hengli has component localization/share upside"
+        ],
+        "evidenceRefs": [
+          "sany-guidance-20190126",
+          "machinery-valuation-20190320",
+          "regime-machinery-20190331"
+        ],
+        "switchCondition": "Prefer Hengli if company-specific share/revision evidence clearly outweighs its valuation premium.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "000157.SZ",
+        "selectedAdvantages": [
+          "stronger realized profit/share evidence at similar valuation"
+        ],
+        "selectedDisadvantages": [
+          "same mature-cycle risk"
+        ],
+        "evidenceRefs": [
+          "sany-guidance-20190126",
+          "machinery-valuation-20190320"
+        ],
+        "switchCondition": "Prefer Zhonglian if frozen company revisions and balance-sheet/downside evidence become superior.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "credible",
+    "rationale": "The opportunity is the equipment cycle; Sany is an acceptable preferred expression without requiring it to be the future-best peer."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Machinery basket had +9.23pp 20d and +13.78pp 60d excess. Sany/Hengli were strong, but Zhonglian lagged on 60d, so the rerating was meaningful rather than universal.",
+    "thesisExpectation": "Fresh Jan-Feb unit growth and leader earnings/share gains can keep Sany's 2019 earnings above a simple cycle-normalization baseline.",
+    "measurableGap": "March 20 forecasts put Sany at roughly 13.65x 2019E PE versus Hengli 27.67x and peer OEMs around low-teens multiples, leaving room if fresh physical demand sustains earnings.",
+    "evidenceRefs": [
+      "people-excavator-20190324",
+      "sany-guidance-20190126",
+      "machinery-valuation-20190320",
+      "regime-machinery-20190331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Cutoff-valid forward EPS/PE plus realized 2018 profit and fresh Jan-Feb unit growth.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "March 20 Sany 2019E EPS RMB0.96 at 13.65x PE; industry is already recognized as strong.",
+    "thesisScenario": "Jan-Feb volume plus Sany share/efficiency sustain revisions through Q1/Q2 without requiring another explosive valuation rerating.",
+    "breakevenCondition": "Earnings growth must continue to justify a low-teens forward multiple; the thesis does not require a permanent industry boom.",
+    "ordinaryScenarioFailure": "Early-year sales are pull-forward and Q2 demand/earnings normalize sharply.",
+    "catalystOrTimingBridge": "Monthly machinery sales and the next quarterly report are inside the 60d base horizon.",
+    "evidenceRefs": [
+      "people-excavator-20190324",
+      "sany-guidance-20190126",
+      "machinery-valuation-20190320"
+    ],
+    "conclusion": "room"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Jan-Feb excavator sales +39.9% YoY and February +68.7% provide fresh physical acceleration.",
+      "evidenceRefs": [
+        "people-excavator-20190324"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Sany's 2018 attributable profit guidance was +182% to +202% with share/efficiency drivers.",
+      "evidenceRefs": [
+        "sany-guidance-20190126"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "All three names beat CSI300 on 20d and two of three did so on 60d.",
+      "evidenceRefs": [
+        "regime-machinery-20190331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "credible",
+      "rationale": "March 20 estimates provide a current earnings/valuation baseline against which fresh physical growth can be judged.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Compare broad 20/60d relative strength against fresh physical growth and low-teens Sany forward valuation.",
+      "evidenceRefs": [
+        "regime-machinery-20190331",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "clear_reset"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen opportunity basket versus CSI300 using hfq history",
+      "lookback20Excess": 0.09234387625335809,
+      "lookback60Excess": 0.13784116314025785,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-machinery-20190331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Jan-Feb excavator demand accelerated from an already strong 2018 base.",
+      "evidenceRefs": [
+        "people-excavator-20190324",
+        "sany-guidance-20190126"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "broad_positive",
+      "rationale": "Cutoff-valid estimates show positive 2019 earnings paths across Sany, Hengli and Zhonglian.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Replacement/infrastructure/share drivers can persist across multiple quarters.",
+      "evidenceRefs": [
+        "people-excavator-20190324",
+        "sany-guidance-20190126"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "The cycle is mature and prices have rerated, but Sany valuation/earnings do not require a peak-cycle permanence assumption.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320",
+        "regime-machinery-20190331"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Fresh physical demand, realized leader earnings, broad revisions and acceptable valuation align."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600031.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong profit growth plus share/efficiency drivers establish a sound company quality floor.",
+      "evidenceRefs": [
+        "sany-guidance-20190126"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "clear",
+      "rationale": "Fresh Jan-Feb unit growth is stronger than a simple mature-cycle normalization and can lift the current 2019 earnings path.",
+      "evidenceRefs": [
+        "people-excavator-20190324",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "room",
+      "rationale": "Sany's ~13.65x 2019E PE is near peer OEM levels and far below Hengli's component premium.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Monthly sales and Q1/Q2 results are near-term.",
+      "evidenceRefs": [
+        "people-excavator-20190324"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Low-teens forward valuation and strong pre-cutoff profit base provide more protection than relying only on sector momentum.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601100.SH",
+        "revisionAdvantage": "Hengli has strong component upside; no claim of dominant Sany revisions.",
+        "valuationAdvantage": "Sany's 2019E PE is materially lower.",
+        "qualityTradeoff": "Both are quality cycle expressions; Sany has clearer first-party frozen profit evidence.",
+        "catalystAdvantage": "Industry volume maps directly to both.",
+        "downsideTradeoff": "Sany's lower valuation offsets some OEM cyclicality.",
+        "switchCondition": "Switch if Hengli's company-specific revision/share evidence clearly dominates its premium.",
+        "evidenceRefs": [
+          "sany-guidance-20190126",
+          "machinery-valuation-20190320",
+          "regime-machinery-20190331"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "000157.SZ",
+        "revisionAdvantage": "Sany has stronger frozen profit/share evidence.",
+        "valuationAdvantage": "Forward valuations are similar low-teens.",
+        "qualityTradeoff": "Sany's earnings/efficiency evidence is clearer.",
+        "catalystAdvantage": "Both share the same physical demand catalyst.",
+        "downsideTradeoff": "No decisive balance-sheet edge is claimed; Sany's evidence is stronger.",
+        "switchCondition": "Switch if Zhonglian's cutoff-valid company revisions/quality become superior.",
+        "evidenceRefs": [
+          "sany-guidance-20190126",
+          "machinery-valuation-20190320"
+        ],
+        "netAsymmetry": "selected"
+      }
+    ],
+    "overallConclusion": "credible_asymmetry"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "Jan-Feb excavator sales +39.9% YoY, with February +68.7%.",
+    "earningsMechanism": "Higher industry shipments plus Sany share and efficiency gains lift revenue/profit from an already strong 2018 base.",
+    "nextObservableMetric": "monthly excavator sales and Sany quarterly revenue/profit",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "people-excavator-20190324",
+      "sany-guidance-20190126",
+      "machinery-valuation-20190320"
+    ],
+    "failureCondition": "Monthly unit growth and company earnings decelerate materially before the next reporting cycle."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2018 profit was already very strong.",
+      "nextPeriod": "March 20 baseline assumes Sany 2019E EPS RMB0.96 at ~13.65x PE.",
+      "laterPeriod": "Industry growth is expected to normalize after the current cycle.",
+      "rationale": "Use current forward estimates rather than extrapolating 2018's triple-digit profit growth indefinitely.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Jan-Feb physical growth supports stronger Q1/Q2 shipments than a simple normalization case.",
+      "nextPeriodChange": "Share/efficiency gains can keep earnings revisions positive even as industry growth moderates.",
+      "laterPeriodChange": "No perpetual high industry growth is assumed.",
+      "mechanism": "Leader share/efficiency amplifies a still-positive physical cycle.",
+      "evidenceRefs": [
+        "people-excavator-20190324",
+        "sany-guidance-20190126"
+      ]
+    },
+    "pathShape": "cyclical_reacceleration",
+    "incrementalPathAdvantage": {
+      "conclusion": "clear",
+      "rationale": "Fresh physical growth plus company share/efficiency are stronger than the frozen mature-cycle baseline.",
+      "evidenceRefs": [
+        "people-excavator-20190324",
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Cycle maturity is explicit, but the 60d thesis does not require multi-year acceleration.",
+      "evidenceRefs": [
+        "regime-machinery-20190331",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "falsifier": "Monthly sales or next-quarter company earnings fall below the frozen forward path.",
+    "overallConclusion": "clear_path_room"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "construction-machinery OEM demand centered on excavators with component peers as controls",
+    "geographicScope": "China with share/export drivers noted",
+    "customerScope": "construction/infrastructure equipment buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The selected OEM and controls share one coherent physical equipment cycle; valuation/share differences are handled at expression level.",
+    "evidenceRefs": [
+      "people-excavator-20190324",
+      "sany-guidance-20190126"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "Jan-Feb unit acceleration and strong 2018 leader earnings",
+      "horizon": "current quarter",
+      "evidenceRefs": [
+        "people-excavator-20190324",
+        "sany-guidance-20190126"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "volume/share conversion into Q1/Q2 earnings",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "machinery-valuation-20190320",
+        "people-excavator-20190324"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "leader share/localization can persist but industry growth must normalize",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "machinery-valuation-20190320"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Underwrite current physical/company strength while explicitly limiting later-period assumptions.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "clear",
+    "rationale": "Industry unit growth and Sany profit/share evidence point in the same direction.",
+    "evidenceRefs": [
+      "people-excavator-20190324",
+      "sany-guidance-20190126"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "Jan-Feb unit sales are fresh physical evidence after the 2018 earnings boom.",
+      "evidenceRefs": [
+        "people-excavator-20190324"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "2018 profit guidance already showed major realized earnings acceleration.",
+      "evidenceRefs": [
+        "sany-guidance-20190126"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "March 20 forward estimates and fresh physical data support positive revisions.",
+      "evidenceRefs": [
+        "machinery-valuation-20190320",
+        "people-excavator-20190324"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Replacement/share/infrastructure demand can persist across the base horizon without assuming permanent boom.",
+      "evidenceRefs": [
+        "sany-guidance-20190126",
+        "people-excavator-20190324"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Fresh monthly sales or quarterly earnings cease to beat the frozen baseline.",
+    "conclusion": "credible_continuation"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600031.SH",
+    "purestTicker": "600031.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Sany is preferred for the combination of earnings evidence and valuation, not merely direct OEM purity.",
+    "earningsQualityComparison": "Sany has the strongest frozen first-party profit/share evidence.",
+    "downsideComparison": "Low-teens forward PE offers better frozen downside than the premium component expression.",
+    "evidenceRefs": [
+      "sany-guidance-20190126",
+      "machinery-valuation-20190320"
+    ],
+    "conclusion": "balanced"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Normal sector-confirmed Primary: mature-cycle risk is explicit, but fresh physical acceleration and low-teens Sany forward valuation leave room.",
+    "alreadyPricedAssessment": "meaningful_absorption_with_fundamental_support",
+    "constraints": [
+      "cycle maturity",
+      "macro sensitivity",
+      "sector already rerated"
+    ]
+  },
+  "bearCase": "Jan-Feb demand is front-loaded; the mature equipment cycle rolls over and low-teens PE proves to be peak earnings rather than value.",
+  "invalidationConditions": [
+    {
+      "indicator": "monthly excavator sales",
+      "observationMethod": "industry association/public data",
+      "threshold": "material reversal from the frozen growth path"
+    },
+    {
+      "indicator": "Sany quarterly earnings",
+      "observationMethod": "company filing",
+      "threshold": "fails to sustain the frozen forward earnings path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "Selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Freeze Sany as the preferred Primary expression; keep Hengli/Zhonglian as controls rather than forcing exact peer ranking."
+  ]
+}
