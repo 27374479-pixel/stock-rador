@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q1-multisource-deep-v1.5-001",
+  "label": "heterogeneous_frozen_base_horizon_audit",
+  "diagnosticOnly": true,
+  "legacyOpportunityFirstBaseWarning": "outcome.aggregate.opportunityFirstBase uses a legacy common 60d horizon when 60d is present and is not valid for heterogeneous memo base horizons.",
+  "methodology": "Group primary selections by hypothesis and use each frozen result.thesisBaseOutcome, which is already keyed to that memo expectedRealization.baseTradingDays.",
+  "hypothesisRows": [
+    {
+      "hypothesisId": "h-2019q1-xiangshui-dye-supply-shock",
+      "baseTradingDays": 20,
+      "tickerCount": 1,
+      "netReturn": 0.07216478669669724,
+      "excessReturn": 0.07238010671607609,
+      "positive": true,
+      "beatBenchmark": true,
+      "members": [
+        {
+          "ticker": "600352.SH",
+          "baseTradingDays": 20,
+          "netReturn": 0.07216478669669724,
+          "excessReturn": 0.07238010671607609,
+          "matchedControlExcess": 0.06159649622234681,
+          "excessVsBestControl": 0.041190913131247786,
+          "winsAllControls": true
+        }
+      ]
+    },
+    {
+      "hypothesisId": "h-2019q1-excavator-demand-acceleration",
+      "baseTradingDays": 60,
+      "tickerCount": 1,
+      "netReturn": 0.0022321393703759185,
+      "excessReturn": 0.02160581444734,
+      "positive": true,
+      "beatBenchmark": true,
+      "members": [
+        {
+          "ticker": "600031.SH",
+          "baseTradingDays": 60,
+          "netReturn": 0.0022321393703759185,
+          "excessReturn": 0.02160581444734,
+          "matchedControlExcess": -0.08974096289133038,
+          "excessVsBestControl": -0.2379952839342554,
+          "winsAllControls": false
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "count": 2,
+    "directionCaptureRate": 1,
+    "positiveBasketRate": 1,
+    "meanOpportunityNetReturn": 0.03719846303353658,
+    "medianOpportunityNetReturn": 0.03719846303353658,
+    "meanOpportunityExcessReturn": 0.04699296058170804,
+    "medianOpportunityExcessReturn": 0.04699296058170804
+  }
+}
