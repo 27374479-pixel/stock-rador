@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q1-multisource-deep-v1.6-001",
+  "label": "post_outcome_no_selection_miss_audit",
+  "samePeriodMayTuneSkill": false,
+  "diagnosticOnly": true,
+  "lockVerified": true,
+  "lockRunId": "2018q1-multisource-deep-v1.6-001",
+  "cutoffDate": "2018-03-31",
+  "entryDate": "2018-04-02",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "baskets": [
+    {
+      "basketId": "applechain-demand-cut",
+      "label": "Frozen Apple/iPhone-X supply-chain basket under conflicted demand-cut evidence",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "002475.SZ",
+        "300136.SZ",
+        "002456.SZ"
+      ],
+      "tickerResults": [
+        {
+          "ticker": "002475.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2018-05-03",
+              "netReturn": -0.07910556798771207,
+              "benchmarkReturn": -0.02668969286709555,
+              "excessReturn": -0.05241587512061652
+            },
+            "60": {
+              "exitDate": "2018-06-29",
+              "netReturn": -0.04244847598386603,
+              "benchmarkReturn": -0.09905799574545615,
+              "excessReturn": 0.05660951976159012
+            },
+            "120": {
+              "exitDate": "2018-09-21",
+              "netReturn": -0.15376725186364348,
+              "benchmarkReturn": -0.12484443201326156,
+              "excessReturn": -0.02892281985038192
+            }
+          }
+        },
+        {
+          "ticker": "300136.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2018-05-03",
+              "netReturn": -0.13634119540227552,
+              "benchmarkReturn": -0.02668969286709555,
+              "excessReturn": -0.10965150253517997
+            },
+            "60": {
+              "exitDate": "2018-06-29",
+              "netReturn": -0.17046436652696106,
+              "benchmarkReturn": -0.09905799574545615,
+              "excessReturn": -0.07140637078150491
+            },
+            "120": {
+              "exitDate": "2018-09-21",
+              "netReturn": -0.22232083918101075,
+              "benchmarkReturn": -0.12484443201326156,
+              "excessReturn": -0.09747640716774919
+            }
+          }
+        },
+        {
+          "ticker": "002456.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2018-05-03",
+              "netReturn": -0.13034588170987216,
+              "benchmarkReturn": -0.02668969286709555,
+              "excessReturn": -0.10365618884277661
+            },
+            "60": {
+              "exitDate": "2018-06-29",
+              "netReturn": -0.20716014305258257,
+              "benchmarkReturn": -0.09905799574545615,
+              "excessReturn": -0.10810214730712642
+            },
+            "120": {
+              "exitDate": "2018-09-21",
+              "netReturn": -0.335216323037835,
+              "benchmarkReturn": -0.12484443201326156,
+              "excessReturn": -0.21037189102457343
+            }
+          }
+        }
+      ],
+      "horizons": {
+        "20": {
+          "count": 3,
+          "meanNetReturn": -0.11526421503328659,
+          "benchmarkReturn": -0.02668969286709555,
+          "meanExcessReturn": -0.08857452216619104,
+          "positiveExcessBreadth": 0
+        },
+        "60": {
+          "count": 3,
+          "meanNetReturn": -0.14002432852113655,
+          "benchmarkReturn": -0.09905799574545615,
+          "meanExcessReturn": -0.0409663327756804,
+          "positiveExcessBreadth": 0.3333333333333333
+        },
+        "120": {
+          "count": 3,
+          "meanNetReturn": -0.23710147136082974,
+          "benchmarkReturn": -0.12484443201326156,
+          "meanExcessReturn": -0.11225703934756819,
+          "positiveExcessBreadth": 0
+        }
+      }
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2018q1-server-dram-tightness",
+      "reason": "The frozen product-state signal was positive but no verified direct A-share DRAM supplier/expression was frozen; do not hindsight-substitute generic semiconductor names."
+    },
+    {
+      "hypothesisId": "h-2018q1-section301-trade-risk",
+      "reason": "The frozen event was a broad macro-policy risk with unresolved company-level exposure; no company basket was frozen and no hindsight tariff-winner/loser basket should be created."
+    }
+  ]
+}
