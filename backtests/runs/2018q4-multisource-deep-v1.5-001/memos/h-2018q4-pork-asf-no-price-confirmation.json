@@ -1,0 +1,221 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.5.0",
+  "cutoffAt": "2018-12-31T23:59:59+08:00",
+  "researchReadyAt": "2018-12-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q4-pork-asf-no-price-confirmation",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A real ASF scarcity turn can matter over quarters, but cutoff-valid physical pricing is not yet positive enough to underwrite."
+  },
+  "changeHypothesis": {
+    "summary": "ASF disrupted the hog market, but November pork prices remained -1.1% YoY and -0.6% MoM while affected regions accelerated slaughter. Hog equities nevertheless had already rerated sharply.",
+    "firstCredibleDate": "2018-12-09",
+    "valueChain": [
+      "ASF supply disruption",
+      "realized hog/pork price",
+      "producer margins",
+      "earnings"
+    ],
+    "persistenceReason": "Disease-driven supply effects can last quarters, but the early phase can temporarily increase slaughter/supply and depress prices.",
+    "disconfirmingEvidence": [
+      "November pork price remained negative YoY/MoM.",
+      "NBS noted accelerated slaughter in affected regions.",
+      "Pork-equity basket already had +26.47pp 60d excess with full breadth."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nbs-pork-20181209",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    },
+    {
+      "id": "regime-pork-20181231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Frozen pre-cutoff evidence."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [],
+    "falseThemeMatches": []
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002714.SZ",
+      "name": "牧原股份",
+      "verifiedExposure": "Direct hog producer but no frozen positive price/earnings bridge.",
+      "evidenceRefs": [
+        "nbs-pork-20181209",
+        "regime-pork-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "Physical pork price still negative YoY/MoM.",
+        "favorable": "Future scarcity eventually lifts ASP.",
+        "adverse": "Narrative rerating outruns realized prices."
+      },
+      "principalRisks": [
+        "future-knowledge leakage",
+        "high absorption"
+      ]
+    },
+    {
+      "ticker": "300498.SZ",
+      "name": "温氏股份",
+      "verifiedExposure": "Direct hog producer diagnostic candidate.",
+      "evidenceRefs": [
+        "nbs-pork-20181209",
+        "regime-pork-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "Same weak physical price backdrop.",
+        "favorable": "Later scarcity improves margins.",
+        "adverse": "Delay/oversupply dominates."
+      },
+      "principalRisks": [
+        "price confirmation missing"
+      ]
+    },
+    {
+      "ticker": "000876.SZ",
+      "name": "新希望",
+      "verifiedExposure": "Diversified agriculture/hog diagnostic candidate.",
+      "evidenceRefs": [
+        "nbs-pork-20181209",
+        "regime-pork-20181231"
+      ],
+      "earningsSensitivity": {
+        "base": "No clean direct price bridge.",
+        "favorable": "Later scarcity lifts economics.",
+        "adverse": "Indirect exposure and early slaughter dilute thesis."
+      },
+      "principalRisks": [
+        "indirect exposure"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No selection: stock prices anticipate a later scarcity regime that is not yet confirmed by frozen physical pricing or company earnings."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Pork-equity basket already had +8.79pp 20d and +26.47pp 60d excess with full breadth.",
+    "thesisExpectation": "Require realized pork/hog price and producer margin confirmation before selection.",
+    "measurableGap": "The gap is narrative-ahead-of-fundamentals, not a measurable positive earnings bridge.",
+    "evidenceRefs": [
+      "nbs-pork-20181209",
+      "regime-pork-20181231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "hog producer economics under early ASF disruption",
+    "geographicScope": "China",
+    "customerScope": "live hog/pork market",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Direct producer economics are isolated from later 2019 scarcity data.",
+    "evidenceRefs": [
+      "nbs-pork-20181209",
+      "regime-pork-20181231"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "accelerated slaughter and weak pork pricing",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "nbs-pork-20181209"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "unresolved",
+      "driver": "disease may later tighten supply but timing is not frozen",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "nbs-pork-20181209"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "biological supply shock can tighten later but severity is uncertain",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "nbs-pork-20181209"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not import later scarcity confirmation backward; require physical/company evidence at cutoff.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "Equity momentum is strong but physical pork pricing is not.",
+    "evidenceRefs": [
+      "nbs-pork-20181209",
+      "regime-pork-20181231"
+    ]
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "extreme_anticipatory_equity_strength_without_price_bridge",
+    "constraints": [
+      "physical price weak",
+      "full-breadth prior rerating"
+    ]
+  },
+  "bearCase": "The market has capitalized future scarcity too early while accelerated slaughter keeps near-term supply high.",
+  "invalidationConditions": [
+    {
+      "indicator": "pork/hog ASP and producer earnings",
+      "observationMethod": "official/company data",
+      "threshold": "no positive earnings conversion at cutoff"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No selection frozen before reveal."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; preserve as explicit future-knowledge guard."
+  ]
+}
