@@ -327,6 +327,127 @@ function isV19FreshEscalation(memo, manifest) {
     ['clear_route', 'credible_route'].includes(memo?.freshIncrementalEscalationTest?.conclusion);
 }
 
+function validateFreshIncrementalEscalationTest(memo, memoPath, manifest) {
+  const errors = [];
+  if (manifest?.skill?.version !== '1.9.0' || memo?.selectionState === 'No selection') return errors;
+      const test = memo?.freshIncrementalEscalationTest;
+      if (!test || typeof test !== 'object') {
+        errors.push(memoPath + ' v1.9 selected memo requires freshIncrementalEscalationTest');
+      } else {
+        if (typeof test.applicable !== 'boolean') {
+          errors.push(memoPath + ' freshIncrementalEscalationTest.applicable must be boolean');
+        }
+        if (!['new', 'continuation', 'not_applicable'].includes(test.discoveryNovelty)) {
+          errors.push(memoPath + ' freshIncrementalEscalationTest.discoveryNovelty is invalid');
+        }
+        if (!['clear_route', 'credible_route', 'no_route', 'not_applicable'].includes(test.conclusion)) {
+          errors.push(memoPath + ' freshIncrementalEscalationTest.conclusion is invalid');
+        }
+  
+        if (test.applicable === false) {
+          if (test.conclusion !== 'not_applicable' || test.discoveryNovelty !== 'not_applicable') {
+            errors.push(memoPath + ' non-applicable freshIncrementalEscalationTest must use not_applicable novelty/conclusion');
+          }
+        } else if (test.applicable === true) {
+          for (const field of ['eventId', 'exitDiscipline', 'falsifier']) {
+            if (typeof test[field] !== 'string' || !test[field].trim()) {
+              errors.push(memoPath + ' freshIncrementalEscalationTest.' + field + ' is required');
+            }
+          }
+          for (const field of ['eventFirstAvailableAt', 'baselineAsOfAt']) {
+            try { assertIso(test[field], memoPath + '.freshIncrementalEscalationTest.' + field); }
+            catch (error) { errors.push(error.message); }
+          }
+          if (test.eventFirstAvailableAt && memo?.cutoffAt &&
+              Date.parse(test.eventFirstAvailableAt) > Date.parse(memo.cutoffAt)) {
+            errors.push(memoPath + ' fresh incremental event cannot be post-cutoff');
+          }
+          if (test.baselineAsOfAt && test.eventFirstAvailableAt &&
+              Date.parse(test.baselineAsOfAt) >= Date.parse(test.eventFirstAvailableAt)) {
+            errors.push(memoPath + ' fresh incremental baseline must predate the new event');
+          }
+          for (const field of ['freshDriverEvidenceRefs', 'baselineEvidenceRefs', 'evidenceRefs']) {
+            if (!Array.isArray(test[field]) || test[field].length === 0 ||
+                test[field].some((x) => typeof x !== 'string' || !x.trim())) {
+              errors.push(memoPath + ' freshIncrementalEscalationTest.' + field + ' must be a non-empty string array');
+            }
+          }
+          const bounded = test.boundedRiskContainment;
+          if (!bounded || !['clear', 'credible', 'mixed', 'insufficient'].includes(bounded.conclusion)) {
+            errors.push(memoPath + ' freshIncrementalEscalationTest.boundedRiskContainment.conclusion is invalid');
+          } else {
+            if (typeof bounded.rationale !== 'string' || !bounded.rationale.trim()) {
+              errors.push(memoPath + ' freshIncrementalEscalationTest.boundedRiskContainment.rationale is required');
+            }
+            if (!Array.isArray(bounded.evidenceRefs) || bounded.evidenceRefs.length === 0) {
+              errors.push(memoPath + ' freshIncrementalEscalationTest.boundedRiskContainment.evidenceRefs must be non-empty');
+            }
+          }
+          if (!Number.isInteger(test.riskWindowTradingDays) || test.riskWindowTradingDays <= 0) {
+            errors.push(memoPath + ' freshIncrementalEscalationTest.riskWindowTradingDays must be a positive integer');
+          } else if (Number.isInteger(memo?.expectedRealization?.baseTradingDays) &&
+                     test.riskWindowTradingDays > memo.expectedRealization.baseTradingDays) {
+            errors.push(memoPath + ' fresh incremental risk window cannot exceed the base horizon');
+          }
+  
+          const positiveRoute = ['clear_route', 'credible_route'].includes(test.conclusion);
+          if (positiveRoute) {
+            if (memo?.timingRoute !== 'base_horizon_convexity') {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires base_horizon_convexity timingRoute');
+            }
+            if (test.discoveryNovelty !== 'new') {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires discovery novelty new');
+            }
+            if (!['realized', 'quantitatively_bridged'].includes(memo?.earningsConversionBridge?.status)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires realized/quantitatively_bridged earnings conversion');
+            }
+            if (memo?.expectationEvidenceStatus !== 'measured_burden') {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires measured expectation burden');
+            }
+            if (!['room', 'tight'].includes(memo?.expectationBurdenTest?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires room/tight expectation burden');
+            }
+            if (!['room', 'tight'].includes(memo?.crossSectionalAsymmetryTest?.valuationSlack?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires room/tight valuation slack');
+            }
+            if (memo?.crossSectionalAsymmetryTest?.qualityFloor?.conclusion !== 'pass') {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires quality floor pass');
+            }
+            if (!['clear', 'credible'].includes(memo?.crossSectionalAsymmetryTest?.catalystReachability?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires reachable base-horizon catalyst');
+            }
+            if (!['clear', 'credible'].includes(memo?.highAbsorptionContinuationTest?.freshIncrementalDriver?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires clear/credible fresh incremental driver');
+            }
+            if (!['favorable', 'neutral'].includes(memo?.opportunityTimingTest?.priceRegime?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires favorable or neutral broad timing');
+            }
+            if (!['clear', 'credible'].includes(bounded?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires clear/credible bounded risk containment');
+            }
+            if (!['clear_route', 'credible_route'].includes(memo?.baseHorizonConvexityTest?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires a valid base-horizon convexity route');
+            }
+            const adversarial = memo?.adversarialEvidenceTest;
+            if (adversarial?.searchCompleteness !== 'complete') {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires complete adversarial search');
+            }
+            if (!['low', 'moderate'].includes(adversarial?.counterThesisSeverity)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation cannot carry high/fatal adversarial risk');
+            }
+            if (!['clear_to_proceed', 'proceed_with_caveats'].includes(adversarial?.conclusion)) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation requires adversarial proceed conclusion');
+            }
+            const pairwise = Array.isArray(memo?.selectionComparison?.pairwise) ? memo.selectionComparison.pairwise : [];
+            if (pairwise.some((x) => ['control', 'insufficient'].includes(x?.netEdge))) {
+              errors.push(memoPath + ' positive v1.9 fresh escalation cannot use a clearly inferior expression');
+            }
+          }
+        }
+      }
+  return errors;
+}
+
 function validateOpportunityMemo(memo, memoPath, manifest) {
   const errors = [];
   if (!['1.2', '1.3', '1.4'].includes(manifest?.schemaVersion)) return errors;
@@ -1781,123 +1902,7 @@ function validateOpportunityMemo(memo, memoPath, manifest) {
   }
 
 
-  if (manifest?.skill?.version === '1.9.0' && memo?.selectionState !== 'No selection') {
-    const test = memo?.freshIncrementalEscalationTest;
-    if (!test || typeof test !== 'object') {
-      errors.push(memoPath + ' v1.9 selected memo requires freshIncrementalEscalationTest');
-    } else {
-      if (typeof test.applicable !== 'boolean') {
-        errors.push(memoPath + ' freshIncrementalEscalationTest.applicable must be boolean');
-      }
-      if (!['new', 'continuation', 'not_applicable'].includes(test.discoveryNovelty)) {
-        errors.push(memoPath + ' freshIncrementalEscalationTest.discoveryNovelty is invalid');
-      }
-      if (!['clear_route', 'credible_route', 'no_route', 'not_applicable'].includes(test.conclusion)) {
-        errors.push(memoPath + ' freshIncrementalEscalationTest.conclusion is invalid');
-      }
-
-      if (test.applicable === false) {
-        if (test.conclusion !== 'not_applicable' || test.discoveryNovelty !== 'not_applicable') {
-          errors.push(memoPath + ' non-applicable freshIncrementalEscalationTest must use not_applicable novelty/conclusion');
-        }
-      } else if (test.applicable === true) {
-        for (const field of ['eventId', 'exitDiscipline', 'falsifier']) {
-          if (typeof test[field] !== 'string' || !test[field].trim()) {
-            errors.push(memoPath + ' freshIncrementalEscalationTest.' + field + ' is required');
-          }
-        }
-        for (const field of ['eventFirstAvailableAt', 'baselineAsOfAt']) {
-          try { assertIso(test[field], memoPath + '.freshIncrementalEscalationTest.' + field); }
-          catch (error) { errors.push(error.message); }
-        }
-        if (test.eventFirstAvailableAt && memo?.cutoffAt &&
-            Date.parse(test.eventFirstAvailableAt) > Date.parse(memo.cutoffAt)) {
-          errors.push(memoPath + ' fresh incremental event cannot be post-cutoff');
-        }
-        if (test.baselineAsOfAt && test.eventFirstAvailableAt &&
-            Date.parse(test.baselineAsOfAt) >= Date.parse(test.eventFirstAvailableAt)) {
-          errors.push(memoPath + ' fresh incremental baseline must predate the new event');
-        }
-        for (const field of ['freshDriverEvidenceRefs', 'baselineEvidenceRefs', 'evidenceRefs']) {
-          if (!Array.isArray(test[field]) || test[field].length === 0 ||
-              test[field].some((x) => typeof x !== 'string' || !x.trim())) {
-            errors.push(memoPath + ' freshIncrementalEscalationTest.' + field + ' must be a non-empty string array');
-          }
-        }
-        const bounded = test.boundedRiskContainment;
-        if (!bounded || !['clear', 'credible', 'mixed', 'insufficient'].includes(bounded.conclusion)) {
-          errors.push(memoPath + ' freshIncrementalEscalationTest.boundedRiskContainment.conclusion is invalid');
-        } else {
-          if (typeof bounded.rationale !== 'string' || !bounded.rationale.trim()) {
-            errors.push(memoPath + ' freshIncrementalEscalationTest.boundedRiskContainment.rationale is required');
-          }
-          if (!Array.isArray(bounded.evidenceRefs) || bounded.evidenceRefs.length === 0) {
-            errors.push(memoPath + ' freshIncrementalEscalationTest.boundedRiskContainment.evidenceRefs must be non-empty');
-          }
-        }
-        if (!Number.isInteger(test.riskWindowTradingDays) || test.riskWindowTradingDays <= 0) {
-          errors.push(memoPath + ' freshIncrementalEscalationTest.riskWindowTradingDays must be a positive integer');
-        } else if (Number.isInteger(memo?.expectedRealization?.baseTradingDays) &&
-                   test.riskWindowTradingDays > memo.expectedRealization.baseTradingDays) {
-          errors.push(memoPath + ' fresh incremental risk window cannot exceed the base horizon');
-        }
-
-        const positiveRoute = ['clear_route', 'credible_route'].includes(test.conclusion);
-        if (positiveRoute) {
-          if (memo?.timingRoute !== 'base_horizon_convexity') {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires base_horizon_convexity timingRoute');
-          }
-          if (test.discoveryNovelty !== 'new') {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires discovery novelty new');
-          }
-          if (!['realized', 'quantitatively_bridged'].includes(memo?.earningsConversionBridge?.status)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires realized/quantitatively_bridged earnings conversion');
-          }
-          if (memo?.expectationEvidenceStatus !== 'measured_burden') {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires measured expectation burden');
-          }
-          if (!['room', 'tight'].includes(memo?.expectationBurdenTest?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires room/tight expectation burden');
-          }
-          if (!['room', 'tight'].includes(memo?.crossSectionalAsymmetryTest?.valuationSlack?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires room/tight valuation slack');
-          }
-          if (memo?.crossSectionalAsymmetryTest?.qualityFloor?.conclusion !== 'pass') {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires quality floor pass');
-          }
-          if (!['clear', 'credible'].includes(memo?.crossSectionalAsymmetryTest?.catalystReachability?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires reachable base-horizon catalyst');
-          }
-          if (!['clear', 'credible'].includes(memo?.highAbsorptionContinuationTest?.freshIncrementalDriver?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires clear/credible fresh incremental driver');
-          }
-          if (!['favorable', 'neutral'].includes(memo?.opportunityTimingTest?.priceRegime?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires favorable or neutral broad timing');
-          }
-          if (!['clear', 'credible'].includes(bounded?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires clear/credible bounded risk containment');
-          }
-          if (!['clear_route', 'credible_route'].includes(memo?.baseHorizonConvexityTest?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires a valid base-horizon convexity route');
-          }
-          const adversarial = memo?.adversarialEvidenceTest;
-          if (adversarial?.searchCompleteness !== 'complete') {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires complete adversarial search');
-          }
-          if (!['low', 'moderate'].includes(adversarial?.counterThesisSeverity)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation cannot carry high/fatal adversarial risk');
-          }
-          if (!['clear_to_proceed', 'proceed_with_caveats'].includes(adversarial?.conclusion)) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation requires adversarial proceed conclusion');
-          }
-          const pairwise = Array.isArray(memo?.selectionComparison?.pairwise) ? memo.selectionComparison.pairwise : [];
-          if (pairwise.some((x) => ['control', 'insufficient'].includes(x?.netEdge))) {
-            errors.push(memoPath + ' positive v1.9 fresh escalation cannot use a clearly inferior expression');
-          }
-        }
-      }
-    }
-  }
+  errors.push(...validateFreshIncrementalEscalationTest(memo, memoPath, manifest));
 
   if (['1.8.0', '1.9.0'].includes(manifest?.skill?.version)) {
     const exceptionTest = memo?.companyExceptionSearchTest;
@@ -2720,6 +2725,7 @@ module.exports = {
   sha256File,
   validateManifest,
   validateMemoEvidenceRefs,
+  validateFreshIncrementalEscalationTest,
   validateFreshIncrementalSourceLink,
   validateOpportunityMemo,
   validateScreening,
