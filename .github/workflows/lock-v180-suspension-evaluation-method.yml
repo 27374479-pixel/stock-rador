@@ -1,0 +1,52 @@
+name: lock-v180-suspension-evaluation-method
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.8-2017q3-holdout-20260924
+    paths:
+      - .github/workflows/lock-v180-suspension-evaluation-method.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock-method:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.8-2017q3-holdout-20260924
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Freeze suspension-aware evaluation method before outcome values
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const crypto = require('crypto');
+          const paths = ['scripts/prepare-suspension-aware-prices.cjs','tests/suspension-aware-prices.test.js'];
+          const files = paths.map(path => ({
+            path,
+            sha256: crypto.createHash('sha256').update(fs.readFileSync(path)).digest('hex')
+          }));
+          const out = {
+            schemaVersion: '1.0',
+            runId: '2017q3-multisource-deep-v1.8-001',
+            reason: 'Generic execution-layer patch for interior suspension gaps discovered before any outcome return values were viewed.',
+            policy: 'Interior missing benchmark-calendar dates are carried at prior actual close; entry and target exit dates are never synthesized.',
+            files
+          };
+          fs.writeFileSync('backtests/runs/2017q3-multisource-deep-v1.8-001/evaluation-method-lock.json', JSON.stringify(out,null,2)+'\n');
+          NODE
+      - name: Commit method lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2017q3-multisource-deep-v1.8-001/evaluation-method-lock.json
+          git commit -m "backtest: lock suspension-aware evaluation method before returns"
+          git pull --rebase origin ai-skill-v1.8-2017q3-holdout-20260924
+          git push origin HEAD:ai-skill-v1.8-2017q3-holdout-20260924
