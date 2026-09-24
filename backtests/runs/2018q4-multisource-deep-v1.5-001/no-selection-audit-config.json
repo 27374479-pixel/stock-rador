@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2018q4-multisource-deep-v1.5-001",
+  "cutoffDate": "2018-12-31",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "samePeriodMayTuneSkill": false,
+  "baskets": [
+    {
+      "basketId": "5g-trial-spectrum",
+      "label": "Frozen 5G supplier basket without clean order/earnings bridge",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "000063.SZ",
+        "600498.SH",
+        "002281.SZ"
+      ]
+    },
+    {
+      "basketId": "pork-asf-preconfirmation",
+      "label": "Frozen hog-producer basket before positive physical pork-price confirmation",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "002714.SZ",
+        "300498.SZ",
+        "000876.SZ"
+      ]
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2018q4-dram-downcycle",
+      "reason": "No direct positive A-share DRAM expression was frozen; do not hindsight substitute generic semiconductor names."
+    },
+    {
+      "hypothesisId": "h-2018q4-private-enterprise-support",
+      "reason": "Broad policy hypothesis explicitly required company-level decomposition and froze no coherent candidate basket."
+    }
+  ]
+}
