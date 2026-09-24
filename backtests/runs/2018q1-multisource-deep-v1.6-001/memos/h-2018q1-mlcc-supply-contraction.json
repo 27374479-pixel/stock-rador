@@ -1,0 +1,727 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.6.0",
+  "cutoffAt": "2018-03-31T23:59:59+08:00",
+  "researchReadyAt": "2018-03-31T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2018q1-mlcc-supply-contraction",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Legacy MLCC capacity withdrawal and repeated supplier repricing can affect listed supplier ASP/margins over one to two quarters, but current price absorption and incomplete Fenghua Q1 earnings confirmation keep the selection at Research."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000636.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Fenghua is the clearest A-share MLCC/Chip-R expression and its cutoff-valid 2017 profit disclosure explicitly said MLCC/resistor orders exceeded supply, but stock absorption and provisional trailing valuation were already high before the April Q1 forecast.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "fenghua-2017-guidance-20180327",
+        "fenghua-cutoff-burden-20180330",
+        "regime-mlcc-20180331"
+      ]
+    },
+    {
+      "ticker": "603678.SH",
+      "role": "acceptable",
+      "directExposure": "credible",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "credible",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Torch had a cutoff-valid Q1 +50% profit forecast explicitly citing persistent component shortages and margin improvement, although its business mix is less pure MLCC than Fenghua.",
+      "evidenceRefs": [
+        "torch-q1-guidance-20180226",
+        "regime-mlcc-20180331"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Major Japanese suppliers were reducing legacy standard MLCC capacity while Taiwan/China suppliers repeatedly raised prices. This is a productive-capacity state change that can lead supplier ASP and earnings, but by March 31 the equity basket had already broadly rerated and Fenghua's strongest 2018Q1 earnings confirmation was not yet public.",
+    "firstCredibleDate": "2018-03-05",
+    "valueChain": [
+      "legacy MLCC productive capacity",
+      "channel availability/lead times",
+      "supplier ASP",
+      "listed supplier gross margin/earnings"
+    ],
+    "persistenceReason": "Supplier product-mix shifts and capacity exits can persist for quarters because qualification and capacity additions take time.",
+    "disconfirmingEvidence": [
+      "All three frozen A-share expressions already beat CSI300 over both 20d and 60d.",
+      "Fenghua's provisional trailing multiple was high on cutoff-known 2017 earnings.",
+      "The April 10 Fenghua Q1 +300% forecast is post-cutoff and excluded."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "mlcc-murata-20180305",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Murata legacy capacity contraction is a leading supply state."
+    },
+    {
+      "id": "mlcc-price-20180327",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Repeated supplier price increases confirm shortage transmission."
+    },
+    {
+      "id": "mlcc-yageo-20180322",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Yageo planned another large April price hike."
+    },
+    {
+      "id": "fenghua-2017-guidance-20180327",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Fenghua had cutoff-valid realized 2017 earnings improvement and explicit MLCC/order shortage."
+    },
+    {
+      "id": "fenghua-cutoff-burden-20180330",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Fenghua valuation/expectation burden was already high before April Q1 guidance."
+    },
+    {
+      "id": "torch-q1-guidance-20180226",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "A second listed passive-component expression had cutoff-valid Q1 earnings acceleration explicitly tied partly to shortages."
+    },
+    {
+      "id": "sanhuan-2017-flash-20180228",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "A large passive-component peer had only modest 2017 profit growth and different product engines."
+    },
+    {
+      "id": "regime-mlcc-20180331",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Equity price absorption was already broad and strong."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "legacy MLCC productive-capacity withdrawal",
+      "to": "market availability and supplier pricing",
+      "mechanism": "Japanese suppliers reduce/exit standard products while replacement capacity/qualification is slow.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-yageo-20180322"
+      ],
+      "failureMode": "new capacity/channel inventory restores supply faster than expected",
+      "lag": "weeks to months"
+    },
+    {
+      "from": "tight availability and repeated price hikes",
+      "to": "A-share supplier margin/earnings",
+      "mechanism": "Direct suppliers with sellable standard-component capacity can raise realized ASP and utilization.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226"
+      ],
+      "failureMode": "raw-material cost/customer mix offsets pricing or listed-company exposure is less direct",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "MLCC/passive-component suppliers with available standard-product capacity"
+    ],
+    "secondOrderWinners": [
+      "distributors with inventory"
+    ],
+    "losers": [
+      "electronics assemblers unable to pass through costs"
+    ],
+    "substitutes": [
+      "smaller/higher-spec alternative MLCCs"
+    ],
+    "bottlenecks": [
+      "qualification",
+      "ceramic/material capacity",
+      "channel inventory"
+    ],
+    "falseThemeMatches": [
+      "electronics companies without direct passive-component supply exposure"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000636.SZ",
+      "name": "风华高科",
+      "verifiedExposure": "Mainland passive-component producer with MLCC and chip-resistor orders explicitly described as exceeding supply.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327"
+      ],
+      "earningsSensitivity": {
+        "base": "2017 attributable profit about RMB207.7m, +49.5%.",
+        "favorable": "Supply contraction/pricing persists into Q1/Q2 and capacity expansion sells at higher ASP.",
+        "adverse": "Equity/valuation already capitalizes later earnings or shortage normalizes."
+      },
+      "principalRisks": [
+        "high expectation burden",
+        "post-cutoff Q1 confirmation absent at freeze"
+      ]
+    },
+    {
+      "ticker": "603678.SH",
+      "name": "火炬电子",
+      "verifiedExposure": "Passive/ceramic components with cutoff-valid Q1 profit guidance partly attributed to ongoing shortages.",
+      "evidenceRefs": [
+        "torch-q1-guidance-20180226"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 profit guided about +50%.",
+        "favorable": "Shortage and military/customer orders support margin.",
+        "adverse": "Less pure MLCC exposure and business-mix effects."
+      },
+      "principalRisks": [
+        "mixed product exposure"
+      ]
+    },
+    {
+      "ticker": "300408.SZ",
+      "name": "三环集团",
+      "verifiedExposure": "Ceramic/passive-component peer; cutoff 2017 profit growth was modest and company had several non-MLCC engines.",
+      "evidenceRefs": [
+        "sanhuan-2017-flash-20180228"
+      ],
+      "earningsSensitivity": {
+        "base": "2017 attributable profit +2.39%.",
+        "favorable": "Passive-component tightness and ceramic products lift later earnings.",
+        "adverse": "Other product mix dilutes MLCC torque."
+      },
+      "principalRisks": [
+        "less direct frozen MLCC earnings bridge"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "603678.SH",
+      "name": "火炬电子",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Listed passive/ceramic-component supplier with cutoff-valid shortage-linked Q1 earnings evidence.",
+      "whySelectedCompanyShouldOutperform": "Fenghua has more direct MLCC exposure, but Torch has better cutoff-valid current-quarter earnings confirmation; no decisive Primary edge is claimed.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226",
+        "regime-mlcc-20180331"
+      ]
+    },
+    {
+      "ticker": "300408.SZ",
+      "name": "三环集团",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Large ceramic/passive-component peer exposed to the same component cycle.",
+      "whySelectedCompanyShouldOutperform": "Fenghua's cutoff filing explicitly describes MLCC orders exceeding supply, while Sanhuan's 2017 profit growth was modest and driven by multiple other products.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "sanhuan-2017-flash-20180228"
+      ]
+    }
+  ],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": "000636.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "603678.SH",
+        "selectedAdvantages": [
+          "clearer direct MLCC exposure",
+          "2017 filing explicitly says MLCC orders exceeded supply"
+        ],
+        "selectedDisadvantages": [
+          "Torch has better cutoff-valid Q1 earnings confirmation and Fenghua stock/valuation absorption is much higher"
+        ],
+        "evidenceRefs": [
+          "fenghua-2017-guidance-20180327",
+          "torch-q1-guidance-20180226",
+          "fenghua-cutoff-burden-20180330",
+          "regime-mlcc-20180331"
+        ],
+        "switchCondition": "Prefer Torch if earnings confirmation/valuation outweighs Fenghua's purer MLCC exposure.",
+        "netEdge": "mixed"
+      },
+      {
+        "controlTicker": "300408.SZ",
+        "selectedAdvantages": [
+          "clearer MLCC earnings mechanism"
+        ],
+        "selectedDisadvantages": [
+          "Sanhuan has stronger absolute 2017 profit base and diversified ceramic engines"
+        ],
+        "evidenceRefs": [
+          "fenghua-2017-guidance-20180327",
+          "sanhuan-2017-flash-20180228"
+        ],
+        "switchCondition": "Prefer Sanhuan if cutoff-valid MLCC-specific revisions become clearer.",
+        "netEdge": "selected"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The opportunity is real enough for Research, but current valuation/price absorption and incomplete Fenghua Q1 confirmation prevent actionable asymmetry."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "MLCC basket had +11.81pp 20d and +18.14pp 60d excess with 100% breadth; Fenghua itself had +18.40pp and +29.13pp excess.",
+    "thesisExpectation": "Capacity withdrawal and repeated pricing can keep supplier earnings rising, but the market already recognizes the shortage and Fenghua's April Q1 profit explosion is not yet known.",
+    "measurableGap": "On cutoff-known 2017 profit, Fenghua's reconstructed provisional trailing multiple is roughly 70x; without the post-cutoff Q1 forecast, expectation slack is not demonstrably wide.",
+    "evidenceRefs": [
+      "fenghua-2017-guidance-20180327",
+      "fenghua-cutoff-burden-20180330",
+      "regime-mlcc-20180331"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Historical cutoff price/share count versus cutoff-valid 2017 profit; post-cutoff Q1 forecast excluded.",
+    "referencePriceAtCutoff": 16.39,
+    "marketBaseline": "Fenghua had already rerated strongly and provisional 2017 earnings implied roughly 70x trailing/provisional PE.",
+    "thesisScenario": "MLCC pricing persists and Q1/Q2 earnings accelerate materially beyond the 2017 run rate.",
+    "breakevenCondition": "New earnings must arrive fast enough to compress the high provisional multiple; the thesis cannot rely only on additional price rerating.",
+    "ordinaryScenarioFailure": "Shortage earnings are slower/smaller than the stock has already anticipated.",
+    "catalystOrTimingBridge": "Q1 report/guidance and further supplier price actions are near-term, but the key Fenghua Q1 forecast is not yet public at cutoff.",
+    "evidenceRefs": [
+      "fenghua-cutoff-burden-20180330",
+      "mlcc-price-20180327"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Supplier capacity withdrawal and repeated price hikes are fresh physical-market evidence.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327",
+        "mlcc-yageo-20180322"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Fenghua 2017 earnings and Torch Q1 guidance support shortage-linked company conversion, but Fenghua current-quarter magnitude is not yet public.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "clear",
+      "rationale": "All three frozen expressions beat CSI300 over 20d and 60d.",
+      "evidenceRefs": [
+        "regime-mlcc-20180331"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "mixed",
+      "rationale": "Fenghua only has a cutoff-valid 2017 earnings estimate; current-quarter forward earnings are not yet published.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Compare broad/full-breadth rerating and Fenghua provisional multiple against incomplete current-quarter earnings evidence.",
+      "evidenceRefs": [
+        "regime-mlcc-20180331",
+        "fenghua-cutoff-burden-20180330"
+      ]
+    },
+    "unresolvedReason": "missing_baseline",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen MLCC basket versus CSI300",
+      "lookback20Excess": 0.1181266176330823,
+      "lookback60Excess": 0.18136083319147234,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-mlcc-20180331"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Capacity exits and repeated price hikes intensify through March.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "narrow_positive",
+      "rationale": "Torch has explicit Q1 guidance and Fenghua has 2017 shortage-linked earnings, but broad current-quarter revisions are incomplete.",
+      "evidenceRefs": [
+        "torch-q1-guidance-20180226",
+        "fenghua-2017-guidance-20180327"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Capacity/product-mix changes and qualification lags can persist across quarters.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "high",
+      "rationale": "Broad equity rerating is already strong and supplier price increases have become a visible market narrative.",
+      "evidenceRefs": [
+        "regime-mlcc-20180331",
+        "mlcc-price-20180327"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "Operating/product-market direction is favorable, but high absorption and incomplete current-quarter earnings prevent Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000636.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "2017 profit grew and direct MLCC demand was strong.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Physical pricing/capacity evidence supports future earnings, but current-quarter Fenghua magnitude is not yet frozen.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "Provisional trailing valuation is high before April Q1 guidance.",
+      "evidenceRefs": [
+        "fenghua-cutoff-burden-20180330"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Q1 guidance/report and further pricing are near-term.",
+      "evidenceRefs": [
+        "mlcc-price-20180327"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Direct exposure helps, but high valuation and strong prior rerating leave limited downside protection.",
+      "evidenceRefs": [
+        "fenghua-cutoff-burden-20180330",
+        "regime-mlcc-20180331"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "603678.SH",
+        "revisionAdvantage": "Torch has the clearer cutoff Q1 forecast; Fenghua has purer MLCC exposure.",
+        "valuationAdvantage": "No frozen valuation advantage for Fenghua.",
+        "qualityTradeoff": "Both pass; Torch has stronger current-quarter evidence.",
+        "catalystAdvantage": "Same shortage/pricing catalyst.",
+        "downsideTradeoff": "Fenghua carries higher observed absorption.",
+        "switchCondition": "Switch to Torch if directness is not worth the weaker expectation/downside profile.",
+        "evidenceRefs": [
+          "fenghua-2017-guidance-20180327",
+          "torch-q1-guidance-20180226",
+          "regime-mlcc-20180331"
+        ],
+        "netAsymmetry": "mixed"
+      },
+      {
+        "controlTicker": "300408.SZ",
+        "revisionAdvantage": "Fenghua has more explicit MLCC shortage-linked earnings.",
+        "valuationAdvantage": "No decisive frozen valuation edge.",
+        "qualityTradeoff": "Sanhuan has diversified earnings; Fenghua has more direct torque.",
+        "catalystAdvantage": "Fenghua maps directly to standard MLCC shortage.",
+        "downsideTradeoff": "Fenghua has greater price absorption.",
+        "switchCondition": "Switch if Sanhuan's cutoff-valid MLCC current-quarter earnings evidence improves.",
+        "evidenceRefs": [
+          "fenghua-2017-guidance-20180327",
+          "sanhuan-2017-flash-20180228"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Legacy MLCC capacity was being withdrawn and suppliers repeatedly raised prices.",
+    "earningsMechanism": "Direct listed suppliers can convert sellable capacity and higher realized ASP/utilization into gross margin and profit.",
+    "nextObservableMetric": "Q1/Q2 listed-supplier revenue, ASP/margin and further price notices",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "mlcc-murata-20180305",
+      "mlcc-price-20180327",
+      "fenghua-2017-guidance-20180327",
+      "torch-q1-guidance-20180226"
+    ],
+    "failureCondition": "Current-quarter earnings fail to accelerate enough to justify the already-high rerating."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "2017 Fenghua profit +49.5% and Torch Q1 guidance +50% show real but heterogeneous conversion.",
+      "nextPeriod": "Further price increases should lift earnings if capacity remains tight.",
+      "laterPeriod": "New capacity/product substitution eventually normalizes shortage pricing.",
+      "rationale": "Do not import Fenghua's April Q1 guidance into the March cutoff.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "March capacity withdrawal/pricing should raise supplier ASP and utilization.",
+      "nextPeriodChange": "Q1/Q2 earnings should broaden across direct suppliers.",
+      "laterPeriodChange": "The shortage premium fades as supply adjusts.",
+      "mechanism": "Capacity state leads pricing then reported earnings.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327"
+      ]
+    },
+    "pathShape": "peak_cycle_decline",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "The physical supply shock is fresh, but the equity/valuation baseline already anticipates much of it.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "regime-mlcc-20180331"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Capacity/qualification lags can persist, but price-driven shortages eventually normalize.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305"
+      ]
+    },
+    "falsifier": "Q1/Q2 earnings do not broaden or supplier pricing/lead times normalize.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "standard/legacy MLCC supply and pricing",
+    "geographicScope": "global supply with China/Taiwan/Japan producers",
+    "customerScope": "electronics OEM/EMS buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The memo isolates MLCC/passive-component supply rather than generic electronics.",
+    "evidenceRefs": [
+      "mlcc-murata-20180305",
+      "mlcc-yageo-20180322"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "capacity withdrawal and repeated price hikes",
+      "horizon": "weeks",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "supplier ASP/margin earnings conversion",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "torch-q1-guidance-20180226",
+        "fenghua-2017-guidance-20180327"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "qualification lags support scarcity but capacity/product substitution eventually responds",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "mlcc-murata-20180305"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Continue research but require current-quarter earnings/expectation slack before action.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Product market and listed-company evidence are directionally aligned; the blocker is expectation/downside rather than causal validity.",
+    "evidenceRefs": [
+      "regime-mlcc-20180331",
+      "fenghua-2017-guidance-20180327",
+      "torch-q1-guidance-20180226"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "March Murata/Yageo supply/pricing changes are fresh.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-yageo-20180322"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Company earnings evidence exists but Fenghua current-quarter magnitude remains unpublished.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Price actions imply upward earnings pressure but broad revision data are incomplete.",
+      "evidenceRefs": [
+        "mlcc-price-20180327"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Capacity/product-mix changes can persist across quarters.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "No broad Q1/Q2 earnings confirmation or shortage normalization.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "000636.SZ",
+    "purestTicker": "000636.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Fenghua is purer but Torch has stronger cutoff-valid current-quarter earnings confirmation; purity alone does not justify action.",
+    "earningsQualityComparison": "Torch has stronger current-quarter guidance; Fenghua has direct MLCC torque.",
+    "downsideComparison": "Fenghua's rerating/valuation burden is worse.",
+    "evidenceRefs": [
+      "fenghua-2017-guidance-20180327",
+      "torch-q1-guidance-20180226",
+      "regime-mlcc-20180331"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "legacy standard-MLCC productive capacity",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "determines sellable supply and supplier pricing power in standard MLCC",
+      "adjustmentLag": "months",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-yageo-20180322"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "listed supplier current-quarter earnings",
+      "observedDirection": "mixed",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "Pricing reacts immediately, while Fenghua's Q1 earnings magnitude is not yet public; Torch provides only partial cross-sectional confirmation.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Capacity withdrawal and price hikes precede full listed-company quarterly earnings recognition.",
+      "evidenceRefs": [
+        "mlcc-murata-20180305",
+        "mlcc-price-20180327"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "credible",
+      "rationale": "Fenghua reports shortage-linked 2017 earnings and Torch guides +50% Q1 partly from component shortages.",
+      "evidenceRefs": [
+        "fenghua-2017-guidance-20180327",
+        "torch-q1-guidance-20180226"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "Current-quarter earnings fail to accelerate or supply tightness normalizes.",
+    "conclusion": "state_leads_flow"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": 16.39,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: V1.6 successfully finds the leading capacity state, but broad price absorption and incomplete current-quarter Fenghua earnings prevent action.",
+    "alreadyPricedAssessment": "real_supply_state_with_high_equity_absorption",
+    "constraints": [
+      "high prior rerating",
+      "high provisional valuation",
+      "post-cutoff Q1 guidance excluded"
+    ]
+  },
+  "bearCase": "The MLCC shortage is real but already capitalized in equities before listed-company earnings can justify the valuation.",
+  "invalidationConditions": [
+    {
+      "indicator": "MLCC lead times/pricing",
+      "observationMethod": "supplier/channel data",
+      "threshold": "normalization or reversal"
+    },
+    {
+      "indicator": "direct supplier Q1/Q2 earnings",
+      "observationMethod": "company filings/guidance",
+      "threshold": "fails to accelerate sufficiently"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "April 10 Fenghua Q1 guidance is explicitly excluded."
+    ]
+  },
+  "unknowns": [
+    "Fenghua current-quarter earnings magnitude is unavailable at cutoff."
+  ],
+  "nextResearchActions": [
+    "Keep Fenghua preferred and Torch acceptable as Research; re-underwrite when current-quarter earnings become cutoff-valid in a later dated replay."
+  ]
+}
