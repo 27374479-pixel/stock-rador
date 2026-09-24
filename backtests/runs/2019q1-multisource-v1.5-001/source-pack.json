@@ -1,0 +1,468 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2019q1-multisource-v1.5-001",
+  "cutoffAt": "2019-03-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2019Q1 replay built in September 2026 with current model/search weights. Only evidence available by 2019-03-31 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official accident, tax, index-policy and macro evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected central-government, tax and MSCI releases; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Selected issuer operating disclosures used only to corroborate broad events before deep mapping.",
+      "coverageStatus": "partial",
+      "limitations": "Longsheng, Sany and CITIC disclosures only; no exhaustive issuer crawl."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable industry demand, turnover and price conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Excavator, securities-market activity and NBS food-price evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting.",
+      "coverageStatus": "partial",
+      "limitations": "Selected China Securities Journal, 21CBH/China business media and People sources."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist sector interpretation of physical supply/demand transmission.",
+      "coverageStatus": "partial",
+      "limitations": "Selected contemporaneous chemical-industry event research; not an exhaustive trade crawl."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "mem-xiangshui-20190322",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "应急管理部指导江苏盐城天嘉宜化工厂爆炸应急处置",
+      "publisher": "中国政府网/应急管理部",
+      "url": "https://www.gov.cn/xinwen/2019-03/22/content_5375872.htm",
+      "publishedAt": "2019-03-22T08:54:00+08:00",
+      "availableAt": "2019-03-22T08:54:00+08:00",
+      "originGroup": "mem-xiangshui-20190322",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "On March 21, Tianjiayi Chemical in Xiangshui chemical park suffered a major explosion and emergency response began immediately."
+      ],
+      "entities": [
+        "Xiangshui",
+        "Tianjiayi Chemical",
+        "fine chemicals"
+      ],
+      "observedChanges": [
+        "a major fine-chemical supply location is abruptly disrupted"
+      ]
+    },
+    {
+      "itemId": "stcn-dye-20190324",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "响水爆炸冲击波：翻倍涨幅中间体已出现，厂家停止报价",
+      "publisher": "证券时报e公司（新浪转载）",
+      "url": "https://finance.sina.com.cn/stock/marketresearch/2019-03-24/doc-ihtxyzsm0142835.shtml",
+      "publishedAt": "2019-03-24T00:00:00+08:00",
+      "availableAt": "2019-03-24T00:00:00+08:00",
+      "originGroup": "stcn-dye-20190324",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Before the accident m-phenylenediamine traded around RMB37k/t; within days quoted market levels reached roughly RMB80-100k/t and leading producers stopped quoting.",
+        "Domestic m-phenylenediamine supply was concentrated, with Zhejiang Longsheng having about 70kt capacity versus Tianjiayi about 17kt."
+      ],
+      "entities": [
+        "m-phenylenediamine",
+        "disperse dyes",
+        "Zhejiang Longsheng"
+      ],
+      "observedChanges": [
+        "intermediate supply shock produces immediate price repricing"
+      ]
+    },
+    {
+      "itemId": "swhy-dye-20190325",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "响水事故影响持续发酵，染料价格上升通道开启",
+      "publisher": "申万宏源化工",
+      "url": "https://pdf.dfcfw.com/pdf/H301_AP201903251309243615_1.pdf",
+      "publishedAt": "2019-03-25T00:00:00+08:00",
+      "availableAt": "2019-03-25T00:00:00+08:00",
+      "originGroup": "swhy-dye-20190325",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The accident shut the Xiangshui park and was expected to tighten supply of dye and pesticide intermediates, with m-phenylenediamine a key affected product."
+      ],
+      "entities": [
+        "dyes",
+        "pesticide intermediates",
+        "m-phenylenediamine"
+      ],
+      "observedChanges": [
+        "supply shock may persist beyond the immediate accident"
+      ]
+    },
+    {
+      "itemId": "longsheng-guidance-20190126",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "浙江龙盛2018年度业绩预增公告",
+      "publisher": "浙江龙盛",
+      "url": "http://static.sse.com.cn/disclosure/listedinfo/announcement/c/2019-01-26/600352_20190126_1.pdf",
+      "publishedAt": "2019-01-26T00:00:00+08:00",
+      "availableAt": "2019-01-26T00:00:00+08:00",
+      "originGroup": "longsheng-guidance-20190126",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Longsheng guided 2018 attributable profit to RMB4.0-4.2bn, +61.7% to +69.8% YoY, and ex-item profit to RMB3.7-3.9bn, +102.4% to +113.4%."
+      ],
+      "entities": [
+        "浙江龙盛",
+        "dyes",
+        "intermediates"
+      ],
+      "observedChanges": [
+        "company entered the event with already-strong realized earnings"
+      ]
+    },
+    {
+      "itemId": "citic-feb-20190306",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中信证券股份有限公司2019年2月份财务数据简报",
+      "publisher": "中信证券",
+      "url": "https://www.cs.ecitic.com/newsite/tzzgx/ggyth/gg/aggg/201903/P020190306719985007088.pdf",
+      "publishedAt": "2019-03-06T00:00:00+08:00",
+      "availableAt": "2019-03-06T00:00:00+08:00",
+      "originGroup": "citic-feb-20190306",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "CITIC Securities parent reported February revenue RMB1.760bn and net profit RMB815m after January parent net profit RMB741m."
+      ],
+      "entities": [
+        "中信证券",
+        "brokerage"
+      ],
+      "observedChanges": [
+        "broker operating profit is already improving before quarter end"
+      ]
+    },
+    {
+      "itemId": "cs-broker-20190312",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "2月净利劲升 券商开启业绩“加速器”",
+      "publisher": "中国证券报",
+      "url": "https://www.cs.com.cn/qs/201903/t20190312_5930135.html",
+      "publishedAt": "2019-03-12T00:00:00+08:00",
+      "availableAt": "2019-03-12T00:00:00+08:00",
+      "originGroup": "cs-broker-20190312",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Listed brokers' February profits accelerated sharply; many brokers posted more than 100% month-on-month profit growth, with major firms among the absolute profit leaders."
+      ],
+      "entities": [
+        "A-share brokers",
+        "brokerage profits"
+      ],
+      "observedChanges": [
+        "market turnover and self-trading recovery convert into monthly broker earnings"
+      ]
+    },
+    {
+      "itemId": "21cbh-broker-20190321",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "券商业绩迎拐点 市场回暖和改革红利双支持",
+      "publisher": "21世纪经济报道",
+      "url": "https://finance.sina.com.cn/roll/2019-03-21/doc-ihtxyzsk9191801.shtml",
+      "publishedAt": "2019-03-21T07:00:00+08:00",
+      "availableAt": "2019-03-21T07:00:00+08:00",
+      "originGroup": "21cbh-broker-20190321",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "2019-to-date A-share daily turnover exceeded RMB540bn and March-to-date approached RMB970bn; 37 listed brokers' Jan-Feb comparable net profit rose about 89% YoY.",
+        "The broker sector had already risen more than 50% year-to-date, making expectation absorption a material risk."
+      ],
+      "entities": [
+        "A-share turnover",
+        "brokers"
+      ],
+      "observedChanges": [
+        "physical trading activity and broker earnings inflect together while equity prices already rerate"
+      ]
+    },
+    {
+      "itemId": "people-excavator-20190324",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "挖掘机销售回暖透露积极信号",
+      "publisher": "人民日报海外版/人民网",
+      "url": "https://finance.people.com.cn/n1/2019/0324/c1004-30991779.html",
+      "publishedAt": "2019-03-24T06:40:00+08:00",
+      "availableAt": "2019-03-24T06:40:00+08:00",
+      "originGroup": "people-excavator-20190324",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Industry association data showed Jan-Feb excavator sales of 30,501 units, +39.9% YoY; February alone was 18,745 units, +68.7% YoY."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery"
+      ],
+      "observedChanges": [
+        "high-frequency machinery demand accelerates strongly before quarter end"
+      ]
+    },
+    {
+      "itemId": "sany-guidance-20190126",
+      "laneId": "company_first_party",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "三一重工2018年度业绩预增公告",
+      "publisher": "三一重工",
+      "url": "https://pdf.dfcfw.com/pdf/H2_AN201901251288822116_1.pdf",
+      "publishedAt": "2019-01-26T00:00:00+08:00",
+      "availableAt": "2019-01-26T00:00:00+08:00",
+      "originGroup": "sany-guidance-20190126",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Sany guided 2018 attributable profit to RMB5.9-6.32bn, +182% to +202% YoY, citing strong sales, infrastructure demand, replacement and market-share gains."
+      ],
+      "entities": [
+        "三一重工",
+        "excavators"
+      ],
+      "observedChanges": [
+        "leader earnings were already accelerating before 2019 Q1 demand data"
+      ]
+    },
+    {
+      "itemId": "msci-weight-20190228",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "MSCI WILL INCREASE THE WEIGHT OF CHINA A SHARES IN MSCI INDEXES",
+      "publisher": "MSCI",
+      "url": "https://app2.msci.com/webapp/index_ann/DocGet?format=html&lang=en&pub_key=3wTKvvfPyTs%3D",
+      "publishedAt": "2019-02-28T22:10:00+00:00",
+      "availableAt": "2019-02-28T22:10:00+00:00",
+      "originGroup": "msci-weight-20190228",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MSCI announced it would raise the A-share inclusion factor from 5% to 20% in three steps and add ChiNext large caps and later mid caps."
+      ],
+      "entities": [
+        "MSCI",
+        "China A shares",
+        "Stock Connect"
+      ],
+      "observedChanges": [
+        "foreign passive/benchmark-linked demand path becomes more explicit"
+      ]
+    },
+    {
+      "itemId": "vat-reform-20190320",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "财政部 税务总局 海关总署关于深化增值税改革有关政策的公告",
+      "publisher": "财政部/国家税务总局/海关总署",
+      "url": "https://tianjin.chinatax.gov.cn/11200000000/0300/030004/03000418/20190325162517597.shtml",
+      "publishedAt": "2019-03-20T16:31:00+08:00",
+      "availableAt": "2019-03-20T16:31:00+08:00",
+      "originGroup": "vat-reform-20190320",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "From April 1, the VAT rate for manufacturing and other 16% categories would fall to 13%, and the 10% rate for transport/construction would fall to 9%."
+      ],
+      "entities": [
+        "manufacturing",
+        "VAT"
+      ],
+      "observedChanges": [
+        "broad tax burden falls starting immediately after cutoff"
+      ]
+    },
+    {
+      "itemId": "nbs-pork-20190309",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "dataset",
+      "title": "2019年2月份居民消费价格同比上涨1.5%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1900246.html",
+      "publishedAt": "2019-03-09T09:30:00+08:00",
+      "availableAt": "2019-03-09T09:30:00+08:00",
+      "originGroup": "nbs-pork-20190309",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "February pork prices were still -4.8% YoY and only +0.3% MoM, so the later 2019 scarcity earnings regime was not yet visible in official consumer-price data."
+      ],
+      "entities": [
+        "pork",
+        "hog supply"
+      ],
+      "observedChanges": [
+        "ASF narrative has not yet converted into a clear positive pork-price regime at cutoff"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2019q1-xiangshui-dye-supply-shock",
+      "statement": "The March 21 Xiangshui explosion removed a meaningful supplier of dye intermediates and triggered immediate m-phenylenediamine/dye repricing, creating a potentially finite but measurable earnings windfall for unaffected integrated leaders.",
+      "changeType": "sudden_supply_disruption",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-03-22T08:54:00+08:00",
+      "memberItemIds": [
+        "mem-xiangshui-20190322",
+        "stcn-dye-20190324",
+        "swhy-dye-20190325"
+      ],
+      "independentOriginGroups": [
+        "mem-xiangshui-20190322",
+        "stcn-dye-20190324",
+        "swhy-dye-20190325"
+      ],
+      "affectedValueChain": [
+        "dye intermediates",
+        "disperse dyes",
+        "integrated chemical producers",
+        "downstream printing/dyeing"
+      ],
+      "contradictionSearchNotes": "The price shock is real but may be transient and was immediately traded. Deep research must verify which listed companies are operationally unaffected, have direct sellable capacity, and retain expectation room after the first rerating.",
+      "researchQuestion": "Can an unaffected integrated producer show a quantifiable price-to-earnings bridge before normalization, making this a valid V1.5 base-horizon convexity case?"
+    },
+    {
+      "eventId": "event-2019q1-broker-earnings-inflection",
+      "statement": "Rapid recovery in A-share turnover and self-trading conditions had already converted into strong January-February broker profits, but the brokerage sector itself had sharply rerated by late March.",
+      "changeType": "market_activity_earnings_inflection",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-03-06T00:00:00+08:00",
+      "memberItemIds": [
+        "citic-feb-20190306",
+        "cs-broker-20190312",
+        "21cbh-broker-20190321"
+      ],
+      "independentOriginGroups": [
+        "citic-feb-20190306",
+        "cs-broker-20190312",
+        "21cbh-broker-20190321"
+      ],
+      "affectedValueChain": [
+        "equity turnover",
+        "broker commissions",
+        "proprietary trading",
+        "margin financing",
+        "broker earnings"
+      ],
+      "contradictionSearchNotes": "Realized monthly earnings are strong, but stock-price absorption is also extreme and market activity can normalize quickly. Deep research must distinguish a genuine residual earnings gap from chasing the rally.",
+      "researchQuestion": "Did any liquid A-share broker retain enough expectation/valuation room for base-horizon selection after the sector's YTD rerating?"
+    },
+    {
+      "eventId": "event-2019q1-excavator-demand-acceleration",
+      "statement": "Jan-Feb excavator sales accelerated nearly 40% YoY, while the leading OEM entered 2019 with very strong profit growth and share gains, indicating continued machinery earnings momentum.",
+      "changeType": "high_frequency_demand_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2019-01-26T00:00:00+08:00",
+      "memberItemIds": [
+        "sany-guidance-20190126",
+        "people-excavator-20190324"
+      ],
+      "independentOriginGroups": [
+        "sany-guidance-20190126",
+        "people-excavator-20190324"
+      ],
+      "affectedValueChain": [
+        "excavator OEMs",
+        "hydraulics/components",
+        "infrastructure construction"
+      ],
+      "contradictionSearchNotes": "2018 was already a boom year, so strong absolute growth may be well anticipated. Deep research must measure late-cycle/expectation burden rather than extrapolate unit growth mechanically.",
+      "researchQuestion": "Which machinery expressions still had revision room and acceptable downside at March 31 despite the already-visible boom?"
+    },
+    {
+      "eventId": "event-2019q1-msci-a-share-weight-increase",
+      "statement": "MSCI formally committed to raising A-share inclusion from 5% to 20% across 2019, creating scheduled foreign-flow demand but with diffuse company-level earnings transmission.",
+      "changeType": "scheduled_index_flow_expansion",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-02-28T22:10:00+00:00",
+      "memberItemIds": [
+        "msci-weight-20190228"
+      ],
+      "independentOriginGroups": [
+        "msci-weight-20190228"
+      ],
+      "affectedValueChain": [
+        "A-share large caps",
+        "Stock Connect",
+        "brokers/custody",
+        "passive funds"
+      ],
+      "contradictionSearchNotes": "Index flows can move prices without improving company earnings. Do not treat broad inclusion as a fundamental company-engine signal unless a direct monetization path exists.",
+      "researchQuestion": "Is there any direct listed expression with measurable earnings conversion, or should this remain a broad flow event without stock selection?"
+    },
+    {
+      "eventId": "event-2019q1-vat-manufacturing-cut",
+      "statement": "The government locked in a manufacturing VAT cut from 16% to 13% effective April 1, lowering tax burden broadly but with highly heterogeneous pass-through to prices, customers and margins.",
+      "changeType": "broad_tax_policy_change",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2019-03-20T16:31:00+08:00",
+      "memberItemIds": [
+        "vat-reform-20190320"
+      ],
+      "independentOriginGroups": [
+        "vat-reform-20190320"
+      ],
+      "affectedValueChain": [
+        "manufacturing",
+        "construction",
+        "transport",
+        "consumer prices"
+      ],
+      "contradictionSearchNotes": "VAT cuts may be passed through to customers rather than retained as margin, so broad thematic mapping is unsafe without company-specific pricing power and tax-base evidence.",
+      "researchQuestion": "Does any coherent company/industry subset have a direct, under-reflected earnings bridge, or is the event too broad for selection?"
+    },
+    {
+      "eventId": "event-2019q1-pork-scarcity-not-yet-confirmed",
+      "statement": "African-swine-fever concerns existed, but the latest cutoff-valid NBS data still showed pork prices down 4.8% YoY, so the later scarcity regime was not yet confirmed by the observable physical price signal.",
+      "changeType": "narrative_without_physical_confirmation",
+      "noveltyAssessment": "uncertain",
+      "firstAvailableAt": "2019-03-09T09:30:00+08:00",
+      "memberItemIds": [
+        "nbs-pork-20190309"
+      ],
+      "independentOriginGroups": [
+        "nbs-pork-20190309"
+      ],
+      "affectedValueChain": [
+        "hog producers",
+        "pork prices",
+        "feed",
+        "meat processors"
+      ],
+      "contradictionSearchNotes": "Future 2019 scarcity must not leak backward into Q1. Deep research should fail closed unless company-level sales prices/costs already show a measurable turn before March 31.",
+      "researchQuestion": "Is there enough pre-cutoff producer-specific evidence to override the still-weak official pork-price signal?"
+    }
+  ]
+}
