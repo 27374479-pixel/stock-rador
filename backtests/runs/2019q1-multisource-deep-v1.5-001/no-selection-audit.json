@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019q1-multisource-deep-v1.5-001",
+  "label": "post_outcome_no_selection_miss_audit",
+  "samePeriodMayTuneSkill": false,
+  "diagnosticOnly": true,
+  "lockVerified": true,
+  "lockRunId": "2019q1-multisource-deep-v1.5-001",
+  "cutoffDate": "2019-03-31",
+  "entryDate": "2019-04-01",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "baskets": [
+    {
+      "basketId": "pork-preconfirmation",
+      "label": "Frozen hog-producer diagnostic basket before physical scarcity confirmation",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "002714.SZ",
+        "300498.SZ",
+        "000876.SZ"
+      ],
+      "tickerResults": [
+        {
+          "ticker": "002714.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2019-04-29",
+              "netReturn": -0.05333972134055576,
+              "benchmarkReturn": -0.0002153200193788507,
+              "excessReturn": -0.053124401321176906
+            },
+            "60": {
+              "exitDate": "2019-06-28",
+              "netReturn": -0.09589731171004756,
+              "benchmarkReturn": -0.01937367507696408,
+              "excessReturn": -0.07652363663308348
+            },
+            "120": {
+              "exitDate": "2019-09-23",
+              "netReturn": 0.11189277365273753,
+              "benchmarkReturn": -0.002694063575799155,
+              "excessReturn": 0.11458683722853669
+            }
+          }
+        },
+        {
+          "ticker": "300498.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2019-04-29",
+              "netReturn": -0.03807229850103533,
+              "benchmarkReturn": -0.0002153200193788507,
+              "excessReturn": -0.03785697848165648
+            },
+            "60": {
+              "exitDate": "2019-06-28",
+              "netReturn": -0.1130156054837399,
+              "benchmarkReturn": -0.01937367507696408,
+              "excessReturn": -0.09364193040677582
+            },
+            "120": {
+              "exitDate": "2019-09-23",
+              "netReturn": -0.05888809915461135,
+              "benchmarkReturn": -0.002694063575799155,
+              "excessReturn": -0.056194035578812196
+            }
+          }
+        },
+        {
+          "ticker": "000876.SZ",
+          "status": "ok",
+          "horizons": {
+            "20": {
+              "exitDate": "2019-04-29",
+              "netReturn": 0.15715266258801774,
+              "benchmarkReturn": -0.0002153200193788507,
+              "excessReturn": 0.1573679826073966
+            },
+            "60": {
+              "exitDate": "2019-06-28",
+              "netReturn": 0.26953786703619875,
+              "benchmarkReturn": -0.01937367507696408,
+              "excessReturn": 0.28891154211316283
+            },
+            "120": {
+              "exitDate": "2019-09-23",
+              "netReturn": 0.32033007296872307,
+              "benchmarkReturn": -0.002694063575799155,
+              "excessReturn": 0.3230241365445222
+            }
+          }
+        }
+      ],
+      "horizons": {
+        "20": {
+          "count": 3,
+          "meanNetReturn": 0.02191354758214222,
+          "benchmarkReturn": -0.0002153200193788507,
+          "meanExcessReturn": 0.02212886760152107,
+          "positiveExcessBreadth": 0.3333333333333333
+        },
+        "60": {
+          "count": 3,
+          "meanNetReturn": 0.020208316614137096,
+          "benchmarkReturn": -0.01937367507696408,
+          "meanExcessReturn": 0.03958199169110118,
+          "positiveExcessBreadth": 0.3333333333333333
+        },
+        "120": {
+          "count": 3,
+          "meanNetReturn": 0.12444491582228308,
+          "benchmarkReturn": -0.002694063575799155,
+          "meanExcessReturn": 0.12713897939808225,
+          "positiveExcessBreadth": 0.6666666666666666
+        }
+      }
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2019q1-msci-a-share-weight-increase",
+      "reason": "No company-specific frozen earnings expression was mapped; do not invent a post-hoc beneficiary basket."
+    },
+    {
+      "hypothesisId": "h-2019q1-vat-manufacturing-cut",
+      "reason": "Aggregate VAT hypothesis explicitly required decomposition and froze no company basket; do not hindsight-map beneficiaries."
+    }
+  ]
+}
