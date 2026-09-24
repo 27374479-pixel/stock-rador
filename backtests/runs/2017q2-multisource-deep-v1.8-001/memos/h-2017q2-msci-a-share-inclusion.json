@@ -1,0 +1,204 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.8.0",
+  "cutoffAt": "2017-06-30T23:59:59+08:00",
+  "researchReadyAt": "2017-06-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2017q2-msci-a-share-inclusion",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "MSCI inclusion is structurally positive but implementation was about one year away, initial index weight only about 0.73%, and quality large caps were already strongly rerated before cutoff."
+  },
+  "changeHypothesis": {
+    "summary": "MSCI formally approved A-share inclusion, improving structural international access, but actual index implementation was delayed to June 2018 with a small initial weight while high-quality large caps had already strongly outperformed.",
+    "firstCredibleDate": "2017-06-21",
+    "valueChain": [
+      "global index methodology",
+      "Stock Connect accessibility",
+      "foreign allocation",
+      "large-cap ownership",
+      "company valuation"
+    ],
+    "persistenceReason": "International ownership/access can improve structurally over years, but immediate passive flow at Q2 2017 cutoff was limited.",
+    "disconfirmingEvidence": [
+      "Formal implementation was about one year away.",
+      "Initial pro-forma MSCI EM weight was only about 0.73%.",
+      "The frozen large-cap quality basket was already +19.50pp excess over 60d with 100% positive breadth.",
+      "Strong company fundamentals such as Midea's existed independently of MSCI and do not prove incremental MSCI earnings."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "msci-a-share-20170620",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "MSCI inclusion is an official structural accessibility change, but delayed and initially small."
+    },
+    {
+      "id": "midea-q1-20170429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "A representative quality large cap already had strong operating fundamentals independent of MSCI inclusion."
+    },
+    {
+      "id": "regime-msci-20170630",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "The quality large-cap basket had already rerated strongly before/around the announcement."
+    }
+  ],
+  "causalChain": [],
+  "valueChainMap": {
+    "directWinners": [
+      "A-shares eventually included in global indexes if foreign ownership demand grows"
+    ],
+    "secondOrderWinners": [
+      "broker/custody/Connect infrastructure"
+    ],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [
+      "implementation date",
+      "initial index weight",
+      "foreign access/ownership limits"
+    ],
+    "falseThemeMatches": [
+      "any high-quality large cap treated as an immediate MSCI earnings beneficiary"
+    ]
+  },
+  "aShareCandidates": [],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Company quality is not the same as an incremental MSCI event edge; delayed small initial flow plus strong prior rerating leaves no clean event-specific selection."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The frozen quality large-cap basket was +8.81pp excess over 20d and +19.50pp over 60d with 100% positive 60d breadth.",
+    "thesisExpectation": "Foreign ownership may structurally rise over years, but the 60-day base horizon does not have a large forced passive-flow catalyst.",
+    "measurableGap": "No event-specific company earnings gap is measurable beyond already-recognized quality/large-cap rerating.",
+    "evidenceRefs": [
+      "msci-a-share-20170620",
+      "midea-q1-20170429",
+      "regime-msci-20170630"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "A-share large-cap accessibility/ownership under MSCI inclusion",
+    "geographicScope": "China A shares/global EM allocation",
+    "customerScope": "foreign institutional/index-linked investors",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Keep structural ownership/accessibility separate from company operating earnings and from generic quality-factor performance.",
+    "evidenceRefs": [
+      "msci-a-share-20170620",
+      "midea-q1-20170429",
+      "regime-msci-20170630"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "announcement effect versus no immediate inclusion flow",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "msci-a-share-20170620",
+        "regime-msci-20170630"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "structural anticipation but formal inclusion still ~1 year away",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "msci-a-share-20170620"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "greater global benchmark accessibility/ownership",
+      "horizon": "years",
+      "evidenceRefs": [
+        "msci-a-share-20170620"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not convert a long-duration ownership state into a base-horizon stock selection without a separate company/valuation edge.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "none",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Quality companies are strong, but their operating strength predates and is not caused by the MSCI event.",
+    "evidenceRefs": [
+      "midea-q1-20170429",
+      "regime-msci-20170630"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection on the MSCI event itself: structural accessibility is real, but immediate flow is delayed/small and quality large caps are already rerated.",
+    "alreadyPricedAssessment": "structural_good_news_with_high_largecap_absorption",
+    "constraints": [
+      "implementation delay",
+      "small initial weight",
+      "already strong large-cap rerating",
+      "no direct operating-earnings bridge"
+    ]
+  },
+  "bearCase": "MSCI inclusion is genuinely positive long term but offers no special near/base-horizon edge beyond an already crowded quality/large-cap trade.",
+  "invalidationConditions": [
+    {
+      "indicator": "MSCI implementation/foreign flow",
+      "observationMethod": "official index/Connect flow data",
+      "threshold": "material near-term flow acceleration far above the frozen 0.73% initial-weight path"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No event-specific selection; revisit only with a separate underabsorbed company/valuation edge or unexpectedly accelerated foreign flow."
+  ]
+}
