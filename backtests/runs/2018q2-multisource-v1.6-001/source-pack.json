@@ -1,0 +1,428 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2018q2-multisource-v1.6-001",
+  "cutoffAt": "2018-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Historical 2018Q2 replay built in September 2026 with current model/search weights. Only evidence publicly available by 2018-06-30 is frozen; current-model/search contamination remains uncontrolled.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy, regulatory and index-rule changes.",
+      "coverageStatus": "partial",
+      "limitations": "Selected MEE, NDRC/NEA and MSCI releases; no exhaustive official crawl."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer filings and company disclosures.",
+      "coverageStatus": "unavailable",
+      "limitations": "Deferred until after discovery lock to avoid issuer-first opportunity construction."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable unit demand and market-clearing industry conditions.",
+      "coverageStatus": "partial",
+      "limitations": "Selected construction-machinery physical sales data."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Independent contemporaneous reporting of major market/technology changes.",
+      "coverageStatus": "partial",
+      "limitations": "Selected China Securities Journal/Xinhua reporting."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Industry-specialist supply/demand, quota and product-cycle evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected paper-industry research and TrendForce; not an exhaustive trade crawl."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "mee-wastepaper-standard-20180301",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "进口可用作原料的固体废物环境保护控制标准—废纸或纸板",
+      "publisher": "生态环境部",
+      "url": "https://www.mee.gov.cn/ywgz/fgbz/bz/bzwb/gthw/gtfwwrkzbz/201801/t20180111_429537.shtml",
+      "publishedAt": "2018-01-11T00:00:00+08:00",
+      "availableAt": "2018-01-11T00:00:00+08:00",
+      "originGroup": "mee-wastepaper-standard-20180301",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "GB 16487.4-2017 tightened environmental-control requirements for imported waste paper and took effect on March 1, 2018."
+      ],
+      "entities": [
+        "imported waste paper",
+        "recycled fiber",
+        "paper packaging"
+      ],
+      "observedChanges": [
+        "imported recycled-fiber access becomes more constrained and compliance-sensitive"
+      ]
+    },
+    {
+      "itemId": "paper-quota-20180422",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "龙头外废配额较大，成本优势显著",
+      "publisher": "华泰证券轻工",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201804231127839739_1.pdf?1524497564000.pdf=",
+      "publishedAt": "2018-04-22T00:00:00+08:00",
+      "availableAt": "2018-04-22T00:00:00+08:00",
+      "originGroup": "paper-quota-20180422",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The first ten 2018 waste-paper import-license batches approved about 9.4431 million tons, down 65.7% versus the first ten batches of 2017.",
+        "Quota shares were concentrated among leaders: Nine Dragons about 36%, Lee & Man 16%, Shanying 13% and Guangzhou Paper 8%.",
+        "At the time, corrugated-paper and domestic-OCC prices were roughly stable, so the quota/access change could precede a clearer downstream spread response."
+      ],
+      "entities": [
+        "waste-paper quota",
+        "recycled fiber",
+        "packaging paper"
+      ],
+      "observedChanges": [
+        "industry imported-fiber availability falls sharply while quota access concentrates in leaders"
+      ]
+    },
+    {
+      "itemId": "paper-cost-gap-20180508",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "commentary",
+      "title": "废纸配额集中与龙头成本优势跟踪",
+      "publisher": "轻工行业研究",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201805081138046572_1.pdf",
+      "publishedAt": "2018-05-08T00:00:00+08:00",
+      "availableAt": "2018-05-08T00:00:00+08:00",
+      "originGroup": "paper-cost-gap-20180508",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The first eleven 2018 import-waste-paper batches totaled roughly 11.01 million tons and the top three groups received about 61.8% of quota.",
+        "The report estimated a material raw-fiber cost gap between quota-rich leaders able to use imported waste paper and smaller mills relying mainly on domestic waste paper."
+      ],
+      "entities": [
+        "waste paper",
+        "packaging paper",
+        "import quota"
+      ],
+      "observedChanges": [
+        "relative raw-material state improves for quota-rich leaders even while industry-wide fiber scarcity worsens"
+      ]
+    },
+    {
+      "itemId": "excavator-may-20180623",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "工程机械景气度高企 龙头股强者恒强",
+      "publisher": "中国证券报·中证网",
+      "url": "https://www.cs.com.cn/gppd/201806/t20180623_5827948.html",
+      "publishedAt": "2018-06-23T08:57:00+08:00",
+      "availableAt": "2018-06-23T08:57:00+08:00",
+      "originGroup": "excavator-may-20180623",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "May excavator sales were 19,313 units, +71.3% YoY and a historical monthly high.",
+        "Jan-May excavator sales were 105,935 units, +60.2% YoY; exports were +103.9% YoY."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery"
+      ],
+      "observedChanges": [
+        "physical equipment demand remains exceptionally strong through May"
+      ]
+    },
+    {
+      "itemId": "excavator-may-ccma-20180615",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "5月挖掘机销售19313台 前5月累计超10万台",
+      "publisher": "中国工程机械工业协会挖掘机械分会/第一工程机械网",
+      "url": "https://news.d1cm.com/2018061597170.shtml",
+      "publishedAt": "2018-06-15T11:38:00+08:00",
+      "availableAt": "2018-06-15T11:38:00+08:00",
+      "originGroup": "excavator-may-ccma-20180615",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Association data independently recorded strong Jan-May 2018 excavator volumes and continued high YoY growth."
+      ],
+      "entities": [
+        "excavators",
+        "construction machinery"
+      ],
+      "observedChanges": [
+        "industry volume remains high despite a high comparison base"
+      ]
+    },
+    {
+      "itemId": "pv-531-20180601",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于2018年光伏发电有关事项的通知（发改能源〔2018〕823号）",
+      "publisher": "国家发展改革委/财政部/国家能源局",
+      "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201806/t20180601_962736.html",
+      "publishedAt": "2018-06-01T00:00:00+08:00",
+      "availableAt": "2018-06-01T00:00:00+08:00",
+      "originGroup": "pv-531-20180601",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The policy temporarily stopped arranging 2018 construction quota for ordinary subsidized PV power stations.",
+        "About 10GW was arranged for distributed PV, while subsidy/tariff policy was tightened."
+      ],
+      "entities": [
+        "photovoltaics",
+        "distributed PV",
+        "utility PV"
+      ],
+      "observedChanges": [
+        "domestic subsidized PV demand path is abruptly reset lower"
+      ]
+    },
+    {
+      "itemId": "pv-531-qa-20180601",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家能源局新能源司和国家发展改革委价格司负责同志就《关于2018年光伏发电有关事项的通知》答记者问",
+      "publisher": "国家能源局",
+      "url": "https://www.nea.gov.cn/2018-06/01/c_137223463.htm",
+      "publishedAt": "2018-06-01T00:00:00+08:00",
+      "availableAt": "2018-06-01T00:00:00+08:00",
+      "originGroup": "pv-531-qa-20180601",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Officials confirmed the pause in ordinary subsidized station quota and clarified the roughly 10GW distributed-PV arrangement."
+      ],
+      "entities": [
+        "PV demand",
+        "subsidy",
+        "distributed PV"
+      ],
+      "observedChanges": [
+        "policy shock is confirmed as a real demand-side reset rather than rumor"
+      ]
+    },
+    {
+      "itemId": "nand-oversupply-20180627",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Price Decline Will Continue in NAND Flash Market in 2H18 due to Weak Growth Momentum",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20180627-10015.html",
+      "publishedAt": "2018-06-27T00:00:00+08:00",
+      "availableAt": "2018-06-27T00:00:00+08:00",
+      "originGroup": "nand-oversupply-20180627",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "NAND contract prices had already declined for two consecutive quarters in 1H18.",
+        "64/72-layer 3D NAND yield/output kept improving while smartphone/notebook/tablet demand growth was weak; further price declines were expected."
+      ],
+      "entities": [
+        "NAND Flash",
+        "3D NAND",
+        "SSD"
+      ],
+      "observedChanges": [
+        "supply/output state outruns demand and pushes the product cycle downward"
+      ]
+    },
+    {
+      "itemId": "5g-sa-20180615",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "5G独立组网标准出台",
+      "publisher": "新华社/中央网信办",
+      "url": "https://www.cac.gov.cn/2018-06/15/c_1122989205.htm",
+      "publishedAt": "2018-06-15T12:06:00+08:00",
+      "availableAt": "2018-06-15T12:06:00+08:00",
+      "originGroup": "5g-sa-20180615",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "3GPP approved the 5G NR standalone standard, completing a major first-phase standardization milestone and enabling further equipment testing and network preparation."
+      ],
+      "entities": [
+        "5G",
+        "3GPP",
+        "telecom equipment"
+      ],
+      "observedChanges": [
+        "5G moves from incomplete standards toward a testable standalone architecture"
+      ]
+    },
+    {
+      "itemId": "msci-may-review-20180514",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "MSCI Global Standard Indexes May 2018 Semi-Annual Index Review",
+      "publisher": "MSCI",
+      "url": "https://app2.msci.com/webapp/index_ann/DocGet?format=html&lang=en&pub_key=Am%2BNbW3rdUE%3D",
+      "publishedAt": "2018-05-14T00:00:00+00:00",
+      "availableAt": "2018-05-14T00:00:00+00:00",
+      "originGroup": "msci-may-review-20180514",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "MSCI announced the first partial inclusion step for China A shares: 234 names at a 2.5% inclusion factor, with a second step scheduled for August.",
+        "The aggregate A-share weight in the MSCI Emerging Markets Index was initially small, so the event primarily changed portfolio-flow access rather than issuer earnings."
+      ],
+      "entities": [
+        "MSCI",
+        "China A shares",
+        "foreign index flows"
+      ],
+      "observedChanges": [
+        "scheduled benchmark-linked foreign demand becomes operational"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2018q2-wastepaper-quota-concentration",
+      "statement": "Imported recycled-fiber availability fell sharply under tighter waste-paper rules, while import quota became concentrated in a handful of packaging-paper leaders, potentially creating a relative raw-material cost state that precedes visible downstream paper-margin differentiation.",
+      "changeType": "upstream_input_access_concentration",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-04-22T00:00:00+08:00",
+      "memberItemIds": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508"
+      ],
+      "independentOriginGroups": [
+        "mee-wastepaper-standard-20180301",
+        "paper-quota-20180422",
+        "paper-cost-gap-20180508"
+      ],
+      "affectedValueChain": [
+        "imported recycled fiber",
+        "domestic waste paper",
+        "packaging-paper mills",
+        "boxboard/corrugated paper"
+      ],
+      "contradictionSearchNotes": "Industry-wide imported-fiber scarcity can raise domestic OCC costs and hurt all producers. Deep research must distinguish absolute industry pressure from relative quota/access advantage and prove that a listed leader can convert that state into earnings without the benefit already being fully priced.",
+      "researchQuestion": "Does concentrated imported-fiber access create a cutoff-valid, measurable cost/earnings advantage for an A-share packaging-paper leader before downstream paper-price/margin flows fully reflect it?"
+    },
+    {
+      "eventId": "event-2018q2-machinery-high-demand",
+      "statement": "May excavator sales reached a historical monthly high and Jan-May volumes remained up about 60% YoY, preserving a strong physical machinery cycle into late Q2.",
+      "changeType": "high_frequency_demand_strength",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-06-15T11:38:00+08:00",
+      "memberItemIds": [
+        "excavator-may-ccma-20180615",
+        "excavator-may-20180623"
+      ],
+      "independentOriginGroups": [
+        "excavator-may-ccma-20180615",
+        "excavator-may-20180623"
+      ],
+      "affectedValueChain": [
+        "construction demand",
+        "excavator OEMs",
+        "hydraulic components",
+        "equipment suppliers"
+      ],
+      "contradictionSearchNotes": "The cycle has already been strong for many quarters. Deep research must test leader earnings/valuation and high-base risk rather than treating record unit sales as automatically under-reflected.",
+      "researchQuestion": "Do leading machinery companies still have measurable earnings/expectation room at June 30 after the high-growth cycle has become widely visible?"
+    },
+    {
+      "eventId": "event-2018q2-pv-531-demand-reset",
+      "statement": "The June 1 '531' policy abruptly reduced the 2018 subsidized domestic PV construction path by pausing ordinary station quota and limiting distributed-PV support.",
+      "changeType": "policy_demand_contraction",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-06-01T00:00:00+08:00",
+      "memberItemIds": [
+        "pv-531-20180601",
+        "pv-531-qa-20180601"
+      ],
+      "independentOriginGroups": [
+        "pv-531-20180601",
+        "pv-531-qa-20180601"
+      ],
+      "affectedValueChain": [
+        "PV project demand",
+        "modules/wafers",
+        "polysilicon",
+        "inverters",
+        "low-cost survivors"
+      ],
+      "contradictionSearchNotes": "Long-run grid parity and cost decline can favor efficient leaders later, but the cutoff event is a near-term demand shock. Do not import later policy relief or recovery into the June 30 decision.",
+      "researchQuestion": "Is there already a company-specific cost/share engine strong enough to offset the immediate domestic demand reset, or should the Skill fail closed?"
+    },
+    {
+      "eventId": "event-2018q2-nand-oversupply",
+      "statement": "NAND had entered an oversupply/price-downcycle as 64/72-layer yields and bit output improved faster than weak end-demand growth.",
+      "changeType": "capacity_supply_acceleration",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2018-06-27T00:00:00+08:00",
+      "memberItemIds": [
+        "nand-oversupply-20180627"
+      ],
+      "independentOriginGroups": [
+        "nand-oversupply-20180627"
+      ],
+      "affectedValueChain": [
+        "NAND wafer supply",
+        "SSD/eMMC pricing",
+        "memory suppliers",
+        "device/storage buyers"
+      ],
+      "contradictionSearchNotes": "Lower NAND prices may benefit downstream storage buyers, but no positive A-share expression should be invented without a direct earnings bridge.",
+      "researchQuestion": "Does the falling NAND state create any direct positive A-share earnings expression, or is it only a negative product-cycle control?"
+    },
+    {
+      "eventId": "event-2018q2-5g-sa-standard",
+      "statement": "3GPP completed the 5G standalone standard, removing a technical-standardization dependency and enabling further testing, but commercial operator capex/order conversion was still a separate later step.",
+      "changeType": "technical_standard_completion",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-06-15T12:06:00+08:00",
+      "memberItemIds": [
+        "5g-sa-20180615"
+      ],
+      "independentOriginGroups": [
+        "5g-sa-20180615"
+      ],
+      "affectedValueChain": [
+        "5G testing",
+        "network equipment",
+        "optical components",
+        "operator capex"
+      ],
+      "contradictionSearchNotes": "A completed standard is structurally important but not itself a supplier revenue event. Deep research must require orders/earnings rather than buying standardization beta.",
+      "researchQuestion": "Does any A-share supplier have a cutoff-valid order/earnings bridge from SA completion, or should this remain non-actionable?"
+    },
+    {
+      "eventId": "event-2018q2-msci-first-inclusion",
+      "statement": "MSCI implemented the first partial inclusion of China A shares at a 2.5% inclusion factor, creating scheduled benchmark-linked foreign flows without directly changing issuer operating earnings.",
+      "changeType": "scheduled_index_flow",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2018-05-14T00:00:00+00:00",
+      "memberItemIds": [
+        "msci-may-review-20180514"
+      ],
+      "independentOriginGroups": [
+        "msci-may-review-20180514"
+      ],
+      "affectedValueChain": [
+        "A-share large caps",
+        "Stock Connect",
+        "passive/benchmark funds"
+      ],
+      "contradictionSearchNotes": "Index demand can affect prices but is not a company earnings bridge. Do not map generic large-cap beneficiaries unless a direct monetization mechanism exists.",
+      "researchQuestion": "Is there any direct company-level earnings conversion, or should the event remain a broad market-flow observation without stock selection?"
+    }
+  ]
+}
