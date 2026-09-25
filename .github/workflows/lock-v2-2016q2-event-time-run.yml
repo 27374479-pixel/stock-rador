@@ -1,0 +1,37 @@
+name: lock-v2-2016q2-event-time-run
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2016q2-expanded-discovery-20260925
+    paths:
+      - .github/workflows/lock-v2-2016q2-event-time-run.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2016q2-expanded-discovery-20260925
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Validate and freeze 2016Q2 event-time run
+        run: |
+          rm -f backtests/runs/2016q2-expanded-discovery-v2.0-001/lock.json
+          node scripts/lock-skill-run-v190.cjs             backtests/runs/2016q2-expanded-discovery-v2.0-001/manifest.json             backtests/runs/2016q2-expanded-discovery-v2.0-001/lock.json
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2016q2-expanded-discovery-v2.0-001/lock.json
+          git commit -m "backtest: lock 2016Q2 expanded-discovery event-time run"
+          git pull --rebase origin ai-skill-v2.0-2016q2-expanded-discovery-20260925
+          git push origin HEAD:ai-skill-v2.0-2016q2-expanded-discovery-20260925
