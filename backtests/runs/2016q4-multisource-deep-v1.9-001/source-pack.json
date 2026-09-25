@@ -1,0 +1,661 @@
+{
+  "schemaVersion": "2.0",
+  "runId": "2016q4-multisource-deep-v1.9-001",
+  "cutoffAt": "2016-12-31T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Second untouched V1.9 validation window at repository/version-design level. Current model/search may expose later historical context. Only sources provably public by 2016-12-31 are frozen; no post-cutoff stock outcomes are opened before lock.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official fiscal, regulatory and market-structure policy.",
+      "coverageStatus": "partial",
+      "limitations": "Selected MOF and CSRC records; not exhaustive."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company mapping intentionally deferred until discovery freeze."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Observable production/supply/price state changes.",
+      "coverageStatus": "partial",
+      "limitations": "Selected coal and chemical capacity/price evidence."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Contemporaneous independent reporting on policy and global supply events.",
+      "coverageStatus": "partial",
+      "limitations": "Selected Xinhua/China Securities Journal coverage."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Industry-specific product/capacity evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected chemical-industry research/price evidence only."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "property-tightening-20161005",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "多地出台楼市调控措施：分城施策 考验调控智慧",
+      "publisher": "经济日报/新华网",
+      "url": "https://www.xinhuanet.com/politics/2016-10/05/c_129311341.htm",
+      "publishedAt": "2016-10-05T09:06:47+08:00",
+      "availableAt": "2016-10-05T09:06:47+08:00",
+      "originGroup": "property-tightening-20161005",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Around the National Day holiday, many hot cities including Beijing, Tianjin, Hefei and Zhengzhou tightened property policy with purchase restrictions, higher down-payment ratios and differentiated mortgage rules.",
+        "The stated objective was to suppress investment/speculative demand and cool overheated housing markets.",
+        "This marked a policy turn away from the prior broad easing/rapid-price-rise phase in hot cities."
+      ],
+      "entities": [
+        "property",
+        "purchase restrictions",
+        "mortgage policy",
+        "developers"
+      ],
+      "observedChanges": [
+        "a new multi-city demand/credit tightening regime begins in hot housing markets"
+      ]
+    },
+    {
+      "itemId": "auto-tax-reset-20161213",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于减征1.6升及以下排量乘用车车辆购置税的通知",
+      "publisher": "财政部",
+      "url": "https://www.mof.gov.cn/gp/xxgkml/szs/201612/t20161215_2510636.htm",
+      "publishedAt": "2016-12-13T00:00:00+08:00",
+      "availableAt": "2016-12-15T00:00:00+08:00",
+      "originGroup": "auto-tax-reset-20161213",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "From 2017-01-01 through 2017-12-31, purchase tax on passenger vehicles with engine displacement at or below 1.6L would be levied at 7.5%.",
+        "The prior 5% temporary incentive therefore partially rolled back rather than ending completely; the legal rate would return to 10% from 2018.",
+        "The policy creates a measurable demand-baseline reset for OEMs exposed to small-displacement passenger vehicles."
+      ],
+      "entities": [
+        "passenger vehicles",
+        "1.6L purchase tax",
+        "auto OEMs"
+      ],
+      "observedChanges": [
+        "a new partial rollback of the small-engine auto demand subsidy is fixed for 2017"
+      ]
+    },
+    {
+      "itemId": "opec-cut-20161201",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "欧佩克8年来首次决定减产",
+      "publisher": "新华社",
+      "url": "https://www.xinhuanet.com/world/2016-12/01/c_129385619.htm",
+      "publishedAt": "2016-12-01T06:02:32+08:00",
+      "availableAt": "2016-12-01T06:02:32+08:00",
+      "originGroup": "opec-cut-20161201",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "OPEC agreed on Nov-30 to cut crude production by about 1.2m barrels per day and cap output near 32.5m bpd beginning 2017-01-01.",
+        "It was OPEC's first formal production-cut decision since 2008 and explicitly targeted a more balanced oil market."
+      ],
+      "entities": [
+        "OPEC",
+        "crude oil",
+        "production cut",
+        "upstream oil"
+      ],
+      "observedChanges": [
+        "a new global crude-supply state begins with a formal coordinated cut"
+      ]
+    },
+    {
+      "itemId": "opec-price-response-20161201",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "欧佩克8年来首达减产协议 国际油价大涨",
+      "publisher": "新华社",
+      "url": "https://www.xinhuanet.com/world/2016-12/01/c_1120031774.htm",
+      "publishedAt": "2016-12-01T14:45:19+08:00",
+      "availableAt": "2016-12-01T14:45:19+08:00",
+      "originGroup": "opec-price-response-20161201",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The OPEC agreement was accompanied by an understanding that non-OPEC producers would also cut, including a Russian commitment of roughly 300kbpd.",
+        "WTI rose about 9.31% and Brent about 8.82% on Nov-30, showing immediate market absorption of the new supply agreement."
+      ],
+      "entities": [
+        "OPEC",
+        "Russia",
+        "WTI",
+        "Brent"
+      ],
+      "observedChanges": [
+        "the fresh supply agreement is immediately reflected in crude prices, creating a clear expectation-absorption test"
+      ]
+    },
+    {
+      "itemId": "coal-330-release-20161124",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "发改委再次强调：基本面不支持钢铁煤炭价格大幅上涨",
+      "publisher": "中国证券报·中证网",
+      "url": "https://www.cs.com.cn/zzqh2020/201611/t20161124_5102586.html",
+      "publishedAt": "2016-11-24T00:00:00+08:00",
+      "availableAt": "2016-11-24T00:00:00+08:00",
+      "originGroup": "coal-330-release-20161124",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "After an 18-week coal-price rise of more than 60% from the start of the year, policy measures had begun to reverse the shortage.",
+        "A new policy allowed all legal and compliant coal mines meeting safety conditions to organize production on a 330-working-day basis through the heating season.",
+        "The Bohai-Rim 5500kcal coal index had already fallen for three consecutive weeks by late November, indicating that supply normalization was beginning to affect the downstream price flow."
+      ],
+      "entities": [
+        "thermal coal",
+        "276-day rule",
+        "330-day production",
+        "legal compliant mines"
+      ],
+      "observedChanges": [
+        "a new supply-release regime begins to counter the earlier policy-induced coal shortage"
+      ]
+    },
+    {
+      "itemId": "coal-policy-detail-20161129",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "commentary",
+      "title": "汾渭能源常毅军：明年动力煤、炼焦煤供需如何演变？",
+      "publisher": "中证网",
+      "url": "https://www.cs.com.cn/zzqh/spqh/201611/t20161129_5105909.html",
+      "publishedAt": "2016-11-29T00:00:00+08:00",
+      "availableAt": "2016-11-29T00:00:00+08:00",
+      "originGroup": "coal-policy-detail-20161129",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The report described a progression from partial capacity releases in September/October to Nov-16 coverage allowing all safe, compliant operating mines to use a 330-day production schedule.",
+        "It estimated the 276-versus-330-day difference represented several hundred million tonnes of effective annualized supply, explaining why the policy change was economically material."
+      ],
+      "entities": [
+        "thermal coal",
+        "coking coal",
+        "276-day rule",
+        "330-day rule"
+      ],
+      "observedChanges": [
+        "the policy reversal materially increases available legal production capacity"
+      ]
+    },
+    {
+      "itemId": "shenzhen-connect-approval-20161125",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "中国证监会 香港证监会联合公告：正式启动深港通",
+      "publisher": "中国证监会",
+      "url": "https://www.csrc.gov.cn/csrc/c100028/c1001621/content.shtml",
+      "publishedAt": "2016-11-25T00:00:00+08:00",
+      "availableAt": "2016-11-25T00:00:00+08:00",
+      "originGroup": "shenzhen-connect-approval-20161125",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The CSRC and Hong Kong SFC approved formal launch of the Shenzhen-Hong Kong Stock Connect.",
+        "Trading was scheduled to begin on 2016-12-05 after rules, technology and supervisory arrangements were completed."
+      ],
+      "entities": [
+        "Shenzhen-Hong Kong Stock Connect",
+        "A shares",
+        "Hong Kong investors"
+      ],
+      "observedChanges": [
+        "an already-announced market-opening mechanism moves from preparation to live implementation"
+      ]
+    },
+    {
+      "itemId": "shenzhen-connect-live-20161206",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "深港通首日运行顺畅 北上资金活跃度高于南下资金",
+      "publisher": "新华网",
+      "url": "https://www.xinhuanet.com/finance/zhuanti/huiyi/zt27.htm",
+      "publishedAt": "2016-12-06T00:00:00+08:00",
+      "availableAt": "2016-12-06T00:00:00+08:00",
+      "originGroup": "shenzhen-connect-live-20161206",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Shenzhen-Hong Kong Stock Connect began trading on Dec-5 and operated smoothly on the first day.",
+        "Northbound activity was more active than southbound activity, indicating real but still early cross-border participation."
+      ],
+      "entities": [
+        "Shenzhen-Hong Kong Stock Connect",
+        "northbound flow",
+        "Shenzhen A shares"
+      ],
+      "observedChanges": [
+        "implementation confirms an earlier-announced structural opening but does not create a wholly new thesis"
+      ]
+    },
+    {
+      "itemId": "tio2-environmental-hit-20161214",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "化工：甲醇和纯苯等价格大涨；钛白粉环保影响产能",
+      "publisher": "中证网转载行业研究",
+      "url": "https://www.cs.com.cn/gppd/zzgsm/201612/zzgsm20161214/06/201612/t20161214_5121940.html",
+      "publishedAt": "2016-12-14T00:00:00+08:00",
+      "availableAt": "2016-12-14T00:00:00+08:00",
+      "originGroup": "tio2-environmental-hit-20161214",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Domestic titanium-dioxide producers raised prices again by roughly RMB800-1,000/t in December.",
+        "An environmental incident/inspection in the Panzhihua-Xichang region was reported to affect about 360kt of capacity, around 11%, worsening already-tight inventories.",
+        "The report also noted weak seasonal downstream acceptance, creating an explicit demand-side counterpoint to the fresh supply shock."
+      ],
+      "entities": [
+        "titanium dioxide",
+        "Panzhihua-Xichang",
+        "environmental inspection",
+        "capacity"
+      ],
+      "observedChanges": [
+        "a fresh environmental capacity shock arrives on top of an already-rising TiO2 cycle"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2016q4-property-tightening-wave",
+      "statement": "Hot-city housing policy abruptly tightened around the National Day holiday through purchase restrictions, higher down-payments and stricter mortgage policy, marking a turn away from the prior demand-supportive regime.",
+      "changeType": "demand_credit_policy_tightening",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-10-05T09:06:47+08:00",
+      "memberItemIds": [
+        "property-tightening-20161005"
+      ],
+      "independentOriginGroups": [
+        "property-tightening-20161005"
+      ],
+      "affectedValueChain": [
+        "property developers",
+        "home sales",
+        "mortgage demand",
+        "building materials",
+        "home appliances"
+      ],
+      "contradictionSearchNotes": "A major negative policy state does not automatically imply every property-linked company is uninvestable; exposure differs by geography, inventory, balance sheet and non-property end markets.",
+      "researchQuestion": "Does any listed company have a company-specific path that is resilient to hot-city demand tightening, or should the aggregate policy shift remain No selection?"
+    },
+    {
+      "eventId": "event-2016q4-small-car-tax-reset",
+      "statement": "The 2017 purchase tax on <=1.6L passenger vehicles was fixed at 7.5%, partially reversing the 5% incentive while avoiding an immediate return to the full 10% rate.",
+      "changeType": "new_demand_subsidy_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-12-15T00:00:00+08:00",
+      "memberItemIds": [
+        "auto-tax-reset-20161213"
+      ],
+      "independentOriginGroups": [
+        "auto-tax-reset-20161213"
+      ],
+      "affectedValueChain": [
+        "small-engine passenger vehicles",
+        "OEMs",
+        "dealers",
+        "auto suppliers"
+      ],
+      "contradictionSearchNotes": "The policy is simultaneously a demand headwind versus 2016 and a softer landing versus full subsidy expiry. Company product mix and expectation baseline matter.",
+      "researchQuestion": "Which OEMs or suppliers have a cutoff-valid earnings path that can outperform the reset baseline rather than simply relying on 2016 stimulus demand?"
+    },
+    {
+      "eventId": "event-2016q4-opec-first-cut",
+      "statement": "OPEC reached its first formal production-cut agreement since 2008, with additional non-OPEC participation, creating a new coordinated crude-supply state effective from 2017.",
+      "changeType": "fresh_global_supply_cut",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-12-01T06:02:32+08:00",
+      "memberItemIds": [
+        "opec-cut-20161201",
+        "opec-price-response-20161201"
+      ],
+      "independentOriginGroups": [
+        "opec-cut-20161201",
+        "opec-price-response-20161201"
+      ],
+      "affectedValueChain": [
+        "upstream oil producers",
+        "oilfield services",
+        "refiners",
+        "petrochemicals",
+        "transport/fuel users"
+      ],
+      "contradictionSearchNotes": "Oil futures immediately jumped about 9%, so the agreement is fresh but already partially absorbed. Integrated Chinese oil companies may have upstream benefits offset by refining/downstream economics.",
+      "researchQuestion": "Is there a direct A-share oil expression with incremental earnings leverage and residual expectation room after the immediate crude-price jump?"
+    },
+    {
+      "eventId": "event-2016q4-coal-330-supply-release",
+      "statement": "China broadened the shift from the 276-day coal-production regime to 330-day production for safe compliant mines, materially increasing effective supply and beginning to reverse the earlier shortage-driven price spike.",
+      "changeType": "fresh_supply_normalization_policy",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-11-24T00:00:00+08:00",
+      "memberItemIds": [
+        "coal-330-release-20161124",
+        "coal-policy-detail-20161129"
+      ],
+      "independentOriginGroups": [
+        "coal-330-release-20161124",
+        "coal-policy-detail-20161129"
+      ],
+      "affectedValueChain": [
+        "coal miners",
+        "coal price",
+        "thermal power",
+        "steel/coking chain",
+        "transport"
+      ],
+      "contradictionSearchNotes": "The state change is negative for pure coal-price continuation but may improve downstream power/industrial margins with a lag. Search both upstream losers and downstream company exceptions rather than stopping at the aggregate.",
+      "researchQuestion": "Can lower coal-cost exposure create a cutoff-valid downstream company opportunity before the coal-price normalization is fully reflected?"
+    },
+    {
+      "eventId": "event-2016q4-shenzhen-connect-live",
+      "statement": "Shenzhen-Hong Kong Stock Connect moved from the already-announced August framework into live trading in December, confirming market opening but largely implementing a known structural thesis.",
+      "changeType": "market_structure_implementation",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2016-11-25T00:00:00+08:00",
+      "memberItemIds": [
+        "shenzhen-connect-approval-20161125",
+        "shenzhen-connect-live-20161206"
+      ],
+      "independentOriginGroups": [
+        "shenzhen-connect-approval-20161125",
+        "shenzhen-connect-live-20161206"
+      ],
+      "affectedValueChain": [
+        "Shenzhen-listed shares",
+        "brokerage/custody",
+        "foreign institutional access",
+        "northbound ownership"
+      ],
+      "contradictionSearchNotes": "Principle approval occurred in August, so December launch must not be relabeled as a fresh event merely because implementation began.",
+      "researchQuestion": "Does implementation create any base-horizon company edge beyond an already-known market-opening narrative?"
+    },
+    {
+      "eventId": "event-2016q4-tio2-environmental-capacity-hit",
+      "statement": "A fresh environmental capacity disruption in the Panzhihua-Xichang TiO2 chain tightened an already-rising market and triggered another large price increase in December.",
+      "changeType": "fresh_incremental_supply_disruption",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-12-14T00:00:00+08:00",
+      "memberItemIds": [
+        "tio2-environmental-hit-20161214"
+      ],
+      "independentOriginGroups": [
+        "tio2-environmental-hit-20161214"
+      ],
+      "affectedValueChain": [
+        "TiO2 producers",
+        "titanium ore",
+        "coatings/plastics downstream",
+        "integrated resource producers"
+      ],
+      "contradictionSearchNotes": "The TiO2 upcycle already existed before Q4, so V1.9 may only use the incremental environmental capacity hit if a pre-event baseline and direct company earnings bridge are frozen; repeated price hikes alone are continuation.",
+      "researchQuestion": "Does the new capacity hit create an incremental earnings reset for an integrated/direct producer beyond the already-known 2016 TiO2 upcycle?"
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "vanke-q3-20161028",
+      "title": "万科A 2016年第三季度报告",
+      "publisher": "万科企业股份有限公司",
+      "publishedAt": "2016-10-28T00:00:00+08:00",
+      "availableAt": "2016-10-28T00:00:00+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2829779&stockid=000002",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB117.055bn, +47.06% YoY; attributable profit about RMB8.262bn, +20.54%.",
+        "Operating cash flow was about RMB42.986bn, a very large improvement from the prior-year negative base.",
+        "The company still faced material governance/transaction uncertainty around the Shenzhen Metro proposal while the new multi-city property tightening directly weakened the aggregate demand backdrop."
+      ]
+    },
+    {
+      "id": "saic-q3-20161029",
+      "title": "上汽集团2016年第三季度报告",
+      "publisher": "上海汽车集团股份有限公司",
+      "publishedAt": "2016-10-29T00:00:00+08:00",
+      "availableAt": "2016-10-29T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2836690&stockid=600104",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB523.855bn, +11.50% YoY; attributable profit about RMB23.092bn, +8.60%; ex-item profit +7.22%.",
+        "Operating cash flow was about RMB15.826bn, down 19.85% YoY.",
+        "The company therefore entered the tax-reset event with profitable scale and positive cash generation, but without a fresh company-specific earnings reset."
+      ]
+    },
+    {
+      "id": "changan-q3-20161027",
+      "title": "长安汽车2016年第三季度报告",
+      "publisher": "重庆长安汽车股份有限公司",
+      "publishedAt": "2016-10-27T00:00:00+08:00",
+      "availableAt": "2016-10-27T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2826360&stockid=000625",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB53.607bn, +11.43% YoY; attributable profit about RMB7.739bn, +14.81%; ex-item profit +13.04%.",
+        "Operating cash flow was about RMB6.493bn, down 19.28% YoY.",
+        "The company was benefiting from the 2016 auto-demand boom, so the 2017 tax increase represents a baseline headwind rather than a new positive company driver."
+      ]
+    },
+    {
+      "id": "greatwall-q3-20161026",
+      "title": "长城汽车2016年第三季度报告",
+      "publisher": "长城汽车股份有限公司",
+      "publishedAt": "2016-10-26T00:00:00+08:00",
+      "availableAt": "2016-10-26T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2822126&stockid=601633",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB63.345bn, +20.42% YoY; attributable profit about RMB7.209bn, +16.11%; ex-item profit +18.60%.",
+        "Contemporaneous coverage repeatedly described purchase-tax support as helping Q3 sales, making the 2017 partial rollback a real demand-comparison risk rather than a company-specific fresh positive."
+      ]
+    },
+    {
+      "id": "petrochina-outlook-20161029",
+      "title": "中国石油2016年度业绩预告",
+      "publisher": "中国石油天然气股份有限公司",
+      "publishedAt": "2016-10-29T00:00:00+08:00",
+      "availableAt": "2016-10-29T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/go.php/vFD_AchievementNotice/stockid/601857.phtml",
+      "normalizedClaims": [
+        "The company warned that 2016 attributable profit would decline sharply year on year because crude and natural-gas realization prices remained low.",
+        "The warning was issued before the Nov-30 OPEC cut, providing a clean weak pre-event earnings baseline for an upstream oil expression.",
+        "A new oil-price recovery could improve the path, but the cutoff evidence did not yet show realized post-cut earnings conversion."
+      ]
+    },
+    {
+      "id": "sinopec-q3-20161028",
+      "title": "中国石化2016年第三季度报告",
+      "publisher": "中国石油化工股份有限公司",
+      "publishedAt": "2016-10-28T00:00:00+08:00",
+      "availableAt": "2016-10-28T00:00:00+08:00",
+      "url": "https://static.cninfo.com.cn/finalpage/2016-10-28/1202797675.PDF",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB1.364tn, -11.3% YoY; attributable profit about RMB29.166bn, +12.6%; operating cash flow about RMB131.7bn, +13.3%.",
+        "The upstream exploration/production segment remained loss-making at roughly RMB-30.865bn EBIT, while refining EBIT was about RMB43.504bn and had risen sharply.",
+        "This is a diversified integrated exposure: higher crude can repair upstream economics while partially compressing refining margins, so OPEC is not a simple one-factor earnings bridge."
+      ]
+    },
+    {
+      "id": "sinopec-expectations-20161209",
+      "title": "中国石化公司深度：油价进入震荡向上通道",
+      "publisher": "申万宏源研究",
+      "publishedAt": "2016-12-09T00:00:00+08:00",
+      "availableAt": "2016-12-09T00:00:00+08:00",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201612090174219930_01.pdf",
+      "normalizedClaims": [
+        "The report cited China Petroleum & Chemical at about RMB5.30, around 17x 2016E PE and roughly 0.93x PB.",
+        "It modeled 2017E EPS around RMB0.48 versus 2016E around RMB0.32 and estimated that a US$5/10 oil-price increase from a US$50 baseline could add about RMB0.12/RMB0.18 EPS.",
+        "The same sensitivity explicitly included both positive upstream/inventory effects and negative refining-spread effects, supporting a measurable but mixed integrated-company bridge."
+      ]
+    },
+    {
+      "id": "cosl-q3-20161029",
+      "title": "中海油服2016年第三季度报告",
+      "publisher": "中海油田服务股份有限公司",
+      "publishedAt": "2016-10-29T00:00:00+08:00",
+      "availableAt": "2016-10-29T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2837475&stockid=601808",
+      "normalizedClaims": [
+        "The company stated that 1-9M profit after impairment was about RMB-1.8bn.",
+        "Despite some oil-price recovery, the global oilfield-services market was expected to remain weak and the company expected a large full-year loss.",
+        "A fresh OPEC cut therefore did not yet provide a cutoff-valid near/base-horizon realized oil-service earnings bridge."
+      ]
+    },
+    {
+      "id": "huaneng-q3-20161026",
+      "title": "华能国际2016年第三季度报告",
+      "publisher": "华能国际电力股份有限公司",
+      "publishedAt": "2016-10-26T00:00:00+08:00",
+      "availableAt": "2016-10-26T00:00:00+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2822132&stockid=600011",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB83.221bn, -14.43% YoY; attributable profit about RMB9.389bn, -29.06%; ex-item profit -27.55%.",
+        "Operating cash flow was about RMB27.399bn, down 22.93%.",
+        "The company attributed profit decline to lower coal-fired tariffs, lower power volume and more market-priced power, meaning lower coal prices could help but would enter a business with multiple independent earnings headwinds."
+      ]
+    },
+    {
+      "id": "midea-q3-20161031",
+      "title": "美的集团2016年第三季度报告",
+      "publisher": "美的集团股份有限公司",
+      "publishedAt": "2016-10-31T00:00:00+08:00",
+      "availableAt": "2016-10-31T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2838184&stockid=000333",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB116.378bn, +4.49% YoY; attributable profit about RMB12.808bn, +16.31%; ex-item profit +30.47%.",
+        "Operating cash flow was about RMB19.037bn, +5.94%.",
+        "Toshiba Home Appliances consolidation and KUKA-related investment activity were already company-specific drivers independent of the December Shenzhen-Connect implementation."
+      ]
+    },
+    {
+      "id": "baililian-q3-20161028",
+      "title": "佰利联2016年第三季度报告",
+      "publisher": "河南佰利联化学股份有限公司",
+      "publishedAt": "2016-10-28T00:00:00+08:00",
+      "availableAt": "2016-10-28T00:00:00+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2828709&stockid=002601",
+      "normalizedClaims": [
+        "1-9M revenue was about RMB2.032bn, +6.96% YoY; attributable profit about RMB119.5m, +103.65%; ex-item profit +106.82%.",
+        "Operating cash flow was about RMB-417.3m despite the profit recovery.",
+        "After the Longmang acquisition, goodwill was about RMB4.621bn and short-term borrowings about RMB2.484bn, while the acquisition/private-placement structure materially increased balance-sheet and capital-allocation complexity."
+      ]
+    },
+    {
+      "id": "baililian-expectations-20161207",
+      "title": "佰利联：钛精矿涨价及环保停产影响，有望继续助推钛白粉价格上涨",
+      "publisher": "太平洋证券",
+      "publishedAt": "2016-12-07T00:00:00+08:00",
+      "availableAt": "2016-12-07T00:00:00+08:00",
+      "url": "https://pdf.dfcfw.com/pdf/H3_AP201612090173045781_1.pdf?1513423522000.pdf=",
+      "normalizedClaims": [
+        "The report cited a price around RMB14.13 and a target around RMB16.00 before the Dec-14 environmental-capacity event.",
+        "It already highlighted more than ten TiO2 price increases during 2016 and roughly 40%+ product-price appreciation, making the old upcycle part of the frozen baseline rather than fresh evidence.",
+        "The company had just raised TiO2 prices by RMB1,000/t on Dec-6, so any V1.9 escalation must isolate the later environmental capacity hit rather than relabel the whole 2016 price cycle as new."
+      ]
+    },
+    {
+      "id": "annada-guidance-20161022",
+      "title": "安纳达2016年度业绩预告（随三季报）",
+      "publisher": "安徽安纳达钛业股份有限公司",
+      "publishedAt": "2016-10-22T00:00:00+08:00",
+      "availableAt": "2016-10-22T00:00:00+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vFD_AchievementNotice/stockid/002136.phtml",
+      "normalizedClaims": [
+        "The company forecast 2016 attributable profit of roughly RMB35m-40m after the prior-year loss.",
+        "The stated driver was higher TiO2 selling prices and recovering gross margin, confirming that the industry rebound was already well known before the Dec-14 environmental shock.",
+        "The frozen price regime also showed much stronger 20d and 60d absorption for Annada than for Baililian, making it a cleaner-balance-sheet but more crowded expression candidate."
+      ]
+    },
+    {
+      "id": "regime-property-20161231",
+      "title": "2016Q4 property pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-12-30T15:00:00+08:00",
+      "availableAt": "2016-12-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was -9.77 percentage points with 0.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was -8.81 percentage points with 33.3% positive breadth.",
+        "Mechanical pre-cutoff price-regime conclusion: adverse."
+      ]
+    },
+    {
+      "id": "regime-auto-20161231",
+      "title": "2016Q4 auto pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-12-30T15:00:00+08:00",
+      "availableAt": "2016-12-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 2.32 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was -0.54 percentage points with 66.7% positive breadth.",
+        "Mechanical pre-cutoff price-regime conclusion: neutral."
+      ]
+    },
+    {
+      "id": "regime-opec-20161231",
+      "title": "2016Q4 OPEC/oil pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-12-30T15:00:00+08:00",
+      "availableAt": "2016-12-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 4.30 percentage points with 100.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 5.70 percentage points with 100.0% positive breadth.",
+        "Mechanical pre-cutoff price-regime conclusion: favorable."
+      ]
+    },
+    {
+      "id": "regime-coal-20161231",
+      "title": "2016Q4 coal pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-12-30T15:00:00+08:00",
+      "availableAt": "2016-12-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was -0.39 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was -8.36 percentage points with 33.3% positive breadth.",
+        "Mechanical pre-cutoff price-regime conclusion: neutral."
+      ]
+    },
+    {
+      "id": "regime-connect-20161231",
+      "title": "2016Q4 Shenzhen-Connect pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-12-30T15:00:00+08:00",
+      "availableAt": "2016-12-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was -1.38 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 0.83 percentage points with 66.7% positive breadth.",
+        "Mechanical pre-cutoff price-regime conclusion: neutral."
+      ]
+    },
+    {
+      "id": "regime-tio2-20161231",
+      "title": "2016Q4 TiO2 pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-12-30T15:00:00+08:00",
+      "availableAt": "2016-12-30T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 7.83 percentage points with 100.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was -1.53 percentage points with 33.3% positive breadth.",
+        "Mechanical pre-cutoff price-regime conclusion: neutral."
+      ]
+    }
+  ]
+}
