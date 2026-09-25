@@ -1,0 +1,358 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-09-30T23:59:59+08:00",
+  "researchReadyAt": "2016-09-30T19:48:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q3-beijing-property-tightening",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The first post-announcement sessions and subsequent sales/financing data would reveal incidence; at cutoff there is no positive company-specific bridge."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "other",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [],
+  "changeHypothesis": {
+    "summary": "Beijing announced a fresh mortgage/down-payment tightening after the Sep-30 close. The shock is directionally negative for leveraged housing demand; strong developer quality does not turn that negative event into a positive catalyst.",
+    "firstCredibleDate": "2016-09-30",
+    "valueChain": [
+      "mortgage leverage",
+      "homebuyer demand",
+      "developer sales",
+      "developer financing",
+      "construction demand"
+    ],
+    "persistenceReason": "Housing controls can persist for multiple quarters, but the direct first-order event sign is negative.",
+    "disconfirmingEvidence": [
+      "The property basket had already strongly outperformed over 60d before the announcement.",
+      "Vanke and Poly quality predates the shock.",
+      "The announcement arrived after the market close, so no post-event equity absorption existed at cutoff."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "beijing-property-tightening-20160930",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "vanke-h1-20160822",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "poly-h1-20160830",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "financialstreet-h1-20160818",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "regime-property-20160930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "higher down-payment and tighter mortgage policy",
+      "to": "housing transaction leverage/demand",
+      "mechanism": "Higher buyer equity requirements reduce leverage and can weaken transaction demand.",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930"
+      ],
+      "failureMode": "demand proves insensitive or policy is rapidly reversed",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "strong-balance-sheet developers may prove relatively resilient, not absolute event winners"
+    ],
+    "losers": [
+      "highly exposed developers and housing-linked activity"
+    ],
+    "substitutes": [
+      "lower-leverage buyers",
+      "other geographies"
+    ],
+    "bottlenecks": [
+      "mortgage availability",
+      "buyer down payment"
+    ],
+    "falseThemeMatches": [
+      "buying a quality developer merely because it is resilient to a negative event"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000002.SZ",
+      "name": "万科A",
+      "verifiedExposure": "Strong pre-event cash generation but direct property demand exposure.",
+      "evidenceRefs": [
+        "vanke-h1-20160822",
+        "regime-property-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong sales/cash before tightening.",
+        "favorable": "Relative resilience only.",
+        "adverse": "Demand/financing tightening can slow sales."
+      },
+      "principalRisks": [
+        "negative event sign",
+        "governance dispute",
+        "prior rerating"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "No company is selected, so no matched-control basket is frozen.",
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Property names had strong pre-cutoff 60d relative performance, but the Sep-30 policy arrived after the close.",
+    "thesisExpectation": "Strong developers may lose less than weaker peers.",
+    "measurableGap": "Relative resilience is not the same as a positive incremental earnings path.",
+    "evidenceRefs": [
+      "beijing-property-tightening-20160930",
+      "vanke-h1-20160822",
+      "poly-h1-20160830",
+      "financialstreet-h1-20160818",
+      "regime-property-20160930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "No executable company-level expectation burden can be measured strongly enough for selection.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Property names had strong pre-cutoff 60d relative performance, but the Sep-30 policy arrived after the close.",
+    "thesisScenario": "Strong developers may lose less than weaker peers.",
+    "breakevenCondition": "A company must show a distinct positive mechanism that more than offsets the tightening.",
+    "ordinaryScenarioFailure": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+    "catalystOrTimingBridge": "None strong enough for a selected company at the cutoff.",
+    "evidenceRefs": [
+      "beijing-property-tightening-20160930",
+      "vanke-h1-20160822",
+      "poly-h1-20160830",
+      "financialstreet-h1-20160818",
+      "regime-property-20160930"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "Beijing housing demand and financing",
+    "geographicScope": "Beijing/China property market",
+    "customerScope": "homebuyers and developers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The policy shock is real and important, but the long-side company transmission is negative or unresolved at cutoff.",
+    "evidenceRefs": [
+      "beijing-property-tightening-20160930",
+      "vanke-h1-20160822",
+      "poly-h1-20160830",
+      "financialstreet-h1-20160818",
+      "regime-property-20160930"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "fresh mortgage/down-payment tightening",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "potential sales/financing slowdown",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "strong developers may consolidate share but remain demand-exposed",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Treat quality/resilience as a later company-research question, not an immediate positive event trade.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+    "evidenceRefs": [
+      "beijing-property-tightening-20160930",
+      "vanke-h1-20160822",
+      "poly-h1-20160830",
+      "financialstreet-h1-20160818",
+      "regime-property-20160930"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff."
+    ]
+  },
+  "bearCase": "A negative demand shock follows substantial pre-cutoff property rerating, so buying resilience can confuse quality with positive event alpha.",
+  "invalidationConditions": [
+    {
+      "indicator": "post-policy sales, financing, and company-specific share data",
+      "observationMethod": "cutoff-valid company/industry evidence",
+      "threshold": "evidence contradicts the frozen causal hypothesis or fails to create an investable company-level edge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [
+    "Whether any developer gains enough relative share/capital advantage to create a positive net earnings path after the tightening."
+  ],
+  "nextResearchActions": [
+    "No selection at 2016Q3 cutoff; wait for post-policy company evidence rather than treating defensive quality as a positive catalyst."
+  ],
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "The policy shock is real and important, but the long-side company transmission is negative or unresolved at cutoff.",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "The policy shock is real and important, but the long-side company transmission is negative or unresolved at cutoff.",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "insufficient",
+      "rationale": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "The policy shock is real and important, but the long-side company transmission is negative or unresolved at cutoff.",
+      "evidenceRefs": [
+        "beijing-property-tightening-20160930",
+        "vanke-h1-20160822",
+        "poly-h1-20160830",
+        "financialstreet-h1-20160818",
+        "regime-property-20160930"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "post-policy sales, financing, and company-specific share data",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": null,
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+    "earningsQualityComparison": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+    "downsideComparison": "The event itself is a fresh negative demand/financing shock; no frozen company-specific positive driver converts resilience into a Primary or Research long selection at this exact cutoff.",
+    "evidenceRefs": [
+      "beijing-property-tightening-20160930",
+      "vanke-h1-20160822",
+      "poly-h1-20160830",
+      "financialstreet-h1-20160818",
+      "regime-property-20160930"
+    ],
+    "conclusion": "insufficient"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "insufficient",
+    "axes": [],
+    "strongestCounterThesis": "A negative demand shock follows substantial pre-cutoff property rerating, so buying resilience can confuse quality with positive event alpha.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "post-policy sales, financing, and company-specific share data",
+    "conclusion": "research_only"
+  },
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
