@@ -27,7 +27,7 @@ jobs:
         run: |
           set -e
           D=backtests/runs/2026-h1-weekly-replay-v1.9-001/regime
-          for f in memory-20260109 lithium-storage-20260116 shipping-20260306 catl-ess-20260424; do
+          for f in memory-20260109 memory-20260206 lithium-storage-20260116 shipping-20260306 catl-ess-20260424; do
             rm -f "$D/$f.snapshot.json"
             node scripts/fetch-precutoff-regime-hfq.cjs "$D/$f.json" "$D/$f.snapshot.json"
           done
