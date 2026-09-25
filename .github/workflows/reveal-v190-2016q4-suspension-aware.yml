@@ -1,0 +1,65 @@
+name: reveal-v190-2016q4-suspension-aware
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.9-2016q4-holdout-20260925
+    paths:
+      - .github/workflows/reveal-v190-2016q4-suspension-aware.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.9-2016q4-holdout-20260925
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Verify frozen suspension-aware evaluation method
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'), crypto=require('crypto');
+          const lock=JSON.parse(fs.readFileSync('backtests/runs/2016q4-multisource-deep-v1.9-001/evaluation-method-lock.json','utf8'));
+          for (const f of lock.files) {
+            const got=crypto.createHash('sha256').update(fs.readFileSync(f.path)).digest('hex');
+            if (got!==f.sha256) throw new Error('evaluation method changed after lock: '+f.path);
+          }
+          NODE
+      - name: Fetch frozen historical prices
+        run: |
+          rm -f backtests/runs/2016q4-multisource-deep-v1.9-001/prices.raw.json
+          node scripts/fetch-backtest-prices-hfq.cjs \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/lock.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/prices.raw.json
+      - name: Apply generic interior-suspension mark-to-market
+        run: |
+          rm -f backtests/runs/2016q4-multisource-deep-v1.9-001/prices.json
+          node scripts/prepare-suspension-aware-prices.cjs \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/lock.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/prices.raw.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/prices.json
+      - name: Evaluate frozen selections
+        run: |
+          rm -f backtests/runs/2016q4-multisource-deep-v1.9-001/outcome.json
+          node scripts/evaluate-skill-run-v190.cjs \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/lock.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/prices.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/outcome.json
+      - name: Commit diagnostic outcomes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2016q4-multisource-deep-v1.9-001/prices.raw.json \
+                  backtests/runs/2016q4-multisource-deep-v1.9-001/prices.json \
+                  backtests/runs/2016q4-multisource-deep-v1.9-001/outcome.json
+          git commit -m "backtest: reveal v1.9 2016Q4 suspension-aware diagnostics"
+          git pull --rebase origin ai-skill-v1.9-2016q4-holdout-20260925
+          git push origin HEAD:ai-skill-v1.9-2016q4-holdout-20260925
