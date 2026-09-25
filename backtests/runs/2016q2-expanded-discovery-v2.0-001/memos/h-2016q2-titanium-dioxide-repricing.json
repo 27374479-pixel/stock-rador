@@ -1,0 +1,644 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-06-15T23:59:59+08:00",
+  "researchReadyAt": "2016-06-15T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q2-titanium-dioxide-repricing",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Price realization, margin and cash flow should reveal the continuation's quality within one quarter."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002601.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Repeated TiO2 price hikes were directly confirmed by a listed producer, but the repricing cycle was already a continuation and company cash/earnings quality had not yet fully turned.",
+    "firstCredibleDate": "2016-06-02",
+    "valueChain": [
+      "TiO2 supply/inventory",
+      "producer price",
+      "gross margin",
+      "cash earnings"
+    ],
+    "persistenceReason": "Low inventories and repeated producer hikes can persist for quarters, but higher prices invite supply response and the cycle predates this checkpoint.",
+    "disconfirmingEvidence": [
+      "The event is continuation rather than fresh discovery.",
+      "Q1 operating cash flow remained negative.",
+      "Both direct producers already had substantial price moves over the prior 60 days."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "tio2-industry-hikes-20160602",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "tio2-company-filing-20160615",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "baililian-q1-20160426",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "regime-tio2-ready-20160615",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "repeated TiO2 producer price increases",
+      "to": "producer revenue/margin",
+      "mechanism": "Direct price increases can expand gross profit if volumes/costs remain stable.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426"
+      ],
+      "failureMode": "Realized selling prices or margins fail to improve, cash conversion worsens, or added supply ends the cycle.",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "TiO2 producers with realizable price increases"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "pigment/coatings customers"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "realized transaction price",
+      "feedstock cost",
+      "capacity restart"
+    ],
+    "falseThemeMatches": [
+      "chemical names without TiO2 revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002601.SZ",
+      "name": "佰利联",
+      "verifiedExposure": "The company is a direct TiO2 producer with a cutoff-valid price-adjustment disclosure, but Q1 profit growth was modest and cash flow still negative.",
+      "evidenceRefs": [
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 revenue/profit growth was modest and operating cash flow remained negative before the later price hikes.",
+        "favorable": "Repeated price increases lift realized selling price and margin during the base horizon.",
+        "adverse": "Price hikes fail to transact or feedstock/capacity responses offset margin expansion."
+      },
+      "principalRisks": [
+        "continuation absorption",
+        "negative cash flow",
+        "cycle normalization"
+      ]
+    },
+    {
+      "ticker": "002145.SZ",
+      "name": "中核钛白",
+      "verifiedExposure": "Frozen counterfactual expression in the same economic chain.",
+      "evidenceRefs": [
+        "regime-tio2-ready-20160615"
+      ],
+      "earningsSensitivity": {
+        "base": "Counterfactual listed expression.",
+        "favorable": "Could dominate if its company-level conversion proves stronger.",
+        "adverse": "May have weaker quality, directness or expectation asymmetry."
+      },
+      "principalRisks": [
+        "different company-specific economics",
+        "counterfactual may not share the same direct earnings bridge"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002145.SZ",
+      "name": "中核钛白",
+      "controlType": "sector_peer",
+      "fairCounterfactualReason": "Frozen listed peer exposed to the same broad economic state change.",
+      "whySelectedCompanyShouldOutperform": "The selected company has direct TiO2 economics and improving, though still negative, operating cash flow.",
+      "evidenceRefs": [
+        "regime-tio2-ready-20160615",
+        "baililian-q1-20160426"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen peer is sufficient for this Research-only event-time expression test.",
+  "selectionComparison": {
+    "selectedTicker": "002601.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002145.SZ",
+        "selectedAdvantages": [
+          "The selected company has direct TiO2 economics and improving, though still negative, operating cash flow."
+        ],
+        "selectedDisadvantages": [
+          null
+        ],
+        "evidenceRefs": [
+          "regime-tio2-ready-20160615",
+          "baililian-q1-20160426"
+        ],
+        "switchCondition": "Prefer the control if its realized pricing, cash conversion and expectation burden are demonstrably better.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed"
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The TiO2 basket was favorable and both direct names had positive 60d relative performance at different magnitudes.",
+    "thesisExpectation": "Repeated producer hikes can continue to improve direct TiO2 earnings.",
+    "measurableGap": "No complete point-in-time valuation/consensus snapshot proves that the continuation remains underpriced.",
+    "evidenceRefs": [
+      "tio2-industry-hikes-20160602",
+      "tio2-company-filing-20160615",
+      "baililian-q1-20160426",
+      "regime-tio2-ready-20160615"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Point-in-time event/company evidence plus benchmark-relative 20/60d absorption; no sufficiently complete contemporaneous consensus/valuation snapshot is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The TiO2 basket was favorable and both direct names had positive 60d relative performance at different magnitudes.",
+    "thesisScenario": "Repeated producer hikes can continue to improve direct TiO2 earnings.",
+    "breakevenCondition": "Realized price/margin improvement must exceed what the already-rerated continuation narrative implies.",
+    "catalystOrTimingBridge": "realized TiO2 selling price, gross margin and operating cash flow",
+    "evidenceRefs": [
+      "tio2-industry-hikes-20160602",
+      "tio2-company-filing-20160615",
+      "baililian-q1-20160426",
+      "regime-tio2-ready-20160615"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Industry and issuer evidence confirm repeated price hikes, but the signal is continuation rather than a new cycle start.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+      "evidenceRefs": [
+        "baililian-q1-20160426"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "The selected company has direct TiO2 economics and improving, though still negative, operating cash flow.",
+      "evidenceRefs": [
+        "regime-tio2-ready-20160615",
+        "baililian-q1-20160426"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "The frozen company evidence defines the pre-catalyst or contemporaneous operating baseline without using future outcomes.",
+      "evidenceRefs": [
+        "baililian-q1-20160426"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Selected ticker event-time excess was 16.36% over 20d and 11.75% over 60d; broad regime was favorable.",
+      "evidenceRefs": [
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen event basket versus CSI300 at the event-time checkpoint",
+      "lookback20Excess": 0.08625334805715745,
+      "lookback60Excess": 0.27323425106251387,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Industry and issuer evidence confirm repeated price hikes, but the signal is continuation rather than a new cycle start.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "No complete cutoff-valid analyst revision breadth is frozen.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Low inventories and repeated producer hikes can persist for quarters, but higher prices invite supply response and the cycle predates this checkpoint.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "regime-tio2-ready-20160615",
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ]
+    },
+    "overallConclusion": "favorable"
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002601.SZ",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+      "evidenceRefs": [
+        "baililian-q1-20160426"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "No complete point-in-time valuation/consensus snapshot proves that the continuation remains underpriced.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete point-in-time valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "realized TiO2 selling price, gross margin and operating cash flow",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002145.SZ",
+        "revisionAdvantage": "The selected company has direct TiO2 economics and improving, though still negative, operating cash flow.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+        "catalystAdvantage": "realized TiO2 selling price, gross margin and operating cash flow",
+        "switchCondition": "Prefer the control if its realized pricing, cash conversion and expectation burden are demonstrably better.",
+        "evidenceRefs": [
+          "regime-tio2-ready-20160615",
+          "baililian-q1-20160426"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "The TiO2 industry continued repeated price increases and the issuer disclosed cumulative pricing action.",
+    "earningsMechanism": "Higher realized TiO2 price can raise revenue and margin for the direct producer if costs/volumes hold.",
+    "nextObservableMetric": "realized TiO2 selling price, gross margin and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "tio2-industry-hikes-20160602",
+      "tio2-company-filing-20160615",
+      "baililian-q1-20160426"
+    ],
+    "failureCondition": "Realized selling prices or margins fail to improve, cash conversion worsens, or added supply ends the cycle."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Q1 revenue/profit growth was modest and operating cash flow remained negative before the later price hikes.",
+      "nextPeriod": "The current operating baseline does not yet prove the event's incremental earnings contribution.",
+      "laterPeriod": "Longer-run economics remain conditional on the causal driver persisting.",
+      "rationale": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+      "evidenceRefs": [
+        "baililian-q1-20160426"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "The TiO2 industry continued repeated price increases and the issuer disclosed cumulative pricing action.",
+      "nextPeriodChange": "Repeated producer hikes can continue to improve direct TiO2 earnings.",
+      "laterPeriodChange": "No permanent favorable state is assumed.",
+      "mechanism": "Higher realized TiO2 price can raise revenue and margin for the direct producer if costs/volumes hold.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "No complete point-in-time valuation/consensus snapshot proves that the continuation remains underpriced.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "falsifier": "Realized selling prices or margins fail to improve, cash conversion worsens, or added supply ends the cycle.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "China TiO2 pricing cycle",
+    "geographicScope": "China / globally linked market where applicable",
+    "customerScope": "coatings/pigment buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Repeated TiO2 price hikes were directly confirmed by a listed producer, but the repricing cycle was already a continuation and company cash/earnings quality had not yet fully turned.",
+    "evidenceRefs": [
+      "tio2-industry-hikes-20160602",
+      "tio2-company-filing-20160615",
+      "baililian-q1-20160426",
+      "regime-tio2-ready-20160615"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "The TiO2 industry continued repeated price increases and the issuer disclosed cumulative pricing action.",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "company-level earnings conversion and expectation gap remain incomplete",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "Low inventories and repeated producer hikes can persist for quarters, but higher prices invite supply response and the cycle predates this checkpoint.",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Preserve the real event while keeping selection at Research until earnings and expectation gates are resolved.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+    "evidenceRefs": [
+      "baililian-q1-20160426",
+      "regime-tio2-ready-20160615"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "The event is a continuation rather than a newly isolated driver.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+      "evidenceRefs": [
+        "baililian-q1-20160426"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No complete point-in-time valuation/consensus snapshot proves that the continuation remains underpriced.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615",
+        "baililian-q1-20160426",
+        "regime-tio2-ready-20160615"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Low inventories and repeated producer hikes can persist for quarters, but higher prices invite supply response and the cycle predates this checkpoint.",
+      "evidenceRefs": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "Realized selling prices or margins fail to improve, cash conversion worsens, or added supply ends the cycle.",
+    "conclusion": "mixed"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002601.SZ",
+    "purestTicker": "002601.SZ",
+    "purityIsDecisionDriver": false,
+    "earningsQualityComparison": "Direct exposure is clear, but Q1 cash conversion remained negative and the earnings turn was still modest.",
+    "evidenceRefs": [
+      "tio2-industry-hikes-20160602",
+      "tio2-company-filing-20160615",
+      "baililian-q1-20160426",
+      "regime-tio2-ready-20160615"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Company-level liquidity/cash quality was reviewed but not fully cleared for Primary.",
+        "evidenceRefs": [
+          "baililian-q1-20160426"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid capital-allocation review is incomplete.",
+        "evidenceRefs": [
+          "baililian-q1-20160426"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid governance review is incomplete.",
+        "evidenceRefs": [
+          "baililian-q1-20160426"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid refinancing/contingent-liability review is incomplete.",
+        "evidenceRefs": [
+          "baililian-q1-20160426"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The continuation is already substantially priced while weak cash quality limits downside protection.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "Realized selling prices or margins fail to improve, cash conversion worsens, or added supply ends the cycle.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      null
+    ]
+  },
+  "bearCase": "The continuation is already substantially priced while weak cash quality limits downside protection.",
+  "invalidationConditions": [
+    {
+      "indicator": "realized TiO2 selling price, gross margin and operating cash flow",
+      "observationMethod": "cutoff-valid company filings and industry/price data",
+      "threshold": "Realized selling prices or margins fail to improve, cash conversion worsens, or added supply ends the cycle."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination; no post-cutoff stock outcomes used before lock.",
+    "result": "not_clean",
+    "caveats": [
+      "Current model/search may encode later historical context.",
+      "Only evidence available by the memo cutoff is frozen."
+    ]
+  },
+  "unknowns": [
+    "No complete point-in-time valuation/consensus snapshot proves that the continuation remains underpriced."
+  ],
+  "nextResearchActions": [
+    "Keep 佰利联 as Research only; require realized TiO2 selling price, gross margin and operating cash flow plus a measured expectation/valuation gap before any Primary escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
