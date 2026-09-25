@@ -1,0 +1,738 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-12-31T23:59:59+08:00",
+  "researchReadyAt": "2016-12-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q4-coal-330-supply-release",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The 330-day policy can lower coal costs for downstream thermal power within a quarter, but Huaneng's tariff/volume/market-power headwinds make the net earnings bridge uncertain."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600011.SH",
+      "role": "preferred",
+      "directExposure": "credible",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Huaneng is a direct thermal-power fuel-cost beneficiary of coal normalization, but Q3 profit and OCF were already falling because of tariff, volume and market-pricing headwinds.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "coal-policy-detail-20161129",
+        "huaneng-q3-20161026",
+        "regime-coal-20161231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Coal supply policy shifted from shortage-inducing 276-day production toward broad 330-day production. This is adverse for coal-price continuation but can create a downstream fuel-cost exception for thermal power, subject to independent tariff/volume headwinds.",
+    "firstCredibleDate": "2016-11-24",
+    "valueChain": [
+      "coal production days",
+      "coal supply/price",
+      "thermal-power fuel cost",
+      "power tariff/volume",
+      "generator margin/cash"
+    ],
+    "persistenceReason": "The heating-season production relaxation can materially increase supply for months, but power-company benefit depends on tariff and utilization.",
+    "disconfirmingEvidence": [
+      "Huaneng 1-9M profit fell about 29%.",
+      "Huaneng OCF fell about 23%.",
+      "The company cited lower coal-fired tariffs, lower volume and more market-priced power as independent headwinds.",
+      "Coal price normalization may not be enough to offset those headwinds."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "coal-330-release-20161124",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "Coal policy shifted toward supply normalization and price pressure."
+    },
+    {
+      "id": "coal-policy-detail-20161129",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "The 330-day regime materially increases effective compliant production capacity."
+    },
+    {
+      "id": "huaneng-q3-20161026",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Huaneng has direct coal-cost exposure but entered the event with falling profit/OCF and tariff/volume headwinds."
+    },
+    {
+      "id": "regime-coal-20161231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Coal producer price regime was neutral/weak over 60d, consistent with normalization."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "330-day production release",
+      "to": "coal supply/price",
+      "mechanism": "More operating days increase legal compliant coal output and reverse the earlier shortage.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "coal-policy-detail-20161129"
+      ],
+      "failureMode": "demand or transport constraints keep coal tight",
+      "lag": "weeks"
+    },
+    {
+      "from": "lower coal price",
+      "to": "Huaneng fuel margin",
+      "mechanism": "Lower fuel cost can improve thermal-power generation margins if tariffs/volume remain adequate.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ],
+      "failureMode": "tariff cuts, market-priced power or lower utilization overwhelm fuel savings",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "coal-consuming thermal generators if fuel savings pass through to margin"
+    ],
+    "secondOrderWinners": [
+      "coal-intensive industrial users"
+    ],
+    "losers": [
+      "high-cost coal producers relying on shortage prices"
+    ],
+    "substitutes": [
+      "hydro/nuclear/renewables"
+    ],
+    "bottlenecks": [
+      "coal transport",
+      "power tariffs",
+      "utilization"
+    ],
+    "falseThemeMatches": [
+      "power companies whose non-fuel headwinds dominate the coal benefit"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "verifiedExposure": "Large thermal generator with direct fuel-cost sensitivity and cutoff-valid profit/OCF baseline.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ],
+      "earningsSensitivity": {
+        "base": "Profit/OCF already declining from tariff and volume pressures.",
+        "favorable": "Coal-cost normalization outpaces tariff/volume weakness.",
+        "adverse": "Tariff/market-power/volume headwinds dominate fuel savings."
+      },
+      "principalRisks": [
+        "tariff",
+        "utilization",
+        "market-priced power",
+        "coal normalization timing"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "Research-only downstream exception; no frozen downstream peer with equally complete company evidence is used as a matched control.",
+  "selectionComparison": {
+    "selectedTicker": "600011.SH",
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "Huaneng is a plausible downstream exception, but no clean cross-sectional ranking or net earnings reset supports Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The frozen coal-producer basket was approximately -0.39pp excess over 20d and -8.36pp over 60d, consistent with supply normalization pressure on the old coal trade. Huaneng itself entered the event with profit/OCF declines and multiple non-fuel headwinds.",
+    "thesisExpectation": "Lower coal costs may improve thermal-power margins, but only if tariff/volume pressures do not dominate.",
+    "measurableGap": "A causal cost bridge exists, but the net company earnings gap is not measured tightly enough for Primary.",
+    "evidenceRefs": [
+      "coal-330-release-20161124",
+      "coal-policy-detail-20161129",
+      "huaneng-q3-20161026",
+      "regime-coal-20161231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Company earnings/cash baseline plus deterministic coal-regime state; no cutoff-valid generator valuation gap is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Coal prices are beginning to normalize while Huaneng earnings are already weak for independent reasons.",
+    "thesisScenario": "Fuel-cost relief becomes large enough inside 60d to offset tariff/volume/market-power pressure.",
+    "breakevenCondition": "Coal savings must exceed non-fuel earnings deterioration without relying on a valuation rerating.",
+    "ordinaryScenarioFailure": "Power tariffs/utilization deteriorate or coal prices remain high.",
+    "catalystOrTimingBridge": "Coal indexes and subsequent generator operating/earnings data can be observed inside 60d.",
+    "evidenceRefs": [
+      "coal-330-release-20161124",
+      "huaneng-q3-20161026",
+      "regime-coal-20161231"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "The coal supply release is a fresh cost-side state change for downstream users.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "coal-policy-detail-20161129"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Huaneng has direct fuel exposure but current profit/OCF are falling.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Coal equities reflect normalization, but no frozen downstream-peer confirmation is available.",
+      "evidenceRefs": [
+        "regime-coal-20161231"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "clear",
+      "rationale": "Huaneng Q3 provides a pre-event earnings/cash baseline before the late-November supply release.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Coal producer 60d tape is weak; the event is not a crowded positive downstream trade.",
+      "evidenceRefs": [
+        "regime-coal-20161231"
+      ]
+    },
+    "unresolvedReason": "measurement_gap_only",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen coal-producer basket versus CSI300",
+      "lookback20Excess": -0.003853592792940804,
+      "lookback60Excess": -0.08356441427214294,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-coal-20161231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Policy materially expands compliant coal supply.",
+      "evidenceRefs": [
+        "coal-policy-detail-20161129"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Upstream negative/downstream potentially positive; Huaneng company baseline is weak.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026",
+        "regime-coal-20161231"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "330-day production can operate through the heating season and change fuel economics.",
+      "evidenceRefs": [
+        "coal-330-release-20161124"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "The old coal rally is already weakening rather than accelerating.",
+      "evidenceRefs": [
+        "regime-coal-20161231"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "Fresh cost relief is plausible for downstream generators, but company confirmation is incomplete."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600011.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Company remains profitable with large positive OCF despite declines.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Fuel-cost normalization can improve a weak earnings baseline.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No cutoff-valid valuation gap is frozen.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "Coal price and subsequent generator operating data are observable within 60d.",
+      "evidenceRefs": [
+        "coal-330-release-20161124"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Tariff, utilization and market-power headwinds are independent and not bounded by the coal event.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "pairwise": [],
+    "overallConclusion": "insufficient"
+  },
+  "earningsConversionBridge": {
+    "driverType": "cost",
+    "driverChange": "330-day coal production increases effective supply and can lower fuel cost.",
+    "earningsMechanism": "Lower unit coal cost can lift thermal-generation gross margin if tariffs/volume hold.",
+    "nextObservableMetric": "coal price, fuel cost per kWh, thermal utilization and segment earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "coal-330-release-20161124",
+      "coal-policy-detail-20161129",
+      "huaneng-q3-20161026"
+    ],
+    "failureCondition": "Tariff/volume deterioration or persistent coal tightness overwhelms fuel savings."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Huaneng profit/OCF are declining from tariff/volume pressures.",
+      "nextPeriod": "Coal normalization can reduce the largest variable cost.",
+      "laterPeriod": "Power-market reform/tariffs remain structural constraints.",
+      "rationale": "Use the Q3 company baseline before the late-November coal supply release.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Fuel cost begins to normalize.",
+      "nextPeriodChange": "Margin may recover if coal savings exceed tariff/volume pressure.",
+      "laterPeriodChange": "Persistent value depends on power pricing and utilization.",
+      "mechanism": "Fresh upstream supply normalization creates a downstream cost exception.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "The fuel-cost shock is causally direct but net earnings benefit is uncertain.",
+      "evidenceRefs": [
+        "coal-policy-detail-20161129",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Coal policy persists, but power pricing can absorb the benefit.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "falsifier": "Fuel costs fall but Huaneng earnings/cash fail to improve.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "thermal-power fuel-cost economics after coal supply normalization",
+    "geographicScope": "China coal/power market",
+    "customerScope": "grid/market electricity demand",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Map the negative coal-price state into downstream fuel-cost beneficiaries rather than stopping at coal producers.",
+    "evidenceRefs": [
+      "coal-330-release-20161124",
+      "huaneng-q3-20161026"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "coal supply rises while Huaneng tariff/volume earnings remain weak",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "potential fuel-cost margin relief if coal prices normalize",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "coal-policy-detail-20161129",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "power-market pricing and utilization can offset fuel-cost gains",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Continue Huaneng as Research; require net earnings confirmation because lower coal cost alone does not resolve tariff/volume headwinds.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "mixed",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "The event is negative for coal producers but potentially positive for a downstream generator; company earnings still face other headwinds.",
+    "evidenceRefs": [
+      "regime-coal-20161231",
+      "huaneng-q3-20161026"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "330-day supply release is fresh relative to Huaneng Q3 baseline.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "The benefit is not yet realized; current earnings are falling.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No frozen downstream revision breadth.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Fuel-cost relief can persist through heating season.",
+      "evidenceRefs": [
+        "coal-policy-detail-20161129"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "Fuel savings fail to improve net earnings.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600011.SH",
+    "purestTicker": "600011.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "The candidate is selected for direct coal-cost sensitivity, not theme purity.",
+    "earningsQualityComparison": "Positive profit/OCF but deteriorating trend creates a mixed quality path.",
+    "downsideComparison": "Independent tariff/volume risks remain.",
+    "evidenceRefs": [
+      "huaneng-q3-20161026"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "legal compliant coal production days/effective capacity",
+      "observedDirection": "rising",
+      "opportunityImplication": "negative",
+      "economicRole": "increases coal supply and pressures fuel price",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "coal-policy-detail-20161129"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "coal price / thermal generator fuel cost",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "Coal price was beginning to fall while generator financial benefit had not yet been reported.",
+      "evidenceRefs": [
+        "coal-330-release-20161124",
+        "regime-coal-20161231"
+      ]
+    },
+    "stateFlowRelation": "state_leads_flow",
+    "causalLagBridge": {
+      "conclusion": "credible",
+      "rationale": "More production can precede quarterly fuel-cost/margin realization.",
+      "evidenceRefs": [
+        "coal-policy-detail-20161129",
+        "huaneng-q3-20161026"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "mixed",
+      "rationale": "Coal producer tape is weakening, but downstream company confirmation is absent.",
+      "evidenceRefs": [
+        "regime-coal-20161231"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [
+      "tariff decline",
+      "lower generation volume",
+      "market-priced power pressure"
+    ],
+    "falsifier": "Coal falls but generator earnings do not improve.",
+    "conclusion": "state_leads_flow"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "OCF remains positive but fell materially year over year.",
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Power generation is capital intensive; no fresh acquisition shortcut removes operating pressure.",
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "clear",
+        "rationale": "No acute cutoff-valid governance blocker is identified in the frozen Q3 evidence.",
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Capital-intensive utility economics remain financing-sensitive while earnings decline.",
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "Lower coal prices are insufficient because lower tariffs, weaker volume and market-priced power already dominate earnings.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Fuel-cost relief produces measurable net earnings/cash recovery despite tariff/volume pressure.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_company_sector_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "The key heterogeneity is value-chain position rather than geography.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "Coal mine compliance affects the upstream state; Huaneng is a downstream generator.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Thermal generation is a direct coal-cost-consuming business, economically opposite to coal producers.",
+        "searchTrace": [
+          "thermal generation fuel mix coal cost exposure"
+        ],
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Coal is a major input; lower fuel prices can improve generation margin.",
+        "searchTrace": [
+          "coal cost thermal power margin Q3"
+        ],
+        "evidenceRefs": [
+          "coal-330-release-20161124",
+          "huaneng-q3-20161026"
+        ]
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Power tariffs and market-priced electricity directly determine whether coal savings are retained.",
+        "searchTrace": [
+          "coal fired tariff market power earnings"
+        ],
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No frozen customer mix independently creates a stronger positive exception.",
+        "searchTrace": [
+          "thermal power demand customer mix"
+        ],
+        "evidenceRefs": []
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Positive OCF supports survival but falling OCF limits confidence.",
+        "searchTrace": [
+          "Huaneng operating cash flow Q3 2016"
+        ],
+        "evidenceRefs": [
+          "huaneng-q3-20161026"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Value-chain position reverses the sign of the coal supply shock for a fuel consumer.",
+        "searchTrace": [
+          "cross value chain coal producer versus power generator"
+        ],
+        "evidenceRefs": [
+          "coal-330-release-20161124",
+          "huaneng-q3-20161026"
+        ]
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "600011.SH",
+        "exceptionMechanism": "As a coal-consuming thermal generator, Huaneng can benefit from lower coal cost even while coal-producer economics weaken.",
+        "directExposure": "credible",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "Cross-value-chain exception is real, but tariff/volume headwinds prevent Primary.",
+        "evidenceRefs": [
+          "coal-330-release-20161124",
+          "huaneng-q3-20161026"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "The negative upstream state should not terminate research before auditing downstream fuel-cost beneficiaries.",
+    "falsifierOrEscalationTrigger": "Coal cost falls but Huaneng net earnings/cash fail to recover."
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: a genuine cross-value-chain fresh exception, but unmeasured valuation and independent company headwinds block Primary.",
+    "alreadyPricedAssessment": "fresh_cost_relief_not_yet_company_confirmed",
+    "constraints": [
+      "tariff pressure",
+      "volume decline",
+      "market power pricing",
+      "no measured valuation gap"
+    ]
+  },
+  "bearCase": "Coal normalizes but Huaneng does not benefit because tariff and utilization deterioration absorb the entire fuel-cost gain.",
+  "invalidationConditions": [
+    {
+      "indicator": "coal price and Huaneng margin/earnings",
+      "observationMethod": "industry/company filing",
+      "threshold": "fuel costs fall without net profit/OCF recovery"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Huaneng Research as a downstream company exception; require net earnings confirmation, not just lower coal."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q4-coal-330-supply-release",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-11-24T00:00:00+08:00",
+    "baselineAsOfAt": "2016-10-26T00:00:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "coal-330-release-20161124",
+      "coal-policy-detail-20161129"
+    ],
+    "baselineEvidenceRefs": [
+      "huaneng-q3-20161026"
+    ],
+    "evidenceRefs": [
+      "coal-330-release-20161124",
+      "coal-policy-detail-20161129",
+      "huaneng-q3-20161026",
+      "regime-coal-20161231"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "mixed",
+      "rationale": "Fuel-cost direction is favorable but tariff/volume/market-power risks are independent and not bounded by the fresh event.",
+      "evidenceRefs": [
+        "huaneng-q3-20161026"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Remain Research; require net earnings/cash confirmation inside the base horizon before any escalation.",
+    "falsifier": "Coal prices fall but Huaneng margin/earnings fail to recover.",
+    "conclusion": "no_route"
+  }
+}
