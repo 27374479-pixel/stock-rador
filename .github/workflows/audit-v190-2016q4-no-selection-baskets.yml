@@ -1,0 +1,40 @@
+name: audit-v190-2016q4-no-selection-baskets
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.9-2016q4-holdout-20260925
+    paths:
+      - .github/workflows/audit-v190-2016q4-no-selection-baskets.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v1.9-2016q4-holdout-20260925
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Audit frozen no-selection baskets after reveal
+        run: |
+          rm -f backtests/runs/2016q4-multisource-deep-v1.9-001/no-selection-audit.json
+          node scripts/audit-postoutcome-baskets-v190-hfq.cjs \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/lock.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/no-selection-audit-config.json \
+            backtests/runs/2016q4-multisource-deep-v1.9-001/no-selection-audit.json
+      - name: Commit diagnostic audit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2016q4-multisource-deep-v1.9-001/no-selection-audit.json
+          git commit -m "backtest: audit v1.9 2016Q4 no-selection baskets"
+          git pull --rebase origin ai-skill-v1.9-2016q4-holdout-20260925
+          git push origin HEAD:ai-skill-v1.9-2016q4-holdout-20260925
