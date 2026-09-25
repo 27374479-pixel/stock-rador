@@ -1,0 +1,22 @@
+name: summarize-2026-weekly-baseline
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2016q2-expanded-discovery-20260925
+    paths:
+      - .github/workflows/summarize-2026-weekly-baseline.yml
+      - scripts/summarize-2026-weekly-baseline.cjs
+
+permissions:
+  contents: read
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/summarize-2026-weekly-baseline.cjs
