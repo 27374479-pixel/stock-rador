@@ -1,0 +1,321 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-12-31T23:59:59+08:00",
+  "researchReadyAt": "2016-12-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q4-shenzhen-connect-live",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The December launch confirms an already-announced market-opening mechanism; any base-horizon company return must be tied to a new incremental ownership/earnings channel rather than pre-existing quality."
+  },
+  "changeHypothesis": {
+    "summary": "Shenzhen-Hong Kong Stock Connect moved from an already-known framework into live operation in December. The structural opening is real, but the event is explicitly continuation and does not by itself create new company earnings.",
+    "firstCredibleDate": "2016-11-25",
+    "valueChain": [
+      "market access",
+      "northbound participation",
+      "ownership/valuation",
+      "company financing/valuation"
+    ],
+    "persistenceReason": "Cross-border access can persist structurally, but implementation was known before launch and first-day flow does not prove a company-specific earnings reset.",
+    "disconfirmingEvidence": [
+      "The discovery cluster is frozen as continuation.",
+      "The Shenzhen quality basket is only neutral.",
+      "Midea's profit/cash quality and M&A/product drivers predate the live-launch event."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "shenzhen-connect-approval-20161125",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Formal launch was approved for Dec-5 after an already-known framework."
+    },
+    {
+      "id": "shenzhen-connect-live-20161206",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "The mechanism went live and northbound activity was real."
+    },
+    {
+      "id": "midea-q3-20161031",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Midea had strong pre-existing company drivers independent of the Connect launch."
+    },
+    {
+      "id": "regime-connect-20161231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "The frozen Shenzhen quality basket was neutral."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "Connect live implementation",
+      "to": "cross-border market access",
+      "mechanism": "Eligible investors gain operational access to Shenzhen shares.",
+      "evidenceRefs": [
+        "shenzhen-connect-approval-20161125",
+        "shenzhen-connect-live-20161206"
+      ],
+      "failureMode": "flows remain too small/dispersed to alter individual-company expectations",
+      "lag": "weeks"
+    },
+    {
+      "from": "market access",
+      "to": "company equity value",
+      "mechanism": "Ownership/valuation may change without changing company earnings; company-specific benefit requires evidence beyond pre-existing quality.",
+      "evidenceRefs": [
+        "midea-q3-20161031",
+        "regime-connect-20161231"
+      ],
+      "failureMode": "market opening has no incremental base-horizon company effect",
+      "lag": "months"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "market infrastructure/brokerage if incremental volumes are material"
+    ],
+    "secondOrderWinners": [
+      "eligible high-quality Shenzhen names if ownership materially changes"
+    ],
+    "losers": [],
+    "substitutes": [
+      "existing QFII/HK-Shanghai Connect channels"
+    ],
+    "bottlenecks": [
+      "northbound flow size",
+      "investor eligibility",
+      "valuation absorption"
+    ],
+    "falseThemeMatches": [
+      "strong Shenzhen companies whose earnings engine predates the Connect launch"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000333.SZ",
+      "name": "美的集团",
+      "verifiedExposure": "High-quality Shenzhen large cap with strong profit/OCF, but company drivers predate Connect.",
+      "evidenceRefs": [
+        "midea-q3-20161031",
+        "regime-connect-20161231"
+      ],
+      "earningsSensitivity": {
+        "base": "Existing appliance/M&A engine.",
+        "favorable": "Foreign ownership/valuation gradually improves.",
+        "adverse": "No incremental flow or company-specific effect."
+      },
+      "principalRisks": [
+        "causal attribution",
+        "continuation signal"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No company-specific incremental earnings/valuation bridge is attributable to the live-launch event; pre-existing quality cannot be relabeled as event alpha."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The frozen Shenzhen quality basket was about -1.38pp excess over 20d and +0.83pp over 60d, a neutral regime. The market-opening framework was already public before the December launch.",
+    "thesisExpectation": "Connect may be a long-duration ownership/valuation tailwind, but no base-horizon company-specific incremental edge is verified.",
+    "measurableGap": "No cutoff-valid gap tied to the implementation event rather than pre-existing company quality.",
+    "evidenceRefs": [
+      "shenzhen-connect-approval-20161125",
+      "shenzhen-connect-live-20161206",
+      "midea-q3-20161031",
+      "regime-connect-20161231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "market_structure",
+    "productMarketScope": "Shenzhen-Hong Kong cross-border market access",
+    "geographicScope": "Shenzhen/Hong Kong equity markets",
+    "customerScope": "northbound/southbound investors",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The event is structural market implementation rather than a direct company earnings shock.",
+    "evidenceRefs": [
+      "shenzhen-connect-approval-20161125",
+      "shenzhen-connect-live-20161206",
+      "midea-q3-20161031"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "live access but small/early flows",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "shenzhen-connect-live-20161206",
+        "regime-connect-20161231"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "ownership/valuation effect is unverified at company level",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "regime-connect-20161231"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "persistent cross-border access",
+      "horizon": "multiple quarters/years",
+      "evidenceRefs": [
+        "shenzhen-connect-approval-20161125"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "No selection at the registered base horizon; do not attribute pre-existing company quality to the continuation event.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "Midea is a strong company, but its quality is independent of the event and therefore not a valid Connect-specific divergence.",
+    "evidenceRefs": [
+      "midea-q3-20161031",
+      "regime-connect-20161231"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "known_market_structure_implementation_without_company_specific_increment",
+    "constraints": [
+      "continuation event",
+      "no direct earnings bridge",
+      "causal attribution risk"
+    ]
+  },
+  "bearCase": "Strong Shenzhen companies may rise for their own fundamentals, but that does not validate the Connect launch as a base-horizon company-selection signal.",
+  "invalidationConditions": [
+    {
+      "indicator": "incremental northbound ownership/valuation effect",
+      "observationMethod": "market/company ownership data",
+      "threshold": "new material company-specific effect beyond pre-existing baseline"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; keep market-opening structure separate from company fundamentals unless a new incremental bridge emerges."
+  ],
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [],
+  "expectationEvidenceStatus": "insufficient",
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "insufficient",
+      "rationale": "The cluster is explicitly continuation; live implementation cannot be relabeled as fresh.",
+      "evidenceRefs": [
+        "shenzhen-connect-approval-20161125",
+        "shenzhen-connect-live-20161206"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Midea quality is realized but unrelated to the event.",
+      "evidenceRefs": [
+        "midea-q3-20161031"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No event-specific revision is frozen.",
+      "evidenceRefs": [
+        "regime-connect-20161231"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Market access is structural, but base-horizon effect is uncertain.",
+      "evidenceRefs": [
+        "shenzhen-connect-approval-20161125"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "A measurable incremental company ownership/valuation path appears that was not already in the baseline.",
+    "conclusion": "no_continuation"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": null,
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "No expression selected.",
+    "earningsQualityComparison": "Midea quality is acknowledged but excluded as causal event evidence.",
+    "downsideComparison": "No selected expression.",
+    "evidenceRefs": [
+      "midea-q3-20161031",
+      "regime-connect-20161231"
+    ],
+    "conclusion": "balanced"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "insufficient",
+    "axes": [],
+    "strongestCounterThesis": "The launch is implementation of an already-known framework, so buying a strong Shenzhen company after launch confuses company quality with event alpha.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "A genuinely new event-specific ownership/valuation driver emerges.",
+    "conclusion": "research_only"
+  },
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
