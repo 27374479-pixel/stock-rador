@@ -1,0 +1,900 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-09-30T23:59:59+08:00",
+  "researchReadyAt": "2016-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q3-coal-supply-restriction-conflict",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Coal pricing and producer earnings can remain supported for quarters, but this memo tests whether an old cycle still has a new actionable edge; cutoff evidence is insufficient for Primary."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "durable_cash_yield",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601088.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "clear",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Coal supply restriction remains economically powerful, but it is a continuation and policy has begun counter-adjusting supply. Shenhua is the strongest frozen low-cost/cash-quality expression, yet V1.9 fresh escalation is unavailable and its own price is already strong.",
+    "firstCredibleDate": "2016-09-08",
+    "valueChain": [
+      "276-day supply restriction",
+      "coal availability",
+      "coal price",
+      "low-cost miner margin/cash"
+    ],
+    "persistenceReason": "Supply reform can persist, but temporary advanced-capacity release explicitly limits runaway scarcity.",
+    "disconfirmingEvidence": [
+      "Core coal thesis predates the quarter.",
+      "Authorities are already counter-adjusting supply.",
+      "Shenhua has positive 20d and 60d excess returns, so the company-engine override is unavailable."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "coal-276-supply-20160908",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "shenhua-h1-20160827",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "shaanxi-coal-h1-20160829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "yanzhou-h1-20160829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "regime-coal-20160930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "continued production restriction",
+      "to": "coal availability and pricing",
+      "mechanism": "Lower permitted production supports scarcity and producer pricing.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908"
+      ],
+      "failureMode": "policy release restores enough supply to normalize prices",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "coal pricing",
+      "to": "Shenhua cash earnings",
+      "mechanism": "Low production cost and strong cash conversion provide direct producer exposure.",
+      "evidenceRefs": [
+        "shenhua-h1-20160827"
+      ],
+      "failureMode": "price normalization or integrated downstream effects offset mining benefit",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "low-cost coal producers"
+    ],
+    "secondOrderWinners": [
+      "transport linked to coal volume/price"
+    ],
+    "losers": [
+      "coal-consuming power/industrial users"
+    ],
+    "substitutes": [
+      "alternative fuels and increased permitted capacity"
+    ],
+    "bottlenecks": [
+      "permitted output",
+      "rail logistics"
+    ],
+    "falseThemeMatches": [
+      "continuation stories relabeled as fresh events"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601088.SH",
+      "name": "中国神华",
+      "verifiedExposure": "Large low-cost integrated coal producer with strong cutoff-valid operating cash flow.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "H1 profit remained down but cash generation and low cost were strong.",
+        "favorable": "Persistently tight supply supports realized coal margins.",
+        "adverse": "Policy releases supply and normalizes scarcity before a new revision gap forms."
+      },
+      "principalRisks": [
+        "policy counter-adjustment",
+        "continuation/absorption",
+        "integrated-business offsets"
+      ]
+    },
+    {
+      "ticker": "601225.SH",
+      "name": "陕西煤业",
+      "verifiedExposure": "Frozen counterfactual/control expression.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Used as a contemporaneous comparison.",
+        "favorable": "Could outperform if the preferred company's specific edge fails.",
+        "adverse": "May lack the preferred company's direct mechanism."
+      },
+      "principalRisks": [
+        "weaker causal fit",
+        "different company-specific risks"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601225.SH",
+      "name": "陕西煤业",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Frozen listed comparison exposed to the same broad environment but with a different company-level mechanism.",
+      "whySelectedCompanyShouldOutperform": "Shenhua has superior frozen cash quality and cost evidence versus weaker peers.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen control is sufficient for this Research-only expression test.",
+  "selectionComparison": {
+    "selectedTicker": "601088.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601225.SH",
+        "selectedAdvantages": [
+          "Low production cost and very strong realized operating cash conversion."
+        ],
+        "selectedDisadvantages": [
+          "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary."
+        ],
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ],
+        "switchCondition": "Prefer another miner only if cutoff-valid cost/cash and expectation evidence shows a cleaner under-reflected edge.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Coal scarcity is well known and Shenhua already has positive relative returns over both frozen windows.",
+    "thesisExpectation": "Low-cost producers can continue to monetize tight supply.",
+    "measurableGap": "No genuinely new driver or measured expectation reset separates the old coal thesis from its already-known continuation.",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "shaanxi-coal-h1-20160829",
+      "yanzhou-h1-20160829",
+      "regime-coal-20160930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen company evidence plus benchmark-relative pre-cutoff price regime; no sufficiently complete contemporaneous valuation/consensus snapshot.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Coal scarcity is well known and Shenhua already has positive relative returns over both frozen windows.",
+    "thesisScenario": "Low-cost producers can continue to monetize tight supply.",
+    "breakevenCondition": "A new source-linked tightening or under-reflected earnings revision must emerge beyond the known restriction.",
+    "ordinaryScenarioFailure": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+    "catalystOrTimingBridge": "Subsequent coal price, permitted-output policy and producer earnings data.",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "shaanxi-coal-h1-20160829",
+      "yanzhou-h1-20160829",
+      "regime-coal-20160930"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Supply remains restricted, but policy counter-adjustment makes the incremental impulse conflicted.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Shenhua's low cost and strong operating cash generation are already realized.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Shenhua has superior frozen cash quality and cost evidence versus weaker peers.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "clear",
+      "rationale": "The frozen company filing predates the event and is kept separate from the new driver.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Shenhua is above CSI300 over both frozen 20d and 60d windows.",
+      "evidenceRefs": [
+        "regime-coal-20160930"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen coal basket versus CSI300",
+      "lookback20Excess": 0.016926613174993332,
+      "lookback60Excess": -0.004000076772185279,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-coal-20160930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "plateauing",
+      "rationale": "Supply remains restricted, but policy counter-adjustment makes the incremental impulse conflicted.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Supply reform can persist, but temporary advanced-capacity release explicitly limits runaway scarcity.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+      "evidenceRefs": [
+        "regime-coal-20160930"
+      ]
+    },
+    "overallConclusion": "neutral",
+    "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601088.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Low unit cost and very strong H1 operating cash flow support a high quality floor.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "No genuinely new driver or measured expectation reset separates the old coal thesis from its already-known continuation.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete cutoff-valid valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Subsequent coal price, permitted-output policy and producer earnings data.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601225.SH",
+        "revisionAdvantage": "Low production cost and very strong realized operating cash conversion.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "Low unit cost and very strong H1 operating cash flow support a high quality floor.",
+        "catalystAdvantage": "Subsequent coal price, permitted-output policy and producer earnings data.",
+        "downsideTradeoff": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+        "switchCondition": "Prefer another miner only if cutoff-valid cost/cash and expectation evidence shows a cleaner under-reflected edge.",
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Existing supply restriction supports coal prices while temporary release caps scarcity.",
+    "earningsMechanism": "A low-cost miner converts sustained coal pricing into margin and cash, but the change is continuation rather than fresh.",
+    "nextObservableMetric": "coal price, permitted production days/output, mining margin and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "realized",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "shaanxi-coal-h1-20160829",
+      "yanzhou-h1-20160829",
+      "regime-coal-20160930"
+    ],
+    "failureCondition": "Policy supply release normalizes coal pricing or no incremental earnings revision appears."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "H1 profit remained down but cash generation and low cost were strong.",
+      "nextPeriod": "The old supply-reform recovery is already visible.",
+      "laterPeriod": "Policy normalization can erode scarcity rents.",
+      "rationale": "The pre-event company filing defines the baseline rather than later outcomes.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Tight supply continues but is policy-conflicted.",
+      "nextPeriodChange": "Low-cost producer earnings remain supported if prices hold.",
+      "laterPeriodChange": "No assumption that 276-day scarcity persists indefinitely.",
+      "mechanism": "A low-cost miner converts sustained coal pricing into margin and cash, but the change is continuation rather than fresh.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "No genuinely new driver or measured expectation reset separates the old coal thesis from its already-known continuation.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "falsifier": "Policy supply release normalizes coal pricing or no incremental earnings revision appears.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "coal supply restriction and low-cost producer economics",
+    "geographicScope": "China A-share relevant market",
+    "customerScope": "thermal and coking coal buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The company is high quality, but V1.9 is deliberately designed not to promote a continuation just because quality and cash are strong.",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "shaanxi-coal-h1-20160829",
+      "yanzhou-h1-20160829",
+      "regime-coal-20160930"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "ongoing supply restriction",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "counter-adjusted supply versus pricing support",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "supply reform versus normalization",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Low unit cost and very strong H1 operating cash flow support a high quality floor.",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "shaanxi-coal-h1-20160829",
+      "yanzhou-h1-20160829",
+      "regime-coal-20160930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": true,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "insufficient",
+      "rationale": "Supply remains restricted, but policy counter-adjustment makes the incremental impulse conflicted.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Shenhua's low cost and strong operating cash generation are already realized.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No genuinely new driver or measured expectation reset separates the old coal thesis from its already-known continuation.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Supply reform can persist, but temporary advanced-capacity release explicitly limits runaway scarcity.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "shaanxi-coal-h1-20160829",
+        "yanzhou-h1-20160829",
+        "regime-coal-20160930"
+      ]
+    },
+    "narrativeRepetitionRisk": "high",
+    "falsifier": "Policy supply release normalizes coal pricing or no incremental earnings revision appears.",
+    "conclusion": "confirmation_only"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "601088.SH",
+    "purestTicker": "601088.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+    "earningsQualityComparison": "Low unit cost and very strong H1 operating cash flow support a high quality floor.",
+    "downsideComparison": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "shaanxi-coal-h1-20160829",
+      "yanzhou-h1-20160829",
+      "regime-coal-20160930"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Strong H1 operating cash generation materially reduces near-term liquidity concern.",
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Frozen evidence is insufficient to clear capital-allocation risk for Primary.",
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "No complete dedicated governance search is frozen for this Research-only candidate.",
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Financing and contingent-risk review is not complete enough for Primary.",
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The coal rally is a mature continuation; temporary supply release caps the shortage and the market has already recognized Shenhua's quality.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "Policy supply release normalizes coal pricing or no incremental earnings revision appears.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_company_sector_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "Geography was checked but did not independently establish a stronger listed exception.",
+        "searchTrace": [
+          "cutoff company geography and policy exposure"
+        ],
+        "evidenceRefs": []
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "The candidate has a cutoff-valid company characteristic that can differentiate it from the conflicted aggregate.",
+        "searchTrace": [
+          "cutoff compliance/capacity eligibility evidence"
+        ],
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Product or business mix creates a different earnings path from a generic sector proxy.",
+        "searchTrace": [
+          "cutoff product mix and direct exposure evidence"
+        ],
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No separate cost-curve advantage beyond the frozen company evidence was established.",
+        "searchTrace": [
+          "cutoff cost and input evidence"
+        ],
+        "evidenceRefs": []
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No stronger contract-pricing exception was frozen.",
+        "searchTrace": [
+          "cutoff contract and pricing evidence"
+        ],
+        "evidenceRefs": []
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "Customer/end-market mix was considered but is not sufficient alone for Primary.",
+        "searchTrace": [
+          "cutoff customer and end-market evidence"
+        ],
+        "evidenceRefs": []
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Cash quality materially differentiates the candidate from weaker peers, but does not waive timing and expectation gates.",
+        "searchTrace": [
+          "cutoff cash flow and working capital evidence"
+        ],
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "No additional material heterogeneity lane was required by the frozen evidence.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "601088.SH",
+        "exceptionMechanism": "Low cost and cash quality differentiate Shenhua from weaker producers inside a policy-conflicted coal cycle.",
+        "directExposure": "clear",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "The exception is economically plausible and cutoff-valid, but inherited timing/expectation/risk gates still block Primary.",
+        "evidenceRefs": [
+          "coal-276-supply-20160908",
+          "shenhua-h1-20160827",
+          "shaanxi-coal-h1-20160829",
+          "yanzhou-h1-20160829",
+          "regime-coal-20160930"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "Aggregate conflict should not terminate company mapping; the surviving exception remains Research rather than a promotion shortcut.",
+    "falsifierOrEscalationTrigger": "New cutoff-valid company evidence must confirm the differentiated earnings path without violating inherited timing, valuation, and risk gates."
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "This is a continuation with explicit policy counter-adjustment, not a source-linked fresh driver; Shenhua is sustained-strength, so neither V1.9 fresh escalation nor company-engine override can rescue Primary."
+    ]
+  },
+  "bearCase": "The coal rally is a mature continuation; temporary supply release caps the shortage and the market has already recognized Shenhua's quality.",
+  "invalidationConditions": [
+    {
+      "indicator": "coal price, permitted production days/output, mining margin and operating cash flow",
+      "observationMethod": "company filings and contemporaneous industry data",
+      "threshold": "Policy supply release normalizes coal pricing or no incremental earnings revision appears."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [
+    "How much incremental price/margin upside remains beyond the already-known supply-reform baseline."
+  ],
+  "nextResearchActions": [
+    "Keep Shenhua Research only; require a genuinely new, source-linked driver or a separately validated re-underwrite rather than extending the old coal narrative."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q3-coal-supply-restriction-conflict",
+    "discoveryNovelty": "continuation",
+    "eventFirstAvailableAt": "2016-09-08T12:30:00+08:00",
+    "baselineAsOfAt": "2016-08-27T00:00:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "coal-276-supply-20160908"
+    ],
+    "baselineEvidenceRefs": [
+      "shenhua-h1-20160827"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "credible",
+      "rationale": "Shenhua quality is strong, but bounded risk cannot convert a continuation into a V1.9 fresh route.",
+      "evidenceRefs": [
+        "coal-276-supply-20160908",
+        "shenhua-h1-20160827",
+        "regime-coal-20160930"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only; do not roll the mature scarcity thesis forward without a genuinely new driver.",
+    "falsifier": "Policy supply release and coal-price normalization eliminate incremental earnings support.",
+    "evidenceRefs": [
+      "coal-276-supply-20160908",
+      "shenhua-h1-20160827",
+      "regime-coal-20160930"
+    ],
+    "conclusion": "no_route"
+  }
+}
