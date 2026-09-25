@@ -148,11 +148,11 @@ test('expanded discovery schema requires explicit cross-role coverage without we
   const p = pack();
   p.schemaVersion = '2.1';
   p.sourceRoles = [
-    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete' },
-    { roleId: 'official_statistics_customs', purpose: 'official operating data', coverageStatus: 'complete' },
-    { roleId: 'specialist_trade_pricing', purpose: 'product pricing and lead times', coverageStatus: 'partial', limitations: 'selected publications' },
-    { roleId: 'reputable_news_wire', purpose: 'broad attributed reporting', coverageStatus: 'complete' },
-    { roleId: 'international_chain_primary', purpose: 'overseas customer and supplier evidence', coverageStatus: 'partial', limitations: 'selected markets' },
+    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete', searchTrace: ['official regulator feeds'] },
+    { roleId: 'official_statistics_customs', purpose: 'official operating data', coverageStatus: 'complete', searchTrace: ['statistics and customs releases'] },
+    { roleId: 'specialist_trade_pricing', purpose: 'product pricing and lead times', coverageStatus: 'partial', limitations: 'selected publications', searchTrace: ['specialist pricing publications'] },
+    { roleId: 'reputable_news_wire', purpose: 'broad attributed reporting', coverageStatus: 'complete', searchTrace: ['general and financial news feeds'] },
+    { roleId: 'international_chain_primary', purpose: 'overseas customer and supplier evidence', coverageStatus: 'partial', limitations: 'selected markets', searchTrace: ['foreign issuer and government releases'] },
     { roleId: 'community_forum_weak_signal', purpose: 'weak-signal discovery only', coverageStatus: 'unavailable', limitations: 'historical archive unavailable' }
   ];
   p.sourceItems[0].sourceRoleId = 'official_policy_regulatory';
@@ -174,7 +174,7 @@ test('expanded discovery schema fails closed when a source item hides behind a b
   const p = pack();
   p.schemaVersion = '2.1';
   p.sourceRoles = [
-    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete' }
+    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete', searchTrace: ['official regulator feeds'] }
   ];
 
   const errors = validateDiscoveryPack(p, m);
