@@ -1,0 +1,744 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-09-30T23:59:59+08:00",
+  "researchReadyAt": "2016-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q3-dram-price-inflection",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Q4 DRAM contract pricing and subsequent storage revenue/margins can test the earnings bridge within the base horizon."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002049.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "A genuine global DRAM price inflection is visible and 002049 has direct current DRAM/module shipments, but its cash conversion is weak and both broad and direct-candidate price regimes are adverse.",
+    "firstCredibleDate": "2016-09-05",
+    "valueChain": [
+      "DRAM supply/demand",
+      "contract price",
+      "memory chips/modules",
+      "supplier revenue/margin"
+    ],
+    "persistenceReason": "A product cycle can persist for quarters, but the A-share direct exposure is small enough that company-level earnings materiality must be verified.",
+    "disconfirmingEvidence": [
+      "002049 operating cash flow turned negative in H1.",
+      "The broad DRAM basket is adverse.",
+      "The direct 002049 audit is also adverse."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-rebound-20160905",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "unigroup-h1-20160818",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "regime-dram-20160930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "regime-dram-direct-002049-20160930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "DRAM supply tightening and price rebound",
+      "to": "memory chip/module pricing",
+      "mechanism": "Higher contract prices improve revenue/margin potential for direct DRAM sellers.",
+      "evidenceRefs": [
+        "dram-rebound-20160905"
+      ],
+      "failureMode": "price rebound reverses or company product mix does not monetize it",
+      "lag": "weeks to quarters"
+    },
+    {
+      "from": "higher DRAM pricing",
+      "to": "002049 earnings",
+      "mechanism": "The company is already batch-shipping DRAM chips/modules, creating a direct but not yet fully quantified bridge.",
+      "evidenceRefs": [
+        "unigroup-h1-20160818"
+      ],
+      "failureMode": "DRAM exposure is too small or cash/margin conversion remains weak",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "direct DRAM suppliers"
+    ],
+    "secondOrderWinners": [
+      "memory modules with pricing power"
+    ],
+    "losers": [
+      "memory buyers unable to pass through cost"
+    ],
+    "substitutes": [
+      "other memory technologies over longer horizons"
+    ],
+    "bottlenecks": [
+      "DRAM supply",
+      "product mix",
+      "company earnings materiality"
+    ],
+    "falseThemeMatches": [
+      "generic semiconductor proxies without current DRAM revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002049.SZ",
+      "name": "紫光国芯",
+      "verifiedExposure": "H1 filing explicitly shows batch DRAM chip/module shipment and >30% storage-chip revenue growth.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Direct DRAM exposure exists before the price inflection, but H1 cash conversion is weak.",
+        "favorable": "Q4 contract-price rise lifts storage revenue and margin.",
+        "adverse": "Direct exposure is too small or working-capital/cash weakness offsets product pricing."
+      },
+      "principalRisks": [
+        "weak operating cash flow",
+        "adverse price regime",
+        "uncertain earnings materiality"
+      ]
+    },
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "verifiedExposure": "Frozen counterfactual/control expression.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Used as a contemporaneous comparison.",
+        "favorable": "Could outperform if the preferred company's specific edge fails.",
+        "adverse": "May lack the preferred company's direct mechanism."
+      },
+      "principalRisks": [
+        "weaker causal fit",
+        "different company-specific risks"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Frozen listed comparison exposed to the same broad environment but with a different company-level mechanism.",
+      "whySelectedCompanyShouldOutperform": "002049 has explicit current DRAM shipments while the control does not establish equivalent direct DRAM exposure.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen control is sufficient for this Research-only expression test.",
+  "selectionComparison": {
+    "selectedTicker": "002049.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600460.SH",
+        "selectedAdvantages": [
+          "Direct current DRAM product exposure rather than generic semiconductor thematic exposure."
+        ],
+        "selectedDisadvantages": [
+          "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved."
+        ],
+        "evidenceRefs": [
+          "dram-rebound-20160905",
+          "unigroup-h1-20160818",
+          "regime-dram-20160930",
+          "regime-dram-direct-002049-20160930"
+        ],
+        "switchCondition": "Use another expression only if cutoff-valid filings show equal or stronger direct DRAM revenue with better cash/expectation quality.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The global product inflection is public, while 002049 and the frozen DRAM basket remain materially weak versus CSI300.",
+    "thesisExpectation": "Rising DRAM contract prices can improve direct storage-chip earnings.",
+    "measurableGap": "The magnitude of 002049's incremental margin/earnings benefit is not frozen.",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930",
+      "regime-dram-direct-002049-20160930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen company evidence plus benchmark-relative pre-cutoff price regime; no sufficiently complete contemporaneous valuation/consensus snapshot.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The global product inflection is public, while 002049 and the frozen DRAM basket remain materially weak versus CSI300.",
+    "thesisScenario": "Rising DRAM contract prices can improve direct storage-chip earnings.",
+    "breakevenCondition": "The DRAM price rise must be large enough to matter to consolidated earnings and cash.",
+    "ordinaryScenarioFailure": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+    "catalystOrTimingBridge": "Q4 contract prices and subsequent storage revenue/margin disclosure.",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930",
+      "regime-dram-direct-002049-20160930"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "TrendForce documents a fresh product-market price inflection.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Direct DRAM shipment/revenue exposure is realized, but the incremental post-event earnings effect is not.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "002049 has explicit current DRAM shipments while the control does not establish equivalent direct DRAM exposure.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "clear",
+      "rationale": "The frozen company filing predates the event and is kept separate from the new driver.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "002049 is materially below CSI300 over both 20d and 60d frozen windows.",
+      "evidenceRefs": [
+        "regime-dram-20160930"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen DRAM basket versus CSI300",
+      "lookback20Excess": -0.026019791432021155,
+      "lookback60Excess": -0.1614525552640568,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-dram-20160930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "TrendForce documents a fresh product-market price inflection.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "A product cycle can persist for quarters, but the A-share direct exposure is small enough that company-level earnings materiality must be verified.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+      "evidenceRefs": [
+        "regime-dram-20160930"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002049.SZ",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "Profit/revenue growth and direct exposure are positive, but negative operating cash flow weakens the quality floor.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "The magnitude of 002049's incremental margin/earnings benefit is not frozen.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete cutoff-valid valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Q4 contract prices and subsequent storage revenue/margin disclosure.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600460.SH",
+        "revisionAdvantage": "Direct current DRAM product exposure rather than generic semiconductor thematic exposure.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "Profit/revenue growth and direct exposure are positive, but negative operating cash flow weakens the quality floor.",
+        "catalystAdvantage": "Q4 contract prices and subsequent storage revenue/margin disclosure.",
+        "downsideTradeoff": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+        "switchCondition": "Use another expression only if cutoff-valid filings show equal or stronger direct DRAM revenue with better cash/expectation quality.",
+        "evidenceRefs": [
+          "dram-rebound-20160905",
+          "unigroup-h1-20160818",
+          "regime-dram-20160930",
+          "regime-dram-direct-002049-20160930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Q4 DRAM contract prices are expected to rise after a prolonged decline.",
+    "earningsMechanism": "Direct DRAM chips/modules can realize higher selling prices if product mix and volumes hold.",
+    "nextObservableMetric": "DRAM contract price, storage-chip revenue/margin and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930",
+      "regime-dram-direct-002049-20160930"
+    ],
+    "failureCondition": "DRAM prices fail to rise or storage revenue/margins/cash do not respond."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Direct DRAM exposure exists before the price inflection, but H1 cash conversion is weak.",
+      "nextPeriod": "Storage-chip growth exists but the company is not yet a proven cycle beneficiary.",
+      "laterPeriod": "Longer-term domestic memory opportunity remains separate from this price-cycle thesis.",
+      "rationale": "The pre-event company filing defines the baseline rather than later outcomes.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Product price rises.",
+      "nextPeriodChange": "Direct storage revenue/margin can improve.",
+      "laterPeriodChange": "No assumption of permanent pricing tightness.",
+      "mechanism": "Direct DRAM chips/modules can realize higher selling prices if product mix and volumes hold.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The magnitude of 002049's incremental margin/earnings benefit is not frozen.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "falsifier": "DRAM prices fail to rise or storage revenue/margins/cash do not respond.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "direct DRAM chips and memory modules",
+    "geographicScope": "China A-share relevant market",
+    "customerScope": "servers, PCs, set-top boxes and industrial users",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The product-market signal and direct exposure are both real; the failure is investability/timing/risk, not discovery.",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930",
+      "regime-dram-direct-002049-20160930"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "fresh DRAM contract-price inflection",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "potential direct storage earnings conversion",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "longer-run memory competition/capacity",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Profit/revenue growth and direct exposure are positive, but negative operating cash flow weakens the quality floor.",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930",
+      "regime-dram-direct-002049-20160930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "TrendForce documents a fresh product-market price inflection.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Direct DRAM shipment/revenue exposure is realized, but the incremental post-event earnings effect is not.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "The magnitude of 002049's incremental margin/earnings benefit is not frozen.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "A product cycle can persist for quarters, but the A-share direct exposure is small enough that company-level earnings materiality must be verified.",
+      "evidenceRefs": [
+        "dram-rebound-20160905",
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "DRAM prices fail to rise or storage revenue/margins/cash do not respond.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002049.SZ",
+    "purestTicker": "002049.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+    "earningsQualityComparison": "Profit/revenue growth and direct exposure are positive, but negative operating cash flow weakens the quality floor.",
+    "downsideComparison": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930",
+      "regime-dram-direct-002049-20160930"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "H1 operating cash flow was negative, so earnings quality/downside is not cleared.",
+        "evidenceRefs": [
+          "dram-rebound-20160905",
+          "unigroup-h1-20160818",
+          "regime-dram-20160930",
+          "regime-dram-direct-002049-20160930"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Frozen evidence is insufficient to clear capital-allocation risk for Primary.",
+        "evidenceRefs": [
+          "dram-rebound-20160905",
+          "unigroup-h1-20160818",
+          "regime-dram-20160930",
+          "regime-dram-direct-002049-20160930"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "No complete dedicated governance search is frozen for this Research-only candidate.",
+        "evidenceRefs": [
+          "dram-rebound-20160905",
+          "unigroup-h1-20160818",
+          "regime-dram-20160930",
+          "regime-dram-direct-002049-20160930"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Financing and contingent-risk review is not complete enough for Primary.",
+        "evidenceRefs": [
+          "dram-rebound-20160905",
+          "unigroup-h1-20160818",
+          "regime-dram-20160930",
+          "regime-dram-direct-002049-20160930"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The global DRAM cycle improves but 002049's direct exposure is not material enough to overcome weak cash quality and adverse equity timing.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "DRAM prices fail to rise or storage revenue/margins/cash do not respond.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "Despite a clean product signal and direct mapping, V1.9 forbids a fresh Primary under mechanically adverse broad timing; expectation burden and cash-quality risk are also unresolved."
+    ]
+  },
+  "bearCase": "The global DRAM cycle improves but 002049's direct exposure is not material enough to overcome weak cash quality and adverse equity timing.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM contract price, storage-chip revenue/margin and operating cash flow",
+      "observationMethod": "company filings and contemporaneous industry data",
+      "threshold": "DRAM prices fail to rise or storage revenue/margins/cash do not respond."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [
+    "Exact DRAM revenue share, realized pricing and margin sensitivity at the cutoff."
+  ],
+  "nextResearchActions": [
+    "Keep 002049 as Research only; require direct storage-margin/cash confirmation and non-adverse timing before any Primary route."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q3-dram-price-inflection",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-09-05T00:00:00+08:00",
+    "baselineAsOfAt": "2016-08-18T00:00:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "dram-rebound-20160905"
+    ],
+    "baselineEvidenceRefs": [
+      "unigroup-h1-20160818"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "insufficient",
+      "rationale": "Adverse broad/direct timing plus weak cash conversion block the bounded V1.9 fresh route.",
+      "evidenceRefs": [
+        "unigroup-h1-20160818",
+        "regime-dram-20160930",
+        "regime-dram-direct-002049-20160930"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only until direct margin/cash confirmation and a non-adverse timing state exist.",
+    "falsifier": "DRAM price or company storage earnings fail to improve.",
+    "evidenceRefs": [
+      "dram-rebound-20160905",
+      "unigroup-h1-20160818",
+      "regime-dram-20160930"
+    ],
+    "conclusion": "no_route"
+  }
+}
