@@ -1,0 +1,369 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-12-31T23:59:59+08:00",
+  "researchReadyAt": "2016-12-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q4-small-car-tax-reset",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The partial tax rollback changes 2017 passenger-vehicle demand comparisons immediately, but cutoff-valid company evidence does not identify a positive event-driven earnings exception."
+  },
+  "changeHypothesis": {
+    "summary": "The <=1.6L passenger-vehicle purchase tax rises from 5% to 7.5% in 2017, creating a softer landing than a full return to 10% but a clear demand headwind versus the 2016 stimulus baseline.",
+    "firstCredibleDate": "2016-12-15",
+    "valueChain": [
+      "purchase tax",
+      "small-engine passenger-car affordability",
+      "OEM/dealer sales",
+      "production/inventory",
+      "OEM earnings"
+    ],
+    "persistenceReason": "The 7.5% rate is fixed for 2017, so the changed demand baseline persists for a full year.",
+    "disconfirmingEvidence": [
+      "SAIC, Changan and Great Wall all had profitable 2016 operating baselines, but none of the frozen evidence shows a new positive company driver caused by the tax reset.",
+      "Changan and Great Wall were benefiting from the prior stimulus cycle.",
+      "The auto price regime is only neutral, not a broad fresh positive reset."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "auto-tax-reset-20161213",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "The 2017 purchase-tax rate reset creates a new demand baseline."
+    },
+    {
+      "id": "saic-q3-20161029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "SAIC entered the event profitable but with declining OCF and no new tax-reset benefit."
+    },
+    {
+      "id": "changan-q3-20161027",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Changan's strong 2016 growth was part of the old stimulus-supported baseline."
+    },
+    {
+      "id": "greatwall-q3-20161026",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Great Wall's strong 2016 sales/profit also benefited from the existing demand regime."
+    },
+    {
+      "id": "regime-auto-20161231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "The frozen auto basket was neutral at cutoff."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "purchase tax rises from 5% to 7.5%",
+      "to": "small-engine vehicle demand baseline",
+      "mechanism": "The consumer tax incentive becomes less generous, creating a tougher 2017 comparison.",
+      "evidenceRefs": [
+        "auto-tax-reset-20161213"
+      ],
+      "failureMode": "underlying income/product-cycle strength fully offsets the tax change",
+      "lag": "weeks"
+    },
+    {
+      "from": "vehicle demand baseline",
+      "to": "OEM earnings",
+      "mechanism": "Unit volume, pricing and inventory determine whether the tax reset changes revenue/profit.",
+      "evidenceRefs": [
+        "saic-q3-20161029",
+        "changan-q3-20161027",
+        "greatwall-q3-20161026"
+      ],
+      "failureMode": "company product launches/share gains offset aggregate demand pressure",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [],
+    "losers": [
+      "small-engine OEMs most dependent on stimulus-sensitive demand"
+    ],
+    "substitutes": [
+      "larger-engine or alternative-powertrain vehicles depending consumer mix"
+    ],
+    "bottlenecks": [
+      "consumer demand",
+      "dealer inventory",
+      "product mix"
+    ],
+    "falseThemeMatches": [
+      "profitable auto OEMs assumed to benefit merely because tax policy is clarified"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600104.SH",
+      "name": "上汽集团",
+      "verifiedExposure": "Large passenger-vehicle OEM with profitable cutoff baseline but no frozen positive incremental tax-reset bridge.",
+      "evidenceRefs": [
+        "saic-q3-20161029",
+        "regime-auto-20161231"
+      ],
+      "earningsSensitivity": {
+        "base": "Profitable scale but OCF down.",
+        "favorable": "Product/share strength offsets tax headwind.",
+        "adverse": "2017 demand slows as incentive weakens."
+      },
+      "principalRisks": [
+        "tax demand reset",
+        "cash-flow slowdown"
+      ]
+    },
+    {
+      "ticker": "000625.SZ",
+      "name": "长安汽车",
+      "verifiedExposure": "Passenger OEM benefiting from the 2016 demand cycle.",
+      "evidenceRefs": [
+        "changan-q3-20161027",
+        "regime-auto-20161231"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong 2016 profit.",
+        "favorable": "Product cycle offsets tax reset.",
+        "adverse": "Stimulus-supported demand normalizes."
+      },
+      "principalRisks": [
+        "demand normalization",
+        "OCF decline"
+      ]
+    },
+    {
+      "ticker": "601633.SH",
+      "name": "长城汽车",
+      "verifiedExposure": "Passenger/SUV OEM with strong 2016 growth under the old incentive regime.",
+      "evidenceRefs": [
+        "greatwall-q3-20161026",
+        "regime-auto-20161231"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong existing growth.",
+        "favorable": "Product strength offsets policy.",
+        "adverse": "Tax-sensitive demand slows."
+      },
+      "principalRisks": [
+        "policy normalization",
+        "product concentration"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": null,
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "No cutoff-valid company has a positive event-driven earnings bridge strong enough to justify selection after the tax incentive becomes less generous."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The frozen auto basket was roughly +2.32pp excess over 20d and -0.54pp over 60d, a neutral regime. Company profit strength was already visible before the tax reset.",
+    "thesisExpectation": "2017 demand may soften relative to the 2016 stimulus baseline, with company outcomes driven more by product/share than by the policy event itself.",
+    "measurableGap": "No positive company-specific incremental gap is verified.",
+    "evidenceRefs": [
+      "auto-tax-reset-20161213",
+      "saic-q3-20161029",
+      "changan-q3-20161027",
+      "greatwall-q3-20161026",
+      "regime-auto-20161231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "",
+    "thesisScenario": "",
+    "breakevenCondition": "",
+    "ordinaryScenarioFailure": "",
+    "catalystOrTimingBridge": "",
+    "evidenceRefs": [],
+    "conclusion": "unresolved"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "<=1.6L passenger-vehicle demand under the 2017 purchase-tax reset",
+    "geographicScope": "China passenger-auto market",
+    "customerScope": "retail passenger-car buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The event is a demand-baseline reset; no company-specific positive exception is sufficiently evidenced in the frozen pool.",
+    "evidenceRefs": [
+      "auto-tax-reset-20161213",
+      "saic-q3-20161029",
+      "changan-q3-20161027",
+      "greatwall-q3-20161026"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "mixed",
+      "driver": "partial incentive rollback versus product/company strength",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "auto-tax-reset-20161213",
+        "regime-auto-20161231"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "negative",
+      "driver": "2017 tax rate is less supportive than 2016",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "auto-tax-reset-20161213"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "product/share can offset policy but is company-specific and not a new event bridge",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "saic-q3-20161029",
+        "changan-q3-20161027",
+        "greatwall-q3-20161026"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "No selection until a company-specific product/share driver is separately verified; do not reinterpret policy clarity as positive alpha.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "Company quality differs, but no frozen positive event-specific earnings path is established.",
+    "evidenceRefs": [
+      "regime-auto-20161231",
+      "saic-q3-20161029",
+      "changan-q3-20161027",
+      "greatwall-q3-20161026"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "No selection.",
+    "alreadyPricedAssessment": "neutral_sector_with_negative_policy_reset_and_no_positive_company_bridge",
+    "constraints": [
+      "demand normalization",
+      "no event-specific positive company catalyst"
+    ]
+  },
+  "bearCase": "2016 stimulus-supported volume was pulled forward and the less generous 2017 tax rate weakens unit growth.",
+  "invalidationConditions": [
+    {
+      "indicator": "company-specific product/share/earnings",
+      "observationMethod": "OEM operating data",
+      "threshold": "new verified growth engine offsets policy headwind"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "No selection; wait for a separate company-specific positive driver rather than treating policy clarification as opportunity."
+  ],
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [],
+  "expectationEvidenceStatus": "insufficient",
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "The event is fresh but is a partial demand headwind, not a positive driver.",
+      "evidenceRefs": [
+        "auto-tax-reset-20161213"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "OEM earnings are positive but predate the event.",
+      "evidenceRefs": [
+        "saic-q3-20161029",
+        "changan-q3-20161027",
+        "greatwall-q3-20161026"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No positive event-specific revision is frozen.",
+      "evidenceRefs": [
+        "regime-auto-20161231"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "The tax rate is fixed for 2017.",
+      "evidenceRefs": [
+        "auto-tax-reset-20161213"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "A new company-specific product/share driver emerges.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": null,
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "No expression selected.",
+    "earningsQualityComparison": "Profitable OEMs exist, but quality alone is not an event-specific positive bridge.",
+    "downsideComparison": "No selected expression.",
+    "evidenceRefs": [
+      "saic-q3-20161029",
+      "changan-q3-20161027",
+      "greatwall-q3-20161026"
+    ],
+    "conclusion": "balanced"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "insufficient",
+    "axes": [],
+    "strongestCounterThesis": "The policy reset is a demand headwind and existing company quality reflects the old stimulus baseline rather than a new opportunity.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "A company demonstrates a new product/share/earnings reset that clearly offsets the tax headwind.",
+    "conclusion": "research_only"
+  },
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
