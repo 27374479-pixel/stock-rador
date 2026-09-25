@@ -1,0 +1,42 @@
+name: fetch-v2-2016q2-event-time-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2016q2-expanded-discovery-20260925
+    paths:
+      - .github/workflows/fetch-v2-2016q2-event-time-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2016q2-expanded-discovery-20260925
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Fetch event-time 20/60d regimes
+        run: |
+          set -e
+          D=backtests/runs/2016q2-expanded-discovery-v2.0-001/regime
+          pairs="coal-ready-20160609 pv-ready-20160613 battery-ready-20160429 memory-nand-ready-20160531 memory-dram-ready-20160616 lcd-ready-20160628 vitamin-e-ready-20160428 tio2-ready-20160615 gpon-ready-20160621 charging-ready-20160503"
+          for f in $pairs; do
+            rm -f "$D/$f.snapshot.json"
+            node scripts/fetch-precutoff-regime-hfq.cjs "$D/$f.json" "$D/$f.snapshot.json"
+          done
+      - name: Commit event-time snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2016q2-expanded-discovery-v2.0-001/regime/*-ready-*.snapshot.json
+          git commit -m "backtest: freeze 2016Q2 event-time regime snapshots"
+          git pull --rebase origin ai-skill-v2.0-2016q2-expanded-discovery-20260925
+          git push origin HEAD:ai-skill-v2.0-2016q2-expanded-discovery-20260925
