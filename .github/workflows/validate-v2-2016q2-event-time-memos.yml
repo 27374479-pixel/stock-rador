@@ -1,0 +1,39 @@
+name: validate-v2-2016q2-event-time-memos
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2016q2-expanded-discovery-20260925
+    paths:
+      - .github/workflows/validate-v2-2016q2-event-time-memos.yml
+      - backtests/runs/2016q2-expanded-discovery-v2.0-001/manifest.json
+      - backtests/runs/2016q2-expanded-discovery-v2.0-001/source-pack-deep.json
+      - backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/*.json
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Validate V1.9 event-time memos without revealing outcomes
+        run: |
+          rm -f /tmp/2016q2-lock.json
+          node scripts/lock-skill-run-v190.cjs \
+            backtests/runs/2016q2-expanded-discovery-v2.0-001/manifest.json \
+            /tmp/2016q2-lock.json
+          node - <<'NODE'
+          const x=require('/tmp/2016q2-lock.json');
+          console.log(JSON.stringify({
+            runId:x.runId,
+            fileCount:x.files.length,
+            selectionDigest:x.selectionDigest,
+            selections:x.selectionSummary
+          },null,2));
+          NODE
