@@ -1,0 +1,65 @@
+{
+  "schemaVersion": "2.0",
+  "title": "Discovery Source Expansion Protocol",
+  "objective": "Increase opportunity recall by widening and auditing the public-information discovery universe while leaving V1.9 promotion, valuation, timing, quality and adversarial gates unchanged.",
+  "selectionPolicy": {
+    "inheritSelectionRulesFrom": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "relaxPrimaryGates": false,
+    "frequencyQuota": false,
+    "researchPrinciple": "More Primary opportunities must come from discovering more independent economic changes, not from promoting weaker candidates."
+  },
+  "sourcePackSchema": "2.1",
+  "minimumCoveredSourceRoles": 10,
+  "requiredSourceRoles": [
+    "official_policy_regulatory",
+    "official_statistics_customs",
+    "exchange_disclosure",
+    "issuer_ir_filing",
+    "customer_supplier_first_party",
+    "specialist_trade_pricing",
+    "reputable_news_wire",
+    "international_chain_primary"
+  ],
+  "additionalRolePool": [
+    "commodity_exchange_physical",
+    "industry_association_operating",
+    "procurement_tender_orders",
+    "logistics_freight_ports",
+    "patent_standard_certification",
+    "regional_local_reporting",
+    "community_forum_weak_signal",
+    "alternative_operating_signal"
+  ],
+  "coverageRules": [
+    "Every covered source role must preserve a non-empty searchTrace even when no event is found.",
+    "Every frozen source item in schema 2.1 must declare exactly one primary sourceRoleId in addition to its broad lane.",
+    "Copies derived from one filing, press release, wire story or anonymous claim remain one originGroup.",
+    "Community and regional sources may discover weak signals but cannot replace independent verification.",
+    "Cross-border value chains must search overseas first-party or official evidence when it is closer to the physical event.",
+    "A source role may be unavailable, but the limitation must be explicit; unavailable roles do not count toward coverage."
+  ],
+  "discoveryCadence": {
+    "rollingCheckpointTradingDays": 5,
+    "lookbackCalendarDays": 90,
+    "eventUnit": "economic_state_change_cluster",
+    "deduplicateNarrativeRepeats": true
+  },
+  "evaluation": {
+    "compareAgainst": "V1.9 broad-lane discovery",
+    "primaryMetrics": [
+      "unique_event_clusters_per_checkpoint",
+      "promoted_hypotheses_per_252_trading_days",
+      "independent_primary_clusters_per_252_trading_days",
+      "diagnostic_recall",
+      "source_universe_miss_rate",
+      "retrieval_miss_rate"
+    ],
+    "qualityGuardrails": [
+      "primary_60d_excess_distribution",
+      "primary_60d_matched_control_win_rate",
+      "false_positive_rate",
+      "drawdown_distribution"
+    ],
+    "acceptanceRule": "Adopt source expansion only if untouched replay shows materially higher discovery recall and/or independent opportunity frequency without material degradation of Primary quality."
+  }
+}
