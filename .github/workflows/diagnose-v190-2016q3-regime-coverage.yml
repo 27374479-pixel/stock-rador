@@ -1,0 +1,36 @@
+name: diagnose-v190-2016q3-regime-coverage
+
+on:
+  push:
+    branches:
+      - ai-skill-v1.9-2016q3-holdout-20260925
+    paths:
+      - .github/workflows/diagnose-v190-2016q3-regime-coverage.yml
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Count cutoff-valid Tencent hfq rows
+        run: |
+          node - <<'NODE'
+          const pairs = [
+            ['000333.SZ','sz000333'],['000651.SZ','sz000651'],['002415.SZ','sz002415'],
+            ['002074.SZ','sz002074'],['002594.SZ','sz002594'],['000625.SZ','sz000625'],
+            ['600125.SH','sh600125'],['601006.SH','sh601006'],['600787.SH','sh600787'],
+            ['000002.SZ','sz000002'],['600048.SH','sh600048'],['000402.SZ','sz000402'],
+            ['300327.SZ','sz300327'],['600584.SH','sh600584'],['600460.SH','sh600460'],
+            ['601088.SH','sh601088'],['601225.SH','sh601225'],['600188.SH','sh600188'],
+            ['000858.SZ','sz000858'],['000568.SZ','sz000568'],['000423.SZ','sz000423']
+          ];
+          for (const [t,q] of pairs) {
+            const u='https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+q+',day,2016-05-01,2016-09-30,300,hfq';
+            const r=await fetch(u); const j=await r.json();
+            const v=Object.values(j.data||{})[0]||{}; const rows=v.hfqday||v.day||[];
+            console.log(t, rows.length, rows[0]?.[0], rows.at(-1)?.[0]);
+          }
+          NODE
