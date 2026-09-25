@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2016q2-coal-276-hard-capacity-reset",
+  "cutoffDate": "2016-06-30",
+  "fetchedAt": "2026-09-25T13:26:47.605Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "601088.SH",
+    "601225.SH",
+    "600188.SH"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2016-05-31",
+      "endDate": "2016-06-30",
+      "return": -0.004934438849556355
+    },
+    "60": {
+      "startDate": "2016-04-01",
+      "endDate": "2016-06-30",
+      "return": -0.021096313033654113
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "601088.SH",
+        "startDate": "2016-05-31",
+        "endDate": "2016-06-30",
+        "return": 0.006191950464396356,
+        "benchmarkReturn": -0.004934438849556355,
+        "excessReturn": 0.011126389313952711
+      },
+      {
+        "ticker": "601225.SH",
+        "startDate": "2016-05-31",
+        "endDate": "2016-06-30",
+        "return": 0.16157205240174677,
+        "benchmarkReturn": -0.004934438849556355,
+        "excessReturn": 0.16650649125130312
+      },
+      {
+        "ticker": "600188.SH",
+        "startDate": "2016-05-31",
+        "endDate": "2016-06-30",
+        "return": 0.13065126468830912,
+        "benchmarkReturn": -0.004934438849556355,
+        "excessReturn": 0.13558570353786548
+      }
+    ],
+    "60": [
+      {
+        "ticker": "601088.SH",
+        "startDate": "2016-04-01",
+        "endDate": "2016-06-30",
+        "return": -0.0066225165562913135,
+        "benchmarkReturn": -0.021096313033654113,
+        "excessReturn": 0.0144737964773628
+      },
+      {
+        "ticker": "601225.SH",
+        "startDate": "2016-04-01",
+        "endDate": "2016-06-30",
+        "return": 0.19282511210762343,
+        "benchmarkReturn": -0.021096313033654113,
+        "excessReturn": 0.21392142514127754
+      },
+      {
+        "ticker": "600188.SH",
+        "startDate": "2016-04-01",
+        "endDate": "2016-06-30",
+        "return": 0.01284567350579846,
+        "benchmarkReturn": -0.021096313033654113,
+        "excessReturn": 0.03394198653945257
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": 0.10440619470104044,
+    "lookback60Excess": 0.08744573605269763,
+    "positiveBreadth20": 1,
+    "positiveBreadth60": 1
+  },
+  "conclusion": "favorable",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2016-01-02,2016-06-30,300,hfq",
+    "601088.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601088,day,2016-01-02,2016-06-30,300,hfq",
+    "601225.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601225,day,2016-01-02,2016-06-30,300,hfq",
+    "600188.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600188,day,2016-01-02,2016-06-30,300,hfq"
+  }
+}
