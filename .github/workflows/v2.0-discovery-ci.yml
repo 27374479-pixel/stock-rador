@@ -1,0 +1,21 @@
+name: v2.0-discovery-ci
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-frequency-recall-20260925
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Load expanded discovery auditor
+        run: node -e "const d=require('./scripts/discovery-core.cjs'); if(!d.SOURCE_ROLES || d.SOURCE_ROLES.length < 16) process.exit(1)"
