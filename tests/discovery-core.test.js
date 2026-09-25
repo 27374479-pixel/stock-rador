@@ -1,6 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
+  SOURCE_ROLES,
   auditMissedOpportunities,
   summarizeDiscoveryPack,
   validateDiscoveryPack,
@@ -129,4 +130,53 @@ test('missed-opportunity audit reports diagnostic recall but forbids same-period
   const bad = structuredClone(good);
   bad.samePeriodMayTuneSkill = true;
   assert.ok(auditMissedOpportunities(lock, p, bad).errors.some((error) => error.includes('samePeriodMayTuneSkill')));
+});
+
+
+test('expanded discovery schema requires explicit cross-role coverage without weakening old packs', () => {
+  const m = manifest();
+  m.discoveryPolicy.requiredSourceRoles = [
+    'official_policy_regulatory',
+    'official_statistics_customs',
+    'specialist_trade_pricing',
+    'reputable_news_wire',
+    'international_chain_primary',
+    'community_forum_weak_signal'
+  ];
+  m.discoveryPolicy.minimumCoveredSourceRoles = 5;
+
+  const p = pack();
+  p.schemaVersion = '2.1';
+  p.sourceRoles = [
+    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete' },
+    { roleId: 'official_statistics_customs', purpose: 'official operating data', coverageStatus: 'complete' },
+    { roleId: 'specialist_trade_pricing', purpose: 'product pricing and lead times', coverageStatus: 'partial', limitations: 'selected publications' },
+    { roleId: 'reputable_news_wire', purpose: 'broad attributed reporting', coverageStatus: 'complete' },
+    { roleId: 'international_chain_primary', purpose: 'overseas customer and supplier evidence', coverageStatus: 'partial', limitations: 'selected markets' },
+    { roleId: 'community_forum_weak_signal', purpose: 'weak-signal discovery only', coverageStatus: 'unavailable', limitations: 'historical archive unavailable' }
+  ];
+  p.sourceItems[0].sourceRoleId = 'official_policy_regulatory';
+  p.sourceItems[1].sourceRoleId = 'reputable_news_wire';
+  p.sourceItems[2].sourceRoleId = 'specialist_trade_pricing';
+
+  assert.deepEqual(validateDiscoveryPack(p, m), []);
+  const summary = summarizeDiscoveryPack(p);
+  assert.equal(summary.coveredSourceRoleCount, 5);
+  assert.equal(summary.bySourceRole.reputable_news_wire.sourceItemCount, 1);
+  assert.ok(SOURCE_ROLES.includes('procurement_tender_orders'));
+});
+
+test('expanded discovery schema fails closed when a source item hides behind a broad lane without a source role', () => {
+  const m = manifest();
+  m.discoveryPolicy.requiredSourceRoles = ['official_policy_regulatory'];
+  m.discoveryPolicy.minimumCoveredSourceRoles = 1;
+
+  const p = pack();
+  p.schemaVersion = '2.1';
+  p.sourceRoles = [
+    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete' }
+  ];
+
+  const errors = validateDiscoveryPack(p, m);
+  assert.ok(errors.some((error) => error.includes('sourceRoleId')));
 });
