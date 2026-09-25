@@ -10,7 +10,11 @@
   "discoveryExtension": {
     "protocolPath": "backtests/discovery-source-expansion-protocol-v2.json",
     "selectionRulesChanged": false,
-    "sourcePackSchema": "2.1"
+    "sourcePackSchema": "2.1",
+    "originalDiscoveryPackPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/source-pack.json",
+    "deepResearchSourcePackPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/source-pack-deep.json",
+    "originalDiscoveryPackUnmodified": true,
+    "eventTimeUnderwriting": true
   },
   "model": {
     "name": "GPT-5.6 Sol",
@@ -23,7 +27,7 @@
   "screeningPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/screening.json",
   "contaminationControls": {
     "modelMemoryRisk": "known_uncontrolled",
-    "sourcePackPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/source-pack.json",
+    "sourcePackPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/source-pack-deep.json",
     "identityStressPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/identity-stress.json",
     "searchResultFutureLeakageObserved": true,
     "validationClass": "exploratory_contaminated",
@@ -33,8 +37,62 @@
     "ticker": "000300.SH",
     "name": "沪深300"
   },
-  "hypothesisMemoPaths": [],
-  "selections": [],
+  "hypothesisMemoPaths": [
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-coal-276-hard-capacity-reset.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-pv-build-scale-top-runner.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-power-battery-qualification.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-nand-demand-supply-inflection.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-dram-supply-discipline-early-turn.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-lcd-inventory-price-recovery.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-vitamin-e-repricing.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-titanium-dioxide-repricing.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-china-mobile-gpon-award.json",
+    "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-state-grid-charging-procurement.json"
+  ],
+  "selections": [
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-coal-276-hard-capacity-reset.json",
+      "hypothesisId": "h-2016q2-coal-276-hard-capacity-reset",
+      "ticker": "601088.SH",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-pv-build-scale-top-runner.json",
+      "hypothesisId": "h-2016q2-pv-build-scale-top-runner",
+      "ticker": "601012.SH",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-power-battery-qualification.json",
+      "hypothesisId": "h-2016q2-power-battery-qualification",
+      "ticker": "002074.SZ",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-dram-supply-discipline-early-turn.json",
+      "hypothesisId": "h-2016q2-dram-supply-discipline-early-turn",
+      "ticker": "002049.SZ",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-lcd-inventory-price-recovery.json",
+      "hypothesisId": "h-2016q2-lcd-inventory-price-recovery",
+      "ticker": "000725.SZ",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-vitamin-e-repricing.json",
+      "hypothesisId": "h-2016q2-vitamin-e-repricing",
+      "ticker": "002001.SZ",
+      "limitRate": 0.1
+    },
+    {
+      "memoPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/memos/h-2016q2-titanium-dioxide-repricing.json",
+      "hypothesisId": "h-2016q2-titanium-dioxide-repricing",
+      "ticker": "002601.SZ",
+      "limitRate": 0.1
+    }
+  ],
   "discoveryPolicy": {
     "requiredLanes": [
       "official_primary",
@@ -63,5 +121,47 @@
       "causalEligibilityRule": "A case is detectable only if pre-cutoff public evidence can support a causal economic thesis without future outcomes.",
       "samePeriodMayTuneSkill": false
     }
+  },
+  "implementationPaths": [
+    "scripts/backtest-core-v190.cjs",
+    "scripts/lock-skill-run-v190.cjs",
+    "scripts/fetch-precutoff-regime-hfq.cjs",
+    "scripts/fetch-backtest-prices-hfq.cjs",
+    "scripts/evaluate-skill-run-v190.cjs",
+    "scripts/discovery-core.cjs",
+    "backtests/discovery-source-expansion-protocol-v2.json",
+    "docs/discovery-source-registry-v2.md",
+    "skills/stock-rador/versions/1.9.0/CANDIDATE_LOCK.json"
+  ],
+  "trackedHypothesisStates": [
+    "Research hypothesis",
+    "High-priority hypothesis"
+  ],
+  "trackedSelectionStates": [
+    "No selection",
+    "Research selection",
+    "High-priority selection"
+  ],
+  "primarySelectionStates": [
+    "High-priority selection"
+  ],
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "matchedControlStatistic": "equal_weight_mean"
+  },
+  "reportingPolicy": {
+    "primaryMetric": "primary_opportunity_base_excess",
+    "mustReportAllSelections": true,
+    "mustReportMatchedControls": true,
+    "mustReportBestControl": true,
+    "mustReportHypothesisAndSelectionStates": true,
+    "mustReportExpectationBurden": true,
+    "noSignalIsValid": true
   }
 }
