@@ -1,0 +1,341 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-09-30T23:59:59+08:00",
+  "researchReadyAt": "2016-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q3-truck-overload-enforcement",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Freight and modal-share effects should become observable within weeks, but listed-company earnings conversion remains unresolved."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "other",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [],
+  "changeHypothesis": {
+    "summary": "Tighter truck over-limit enforcement created an observable legal-capacity shock and immediate freight-rate increases, but the frozen listed-company mapping does not establish a direct positive earnings bridge.",
+    "firstCredibleDate": "2016-08-30",
+    "valueChain": [
+      "truck legal capacity",
+      "road freight rates",
+      "rail/water substitution",
+      "shipper transport cost"
+    ],
+    "persistenceReason": "Enforcement can persist, but incidence is split between carriers, alternative modes, and cargo owners.",
+    "disconfirmingEvidence": [
+      "Higher rates can be a cost rather than profit benefit.",
+      "Tielong H1 rail/logistics earnings were already weak.",
+      "Frozen freight basket timing is adverse."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "truck-overload-rule-20160830",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "truck-freight-price-20160923",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "tielong-h1-20160820",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "regime-freight-20160930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "tighter overload enforcement",
+      "to": "effective road freight capacity and rates",
+      "mechanism": "Lower legal load per truck tightens effective capacity and raises observed transport prices.",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923"
+      ],
+      "failureMode": "enforcement weakens or capacity rapidly adapts",
+      "lag": "days to weeks"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "legal road capacity providers if higher rates exceed costs"
+    ],
+    "secondOrderWinners": [
+      "rail/water substitutes if modal share shifts"
+    ],
+    "losers": [
+      "cargo owners unable to pass through freight cost"
+    ],
+    "substitutes": [
+      "rail",
+      "water transport"
+    ],
+    "bottlenecks": [
+      "legal truck capacity",
+      "modal transfer capacity"
+    ],
+    "falseThemeMatches": [
+      "generic logistics names without direct margin benefit"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600125.SH",
+      "name": "铁龙物流",
+      "verifiedExposure": "Rail/logistics exposure, but H1 earnings did not show an event-specific acceleration.",
+      "evidenceRefs": [
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Weak rail/logistics revenue before the event.",
+        "favorable": "Potential substitution from road to rail.",
+        "adverse": "No proven near-term earnings conversion."
+      },
+      "principalRisks": [
+        "indirect exposure",
+        "adverse broad timing"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "No company is selected, so no matched-control basket is frozen.",
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Freight-rate increases were already observable within days of enforcement.",
+    "thesisExpectation": "Legal-capacity tightening may benefit carriers or modal substitutes.",
+    "measurableGap": "The listed-company share and margin capture are unquantified.",
+    "evidenceRefs": [
+      "truck-overload-rule-20160830",
+      "truck-freight-price-20160923",
+      "tielong-h1-20160820",
+      "regime-freight-20160930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "No executable company-level expectation burden can be measured strongly enough for selection.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Freight-rate increases were already observable within days of enforcement.",
+    "thesisScenario": "Legal-capacity tightening may benefit carriers or modal substitutes.",
+    "breakevenCondition": "A listed expression must show direct incremental revenue/margin benefit rather than thematic exposure.",
+    "ordinaryScenarioFailure": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+    "catalystOrTimingBridge": "None strong enough for a selected company at the cutoff.",
+    "evidenceRefs": [
+      "truck-overload-rule-20160830",
+      "truck-freight-price-20160923",
+      "tielong-h1-20160820",
+      "regime-freight-20160930"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "aggregate_sector",
+    "productMarketScope": "legal road-freight capacity and modal substitution",
+    "geographicScope": "China",
+    "customerScope": "freight carriers and shippers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The event passes reality and physical-effect tests, but company transmission is insufficient.",
+    "evidenceRefs": [
+      "truck-overload-rule-20160830",
+      "truck-freight-price-20160923",
+      "tielong-h1-20160820",
+      "regime-freight-20160930"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "observed freight-rate increase",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "benefit incidence across carriers, substitutes and shippers is unresolved",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "enforcement persistence versus adaptation",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not convert a physical price shock into a stock without a direct earnings bridge.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+    "evidenceRefs": [
+      "truck-overload-rule-20160830",
+      "truck-freight-price-20160923",
+      "tielong-h1-20160820",
+      "regime-freight-20160930"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse."
+    ]
+  },
+  "bearCase": "Freight-rate inflation mostly transfers cost to shippers while listed proxies fail to capture margin upside.",
+  "invalidationConditions": [
+    {
+      "indicator": "freight rates and modal-share/company margin data",
+      "observationMethod": "cutoff-valid company/industry evidence",
+      "threshold": "evidence contradicts the frozen causal hypothesis or fails to create an investable company-level edge"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [
+    "Which listed operator captures the incremental economics after costs and competition."
+  ],
+  "nextResearchActions": [
+    "No selection; require direct company-level revenue/margin evidence before mapping the logistics shock into an actionable stock."
+  ],
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "The event passes reality and physical-effect tests, but company transmission is insufficient.",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "mixed",
+      "rationale": "The event passes reality and physical-effect tests, but company transmission is insufficient.",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "insufficient",
+      "rationale": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "The event passes reality and physical-effect tests, but company transmission is insufficient.",
+      "evidenceRefs": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923",
+        "tielong-h1-20160820",
+        "regime-freight-20160930"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "freight rates and modal-share/company margin data",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": null,
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+    "earningsQualityComparison": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+    "downsideComparison": "The physical shock is real but no frozen company has a sufficiently direct, measured profit conversion; broad timing is mechanically adverse.",
+    "evidenceRefs": [
+      "truck-overload-rule-20160830",
+      "truck-freight-price-20160923",
+      "tielong-h1-20160820",
+      "regime-freight-20160930"
+    ],
+    "conclusion": "insufficient"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "insufficient",
+    "axes": [],
+    "strongestCounterThesis": "Freight-rate inflation mostly transfers cost to shippers while listed proxies fail to capture margin upside.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "freight rates and modal-share/company margin data",
+    "conclusion": "research_only"
+  },
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
