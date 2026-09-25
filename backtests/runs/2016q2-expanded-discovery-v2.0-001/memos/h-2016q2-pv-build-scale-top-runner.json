@@ -1,0 +1,642 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-06-13T23:59:59+08:00",
+  "researchReadyAt": "2016-06-13T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q2-pv-build-scale-top-runner",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Project awards and company shipment/margin data should test conversion over the next one to two quarters."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "601012.SH",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "NEA fixed the 2016 PV build scale and Top Runner mix while LONGi already had strong module growth and positive cash flow, but the policy quota is not yet a company-specific profitable order bridge.",
+    "firstCredibleDate": "2016-06-13",
+    "valueChain": [
+      "PV build quota",
+      "project awards",
+      "module/inverter demand",
+      "shipments and margin"
+    ],
+    "persistenceReason": "Annual construction quotas and Top Runner standards can affect demand for several quarters, but geographic curtailment and project timing can delay conversion.",
+    "disconfirmingEvidence": [
+      "Quota is not the same as profitable shipment.",
+      "Sungrow and LONGi already had strong pre-event growth.",
+      "Curtailment and competition can dilute policy demand."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "pv-plan-20160613",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "longi-q1-20160425",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "regime-pv-ready-20160613",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "formal 2016 PV construction allocation",
+      "to": "module and inverter orders/shipments",
+      "mechanism": "Approved project scale can increase addressable equipment demand if projects are financed and built.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425"
+      ],
+      "failureMode": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates.",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified module and inverter suppliers"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "suppliers excluded by technology/quality requirements"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "project execution",
+      "curtailment",
+      "working capital"
+    ],
+    "falseThemeMatches": [
+      "PV concepts without verified profitable shipments"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "601012.SH",
+      "name": "隆基股份",
+      "verifiedExposure": "LONGi had already realized rapid module sales growth, strong profit growth and positive operating cash flow before the new quota.",
+      "evidenceRefs": [
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 growth was already very strong before the June policy, so the company engine cannot be relabeled as policy alpha.",
+        "favorable": "Top Runner/annual build execution adds incremental high-efficiency module demand beyond the existing run rate.",
+        "adverse": "Quota execution lags or price competition/capex absorbs the demand benefit."
+      },
+      "principalRisks": [
+        "policy execution",
+        "already-strong expectations",
+        "industry price competition"
+      ]
+    },
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "verifiedExposure": "Frozen counterfactual expression in the same economic chain.",
+      "evidenceRefs": [
+        "regime-pv-ready-20160613",
+        "sungrow-q1-20160427"
+      ],
+      "earningsSensitivity": {
+        "base": "Counterfactual listed expression.",
+        "favorable": "Could dominate if its company-level conversion proves stronger.",
+        "adverse": "May have weaker quality, directness or expectation asymmetry."
+      },
+      "principalRisks": [
+        "different company-specific economics",
+        "counterfactual may not share the same direct earnings bridge"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "300274.SZ",
+      "name": "阳光电源",
+      "controlType": "sector_peer",
+      "fairCounterfactualReason": "Frozen listed peer exposed to the same broad economic state change.",
+      "whySelectedCompanyShouldOutperform": "LONGi's positive Q1 operating cash flow and direct module-growth evidence are cleaner than Sungrow's deeply negative Q1 operating cash flow.",
+      "evidenceRefs": [
+        "regime-pv-ready-20160613",
+        "sungrow-q1-20160427",
+        "longi-q1-20160425"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen peer is sufficient for this Research-only event-time expression test.",
+  "selectionComparison": {
+    "selectedTicker": "601012.SH",
+    "pairwise": [
+      {
+        "controlTicker": "300274.SZ",
+        "selectedAdvantages": [
+          "LONGi's positive Q1 operating cash flow and direct module-growth evidence are cleaner than Sungrow's deeply negative Q1 operating cash flow."
+        ],
+        "selectedDisadvantages": [
+          null
+        ],
+        "evidenceRefs": [
+          "regime-pv-ready-20160613",
+          "longi-q1-20160425",
+          "sungrow-q1-20160427"
+        ],
+        "switchCondition": "Prefer Sungrow if cutoff-valid orders/margins show clearly stronger incremental quota conversion with acceptable cash quality.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed"
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The event-time PV basket was neutral; LONGi was slightly weak over 20d but positive over 60d, while Sungrow had stronger prior rerating.",
+    "thesisExpectation": "The formal build plan may create incremental high-efficiency PV demand.",
+    "measurableGap": "No frozen source quantifies how much of the 18.1GW plan is incremental to LONGi's already strong Q1 module run rate.",
+    "evidenceRefs": [
+      "pv-plan-20160613",
+      "longi-q1-20160425",
+      "regime-pv-ready-20160613"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Point-in-time event/company evidence plus benchmark-relative 20/60d absorption; no sufficiently complete contemporaneous consensus/valuation snapshot is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The event-time PV basket was neutral; LONGi was slightly weak over 20d but positive over 60d, while Sungrow had stronger prior rerating.",
+    "thesisScenario": "The formal build plan may create incremental high-efficiency PV demand.",
+    "breakevenCondition": "Incremental profitable shipments from the plan must exceed what the existing growth and valuation already require.",
+    "catalystOrTimingBridge": "company orders/shipments, module pricing/margin, receivables and operating cash flow",
+    "evidenceRefs": [
+      "pv-plan-20160613",
+      "longi-q1-20160425",
+      "regime-pv-ready-20160613"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "A formal annual build allocation is a real demand-state change, but its listed-company conversion is project-dependent.",
+      "evidenceRefs": [
+        "pv-plan-20160613"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+      "evidenceRefs": [
+        "longi-q1-20160425"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "LONGi's positive Q1 operating cash flow and direct module-growth evidence are cleaner than Sungrow's deeply negative Q1 operating cash flow.",
+      "evidenceRefs": [
+        "regime-pv-ready-20160613",
+        "longi-q1-20160425",
+        "sungrow-q1-20160427"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "The frozen company evidence defines the pre-catalyst or contemporaneous operating baseline without using future outcomes.",
+      "evidenceRefs": [
+        "longi-q1-20160425"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Selected ticker event-time excess was -0.19% over 20d and 4.81% over 60d; broad regime was neutral.",
+      "evidenceRefs": [
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen event basket versus CSI300 at the event-time checkpoint",
+      "lookback20Excess": 0.007454971542327327,
+      "lookback60Excess": 0.048560221322296614,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "neutral",
+      "evidenceRefs": [
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "A formal annual build allocation is a real demand-state change, but its listed-company conversion is project-dependent.",
+      "evidenceRefs": [
+        "pv-plan-20160613"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "No complete cutoff-valid analyst revision breadth is frozen.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Annual construction quotas and Top Runner standards can affect demand for several quarters, but geographic curtailment and project timing can delay conversion.",
+      "evidenceRefs": [
+        "pv-plan-20160613"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "regime-pv-ready-20160613",
+        "pv-plan-20160613"
+      ]
+    },
+    "overallConclusion": "neutral"
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "601012.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+      "evidenceRefs": [
+        "longi-q1-20160425"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "No frozen source quantifies how much of the 18.1GW plan is incremental to LONGi's already strong Q1 module run rate.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete point-in-time valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "company orders/shipments, module pricing/margin, receivables and operating cash flow",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "300274.SZ",
+        "revisionAdvantage": "LONGi's positive Q1 operating cash flow and direct module-growth evidence are cleaner than Sungrow's deeply negative Q1 operating cash flow.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+        "catalystAdvantage": "company orders/shipments, module pricing/margin, receivables and operating cash flow",
+        "switchCondition": "Prefer Sungrow if cutoff-valid orders/margins show clearly stronger incremental quota conversion with acceptable cash quality.",
+        "evidenceRefs": [
+          "regime-pv-ready-20160613",
+          "longi-q1-20160425",
+          "sungrow-q1-20160427"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "volume",
+    "driverChange": "2016 national PV construction scale and Top Runner allocation became formal.",
+    "earningsMechanism": "Completed projects can lift module shipments and utilization, but the company-specific award share is unquantified.",
+    "nextObservableMetric": "company orders/shipments, module pricing/margin, receivables and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "pv-plan-20160613",
+      "longi-q1-20160425"
+    ],
+    "failureCondition": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Q1 growth was already very strong before the June policy, so the company engine cannot be relabeled as policy alpha.",
+      "nextPeriod": "The current operating baseline does not yet prove the event's incremental earnings contribution.",
+      "laterPeriod": "Longer-run economics remain conditional on the causal driver persisting.",
+      "rationale": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+      "evidenceRefs": [
+        "longi-q1-20160425"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "2016 national PV construction scale and Top Runner allocation became formal.",
+      "nextPeriodChange": "The formal build plan may create incremental high-efficiency PV demand.",
+      "laterPeriodChange": "No permanent favorable state is assumed.",
+      "mechanism": "Completed projects can lift module shipments and utilization, but the company-specific award share is unquantified.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "No frozen source quantifies how much of the 18.1GW plan is incremental to LONGi's already strong Q1 module run rate.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "falsifier": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "2016 China utility-scale PV and Top Runner build",
+    "geographicScope": "China / globally linked market where applicable",
+    "customerScope": "PV project developers and EPCs",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "NEA fixed the 2016 PV build scale and Top Runner mix while LONGi already had strong module growth and positive cash flow, but the policy quota is not yet a company-specific profitable order bridge.",
+    "evidenceRefs": [
+      "pv-plan-20160613",
+      "longi-q1-20160425",
+      "regime-pv-ready-20160613"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "2016 national PV construction scale and Top Runner allocation became formal.",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "company-level earnings conversion and expectation gap remain incomplete",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "Annual construction quotas and Top Runner standards can affect demand for several quarters, but geographic curtailment and project timing can delay conversion.",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Preserve the real event while keeping selection at Research until earnings and expectation gates are resolved.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "mixed",
+    "companySignal": "positive",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+    "evidenceRefs": [
+      "longi-q1-20160425",
+      "regime-pv-ready-20160613"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "A formal annual build allocation is a real demand-state change, but its listed-company conversion is project-dependent.",
+      "evidenceRefs": [
+        "pv-plan-20160613"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+      "evidenceRefs": [
+        "longi-q1-20160425"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No frozen source quantifies how much of the 18.1GW plan is incremental to LONGi's already strong Q1 module run rate.",
+      "evidenceRefs": [
+        "pv-plan-20160613",
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Annual construction quotas and Top Runner standards can affect demand for several quarters, but geographic curtailment and project timing can delay conversion.",
+      "evidenceRefs": [
+        "pv-plan-20160613"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "601012.SH",
+    "purestTicker": "601012.SH",
+    "purityIsDecisionDriver": false,
+    "earningsQualityComparison": "LONGi's Q1 revenue/profit and cash flow were strong, creating a quality floor but also a high pre-existing operating baseline.",
+    "evidenceRefs": [
+      "pv-plan-20160613",
+      "longi-q1-20160425",
+      "regime-pv-ready-20160613"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Company-level liquidity/cash quality was reviewed but not fully cleared for Primary.",
+        "evidenceRefs": [
+          "longi-q1-20160425"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid capital-allocation review is incomplete.",
+        "evidenceRefs": [
+          "longi-q1-20160425"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid governance review is incomplete.",
+        "evidenceRefs": [
+          "longi-q1-20160425"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid refinancing/contingent-liability review is incomplete.",
+        "evidenceRefs": [
+          "longi-q1-20160425"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The policy is already anticipated or fails to create incremental profitable volume beyond the strong existing company baseline.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      null
+    ]
+  },
+  "bearCase": "The policy is already anticipated or fails to create incremental profitable volume beyond the strong existing company baseline.",
+  "invalidationConditions": [
+    {
+      "indicator": "company orders/shipments, module pricing/margin, receivables and operating cash flow",
+      "observationMethod": "cutoff-valid company filings and industry/price data",
+      "threshold": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination; no post-cutoff stock outcomes used before lock.",
+    "result": "not_clean",
+    "caveats": [
+      "Current model/search may encode later historical context.",
+      "Only evidence available by the memo cutoff is frozen."
+    ]
+  },
+  "unknowns": [
+    "No frozen source quantifies how much of the 18.1GW plan is incremental to LONGi's already strong Q1 module run rate."
+  ],
+  "nextResearchActions": [
+    "Keep 隆基股份 as Research only; require company orders/shipments, module pricing/margin, receivables and operating cash flow plus a measured expectation/valuation gap before any Primary escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q2-pv-build-scale-top-runner",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-06-13T23:59:59+08:00",
+    "baselineAsOfAt": "2016-04-25T23:59:59+08:00",
+    "freshDriverEvidenceRefs": [
+      "pv-plan-20160613"
+    ],
+    "baselineEvidenceRefs": [
+      "longi-q1-20160425"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "insufficient",
+      "evidenceRefs": [
+        "longi-q1-20160425",
+        "regime-pv-ready-20160613"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only; re-underwrite only after the next pre-specified operating/earnings confirmation.",
+    "falsifier": "The announced build scale does not convert into incremental profitable shipments or working-capital/cash quality deteriorates.",
+    "evidenceRefs": [
+      "pv-plan-20160613",
+      "longi-q1-20160425",
+      "regime-pv-ready-20160613"
+    ],
+    "conclusion": "no_route"
+  }
+}
