@@ -17,9 +17,29 @@ function sorted(values) {
   return [...values].sort((a, b) => a.localeCompare(b));
 }
 
+const SOURCE_ROLES = [
+  'official_policy_regulatory',
+  'official_statistics_customs',
+  'exchange_disclosure',
+  'issuer_ir_filing',
+  'customer_supplier_first_party',
+  'commodity_exchange_physical',
+  'industry_association_operating',
+  'procurement_tender_orders',
+  'logistics_freight_ports',
+  'patent_standard_certification',
+  'specialist_trade_pricing',
+  'reputable_news_wire',
+  'regional_local_reporting',
+  'international_chain_primary',
+  'community_forum_weak_signal',
+  'alternative_operating_signal'
+];
+
 function validateDiscoveryPack(pack, manifest) {
   const errors = [];
-  if (pack?.schemaVersion !== '2.0') errors.push('discovery source pack schemaVersion must be 2.0');
+  if (!['2.0', '2.1'].includes(pack?.schemaVersion)) errors.push('discovery source pack schemaVersion must be 2.0 or 2.1');
+  const expandedCoverage = pack?.schemaVersion === '2.1';
   if (pack?.runId !== manifest?.runId) errors.push('discovery source pack runId must match manifest.runId');
   const cutoffValid = assertIso(pack?.cutoffAt, 'discovery source pack cutoffAt', errors);
 
@@ -46,6 +66,31 @@ function validateDiscoveryPack(pack, manifest) {
     }
   }
 
+  const sourceRoles = Array.isArray(pack?.sourceRoles) ? pack.sourceRoles : [];
+  const sourceRoleIds = new Set();
+  let coveredSourceRoleCount = 0;
+  if (expandedCoverage) {
+    if (!sourceRoles.length) errors.push('schemaVersion 2.1 requires non-empty sourceRoles');
+    for (const role of sourceRoles) {
+      if (typeof role?.roleId !== 'string' || !SOURCE_ROLES.includes(role.roleId)) {
+        errors.push(`invalid discovery source role ${role?.roleId ?? 'missing'}`);
+        continue;
+      }
+      if (sourceRoleIds.has(role.roleId)) errors.push(`duplicate discovery source role ${role.roleId}`);
+      sourceRoleIds.add(role.roleId);
+      if (!['complete', 'partial', 'unavailable'].includes(role?.coverageStatus)) {
+        errors.push(`discovery source role ${role.roleId} has invalid coverageStatus`);
+      }
+      if (role.coverageStatus === 'complete' || role.coverageStatus === 'partial') coveredSourceRoleCount += 1;
+      if (role.coverageStatus !== 'complete' && (typeof role?.limitations !== 'string' || !role.limitations.trim())) {
+        errors.push(`discovery source role ${role.roleId} requires limitations when not complete`);
+      }
+      if (typeof role?.purpose !== 'string' || !role.purpose.trim()) {
+        errors.push(`discovery source role ${role.roleId} requires purpose`);
+      }
+    }
+  }
+
   const policy = manifest?.discoveryPolicy;
   if (!policy || typeof policy !== 'object') {
     errors.push('schemaVersion 1.4 requires discoveryPolicy');
@@ -61,6 +106,21 @@ function validateDiscoveryPack(pack, manifest) {
       errors.push('discoveryPolicy.minimumCoveredLanes must be a positive integer');
     } else if (coveredLaneCount < policy.minimumCoveredLanes) {
       errors.push(`only ${coveredLaneCount} discovery lanes are covered; minimum is ${policy.minimumCoveredLanes}`);
+    }
+    if (expandedCoverage) {
+      if (!Array.isArray(policy.requiredSourceRoles) || !policy.requiredSourceRoles.length) {
+        errors.push('schemaVersion 2.1 requires discoveryPolicy.requiredSourceRoles');
+      } else {
+        for (const roleId of policy.requiredSourceRoles) {
+          if (!SOURCE_ROLES.includes(roleId)) errors.push(`unknown required source role: ${roleId}`);
+          if (!sourceRoleIds.has(roleId)) errors.push(`required source role missing from pack: ${roleId}`);
+        }
+      }
+      if (!Number.isInteger(policy.minimumCoveredSourceRoles) || policy.minimumCoveredSourceRoles < 1) {
+        errors.push('schemaVersion 2.1 requires positive discoveryPolicy.minimumCoveredSourceRoles');
+      } else if (coveredSourceRoleCount < policy.minimumCoveredSourceRoles) {
+        errors.push(`only ${coveredSourceRoleCount} discovery source roles are covered; minimum is ${policy.minimumCoveredSourceRoles}`);
+      }
     }
     if (policy.screeningTarget !== 'event_cluster') {
       errors.push('discoveryPolicy.screeningTarget must be event_cluster');
@@ -90,6 +150,11 @@ function validateDiscoveryPack(pack, manifest) {
     if (itemMap.has(item.itemId)) errors.push(`duplicate discovery source item ${item.itemId}`);
     itemMap.set(item.itemId, item);
     if (!laneIds.has(item.laneId)) errors.push(`source item ${item.itemId} references unknown lane ${item.laneId}`);
+    if (expandedCoverage) {
+      if (typeof item?.sourceRoleId !== 'string' || !sourceRoleIds.has(item.sourceRoleId)) {
+        errors.push(`source item ${item.itemId} requires a valid sourceRoleId`);
+      }
+    }
     if (typeof item?.originGroup !== 'string' || !item.originGroup) {
       errors.push(`source item ${item.itemId} requires originGroup`);
     }
@@ -201,6 +266,15 @@ function summarizeDiscoveryPack(pack) {
       uniqueOriginGroupCount: uniq(items.filter((item) => item.laneId === lane.laneId).map((item) => item.originGroup)).length
     };
   }
+  const sourceRoles = Array.isArray(pack?.sourceRoles) ? pack.sourceRoles : [];
+  const bySourceRole = {};
+  for (const role of sourceRoles) {
+    bySourceRole[role.roleId] = {
+      coverageStatus: role.coverageStatus,
+      sourceItemCount: items.filter((item) => item.sourceRoleId === role.roleId).length,
+      uniqueOriginGroupCount: uniq(items.filter((item) => item.sourceRoleId === role.roleId).map((item) => item.originGroup)).length
+    };
+  }
   const noveltyCounts = {};
   for (const event of events) noveltyCounts[event.noveltyAssessment] = (noveltyCounts[event.noveltyAssessment] ?? 0) + 1;
   return {
@@ -208,7 +282,9 @@ function summarizeDiscoveryPack(pack) {
     uniqueOriginGroupCount: uniq(items.map((item) => item.originGroup)).length,
     eventClusterCount: events.length,
     coveredLaneCount: lanes.filter((lane) => lane.coverageStatus !== 'unavailable').length,
+    coveredSourceRoleCount: sourceRoles.filter((role) => role.coverageStatus !== 'unavailable').length,
     byLane,
+    bySourceRole,
     noveltyCounts
   };
 }
@@ -289,6 +365,7 @@ function readJson(filePath) {
 }
 
 module.exports = {
+  SOURCE_ROLES,
   MISS_STAGES,
   auditMissedOpportunities,
   readJson,
