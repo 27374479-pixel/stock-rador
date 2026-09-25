@@ -1,0 +1,38 @@
+name: validate-v2-expanded-discovery-2016q2
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2016q2-expanded-discovery-20260925
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Validate expanded discovery freeze
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          const { validateDiscoveryPack, validateDiscoveryScreening, summarizeDiscoveryPack } = require('./scripts/discovery-core.cjs');
+          const base = 'backtests/runs/2016q2-expanded-discovery-v2.0-001';
+          const manifest = JSON.parse(fs.readFileSync(base + '/manifest.json', 'utf8'));
+          const pack = JSON.parse(fs.readFileSync(base + '/source-pack.json', 'utf8'));
+          const screening = JSON.parse(fs.readFileSync(base + '/screening.json', 'utf8'));
+          const errors = [
+            ...validateDiscoveryPack(pack, manifest),
+            ...validateDiscoveryScreening(screening, pack, manifest)
+          ];
+          if (errors.length) {
+            console.error(errors.join('\n'));
+            process.exit(1);
+          }
+          console.log(JSON.stringify(summarizeDiscoveryPack(pack), null, 2));
+          NODE
