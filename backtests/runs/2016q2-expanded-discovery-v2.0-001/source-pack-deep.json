@@ -1,0 +1,1117 @@
+{
+  "schemaVersion": "2.1",
+  "runId": "2016q2-expanded-discovery-v2.0-001",
+  "cutoffAt": "2016-06-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Expanded-discovery process test. Current model/search can expose later historical context. Only sources provably public by 2016-06-30 are frozen; no post-cutoff selected-stock price outcomes are intentionally opened before lock.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy, statistics and regulatory sources.",
+      "coverageStatus": "complete"
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier first-party records.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on value chains surfaced during event-first discovery."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "Physical supply/demand, prices, inventory and procurement.",
+      "coverageStatus": "complete"
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Attributed contemporaneous business reporting.",
+      "coverageStatus": "complete"
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Specialist product/industry research and pricing.",
+      "coverageStatus": "complete"
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Community weak-signal discovery.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean historical point-in-time archive."
+    }
+  ],
+  "sourceRoles": [
+    {
+      "roleId": "official_policy_regulatory",
+      "purpose": "Policy, regulatory, enforcement and capacity-rule changes.",
+      "coverageStatus": "complete",
+      "searchTrace": [
+        "State Council/NDRC/NEA/MIIT 2016Q2 policy and regulatory releases; coal, PV and power-battery rules reviewed."
+      ]
+    },
+    {
+      "roleId": "official_statistics_customs",
+      "purpose": "Official production, price, trade and industrial activity statistics.",
+      "coverageStatus": "complete",
+      "searchTrace": [
+        "NBS 2016Q2 PPI and industrial-production releases reviewed; customs-derived trade figures cross-checked where surfaced in contemporaneous reporting."
+      ]
+    },
+    {
+      "roleId": "exchange_disclosure",
+      "purpose": "Exchange-hosted issuer announcements and regulatory disclosures.",
+      "coverageStatus": "partial",
+      "limitations": "Historical search indexing is incomplete; CNINFO/SSE/SZSE announcement queries were run for candidate industries and named issuers only after event discovery.",
+      "searchTrace": [
+        "CNINFO/SSE/SZSE 2016Q2 announcement searches for price adjustments, customer awards and industry exposures."
+      ]
+    },
+    {
+      "roleId": "issuer_ir_filing",
+      "purpose": "Issuer announcements, filings and investor disclosures that can verify direct economics.",
+      "coverageStatus": "partial",
+      "limitations": "Discovery-stage issuer search is intentionally event-led rather than stock-watchlist-led.",
+      "searchTrace": [
+        "Issuer announcements and verbatim exchange-filing mirrors reviewed for TiO2 price changes and candidate exposure checks."
+      ]
+    },
+    {
+      "roleId": "customer_supplier_first_party",
+      "purpose": "Upstream/downstream/competitor first-party evidence close to physical demand and supply.",
+      "coverageStatus": "partial",
+      "limitations": "Selected global electronics-chain first-party releases; not exhaustive across all industries.",
+      "searchTrace": [
+        "SK hynix first-quarter 2016 results and other supplier/customer first-party releases searched for memory-chain demand and supply direction."
+      ]
+    },
+    {
+      "roleId": "commodity_exchange_physical",
+      "purpose": "Exchange inventory, warehouse, settlement and physical-market records.",
+      "coverageStatus": "partial",
+      "limitations": "SHFE/DCE/CZCE historical searches were performed, but no separate Q2 event was promoted solely from this role in the frozen pack.",
+      "searchTrace": [
+        "SHFE/DCE/CZCE 2016Q2 inventory/warehouse/price-state searches across coal-linked, metals and chemical chains."
+      ]
+    },
+    {
+      "roleId": "industry_association_operating",
+      "purpose": "Association production, sales, inventory, shipment and operating data.",
+      "coverageStatus": "partial",
+      "limitations": "Historical association archives are uneven; CAAM and major industry-association releases were searched as corroboration.",
+      "searchTrace": [
+        "CAAM and relevant industry-association 2016Q2 operating/policy summaries searched for autos, batteries, steel and industrial demand."
+      ]
+    },
+    {
+      "roleId": "procurement_tender_orders",
+      "purpose": "Tender, award and procurement results that can reveal order acceleration.",
+      "coverageStatus": "partial",
+      "limitations": "Some original operator procurement pages are no longer cleanly indexed; contemporaneous specialist reports citing official results are preserved with their weaker provenance.",
+      "searchTrace": [
+        "China Mobile GPON HGU procurement and State Grid charging-pile procurement/result searches for 2016Q2."
+      ]
+    },
+    {
+      "roleId": "logistics_freight_ports",
+      "purpose": "Freight, port, rail, road and shipping flow signals.",
+      "coverageStatus": "partial",
+      "limitations": "Pre-cutoff monthly archives were searched but no sufficiently sharp, independently verified Q2 logistics state change survived event screening.",
+      "searchTrace": [
+        "MOT/Pearl River and port/freight 2016Q2 monthly-flow searches; no promoted event based solely on this role."
+      ]
+    },
+    {
+      "roleId": "patent_standard_certification",
+      "purpose": "Standards, certification, qualification and approval changes affecting eligibility.",
+      "coverageStatus": "partial",
+      "limitations": "Main relevant Q2 signal overlapped with MIIT battery qualification policy and is represented under official policy for origin clarity.",
+      "searchTrace": [
+        "GB/T battery-test/qualification and other 2016Q2 standards/certification searches."
+      ]
+    },
+    {
+      "roleId": "specialist_trade_pricing",
+      "purpose": "Product pricing, inventory, lead-time, utilization and specialist supply-demand evidence.",
+      "coverageStatus": "complete",
+      "searchTrace": [
+        "TrendForce/DRAMeXchange/WitsView memory and panel searches; Business Society chemical-price searches; Q2 product-level inflections recorded."
+      ]
+    },
+    {
+      "roleId": "reputable_news_wire",
+      "purpose": "Attributed cross-industry reporting useful for early event discovery and corroboration.",
+      "coverageStatus": "complete",
+      "searchTrace": [
+        "Multiple Chinese financial/business news searches for chemical repricing, capacity reform, procurement and policy execution; syndicated origins deduplicated."
+      ]
+    },
+    {
+      "roleId": "regional_local_reporting",
+      "purpose": "Local reporting on plants, outages, enforcement and local demand as weak-signal discovery.",
+      "coverageStatus": "partial",
+      "limitations": "Historical local archives are incomplete; no local-only claim is used as verification.",
+      "searchTrace": [
+        "Regional 2016Q2 plant/outage/environmental enforcement and project-start searches; no local-only event promoted."
+      ]
+    },
+    {
+      "roleId": "international_chain_primary",
+      "purpose": "Foreign issuer, regulator and industry evidence closest to global supply-chain changes.",
+      "coverageStatus": "partial",
+      "limitations": "Focused on electronics/memory where the physical market was demonstrably global.",
+      "searchTrace": [
+        "Samsung Electronics and SK hynix first-party 2016Q2-period releases reviewed for memory, display and device demand/supply."
+      ]
+    },
+    {
+      "roleId": "community_forum_weak_signal",
+      "purpose": "Forum/community observations used only to discover weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time historical community archive was available for a reliable 2016Q2 freeze."
+    },
+    {
+      "roleId": "alternative_operating_signal",
+      "purpose": "Auditable nontraditional operating proxies.",
+      "coverageStatus": "unavailable",
+      "limitations": "No sufficiently auditable point-in-time alternative dataset was available for this historical replay."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "coal-276-reset-20160418",
+      "laneId": "official_primary",
+      "sourceRoleId": "official_policy_regulatory",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于支持钢铁煤炭行业化解过剩产能实现脱困发展的意见",
+      "publisher": "国家安全监管总局/国家煤矿安全监察局",
+      "url": "https://www.chinamine-safety.gov.cn/zfxxgk/fdzdgknr/tzgg/201604/t20160418_348962.shtml",
+      "publishedAt": "2016-04-18T23:59:59+08:00",
+      "availableAt": "2016-04-18T23:59:59+08:00",
+      "originGroup": "coal-276-official-20160418",
+      "normalizedClaims": [
+        "All producing coal mines were to have capacity re-determined using 276 working days.",
+        "The direct method multiplies existing compliant capacity by 0.84, creating a mechanical supply-capacity reset."
+      ],
+      "entities": [
+        "coal mines",
+        "276 working days",
+        "production capacity"
+      ],
+      "observedChanges": [
+        "compliant coal production capacity is mechanically reduced"
+      ]
+    },
+    {
+      "itemId": "coal-central-mine-capacity-20160527",
+      "laneId": "official_primary",
+      "sourceRoleId": "official_policy_regulatory",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家煤矿安全监察局 国家发展和改革委员会 国家能源局公告(2016年 第1号)",
+      "publisher": "国家煤矿安全监察局/国家发展改革委/国家能源局",
+      "url": "https://www.chinamine-safety.gov.cn/zfxxgk/fdzdgknr/tzgg/201605/t20160527_348968.shtml",
+      "publishedAt": "2016-05-27T11:29:00+08:00",
+      "availableAt": "2016-05-27T11:29:00+08:00",
+      "originGroup": "coal-central-capacity-20160527",
+      "normalizedClaims": [
+        "Authorities publicly re-determined capacity for 210 mines under 14 central enterprises using the 276-working-day rule."
+      ],
+      "entities": [
+        "central SOE coal mines",
+        "coal capacity"
+      ],
+      "observedChanges": [
+        "the national capacity restriction moves from policy to mine-level implementation"
+      ]
+    },
+    {
+      "itemId": "ppi-coal-turn-20160609",
+      "laneId": "official_primary",
+      "sourceRoleId": "official_statistics_customs",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "2016年5月份工业生产者出厂价格同比下降2.8%",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230203_1899152.html",
+      "publishedAt": "2016-06-09T23:59:59+08:00",
+      "availableAt": "2016-06-09T23:59:59+08:00",
+      "originGroup": "nbs-ppi-201605",
+      "normalizedClaims": [
+        "May PPI rose 0.5% month on month overall.",
+        "Coal mining and washing producer prices rose 1.8% month on month while mining producer prices rose 3.8%."
+      ],
+      "entities": [
+        "PPI",
+        "coal mining"
+      ],
+      "observedChanges": [
+        "official prices begin confirming upstream mining/coal repricing"
+      ]
+    },
+    {
+      "itemId": "pv-plan-20160613",
+      "laneId": "official_primary",
+      "sourceRoleId": "official_policy_regulatory",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "国家能源局关于下达2016年光伏发电建设实施方案的通知 国能新能〔2016〕166号",
+      "publisher": "国家能源局",
+      "url": "https://zfxxgk.nea.gov.cn/auto87/201606/t20160613_2263.htm",
+      "publishedAt": "2016-06-13T23:59:59+08:00",
+      "availableAt": "2016-06-13T23:59:59+08:00",
+      "originGroup": "nea-pv-plan-20160613",
+      "normalizedClaims": [
+        "The 2016 national new PV-station construction scale was set at 18.10 GW.",
+        "The plan allocated 12.60 GW to conventional PV stations and 5.50 GW to Top Runner bases, while considering regional power-market conditions."
+      ],
+      "entities": [
+        "photovoltaics",
+        "Top Runner",
+        "PV stations"
+      ],
+      "observedChanges": [
+        "annual PV build quota and quality mix become formally specified"
+      ]
+    },
+    {
+      "itemId": "battery-third-batch-20160429",
+      "laneId": "official_primary",
+      "sourceRoleId": "official_policy_regulatory",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "《汽车动力蓄电池行业规范条件》企业目录（第三批）",
+      "publisher": "工业和信息化部",
+      "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/gg/art/2020/art_395bda69bf6c4a20a47c42ba89393799.html",
+      "publishedAt": "2016-04-29T17:09:00+08:00",
+      "availableAt": "2016-04-29T17:09:00+08:00",
+      "originGroup": "miit-battery-third-batch-20160429",
+      "normalizedClaims": [
+        "MIIT published the third batch of enterprises meeting the power-battery industry specification after application and technical review."
+      ],
+      "entities": [
+        "power batteries",
+        "qualification directory"
+      ],
+      "observedChanges": [
+        "battery-industry eligibility becomes more differentiated by formal qualification"
+      ]
+    },
+    {
+      "itemId": "nand-inflection-20160531",
+      "laneId": "specialist_trade",
+      "sourceRoleId": "specialist_trade_pricing",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "NAND Flash Prices to Stabilize in Second Half of 2016 as Demand Returns",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/presscenter/news/20160531-9403.html",
+      "publishedAt": "2016-05-31T23:59:59+08:00",
+      "availableAt": "2016-05-31T23:59:59+08:00",
+      "originGroup": "trendforce-nand-20160531",
+      "normalizedClaims": [
+        "NAND demand was picking up on iPhone stocking, SSD growth and steady Chinese smartphone demand.",
+        "Channel NAND prices had stabilized at end-March and begun to rebound slowly; planar and 3D NAND supply could tighten into Q3."
+      ],
+      "entities": [
+        "NAND Flash",
+        "SSD",
+        "smartphones"
+      ],
+      "observedChanges": [
+        "a product-market downcycle begins shifting toward balance/tightness"
+      ]
+    },
+    {
+      "itemId": "dram-supply-control-20160616",
+      "laneId": "specialist_trade",
+      "sourceRoleId": "specialist_trade_pricing",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "DRAM Suppliers to Implement Plans to Control Supply and Stabilize Prices",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.com/research/category/Semiconductors/DRAM/6?page=142",
+      "publishedAt": "2016-06-16T23:59:59+08:00",
+      "availableAt": "2016-06-16T23:59:59+08:00",
+      "originGroup": "trendforce-dram-20160616",
+      "normalizedClaims": [
+        "TrendForce described a 19-month DRAM price slump and supplier plans to control supply and stabilize prices."
+      ],
+      "entities": [
+        "DRAM",
+        "memory suppliers"
+      ],
+      "observedChanges": [
+        "supplier behavior begins changing from unconstrained oversupply toward supply discipline"
+      ]
+    },
+    {
+      "itemId": "samsung-q1-20160428",
+      "laneId": "company_first_party",
+      "sourceRoleId": "international_chain_primary",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "Samsung Electronics Announces First Quarter Results",
+      "publisher": "Samsung Electronics",
+      "url": "https://news.samsung.com/us/samsung-electronics-announces-first-quarter-results-2/",
+      "publishedAt": "2016-04-29T23:59:59+08:00",
+      "availableAt": "2016-04-29T23:59:59+08:00",
+      "originGroup": "samsung-q1-20160428",
+      "normalizedClaims": [
+        "Samsung reported weak seasonal memory demand but solid memory earnings from higher-value products and cost reductions.",
+        "The company expected SSD/high-value memory demand to support subsequent periods while LCD profitability was expected to improve later in the year."
+      ],
+      "entities": [
+        "Samsung",
+        "DRAM",
+        "NAND",
+        "SSD",
+        "LCD"
+      ],
+      "observedChanges": [
+        "global first-party evidence provides baseline and forward demand/supply context"
+      ]
+    },
+    {
+      "itemId": "skhynix-q1-20160426",
+      "laneId": "company_first_party",
+      "sourceRoleId": "customer_supplier_first_party",
+      "sourceType": "first_party",
+      "contentKind": "original",
+      "title": "SK hynix Inc. Reports First Quarter 2016 Results",
+      "publisher": "SK hynix",
+      "url": "https://news.skhynix.com/en/sk-hynix-inc-reports-first-quarter-2016-results/",
+      "publishedAt": "2016-04-27T23:59:59+08:00",
+      "availableAt": "2016-04-27T23:59:59+08:00",
+      "originGroup": "skhynix-q1-20160426",
+      "normalizedClaims": [
+        "Q1 DRAM bit shipments fell 3% QoQ and ASP fell 14%, confirming severe starting weakness.",
+        "The first-party report framed process transitions and later 3D NAND ramp as supply-side responses to weak conditions."
+      ],
+      "entities": [
+        "SK hynix",
+        "DRAM",
+        "NAND"
+      ],
+      "observedChanges": [
+        "supplier first-party evidence confirms the depressed baseline before the later inflection"
+      ]
+    },
+    {
+      "itemId": "lcd-shipments-20160622",
+      "laneId": "specialist_trade",
+      "sourceRoleId": "specialist_trade_pricing",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "Large-Size LCD Panel Shipments Were Strong Across All Applications in May",
+      "publisher": "TrendForce/WitsView",
+      "url": "https://www.trendforce.com/presscenter/news/20160622-9431.html",
+      "publishedAt": "2016-06-22T23:59:59+08:00",
+      "availableAt": "2016-06-22T23:59:59+08:00",
+      "originGroup": "trendforce-lcd-20160622",
+      "normalizedClaims": [
+        "Large-size panel shipments rose 6.5% month on month in May as inventories were replenished.",
+        "Panel prices had begun to recover after bottoming, with BOE monitor-panel shipments at a record high in May."
+      ],
+      "entities": [
+        "LCD panels",
+        "BOE",
+        "TV panels",
+        "monitor panels"
+      ],
+      "observedChanges": [
+        "inventory replenishment and pricing begin turning upward"
+      ]
+    },
+    {
+      "itemId": "lcd-recovery-20160628",
+      "laneId": "specialist_trade",
+      "sourceRoleId": "specialist_trade_pricing",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "TrendForce Reports LCD Panel Prices Will Recover Despite an Increase in Market Supply During Second Quarter",
+      "publisher": "TrendForce/WitsView",
+      "url": "https://www.trendforce.com/presscenter/news/20160628-9436.html",
+      "publishedAt": "2016-06-28T23:59:59+08:00",
+      "availableAt": "2016-06-28T23:59:59+08:00",
+      "originGroup": "trendforce-lcd-20160628",
+      "normalizedClaims": [
+        "Excess TV-panel inventories were consumed faster than expected and inventories returned toward healthy levels.",
+        "Some panel sizes had stabilized or rebounded, with Q3 glut ratio projected to fall sharply."
+      ],
+      "entities": [
+        "LCD panels",
+        "panel inventory",
+        "panel prices"
+      ],
+      "observedChanges": [
+        "display oversupply begins resolving into a measurable price/inventory recovery"
+      ]
+    },
+    {
+      "itemId": "vitamin-e-stopquote-20160420",
+      "laneId": "specialist_trade",
+      "sourceRoleId": "specialist_trade_pricing",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "4月19日新和成对维生素E停报停签",
+      "publisher": "生意社（新浪财经转载）",
+      "url": "https://finance.sina.com.cn/money/future/shihua/2016-04-20/doc-ifxriqzw7552880.shtml",
+      "publishedAt": "2016-04-20T08:39:00+08:00",
+      "availableAt": "2016-04-20T08:39:00+08:00",
+      "originGroup": "business-society-ve-20160420",
+      "normalizedClaims": [
+        "NHU had raised vitamin E ex-factory price to RMB72/kg on April 6 and another large producer quoted RMB73/kg on April 8.",
+        "On April 19 NHU stopped quoting and signing vitamin E orders."
+      ],
+      "entities": [
+        "vitamin E",
+        "NHU"
+      ],
+      "observedChanges": [
+        "vitamin E pricing tightness accelerates into quote withdrawal"
+      ]
+    },
+    {
+      "itemId": "tio2-industry-hikes-20160602",
+      "laneId": "reputable_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "多家企业上调钛白粉价格 今年第七轮涨价",
+      "publisher": "中国新闻网/中国证券报",
+      "url": "https://www.chinanews.com/stock/2016/06-02/7891877.shtml",
+      "publishedAt": "2016-06-02T11:08:47+08:00",
+      "availableAt": "2016-06-02T11:08:47+08:00",
+      "originGroup": "tio2-news-20160602",
+      "normalizedClaims": [
+        "Multiple TiO2 producers raised domestic prices RMB500-800/t and export prices USD50-100/t.",
+        "Low inventory and stronger exports were cited as drivers; Jan-Apr exports were about 213 thousand tonnes."
+      ],
+      "entities": [
+        "titanium dioxide",
+        "exports",
+        "inventory"
+      ],
+      "observedChanges": [
+        "repeated industry price increases are being reinforced by low inventory and export demand"
+      ]
+    },
+    {
+      "itemId": "tio2-company-filing-20160615",
+      "laneId": "company_first_party",
+      "sourceRoleId": "issuer_ir_filing",
+      "sourceType": "first_party",
+      "contentKind": "filing",
+      "title": "中核华原钛白股份有限公司关于公司主营产品价格调整的公告",
+      "publisher": "中核钛白（证券时报公告原文镜像）",
+      "url": "https://epaper.stcn.com/paper/zqsb/html/2016-06/15/content_837083.htm",
+      "publishedAt": "2016-06-15T23:59:59+08:00",
+      "availableAt": "2016-06-15T23:59:59+08:00",
+      "originGroup": "002145-filing-20160615",
+      "normalizedClaims": [
+        "TiO2 represented about 92% of 2015 main-business revenue.",
+        "Average selling price had risen about RMB2500/t or 25% from end-2015 and the company raised another RMB500/t from June 15.",
+        "The company still guided H1 to a RMB50-65m net loss and explicitly warned that volume impact and price duration were uncertain."
+      ],
+      "entities": [
+        "002145.SZ",
+        "titanium dioxide"
+      ],
+      "observedChanges": [
+        "company-level price realization is direct but near-term profitability remains weak/uncertain"
+      ]
+    },
+    {
+      "itemId": "gpon-hgu-award-20160621",
+      "laneId": "physical_industry",
+      "sourceRoleId": "procurement_tender_orders",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "中移动2016年GPON HGU集采结果出炉 华为烽火等中标",
+      "publisher": "光纤在线",
+      "url": "https://www.c-fol.net/news/content/1/201606/20160621080112.html",
+      "publishedAt": "2016-06-21T08:01:12+08:00",
+      "availableAt": "2016-06-21T08:01:12+08:00",
+      "originGroup": "cmcc-gpon-award-report-20160621",
+      "normalizedClaims": [
+        "The report, citing China Mobile's official result, described a 20 million-unit GPON HGU procurement.",
+        "Candidate shares were reported as FiberHome 32%, Huawei 26%, Shanghai Bell 23%, ZTE 19%."
+      ],
+      "entities": [
+        "China Mobile",
+        "GPON HGU",
+        "FiberHome",
+        "ZTE"
+      ],
+      "observedChanges": [
+        "a large access-network procurement award becomes observable with supplier shares"
+      ]
+    },
+    {
+      "itemId": "stategrid-charging-award-20160503",
+      "laneId": "physical_industry",
+      "sourceRoleId": "procurement_tender_orders",
+      "sourceType": "reputable_news",
+      "contentKind": "commentary",
+      "title": "国网一招中标点评：2016年充电桩第一次招标",
+      "publisher": "证券之星转载国金证券",
+      "url": "https://stock.stockstar.com/JC2016050300001526.shtml",
+      "publishedAt": "2016-05-03T00:00:00+08:00",
+      "availableAt": "2016-05-03T00:00:00+08:00",
+      "originGroup": "stategrid-charging-award-20160428",
+      "normalizedClaims": [
+        "The report said State Grid's April 28 award was the first 2016 charging-pile tender.",
+        "The tender covered 568 MW of DC charging piles in 33 packages with 17 winning entities."
+      ],
+      "entities": [
+        "State Grid",
+        "DC charging piles"
+      ],
+      "observedChanges": [
+        "a discrete public charging-infrastructure procurement cycle begins"
+      ]
+    },
+    {
+      "itemId": "industrial-structure-20160613",
+      "laneId": "official_primary",
+      "sourceRoleId": "official_statistics_customs",
+      "sourceType": "primary",
+      "contentKind": "dataset",
+      "title": "国家统计局工业司高级统计师江源解读5月份工业生产数据",
+      "publisher": "国家统计局",
+      "url": "https://www.stats.gov.cn/sj/sjjd/202302/t20230202_1897033.html",
+      "publishedAt": "2016-06-13T15:00:00+08:00",
+      "availableAt": "2016-06-13T15:00:00+08:00",
+      "originGroup": "nbs-industrial-201605",
+      "normalizedClaims": [
+        "High-tech industrial value added grew 11.5% YoY in May and equipment manufacturing grew 8.5%.",
+        "Coal mining and washing output fell 4.4% YoY, reinforcing the supply-side contraction backdrop."
+      ],
+      "entities": [
+        "high-tech manufacturing",
+        "equipment manufacturing",
+        "coal mining"
+      ],
+      "observedChanges": [
+        "broad industrial composition shows acceleration in high-tech/equipment alongside mining contraction"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2016q2-coal-276-hard-capacity-reset",
+      "statement": "Authorities mechanically reset compliant coal-mine capacity to 84% of prior levels under a 276-working-day system, then published mine-level implementation while official coal producer prices began to turn up.",
+      "changeType": "hard_supply_capacity_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-04-18T23:59:59+08:00",
+      "memberItemIds": [
+        "coal-276-reset-20160418",
+        "coal-central-mine-capacity-20160527",
+        "ppi-coal-turn-20160609"
+      ],
+      "independentOriginGroups": [
+        "coal-276-official-20160418",
+        "coal-central-capacity-20160527",
+        "nbs-ppi-201605"
+      ],
+      "affectedValueChain": [
+        "coal miners",
+        "coal-fired power",
+        "coke/steel",
+        "rail/logistics"
+      ],
+      "contradictionSearchNotes": "A supply cut can support coal prices but may be countered later by policy relaxation or demand weakness; company mapping must separate low-cost cash-generative miners from leveraged/high-cost exposure.",
+      "researchQuestion": "Was the capacity reset large and fresh enough to create a still-underpriced earnings inflection in an acceptable A-share coal expression by Q2 cutoff?"
+    },
+    {
+      "eventId": "event-2016q2-pv-build-scale-top-runner",
+      "statement": "NEA formally set a 2016 PV station build scale of 18.10 GW with a large Top Runner component, changing the annual project-quality and geographic allocation state.",
+      "changeType": "policy_demand_allocation",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-06-13T23:59:59+08:00",
+      "memberItemIds": [
+        "pv-plan-20160613"
+      ],
+      "independentOriginGroups": [
+        "nea-pv-plan-20160613"
+      ],
+      "affectedValueChain": [
+        "PV modules",
+        "inverters",
+        "EPC",
+        "high-efficiency technology",
+        "project developers"
+      ],
+      "contradictionSearchNotes": "The policy is supportive but late-Q2 global/Chinese demand timing and curtailment/geographic constraints can offset headline capacity; do not equate quota with immediate profitable shipments.",
+      "researchQuestion": "Is there a direct A-share expression with incremental profitable orders/shipments not already reflected in price and expectations?"
+    },
+    {
+      "eventId": "event-2016q2-power-battery-qualification",
+      "statement": "MIIT published a new batch of qualified power-battery enterprises, increasing regulatory eligibility differentiation inside a rapidly growing but policy-dependent value chain.",
+      "changeType": "regulatory_qualification_filter",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-04-29T17:09:00+08:00",
+      "memberItemIds": [
+        "battery-third-batch-20160429"
+      ],
+      "independentOriginGroups": [
+        "miit-battery-third-batch-20160429"
+      ],
+      "affectedValueChain": [
+        "battery cells",
+        "battery packs",
+        "NEV OEMs",
+        "qualified domestic suppliers"
+      ],
+      "contradictionSearchNotes": "Qualification can redistribute share but does not prove incremental orders or earnings by itself; subsidies, receivables and working-capital quality remain critical.",
+      "researchQuestion": "Did any newly/previously qualified A-share battery supplier have a quantifiable share/order/earnings bridge that remained under-reflected?"
+    },
+    {
+      "eventId": "event-2016q2-nand-demand-supply-inflection",
+      "statement": "NAND demand began recovering while channel prices stabilized/rebounded and planar/3D supply looked tighter into Q3, marking an early product-cycle inflection.",
+      "changeType": "product_market_turning_point",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-05-31T23:59:59+08:00",
+      "memberItemIds": [
+        "nand-inflection-20160531"
+      ],
+      "independentOriginGroups": [
+        "trendforce-nand-20160531"
+      ],
+      "affectedValueChain": [
+        "NAND suppliers",
+        "controllers/modules",
+        "SSD",
+        "smartphones",
+        "data centers"
+      ],
+      "contradictionSearchNotes": "The global signal is real but A-share mapping may be weak or proxy-like; direct current earnings exposure must be verified.",
+      "researchQuestion": "Is there an executable A-share company with direct current NAND/controller/module economics rather than a generic semiconductor label?"
+    },
+    {
+      "eventId": "event-2016q2-dram-supply-discipline-early-turn",
+      "statement": "After a prolonged DRAM price slump, supplier plans explicitly shifted toward controlling supply and stabilizing prices.",
+      "changeType": "supplier_behavior_early_turn",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-06-16T23:59:59+08:00",
+      "memberItemIds": [
+        "dram-supply-control-20160616"
+      ],
+      "independentOriginGroups": [
+        "trendforce-dram-20160616"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory modules",
+        "PC/server/mobile OEMs"
+      ],
+      "contradictionSearchNotes": "The event is earlier and less confirmed than the later Q3 pricing turn; treat it as an early-turn hypothesis, not as proof of realized pricing.",
+      "researchQuestion": "Can any A-share expression show direct DRAM earnings sensitivity plus enough pre-cutoff confirmation to clear V1.9 without using later Q3 evidence?"
+    },
+    {
+      "eventId": "event-2016q2-lcd-inventory-price-recovery",
+      "statement": "Large-size LCD shipments, inventory replenishment and panel prices began recovering after a weak Q1, with inventories normalizing faster than expected.",
+      "changeType": "inventory_price_cycle_turn",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-06-22T23:59:59+08:00",
+      "memberItemIds": [
+        "lcd-shipments-20160622",
+        "lcd-recovery-20160628"
+      ],
+      "independentOriginGroups": [
+        "trendforce-lcd-20160622",
+        "trendforce-lcd-20160628"
+      ],
+      "affectedValueChain": [
+        "panel makers",
+        "TV/monitor/notebook brands",
+        "display materials"
+      ],
+      "contradictionSearchNotes": "Capacity was also ramping, so the recovery depends on replenishment and product-size mix; price recovery must map to company earnings, not merely shipment volume.",
+      "researchQuestion": "Does a listed panel maker or supplier have a direct margin/revenue inflection and acceptable expectation burden at cutoff?"
+    },
+    {
+      "eventId": "event-2016q2-vitamin-e-repricing",
+      "statement": "Vitamin E producers sharply raised quotes and NHU then stopped quoting/signing, signaling unusually tight near-term pricing conditions.",
+      "changeType": "specialty_chemical_price_squeeze",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-04-20T08:39:00+08:00",
+      "memberItemIds": [
+        "vitamin-e-stopquote-20160420"
+      ],
+      "independentOriginGroups": [
+        "business-society-ve-20160420"
+      ],
+      "affectedValueChain": [
+        "vitamin E producers",
+        "feed",
+        "nutrition customers"
+      ],
+      "contradictionSearchNotes": "One specialist source is not enough for Primary; duration, inventory, competitor restarts and company earnings materiality require independent verification.",
+      "researchQuestion": "Can the price jump be independently verified and bridged to a direct A-share producer's base-horizon earnings without chasing an already absorbed move?"
+    },
+    {
+      "eventId": "event-2016q2-titanium-dioxide-repricing",
+      "statement": "TiO2 underwent repeated broad price hikes supported by low inventories and exports, with a listed producer disclosing a 25% cumulative price increase and another June hike.",
+      "changeType": "commodity_chemical_repricing",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2016-06-02T11:08:47+08:00",
+      "memberItemIds": [
+        "tio2-industry-hikes-20160602",
+        "tio2-company-filing-20160615"
+      ],
+      "independentOriginGroups": [
+        "tio2-news-20160602",
+        "002145-filing-20160615"
+      ],
+      "affectedValueChain": [
+        "TiO2 producers",
+        "pigment customers",
+        "export markets"
+      ],
+      "contradictionSearchNotes": "The cycle began before Q2 and the direct company still guided an H1 loss; treat as continuation/fresh-strengthening rather than inventing a brand-new thesis.",
+      "researchQuestion": "Can an inherited V1.9/V1.8 route justify a Research/Primary expression despite continuation status and weak near-term profit, or should it remain non-actionable?"
+    },
+    {
+      "eventId": "event-2016q2-china-mobile-gpon-award",
+      "statement": "A reported China Mobile 20-million-unit GPON HGU procurement disclosed candidate suppliers and shares, creating a discrete order-allocation event in access-network equipment.",
+      "changeType": "large_procurement_award",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-06-21T08:01:12+08:00",
+      "memberItemIds": [
+        "gpon-hgu-award-20160621"
+      ],
+      "independentOriginGroups": [
+        "cmcc-gpon-award-report-20160621"
+      ],
+      "affectedValueChain": [
+        "GPON HGU vendors",
+        "optical access equipment",
+        "telecom equipment"
+      ],
+      "contradictionSearchNotes": "The available frozen source is a specialist report citing the operator, so original award provenance, unit economics and company-level materiality must be verified before promotion beyond Research.",
+      "researchQuestion": "Is the reported award independently verifiable and large enough relative to a listed supplier's revenue/profit to create an underpriced earnings bridge?"
+    },
+    {
+      "eventId": "event-2016q2-state-grid-charging-procurement",
+      "statement": "State Grid's first 2016 charging-pile tender reportedly awarded 568 MW of DC charging equipment across 33 packages and 17 winners.",
+      "changeType": "infrastructure_procurement_start",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-05-03T00:00:00+08:00",
+      "memberItemIds": [
+        "stategrid-charging-award-20160503"
+      ],
+      "independentOriginGroups": [
+        "stategrid-charging-award-20160428"
+      ],
+      "affectedValueChain": [
+        "charging-pile equipment",
+        "power electronics",
+        "grid automation"
+      ],
+      "contradictionSearchNotes": "Secondary sell-side reporting is weaker than an original award page; winner revenue sensitivity and competition/low margins must be checked.",
+      "researchQuestion": "Does a listed winner have a direct, material and profitable order bridge that survives source-quality and expectation tests?"
+    },
+    {
+      "eventId": "event-2016q2-industrial-structure-acceleration-control",
+      "statement": "Official May data showed high-tech and equipment manufacturing growing faster than overall industry while mining contracted, indicating broad structural divergence rather than a single investable event.",
+      "changeType": "broad_macro_structure",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2016-06-13T15:00:00+08:00",
+      "memberItemIds": [
+        "industrial-structure-20160613"
+      ],
+      "independentOriginGroups": [
+        "nbs-industrial-201605"
+      ],
+      "affectedValueChain": [
+        "high-tech manufacturing",
+        "equipment",
+        "mining"
+      ],
+      "contradictionSearchNotes": "This is intentionally a broad control: macro breadth alone is too diffuse for direct single-stock causal mapping.",
+      "researchQuestion": "Should broad structural acceleration be rejected at triage unless a narrower source-linked state change can be isolated?"
+    }
+  ],
+  "evidenceDocuments": [
+    {
+      "id": "shenhua-q1-20160430",
+      "title": "中国神华2016年第一季度报告",
+      "publisher": "中国神华能源股份有限公司",
+      "publishedAt": "2016-04-30T23:59:59+08:00",
+      "availableAt": "2016-04-30T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2446441&stockid=601088",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB39.402bn, down 4.6% year on year; attributable profit was about RMB4.607bn, down 21.4%.",
+        "Operating cash flow was about RMB15.225bn, up 45.2%; excluding the finance company, operating cash flow was about RMB19.123bn, up 109.3%.",
+        "Commercial coal output rose about 2.9% to 71.3Mt and sales rose about 27.1% to 92.5Mt, while lower coal selling prices still depressed segment profitability."
+      ]
+    },
+    {
+      "id": "shaanxi-coal-q1-20160423",
+      "title": "陕西煤业2016年第一季度报告",
+      "publisher": "陕西煤业股份有限公司",
+      "publishedAt": "2016-04-23T23:59:59+08:00",
+      "availableAt": "2016-04-23T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2399937&stockid=601225",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB5.839bn, down 31.98% year on year, while attributable profit remained a loss of about RMB38.85m.",
+        "Operating cash flow improved to about positive RMB279.68m from negative RMB202.14m a year earlier.",
+        "Inventory rose about 42.66%; the filing attributed the increase to coal-price weakness, sluggish sales and product accumulation."
+      ]
+    },
+    {
+      "id": "longi-q1-20160425",
+      "title": "隆基股份2016年第一季度报告",
+      "publisher": "西安隆基硅材料股份有限公司",
+      "publishedAt": "2016-04-25T23:59:59+08:00",
+      "availableAt": "2016-04-25T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2400210&stockid=601012",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB2.209bn, up 169.11% year on year; attributable profit was about RMB266.34m, up 259.92%.",
+        "Operating cash flow was about positive RMB149.10m versus negative RMB97.88m a year earlier.",
+        "The company attributed the revenue increase primarily to a large increase in module sales."
+      ]
+    },
+    {
+      "id": "sungrow-q1-20160427",
+      "title": "阳光电源2016年第一季度报告",
+      "publisher": "阳光电源股份有限公司",
+      "publishedAt": "2016-04-27T23:59:59+08:00",
+      "availableAt": "2016-04-27T23:59:59+08:00",
+      "url": "https://disc.static.szse.cn/disc/disk01/finalpage/2016-04-27/6f4273fa-2003-42e2-a3c2-3843d4a16ab6.PDF",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB1.366bn, up 86.87% year on year; attributable profit was about RMB121.14m, up 75.82%.",
+        "Operating cash flow was about negative RMB419.75m versus negative RMB159.39m a year earlier.",
+        "The filing linked growth to rapid domestic PV-market development and system-integration revenue while also disclosing policy, competition, project and receivables risks."
+      ]
+    },
+    {
+      "id": "guoxuan-q1-20160427",
+      "title": "国轩高科2016年第一季度报告",
+      "publisher": "国轩高科股份有限公司",
+      "publishedAt": "2016-04-27T23:59:59+08:00",
+      "availableAt": "2016-04-27T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2416500&stockid=002074",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB1.174bn, up 424.67% year on year; attributable profit was about RMB306.17m, up 329.57%.",
+        "Operating cash flow improved to about positive RMB23.63m from negative RMB144.55m a year earlier.",
+        "The extraordinary year-on-year growth comparison was partly affected by a changed consolidation scope, while investment/capital spending also increased."
+      ]
+    },
+    {
+      "id": "boe-q1-20160426",
+      "title": "京东方A 2016年第一季度报告",
+      "publisher": "京东方科技集团股份有限公司",
+      "publishedAt": "2016-04-26T23:59:59+08:00",
+      "availableAt": "2016-04-26T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2406689&stockid=000725",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB12.298bn, up 6.17% year on year, but attributable profit fell about 88.93% to RMB108.33m.",
+        "Excluding non-recurring items, the company recorded a loss of about RMB1.357bn.",
+        "Operating cash flow was about RMB2.768bn, up about 20.2%, leaving strong cash generation but a very weak earnings baseline before the panel-price recovery."
+      ]
+    },
+    {
+      "id": "tcl-q1-20160421",
+      "title": "TCL集团2016年第一季度报告",
+      "publisher": "TCL集团股份有限公司",
+      "publishedAt": "2016-04-21T23:59:59+08:00",
+      "availableAt": "2016-04-21T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2378889&stockid=000100",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB23.399bn, up 0.38% year on year; attributable profit fell about 65.45% to RMB260.58m.",
+        "Huaxing Optoelectronics revenue was about RMB4.32bn, up 1.23%, while net profit fell about 67.6%.",
+        "Management said panel prices had been falling since 2015 but showed signs of stabilization by quarter-end."
+      ]
+    },
+    {
+      "id": "nhu-q1-20160428",
+      "title": "新和成2016年第一季度报告",
+      "publisher": "浙江新和成股份有限公司",
+      "publishedAt": "2016-04-28T23:59:59+08:00",
+      "availableAt": "2016-04-28T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2423342&stockid=002001",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB1.087bn, up 13.46% year on year; attributable profit was about RMB155.68m, up 93.56%.",
+        "Excluding non-recurring items, profit rose about 123.98%.",
+        "Operating cash flow was about RMB179.97m, up 63.49%, providing a strong pre-event quality and cash-conversion baseline."
+      ]
+    },
+    {
+      "id": "zhejiang-medicine-q1-20160428",
+      "title": "浙江医药2016年第一季度报告",
+      "publisher": "浙江医药股份有限公司",
+      "publishedAt": "2016-04-28T23:59:59+08:00",
+      "availableAt": "2016-04-28T23:59:59+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllBulletin/stockid/600216.phtml?ftype=yjdbg",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB1.309bn, up 24.81% year on year; attributable profit was about RMB64.72m versus a loss a year earlier.",
+        "Excluding non-recurring items, profit was about RMB59.96m versus a prior-year loss.",
+        "Operating cash flow was about negative RMB179.73m, weaker than roughly negative RMB89.73m a year earlier, creating a cash-quality disadvantage versus NHU."
+      ]
+    },
+    {
+      "id": "tongfang-guoxin-annual-20160412",
+      "title": "同方国芯2015年年度报告",
+      "publisher": "同方国芯电子股份有限公司",
+      "publishedAt": "2016-04-12T23:59:59+08:00",
+      "availableAt": "2016-04-12T23:59:59+08:00",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2336791&stockid=002049",
+      "normalizedClaims": [
+        "2015 revenue was about RMB1.250bn, up 15.02%; attributable profit was about RMB335.48m, up 10.23%; operating cash flow was about RMB403.03m, up 59.11%.",
+        "The year-end acquisition of Xi'an Ziguang Guoxin added a business with mainstream large-capacity memory core design capability and DRAM chips/modules.",
+        "The 2015 report consolidated the acquired entity's balance sheet but not its 2015 income statement, so direct DRAM product exposure was established while realized consolidated earnings sensitivity remained unproven at the 2016Q2 cutoff."
+      ]
+    },
+    {
+      "id": "baililian-q1-20160426",
+      "title": "佰利联2016年第一季度报告",
+      "publisher": "河南佰利联化学股份有限公司",
+      "publishedAt": "2016-04-26T23:59:59+08:00",
+      "availableAt": "2016-04-26T23:59:59+08:00",
+      "url": "https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=2406618&stockid=002601",
+      "normalizedClaims": [
+        "Q1 revenue was about RMB628.6m, up 1.55% year on year; attributable profit was about RMB16.53m, up 14.70%.",
+        "Excluding non-recurring items, profit rose about 13.86%.",
+        "Operating cash flow was about negative RMB89.38m versus roughly negative RMB234.95m a year earlier, so cash flow improved but remained negative before the later TiO2 price hikes."
+      ]
+    },
+    {
+      "id": "regime-coal-ready-20160609",
+      "title": "2016Q2 coal event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-06-09T15:00:00+08:00",
+      "availableAt": "2016-06-09T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was -0.08 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was -6.61 percentage points with 0.0% positive breadth.",
+        "Mechanical event-time price-regime conclusion: neutral.",
+        "Individual 20d excess: 601088.SH: -1.80%, 601225.SH: 1.34%, 600188.SH: 0.23%. Individual 60d excess: 601088.SH: -4.23%, 601225.SH: -1.70%, 600188.SH: -13.91%."
+      ]
+    },
+    {
+      "id": "regime-pv-ready-20160613",
+      "title": "2016Q2 pv event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-06-13T15:00:00+08:00",
+      "availableAt": "2016-06-13T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 0.75 percentage points with 33.3% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 4.86 percentage points with 66.7% positive breadth.",
+        "Mechanical event-time price-regime conclusion: neutral.",
+        "Individual 20d excess: 300274.SZ: 4.68%, 601012.SH: -0.19%, 002129.SZ: -2.25%. Individual 60d excess: 300274.SZ: 15.57%, 601012.SH: 4.81%, 002129.SZ: -5.81%."
+      ]
+    },
+    {
+      "id": "regime-battery-ready-20160429",
+      "title": "2016Q2 battery event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-04-29T15:00:00+08:00",
+      "availableAt": "2016-04-29T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 5.66 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 41.71 percentage points with 100.0% positive breadth.",
+        "Mechanical event-time price-regime conclusion: favorable.",
+        "Individual 20d excess: 002074.SZ: -2.79%, 002594.SZ: 10.23%, 300014.SZ: 9.54%. Individual 60d excess: 002074.SZ: 40.84%, 002594.SZ: 29.98%, 300014.SZ: 54.32%."
+      ]
+    },
+    {
+      "id": "regime-memory-nand-ready-20160531",
+      "title": "2016Q2 memory-nand event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-05-31T15:00:00+08:00",
+      "availableAt": "2016-05-31T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 11.39 percentage points with 100.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 34.36 percentage points with 66.7% positive breadth.",
+        "Mechanical event-time price-regime conclusion: favorable.",
+        "Individual 20d excess: 002049.SZ: 4.44%, 300327.SZ: 3.46%, 600460.SH: 26.26%. Individual 60d excess: 002049.SZ: -31.65%, 300327.SZ: 104.18%, 600460.SH: 30.56%."
+      ]
+    },
+    {
+      "id": "regime-memory-dram-ready-20160616",
+      "title": "2016Q2 memory-dram event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-06-16T15:00:00+08:00",
+      "availableAt": "2016-06-16T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 15.71 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 31.18 percentage points with 66.7% positive breadth.",
+        "Mechanical event-time price-regime conclusion: favorable.",
+        "Individual 20d excess: 002049.SZ: 21.85%, 300327.SZ: -2.17%, 600460.SH: 27.46%. Individual 60d excess: 002049.SZ: -0.62%, 300327.SZ: 64.42%, 600460.SH: 29.75%."
+      ]
+    },
+    {
+      "id": "regime-lcd-ready-20160628",
+      "title": "2016Q2 lcd event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-06-28T15:00:00+08:00",
+      "availableAt": "2016-06-28T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was -2.62 percentage points with 33.3% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 3.13 percentage points with 33.3% positive breadth.",
+        "Mechanical event-time price-regime conclusion: neutral.",
+        "Individual 20d excess: 000725.SZ: -3.66%, 000100.SZ: -5.35%, 000050.SZ: 1.15%. Individual 60d excess: 000725.SZ: -7.05%, 000100.SZ: -9.17%, 000050.SZ: 25.60%."
+      ]
+    },
+    {
+      "id": "regime-vitamin-e-ready-20160428",
+      "title": "2016Q2 vitamin-e event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-04-28T15:00:00+08:00",
+      "availableAt": "2016-04-28T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 3.03 percentage points with 100.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 12.22 percentage points with 100.0% positive breadth.",
+        "Mechanical event-time price-regime conclusion: favorable.",
+        "Individual 20d excess: 002001.SZ: 1.30%, 600216.SH: 4.76%. Individual 60d excess: 002001.SZ: 20.99%, 600216.SH: 3.46%."
+      ]
+    },
+    {
+      "id": "regime-tio2-ready-20160615",
+      "title": "2016Q2 tio2 event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-06-15T15:00:00+08:00",
+      "availableAt": "2016-06-15T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 8.63 percentage points with 100.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 27.32 percentage points with 100.0% positive breadth.",
+        "Mechanical event-time price-regime conclusion: favorable.",
+        "Individual 20d excess: 002145.SZ: 0.89%, 002601.SZ: 16.36%. Individual 60d excess: 002145.SZ: 42.89%, 002601.SZ: 11.75%."
+      ]
+    },
+    {
+      "id": "regime-gpon-ready-20160621",
+      "title": "2016Q2 gpon event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-06-21T15:00:00+08:00",
+      "availableAt": "2016-06-21T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 2.54 percentage points with 100.0% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was -4.69 percentage points with 0.0% positive breadth.",
+        "Mechanical event-time price-regime conclusion: neutral.",
+        "Individual 20d excess: 600498.SH: 4.26%, 000063.SZ: 0.83%. Individual 60d excess: 600498.SH: -2.17%, 000063.SZ: -7.20%."
+      ]
+    },
+    {
+      "id": "regime-charging-ready-20160503",
+      "title": "2016Q2 charging event-time pre-cutoff price regime",
+      "publisher": "Stock Rador deterministic pre-cutoff regime snapshot",
+      "publishedAt": "2016-05-03T15:00:00+08:00",
+      "availableAt": "2016-05-03T15:00:00+08:00",
+      "normalizedClaims": [
+        "Frozen 20-trading-day basket excess versus CSI300 was 4.26 percentage points with 66.7% positive breadth.",
+        "Frozen 60-trading-day basket excess versus CSI300 was 4.83 percentage points with 66.7% positive breadth.",
+        "Mechanical event-time price-regime conclusion: favorable.",
+        "Individual 20d excess: 000400.SZ: 12.15%, 300001.SZ: -2.76%, 002276.SZ: 3.40%. Individual 60d excess: 000400.SZ: 16.02%, 300001.SZ: 1.33%, 002276.SZ: -2.87%."
+      ]
+    }
+  ],
+  "deepResearchExtension": {
+    "createdFor": "V1.9 company-level event-time underwriting after frozen expanded discovery",
+    "originalDiscoveryPackPath": "backtests/runs/2016q2-expanded-discovery-v2.0-001/source-pack.json",
+    "originalDiscoveryPackUnmodified": true,
+    "companyEvidenceRule": "Only documents available on or before each memo cutoff may be cited.",
+    "outcomeDataViewed": false
+  }
+}
