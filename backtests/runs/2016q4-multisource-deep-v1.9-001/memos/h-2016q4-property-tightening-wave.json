@@ -1,0 +1,721 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-12-31T23:59:59+08:00",
+  "researchReadyAt": "2016-12-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q4-property-tightening-wave",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The policy shock is immediately adverse for hot-city property demand; any company exception must prove resilience over the next quarter rather than treating falling sector prices as a buy signal."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "000002.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "acceptable",
+      "rationale": "Vanke has strong realized sales/profit/cash quality, but the new demand/credit tightening is a direct sector headwind and the frozen property regime is adverse; resilience is a Research exception, not a fresh positive Primary route.",
+      "evidenceRefs": [
+        "property-tightening-20161005",
+        "vanke-q3-20161028",
+        "regime-property-20161231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Hot-city purchase and mortgage policy tightened sharply in early October. The aggregate property state is adverse, but Vanke's strong realized cash/earnings can justify continued company-level Research rather than an automatic sector-wide rejection.",
+    "firstCredibleDate": "2016-10-05",
+    "valueChain": [
+      "purchase/mortgage restrictions",
+      "housing transaction demand",
+      "developer sales/collections",
+      "land/inventory",
+      "developer cash/earnings"
+    ],
+    "persistenceReason": "City-level restrictions can persist for multiple quarters, while large developers with strong cash and diversified geography may absorb the shock better than weaker peers.",
+    "disconfirmingEvidence": [
+      "The frozen developer basket was adverse over both 20d and 60d.",
+      "Vanke itself materially underperformed CSI300 before cutoff.",
+      "The policy directly targets speculative/investment demand.",
+      "Governance/transaction uncertainty remained around the Shenzhen Metro proposal."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "property-tightening-20161005",
+      "sourcePackRef": "sourceItems",
+      "relation": "contradicts",
+      "supportsClaim": "A new broad property demand/credit tightening began in hot cities."
+    },
+    {
+      "id": "vanke-q3-20161028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Vanke had strong revenue/profit and exceptionally strong operating cash generation despite governance uncertainty."
+    },
+    {
+      "id": "regime-property-20161231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "The frozen property price regime was adverse and Vanke had large negative relative returns."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "purchase/mortgage tightening",
+      "to": "hot-city transaction demand",
+      "mechanism": "Higher downpayments and purchase restrictions reduce marginal/speculative housing demand.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ],
+      "failureMode": "policy enforcement eases or demand shifts across geography",
+      "lag": "weeks"
+    },
+    {
+      "from": "weaker sector demand",
+      "to": "Vanke cash/earnings",
+      "mechanism": "Strong sales scale, collections and cash can cushion but not eliminate a housing-demand slowdown.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ],
+      "failureMode": "sales/collections fall faster than cost/inventory adjustment",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [],
+    "secondOrderWinners": [
+      "developers with stronger cash and diversified geography may be relatively resilient"
+    ],
+    "losers": [
+      "highly leveraged developers concentrated in tightened hot cities"
+    ],
+    "substitutes": [
+      "rental/other-city housing demand"
+    ],
+    "bottlenecks": [
+      "mortgage availability",
+      "buyer eligibility",
+      "inventory turnover",
+      "land cost"
+    ],
+    "falseThemeMatches": [
+      "developers treated as beneficiaries merely because prices fell"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "000002.SZ",
+      "name": "万科A",
+      "verifiedExposure": "Large residential developer with strong cutoff-valid profit and operating cash flow.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong realized cash/earnings enter a direct policy headwind.",
+        "favorable": "Diversified geography and cash quality cushion sales slowdown.",
+        "adverse": "Restrictions reduce sales/collections while governance uncertainty persists."
+      },
+      "principalRisks": [
+        "property tightening",
+        "governance/transaction uncertainty",
+        "sector de-rating"
+      ]
+    },
+    {
+      "ticker": "600048.SH",
+      "name": "保利地产",
+      "verifiedExposure": "Large property-developer sector control from the frozen regime basket.",
+      "evidenceRefs": [
+        "regime-property-20161231"
+      ],
+      "earningsSensitivity": {
+        "base": "Direct sector exposure.",
+        "favorable": "Relative resilience to tightening.",
+        "adverse": "Demand/valuation decline."
+      },
+      "principalRisks": [
+        "property policy",
+        "sector cycle"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600048.SH",
+      "name": "保利地产",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Large developer exposed to the same sector-policy tightening and frozen price regime.",
+      "whySelectedCompanyShouldOutperform": "Vanke has explicit cutoff-valid strong operating cash and earnings evidence, but no Primary ranking claim is made.",
+      "evidenceRefs": [
+        "vanke-q3-20161028",
+        "regime-property-20161231"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only resilience comparison; one sector proxy is sufficient because the decision is not a Primary promotion.",
+  "selectionComparison": {
+    "selectedTicker": "000002.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600048.SH",
+        "selectedAdvantages": [
+          "strong cutoff-valid operating cash generation",
+          "large realized profit base"
+        ],
+        "selectedDisadvantages": [
+          "direct tightening exposure",
+          "governance/transaction uncertainty",
+          "worse frozen price dislocation"
+        ],
+        "evidenceRefs": [
+          "vanke-q3-20161028",
+          "regime-property-20161231"
+        ],
+        "switchCondition": "Do not prefer Vanke if sales/collections weaken materially or a peer demonstrates clearly superior cutoff-valid balance-sheet/operating resilience.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Vanke is a plausible company-resilience exception inside an adverse aggregate, not a positive event-driven Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The property basket was about -9.77pp excess over 20d and -8.81pp over 60d; Vanke itself was about -14.30pp and -21.46pp.",
+    "thesisExpectation": "Vanke's cash and scale can make it more resilient than the aggregate tightening state, but the event itself is not a positive earnings reset.",
+    "measurableGap": "Resilience is credible but valuation/earnings upside is not sufficiently measured to distinguish cheapness from justified sector de-rating.",
+    "evidenceRefs": [
+      "property-tightening-20161005",
+      "vanke-q3-20161028",
+      "regime-property-20161231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen benchmark-relative price dislocation plus realized cash/earnings; no cutoff-valid forward valuation reset is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The market is already de-rating developers as tightening spreads.",
+    "thesisScenario": "Vanke's cash/scale/geographic resilience causes less earnings damage than implied by broad sector weakness.",
+    "breakevenCondition": "Sales and collections must remain sufficiently strong without relying on policy reversal or multiple expansion.",
+    "ordinaryScenarioFailure": "Policy tightening causes a broad sales/collection slowdown and the de-rating is fundamentally justified.",
+    "catalystOrTimingBridge": "Monthly sales/collections and subsequent company results can test resilience inside 60d.",
+    "evidenceRefs": [
+      "property-tightening-20161005",
+      "vanke-q3-20161028",
+      "regime-property-20161231"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "mixed",
+      "rationale": "The new information is an adverse sector reset, not a positive company acceleration.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Vanke entered the shock with strong profit and operating cash.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "mixed",
+      "rationale": "Only sector price controls are frozen; company-level resilience is not yet broadly confirmed.",
+      "evidenceRefs": [
+        "regime-property-20161231"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "mixed",
+      "rationale": "No clean pre-event forward valuation/earnings baseline is frozen.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "The sector and Vanke are already heavily de-rated, but low absorption does not itself create a positive catalyst.",
+      "evidenceRefs": [
+        "regime-property-20161231"
+      ]
+    },
+    "unresolvedReason": "measurement_gap_only",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen property basket versus CSI300",
+      "lookback20Excess": -0.09767793549644803,
+      "lookback60Excess": -0.08809400171413333,
+      "positiveBreadth20": 0,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-property-20161231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "reversing",
+      "rationale": "Policy is explicitly tightening housing demand/credit.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "negative",
+      "rationale": "Aggregate sector direction is adverse; Vanke is only a resilience exception.",
+      "evidenceRefs": [
+        "property-tightening-20161005",
+        "regime-property-20161231"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Housing controls can persist for multiple quarters.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "The prior property-demand cycle had been strong enough to trigger policy tightening.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "Broad timing is adverse; V1.9 positive escalation is impossible."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "000002.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Strong realized profit and OCF support quality.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "Resilience may be underappreciated but no positive event-driven revision bridge is frozen.",
+      "evidenceRefs": [
+        "vanke-q3-20161028",
+        "regime-property-20161231"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "Large price weakness is not equivalent to measured valuation slack.",
+      "evidenceRefs": [
+        "regime-property-20161231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Monthly sales/collections can test resilience.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "Strong cash helps, but direct policy and governance risks remain.",
+      "evidenceRefs": [
+        "vanke-q3-20161028",
+        "property-tightening-20161005"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600048.SH",
+        "revisionAdvantage": "Vanke has stronger frozen company cash evidence.",
+        "valuationAdvantage": "No clean valuation edge; Vanke price dislocation is actually more severe.",
+        "qualityTradeoff": "Vanke quality evidence is explicit, but governance risk is additional.",
+        "catalystAdvantage": "Both face the same policy environment.",
+        "downsideTradeoff": "Vanke cash cushions but cannot remove sector policy risk.",
+        "switchCondition": "Switch if a control shows clearly superior company resilience or Vanke sales/collections weaken.",
+        "evidenceRefs": [
+          "vanke-q3-20161028",
+          "regime-property-20161231"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "other",
+    "driverChange": "Policy tightening is adverse; the research thesis is relative resilience rather than a positive earnings driver.",
+    "earningsMechanism": "Strong cash/scale may limit the magnitude of earnings damage versus the aggregate sector.",
+    "nextObservableMetric": "monthly contracted sales/collections and subsequent earnings/cash",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "property-tightening-20161005",
+      "vanke-q3-20161028"
+    ],
+    "failureCondition": "Vanke sales/collections deteriorate in line with or worse than the sector."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Vanke entered Q4 with strong realized profit/cash.",
+      "nextPeriod": "Property tightening should slow transaction demand.",
+      "laterPeriod": "Relative company resilience depends on geography, inventory and financing.",
+      "rationale": "The event worsens the sector path; company quality may only reduce the damage.",
+      "evidenceRefs": [
+        "vanke-q3-20161028",
+        "property-tightening-20161005"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "No positive sector reset is assumed.",
+      "nextPeriodChange": "Vanke may hold sales/cash better than weaker peers.",
+      "laterPeriodChange": "Persistent controls still cap sector upside.",
+      "mechanism": "Company resilience inside a negative aggregate.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "Vanke's cash base supports relative resilience, not absolute acceleration.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "high",
+      "rationale": "Policy tightening can persist and dominate quality.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "falsifier": "Sales/collections weaken enough to erase the resilience thesis.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "large residential developers under hot-city purchase/mortgage tightening",
+    "geographicScope": "China hot cities / diversified national developers",
+    "customerScope": "home buyers and mortgage-financed demand",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Decompose the adverse sector shock into company-level balance-sheet/geographic resilience rather than buying the sector.",
+    "evidenceRefs": [
+      "property-tightening-20161005",
+      "vanke-q3-20161028"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "multi-city purchase/mortgage restrictions and adverse sector price regime",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "property-tightening-20161005",
+        "regime-property-20161231"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "Vanke cash/scale resilience versus demand slowdown",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "persistent policy controls versus diversified scale/cash strength",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "property-tightening-20161005",
+        "vanke-q3-20161028"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "Continue Vanke as Research only; adverse broad timing and unmeasured valuation block Primary.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Company cash/earnings quality is strong even as sector policy/tape are adverse.",
+    "evidenceRefs": [
+      "vanke-q3-20161028",
+      "regime-property-20161231"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "The new event is adverse rather than a positive incremental driver.",
+      "evidenceRefs": [
+        "property-tightening-20161005"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Company earnings/cash quality is realized.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No positive revisions are frozen.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Cash/geographic resilience can persist.",
+      "evidenceRefs": [
+        "vanke-q3-20161028"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "Company resilience fails.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "000002.SZ",
+    "purestTicker": "000002.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "Vanke is chosen for explicit cash-quality evidence, not thematic purity.",
+    "earningsQualityComparison": "Strong cutoff-valid earnings/OCF support relative resilience.",
+    "downsideComparison": "Policy and governance risks remain material.",
+    "evidenceRefs": [
+      "vanke-q3-20161028",
+      "regime-property-20161231"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Large positive operating cash flow supports liquidity quality.",
+        "evidenceRefs": [
+          "vanke-q3-20161028"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Land/inventory capital allocation remains material under a tightening cycle.",
+        "evidenceRefs": [
+          "vanke-q3-20161028"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Shenzhen Metro proposal and governance/transaction uncertainty remained unresolved.",
+        "evidenceRefs": [
+          "vanke-q3-20161028"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Property remains financing-sensitive even with strong current cash.",
+        "evidenceRefs": [
+          "vanke-q3-20161028"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The severe sector de-rating is justified because tightening materially weakens sales and land economics; strong past cash does not protect forward returns.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Sales/collections weaken or governance uncertainty escalates.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_company_sector_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "A diversified national developer is not identical to a single hot-city exposure.",
+        "searchTrace": [
+          "developer geography diversification under city-specific tightening"
+        ],
+        "evidenceRefs": [
+          "property-tightening-20161005",
+          "vanke-q3-20161028"
+        ]
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "No productive-capacity compliance mechanism applies to residential developers.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No frozen product-mix fact independently creates a positive earnings path.",
+        "searchTrace": [
+          "residential product mix developer filing"
+        ],
+        "evidenceRefs": []
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No frozen land/funding cost advantage is sufficient to create a positive route.",
+        "searchTrace": [
+          "developer funding land cost resilience"
+        ],
+        "evidenceRefs": []
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No frozen contract structure removes housing-demand policy exposure.",
+        "searchTrace": [
+          "presales contract pricing tightening"
+        ],
+        "evidenceRefs": []
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Diversified geography/customer demand can reduce exposure to individual tightened cities.",
+        "searchTrace": [
+          "national developer geography customer demand"
+        ],
+        "evidenceRefs": [
+          "property-tightening-20161005",
+          "vanke-q3-20161028"
+        ]
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Vanke's very strong OCF creates a real company-level resilience difference.",
+        "searchTrace": [
+          "developer operating cash flow collections Q3 2016"
+        ],
+        "evidenceRefs": [
+          "vanke-q3-20161028"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Scale and governance/transaction structure differentiate Vanke, with both resilience and risk.",
+        "searchTrace": [
+          "developer scale governance transaction"
+        ],
+        "evidenceRefs": [
+          "vanke-q3-20161028"
+        ]
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "000002.SZ",
+        "exceptionMechanism": "Strong operating cash and diversified scale may reduce earnings damage from city-specific tightening.",
+        "directExposure": "clear",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "Credible resilience exception but adverse broad timing and unmeasured valuation prevent Primary.",
+        "evidenceRefs": [
+          "vanke-q3-20161028",
+          "property-tightening-20161005",
+          "regime-property-20161231"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "The aggregate is adverse but Vanke's cash/scale justify company-level Research rather than an indiscriminate sector rejection.",
+    "falsifierOrEscalationTrigger": "Sales/collections fail to show relative resilience."
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: company resilience inside an adverse sector, not a positive fresh-event trade.",
+    "alreadyPricedAssessment": "deep_sector_derating_without_measured_positive_gap",
+    "constraints": [
+      "adverse broad timing",
+      "policy headwind",
+      "governance",
+      "unmeasured valuation"
+    ]
+  },
+  "bearCase": "The sector decline is fundamentally justified and Vanke's strong past cash fails to prevent forward sales/earnings compression.",
+  "invalidationConditions": [
+    {
+      "indicator": "Vanke monthly sales/collections",
+      "observationMethod": "company operating data",
+      "threshold": "deteriorates in line with/worse than tightened sector"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Vanke Research as a company-resilience exception; do not treat sector weakness as a contrarian Primary."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
