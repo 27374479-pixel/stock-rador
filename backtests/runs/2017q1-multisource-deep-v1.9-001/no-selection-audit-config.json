@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q1-multisource-deep-v1.9-001",
+  "cutoffDate": "2017-03-31",
+  "benchmarkTicker": "000300.SH",
+  "holdingTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "oneWayCostRate": 0.001,
+  "samePeriodMayTuneSkill": false,
+  "baskets": [
+    {
+      "basketId": "cobalt-high-absorption",
+      "label": "Frozen cobalt/resource/recycling expressions after strong commodity and equity rerating",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "603799.SH",
+        "603993.SH",
+        "002340.SZ"
+      ]
+    },
+    {
+      "basketId": "dram-proxy-theme",
+      "label": "Frozen continuously traded domestic semiconductor proxies; diagnostic only, not accepted commodity-DRAM expressions",
+      "frozenDecision": "No selection",
+      "tickers": [
+        "300327.SZ",
+        "600584.SH",
+        "600460.SH"
+      ]
+    }
+  ],
+  "unauditableNoSelectionHypotheses": [
+    {
+      "hypothesisId": "h-2017q1-dram-tightness",
+      "reason": "The only cutoff-valid A-share company with documented actual DRAM product exposure in the deep source pack, 002049.SZ, lacked continuous tradability at the Mar-31 cutoff. The proxy basket is audited only for theme/reflexivity diagnostics and must not be treated as a hindsight-valid direct DRAM expression."
+    }
+  ]
+}
