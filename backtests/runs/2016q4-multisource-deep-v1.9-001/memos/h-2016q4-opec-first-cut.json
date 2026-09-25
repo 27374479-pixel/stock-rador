@@ -1,0 +1,748 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-12-31T23:59:59+08:00",
+  "researchReadyAt": "2016-12-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q4-opec-first-cut",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "The coordinated supply cut can lift crude realizations quickly, but integrated-company offsets and already-positive price breadth require company-level earnings confirmation before Primary."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "600028.SH",
+      "role": "preferred",
+      "directExposure": "credible",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "credible",
+      "conclusion": "acceptable",
+      "rationale": "Sinopec has direct upstream oil exposure plus strong cash generation, but its refining/marketing businesses partially offset higher crude, so the new OPEC state is not a clean one-way earnings bridge.",
+      "evidenceRefs": [
+        "opec-cut-20161201",
+        "opec-price-response-20161201",
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209",
+        "regime-opec-20161231"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "OPEC's first formal production cut since 2008 creates a genuinely new global supply state, but A-share integrated oil companies have offsetting upstream/refining economics and the frozen oil basket is already broadly positive.",
+    "firstCredibleDate": "2016-12-01",
+    "valueChain": [
+      "OPEC/non-OPEC production",
+      "crude balance and price",
+      "upstream realization",
+      "refining inventory/spreads",
+      "integrated company earnings"
+    ],
+    "persistenceReason": "The cut is scheduled from Jan-2017 and can persist for months if compliance holds.",
+    "disconfirmingEvidence": [
+      "Oil equities were already positive across both 20d and 60d windows.",
+      "Sinopec upstream remained loss-making while refining was highly profitable, creating offsetting sensitivity.",
+      "PetroChina still expected sharply lower 2016 profit.",
+      "COSL expected a large full-year loss and weak oil-service demand."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "opec-cut-20161201",
+      "sourcePackRef": "sourceItems",
+      "relation": "supports",
+      "supportsClaim": "A new coordinated global crude-supply cut was formally agreed."
+    },
+    {
+      "id": "opec-price-response-20161201",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Crude immediately repriced higher, showing rapid expectation absorption."
+    },
+    {
+      "id": "sinopec-q3-20161028",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "supports",
+      "supportsClaim": "Sinopec has strong cash/overall earnings but sharply different upstream and refining economics."
+    },
+    {
+      "id": "sinopec-expectations-20161209",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Post-event valuation and oil-price EPS sensitivity were measurable before cutoff."
+    },
+    {
+      "id": "petrochina-outlook-20161029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "A direct upstream-heavy peer had a weak pre-event earnings baseline."
+    },
+    {
+      "id": "cosl-q3-20161029",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "contradicts",
+      "supportsClaim": "Oil-service earnings remained deeply impaired."
+    },
+    {
+      "id": "regime-opec-20161231",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "The broad oil basket was already favorable at cutoff."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "coordinated production cut",
+      "to": "crude supply balance/price",
+      "mechanism": "Lower OPEC/non-OPEC output reduces available supply versus the prior baseline.",
+      "evidenceRefs": [
+        "opec-cut-20161201",
+        "opec-price-response-20161201"
+      ],
+      "failureMode": "poor compliance or supply response overwhelms the cut",
+      "lag": "weeks"
+    },
+    {
+      "from": "higher crude",
+      "to": "Sinopec integrated earnings",
+      "mechanism": "Higher realizations repair upstream losses and create inventory effects, but can compress refining spreads, leaving a mixed net bridge.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209"
+      ],
+      "failureMode": "refining margin compression offsets upstream improvement",
+      "lag": "quarter"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "upstream oil producers"
+    ],
+    "secondOrderWinners": [
+      "oilfield services if capex later recovers"
+    ],
+    "losers": [
+      "fuel-intensive users and refiners without pass-through"
+    ],
+    "substitutes": [
+      "non-OPEC supply and alternative energy"
+    ],
+    "bottlenecks": [
+      "OPEC compliance",
+      "US supply response",
+      "refining spread"
+    ],
+    "falseThemeMatches": [
+      "oil-service names without near-term activity recovery"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "600028.SH",
+      "name": "中国石化",
+      "verifiedExposure": "Integrated oil company with material upstream exposure and measurable oil-price EPS sensitivity.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong refining/cash quality offsets upstream losses.",
+        "favorable": "Higher crude repairs upstream and inventory gains exceed refining-spread pressure.",
+        "adverse": "Refining margin compression offsets upstream improvement."
+      },
+      "principalRisks": [
+        "integrated offset",
+        "oil-price compliance",
+        "expectation absorption"
+      ]
+    },
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "verifiedExposure": "More upstream-sensitive integrated peer with a weak pre-event earnings baseline.",
+      "evidenceRefs": [
+        "petrochina-outlook-20161029",
+        "regime-opec-20161231"
+      ],
+      "earningsSensitivity": {
+        "base": "2016 profit expected sharply lower.",
+        "favorable": "Higher crude improves realization and upstream earnings.",
+        "adverse": "Oil recovery insufficient or already priced."
+      },
+      "principalRisks": [
+        "weak earnings baseline",
+        "capital intensity",
+        "oil price"
+      ]
+    },
+    {
+      "ticker": "601808.SH",
+      "name": "中海油服",
+      "verifiedExposure": "Oil-service exposure but current activity/profit remained impaired.",
+      "evidenceRefs": [
+        "cosl-q3-20161029"
+      ],
+      "earningsSensitivity": {
+        "base": "Large loss.",
+        "favorable": "Oil-company capex eventually recovers.",
+        "adverse": "Service activity remains weak despite spot oil."
+      },
+      "principalRisks": [
+        "lagged capex",
+        "impairment",
+        "losses"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "601857.SH",
+      "name": "中国石油",
+      "controlType": "peer",
+      "fairCounterfactualReason": "Direct integrated/upstream peer exposed to the same oil-price reset.",
+      "whySelectedCompanyShouldOutperform": "Sinopec has far stronger cutoff-valid cash/earnings quality, although PetroChina has purer upstream torque.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "petrochina-outlook-20161029",
+        "regime-opec-20161231"
+      ]
+    }
+  ],
+  "matchedControlException": "Research-only comparison; integrated economics prevent a clean Primary ranking.",
+  "selectionComparison": {
+    "selectedTicker": "600028.SH",
+    "pairwise": [
+      {
+        "controlTicker": "601857.SH",
+        "selectedAdvantages": [
+          "stronger current earnings",
+          "positive operating cash flow",
+          "measurable valuation baseline"
+        ],
+        "selectedDisadvantages": [
+          "less pure upstream oil-price sensitivity",
+          "refining can offset higher crude"
+        ],
+        "evidenceRefs": [
+          "sinopec-q3-20161028",
+          "sinopec-expectations-20161209",
+          "petrochina-outlook-20161029"
+        ],
+        "switchCondition": "Prefer PetroChina only if upstream recovery becomes large enough and cutoff-valid earnings/valuation quality improves.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "Sinopec is the higher-quality Research expression, but the fresh event does not create a sufficiently clean integrated-company earnings bridge for Primary."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The frozen oil basket was about +4.30pp excess over 20d and +5.70pp over 60d with 100% positive breadth. A Dec-9 report placed Sinopec around 17x 2016E PE / 0.93x PB and already modeled a 2017 earnings recovery.",
+    "thesisExpectation": "OPEC compliance raises crude enough to repair Sinopec upstream economics without erasing refining/marketing profitability.",
+    "measurableGap": "The event is fresh and measurable, but the integrated offset plus broad price confirmation leaves only a Research-level residual gap.",
+    "evidenceRefs": [
+      "opec-cut-20161201",
+      "opec-price-response-20161201",
+      "sinopec-q3-20161028",
+      "sinopec-expectations-20161209",
+      "regime-opec-20161231"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Contemporaneous PB/PE and explicit oil-price EPS sensitivity against frozen price absorption.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "A Dec-9 report already forecasts material 2017 EPS recovery under higher oil while the whole frozen oil basket is benchmark-positive.",
+    "thesisScenario": "OPEC compliance sustains crude around/above the modeled baseline and upstream repair exceeds refining-spread compression.",
+    "breakevenCondition": "Net integrated EPS must improve beyond the already-modeled recovery without requiring a further broad oil rerating.",
+    "ordinaryScenarioFailure": "Compliance disappoints or refining-spread losses offset upstream gains.",
+    "catalystOrTimingBridge": "OPEC implementation/compliance and Q4/Q1 segment earnings fall within the 60d base horizon.",
+    "evidenceRefs": [
+      "sinopec-expectations-20161209",
+      "opec-cut-20161201",
+      "regime-opec-20161231"
+    ],
+    "conclusion": "tight"
+  },
+  "expectationEvidenceStatus": "measured_burden",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "clear",
+      "rationale": "Formal OPEC/non-OPEC cuts are new versus the pre-event supply baseline.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Sinopec has strong current cash/earnings, but upstream is still loss-making.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Oil equities broadly confirm the event, while company economics differ materially.",
+      "evidenceRefs": [
+        "regime-opec-20161231",
+        "petrochina-outlook-20161029",
+        "cosl-q3-20161029"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "published_forecast",
+      "conclusion": "clear",
+      "rationale": "Pre/post-event company forecasts make the market path measurable.",
+      "evidenceRefs": [
+        "petrochina-outlook-20161029",
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Both 20d and 60d frozen basket excess are positive with full breadth.",
+      "evidenceRefs": [
+        "regime-opec-20161231"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen oil basket versus CSI300",
+      "lookback20Excess": 0.04296780117285547,
+      "lookback60Excess": 0.0569701347112565,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-opec-20161231"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "The production-cut agreement is a fresh supply reset.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "Upstream benefits but integrated/refining and service paths differ.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "petrochina-outlook-20161029",
+        "cosl-q3-20161029"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Formal cuts are intended to operate from Jan-2017 for months.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "rationale": "Oil equities already repriced positively but not at extreme broad-runaway levels.",
+      "evidenceRefs": [
+        "regime-opec-20161231"
+      ]
+    },
+    "overallConclusion": "favorable",
+    "rationale": "The product/sector signal is confirmed, but company conversion remains mixed."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "600028.SH",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Sinopec has positive profit and very strong OCF.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "credible",
+      "rationale": "Upstream losses provide operating leverage to higher crude, but the market already models recovery.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "tight",
+      "rationale": "PB is low but the earnings recovery is already modeled and broad price breadth is positive.",
+      "evidenceRefs": [
+        "sinopec-expectations-20161209",
+        "regime-opec-20161231"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "clear",
+      "rationale": "January OPEC implementation and subsequent segment data are inside 60d.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "credible",
+      "rationale": "Integrated refining/marketing and strong cash diversify pure upstream downside, but also dilute upside.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "601857.SH",
+        "revisionAdvantage": "Sinopec has a stronger current earnings/cash base; PetroChina has more upstream torque.",
+        "valuationAdvantage": "Sinopec valuation is measured but neither has a decisive low-burden edge.",
+        "qualityTradeoff": "Sinopec current quality is stronger.",
+        "catalystAdvantage": "Both share the oil catalyst.",
+        "downsideTradeoff": "Sinopec integration cushions oil downside but dilutes upside.",
+        "switchCondition": "Switch if PetroChina's earnings path and valuation become clearly superior.",
+        "evidenceRefs": [
+          "sinopec-q3-20161028",
+          "sinopec-expectations-20161209",
+          "petrochina-outlook-20161029"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "Formal coordinated supply cut supports a higher crude realization path.",
+    "earningsMechanism": "Higher crude improves upstream realization/inventory economics, offset partly by refining-spread pressure.",
+    "nextObservableMetric": "OPEC compliance, crude realization, upstream/refining segment EBIT",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "opec-cut-20161201",
+      "sinopec-q3-20161028",
+      "sinopec-expectations-20161209"
+    ],
+    "failureCondition": "Net integrated earnings fail to improve because cuts fail or refining offsets dominate."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "published_forecast",
+      "nearTerm": "Sinopec is profitable because refining/marketing offset upstream losses.",
+      "nextPeriod": "Market already expects 2017 oil-driven EPS recovery.",
+      "laterPeriod": "Integrated returns depend on both crude and refining margins.",
+      "rationale": "Separate the new OPEC supply cut from a pre-existing low-oil integrated-company baseline.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Upstream loss narrows if crude remains higher.",
+      "nextPeriodChange": "Net EPS can beat baseline only if upstream repair dominates refining pressure.",
+      "laterPeriodChange": "US/non-OPEC supply response can cap duration.",
+      "mechanism": "Fresh supply cut creates cross-segment earnings leverage.",
+      "evidenceRefs": [
+        "opec-cut-20161201",
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "credible",
+      "rationale": "OPEC is genuinely incremental, but integrated offsets reduce purity.",
+      "evidenceRefs": [
+        "opec-cut-20161201",
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "Compliance and supply response determine persistence.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "falsifier": "Crude/OPEC compliance weakens or refining compression offsets upstream repair.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "integrated oil economics after the OPEC production cut",
+    "geographicScope": "global crude market / China integrated oil",
+    "customerScope": "crude/refined-product markets",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "A global oil-price signal must be decomposed into upstream/refining/company-specific earnings paths.",
+    "evidenceRefs": [
+      "opec-cut-20161201",
+      "sinopec-q3-20161028",
+      "sinopec-expectations-20161209"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "formal production cut and immediate crude repricing",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "opec-cut-20161201",
+        "opec-price-response-20161201"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "upstream repair versus refining offset",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "compliance and non-OPEC supply response",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Keep Sinopec Research until net integrated earnings revisions prove that upstream repair exceeds refining offsets and already-priced expectations.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "mixed",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Oil prices and sector tape are positive, but integrated-company earnings sensitivity is mixed.",
+    "evidenceRefs": [
+      "sinopec-q3-20161028",
+      "regime-opec-20161231"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "clear",
+      "rationale": "Formal coordinated cut is new.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Overall earnings/cash are realized, but fresh upstream benefit is not.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "credible",
+      "rationale": "Post-event research models higher 2017 EPS.",
+      "evidenceRefs": [
+        "sinopec-expectations-20161209"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Cut can persist for months if compliance holds.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "No net integrated earnings improvement.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "600028.SH",
+    "purestTicker": "601857.SH",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "PetroChina has purer upstream torque but a much weaker earnings baseline; Sinopec has measured valuation and stronger cash quality.",
+    "earningsQualityComparison": "Sinopec is materially stronger at cutoff.",
+    "downsideComparison": "Sinopec integration cushions downside but also dilutes upside.",
+    "evidenceRefs": [
+      "sinopec-q3-20161028",
+      "sinopec-expectations-20161209",
+      "petrochina-outlook-20161029"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": true,
+    "systemType": "capacity_constrained",
+    "upstreamState": {
+      "variable": "OPEC/non-OPEC crude production commitment",
+      "observedDirection": "falling",
+      "opportunityImplication": "positive",
+      "economicRole": "changes available global crude supply",
+      "adjustmentLag": "weeks",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "downstreamFlow": {
+      "variable": "crude price and listed oil equity pricing",
+      "observedDirection": "rising",
+      "opportunityImplication": "positive",
+      "temporaryDistortion": "Immediate crude/equity repricing confirms the state but may also absorb part of it.",
+      "evidenceRefs": [
+        "opec-price-response-20161201",
+        "regime-opec-20161231"
+      ]
+    },
+    "stateFlowRelation": "aligned",
+    "causalLagBridge": {
+      "conclusion": "clear",
+      "rationale": "Formal supply cut maps directly to the global crude balance.",
+      "evidenceRefs": [
+        "opec-cut-20161201"
+      ]
+    },
+    "crossSectionalCorroboration": {
+      "conclusion": "credible",
+      "rationale": "Oil equities broadly confirm while earnings sensitivity differs by business mix.",
+      "evidenceRefs": [
+        "regime-opec-20161231",
+        "sinopec-q3-20161028"
+      ]
+    },
+    "stateLeadDisposition": "research_only",
+    "independentBlockers": [],
+    "falsifier": "Compliance fails or supply response offsets the cut.",
+    "conclusion": "flow_confirms_state"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "complete",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "clear",
+        "rationale": "Strong operating cash flow and declining short-term borrowing support current liquidity.",
+        "evidenceRefs": [
+          "sinopec-q3-20161028"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Integrated oil remains capital intensive and requires continuing upstream/refining investment.",
+        "evidenceRefs": [
+          "sinopec-q3-20161028"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Large state-owned integrated structure and related-party/overseas asset arrangements remain governance complexity, though no acute blocker is frozen.",
+        "evidenceRefs": [
+          "sinopec-q3-20161028"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "clear",
+        "rationale": "Cutoff filings do not show an acute refinancing blocker; short borrowings had fallen materially.",
+        "evidenceRefs": [
+          "sinopec-q3-20161028"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "Higher crude may be mostly priced and can reduce refining spreads, leaving net integrated earnings below the bullish oil narrative.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "tighten_downside",
+    "falsifierOrEscalationTrigger": "Upstream EBIT improves without material refining/marketing offset and revisions exceed the frozen baseline.",
+    "conclusion": "proceed_with_caveats"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "Research only: fresh supply reset, measured valuation and strong quality, but integrated offsets and broad price confirmation block V1.9 Primary.",
+    "alreadyPricedAssessment": "fresh_event_partially_absorbed_with_mixed_company_conversion",
+    "constraints": [
+      "integrated refining offset",
+      "full positive breadth",
+      "OPEC compliance"
+    ]
+  },
+  "bearCase": "The OPEC cut is real but already reflected in crude/oil equities; refining-spread compression and supply response prevent incremental EPS upside.",
+  "invalidationConditions": [
+    {
+      "indicator": "OPEC compliance and Sinopec segment EBIT",
+      "observationMethod": "industry/company data",
+      "threshold": "upstream repair does not exceed refining/marketing offset"
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [],
+  "nextResearchActions": [
+    "Keep Sinopec Research; require net integrated earnings revisions beyond the Dec-9 baseline before escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q4-opec-first-cut",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-12-01T06:02:32+08:00",
+    "baselineAsOfAt": "2016-10-29T00:00:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "opec-cut-20161201",
+      "opec-price-response-20161201"
+    ],
+    "baselineEvidenceRefs": [
+      "sinopec-q3-20161028",
+      "petrochina-outlook-20161029"
+    ],
+    "evidenceRefs": [
+      "opec-cut-20161201",
+      "opec-price-response-20161201",
+      "sinopec-q3-20161028",
+      "petrochina-outlook-20161029",
+      "sinopec-expectations-20161209"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "mixed",
+      "rationale": "Company quality is strong, but integrated refining offsets and already-positive sector breadth prevent sufficiently bounded one-way downside/upside asymmetry.",
+      "evidenceRefs": [
+        "sinopec-q3-20161028",
+        "sinopec-expectations-20161209",
+        "regime-opec-20161231"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Remain Research; only reconsider after net segment revisions prove the fresh event is not offset inside the 60d base horizon.",
+    "falsifier": "The new supply cut fails to improve net integrated earnings beyond the frozen baseline.",
+    "conclusion": "no_route"
+  }
+}
