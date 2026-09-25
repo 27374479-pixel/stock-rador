@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2016q4-multisource-deep-v1.9-001",
+  "skillVersion": "1.9.0",
+  "validationClass": "exploratory_contaminated_untouched_holdout_at_repo_level",
+  "samePeriodMayTuneSkill": false,
+  "lockedBeforeReveal": true,
+  "candidateFrozenBeforeHoldout": true,
+  "lockCommit": "a46939e450145436e1f650c12c780c6cf9d37142",
+  "revealCommit": "37f9a3e47ee5626afe3a7cedad02432cef272d36",
+  "primarySelectionCount": 0,
+  "frozenDecisionSummary": [
+    {
+      "hypothesisId": "h-2016q4-property-tightening-wave",
+      "selectionState": "Research selection",
+      "ticker": "000002.SZ"
+    },
+    {
+      "hypothesisId": "h-2016q4-small-car-tax-reset",
+      "selectionState": "No selection"
+    },
+    {
+      "hypothesisId": "h-2016q4-opec-first-cut",
+      "selectionState": "Research selection",
+      "ticker": "600028.SH",
+      "freshRoute": "no_route"
+    },
+    {
+      "hypothesisId": "h-2016q4-coal-330-supply-release",
+      "selectionState": "Research selection",
+      "ticker": "600011.SH",
+      "freshRoute": "no_route"
+    },
+    {
+      "hypothesisId": "h-2016q4-shenzhen-connect-live",
+      "selectionState": "No selection"
+    },
+    {
+      "hypothesisId": "h-2016q4-tio2-environmental-capacity-hit",
+      "selectionState": "Research selection",
+      "ticker": "002601.SZ",
+      "freshRoute": "no_route"
+    }
+  ],
+  "outcomeFindings": [
+    {
+      "findingId": "no-forced-primary",
+      "status": "strongly_supported_guardrail",
+      "interpretation": "The second untouched V1.9 holdout contained several new events but produced zero Primary selections. This supports the intended one-way nature of V1.9: a new event only opens a narrow audit path and does not force promotion.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "new-event-opec-no-route",
+      "status": "supported",
+      "evidence": {
+        "ticker": "600028.SH",
+        "excess20": 0.05085024827523532,
+        "excess60": -0.0019752889077795377,
+        "excess120": -0.03429220878703054
+      },
+      "interpretation": "A globally important new supply-policy event did not produce a durable base-horizon benchmark edge in the frozen A-share expression. V1.9 correctly kept it Research.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "new-event-coal-no-route",
+      "status": "supported",
+      "evidence": {
+        "ticker": "600011.SH",
+        "excess20": 0.000059603366001859115,
+        "excess60": -0.037474692814975175,
+        "excess120": -0.06472948768530729
+      },
+      "interpretation": "A new domestic supply-policy change did not justify Primary when the company/expectation bridge remained unresolved. The fresh-event label alone was not enough.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "new-event-tio2-no-route",
+      "status": "mixed_recall_but_not_precision_failure",
+      "evidence": {
+        "ticker": "002601.SZ",
+        "excess20": 0.07541692581680448,
+        "excess60": 0.3121195538311432,
+        "excess120": 0.1867337893030676
+      },
+      "interpretation": "The Skill correctly identified the fresh environmental capacity shock and a direct earnings bridge, but blocked Primary because negative operating cash flow, large acquisition goodwill and financing/integration risks were material and not time-bounded. Strong later returns show a recall cost, but same-period hindsight cannot justify waiving company-risk controls.",
+      "tuningImplication": "future_holdout_only"
+    },
+    {
+      "findingId": "property-tightening-research",
+      "status": "supported_at_base_horizon",
+      "evidence": {
+        "ticker": "000002.SZ",
+        "excess20": -0.012901470954902239,
+        "excess60": -0.05800473635171266,
+        "excess120": 0.0716787180632501
+      },
+      "interpretation": "A large macro-policy state change did not translate into a clean 60d company edge. Keeping the selected property expression Research was appropriate at the registered base horizon.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "structural-market-accessibility-no-selection",
+      "status": "open_failure_class",
+      "evidence": {
+        "shenzhenConnectBasketMeanExcess20": 0.028088210310147632,
+        "shenzhenConnectBasketMeanExcess60": 0.17089982810580348,
+        "shenzhenConnectBasketMeanExcess120": 0.5380090791274467
+      },
+      "interpretation": "The frozen Shenzhen quality/growth basket strongly outperformed after Shenzhen Connect became operational, even though the event lacked a direct current earnings bridge. This may indicate a generic market-structure/ownership-base repricing channel that the current earnings-centric Skill does not model. It must not be converted into a Shenzhen-Connect-specific rule from this same-period result.",
+      "tuningImplication": "define_generic_failure_class_only_then_validate_on_future_untouched_window"
+    },
+    {
+      "findingId": "auto-tax-no-selection",
+      "status": "diagnostic_only",
+      "evidence": {
+        "basketMeanExcess20": 0.04526165799649181,
+        "basketMeanExcess60": 0.053977536679605365,
+        "basketMeanExcess120": 0.06612479715298725
+      },
+      "interpretation": "The frozen passenger-vehicle basket modestly outperformed despite No selection. Because the tax reset itself was not necessarily the causal driver of later OEM returns, this does not justify a sector-specific automotive rule. It is a reminder to separate policy-event causality from unrelated company fundamentals.",
+      "tuningImplication": "none_same_period"
+    }
+  ],
+  "generalityAssessment": {
+    "status": "strengthened",
+    "reasons": [
+      "Three distinct new-event types in the same holdout—global supply coordination, domestic supply policy and environmental capacity disruption—were all evaluated through the same generic V1.9 contract and all remained no_route.",
+      "The only previously validated fresh-route Primary came from a different industry in 2017Q1, demonstrating that the route is not tied to a specific sector.",
+      "A strong later TiO2 return did not trigger a retrospective risk waiver.",
+      "Market-structure repricing is being treated as a generic missing causal channel, not a named-event exception."
+    ],
+    "prohibitedChanges": [
+      "Do not add oil, coal, TiO2, auto, Shenzhen Connect or any named-stock rule.",
+      "Do not loosen adversarial company-risk gates because one risky Research name later rallied.",
+      "Do not add a generic market-structure route until it is defined independently of this outcome and validated on a future untouched window.",
+      "Do not merge dynamic re-underwrite into V1.9."
+    ]
+  },
+  "v19Assessment": {
+    "firstUntouchedHoldout": "2017Q1: one fresh-route Primary strongly supported; new-event and continuation guardrails also supported.",
+    "secondUntouchedHoldout": "2016Q4: zero Primary despite multiple new events; fresh-route precision/guardrail behavior supported.",
+    "crossIndustryGenerality": "supported",
+    "positiveRouteReplication": "not_yet_replicated",
+    "finalVersionDecision": "supported_as_current_candidate_but_not_final",
+    "rationale": "Two untouched windows support V1.9's generic discipline, but only one has produced a qualifying fresh-route Primary. A further untouched window is desirable before declaring the escalation route final."
+  },
+  "nextValidationRequirement": {
+    "action": "Keep V1.9 unchanged and test another untouched earlier window.",
+    "preferredWindow": "2016Q3 if repository history confirms it is unused.",
+    "successCriteria": [
+      "Do not require a Primary; zero-signal remains valid.",
+      "Any fresh-route Primary must arise from a frozen new event plus pre-event baseline and direct/quantified company path.",
+      "Continuation events remain excluded from fresh escalation.",
+      "Material company-risk blockers remain binding.",
+      "If a market-structure/ownership repricing opportunity appears, record it as a diagnostic only; do not alter V1.9 within the same window."
+    ]
+  }
+}
