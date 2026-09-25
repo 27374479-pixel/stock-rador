@@ -1,0 +1,349 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-05-31T23:59:59+08:00",
+  "researchReadyAt": "2016-05-31T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q2-nand-demand-supply-inflection",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "No selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "A direct listed expression would need to be identified before outcome evaluation."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "other",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [],
+  "changeHypothesis": {
+    "summary": "NAND demand and pricing showed an early turn, but the frozen A-share company evidence establishes direct DRAM rather than NAND economics, so the valid product signal lacks a clean listed expression.",
+    "firstCredibleDate": "2016-05-31",
+    "valueChain": [
+      "NAND demand/supply",
+      "NAND pricing",
+      "controllers/modules",
+      "listed-company earnings"
+    ],
+    "persistenceReason": "The product cycle can persist, but a direct A-share expression is mandatory.",
+    "disconfirmingEvidence": [
+      "002049 evidence is DRAM-focused rather than direct NAND.",
+      "Several semiconductor proxies had already rerated strongly.",
+      "A product signal without direct exposure is not actionable."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nand-inflection-20160531",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "samsung-q1-20160428",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "skhynix-q1-20160426",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "tongfang-guoxin-annual-20160412",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "regime-memory-nand-ready-20160531",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "NAND demand recovery and supply tightening",
+      "to": "NAND producer/controller/module economics",
+      "mechanism": "Higher NAND prices can improve direct seller margins, but only for companies with verified current exposure.",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ],
+      "failureMode": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "direct NAND suppliers/controllers/modules"
+    ],
+    "secondOrderWinners": [],
+    "losers": [],
+    "substitutes": [],
+    "bottlenecks": [
+      "direct A-share exposure",
+      "earnings materiality"
+    ],
+    "falseThemeMatches": [
+      "generic semiconductor proxies"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002049.SZ",
+      "name": "同方国芯",
+      "verifiedExposure": "Frozen company evidence establishes DRAM chips/modules rather than a clear NAND earnings bridge.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-nand-ready-20160531"
+      ],
+      "earningsSensitivity": {
+        "base": "Direct DRAM exposure, not verified NAND.",
+        "favorable": "Could benefit only if separate NAND exposure is proven.",
+        "adverse": "Thematic mismatch."
+      },
+      "principalRisks": [
+        "exposure mismatch",
+        "proxy selection"
+      ]
+    }
+  ],
+  "matchedControls": [],
+  "matchedControlException": "No company is selected, so no matched-control basket is frozen.",
+  "selectionComparison": {
+    "selectedTicker": null,
+    "pairwise": [],
+    "selectionEdgeConclusion": "insufficient",
+    "rationale": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The memory basket was already favorable, and the best-performing semiconductor proxies had large prior gains.",
+    "thesisExpectation": "The NAND cycle can improve direct NAND earnings.",
+    "measurableGap": "No frozen A-share company has sufficiently direct current NAND earnings exposure.",
+    "evidenceRefs": [
+      "nand-inflection-20160531",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-nand-ready-20160531"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "No executable company-level expectation burden can be measured strongly enough for selection.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The memory basket was already favorable, and the best-performing semiconductor proxies had large prior gains.",
+    "thesisScenario": "The NAND cycle can improve direct NAND earnings.",
+    "breakevenCondition": "A listed company must have direct current NAND revenue and an underpriced earnings bridge.",
+    "ordinaryScenarioFailure": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "catalystOrTimingBridge": "None strong enough for a selected company at this cutoff.",
+    "evidenceRefs": [
+      "nand-inflection-20160531",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-nand-ready-20160531"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "global NAND pricing cycle",
+    "geographicScope": "China / globally linked market where applicable",
+    "customerScope": "SSD/smartphone/data-center buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "NAND demand and pricing showed an early turn, but the frozen A-share company evidence establishes direct DRAM rather than NAND economics, so the valid product signal lacks a clean listed expression.",
+    "evidenceRefs": [
+      "nand-inflection-20160531",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-nand-ready-20160531"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "NAND demand and pricing showed an early turn, but the frozen A-share company evidence establishes direct DRAM rather than NAND economics, so the valid product signal lacks a clean listed expression.",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-nand-ready-20160531"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "listed-company earnings transmission is unresolved",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-nand-ready-20160531"
+      ]
+    },
+    "structural": {
+      "direction": "mixed",
+      "driver": "The product cycle can persist, but a direct A-share expression is mandatory.",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-nand-ready-20160531"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Do not convert a real event into a stock without direct cutoff-valid transmission and expectation evidence.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "unresolved",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "insufficient",
+    "rationale": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "evidenceRefs": [
+      "nand-inflection-20160531",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-nand-ready-20160531"
+    ]
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate."
+    ]
+  },
+  "bearCase": "The global NAND turn is genuine but cannot be monetized through a sound A-share expression at this cutoff.",
+  "invalidationConditions": [
+    {
+      "indicator": "cutoff-valid issuer filing showing material current NAND revenue/margin",
+      "observationMethod": "cutoff-valid first-party and industry evidence",
+      "threshold": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination; no post-cutoff stock outcomes used before lock.",
+    "result": "not_clean",
+    "caveats": [
+      "Only evidence available by the memo cutoff is frozen."
+    ]
+  },
+  "unknowns": [
+    "No frozen A-share company has sufficiently direct current NAND earnings exposure."
+  ],
+  "nextResearchActions": [
+    "No selection; reopen only if a direct current NAND earnings expression is verified."
+  ],
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "mixed",
+      "rationale": "NAND demand and pricing showed an early turn, but the frozen A-share company evidence establishes direct DRAM rather than NAND economics, so the valid product signal lacks a clean listed expression.",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "insufficient",
+      "rationale": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-nand-ready-20160531"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "insufficient",
+      "rationale": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-nand-ready-20160531"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "mixed",
+      "rationale": "The product cycle can persist, but a direct A-share expression is mandatory.",
+      "evidenceRefs": [
+        "nand-inflection-20160531",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": null,
+    "purestTicker": null,
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "earningsQualityComparison": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "downsideComparison": "The product-market signal is real, but the frozen A-share map is proxy-like and fails the direct-exposure/earnings-conversion gate.",
+    "evidenceRefs": [
+      "nand-inflection-20160531",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-nand-ready-20160531"
+    ],
+    "conclusion": "insufficient"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "insufficient",
+    "axes": [],
+    "strongestCounterThesis": "The global NAND turn is genuine but cannot be monetized through a sound A-share expression at this cutoff.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "cutoff-valid issuer filing showing material current NAND revenue/margin",
+    "conclusion": "research_only"
+  },
+  "freshIncrementalEscalationTest": {
+    "applicable": false,
+    "discoveryNovelty": "not_applicable",
+    "conclusion": "not_applicable"
+  }
+}
