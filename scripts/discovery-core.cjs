@@ -88,6 +88,11 @@ function validateDiscoveryPack(pack, manifest) {
       if (typeof role?.purpose !== 'string' || !role.purpose.trim()) {
         errors.push(`discovery source role ${role.roleId} requires purpose`);
       }
+      if (role.coverageStatus !== 'unavailable') {
+        if (!Array.isArray(role?.searchTrace) || !role.searchTrace.length || role.searchTrace.some((entry) => typeof entry !== 'string' || !entry.trim())) {
+          errors.push(`covered discovery source role ${role.roleId} requires non-empty searchTrace`);
+        }
+      }
     }
   }
 
