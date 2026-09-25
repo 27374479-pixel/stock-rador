@@ -1,0 +1,742 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-04-28T23:59:59+08:00",
+  "researchReadyAt": "2016-04-28T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q2-vitamin-e-repricing",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Realized VE prices and the next quarterly earnings/margin data should test the bridge within 60 trading days."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002001.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "VE repricing had a direct producer earnings bridge and NHU entered the Apr-20 stop-quote event with strong cash quality, but the price-upcycle narrative was already visible to the market before the fresh stop-quote signal.",
+    "firstCredibleDate": "2016-04-20",
+    "valueChain": [
+      "VE supply/quotes",
+      "realized selling price",
+      "nutrition-product margin",
+      "producer EPS/cash"
+    ],
+    "persistenceReason": "Concentrated supply and production constraints can keep VE prices high for quarters, but quote discipline can reverse if small capacity returns or producers restore supply.",
+    "disconfirmingEvidence": [
+      "VE price hikes were already a public theme before Apr20.",
+      "A high quoted price may not equal realized transaction price.",
+      "Producer supply responses can cap the cycle."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "vitamin-e-stopquote-20160420",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "vitamin-e-independent-20160409",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "vitamin-e-sensitivity-20160227",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "nhu-annual-20160419",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "nhu-q1-20160428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "regime-vitamin-e-ready-20160428",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "producer quote hikes and stop-quote/stop-signing behavior",
+      "to": "realized VE price and producer earnings",
+      "mechanism": "A concentrated VE market gives direct producers strong sensitivity to realized selling-price changes.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419"
+      ],
+      "failureMode": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve.",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "large VE producers"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "feed/nutrition buyers unable to pass through costs"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "realized transaction price",
+      "producer supply response",
+      "raw-material supply"
+    ],
+    "falseThemeMatches": [
+      "vitamin companies without meaningful VE production"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002001.SZ",
+      "name": "新和成",
+      "verifiedExposure": "NHU is a major VE producer; a contemporaneous sensitivity estimate linked VE price changes directly to EPS, and Q1 cash/profit quality was strong.",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ],
+      "earningsSensitivity": {
+        "base": "2015 profit was depressed but cash flow remained strong; Q1 2016 already showed a sharp profit recovery.",
+        "favorable": "Stop-quote behavior sustains materially higher realized VE prices, creating strong incremental margin/EPS leverage.",
+        "adverse": "Quoted prices fail to transact or supply normalizes quickly, leaving the narrative ahead of earnings."
+      },
+      "principalRisks": [
+        "narrative already known",
+        "quote-to-transaction gap",
+        "cycle normalization"
+      ]
+    },
+    {
+      "ticker": "600216.SH",
+      "name": "浙江医药",
+      "verifiedExposure": "Frozen counterfactual expression in the same economic chain.",
+      "evidenceRefs": [
+        "regime-vitamin-e-ready-20160428",
+        "zhejiang-medicine-q1-20160428"
+      ],
+      "earningsSensitivity": {
+        "base": "Counterfactual listed expression.",
+        "favorable": "Could dominate if its company-level conversion proves stronger.",
+        "adverse": "May have weaker quality, directness or expectation asymmetry."
+      },
+      "principalRisks": [
+        "different company-specific economics",
+        "counterfactual may not share the same direct earnings bridge"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600216.SH",
+      "name": "浙江医药",
+      "controlType": "sector_peer",
+      "fairCounterfactualReason": "Frozen listed peer exposed to the same broad economic state change.",
+      "whySelectedCompanyShouldOutperform": "NHU had much stronger Q1 operating cash flow than Zhejiang Medicine and a contemporaneous quantified VE-to-EPS sensitivity.",
+      "evidenceRefs": [
+        "regime-vitamin-e-ready-20160428",
+        "zhejiang-medicine-q1-20160428",
+        "nhu-annual-20160419"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen peer is sufficient for this Research-only event-time expression test.",
+  "selectionComparison": {
+    "selectedTicker": "002001.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600216.SH",
+        "selectedAdvantages": [
+          "NHU had much stronger Q1 operating cash flow than Zhejiang Medicine and a contemporaneous quantified VE-to-EPS sensitivity."
+        ],
+        "selectedDisadvantages": [
+          null
+        ],
+        "evidenceRefs": [
+          "regime-vitamin-e-ready-20160428",
+          "nhu-annual-20160419",
+          "nhu-q1-20160428",
+          "zhejiang-medicine-q1-20160428"
+        ],
+        "switchCondition": "Prefer Zhejiang Medicine if realized VE volume/price and cash conversion become clearly superior with less expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed"
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "VE had already been discussed as a price-up theme since February/early April; NHU was positive versus CSI300 over both 20d and 60d, though the 20d move was modest.",
+    "thesisExpectation": "The Apr-20 stop-quote is an incremental tightening signal that could extend realized VE pricing and earnings beyond the pre-event baseline.",
+    "measurableGap": "A quantitative price-to-EPS bridge exists, but the fraction of the quoted price increase already capitalized in NHU's valuation is not measured.",
+    "evidenceRefs": [
+      "vitamin-e-stopquote-20160420",
+      "vitamin-e-independent-20160409",
+      "vitamin-e-sensitivity-20160227",
+      "nhu-annual-20160419",
+      "nhu-q1-20160428",
+      "regime-vitamin-e-ready-20160428"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Point-in-time event/company evidence plus benchmark-relative 20/60d absorption; no sufficiently complete contemporaneous consensus/valuation snapshot is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "VE had already been discussed as a price-up theme since February/early April; NHU was positive versus CSI300 over both 20d and 60d, though the 20d move was modest.",
+    "thesisScenario": "The Apr-20 stop-quote is an incremental tightening signal that could extend realized VE pricing and earnings beyond the pre-event baseline.",
+    "breakevenCondition": "Realized VE pricing must remain high enough and long enough for the incremental EPS bridge to exceed the already-public repricing expectations.",
+    "catalystOrTimingBridge": "realized VE transaction price, nutrition-segment margin, quarterly EPS and operating cash flow",
+    "evidenceRefs": [
+      "vitamin-e-stopquote-20160420",
+      "vitamin-e-independent-20160409",
+      "vitamin-e-sensitivity-20160227",
+      "nhu-annual-20160419",
+      "nhu-q1-20160428",
+      "regime-vitamin-e-ready-20160428"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Independent Apr-9 price-hike evidence plus the Apr-20 NHU stop-quote creates a source-linked incremental tightening signal with a pre-existing EPS sensitivity estimate.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "nhu-q1-20160428"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "NHU had much stronger Q1 operating cash flow than Zhejiang Medicine and a contemporaneous quantified VE-to-EPS sensitivity.",
+      "evidenceRefs": [
+        "regime-vitamin-e-ready-20160428",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "zhejiang-medicine-q1-20160428"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "The frozen company evidence defines the pre-catalyst or contemporaneous operating baseline without using future outcomes.",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "nhu-q1-20160428"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Selected ticker event-time excess was 1.30% over 20d and 20.99% over 60d; broad regime was favorable.",
+      "evidenceRefs": [
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen event basket versus CSI300 at the event-time checkpoint",
+      "lookback20Excess": 0.030299653178826658,
+      "lookback60Excess": 0.12221645041533413,
+      "positiveBreadth20": 1,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Independent Apr-9 price-hike evidence plus the Apr-20 NHU stop-quote creates a source-linked incremental tightening signal with a pre-existing EPS sensitivity estimate.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "No complete cutoff-valid analyst revision breadth is frozen.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Concentrated supply and production constraints can keep VE prices high for quarters, but quote discipline can reverse if small capacity returns or producers restore supply.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "regime-vitamin-e-ready-20160428",
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227"
+      ]
+    },
+    "overallConclusion": "favorable"
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002001.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "nhu-q1-20160428"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "A quantitative price-to-EPS bridge exists, but the fraction of the quoted price increase already capitalized in NHU's valuation is not measured.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete point-in-time valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "realized VE transaction price, nutrition-segment margin, quarterly EPS and operating cash flow",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600216.SH",
+        "revisionAdvantage": "NHU had much stronger Q1 operating cash flow than Zhejiang Medicine and a contemporaneous quantified VE-to-EPS sensitivity.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+        "catalystAdvantage": "realized VE transaction price, nutrition-segment margin, quarterly EPS and operating cash flow",
+        "switchCondition": "Prefer Zhejiang Medicine if realized VE volume/price and cash conversion become clearly superior with less expectation burden.",
+        "evidenceRefs": [
+          "regime-vitamin-e-ready-20160428",
+          "nhu-annual-20160419",
+          "nhu-q1-20160428",
+          "zhejiang-medicine-q1-20160428"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "NHU moved from large VE quote increases to stopping quotes/signings after a public early-April repricing.",
+    "earningsMechanism": "A contemporaneous estimate linked each RMB10/kg VE price increase to roughly RMB0.20/share of NHU earnings, giving a direct quantitative bridge if realized prices hold.",
+    "nextObservableMetric": "realized VE transaction price, nutrition-segment margin, quarterly EPS and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "quantitatively_bridged",
+    "evidenceRefs": [
+      "vitamin-e-stopquote-20160420",
+      "vitamin-e-independent-20160409",
+      "vitamin-e-sensitivity-20160227",
+      "nhu-annual-20160419",
+      "nhu-q1-20160428"
+    ],
+    "failureCondition": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "2015 profit was depressed but cash flow remained strong; Q1 2016 already showed a sharp profit recovery.",
+      "nextPeriod": "The current operating baseline does not yet prove the event's incremental earnings contribution.",
+      "laterPeriod": "Longer-run economics remain conditional on the causal driver persisting.",
+      "rationale": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "nhu-q1-20160428"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "NHU moved from large VE quote increases to stopping quotes/signings after a public early-April repricing.",
+      "nextPeriodChange": "The Apr-20 stop-quote is an incremental tightening signal that could extend realized VE pricing and earnings beyond the pre-event baseline.",
+      "laterPeriodChange": "No permanent favorable state is assumed.",
+      "mechanism": "A contemporaneous estimate linked each RMB10/kg VE price increase to roughly RMB0.20/share of NHU earnings, giving a direct quantitative bridge if realized prices hold.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "A quantitative price-to-EPS bridge exists, but the fraction of the quoted price increase already capitalized in NHU's valuation is not measured.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "falsifier": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "global/China vitamin-E producer pricing cycle",
+    "geographicScope": "China / globally linked market where applicable",
+    "customerScope": "feed, nutrition and pharmaceutical buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "VE repricing had a direct producer earnings bridge and NHU entered the Apr-20 stop-quote event with strong cash quality, but the price-upcycle narrative was already visible to the market before the fresh stop-quote signal.",
+    "evidenceRefs": [
+      "vitamin-e-stopquote-20160420",
+      "vitamin-e-independent-20160409",
+      "vitamin-e-sensitivity-20160227",
+      "nhu-annual-20160419",
+      "nhu-q1-20160428",
+      "regime-vitamin-e-ready-20160428"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "NHU moved from large VE quote increases to stopping quotes/signings after a public early-April repricing.",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "company-level earnings conversion and expectation gap remain incomplete",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "Concentrated supply and production constraints can keep VE prices high for quarters, but quote discipline can reverse if small capacity returns or producers restore supply.",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Preserve the real event while keeping selection at Research until earnings and expectation gates are resolved.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+    "evidenceRefs": [
+      "nhu-annual-20160419",
+      "nhu-q1-20160428",
+      "regime-vitamin-e-ready-20160428"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Independent Apr-9 price-hike evidence plus the Apr-20 NHU stop-quote creates a source-linked incremental tightening signal with a pre-existing EPS sensitivity estimate.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "nhu-q1-20160428"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "A quantitative price-to-EPS bridge exists, but the fraction of the quoted price increase already capitalized in NHU's valuation is not measured.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227",
+        "nhu-annual-20160419",
+        "nhu-q1-20160428",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Concentrated supply and production constraints can keep VE prices high for quarters, but quote discipline can reverse if small capacity returns or producers restore supply.",
+      "evidenceRefs": [
+        "vitamin-e-stopquote-20160420",
+        "vitamin-e-independent-20160409",
+        "vitamin-e-sensitivity-20160227"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002001.SZ",
+    "purestTicker": "002001.SZ",
+    "purityIsDecisionDriver": false,
+    "earningsQualityComparison": "NHU had strong 2015 cash flow and Q1 2016 profit/cash acceleration, while the control's Q1 operating cash flow remained negative.",
+    "evidenceRefs": [
+      "vitamin-e-stopquote-20160420",
+      "vitamin-e-independent-20160409",
+      "vitamin-e-sensitivity-20160227",
+      "nhu-annual-20160419",
+      "nhu-q1-20160428",
+      "regime-vitamin-e-ready-20160428"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Company-level liquidity/cash quality was reviewed but not fully cleared for Primary.",
+        "evidenceRefs": [
+          "nhu-annual-20160419",
+          "nhu-q1-20160428"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid capital-allocation review is incomplete.",
+        "evidenceRefs": [
+          "nhu-annual-20160419",
+          "nhu-q1-20160428"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid governance review is incomplete.",
+        "evidenceRefs": [
+          "nhu-annual-20160419",
+          "nhu-q1-20160428"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid refinancing/contingent-liability review is incomplete.",
+        "evidenceRefs": [
+          "nhu-annual-20160419",
+          "nhu-q1-20160428"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The market had already recognized the vitamin repricing theme, making the Apr-20 stop-quote confirmation insufficient incremental alpha.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      null
+    ]
+  },
+  "bearCase": "The market had already recognized the vitamin repricing theme, making the Apr-20 stop-quote confirmation insufficient incremental alpha.",
+  "invalidationConditions": [
+    {
+      "indicator": "realized VE transaction price, nutrition-segment margin, quarterly EPS and operating cash flow",
+      "observationMethod": "cutoff-valid company filings and industry/price data",
+      "threshold": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination; no post-cutoff stock outcomes used before lock.",
+    "result": "not_clean",
+    "caveats": [
+      "Current model/search may encode later historical context.",
+      "Only evidence available by the memo cutoff is frozen."
+    ]
+  },
+  "unknowns": [
+    "A quantitative price-to-EPS bridge exists, but the fraction of the quoted price increase already capitalized in NHU's valuation is not measured."
+  ],
+  "nextResearchActions": [
+    "Keep 新和成 as Research only; require realized VE transaction price, nutrition-segment margin, quarterly EPS and operating cash flow plus a measured expectation/valuation gap before any Primary escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q2-vitamin-e-repricing",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-04-20T08:39:00+08:00",
+    "baselineAsOfAt": "2016-04-19T23:59:59+08:00",
+    "freshDriverEvidenceRefs": [
+      "vitamin-e-stopquote-20160420"
+    ],
+    "baselineEvidenceRefs": [
+      "nhu-annual-20160419"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "insufficient",
+      "evidenceRefs": [
+        "nhu-annual-20160419",
+        "regime-vitamin-e-ready-20160428"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only; re-underwrite only after the next pre-specified operating/earnings confirmation.",
+    "falsifier": "VE transaction prices fail to validate quoted levels, supply returns quickly, or NHU margins/EPS/cash do not improve.",
+    "evidenceRefs": [
+      "vitamin-e-stopquote-20160420",
+      "nhu-annual-20160419",
+      "regime-vitamin-e-ready-20160428"
+    ],
+    "conclusion": "no_route"
+  }
+}
