@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Selection Frequency Evaluation Protocol",
+  "purpose": "Measure how often the frozen Skill naturally produces independent actionable ideas without changing its decision thresholds to hit a target frequency.",
+  "skillRuleMutationAllowed": false,
+  "currentQuarterEndEstimate": {
+    "basis": [
+      {
+        "window": "2016Q4",
+        "version": "1.9",
+        "primaryCount": 0,
+        "researchCount": 4,
+        "noSelectionCount": 2
+      },
+      {
+        "window": "2017Q1",
+        "version": "1.9",
+        "primaryCount": 1,
+        "researchCount": 3,
+        "noSelectionCount": 2
+      },
+      {
+        "window": "2017Q2",
+        "version": "1.8",
+        "primaryCount": 0,
+        "researchCount": 3,
+        "noSelectionCount": 3
+      },
+      {
+        "window": "2017Q3",
+        "version": "1.8",
+        "primaryCount": 1,
+        "researchCount": 3,
+        "noSelectionCount": 2
+      }
+    ],
+    "testedQuarters": 4,
+    "frozenEvents": 24,
+    "primaryCount": 2,
+    "researchCount": 13,
+    "noSelectionCount": 9,
+    "primaryPerQuarter": 0.5,
+    "annualizedPrimaryCountIfRepresentative": 2,
+    "approximatePrimaryGapMonths": 6,
+    "caveat": "Quarter-end checkpoint backtests measure decision quality, not true live selection frequency. They can miss opportunities that appeared and were absorbed before quarter-end."
+  },
+  "rollingReplayDesign": {
+    "decisionStrideTradingDays": 5,
+    "discoveryLookbackCalendarDays": 90,
+    "cutoffRule": "At each checkpoint, only evidence publicly available by that timestamp may be used.",
+    "eventFreshnessRule": "Use the frozen Skill's novelty/baseline rules; do not relabel continuation as new to increase signal count.",
+    "deduplication": {
+      "key": "economic_hypothesis_cluster + preferred_ticker",
+      "suppressWithinTradingDays": 60,
+      "reopenOnlyIf": "A source-linked genuinely new driver, explicit invalidation-and-recovery, or separately validated re-underwrite creates a new decision state."
+    },
+    "outcomeWindowsTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "benchmark": "000300.SH"
+  },
+  "primaryFrequencyMetrics": [
+    "independent_primary_clusters_per_252_trading_days",
+    "median_trading_days_between_primary_clusters",
+    "p90_trading_days_between_primary_clusters",
+    "maximum_primary_drought_trading_days",
+    "fraction_of_checkpoints_with_at_least_one_primary",
+    "simultaneous_independent_primary_clusters"
+  ],
+  "qualityMetrics": [
+    "primary_60d_excess_mean",
+    "primary_60d_excess_median",
+    "primary_60d_positive_excess_rate",
+    "primary_60d_matched_control_win_rate",
+    "primary_close_path_max_drawdown_distribution",
+    "research_to_primary_conversion_rate",
+    "research_60d_excess_distribution"
+  ],
+  "recallMetrics": [
+    "postoutcome_detectable_miss_rate",
+    "missed_independent_opportunity_clusters_per_252_trading_days",
+    "miss_reason_distribution"
+  ],
+  "interpretationRules": [
+    "Do not optimize for a preselected signal count.",
+    "A low frequency with high quality is valid; a high frequency with degraded base-horizon quality is not an improvement.",
+    "Multiple stocks expressing one economic thesis count as one opportunity cluster for frequency.",
+    "Research selections are tracked separately from actionable Primary selections.",
+    "Same-window frequency outcomes may diagnose but may not tune the Skill; threshold/rule changes require another untouched window."
+  ]
+}
