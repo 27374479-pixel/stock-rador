@@ -1,0 +1,393 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2016q3-multisource-v1.9-001",
+  "cutoffAt": "2016-09-30T23:59:59+08:00",
+  "validationClass": "exploratory_contaminated",
+  "contaminationNote": "Current model/search can expose later historical context. Only sources provably public by 2016-09-30 are frozen; no selected-stock outcomes are opened before discovery lock.",
+  "lanes": [
+    {
+      "laneId": "official_primary",
+      "purpose": "Official policy, regulation and market-structure announcements.",
+      "coverageStatus": "partial",
+      "limitations": "Selected regulator/ministerial records; not exhaustive."
+    },
+    {
+      "laneId": "company_first_party",
+      "purpose": "Issuer/customer/supplier filings.",
+      "coverageStatus": "unavailable",
+      "limitations": "Company mapping intentionally deferred until after discovery freeze."
+    },
+    {
+      "laneId": "physical_industry",
+      "purpose": "High-frequency physical supply/demand and transport evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected coal/logistics evidence only."
+    },
+    {
+      "laneId": "reputable_news",
+      "purpose": "Contemporaneous reporting on policy execution and market impact.",
+      "coverageStatus": "partial",
+      "limitations": "Selected People/CNStock/21st Century coverage."
+    },
+    {
+      "laneId": "specialist_trade",
+      "purpose": "Product-level technology and pricing evidence.",
+      "coverageStatus": "partial",
+      "limitations": "Selected TrendForce DRAM evidence."
+    },
+    {
+      "laneId": "community_weak_signal",
+      "purpose": "Forum/community weak signals.",
+      "coverageStatus": "unavailable",
+      "limitations": "No clean point-in-time historical community crawl."
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "shenzhen-connect-approval-20160816",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "中国证监会 香港证监会联合公告：原则批准深港通",
+      "publisher": "香港证券及期货事务监察委员会/中国证监会",
+      "url": "https://apps.sfc.hk/edistributionWeb/api/news/list-content?lang=TC&refNo=16PR80",
+      "publishedAt": "2016-08-16T20:00:00+08:00",
+      "availableAt": "2016-08-16T20:00:00+08:00",
+      "originGroup": "shenzhen-connect-approval-20160816",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Regulators approved the Shenzhen-Hong Kong Stock Connect framework in principle.",
+        "The scheme removed aggregate quota limits and retained daily quota controls.",
+        "Formal launch still required rule/system preparation estimated at about four months, so structural accessibility changed before actual flow execution."
+      ],
+      "entities": [
+        "Shenzhen-Hong Kong Stock Connect",
+        "A shares",
+        "Hong Kong market",
+        "cross-border investors"
+      ],
+      "observedChanges": [
+        "a new cross-border market-access state becomes official, while actual implementation is delayed"
+      ]
+    },
+    {
+      "itemId": "nev-subsidy-fraud-20160908",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "关于地方预决算公开和新能源汽车推广应用补助资金专项检查的通报",
+      "publisher": "中华人民共和国财政部",
+      "url": "https://www.mof.gov.cn/gkml/bulinggonggao/tongzhitonggao/201609/t20160908_2413434.htm",
+      "publishedAt": "2016-09-08T00:00:00+08:00",
+      "availableAt": "2016-09-08T00:00:00+08:00",
+      "originGroup": "nev-subsidy-fraud-20160908",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The Ministry of Finance disclosed a special inspection of NEV subsidy applications covering major producers and historical subsidy claims.",
+        "The inspection found material violations including false production/sales records, early registration of unfinished vehicles and subsidy claims for idle vehicles.",
+        "The event changed the policy-quality environment from broad subsidy expansion toward enforcement, eligibility and real-use verification."
+      ],
+      "entities": [
+        "new energy vehicles",
+        "subsidies",
+        "fraud inspection",
+        "vehicle OEMs"
+      ],
+      "observedChanges": [
+        "a new regulatory-quality shock raises compliance/real-demand differentiation inside the NEV chain"
+      ]
+    },
+    {
+      "itemId": "nev-fraud-company-20160908",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "新能源汽车骗补情况公布 涉奇瑞金龙等车企",
+      "publisher": "经济观察网",
+      "url": "https://m.eeo.com.cn/2016/0908/291758.shtml",
+      "publishedAt": "2016-09-08T16:06:00+08:00",
+      "availableAt": "2016-09-08T16:06:00+08:00",
+      "originGroup": "nev-fraud-company-20160908",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The inspection covered 90 major NEV producers and 401,000 vehicles tied to 2013-2015 subsidies, with 133,000 sold vehicles sampled for operating status.",
+        "Named violations showed that subsidy enforcement could redistribute value toward compliant manufacturers and suppliers rather than simply reduce the whole sector."
+      ],
+      "entities": [
+        "NEV OEMs",
+        "subsidy fraud",
+        "compliance"
+      ],
+      "observedChanges": [
+        "regulatory enforcement creates potential company-level quality exceptions inside a broadly subsidized industry"
+      ]
+    },
+    {
+      "itemId": "truck-overload-rule-20160830",
+      "laneId": "official_primary",
+      "sourceType": "primary",
+      "contentKind": "original",
+      "title": "超限运输车辆行驶公路管理规定（交通运输部令2016年第62号）",
+      "publisher": "中华人民共和国交通运输部",
+      "url": "https://xxgk.mot.gov.cn/jigou/fgs/202006/t20200623_3307801.html",
+      "publishedAt": "2016-08-30T00:00:00+08:00",
+      "availableAt": "2016-08-30T00:00:00+08:00",
+      "originGroup": "truck-overload-rule-20160830",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The revised national over-limit road-freight regulation was published in August and took effect on 2016-09-21.",
+        "The rule standardized vehicle dimensions/weight limits and tightened enforcement of over-limit road transport.",
+        "The regulatory state directly changes effective freight capacity and the economics of legal trucking."
+      ],
+      "entities": [
+        "road freight",
+        "truck weight limits",
+        "logistics",
+        "vehicle transport"
+      ],
+      "observedChanges": [
+        "a new logistics-capacity rule takes effect late in the quarter"
+      ]
+    },
+    {
+      "itemId": "truck-freight-price-20160923",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "公路货车超限超载新规正式执行 煤钢运费应声提价",
+      "publisher": "中国证券网",
+      "url": "https://news.cnstock.com/industry%2Crdjj-201609-3907462.htm",
+      "publishedAt": "2016-09-23T13:37:22+08:00",
+      "availableAt": "2016-09-23T13:37:22+08:00",
+      "originGroup": "truck-freight-price-20160923",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "After the Sep-21 enforcement start, some freight markets raised rates immediately.",
+        "Reported steel freight increases ranged roughly 30%-65% in some markets, while coal transport cost estimates rose about RMB20-30 per tonne.",
+        "The new rule therefore produced an observable physical/logistics effect before the Sep-30 cutoff."
+      ],
+      "entities": [
+        "road freight",
+        "steel",
+        "coal",
+        "logistics rates"
+      ],
+      "observedChanges": [
+        "legal freight capacity tightens and transport prices rise within days of enforcement"
+      ]
+    },
+    {
+      "itemId": "beijing-property-tightening-20160930",
+      "laneId": "reputable_news",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "title": "北京“9·30”楼市调控新政发布",
+      "publisher": "人民网",
+      "url": "https://house.people.com.cn/n1/2016/0930/c164220-28754243.html",
+      "publishedAt": "2016-09-30T19:48:00+08:00",
+      "availableAt": "2016-09-30T19:48:00+08:00",
+      "originGroup": "beijing-property-tightening-20160930",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "Beijing raised minimum down-payment ratios for first and second homes and tightened differentiated mortgage policy effective immediately.",
+        "The policy also emphasized land/housing supply and price controls.",
+        "Because the announcement arrived after the Sep-30 market close, the new demand/financing state was public by cutoff but had not yet been fully tradeable in equity prices."
+      ],
+      "entities": [
+        "Beijing housing",
+        "mortgage policy",
+        "property developers",
+        "homebuyers"
+      ],
+      "observedChanges": [
+        "a fresh city-level property-demand and financing tightening arrives exactly at the quarter-end cutoff"
+      ]
+    },
+    {
+      "itemId": "dram-rebound-20160905",
+      "laneId": "specialist_trade",
+      "sourceType": "specialist",
+      "contentKind": "original",
+      "title": "内存需求动能强劲，第四季DRAM合约价有望再涨逾一成",
+      "publisher": "TrendForce/DRAMeXchange",
+      "url": "https://www.trendforce.cn/research/download/RP160905IZ",
+      "publishedAt": "2016-09-05T00:00:00+08:00",
+      "availableAt": "2016-09-05T00:00:00+08:00",
+      "originGroup": "dram-rebound-20160905",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "TrendForce said key memory components had ended a prolonged price decline as Q3 seasonal demand improved.",
+        "It expected Q4 DRAM contract prices to rise by more than 10%, implying an observable shift from prior oversupply/price weakness toward tighter conditions.",
+        "The product-market inflection was global; A-share mapping still requires direct current DRAM earnings rather than generic semiconductor exposure."
+      ],
+      "entities": [
+        "DRAM",
+        "memory contract price",
+        "PC/server/mobile demand"
+      ],
+      "observedChanges": [
+        "a new product-market pricing inflection emerges after a long downcycle"
+      ]
+    },
+    {
+      "itemId": "coal-276-supply-20160908",
+      "laneId": "physical_industry",
+      "sourceType": "industry_data",
+      "contentKind": "original",
+      "title": "发改委煤炭工作会议未放开276工作日制度",
+      "publisher": "21世纪经济报道转载同期会议消息",
+      "url": "https://m.21jingji.com/article/20160908/herald/9f2cabfc656a61c0a985ad819de9a8d9.html",
+      "publishedAt": "2016-09-08T12:30:00+08:00",
+      "availableAt": "2016-09-08T12:30:00+08:00",
+      "originGroup": "coal-276-supply-20160908",
+      "derivativeOf": null,
+      "normalizedClaims": [
+        "The 276-working-day coal production constraint remained in force while authorities considered temporary output increases by selected advanced capacity.",
+        "By end-August, coal de-capacity progress was reported around 60% of the annual task and output was down nearly 10% YoY.",
+        "The event is best treated as a continuation/conflicted state: prior supply restriction remains powerful enough to require policy counter-adjustment, not a wholly new coal thesis."
+      ],
+      "entities": [
+        "coal",
+        "276 working days",
+        "advanced capacity",
+        "supply-side reform"
+      ],
+      "observedChanges": [
+        "an existing supply-restriction cycle reaches a policy-conflict phase as authorities begin temporary supply stabilization"
+      ]
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "event-2016q3-shenzhen-connect-approval",
+      "statement": "Regulators formally approved Shenzhen-Hong Kong Stock Connect, expanding cross-border market accessibility and removing aggregate quota limits, but actual launch still required about four months of preparation.",
+      "changeType": "market_structure_accessibility_change_with_delayed_flow",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-08-16T20:00:00+08:00",
+      "memberItemIds": [
+        "shenzhen-connect-approval-20160816"
+      ],
+      "independentOriginGroups": [
+        "shenzhen-connect-approval-20160816"
+      ],
+      "affectedValueChain": [
+        "eligible Shenzhen equities",
+        "foreign institutional access",
+        "Hong Kong brokers/custody",
+        "cross-border ownership base"
+      ],
+      "contradictionSearchNotes": "Structural access changes immediately, but actual trading flow is delayed. Do not equate eligibility with near-term earnings or assume all Shenzhen growth stocks benefit equally.",
+      "researchQuestion": "Can a company/ownership-base repricing path be justified before formal launch without relying on a direct earnings bridge, or should the event remain Research/No selection?"
+    },
+    {
+      "eventId": "event-2016q3-nev-subsidy-fraud-enforcement",
+      "statement": "The NEV subsidy regime shifted toward enforcement and real-use/compliance verification after a large fraud inspection, potentially hurting low-quality subsidy-dependent firms while favoring compliant technology leaders.",
+      "changeType": "regulatory_quality_filter",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-09-08T00:00:00+08:00",
+      "memberItemIds": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908"
+      ],
+      "independentOriginGroups": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908"
+      ],
+      "affectedValueChain": [
+        "NEV OEMs",
+        "battery suppliers",
+        "subsidy-dependent manufacturers",
+        "compliant high-quality producers"
+      ],
+      "contradictionSearchNotes": "Aggregate policy support is not simply reduced; enforcement can redistribute value. Deep research must search company quality/compliance exceptions rather than average the sector.",
+      "researchQuestion": "Does any listed compliant company have a cutoff-valid earnings/market-share path that improves relative to subsidy-dependent peers?"
+    },
+    {
+      "eventId": "event-2016q3-truck-overload-enforcement",
+      "statement": "New national truck over-limit standards took effect on Sep-21 and immediately raised observed freight rates in steel and coal routes, creating a new logistics-capacity/cost shock.",
+      "changeType": "regulatory_capacity_cost_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-08-30T00:00:00+08:00",
+      "memberItemIds": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923"
+      ],
+      "independentOriginGroups": [
+        "truck-overload-rule-20160830",
+        "truck-freight-price-20160923"
+      ],
+      "affectedValueChain": [
+        "road freight carriers",
+        "truck manufacturers",
+        "steel/coal logistics",
+        "shippers with rail/water alternatives"
+      ],
+      "contradictionSearchNotes": "Higher freight rates help legal capacity/providers but hurt cargo owners and may alter modal share. Do not map the event generically to all logistics or truck names.",
+      "researchQuestion": "Which listed companies have a direct, quantitatively credible benefit from higher legal freight capacity utilization or modal substitution rather than merely higher transport costs?"
+    },
+    {
+      "eventId": "event-2016q3-beijing-property-tightening",
+      "statement": "Beijing announced materially tighter mortgage/down-payment and housing-market controls after the Sep-30 close, creating a fresh demand/financing shock public by the quarterly cutoff but not yet reflected in a post-announcement trading session.",
+      "changeType": "fresh_demand_financing_tightening",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-09-30T19:48:00+08:00",
+      "memberItemIds": [
+        "beijing-property-tightening-20160930"
+      ],
+      "independentOriginGroups": [
+        "beijing-property-tightening-20160930"
+      ],
+      "affectedValueChain": [
+        "Beijing developers",
+        "mortgage demand",
+        "brokers",
+        "construction/material demand",
+        "housing finance"
+      ],
+      "contradictionSearchNotes": "The direct first-order effect is negative for transaction leverage/demand, but company impact depends on geography, inventory, balance sheet and land exposure. The event arrived after market close, so price absorption must be handled carefully.",
+      "researchQuestion": "Is there any company-specific defensive/relative winner under the new tightening, or is No selection the cleaner decision?"
+    },
+    {
+      "eventId": "event-2016q3-dram-price-inflection",
+      "statement": "Global DRAM pricing shifted from a prolonged downcycle toward rising contract prices as Q3 demand tightened supply, with Q4 prices expected to rise more than 10%.",
+      "changeType": "product_market_turning_point",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2016-09-05T00:00:00+08:00",
+      "memberItemIds": [
+        "dram-rebound-20160905"
+      ],
+      "independentOriginGroups": [
+        "dram-rebound-20160905"
+      ],
+      "affectedValueChain": [
+        "DRAM suppliers",
+        "memory modules",
+        "PC/server/mobile OEMs",
+        "domestic memory/semiconductor proxies"
+      ],
+      "contradictionSearchNotes": "The global product inflection is real, but domestic listed mapping may still fail. Direct current DRAM product/revenue evidence is required.",
+      "researchQuestion": "Does any executable A-share company have direct current DRAM earnings exposure at cutoff, or must the valid product signal fail closed?"
+    },
+    {
+      "eventId": "event-2016q3-coal-supply-restriction-conflict",
+      "statement": "The existing 276-day coal supply restriction remained powerful enough that authorities began temporary output-stabilization measures for selected advanced capacity, creating a conflicted continuation state rather than a fresh coal thesis.",
+      "changeType": "continuation_state_with_policy_counteradjustment",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2016-09-08T12:30:00+08:00",
+      "memberItemIds": [
+        "coal-276-supply-20160908"
+      ],
+      "independentOriginGroups": [
+        "coal-276-supply-20160908"
+      ],
+      "affectedValueChain": [
+        "coal miners",
+        "coal-fired power",
+        "steel/coke",
+        "transport"
+      ],
+      "contradictionSearchNotes": "Supply restriction supports coal pricing while policy counter-adjustment explicitly limits runaway scarcity. V1.9 fresh escalation must remain unavailable because the core thesis predates the quarter.",
+      "researchQuestion": "Can any company still pass inherited V1.8/V1.5 gates without using the V1.9 fresh route, or should the mature/conflicted cycle remain Research?"
+    }
+  ]
+}
