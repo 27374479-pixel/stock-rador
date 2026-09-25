@@ -1,0 +1,903 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-09-30T23:59:59+08:00",
+  "researchReadyAt": "2016-09-30T15:00:00+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q3-nev-subsidy-fraud-enforcement",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Compliance-driven share redistribution could become visible through qualified shipments and earnings over the next quarter, but the route is Research-only at cutoff."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "ordinary_growth_compounder",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002074.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "pass",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "The subsidy-fraud crackdown creates a new compliance/real-use quality filter inside NEV. Guoxuan has strong pre-event battery growth and improved cash flow, but the incremental redistribution benefit is not yet quantified and broad timing is adverse.",
+    "firstCredibleDate": "2016-09-08",
+    "valueChain": [
+      "subsidy eligibility",
+      "compliant OEM/battery suppliers",
+      "real-use verification",
+      "market share",
+      "earnings/cash"
+    ],
+    "persistenceReason": "Enforcement and qualification can persist beyond one quarter and can differentiate companies.",
+    "disconfirmingEvidence": [
+      "Strong Guoxuan growth predates the crackdown.",
+      "BYD shows very strong accounting growth but weak operating cash conversion.",
+      "The frozen NEV basket is adverse over both 20d and 60d."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "nev-subsidy-fraud-20160908",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "nev-fraud-company-20160908",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "guoxuan-h1-20160823",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "byd-h1-20160829",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    },
+    {
+      "id": "regime-nev-20160930",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the hypothesis, company mapping, timing, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "subsidy-fraud enforcement",
+      "to": "relative compliance value",
+      "mechanism": "Stricter verification can reduce subsidy-dependent low-quality output and favor compliant supply chains.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908"
+      ],
+      "failureMode": "enforcement reduces aggregate demand without redistributing profitable share",
+      "lag": "quarters"
+    },
+    {
+      "from": "relative compliance value",
+      "to": "Guoxuan earnings path",
+      "mechanism": "A strong battery supplier could gain qualified shipments if customers remain eligible and real demand persists.",
+      "evidenceRefs": [
+        "guoxuan-h1-20160823"
+      ],
+      "failureMode": "no measurable share gain or subsidy/payment stress dominates",
+      "lag": "quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "compliant NEV producers and suppliers if share redistributes"
+    ],
+    "secondOrderWinners": [
+      "quality suppliers to compliant OEMs"
+    ],
+    "losers": [
+      "fraud-dependent producers"
+    ],
+    "substitutes": [
+      "non-subsidized demand"
+    ],
+    "bottlenecks": [
+      "qualification",
+      "real demand",
+      "subsidy payment"
+    ],
+    "falseThemeMatches": [
+      "all NEV stocks treated as uniform beneficiaries"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002074.SZ",
+      "name": "国轩高科",
+      "verifiedExposure": "Direct power-battery supplier with strong pre-event revenue/profit growth and improved OCF.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Strong battery growth is already in the H1 baseline.",
+        "favorable": "Enforcement shifts qualified share toward compliant customers/suppliers.",
+        "adverse": "Aggregate demand and subsidy/payment pressure overwhelm any relative share gain."
+      },
+      "principalRisks": [
+        "subsidy dependence",
+        "working-capital/payment risk",
+        "adverse sector timing"
+      ]
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Frozen counterfactual/control expression.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ],
+      "earningsSensitivity": {
+        "base": "Used as a contemporaneous comparison.",
+        "favorable": "Could outperform if the preferred company's specific edge fails.",
+        "adverse": "May lack the preferred company's direct mechanism."
+      },
+      "principalRisks": [
+        "weaker causal fit",
+        "different company-specific risks"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "controlType": "sector_proxy",
+      "fairCounterfactualReason": "Frozen listed comparison exposed to the same broad environment but with a different company-level mechanism.",
+      "whySelectedCompanyShouldOutperform": "Guoxuan has a cleaner battery-supplier quality case, while BYD's H1 cash conversion was materially weak.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen control is sufficient for this Research-only expression test.",
+  "selectionComparison": {
+    "selectedTicker": "002074.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "selectedAdvantages": [
+          "Better frozen cash conversion and a direct battery-supplier expression of quality redistribution."
+        ],
+        "selectedDisadvantages": [
+          "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse."
+        ],
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ],
+        "switchCondition": "Prefer BYD only if cutoff-valid evidence shows cleaner compliance economics and cash conversion with a lower expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed",
+    "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse."
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "Strong 2016 growth in quality names was already visible before enforcement; sector relative returns are adverse.",
+    "thesisExpectation": "Enforcement may redistribute profitable share toward compliant suppliers.",
+    "measurableGap": "No cutoff-valid estimate quantifies the incremental share/earnings gain for Guoxuan.",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908",
+      "guoxuan-h1-20160823",
+      "byd-h1-20160829",
+      "regime-nev-20160930"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Frozen company evidence plus benchmark-relative pre-cutoff price regime; no sufficiently complete contemporaneous valuation/consensus snapshot.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "Strong 2016 growth in quality names was already visible before enforcement; sector relative returns are adverse.",
+    "thesisScenario": "Enforcement may redistribute profitable share toward compliant suppliers.",
+    "breakevenCondition": "Qualified shipment/share gains must more than offset aggregate policy/payment pressure.",
+    "ordinaryScenarioFailure": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+    "catalystOrTimingBridge": "Subsequent qualification, shipment and earnings evidence can test the redistribution thesis.",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908",
+      "guoxuan-h1-20160823",
+      "byd-h1-20160829",
+      "regime-nev-20160930"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "A new regulatory quality filter is real, but the positive company-level redistribution remains a hypothesis.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "clear",
+      "rationale": "Guoxuan's pre-event H1 growth and improved operating cash flow are realized.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Guoxuan has a cleaner battery-supplier quality case, while BYD's H1 cash conversion was materially weak.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "clear",
+      "rationale": "The frozen company filing predates the event and is kept separate from the new driver.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "low",
+      "checkMethod": "Guoxuan is below CSI300 over both frozen 20d and 60d windows.",
+      "evidenceRefs": [
+        "regime-nev-20160930"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen NEV basket versus CSI300",
+      "lookback20Excess": -0.020132830875890722,
+      "lookback60Excess": -0.0704830814618584,
+      "positiveBreadth20": 0.3333333333333333,
+      "positiveBreadth60": 0.3333333333333333,
+      "conclusion": "adverse",
+      "evidenceRefs": [
+        "regime-nev-20160930"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "A new regulatory quality filter is real, but the positive company-level redistribution remains a hypothesis.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Enforcement and qualification can persist beyond one quarter and can differentiate companies.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "low",
+      "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+      "evidenceRefs": [
+        "regime-nev-20160930"
+      ]
+    },
+    "overallConclusion": "adverse",
+    "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse."
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002074.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Pre-event H1 profit growth and positive operating cash conversion support company quality.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "No cutoff-valid estimate quantifies the incremental share/earnings gain for Guoxuan.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete cutoff-valid valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "Subsequent qualification, shipment and earnings evidence can test the redistribution thesis.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "revisionAdvantage": "Better frozen cash conversion and a direct battery-supplier expression of quality redistribution.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "Pre-event H1 profit growth and positive operating cash conversion support company quality.",
+        "catalystAdvantage": "Subsequent qualification, shipment and earnings evidence can test the redistribution thesis.",
+        "downsideTradeoff": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+        "switchCondition": "Prefer BYD only if cutoff-valid evidence shows cleaner compliance economics and cash conversion with a lower expectation burden.",
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "market_share",
+    "driverChange": "Stricter subsidy verification raises the value of compliant real-use production.",
+    "earningsMechanism": "If compliant customers retain demand, qualified battery suppliers can gain shipments/share relative to weaker subsidy-dependent chains.",
+    "nextObservableMetric": "qualified NEV/battery shipments, receivables/cash conversion and next-period earnings",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908",
+      "guoxuan-h1-20160823",
+      "byd-h1-20160829",
+      "regime-nev-20160930"
+    ],
+    "failureCondition": "No relative share/earnings improvement appears or working-capital/subsidy stress worsens."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Strong battery growth is already in the H1 baseline.",
+      "nextPeriod": "Existing strong growth may slow as the policy regime tightens.",
+      "laterPeriod": "Longer-run growth depends on real demand rather than subsidy arbitrage.",
+      "rationale": "The pre-event company filing defines the baseline rather than later outcomes.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "Near-term enforcement can disrupt the sector.",
+      "nextPeriodChange": "Compliant suppliers may gain relative share.",
+      "laterPeriodChange": "Only real-demand economics should persist.",
+      "mechanism": "If compliant customers retain demand, qualified battery suppliers can gain shipments/share relative to weaker subsidy-dependent chains.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "No cutoff-valid estimate quantifies the incremental share/earnings gain for Guoxuan.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "rationale": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "falsifier": "No relative share/earnings improvement appears or working-capital/subsidy stress worsens.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "company_specific_divergence",
+    "productMarketScope": "compliance-filtered NEV battery supply",
+    "geographicScope": "China A-share relevant market",
+    "customerScope": "qualified NEV OEMs",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "The frozen evidence supports a real regulatory-quality filter and a plausible company exception, but not a Primary-quality expectation/timing package.",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908",
+      "guoxuan-h1-20160823",
+      "byd-h1-20160829",
+      "regime-nev-20160930"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "negative",
+      "driver": "sector enforcement/disruption and adverse price regime",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "positive",
+      "driver": "potential quality/share redistribution",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "higher compliance and real-use standards",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "conflictType": "company_sector_conflict",
+    "resolutionRule": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "negative",
+    "companySignal": "positive",
+    "divergence": "leader_outperforming_sector",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Pre-event H1 profit growth and positive operating cash conversion support company quality.",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908",
+      "guoxuan-h1-20160823",
+      "byd-h1-20160829",
+      "regime-nev-20160930"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "low",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "A new regulatory quality filter is real, but the positive company-level redistribution remains a hypothesis.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "clear",
+      "rationale": "Guoxuan's pre-event H1 growth and improved operating cash flow are realized.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No cutoff-valid estimate quantifies the incremental share/earnings gain for Guoxuan.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Enforcement and qualification can persist beyond one quarter and can differentiate companies.",
+      "evidenceRefs": [
+        "nev-subsidy-fraud-20160908",
+        "nev-fraud-company-20160908",
+        "guoxuan-h1-20160823",
+        "byd-h1-20160829",
+        "regime-nev-20160930"
+      ]
+    },
+    "narrativeRepetitionRisk": "low",
+    "falsifier": "No relative share/earnings improvement appears or working-capital/subsidy stress worsens.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002074.SZ",
+    "purestTicker": "002074.SZ",
+    "purityIsDecisionDriver": false,
+    "expectationBurdenComparison": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+    "earningsQualityComparison": "Pre-event H1 profit growth and positive operating cash conversion support company quality.",
+    "downsideComparison": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908",
+      "guoxuan-h1-20160823",
+      "byd-h1-20160829",
+      "regime-nev-20160930"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Subsidy/working-capital exposure remains a material risk despite improved H1 OCF.",
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Frozen evidence is insufficient to clear capital-allocation risk for Primary.",
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "No complete dedicated governance search is frozen for this Research-only candidate.",
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Financing and contingent-risk review is not complete enough for Primary.",
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The crackdown is mostly an aggregate demand/payment negative; no profitable share redistribution reaches Guoxuan within the base horizon.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "No relative share/earnings improvement appears or working-capital/subsidy stress worsens.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": true,
+    "triggerSignals": [
+      "evidence_horizon_company_sector_conflict"
+    ],
+    "searchCompleteness": "complete",
+    "heterogeneityLanes": {
+      "geography_regulatory_exposure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "Geography was checked but did not independently establish a stronger listed exception.",
+        "searchTrace": [
+          "cutoff company geography and policy exposure"
+        ],
+        "evidenceRefs": []
+      },
+      "compliance_capacity_allowance": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "The candidate has a cutoff-valid company characteristic that can differentiate it from the conflicted aggregate.",
+        "searchTrace": [
+          "cutoff compliance/capacity eligibility evidence"
+        ],
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      },
+      "product_mix": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Product or business mix creates a different earnings path from a generic sector proxy.",
+        "searchTrace": [
+          "cutoff product mix and direct exposure evidence"
+        ],
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      },
+      "cost_curve_input_access": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No separate cost-curve advantage beyond the frozen company evidence was established.",
+        "searchTrace": [
+          "cutoff cost and input evidence"
+        ],
+        "evidenceRefs": []
+      },
+      "contract_pricing_structure": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "No stronger contract-pricing exception was frozen.",
+        "searchTrace": [
+          "cutoff contract and pricing evidence"
+        ],
+        "evidenceRefs": []
+      },
+      "customer_endmarket_mix": {
+        "applicability": "applicable",
+        "status": "searched_no_exception",
+        "rationale": "Customer/end-market mix was considered but is not sufficient alone for Primary.",
+        "searchTrace": [
+          "cutoff customer and end-market evidence"
+        ],
+        "evidenceRefs": []
+      },
+      "working_capital_cash_quality": {
+        "applicability": "applicable",
+        "status": "credible_exception",
+        "rationale": "Cash quality materially differentiates the candidate from weaker peers, but does not waive timing and expectation gates.",
+        "searchTrace": [
+          "cutoff cash flow and working capital evidence"
+        ],
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      },
+      "other_material_heterogeneity": {
+        "applicability": "not_applicable",
+        "status": "not_applicable",
+        "rationale": "No additional material heterogeneity lane was required by the frozen evidence.",
+        "searchTrace": [],
+        "evidenceRefs": []
+      }
+    },
+    "candidateExceptions": [
+      {
+        "ticker": "002074.SZ",
+        "exceptionMechanism": "Compliance quality and cash conversion can make a battery supplier's path differ from subsidy-dependent peers.",
+        "directExposure": "clear",
+        "earningsPathDifferentiation": "credible",
+        "disposition": "research_candidate",
+        "rationale": "The exception is economically plausible and cutoff-valid, but inherited timing/expectation/risk gates still block Primary.",
+        "evidenceRefs": [
+          "nev-subsidy-fraud-20160908",
+          "nev-fraud-company-20160908",
+          "guoxuan-h1-20160823",
+          "byd-h1-20160829",
+          "regime-nev-20160930"
+        ]
+      }
+    ],
+    "overallConclusion": "exception_candidate_found",
+    "rationale": "Aggregate conflict should not terminate company mapping; the surviving exception remains Research rather than a promotion shortcut.",
+    "falsifierOrEscalationTrigger": "New cutoff-valid company evidence must confirm the differentiated earnings path without violating inherited timing, valuation, and risk gates."
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "valuationContext": "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse.",
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      "The event-to-share redistribution is not quantitatively demonstrated, valuation/expectation burden is incomplete, and the frozen NEV regime is adverse."
+    ]
+  },
+  "bearCase": "The crackdown is mostly an aggregate demand/payment negative; no profitable share redistribution reaches Guoxuan within the base horizon.",
+  "invalidationConditions": [
+    {
+      "indicator": "qualified NEV/battery shipments, receivables/cash conversion and next-period earnings",
+      "observationMethod": "company filings and contemporaneous industry data",
+      "threshold": "No relative share/earnings improvement appears or working-capital/subsidy stress worsens."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination.",
+    "result": "not_clean",
+    "caveats": [
+      "No post-cutoff selected-stock outcome is used before lock."
+    ]
+  },
+  "unknowns": [
+    "Magnitude and timing of any compliance-driven share transfer."
+  ],
+  "nextResearchActions": [
+    "Keep Guoxuan as Research only; require direct post-enforcement shipment/share and cash evidence before any escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q3-nev-subsidy-fraud-enforcement",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-09-08T00:00:00+08:00",
+    "baselineAsOfAt": "2016-08-23T00:00:00+08:00",
+    "freshDriverEvidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "nev-fraud-company-20160908"
+    ],
+    "baselineEvidenceRefs": [
+      "guoxuan-h1-20160823"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "insufficient",
+      "rationale": "Adverse broad timing and unquantified redistribution leave risk insufficiently bounded for the V1.9 fresh route.",
+      "evidenceRefs": [
+        "guoxuan-h1-20160823",
+        "regime-nev-20160930"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only until direct post-enforcement share/earnings/cash evidence appears.",
+    "falsifier": "No qualified share gain or worsening subsidy/working-capital stress.",
+    "evidenceRefs": [
+      "nev-subsidy-fraud-20160908",
+      "guoxuan-h1-20160823",
+      "regime-nev-20160930"
+    ],
+    "conclusion": "no_route"
+  }
+}
