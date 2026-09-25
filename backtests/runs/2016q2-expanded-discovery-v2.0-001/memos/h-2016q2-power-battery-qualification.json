@@ -1,0 +1,637 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-04-29T23:59:59+08:00",
+  "researchReadyAt": "2016-04-29T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q2-power-battery-qualification",
+  "hypothesisState": "Research hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "OEM sourcing and shipment/cash evidence should test the hypothesis within the next quarter."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002074.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "MIIT qualification increased regulatory differentiation in the battery chain, but Guoxuan's explosive growth already predated the third-batch list and the event-specific share/order transfer is unquantified.",
+    "firstCredibleDate": "2016-04-29",
+    "valueChain": [
+      "battery qualification",
+      "OEM sourcing eligibility",
+      "battery shipments",
+      "revenue/profit/cash"
+    ],
+    "persistenceReason": "Qualification can persist as a sourcing filter, but policy/subsidy rules and OEM demand determine actual economics.",
+    "disconfirmingEvidence": [
+      "The list may not change Guoxuan's already-existing eligibility.",
+      "Growth comparison is affected by consolidation scope.",
+      "The entire battery basket had already rerated strongly."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "battery-third-batch-20160429",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "guoxuan-q1-20160427",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "regime-battery-ready-20160429",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "formal battery supplier qualification",
+      "to": "addressable OEM sourcing and market share",
+      "mechanism": "Qualified suppliers may retain or gain OEM sourcing access relative to excluded producers.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427"
+      ],
+      "failureMode": "No incremental qualified shipments/share appear or policy/receivable stress worsens.",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "qualified battery suppliers"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "unqualified suppliers"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "OEM awards",
+      "subsidy policy",
+      "receivables/cash conversion"
+    ],
+    "falseThemeMatches": [
+      "battery names without qualification or shipment evidence"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002074.SZ",
+      "name": "国轩高科",
+      "verifiedExposure": "Guoxuan had direct battery exposure, rapid revenue/profit growth and improved operating cash flow before the new list.",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ],
+      "earningsSensitivity": {
+        "base": "Q1 growth was already extraordinary before the event and partly affected by consolidation-scope changes.",
+        "favorable": "Qualification reinforces sourcing access and converts into incremental shipments/share.",
+        "adverse": "The event adds little because eligibility and demand were already embedded in the baseline."
+      },
+      "principalRisks": [
+        "high price absorption",
+        "policy dependence",
+        "working-capital/subsidy risk"
+      ]
+    },
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "verifiedExposure": "Frozen counterfactual expression in the same economic chain.",
+      "evidenceRefs": [
+        "regime-battery-ready-20160429"
+      ],
+      "earningsSensitivity": {
+        "base": "Counterfactual listed expression.",
+        "favorable": "Could dominate if its company-level conversion proves stronger.",
+        "adverse": "May have weaker quality, directness or expectation asymmetry."
+      },
+      "principalRisks": [
+        "different company-specific economics",
+        "counterfactual may not share the same direct earnings bridge"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "002594.SZ",
+      "name": "比亚迪",
+      "controlType": "sector_peer",
+      "fairCounterfactualReason": "Frozen listed peer exposed to the same broad economic state change.",
+      "whySelectedCompanyShouldOutperform": "Direct battery exposure and positive Q1 operating cash flow provide a cleaner company-quality baseline.",
+      "evidenceRefs": [
+        "regime-battery-ready-20160429",
+        "guoxuan-q1-20160427"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen peer is sufficient for this Research-only event-time expression test.",
+  "selectionComparison": {
+    "selectedTicker": "002074.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "selectedAdvantages": [
+          "Direct battery exposure and positive Q1 operating cash flow provide a cleaner company-quality baseline."
+        ],
+        "selectedDisadvantages": [
+          null
+        ],
+        "evidenceRefs": [
+          "regime-battery-ready-20160429",
+          "guoxuan-q1-20160427"
+        ],
+        "switchCondition": "Prefer another qualified supplier if it has clearer event-specific OEM awards, cash conversion and lower expectation burden.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed"
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The battery basket was already strongly favorable; all frozen names had large 60d benchmark-relative gains.",
+    "thesisExpectation": "Qualification differentiation could redistribute incremental share toward compliant suppliers.",
+    "measurableGap": "No frozen evidence quantifies incremental Guoxuan orders or earnings caused by the third-batch publication.",
+    "evidenceRefs": [
+      "battery-third-batch-20160429",
+      "guoxuan-q1-20160427",
+      "regime-battery-ready-20160429"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Point-in-time event/company evidence plus benchmark-relative 20/60d absorption; no sufficiently complete contemporaneous consensus/valuation snapshot is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The battery basket was already strongly favorable; all frozen names had large 60d benchmark-relative gains.",
+    "thesisScenario": "Qualification differentiation could redistribute incremental share toward compliant suppliers.",
+    "breakevenCondition": "The qualification event must create incremental profitable share rather than merely confirm an already-rerated growth narrative.",
+    "catalystOrTimingBridge": "OEM awards, qualified battery shipments, receivables and operating cash flow",
+    "evidenceRefs": [
+      "battery-third-batch-20160429",
+      "guoxuan-q1-20160427",
+      "regime-battery-ready-20160429"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Qualification is a real regulatory filter, but the incremental company effect is not directly observed.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "Direct battery exposure and positive Q1 operating cash flow provide a cleaner company-quality baseline.",
+      "evidenceRefs": [
+        "regime-battery-ready-20160429",
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "The frozen company evidence defines the pre-catalyst or contemporaneous operating baseline without using future outcomes.",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "high",
+      "checkMethod": "Selected ticker event-time excess was -2.79% over 20d and 40.84% over 60d; broad regime was favorable.",
+      "evidenceRefs": [
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen event basket versus CSI300 at the event-time checkpoint",
+      "lookback20Excess": 0.056613366958144194,
+      "lookback60Excess": 0.4171260406461191,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 1,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "persistent",
+      "rationale": "Qualification is a real regulatory filter, but the incremental company effect is not directly observed.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "No complete cutoff-valid analyst revision breadth is frozen.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Qualification can persist as a sourcing filter, but policy/subsidy rules and OEM demand determine actual economics.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "regime-battery-ready-20160429",
+        "battery-third-batch-20160429"
+      ]
+    },
+    "overallConclusion": "favorable"
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002074.SZ",
+    "qualityFloor": {
+      "conclusion": "pass",
+      "rationale": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "No frozen evidence quantifies incremental Guoxuan orders or earnings caused by the third-batch publication.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete point-in-time valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "OEM awards, qualified battery shipments, receivables and operating cash flow",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "002594.SZ",
+        "revisionAdvantage": "Direct battery exposure and positive Q1 operating cash flow provide a cleaner company-quality baseline.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+        "catalystAdvantage": "OEM awards, qualified battery shipments, receivables and operating cash flow",
+        "switchCondition": "Prefer another qualified supplier if it has clearer event-specific OEM awards, cash conversion and lower expectation burden.",
+        "evidenceRefs": [
+          "regime-battery-ready-20160429",
+          "guoxuan-q1-20160427"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "market_share",
+    "driverChange": "A new batch of suppliers met the formal power-battery specification.",
+    "earningsMechanism": "Eligibility can affect OEM sourcing and share, but no event-specific order bridge is frozen.",
+    "nextObservableMetric": "OEM awards, qualified battery shipments, receivables and operating cash flow",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "battery-third-batch-20160429",
+      "guoxuan-q1-20160427"
+    ],
+    "failureCondition": "No incremental qualified shipments/share appear or policy/receivable stress worsens."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Q1 growth was already extraordinary before the event and partly affected by consolidation-scope changes.",
+      "nextPeriod": "The current operating baseline does not yet prove the event's incremental earnings contribution.",
+      "laterPeriod": "Longer-run economics remain conditional on the causal driver persisting.",
+      "rationale": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "A new batch of suppliers met the formal power-battery specification.",
+      "nextPeriodChange": "Qualification differentiation could redistribute incremental share toward compliant suppliers.",
+      "laterPeriodChange": "No permanent favorable state is assumed.",
+      "mechanism": "Eligibility can affect OEM sourcing and share, but no event-specific order bridge is frozen.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "No frozen evidence quantifies incremental Guoxuan orders or earnings caused by the third-batch publication.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "falsifier": "No incremental qualified shipments/share appear or policy/receivable stress worsens.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "China power-battery qualification and OEM sourcing",
+    "geographicScope": "China / globally linked market where applicable",
+    "customerScope": "NEV OEMs",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "MIIT qualification increased regulatory differentiation in the battery chain, but Guoxuan's explosive growth already predated the third-batch list and the event-specific share/order transfer is unquantified.",
+    "evidenceRefs": [
+      "battery-third-batch-20160429",
+      "guoxuan-q1-20160427",
+      "regime-battery-ready-20160429"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "A new batch of suppliers met the formal power-battery specification.",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "company-level earnings conversion and expectation gap remain incomplete",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "Qualification can persist as a sourcing filter, but policy/subsidy rules and OEM demand determine actual economics.",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Preserve the real event while keeping selection at Research until earnings and expectation gates are resolved.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+    "evidenceRefs": [
+      "guoxuan-q1-20160427",
+      "regime-battery-ready-20160429"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "high",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Qualification is a real regulatory filter, but the incremental company effect is not directly observed.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "No frozen evidence quantifies incremental Guoxuan orders or earnings caused by the third-batch publication.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429",
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Qualification can persist as a sourcing filter, but policy/subsidy rules and OEM demand determine actual economics.",
+      "evidenceRefs": [
+        "battery-third-batch-20160429"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "No incremental qualified shipments/share appear or policy/receivable stress worsens.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002074.SZ",
+    "purestTicker": "002074.SZ",
+    "purityIsDecisionDriver": false,
+    "earningsQualityComparison": "Guoxuan's Q1 operating performance was strong, but the growth baseline itself is already extreme and partly affected by consolidation scope.",
+    "evidenceRefs": [
+      "battery-third-batch-20160429",
+      "guoxuan-q1-20160427",
+      "regime-battery-ready-20160429"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Company-level liquidity/cash quality was reviewed but not fully cleared for Primary.",
+        "evidenceRefs": [
+          "guoxuan-q1-20160427"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid capital-allocation review is incomplete.",
+        "evidenceRefs": [
+          "guoxuan-q1-20160427"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid governance review is incomplete.",
+        "evidenceRefs": [
+          "guoxuan-q1-20160427"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid refinancing/contingent-liability review is incomplete.",
+        "evidenceRefs": [
+          "guoxuan-q1-20160427"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The new list is mostly confirmation of an already priced battery boom rather than a fresh earnings catalyst.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "No incremental qualified shipments/share appear or policy/receivable stress worsens.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      null
+    ]
+  },
+  "bearCase": "The new list is mostly confirmation of an already priced battery boom rather than a fresh earnings catalyst.",
+  "invalidationConditions": [
+    {
+      "indicator": "OEM awards, qualified battery shipments, receivables and operating cash flow",
+      "observationMethod": "cutoff-valid company filings and industry/price data",
+      "threshold": "No incremental qualified shipments/share appear or policy/receivable stress worsens."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination; no post-cutoff stock outcomes used before lock.",
+    "result": "not_clean",
+    "caveats": [
+      "Current model/search may encode later historical context.",
+      "Only evidence available by the memo cutoff is frozen."
+    ]
+  },
+  "unknowns": [
+    "No frozen evidence quantifies incremental Guoxuan orders or earnings caused by the third-batch publication."
+  ],
+  "nextResearchActions": [
+    "Keep 国轩高科 as Research only; require OEM awards, qualified battery shipments, receivables and operating cash flow plus a measured expectation/valuation gap before any Primary escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q2-power-battery-qualification",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-04-29T17:09:00+08:00",
+    "baselineAsOfAt": "2016-04-27T23:59:59+08:00",
+    "freshDriverEvidenceRefs": [
+      "battery-third-batch-20160429"
+    ],
+    "baselineEvidenceRefs": [
+      "guoxuan-q1-20160427"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "insufficient",
+      "evidenceRefs": [
+        "guoxuan-q1-20160427",
+        "regime-battery-ready-20160429"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only; re-underwrite only after the next pre-specified operating/earnings confirmation.",
+    "falsifier": "No incremental qualified shipments/share appear or policy/receivable stress worsens.",
+    "evidenceRefs": [
+      "battery-third-batch-20160429",
+      "guoxuan-q1-20160427",
+      "regime-battery-ready-20160429"
+    ],
+    "conclusion": "no_route"
+  }
+}
