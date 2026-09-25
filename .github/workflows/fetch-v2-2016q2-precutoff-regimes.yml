@@ -1,0 +1,41 @@
+name: fetch-v2-2016q2-precutoff-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2016q2-expanded-discovery-20260925
+    paths:
+      - .github/workflows/fetch-v2-2016q2-precutoff-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2016q2-expanded-discovery-20260925
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Fetch cutoff-valid 20/60d regimes
+        run: |
+          set -e
+          D=backtests/runs/2016q2-expanded-discovery-v2.0-001/regime
+          for f in coal pv battery memory lcd vitamin-e tio2 gpon charging; do
+            rm -f "$D/$f-20160630.snapshot.json"
+            node scripts/fetch-precutoff-regime-hfq.cjs "$D/$f-20160630.json" "$D/$f-20160630.snapshot.json"
+          done
+      - name: Commit frozen pre-cutoff snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2016q2-expanded-discovery-v2.0-001/regime/*.snapshot.json
+          git commit -m "backtest: freeze 2016Q2 pre-cutoff regime snapshots"
+          git pull --rebase origin ai-skill-v2.0-2016q2-expanded-discovery-20260925
+          git push origin HEAD:ai-skill-v2.0-2016q2-expanded-discovery-20260925
