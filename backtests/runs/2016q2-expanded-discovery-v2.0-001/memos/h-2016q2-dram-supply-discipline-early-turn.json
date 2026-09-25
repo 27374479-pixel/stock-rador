@@ -1,0 +1,699 @@
+{
+  "schemaVersion": "0.5",
+  "skillVersion": "1.9.0",
+  "cutoffAt": "2016-06-16T23:59:59+08:00",
+  "researchReadyAt": "2016-06-16T23:59:59+08:00",
+  "actionableAt": null,
+  "hypothesisId": "h-2016q2-dram-supply-discipline-early-turn",
+  "hypothesisState": "High-priority hypothesis",
+  "selectionState": "Research selection",
+  "expectedRealization": {
+    "earliestTradingDays": 20,
+    "baseTradingDays": 60,
+    "latestTradingDays": 120,
+    "rationale": "Contract prices and the next company financial disclosure should test the early-turn thesis within 60 trading days."
+  },
+  "decisionValidityTradingDays": 60,
+  "equityReturnArchetype": "cyclical_growth_hybrid",
+  "expressionArchetype": "quality_revision",
+  "timingRoute": "research_only",
+  "acceptableExpressionSet": [
+    {
+      "ticker": "002049.SZ",
+      "role": "preferred",
+      "directExposure": "clear",
+      "earningsConversion": "credible",
+      "balanceSheetOrSurvival": "borderline",
+      "expectationFit": "mixed",
+      "downsideContainment": "mixed",
+      "conclusion": "borderline",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    }
+  ],
+  "changeHypothesis": {
+    "summary": "Global DRAM suppliers shifted toward supply discipline after a long price slump and 002049 had direct newly acquired DRAM product exposure, but its consolidated earnings sensitivity was not yet realized.",
+    "firstCredibleDate": "2016-06-16",
+    "valueChain": [
+      "DRAM supplier discipline",
+      "contract price",
+      "DRAM chips/modules",
+      "company revenue/margin"
+    ],
+    "persistenceReason": "Memory supply discipline can persist over multiple quarters, but the early-turn evidence precedes a confirmed contract-price upcycle.",
+    "disconfirmingEvidence": [
+      "Supplier discipline may fail to lift contract prices.",
+      "002049's acquired DRAM unit was not included in 2015 consolidated income.",
+      "Several semiconductor peers had already rerated sharply."
+    ]
+  },
+  "evidenceLedger": [
+    {
+      "id": "dram-supply-control-20160616",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "samsung-q1-20160428",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "skhynix-q1-20160426",
+      "sourcePackRef": "sourceItems",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "tongfang-guoxin-annual-20160412",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    },
+    {
+      "id": "regime-memory-dram-ready-20160616",
+      "sourcePackRef": "evidenceDocuments",
+      "relation": "context",
+      "supportsClaim": "Cutoff-valid evidence used to bound the event, company mapping, timing, expectation burden, or risk assessment."
+    }
+  ],
+  "causalChain": [
+    {
+      "from": "supplier plans to control DRAM supply",
+      "to": "contract pricing and direct memory-module economics",
+      "mechanism": "Slower supply growth can stabilize/raise DRAM prices, improving revenue and margin for direct sellers.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412"
+      ],
+      "failureMode": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash.",
+      "lag": "weeks to quarters"
+    }
+  ],
+  "valueChainMap": {
+    "directWinners": [
+      "direct DRAM chip/module sellers"
+    ],
+    "secondOrderWinners": [],
+    "losers": [
+      "memory buyers without pass-through"
+    ],
+    "substitutes": [],
+    "bottlenecks": [
+      "actual contract-price turn",
+      "company product mix",
+      "consolidated earnings materiality"
+    ],
+    "falseThemeMatches": [
+      "generic semiconductor names without current DRAM revenue"
+    ]
+  },
+  "aShareCandidates": [
+    {
+      "ticker": "002049.SZ",
+      "name": "同方国芯",
+      "verifiedExposure": "The 2015 annual report establishes a newly acquired DRAM chip/module business but does not yet establish its consolidated income contribution.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ],
+      "earningsSensitivity": {
+        "base": "Direct product exposure exists, but 2015 consolidated profit did not include the acquired unit's income statement.",
+        "favorable": "A contract-price turn makes the acquired DRAM business materially accretive after consolidation.",
+        "adverse": "Pricing does not turn or the unit is too small/low-margin to matter."
+      },
+      "principalRisks": [
+        "unproven consolidated earnings bridge",
+        "semiconductor rerating",
+        "cycle false start"
+      ]
+    },
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "verifiedExposure": "Frozen counterfactual expression in the same economic chain.",
+      "evidenceRefs": [
+        "regime-memory-dram-ready-20160616"
+      ],
+      "earningsSensitivity": {
+        "base": "Counterfactual listed expression.",
+        "favorable": "Could dominate if its company-level conversion proves stronger.",
+        "adverse": "May have weaker quality, directness or expectation asymmetry."
+      },
+      "principalRisks": [
+        "different company-specific economics",
+        "counterfactual may not share the same direct earnings bridge"
+      ]
+    }
+  ],
+  "matchedControls": [
+    {
+      "ticker": "600460.SH",
+      "name": "士兰微",
+      "controlType": "sector_peer",
+      "fairCounterfactualReason": "Frozen listed peer exposed to the same broad economic state change.",
+      "whySelectedCompanyShouldOutperform": "002049 has explicit DRAM product exposure whereas the control is primarily a broad semiconductor counterfactual.",
+      "evidenceRefs": [
+        "regime-memory-dram-ready-20160616",
+        "tongfang-guoxin-annual-20160412"
+      ]
+    }
+  ],
+  "matchedControlException": "One frozen peer is sufficient for this Research-only event-time expression test.",
+  "selectionComparison": {
+    "selectedTicker": "002049.SZ",
+    "pairwise": [
+      {
+        "controlTicker": "600460.SH",
+        "selectedAdvantages": [
+          "002049 has explicit DRAM product exposure whereas the control is primarily a broad semiconductor counterfactual."
+        ],
+        "selectedDisadvantages": [
+          null
+        ],
+        "evidenceRefs": [
+          "regime-memory-dram-ready-20160616",
+          "tongfang-guoxin-annual-20160412"
+        ],
+        "switchCondition": "Prefer another company only if cutoff-valid filings show equally direct DRAM revenue with better realized earnings quality.",
+        "netEdge": "mixed"
+      }
+    ],
+    "selectionEdgeConclusion": "mixed"
+  },
+  "expectations": {
+    "marketExpectationAtCutoff": "The broad memory basket was favorable, while 002049 itself was an early-turn pattern: strong 20d relative performance but roughly flat/slightly negative 60d excess.",
+    "thesisExpectation": "Supply discipline can mark an early DRAM pricing turn that benefits the newly consolidated memory business.",
+    "measurableGap": "The acquired DRAM unit's post-acquisition revenue, margin and consolidated earnings contribution are not frozen by Jun-16.",
+    "evidenceRefs": [
+      "dram-supply-control-20160616",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-dram-ready-20160616"
+    ]
+  },
+  "expectationBurdenTest": {
+    "valuationMethod": "Point-in-time event/company evidence plus benchmark-relative 20/60d absorption; no sufficiently complete contemporaneous consensus/valuation snapshot is frozen.",
+    "referencePriceAtCutoff": null,
+    "marketBaseline": "The broad memory basket was favorable, while 002049 itself was an early-turn pattern: strong 20d relative performance but roughly flat/slightly negative 60d excess.",
+    "thesisScenario": "Supply discipline can mark an early DRAM pricing turn that benefits the newly consolidated memory business.",
+    "breakevenCondition": "DRAM pricing must rise enough for the acquired unit to contribute materially to consolidated earnings after the stock's short-term rebound.",
+    "catalystOrTimingBridge": "DRAM contract price and 002049 storage-chip/module revenue, margin and cash contribution",
+    "evidenceRefs": [
+      "dram-supply-control-20160616",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-dram-ready-20160616"
+    ],
+    "conclusion": "unresolved"
+  },
+  "expectationEvidenceStatus": "insufficient",
+  "expectationResetTest": {
+    "fundamentalAcceleration": {
+      "conclusion": "credible",
+      "rationale": "Supplier behavior changed after a prolonged price slump, which is an upstream causal signal rather than a stock-theme headline.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "realizedCompanyConfirmation": {
+      "conclusion": "credible",
+      "rationale": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "crossSectionalConfirmation": {
+      "conclusion": "credible",
+      "rationale": "002049 has explicit DRAM product exposure whereas the control is primarily a broad semiconductor counterfactual.",
+      "evidenceRefs": [
+        "regime-memory-dram-ready-20160616",
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "baselineLag": {
+      "baselineType": "prior_run_rate",
+      "conclusion": "credible",
+      "rationale": "The frozen company evidence defines the pre-catalyst or contemporaneous operating baseline without using future outcomes.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "priceAbsorption": {
+      "risk": "moderate",
+      "checkMethod": "Selected ticker event-time excess was 21.85% over 20d and -0.62% over 60d; broad regime was favorable.",
+      "evidenceRefs": [
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "unresolvedReason": "other",
+    "conclusion": "mixed"
+  },
+  "opportunityTimingTest": {
+    "priceRegime": {
+      "method": "equal-weight frozen event basket versus CSI300 at the event-time checkpoint",
+      "lookback20Excess": 0.15713998696168832,
+      "lookback60Excess": 0.3118388248752107,
+      "positiveBreadth20": 0.6666666666666666,
+      "positiveBreadth60": 0.6666666666666666,
+      "conclusion": "favorable",
+      "evidenceRefs": [
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "fundamentalImpulse": {
+      "conclusion": "accelerating",
+      "rationale": "Supplier behavior changed after a prolonged price slump, which is an upstream causal signal rather than a stock-theme headline.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "earningsRevisionBreadth": {
+      "conclusion": "mixed",
+      "rationale": "No complete cutoff-valid analyst revision breadth is frozen.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "eventHalfLife": {
+      "conclusion": "multi_quarter",
+      "rationale": "Memory supply discipline can persist over multiple quarters, but the early-turn evidence precedes a confirmed contract-price upcycle.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "lateCycleRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "regime-memory-dram-ready-20160616",
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "overallConclusion": "favorable"
+  },
+  "crossSectionalAsymmetryTest": {
+    "selectedTicker": "002049.SZ",
+    "qualityFloor": {
+      "conclusion": "borderline",
+      "rationale": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "revisionHeadroom": {
+      "conclusion": "mixed",
+      "rationale": "The acquired DRAM unit's post-acquisition revenue, margin and consolidated earnings contribution are not frozen by Jun-16.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "valuationSlack": {
+      "conclusion": "unresolved",
+      "rationale": "No complete point-in-time valuation/consensus burden is frozen.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "catalystReachability": {
+      "conclusion": "credible",
+      "rationale": "DRAM contract price and 002049 storage-chip/module revenue, margin and cash contribution",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "downsideContainment": {
+      "conclusion": "mixed",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "pairwise": [
+      {
+        "controlTicker": "600460.SH",
+        "revisionAdvantage": "002049 has explicit DRAM product exposure whereas the control is primarily a broad semiconductor counterfactual.",
+        "valuationAdvantage": "No decisive valuation edge is frozen.",
+        "qualityTradeoff": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+        "catalystAdvantage": "DRAM contract price and 002049 storage-chip/module revenue, margin and cash contribution",
+        "switchCondition": "Prefer another company only if cutoff-valid filings show equally direct DRAM revenue with better realized earnings quality.",
+        "evidenceRefs": [
+          "regime-memory-dram-ready-20160616",
+          "tongfang-guoxin-annual-20160412"
+        ],
+        "netAsymmetry": "mixed"
+      }
+    ],
+    "overallConclusion": "mixed"
+  },
+  "earningsConversionBridge": {
+    "driverType": "price",
+    "driverChange": "DRAM suppliers began actively controlling supply after a 19-month price slump.",
+    "earningsMechanism": "A successful price stabilization/rise can lift the acquired DRAM business, but consolidated contribution remains unquantified.",
+    "nextObservableMetric": "DRAM contract price and 002049 storage-chip/module revenue, margin and cash contribution",
+    "realizationWindowTradingDays": 60,
+    "status": "proxy_only",
+    "evidenceRefs": [
+      "dram-supply-control-20160616",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412"
+    ],
+    "failureCondition": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash."
+  },
+  "turningPointConvexityTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "companyEngineTimingOverrideTest": {
+    "overallConclusion": "not_applicable"
+  },
+  "baseHorizonConvexityTest": {
+    "conclusion": "not_applicable"
+  },
+  "expectationPathTest": {
+    "baselinePath": {
+      "basis": "prior_run_rate",
+      "nearTerm": "Direct product exposure exists, but 2015 consolidated profit did not include the acquired unit's income statement.",
+      "nextPeriod": "The current operating baseline does not yet prove the event's incremental earnings contribution.",
+      "laterPeriod": "Longer-run economics remain conditional on the causal driver persisting.",
+      "rationale": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "thesisPath": {
+      "nearTermChange": "DRAM suppliers began actively controlling supply after a 19-month price slump.",
+      "nextPeriodChange": "Supply discipline can mark an early DRAM pricing turn that benefits the newly consolidated memory business.",
+      "laterPeriodChange": "No permanent favorable state is assumed.",
+      "mechanism": "A successful price stabilization/rise can lift the acquired DRAM business, but consolidated contribution remains unquantified.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "pathShape": "uncertain",
+    "incrementalPathAdvantage": {
+      "conclusion": "mixed",
+      "rationale": "The acquired DRAM unit's post-acquisition revenue, margin and consolidated earnings contribution are not frozen by Jun-16.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "durationRisk": {
+      "conclusion": "moderate",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "falsifier": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash.",
+    "overallConclusion": "mixed"
+  },
+  "hypothesisDecompositionTest": {
+    "unitOfAnalysis": "single_product_market",
+    "productMarketScope": "global DRAM supply/contract-pricing early turn",
+    "geographicScope": "China / globally linked market where applicable",
+    "customerScope": "PC/server/mobile memory buyers",
+    "decompositionNeeded": false,
+    "siblingHypothesisIds": [],
+    "rationale": "Global DRAM suppliers shifted toward supply discipline after a long price slump and 002049 had direct newly acquired DRAM product exposure, but its consolidated earnings sensitivity was not yet realized.",
+    "evidenceRefs": [
+      "dram-supply-control-20160616",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-dram-ready-20160616"
+    ],
+    "conclusion": "well_scoped"
+  },
+  "evidenceHorizonMatrix": {
+    "nearTerm": {
+      "direction": "positive",
+      "driver": "DRAM suppliers began actively controlling supply after a 19-month price slump.",
+      "horizon": "weeks/current quarter",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "mediumTerm": {
+      "direction": "mixed",
+      "driver": "company-level earnings conversion and expectation gap remain incomplete",
+      "horizon": "next 60 trading days",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "structural": {
+      "direction": "positive",
+      "driver": "Memory supply discipline can persist over multiple quarters, but the early-turn evidence precedes a confirmed contract-price upcycle.",
+      "horizon": "multiple quarters",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "conflictType": "time_horizon_conflict",
+    "resolutionRule": "Preserve the real event while keeping selection at Research until earnings and expectation gates are resolved.",
+    "conclusion": "decomposed"
+  },
+  "leaderDivergenceTest": {
+    "sectorSignal": "positive",
+    "companySignal": "positive",
+    "divergence": "unresolved",
+    "companyEvidenceConclusion": "credible",
+    "rationale": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+    "evidenceRefs": [
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-dram-ready-20160616"
+    ]
+  },
+  "highAbsorptionContinuationTest": {
+    "applicable": false,
+    "absorptionState": "moderate",
+    "freshIncrementalDriver": {
+      "conclusion": "credible",
+      "rationale": "Supplier behavior changed after a prolonged price slump, which is an upstream causal signal rather than a stock-theme headline.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "realizedEarningsSupport": {
+      "conclusion": "credible",
+      "rationale": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412"
+      ]
+    },
+    "revisionVelocity": {
+      "conclusion": "mixed",
+      "rationale": "The acquired DRAM unit's post-acquisition revenue, margin and consolidated earnings contribution are not frozen by Jun-16.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426",
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "durationMechanism": {
+      "conclusion": "credible",
+      "rationale": "Memory supply discipline can persist over multiple quarters, but the early-turn evidence precedes a confirmed contract-price upcycle.",
+      "evidenceRefs": [
+        "dram-supply-control-20160616",
+        "samsung-q1-20160428",
+        "skhynix-q1-20160426"
+      ]
+    },
+    "narrativeRepetitionRisk": "moderate",
+    "falsifier": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash.",
+    "conclusion": "not_applicable"
+  },
+  "expressionPurityTest": {
+    "preferredTicker": "002049.SZ",
+    "purestTicker": "002049.SZ",
+    "purityIsDecisionDriver": false,
+    "earningsQualityComparison": "002049 has direct product exposure and a sound 2015 cash baseline, but the acquired DRAM operation had not yet appeared in consolidated profit.",
+    "evidenceRefs": [
+      "dram-supply-control-20160616",
+      "samsung-q1-20160428",
+      "skhynix-q1-20160426",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-dram-ready-20160616"
+    ],
+    "conclusion": "balanced"
+  },
+  "causalStateVariableTest": {
+    "applicable": false,
+    "systemType": "not_applicable",
+    "stateFlowRelation": "not_applicable",
+    "stateLeadDisposition": "not_applicable",
+    "independentBlockers": [],
+    "conclusion": "not_applicable"
+  },
+  "adversarialEvidenceTest": {
+    "searchCompleteness": "partial",
+    "axes": [
+      {
+        "axis": "balance_sheet_liquidity",
+        "conclusion": "credible_risk",
+        "rationale": "Company-level liquidity/cash quality was reviewed but not fully cleared for Primary.",
+        "evidenceRefs": [
+          "tongfang-guoxin-annual-20160412"
+        ]
+      },
+      {
+        "axis": "capital_allocation_mna_goodwill",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid capital-allocation review is incomplete.",
+        "evidenceRefs": [
+          "tongfang-guoxin-annual-20160412"
+        ]
+      },
+      {
+        "axis": "governance_related_party",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid governance review is incomplete.",
+        "evidenceRefs": [
+          "tongfang-guoxin-annual-20160412"
+        ]
+      },
+      {
+        "axis": "refinancing_dilution_contingent",
+        "conclusion": "credible_risk",
+        "rationale": "Dedicated cutoff-valid refinancing/contingent-liability review is incomplete.",
+        "evidenceRefs": [
+          "tongfang-guoxin-annual-20160412"
+        ]
+      }
+    ],
+    "strongestCounterThesis": "The signal is only an attempted supply response and the A-share direct expression does not yet have proven consolidated earnings leverage.",
+    "counterThesisSeverity": "moderate",
+    "thesisImpact": "block_primary",
+    "falsifierOrEscalationTrigger": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash.",
+    "conclusion": "research_only"
+  },
+  "companyExceptionSearchTest": {
+    "applicable": false,
+    "triggerSignals": [],
+    "overallConclusion": "not_applicable"
+  },
+  "valuationExecution": {
+    "priceAtCutoff": null,
+    "nextExecutablePrice": null,
+    "alreadyPricedAssessment": "unresolved",
+    "constraints": [
+      null
+    ]
+  },
+  "bearCase": "The signal is only an attempted supply response and the A-share direct expression does not yet have proven consolidated earnings leverage.",
+  "invalidationConditions": [
+    {
+      "indicator": "DRAM contract price and 002049 storage-chip/module revenue, margin and cash contribution",
+      "observationMethod": "cutoff-valid company filings and industry/price data",
+      "threshold": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash."
+    }
+  ],
+  "memoryStressTest": {
+    "status": "not_feasible",
+    "method": "Historical replay with current-model/search contamination; no post-cutoff stock outcomes used before lock.",
+    "result": "not_clean",
+    "caveats": [
+      "Current model/search may encode later historical context.",
+      "Only evidence available by the memo cutoff is frozen."
+    ]
+  },
+  "unknowns": [
+    "The acquired DRAM unit's post-acquisition revenue, margin and consolidated earnings contribution are not frozen by Jun-16."
+  ],
+  "nextResearchActions": [
+    "Keep 同方国芯 as Research only; require DRAM contract price and 002049 storage-chip/module revenue, margin and cash contribution plus a measured expectation/valuation gap before any Primary escalation."
+  ],
+  "freshIncrementalEscalationTest": {
+    "applicable": true,
+    "eventId": "event-2016q2-dram-supply-discipline-early-turn",
+    "discoveryNovelty": "new",
+    "eventFirstAvailableAt": "2016-06-16T23:59:59+08:00",
+    "baselineAsOfAt": "2016-04-12T23:59:59+08:00",
+    "freshDriverEvidenceRefs": [
+      "dram-supply-control-20160616"
+    ],
+    "baselineEvidenceRefs": [
+      "tongfang-guoxin-annual-20160412"
+    ],
+    "boundedRiskContainment": {
+      "conclusion": "insufficient",
+      "evidenceRefs": [
+        "tongfang-guoxin-annual-20160412",
+        "regime-memory-dram-ready-20160616"
+      ]
+    },
+    "riskWindowTradingDays": 60,
+    "exitDiscipline": "Research only; re-underwrite only after the next pre-specified operating/earnings confirmation.",
+    "falsifier": "Contract prices fail to stabilize/rise or the acquired DRAM business remains immaterial to consolidated profit/cash.",
+    "evidenceRefs": [
+      "dram-supply-control-20160616",
+      "tongfang-guoxin-annual-20160412",
+      "regime-memory-dram-ready-20160616"
+    ],
+    "conclusion": "no_route"
+  }
+}
