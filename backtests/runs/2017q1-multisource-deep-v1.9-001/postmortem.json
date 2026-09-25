@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q1-multisource-deep-v1.9-001",
+  "skillVersion": "1.9.0",
+  "validationClass": "exploratory_contaminated_untouched_holdout_at_repo_level",
+  "samePeriodMayTuneSkill": false,
+  "lockedBeforeReveal": true,
+  "candidateFrozenBeforeHoldout": true,
+  "lockCommit": "1e1eb8054c2a3d54aa1f05093818548d027d9ff9",
+  "revealCommit": "0703e422a4e04b3264e948752f2e477814d071bb",
+  "noSelectionAuditCommit": "8c9ca92aa24b90de1008d58f56526113d733613e",
+  "frozenDecisionSummary": [
+    {
+      "hypothesisId": "h-2017q1-mdi-late-quarter-shortage",
+      "selectionState": "High-priority selection",
+      "ticker": "600309.SH",
+      "route": "v1.9 fresh_incremental_escalation"
+    },
+    {
+      "hypothesisId": "h-2017q1-nev-policy-reset",
+      "selectionState": "Research selection",
+      "ticker": "002074.SZ",
+      "freshRouteConclusion": "no_route"
+    },
+    {
+      "hypothesisId": "h-2017q1-machinery-record-recovery",
+      "selectionState": "Research selection",
+      "ticker": "600031.SH",
+      "discoveryNovelty": "continuation"
+    },
+    {
+      "hypothesisId": "h-2017q1-tio2-price-cycle",
+      "selectionState": "Research selection",
+      "ticker": "002601.SZ",
+      "discoveryNovelty": "continuation"
+    },
+    {
+      "hypothesisId": "h-2017q1-dram-tightness",
+      "selectionState": "No selection"
+    },
+    {
+      "hypothesisId": "h-2017q1-cobalt-high-absorption",
+      "selectionState": "No selection"
+    }
+  ],
+  "outcomeFindings": [
+    {
+      "findingId": "v19-fresh-incremental-primary-wanhua",
+      "status": "strongly_supported_first_untouched_validation",
+      "evidence": {
+        "ticker": "600309.SH",
+        "excess20": 0.05277648336716545,
+        "excess60": 0.19145937295236304,
+        "excess120": 0.5299199631276941,
+        "excessVsControl20": 0.06402626261751976,
+        "excessVsControl60": 0.3196095559401825,
+        "excessVsControl120": 0.6212057092646857,
+        "winsAllControls20": true,
+        "winsAllControls60": true,
+        "winsAllControls120": true
+      },
+      "interpretation": "The only V1.9 fresh-incremental Primary in the untouched 2017Q1 holdout delivered positive benchmark excess at every horizon and beat its frozen sector control at every horizon. The registered 60d base horizon produced about +19.15pp excess, directly supporting the narrow rule that a genuinely new source-linked incremental driver can justify escalation despite neutral broad timing when direct company economics, measured expectations and bounded downside all pass.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "new-event-does-not-imply-primary-nev",
+      "status": "supported",
+      "evidence": {
+        "ticker": "002074.SZ",
+        "excess20": -0.060870257674977335,
+        "excess60": -0.12224616446534453,
+        "excess120": -0.09839310506959165,
+        "excessVsPeer60": -0.0923441179134914
+      },
+      "interpretation": "The NEV policy reset was genuinely new, but Guoxuan's Q1 earnings decline and financing/dilution burden left bounded-risk containment mixed. V1.9 correctly returned no_route and kept the company Research. This shows the extension is not a generic 'new event' promotion rule.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "continuation-exclusion-machinery",
+      "status": "supported",
+      "evidence": {
+        "ticker": "600031.SH",
+        "excess20": -0.041660520563847725,
+        "excess60": -0.004683940536893694,
+        "excess120": -0.13023559590881173
+      },
+      "interpretation": "Machinery physical demand was strong but explicitly frozen as continuation, so V1.9 fresh escalation was unavailable. Keeping Sany Research avoided turning an old strong narrative into a Primary merely because unit data remained impressive.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "continuation-exclusion-tio2",
+      "status": "supported",
+      "evidence": {
+        "ticker": "002601.SZ",
+        "excess20": 0.049454860894346475,
+        "excess60": -0.06994553044617868,
+        "excess120": -0.014786028200846513,
+        "winsFrozenControlAllHorizons": true
+      },
+      "interpretation": "The selected TiO2 leader was a relatively good company expression and beat its frozen peer at all horizons, but the registered 60d benchmark excess was negative. The continuation label therefore usefully prevented the V1.9 route from converting repeated price-hike confirmation into Primary.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "dram-no-selection-causal-purity",
+      "status": "supported_at_registered_horizon",
+      "evidence": {
+        "proxyMeanExcess20": -0.022780953715097252,
+        "proxyMeanExcess60": -0.21296512507858634,
+        "positiveExcessBreadth60": 0,
+        "proxyMeanExcess120": 0.11016826995526285,
+        "directDramExpressionAtCutoff": "002049.SZ documented actual DRAM products but lacked continuous tradability at cutoff"
+      },
+      "interpretation": "No executable direct DRAM expression was available. Continuously traded semiconductor proxies were poor at 20/60d, strongly supporting the refusal to substitute causal exposure with generic theme proxies. Later mixed 120d proxy behavior does not retroactively repair the cutoff mapping.",
+      "tuningImplication": "none_same_period"
+    },
+    {
+      "findingId": "cobalt-high-absorption-no-selection",
+      "status": "mixed_but_not_v19_failure",
+      "evidence": {
+        "basketMeanExcess20": -0.04781396075678882,
+        "basketMeanExcess60": 0.025964829595273724,
+        "positiveExcessBreadth60": 0.6666666666666666,
+        "basketMeanExcess120": 0.42869686809125346,
+        "positiveExcessBreadth120": 1
+      },
+      "interpretation": "The high-absorption cobalt continuation was poor in the first 20d and only modestly positive on average at the registered 60d horizon, but became very strong by 120d. This is not evidence to relax V1.9, because cobalt was a continuation event and 120d extends beyond the base decision-validity window. It is a separate long-duration continuation/re-underwrite question.",
+      "tuningImplication": "separate_future_reunderwrite_or_long_duration_archetype_only"
+    }
+  ],
+  "v19Assessment": {
+    "freshIncrementalEscalation": "supported_in_first_untouched_holdout",
+    "newEventGuardrail": "supported",
+    "continuationGuardrail": "supported",
+    "directExposureGuardrail": "supported",
+    "inheritedAdversarialAndExpectationGates": "supported",
+    "finalVersionDecision": "promising_but_not_final",
+    "rationale": "The first untouched holdout provides strong evidence for the narrow V1.9 escalation route, but a single successful Primary is not sufficient for a final policy decision. V1.9 should remain unchanged and be tested on at least one more untouched earlier window."
+  },
+  "nextValidationRequirement": {
+    "action": "Freeze V1.9 unchanged and run a second untouched earlier holdout.",
+    "preferredWindow": "2016Q4 if repository and branch-history checks confirm it has never been used.",
+    "successCriteria": [
+      "Any fresh-route Primary must be linked to a frozen new event and pre-event baseline.",
+      "Continuation events must remain unable to use the fresh route.",
+      "Research/No-selection remain valid outcomes; do not force a Primary.",
+      "Lock all decisions before opening post-cutoff outcomes.",
+      "Same-period outcomes may diagnose but may not tune V1.9."
+    ]
+  },
+  "dynamicReunderwriteStatus": "separate_future_capability_not_combined"
+}
