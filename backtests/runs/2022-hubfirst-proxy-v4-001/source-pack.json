@@ -1,0 +1,249 @@
+{
+  "schemaVersion": "2.2",
+  "runId": "2022-hubfirst-proxy-v4-001",
+  "cutoffAt": "2022-12-31T23:59:59+08:00",
+  "lanes": [
+    {
+      "laneId": "generalist_professional_news",
+      "purpose": "Broad cross-market professional discovery without sector preselection",
+      "coverageStatus": "complete"
+    }
+  ],
+  "sourceRoles": [
+    {
+      "roleId": "reputable_news_wire",
+      "purpose": "Generalist professional hub proxy discovery",
+      "coverageStatus": "complete",
+      "searchTrace": [
+        "generic state-change scan: approval reset, shortage/surplus, orders/backlog, inventory, price/spread, margin/cost, demand, policy/regulation, capital flow",
+        "China-focused professional business archive plus global professional-news archive cross-check"
+      ]
+    }
+  ],
+  "discoveryHubs": [
+    {
+      "hubId": "yicai_public_proxy",
+      "hubClass": "china_generalist",
+      "coverageStatus": "complete",
+      "sectorPreselection": false,
+      "queryPrimitives": [
+        "surprise",
+        "shortage_surplus",
+        "price_spread",
+        "inventory",
+        "orders_backlog_tender",
+        "demand_volume_traffic",
+        "margin_cost",
+        "policy_regulation"
+      ],
+      "searchTrace": [
+        "2022 broad business-state scan in First Financial public archive using generic primitives",
+        "No sector list used to seed event discovery"
+      ]
+    },
+    {
+      "hubId": "reuters_public_proxy",
+      "hubClass": "global_generalist",
+      "coverageStatus": "partial",
+      "limitations": "Historical public search recall is incomplete and is not equivalent to terminal archive coverage.",
+      "sectorPreselection": false,
+      "queryPrimitives": [
+        "surprise",
+        "shortage_surplus",
+        "inventory",
+        "orders_backlog_tender",
+        "export_import",
+        "margin_cost",
+        "policy_regulation",
+        "capital_flow_liquidity"
+      ],
+      "searchTrace": [
+        "Broad 2022 China state-change scan in public Reuters archive/search",
+        "Used as cross-market/generalist coverage, not as a sector feed"
+      ]
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "hub-yicai-game-license-20220411",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "第一财经",
+      "title": "时隔8个月国产游戏版号重启，45款游戏获批",
+      "url": "https://www.yicai.com/news/101376545.html",
+      "publishedAt": "2022-04-11T21:26:19+08:00",
+      "availableAt": "2022-04-11T21:26:19+08:00",
+      "originGroup": "yicai-game-license-20220411"
+    },
+    {
+      "itemId": "hub-yicai-hog-cycle-20220524",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "第一财经",
+      "title": "猪价连涨8周，业内：下半年养猪业将整体盈利",
+      "url": "https://www.yicai.com/news/101422298.html",
+      "publishedAt": "2022-05-24T13:02:00+08:00",
+      "availableAt": "2022-05-24T13:02:00+08:00",
+      "originGroup": "yicai-hog-cycle-20220524"
+    },
+    {
+      "itemId": "hub-yicai-commodity-collapse-20220706",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "第一财经",
+      "title": "大宗商品价格暴跌，制造业能松口气了吗",
+      "url": "https://m.yicai.com/news/101466332.html",
+      "publishedAt": "2022-07-06T18:03:00+08:00",
+      "availableAt": "2022-07-06T18:03:00+08:00",
+      "originGroup": "yicai-commodity-collapse-20220706"
+    },
+    {
+      "itemId": "hub-yicai-textile-orders-20220707",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "第一财经",
+      "title": "“爆单”“一厂难求”反转：纺织服装厂发愁订单断档",
+      "url": "https://www.yicai.com/epaper/pc/202207/07/content_23273.html",
+      "publishedAt": "2022-07-07T00:00:00+08:00",
+      "availableAt": "2022-07-07T00:00:00+08:00",
+      "originGroup": "yicai-textile-orders-20220707"
+    },
+    {
+      "itemId": "hub-yicai-imported-game-license-20221228",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "第一财经",
+      "title": "游戏界迎2022年最后一批版号，年内超500款游戏版号获批",
+      "url": "https://www.yicai.com/news/101635741.html",
+      "publishedAt": "2022-12-28T17:25:49+08:00",
+      "availableAt": "2022-12-28T17:25:49+08:00",
+      "originGroup": "yicai-game-license-20221228"
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "hub-event-game-license-normalization",
+      "statement": "After an eight-month pause, domestic game-license approvals resumed in April and continued through 2022, reopening the domestic monetization pipeline for publishers with approved products.",
+      "changeType": "regulatory_market_access_reset",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-04-11T21:26:19+08:00",
+      "memberItemIds": [
+        "hub-yicai-game-license-20220411",
+        "hub-yicai-imported-game-license-20221228"
+      ],
+      "independentOriginGroups": [
+        "yicai-game-license-20220411",
+        "yicai-game-license-20221228"
+      ],
+      "affectedValueChain": [
+        "game publishers",
+        "game developers",
+        "digital entertainment"
+      ],
+      "contradictionSearchNotes": "Approvals remained scarce and uneven; company benefit depends on actual approved titles, pipeline quality and monetization.",
+      "researchQuestion": "Which A-share publisher had an approved product and strong pre-existing economics before the policy normalization was fully priced?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "yicai_public_proxy"
+        ],
+        "discoveredAt": "2022-04-11T21:26:19+08:00"
+      }
+    },
+    {
+      "eventId": "hub-event-hog-cycle-turn",
+      "statement": "Hog prices rose for eight consecutive weeks from the late-March trough, while breeding-capacity reductions pointed to improving producer economics later in 2022.",
+      "changeType": "physical_price_cycle_turn",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-05-24T13:02:00+08:00",
+      "memberItemIds": [
+        "hub-yicai-hog-cycle-20220524"
+      ],
+      "independentOriginGroups": [
+        "yicai-hog-cycle-20220524"
+      ],
+      "affectedValueChain": [
+        "hog breeders",
+        "feed",
+        "slaughter",
+        "pork"
+      ],
+      "contradictionSearchNotes": "Listed breeders were still loss-making at the checkpoint and feed costs were elevated; market may have anticipated the cycle via sow-capacity data.",
+      "researchQuestion": "Does the price turn plus cost/scale leadership create a fresh earnings reset for a listed breeder at a still-reasonable expectation level?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "yicai_public_proxy"
+        ],
+        "discoveredAt": "2022-05-24T13:02:00+08:00"
+      }
+    },
+    {
+      "eventId": "hub-event-input-cost-collapse",
+      "statement": "A broad commodity-price selloff sharply reduced energy, metal, construction-material and agricultural input prices, potentially reversing the prior upstream-to-downstream profit transfer.",
+      "changeType": "input_cost_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-07-06T18:03:00+08:00",
+      "memberItemIds": [
+        "hub-yicai-commodity-collapse-20220706"
+      ],
+      "independentOriginGroups": [
+        "yicai-commodity-collapse-20220706"
+      ],
+      "affectedValueChain": [
+        "manufacturing",
+        "consumer durables",
+        "construction",
+        "chemicals",
+        "transport"
+      ],
+      "contradictionSearchNotes": "Customers immediately sought price cuts, so lower inputs do not automatically translate into higher margins; pass-through varies by contract and competitive structure.",
+      "researchQuestion": "Which A-share companies retain falling input costs rather than passing them through to customers?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "yicai_public_proxy"
+        ],
+        "discoveredAt": "2022-07-06T18:03:00+08:00"
+      }
+    },
+    {
+      "eventId": "hub-event-export-order-cliff",
+      "statement": "Textile/apparel exporters reported a sharp reversal from capacity scarcity to order gaps as overseas demand weakened and prior order migration unwound.",
+      "changeType": "demand_order_reversal",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2022-07-07T00:00:00+08:00",
+      "memberItemIds": [
+        "hub-yicai-textile-orders-20220707"
+      ],
+      "independentOriginGroups": [
+        "yicai-textile-orders-20220707"
+      ],
+      "affectedValueChain": [
+        "textiles",
+        "apparel exporters",
+        "manufacturing employment",
+        "freight"
+      ],
+      "contradictionSearchNotes": "The evidence is strongest as a downside/risk filter; beneficiaries from lower freight/input costs must be separately proven.",
+      "researchQuestion": "Is there a clean positive A-share expression from the order reversal, or should this remain a risk-filter event?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "yicai_public_proxy"
+        ],
+        "discoveredAt": "2022-07-07T00:00:00+08:00"
+      }
+    }
+  ]
+}
