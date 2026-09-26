@@ -1,0 +1,22 @@
+name: summarize-2025-weekly-diagnostic
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/summarize-2025-weekly-diagnostic.yml
+      - scripts/summarize-2025-weekly-diagnostic.cjs
+
+permissions:
+  contents: read
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/summarize-2025-weekly-diagnostic.cjs
