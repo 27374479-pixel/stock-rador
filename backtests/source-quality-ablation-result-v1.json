@@ -1,0 +1,91 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "source-quality-ablation-2025-2026-v1",
+  "validationClass": "exploratory_contaminated",
+  "computedFrom": [
+    "backtests/runs/2025-weekly-eventtime-v1.9-001/weekly-outcome.json",
+    "backtests/runs/2025-broadsource-miss-audit-v1/outcome.json",
+    "backtests/runs/2026-h1-weekly-replay-v1.9-001/weekly-outcome.json",
+    "backtests/source-quality-ablation-v1.json"
+  ],
+  "comparisons": {
+    "2025_old_eventtime_pool": {
+      "count": 7,
+      "positiveCount": 6,
+      "positiveRate": 0.8571428571428571,
+      "excessWinCount": 6,
+      "excessWinRate": 0.8571428571428571,
+      "meanNet60": 0.33451944859099536,
+      "medianNet60": 0.28890694669083583,
+      "meanExcess60": 0.24575875397006958,
+      "medianExcess60": 0.16485324046969718
+    },
+    "2025_expanded_pool_same_selection_logic": {
+      "count": 9,
+      "positiveCount": 8,
+      "positiveRate": 0.8888888888888888,
+      "excessWinCount": 6,
+      "excessWinRate": 0.6666666666666666,
+      "meanNet60": 0.2621797553035813,
+      "medianNet60": 0.24692652108478153,
+      "meanExcess60": 0.16686337927942596,
+      "medianExcess60": 0.15267133314893955
+    },
+    "2025_expanded_pool_with_source_quorum": {
+      "count": 6,
+      "positiveCount": 6,
+      "positiveRate": 1,
+      "excessWinCount": 6,
+      "excessWinRate": 1,
+      "meanNet60": 0.40301679649616107,
+      "medianNet60": 0.2925778922790855,
+      "meanExcess60": 0.31517185076105464,
+      "medianExcess60": 0.19070694905097152,
+      "fisherExactOneSidedVsQuorumFail": 0.011904761904761908
+    },
+    "2025_2026_main_sample_no_quorum_filter": {
+      "count": 13,
+      "positiveCount": 9,
+      "positiveRate": 0.6923076923076923,
+      "excessWinCount": 9,
+      "excessWinRate": 0.6923076923076923,
+      "meanNet60": 0.1813893338294118,
+      "medianNet60": 0.24692652108478153,
+      "meanExcess60": 0.13510414313153113,
+      "medianExcess60": 0.15267133314893955
+    },
+    "2025_2026_main_sample_source_quorum_only": {
+      "count": 12,
+      "positiveCount": 9,
+      "positiveRate": 0.75,
+      "excessWinCount": 9,
+      "excessWinRate": 0.75,
+      "meanNet60": 0.20287716488519605,
+      "medianNet60": 0.25746513913811253,
+      "meanExcess60": 0.16058947395714543,
+      "medianExcess60": 0.15876228680931836,
+      "fisherExactOneSidedVsQuorumFail": 0.30769230769230765
+    }
+  },
+  "interpretation": {
+    "naiveExpansion": "Adding two newly discovered non-tech 2025 candidates increased absolute-positive rate slightly (85.7% -> 88.9%) but reduced excess-win rate materially (85.7% -> 66.7%). More sources alone increased recall but diluted relative quality.",
+    "sourceQuorum2025": "Within the 2025 exploratory window, the three-source research quorum separated the sample extremely well: all six quorum-pass cases beat CSI300, while all three quorum-fail/expanded cases did not. This is promising but post-hoc and small-sample.",
+    "crossWindowCheck": "When the same quorum idea is checked against 2026H1, nearly every selection already had strong source triangulation, yet only 3/6 won. Pooling 2025+2026 raises excess-win rate only from 69.2% to 75.0%. The apparent improvement is modest and statistically fragile.",
+    "conclusion": "Better sources are necessary for broader recall, cleaner company mapping and expectation measurement, but they do not by themselves produce a large robust hit-rate improvement. The dominant remaining errors are timing/absorption, event half-life, benchmark opportunity cost and stale re-underwrite."
+  },
+  "nextExperiment": {
+    "design": "paired_ablation",
+    "A": "old source registry + unchanged V1.9 downstream logic",
+    "B": "source-registry-v2 + unchanged V1.9 downstream logic",
+    "C": "source-registry-v2 + research quorum feature + unchanged timing gates",
+    "D": "source-registry-v2 + research quorum + separately validated timing/absorption changes",
+    "primaryMetrics": [
+      "independent opportunity weeks/52",
+      "60d excess-win rate",
+      "median 60d excess",
+      "median/max drawdown",
+      "sector-family entropy"
+    ],
+    "guardrail": "Do not tune B/C/D on the same revealed windows and claim validation. Use a separate untouched window after hypotheses are frozen."
+  }
+}
