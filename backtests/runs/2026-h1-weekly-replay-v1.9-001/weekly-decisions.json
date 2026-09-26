@@ -1,0 +1,274 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-h1-weekly-replay-v1.9-001",
+  "validationClass": "exploratory_contaminated",
+  "strategyPolicy": {
+    "objective": "Reconstruct the earliest weekly checkpoint at which the unchanged causal/exposure/quality/expectation/timing discipline could produce a stock selection.",
+    "primaryRuleChanged": false,
+    "selectionThresholdRelaxed": false,
+    "weeklyCheckpoint": "Friday after market close; next executable trading session is the entry anchor.",
+    "duplicateRule": "Same economic cluster + same ticker inside the prior 60-trading-day base horizon is continuation, not a new independent opportunity.",
+    "outcomeRule": "60 trading-day net return and excess versus CSI300; positive > 0 is a hit.",
+    "caution": "This is not a clean blind holdout because 2026 quarterly replays and some later history are already known. Exact early-entry future-price paths are not used in the decisions below."
+  },
+  "weeklyCheckpoints": [
+    "2026-01-02",
+    "2026-01-09",
+    "2026-01-16",
+    "2026-01-23",
+    "2026-01-30",
+    "2026-02-06",
+    "2026-02-13",
+    "2026-02-20",
+    "2026-02-27",
+    "2026-03-06",
+    "2026-03-13",
+    "2026-03-20",
+    "2026-03-27",
+    "2026-04-03",
+    "2026-04-10",
+    "2026-04-17",
+    "2026-04-24",
+    "2026-05-01",
+    "2026-05-08",
+    "2026-05-15",
+    "2026-05-22",
+    "2026-05-29",
+    "2026-06-05",
+    "2026-06-12",
+    "2026-06-19",
+    "2026-06-26"
+  ],
+  "eventDecisions": [
+    {
+      "weekEnd": "2026-01-09",
+      "eventId": "event-q1-memory-tightness-accelerates",
+      "decision": "No selection",
+      "reason": "The Jan-5 signal was a continuation of an already-visible Q4 memory upcycle; 603986/300223 had already materially outperformed on 20d/60d price measures and there was not yet a sufficiently incremental reset to justify a new weekly selection.",
+      "evidenceRefs": [
+        "tf-memory-20260105",
+        "gigadevice-q3-20251029",
+        "gigadevice-q3-research-20251029",
+        "regime-memory-20260109"
+      ]
+    },
+    {
+      "weekEnd": "2026-01-16",
+      "eventId": "event-q1-lithium-storage-rebound",
+      "decision": "Research selection",
+      "ticker": "300014.SZ",
+      "name": "亿纬锂能",
+      "cluster": "lithium-storage",
+      "reason": "Storage demand/utilization was independently improving while the stock basket was de-rated; EVE had direct storage shipment growth and improving cash flow, but lithium input volatility and margin quality kept it Research only.",
+      "evidenceRefs": [
+        "reuters-lithium-20260104",
+        "tf-battery-20260112",
+        "eve-q3-20251024",
+        "eve-q3-research-20251024",
+        "regime-lithium-storage-20260116"
+      ]
+    },
+    {
+      "weekEnd": "2026-01-30",
+      "eventId": "event-q1-power-equipment-backlog",
+      "decision": "No selection",
+      "reason": "Two first-party global suppliers confirmed demand, but this remained a continuation without a fresh A-share company-specific edge.",
+      "evidenceRefs": [
+        "gev-q4-20260128",
+        "abb-q4-20260129"
+      ]
+    },
+    {
+      "weekEnd": "2026-01-30",
+      "eventId": "event-q1-copper-record-without-physical-confirmation",
+      "decision": "No selection",
+      "reason": "Record futures pricing lacked confirming physical-demand evidence and was retained as a negative-control event.",
+      "evidenceRefs": [
+        "reuters-copper-20260129"
+      ]
+    },
+    {
+      "weekEnd": "2026-02-06",
+      "eventId": "event-q1-memory-tightness-accelerates",
+      "decision": "Research selection",
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "cluster": "memory-cycle",
+      "reason": "The Feb-2 price forecast was a large incremental magnitude reset versus Jan-5, while 603986 already had realized Q3 revenue/profit acceleration and direct memory exposure. Strong prior price absorption blocks Primary but not a Research selection.",
+      "evidenceRefs": [
+        "tf-memory-20260202",
+        "gigadevice-q3-20251029",
+        "gigadevice-q3-research-20251029",
+        "regime-memory-20260206"
+      ]
+    },
+    {
+      "weekEnd": "2026-02-06",
+      "eventId": "event-q1-server-cpu-shortage",
+      "decision": "No selection",
+      "reason": "The bottleneck was real but the frozen evidence did not establish a clean A-share beneficiary rather than downstream customers harmed by delay and higher CPU cost.",
+      "evidenceRefs": [
+        "reuters-cpu-20260206",
+        "tf-cpu-20260206"
+      ]
+    },
+    {
+      "weekEnd": "2026-02-27",
+      "eventId": "event-q1-rareearth-export-bottleneck",
+      "decision": "No selection",
+      "reason": "Scarcity and export-control enforcement had opposite incidence across upstream and downstream; no company-level pass-through edge was verified.",
+      "evidenceRefs": [
+        "reuters-rareearth-20260226"
+      ]
+    },
+    {
+      "weekEnd": "2026-03-06",
+      "eventId": "event-q1-energy-shipping-rate-spike",
+      "decision": "Research selection",
+      "ticker": "600026.SH",
+      "name": "中远海能",
+      "cluster": "energy-shipping",
+      "reason": "The physical freight-rate shock had a direct tanker earnings expression and prior public evidence established rate sensitivity. However the basket was already extremely strong, so the signal remains Research rather than Primary.",
+      "evidenceRefs": [
+        "reuters-shipping-20260302",
+        "cosco-energy-q3-20251031",
+        "cosco-energy-q3-research-20251031",
+        "regime-shipping-20260306"
+      ]
+    },
+    {
+      "weekEnd": "2026-03-20",
+      "eventId": "event-q1-broad-equipment-capex",
+      "decision": "No selection",
+      "reason": "Macro equipment/capex growth was too broad for a narrow company-level causal and expectation gap.",
+      "evidenceRefs": [
+        "nbs-industrial-20260316",
+        "nbs-fai-20260317"
+      ]
+    },
+    {
+      "weekEnd": "2026-03-27",
+      "eventId": "event-q1-fertilizer-supply-shock",
+      "decision": "No selection",
+      "reason": "The global nitrogen shock was real, but no A-share producer had a frozen company-specific feedstock/export-policy earnings bridge clean enough for selection.",
+      "evidenceRefs": [
+        "reuters-fertilizer-20260318",
+        "reuters-fertilizer-20260320",
+        "reuters-fertilizer-russia-20260324"
+      ]
+    },
+    {
+      "weekEnd": "2026-04-24",
+      "eventId": "event-q2-ess-demand-high-utilization",
+      "decision": "High-priority selection",
+      "ticker": "300750.SZ",
+      "name": "宁德时代",
+      "cluster": "ess-battery",
+      "reason": "CATL Q1 delivered a realized earnings surprise with resilient profitability and direct ESS volume exposure; the weekly price basket was neutral rather than broadly over-absorbed. This preserves the original Q2 strategy's Primary classification.",
+      "evidenceRefs": [
+        "tf-battery-20260416",
+        "catl-q1-20260416",
+        "catl-research-20260416",
+        "catl-consensus-20260417",
+        "regime-catl-ess-20260424"
+      ]
+    },
+    {
+      "weekEnd": "2026-05-01",
+      "eventId": "event-q2-passive-component-divergence",
+      "decision": "Research selection",
+      "ticker": "300408.SZ",
+      "name": "三环集团",
+      "cluster": "passive-components",
+      "reason": "Q1 profit/mix evidence was strong and AI-linked, but valuation/price absorption was already high enough to block Primary.",
+      "evidenceRefs": [
+        "tf-mlcc-20260428",
+        "sanhuan-q1-20260424",
+        "sanhuan-research-20260425",
+        "sanhuan-price-20260430",
+        "sanhuan-valuation-20260424"
+      ]
+    },
+    {
+      "weekEnd": "2026-05-01",
+      "eventId": "event-q2-manufacturing-demand-stall",
+      "decision": "No selection",
+      "reason": "Broad demand softness is a contradiction filter, not a standalone beneficiary thesis.",
+      "evidenceRefs": [
+        "nbs-pmi-20260430"
+      ]
+    },
+    {
+      "weekEnd": "2026-05-15",
+      "eventId": "event-q2-broad-upstream-inflation",
+      "decision": "No selection",
+      "reason": "Broad input inflation does not identify who captures margin and therefore fails company mapping.",
+      "evidenceRefs": [
+        "nbs-ppi-20260511"
+      ]
+    },
+    {
+      "weekEnd": "2026-05-29",
+      "eventId": "event-q2-memory-structural-shortage",
+      "decision": "Research selection",
+      "ticker": "603986.SH",
+      "name": "兆易创新",
+      "cluster": "memory-cycle",
+      "reason": "This is a new re-underwrite after the earlier Q1 decision horizon: Q1 earnings and forecasts reset sharply, while the May-29 structural-shortage evidence reconfirmed the cycle. Price absorption and valuation still block Primary.",
+      "evidenceRefs": [
+        "tf-memory-20260529",
+        "tf-memory-structural-20260529",
+        "gigadevice-q1-20260430",
+        "gigadevice-research-20260501",
+        "gigadevice-price-20260529"
+      ]
+    },
+    {
+      "weekEnd": "2026-06-19",
+      "eventId": "event-q2-critical-mineral-policy-response",
+      "decision": "No selection",
+      "reason": "Policy response without realized company economics is insufficient.",
+      "evidenceRefs": [
+        "reuters-critical-minerals-20260617"
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2026-01-16",
+      "ticker": "300014.SZ",
+      "cluster": "lithium-storage",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2026-02-06",
+      "ticker": "603986.SH",
+      "cluster": "memory-cycle",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2026-03-06",
+      "ticker": "600026.SH",
+      "cluster": "energy-shipping",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2026-04-24",
+      "ticker": "300750.SZ",
+      "cluster": "ess-battery",
+      "selectionState": "High-priority selection"
+    },
+    {
+      "weekEnd": "2026-05-01",
+      "ticker": "300408.SZ",
+      "cluster": "passive-components",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2026-05-29",
+      "ticker": "603986.SH",
+      "cluster": "memory-cycle",
+      "selectionState": "Research selection"
+    }
+  ]
+}
