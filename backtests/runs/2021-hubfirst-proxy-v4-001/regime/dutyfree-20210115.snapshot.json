@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2021-hubfirst-dutyfree-20210115",
+  "cutoffDate": "2021-01-15",
+  "fetchedAt": "2026-09-26T23:05:44.183Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "601888.SH",
+    "600859.SH"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2020-12-17",
+      "endDate": "2021-01-15",
+      "return": 0.08781300573196105
+    },
+    "60": {
+      "startDate": "2020-10-22",
+      "endDate": "2021-01-15",
+      "return": 0.14234048698403945
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "601888.SH",
+        "startDate": "2020-12-17",
+        "endDate": "2021-01-15",
+        "return": 0.23835442761273962,
+        "benchmarkReturn": 0.08781300573196105,
+        "excessReturn": 0.15054142188077857
+      },
+      {
+        "ticker": "600859.SH",
+        "startDate": "2020-12-17",
+        "endDate": "2021-01-15",
+        "return": -0.066505823388336,
+        "benchmarkReturn": 0.08781300573196105,
+        "excessReturn": -0.15431882912029704
+      }
+    ],
+    "60": [
+      {
+        "ticker": "601888.SH",
+        "startDate": "2020-10-22",
+        "endDate": "2021-01-15",
+        "return": 0.4217130524255275,
+        "benchmarkReturn": 0.14234048698403945,
+        "excessReturn": 0.27937256544148803
+      },
+      {
+        "ticker": "600859.SH",
+        "startDate": "2020-10-22",
+        "endDate": "2021-01-15",
+        "return": -0.2208284137153954,
+        "benchmarkReturn": 0.14234048698403945,
+        "excessReturn": -0.36316890069943486
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": -0.0018887036197592355,
+    "lookback60Excess": -0.041898167628973415,
+    "positiveBreadth20": 0.5,
+    "positiveBreadth60": 0.5
+  },
+  "conclusion": "neutral",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2020-07-19,2021-01-15,300,hfq",
+    "601888.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601888,day,2020-07-19,2021-01-15,300,hfq",
+    "600859.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600859,day,2020-07-19,2021-01-15,300,hfq"
+  }
+}
