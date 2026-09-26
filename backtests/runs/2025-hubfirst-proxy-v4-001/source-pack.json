@@ -1,0 +1,411 @@
+{
+  "schemaVersion": "2.2",
+  "runId": "2025-hubfirst-proxy-v4-001",
+  "cutoffAt": "2025-12-31T23:59:59+08:00",
+  "lanes": [
+    {
+      "laneId": "generalist_professional_news",
+      "purpose": "Broad cross-market professional news discovery without sector preselection",
+      "coverageStatus": "complete"
+    }
+  ],
+  "sourceRoles": [
+    {
+      "roleId": "reputable_news_wire",
+      "purpose": "Generalist professional hub proxy discovery",
+      "coverageStatus": "complete",
+      "searchTrace": [
+        "generic state-change scan: surprise, shortage/surplus, backlog/orders, inventory, export/import, margin/cost, policy/regulation, capital flow, estimate revision",
+        "cross-check China-focused professional business news using same generic primitives"
+      ]
+    }
+  ],
+  "discoveryHubs": [
+    {
+      "hubId": "reuters_public_proxy",
+      "hubClass": "global_generalist",
+      "coverageStatus": "complete",
+      "sectorPreselection": false,
+      "queryPrimitives": [
+        "surprise",
+        "shortage_surplus",
+        "price_spread",
+        "inventory",
+        "orders_backlog_tender",
+        "export_import",
+        "demand_volume_traffic",
+        "margin_cost",
+        "policy_regulation",
+        "capital_flow_liquidity",
+        "estimate_revision"
+      ],
+      "searchTrace": [
+        "Reuters public archive broad China 2025 state-change scan using generic primitives",
+        "No sector list used to seed candidate discovery"
+      ]
+    },
+    {
+      "hubId": "yicai_public_proxy",
+      "hubClass": "china_generalist",
+      "coverageStatus": "partial",
+      "limitations": "Public searchable archive used as a proxy for a China-centric professional hub; not equivalent to paid terminal coverage.",
+      "sectorPreselection": false,
+      "queryPrimitives": [
+        "surprise",
+        "inventory",
+        "orders_backlog_tender",
+        "export_import",
+        "demand_volume_traffic",
+        "margin_cost",
+        "policy_regulation",
+        "capital_flow_liquidity"
+      ],
+      "searchTrace": [
+        "First Financial public archive broad 2025 business-state scan using generic primitives",
+        "No sector list used to seed candidate discovery"
+      ]
+    }
+  ],
+  "sourceItems": [
+    {
+      "itemId": "hub-reuters-insurance-equity-20250212",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "Is China's state-funded stock revival plan pie in the sky?",
+      "url": "https://www.reuters.com/markets/asia/is-chinas-state-funded-stock-revival-plan-pie-sky-2025-02-12/",
+      "publishedAt": "2025-02-12T05:58:58Z",
+      "availableAt": "2025-02-12T05:58:58Z",
+      "originGroup": "reuters-insurance-equity-20250212"
+    },
+    {
+      "itemId": "hub-reuters-tradein-20250317",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "How China is doubling down on trade-ins to boost sluggish consumption",
+      "url": "https://www.reuters.com/world/china/how-china-is-doubling-down-trade-ins-boost-sluggish-consumption-2025-03-17/",
+      "publishedAt": "2025-03-17T09:44:48Z",
+      "availableAt": "2025-03-17T09:44:48Z",
+      "originGroup": "reuters-tradein-20250317"
+    },
+    {
+      "itemId": "hub-reuters-shipbuilding-capacity-20250324",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "Japan, Korea would struggle to fill US demand for non-China shipbuilding, NYK Line exec says",
+      "url": "https://www.reuters.com/business/japan-korea-would-struggle-fill-us-demand-non-china-shipbuilding-nyk-line-exec-2025-03-24/",
+      "publishedAt": "2025-03-24T00:00:00Z",
+      "availableAt": "2025-03-24T00:00:00Z",
+      "originGroup": "reuters-shipbuilding-capacity-20250324"
+    },
+    {
+      "itemId": "hub-yicai-tariff-company-response-20250406",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "第一财经",
+      "title": "A股多行业公司发声：美国关税政策影响有限",
+      "url": "https://www.yicai.com/news/102550872.html",
+      "publishedAt": "2025-04-06T23:03:20+08:00",
+      "availableAt": "2025-04-06T23:03:20+08:00",
+      "originGroup": "yicai-tariff-response-20250406"
+    },
+    {
+      "itemId": "hub-reuters-exporter-margin-20250611",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "As US trade truce gets back on track, some Chinese exporters are 'slowly dying'",
+      "url": "https://www.reuters.com/sustainability/sustainable-finance-reporting/us-trade-truce-gets-back-track-some-chinese-exporters-are-slowly-dying-2025-06-11/",
+      "publishedAt": "2025-06-11T09:21:24Z",
+      "availableAt": "2025-06-11T09:21:24Z",
+      "originGroup": "reuters-exporter-margin-20250611"
+    },
+    {
+      "itemId": "hub-reuters-biotech-license-20250616",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "US pharma bets big on China to snap up potential blockbuster drugs",
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/us-pharma-bets-big-china-snap-up-potential-blockbuster-drugs-2025-06-16/",
+      "publishedAt": "2025-06-16T10:09:30Z",
+      "availableAt": "2025-06-16T10:09:30Z",
+      "originGroup": "reuters-biotech-license-20250616"
+    },
+    {
+      "itemId": "hub-reuters-pork-refattening-20250617",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "China wants slimmer pigs",
+      "url": "https://www.reuters.com/world/china/china-wants-slimmer-pigs-2025-06-17/",
+      "publishedAt": "2025-06-17T09:14:46Z",
+      "availableAt": "2025-06-17T09:14:46Z",
+      "originGroup": "reuters-pork-refattening-20250617"
+    },
+    {
+      "itemId": "hub-reuters-coal-chemicals-20250904",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "Chinese alchemy: Cheap fuel powers coal-to-gas and chemicals boom",
+      "url": "https://www.reuters.com/sustainability/climate-energy/chinese-alchemy-cheap-fuel-powers-coal-to-gas-chemicals-boom-2025-09-04/",
+      "publishedAt": "2025-09-04T05:07:30Z",
+      "availableAt": "2025-09-04T05:07:30Z",
+      "originGroup": "reuters-coal-chemicals-20250904"
+    },
+    {
+      "itemId": "hub-reuters-memory-shortage-20251114",
+      "laneId": "generalist_professional_news",
+      "sourceRoleId": "reputable_news_wire",
+      "sourceType": "reputable_news",
+      "contentKind": "original",
+      "publisher": "Reuters",
+      "title": "SMIC says worries over memory shortage prompt customers to hold back Q1 orders",
+      "url": "https://www.reuters.com/world/china/smic-says-worries-over-memory-shortage-prompt-customers-hold-back-q1-orders-2025-11-14/",
+      "publishedAt": "2025-11-14T03:13:59Z",
+      "availableAt": "2025-11-14T03:13:59Z",
+      "originGroup": "reuters-memory-shortage-20251114"
+    }
+  ],
+  "eventClusters": [
+    {
+      "eventId": "hub-event-insurance-equity-allocation",
+      "statement": "China's policy push for insurers and mutual funds to increase A-share allocations created a potentially persistent capital-flow and market-structure state change.",
+      "changeType": "capital_flow_regime",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-02-12T05:58:58Z",
+      "memberItemIds": [
+        "hub-reuters-insurance-equity-20250212"
+      ],
+      "independentOriginGroups": [
+        "reuters-insurance-equity-20250212"
+      ],
+      "affectedValueChain": [
+        "A-share market structure",
+        "insurers",
+        "high-dividend equities"
+      ],
+      "contradictionSearchNotes": "Need to test whether flows are large enough relative to market size and whether macro weakness offsets the allocation effect.",
+      "researchQuestion": "Does long-term institutional reallocation create a durable, investable A-share rerating channel under unchanged V1.9 company-level rules?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-02-12T05:58:58Z"
+      }
+    },
+    {
+      "eventId": "hub-event-consumer-tradein-expansion",
+      "statement": "China doubled consumer trade-in funding and broadened product coverage, creating a cross-category demand impulse in appliances, electronics and autos.",
+      "changeType": "consumer_demand_policy",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-03-17T09:44:48Z",
+      "memberItemIds": [
+        "hub-reuters-tradein-20250317"
+      ],
+      "independentOriginGroups": [
+        "reuters-tradein-20250317"
+      ],
+      "affectedValueChain": [
+        "home appliances",
+        "consumer electronics",
+        "autos",
+        "retail"
+      ],
+      "contradictionSearchNotes": "Need to separate pull-forward demand from durable incremental demand and identify companies with realized margin conversion.",
+      "researchQuestion": "Which A-share companies show direct incremental revenue/profit conversion before the subsidy effect is fully priced?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-03-17T09:44:48Z"
+      }
+    },
+    {
+      "eventId": "hub-event-shipbuilding-capacity-scarcity",
+      "statement": "Non-China shipyards were described as capacity constrained for years, highlighting a global shipbuilding scarcity state with China holding dominant available capacity.",
+      "changeType": "capacity_scarcity",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-03-24T00:00:00Z",
+      "memberItemIds": [
+        "hub-reuters-shipbuilding-capacity-20250324"
+      ],
+      "independentOriginGroups": [
+        "reuters-shipbuilding-capacity-20250324"
+      ],
+      "affectedValueChain": [
+        "shipbuilding",
+        "marine equipment",
+        "shipping capex"
+      ],
+      "contradictionSearchNotes": "Need to test orderbook duration, pricing power, U.S. policy risks and whether Chinese listed yards already reflect the scarcity.",
+      "researchQuestion": "Is shipyard capacity scarcity translating into a fresh earnings reset for A-share shipbuilders?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-03-24T00:00:00Z"
+      }
+    },
+    {
+      "eventId": "hub-event-tariff-exporter-margin-squeeze",
+      "statement": "New U.S. tariffs triggered broad company responses in April and by June evidence showed some exporters accepting lower margins or loss-making orders to preserve customers.",
+      "changeType": "margin_cost_shock",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-04-06T23:03:20+08:00",
+      "memberItemIds": [
+        "hub-yicai-tariff-company-response-20250406",
+        "hub-reuters-exporter-margin-20250611"
+      ],
+      "independentOriginGroups": [
+        "yicai-tariff-response-20250406",
+        "reuters-exporter-margin-20250611"
+      ],
+      "affectedValueChain": [
+        "export manufacturers",
+        "consumer goods",
+        "industrial exporters"
+      ],
+      "contradictionSearchNotes": "Some firms reported limited direct exposure or customer willingness to absorb tariffs, so incidence is heterogeneous.",
+      "researchQuestion": "Which A-share exporters have pricing power, geographic diversification or cost advantages sufficient to avoid margin destruction?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "yicai_public_proxy"
+        ],
+        "discoveredAt": "2025-04-06T23:03:20+08:00"
+      }
+    },
+    {
+      "eventId": "hub-event-china-biotech-licenseout-acceleration",
+      "statement": "Global pharma licensing of China-origin drug assets accelerated sharply, indicating a structural monetization channel for Chinese biotech innovation.",
+      "changeType": "business_model_monetization",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-06-16T10:09:30Z",
+      "memberItemIds": [
+        "hub-reuters-biotech-license-20250616"
+      ],
+      "independentOriginGroups": [
+        "reuters-biotech-license-20250616"
+      ],
+      "affectedValueChain": [
+        "innovative drugs",
+        "biotech licensing",
+        "pharma R&D"
+      ],
+      "contradictionSearchNotes": "Headline deal values overstate near-term cash; must separate upfront economics from contingent milestones and distinguish HK-only from A-share expressions.",
+      "researchQuestion": "Are there direct A-share drug developers with repeatable outbound licensing economics and underappreciated cash/earnings conversion?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-06-16T10:09:30Z"
+      }
+    },
+    {
+      "eventId": "hub-event-pork-refattening-crackdown",
+      "statement": "Policy pressure against speculative refattening emerged amid weak hog prices and oversupply, potentially changing near-term supply timing and producer economics.",
+      "changeType": "supply_behavior_regulation",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-06-17T09:14:46Z",
+      "memberItemIds": [
+        "hub-reuters-pork-refattening-20250617"
+      ],
+      "independentOriginGroups": [
+        "reuters-pork-refattening-20250617"
+      ],
+      "affectedValueChain": [
+        "hog breeders",
+        "feed",
+        "pork supply"
+      ],
+      "contradictionSearchNotes": "Weak end-demand and oversupply may dominate any short-term supply smoothing effect.",
+      "researchQuestion": "Does the crackdown improve large breeder economics or merely expose a still-bearish supply-demand state?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-06-17T09:14:46Z"
+      }
+    },
+    {
+      "eventId": "hub-event-coal-chemicals-cost-advantage",
+      "statement": "Cheap domestic coal and high oil/LNG costs materially improved coal-to-chemicals and coal-to-gas economics, while new capacity accelerated.",
+      "changeType": "relative_cost_curve_shift",
+      "noveltyAssessment": "new",
+      "firstAvailableAt": "2025-09-04T05:07:30Z",
+      "memberItemIds": [
+        "hub-reuters-coal-chemicals-20250904"
+      ],
+      "independentOriginGroups": [
+        "reuters-coal-chemicals-20250904"
+      ],
+      "affectedValueChain": [
+        "coal-to-olefins",
+        "coal-to-gas",
+        "petrochemicals",
+        "energy security"
+      ],
+      "contradictionSearchNotes": "Future oil-price declines, new capacity and climate constraints can erase the cost advantage.",
+      "researchQuestion": "Which A-share producers have a realized and durable feedstock-margin advantage that is not already priced?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-09-04T05:07:30Z"
+      }
+    },
+    {
+      "eventId": "hub-event-memory-shortage-confirmation",
+      "statement": "SMIC reported that memory shortages were already changing customer order behavior, confirming that tight memory supply had spread into downstream production planning.",
+      "changeType": "shortage_spillover",
+      "noveltyAssessment": "continuation",
+      "firstAvailableAt": "2025-11-14T03:13:59Z",
+      "memberItemIds": [
+        "hub-reuters-memory-shortage-20251114"
+      ],
+      "independentOriginGroups": [
+        "reuters-memory-shortage-20251114"
+      ],
+      "affectedValueChain": [
+        "memory",
+        "foundry",
+        "smartphones",
+        "autos"
+      ],
+      "contradictionSearchNotes": "This is likely confirmation of an already-discovered Q4 memory event rather than a new independent opportunity.",
+      "researchQuestion": "Does downstream order hesitation create new winners/losers beyond the existing memory-tightness thesis?",
+      "discoveryTrace": {
+        "firstDetectedVia": "generalist_hub",
+        "hubIds": [
+          "reuters_public_proxy"
+        ],
+        "discoveredAt": "2025-11-14T03:13:59Z"
+      }
+    }
+  ]
+}
