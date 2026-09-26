@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "hubfirst-v4-crossyear-summary-2021-2022-2025",
+  "validationClass": "exploratory_proxy_not_terminal",
+  "years": [
+    2021,
+    2022,
+    2025
+  ],
+  "legacy": {
+    "selections": 24,
+    "independentOpportunityWeeks": 21,
+    "totalCalendarWeeks": 156,
+    "opportunityWeekRate": 0.1346153846153846,
+    "positive60Count": 16,
+    "positive60Rate": 0.6666666666666666,
+    "excessWin60Count": 16,
+    "excessWin60Rate": 0.6666666666666666,
+    "meanNet60": 0.16047296177831344,
+    "medianNet60": 0.1316431502213271,
+    "meanExcess60": 0.14679020990140276,
+    "medianExcess60": 0.15360811371089778
+  },
+  "hubIncremental": {
+    "selections": 6,
+    "selectionWeeks": 6,
+    "positive60Count": 6,
+    "positive60Rate": 1,
+    "excessWin60Count": 5,
+    "excessWin60Rate": 0.8333333333333334,
+    "meanNet60": 0.08426673441827703,
+    "medianNet60": 0.07887450663721896,
+    "meanExcess60": 0.04959435105801493,
+    "medianExcess60": 0.05230038350170674
+  },
+  "union": {
+    "selections": 30,
+    "independentOpportunityWeeks": 26,
+    "totalCalendarWeeks": 156,
+    "opportunityWeekRate": 0.16666666666666666,
+    "opportunityWeekLiftVsLegacy": 0.23809523809523808,
+    "positive60Count": 22,
+    "positive60Rate": 0.7333333333333333,
+    "excessWin60Count": 21,
+    "excessWin60Rate": 0.7,
+    "meanNet60": 0.14523171630630616,
+    "medianNet60": 0.10420958395667013,
+    "meanExcess60": 0.12735103813272516,
+    "medianExcess60": 0.10426170414484065
+  },
+  "yearlyRecall": {
+    "2021": {
+      "legacyEvents": 19,
+      "hubIncrementalEvents": 6,
+      "eventRecallLift": 0.3157894736842105,
+      "incrementalSelectionWeeks": 1
+    },
+    "2022": {
+      "legacyEvents": 19,
+      "hubIncrementalEvents": 4,
+      "eventRecallLift": 0.21052631578947367,
+      "incrementalSelectionWeeks": 2
+    },
+    "2025": {
+      "legacyEvents": 31,
+      "hubIncrementalEvents": 6,
+      "eventRecallLift": 0.1935483870967742,
+      "incrementalSelectionWeeks": 2
+    }
+  },
+  "interpretation": [
+    "Hub-first discovery improved event recall in all three tested years (+19% to +32%) without sector preselection.",
+    "Independent opportunity-week frequency rose 23.8% across the three-year sample, from 21 to 26 weeks.",
+    "All six incremental selections were positive after 60 trading days and five beat CSI300.",
+    "Incremental selections had much weaker median excess than the legacy selected pool, so V4 should be adopted as a recall/discovery upgrade only, not as justification to relax downstream selection gates.",
+    "Because public professional-news archives proxy paid hubs, this validates architecture direction rather than the exact performance of Wind/LSEG/Bloomberg terminal feeds."
+  ],
+  "decision": "promote_hubfirst_architecture_to_candidate_skill_discovery_layer_only"
+}
