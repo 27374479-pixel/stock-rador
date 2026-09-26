@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2024-gold-zijin-20240426",
+  "cutoffDate": "2024-04-26",
+  "fetchedAt": "2026-09-26T00:25:54.414Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "601899.SH",
+    "600547.SH"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2024-03-27",
+      "endDate": "2024-04-26",
+      "return": 0.023261457295470134
+    },
+    "60": {
+      "startDate": "2024-01-23",
+      "endDate": "2024-04-26",
+      "return": 0.10901845027584134
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "601899.SH",
+        "startDate": "2024-03-27",
+        "endDate": "2024-04-26",
+        "return": 0.14722863741339487,
+        "benchmarkReturn": 0.023261457295470134,
+        "excessReturn": 0.12396718011792474
+      },
+      {
+        "ticker": "600547.SH",
+        "startDate": "2024-03-27",
+        "endDate": "2024-04-26",
+        "return": 0.1648858832500084,
+        "benchmarkReturn": 0.023261457295470134,
+        "excessReturn": 0.14162442595453828
+      }
+    ],
+    "60": [
+      {
+        "ticker": "601899.SH",
+        "startDate": "2024-01-23",
+        "endDate": "2024-04-26",
+        "return": 0.5121765601217656,
+        "benchmarkReturn": 0.10901845027584134,
+        "excessReturn": 0.40315810984592426
+      },
+      {
+        "ticker": "600547.SH",
+        "startDate": "2024-01-23",
+        "endDate": "2024-04-26",
+        "return": 0.46765704440244615,
+        "benchmarkReturn": 0.10901845027584134,
+        "excessReturn": 0.3586385941266048
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": 0.1327958030362315,
+    "lookback60Excess": 0.38089835198626454,
+    "positiveBreadth20": 1,
+    "positiveBreadth60": 1
+  },
+  "conclusion": "favorable",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2023-10-29,2024-04-26,300,hfq",
+    "601899.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh601899,day,2023-10-29,2024-04-26,300,hfq",
+    "600547.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh600547,day,2023-10-29,2024-04-26,300,hfq"
+  }
+}
