@@ -1,0 +1,41 @@
+name: fetch-2025-broadsource-miss-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/fetch-2025-broadsource-miss-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Fetch miss-audit regimes
+        run: |
+          set -e
+          D=backtests/runs/2025-broadsource-miss-audit-v1/regime
+          for f in appliance-20250502 machinery-20250808; do
+            rm -f "$D/$f.snapshot.json"
+            node scripts/fetch-precutoff-regime-hfq.cjs "$D/$f.json" "$D/$f.snapshot.json"
+          done
+      - name: Commit snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025-broadsource-miss-audit-v1/regime/*.snapshot.json
+          git commit -m "backtest: freeze 2025 source-bias miss regimes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
