@@ -17,6 +17,29 @@ function sorted(values) {
   return [...values].sort((a, b) => a.localeCompare(b));
 }
 
+const HUB_CLASSES = [
+  'china_generalist',
+  'global_generalist',
+  'structured_intelligence',
+  'document_intelligence'
+];
+
+const GENERIC_QUERY_PRIMITIVES = [
+  'surprise',
+  'shortage_surplus',
+  'price_spread',
+  'inventory',
+  'orders_backlog_tender',
+  'utilization_capacity',
+  'export_import',
+  'demand_volume_traffic',
+  'margin_cost',
+  'policy_regulation',
+  'capital_flow_liquidity',
+  'estimate_revision',
+  'distress_refinancing'
+];
+
 const SOURCE_ROLES = [
   'official_policy_regulatory',
   'official_statistics_customs',
@@ -38,8 +61,9 @@ const SOURCE_ROLES = [
 
 function validateDiscoveryPack(pack, manifest) {
   const errors = [];
-  if (!['2.0', '2.1'].includes(pack?.schemaVersion)) errors.push('discovery source pack schemaVersion must be 2.0 or 2.1');
-  const expandedCoverage = pack?.schemaVersion === '2.1';
+  if (!['2.0', '2.1', '2.2'].includes(pack?.schemaVersion)) errors.push('discovery source pack schemaVersion must be 2.0, 2.1 or 2.2');
+  const expandedCoverage = ['2.1', '2.2'].includes(pack?.schemaVersion);
+  const hubFirstCoverage = pack?.schemaVersion === '2.2';
   if (pack?.runId !== manifest?.runId) errors.push('discovery source pack runId must match manifest.runId');
   const cutoffValid = assertIso(pack?.cutoffAt, 'discovery source pack cutoffAt', errors);
 
@@ -96,6 +120,50 @@ function validateDiscoveryPack(pack, manifest) {
     }
   }
 
+
+  const discoveryHubs = Array.isArray(pack?.discoveryHubs) ? pack.discoveryHubs : [];
+  const hubIds = new Set();
+  let coveredDiscoveryHubCount = 0;
+  const coveredHubClasses = new Set();
+  if (hubFirstCoverage) {
+    if (!discoveryHubs.length) errors.push('schemaVersion 2.2 requires non-empty discoveryHubs');
+    for (const hub of discoveryHubs) {
+      if (typeof hub?.hubId !== 'string' || !hub.hubId.trim()) {
+        errors.push('every discovery hub requires hubId');
+        continue;
+      }
+      if (hubIds.has(hub.hubId)) errors.push(`duplicate discovery hub ${hub.hubId}`);
+      hubIds.add(hub.hubId);
+      if (!HUB_CLASSES.includes(hub?.hubClass)) {
+        errors.push(`discovery hub ${hub.hubId} has invalid hubClass`);
+      }
+      if (!['complete', 'partial', 'unavailable'].includes(hub?.coverageStatus)) {
+        errors.push(`discovery hub ${hub.hubId} has invalid coverageStatus`);
+      }
+      if (hub.coverageStatus !== 'unavailable') {
+        coveredDiscoveryHubCount += 1;
+        if (HUB_CLASSES.includes(hub.hubClass)) coveredHubClasses.add(hub.hubClass);
+        if (!Array.isArray(hub?.searchTrace) || !hub.searchTrace.length || hub.searchTrace.some((entry) => typeof entry !== 'string' || !entry.trim())) {
+          errors.push(`covered discovery hub ${hub.hubId} requires non-empty searchTrace`);
+        }
+        if (!Array.isArray(hub?.queryPrimitives) || hub.queryPrimitives.length < 4) {
+          errors.push(`covered discovery hub ${hub.hubId} requires at least four generic queryPrimitives`);
+        } else {
+          for (const primitive of hub.queryPrimitives) {
+            if (!GENERIC_QUERY_PRIMITIVES.includes(primitive)) {
+              errors.push(`discovery hub ${hub.hubId} has unknown query primitive ${primitive}`);
+            }
+          }
+        }
+        if (hub?.sectorPreselection !== false) {
+          errors.push(`covered discovery hub ${hub.hubId} must set sectorPreselection=false`);
+        }
+      } else if (typeof hub?.limitations !== 'string' || !hub.limitations.trim()) {
+        errors.push(`unavailable discovery hub ${hub.hubId} requires limitations`);
+      }
+    }
+  }
+
   const policy = manifest?.discoveryPolicy;
   if (!policy || typeof policy !== 'object') {
     errors.push('schemaVersion 1.4 requires discoveryPolicy');
@@ -111,6 +179,21 @@ function validateDiscoveryPack(pack, manifest) {
       errors.push('discoveryPolicy.minimumCoveredLanes must be a positive integer');
     } else if (coveredLaneCount < policy.minimumCoveredLanes) {
       errors.push(`only ${coveredLaneCount} discovery lanes are covered; minimum is ${policy.minimumCoveredLanes}`);
+    }
+    if (hubFirstCoverage) {
+      if (!Array.isArray(policy.requiredHubClasses) || !policy.requiredHubClasses.length) {
+        errors.push('schemaVersion 2.2 requires discoveryPolicy.requiredHubClasses');
+      } else {
+        for (const hubClass of policy.requiredHubClasses) {
+          if (!HUB_CLASSES.includes(hubClass)) errors.push(`unknown required hub class: ${hubClass}`);
+          if (!coveredHubClasses.has(hubClass)) errors.push(`required covered hub class missing from pack: ${hubClass}`);
+        }
+      }
+      if (!Number.isInteger(policy.minimumCoveredDiscoveryHubs) || policy.minimumCoveredDiscoveryHubs < 1) {
+        errors.push('schemaVersion 2.2 requires positive discoveryPolicy.minimumCoveredDiscoveryHubs');
+      } else if (coveredDiscoveryHubCount < policy.minimumCoveredDiscoveryHubs) {
+        errors.push(`only ${coveredDiscoveryHubCount} discovery hubs are covered; minimum is ${policy.minimumCoveredDiscoveryHubs}`);
+      }
     }
     if (expandedCoverage) {
       if (!Array.isArray(policy.requiredSourceRoles) || !policy.requiredSourceRoles.length) {
@@ -205,6 +288,34 @@ function validateDiscoveryPack(pack, manifest) {
     if (!['new', 'continuation', 'repeat', 'uncertain'].includes(event?.noveltyAssessment)) {
       errors.push(`event ${event.eventId} has invalid noveltyAssessment`);
     }
+
+    if (hubFirstCoverage) {
+      const trace = event?.discoveryTrace;
+      if (!trace || typeof trace !== 'object') {
+        errors.push(`event ${event.eventId} requires discoveryTrace under schemaVersion 2.2`);
+      } else {
+        const validPaths = ['generalist_hub', 'specialist_validator', 'official_primary', 'issuer_primary', 'high_quality_news', 'weak_signal'];
+        if (!validPaths.includes(trace.firstDetectedVia)) {
+          errors.push(`event ${event.eventId} discoveryTrace.firstDetectedVia is invalid`);
+        }
+        const detectedOk = assertIso(trace.discoveredAt, `event ${event.eventId}.discoveryTrace.discoveredAt`, errors);
+        if (detectedOk && Number.isFinite(Date.parse(event.firstAvailableAt)) && Date.parse(trace.discoveredAt) < Date.parse(event.firstAvailableAt)) {
+          errors.push(`event ${event.eventId} discoveryTrace.discoveredAt cannot predate firstAvailableAt`);
+        }
+        if (cutoffValid && detectedOk && Date.parse(trace.discoveredAt) > Date.parse(pack.cutoffAt)) {
+          errors.push(`event ${event.eventId} discoveryTrace.discoveredAt is post-cutoff`);
+        }
+        const traceHubIds = Array.isArray(trace.hubIds) ? trace.hubIds : [];
+        if (trace.firstDetectedVia === 'generalist_hub') {
+          if (!traceHubIds.length) errors.push(`event ${event.eventId} discovered via hub requires hubIds`);
+          for (const hubId of traceHubIds) {
+            if (!hubIds.has(hubId)) errors.push(`event ${event.eventId} discoveryTrace references unknown hub ${hubId}`);
+          }
+        } else if (typeof trace.hubMissReason !== 'string' || !trace.hubMissReason.trim()) {
+          errors.push(`event ${event.eventId} not first detected via hub requires hubMissReason`);
+        }
+      }
+    }
     if (!Array.isArray(event?.memberItemIds) || !event.memberItemIds.length) {
       errors.push(`event ${event.eventId} requires memberItemIds`);
       continue;
@@ -282,6 +393,20 @@ function summarizeDiscoveryPack(pack) {
   }
   const noveltyCounts = {};
   for (const event of events) noveltyCounts[event.noveltyAssessment] = (noveltyCounts[event.noveltyAssessment] ?? 0) + 1;
+  const discoveryHubs = Array.isArray(pack?.discoveryHubs) ? pack.discoveryHubs : [];
+  const hubFirstEvents = events.filter((event) => event?.discoveryTrace?.firstDetectedVia === 'generalist_hub');
+  const nonHubFirstEvents = events.filter((event) => event?.discoveryTrace && event.discoveryTrace.firstDetectedVia !== 'generalist_hub');
+  const hubLagDays = hubFirstEvents
+    .map((event) => (Date.parse(event.discoveryTrace.discoveredAt) - Date.parse(event.firstAvailableAt)) / 86400000)
+    .filter(Number.isFinite);
+  const byHub = {};
+  for (const hub of discoveryHubs) {
+    byHub[hub.hubId] = {
+      hubClass: hub.hubClass,
+      coverageStatus: hub.coverageStatus,
+      firstDetectedEventCount: hubFirstEvents.filter((event) => (event.discoveryTrace.hubIds ?? []).includes(hub.hubId)).length
+    };
+  }
   return {
     sourceItemCount: items.length,
     uniqueOriginGroupCount: uniq(items.map((item) => item.originGroup)).length,
@@ -290,7 +415,12 @@ function summarizeDiscoveryPack(pack) {
     coveredSourceRoleCount: sourceRoles.filter((role) => role.coverageStatus !== 'unavailable').length,
     byLane,
     bySourceRole,
-    noveltyCounts
+    noveltyCounts,
+    coveredDiscoveryHubCount: discoveryHubs.filter((hub) => hub.coverageStatus !== 'unavailable').length,
+    hubFirstEventCount: hubFirstEvents.length,
+    nonHubFirstEventCount: nonHubFirstEvents.length,
+    meanHubDetectionLagDays: hubLagDays.length ? hubLagDays.reduce((a, b) => a + b, 0) / hubLagDays.length : null,
+    byHub
   };
 }
 
@@ -370,6 +500,8 @@ function readJson(filePath) {
 }
 
 module.exports = {
+  HUB_CLASSES,
+  GENERIC_QUERY_PRIMITIVES,
   SOURCE_ROLES,
   MISS_STAGES,
   auditMissedOpportunities,
