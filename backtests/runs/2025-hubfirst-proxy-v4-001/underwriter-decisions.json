@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025-hubfirst-proxy-v4-001",
+  "validationClass": "exploratory_proxy_not_terminal",
+  "policy": {
+    "inheritSelectionRulesFrom": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "discoveryLayerOnlyChanged": true,
+    "primaryGateRelaxed": false,
+    "timingGateRelaxed": false,
+    "companyMappingGateRelaxed": false,
+    "note": "These decisions are frozen before this run fetches post-entry outcomes."
+  },
+  "eventDecisions": [
+    {
+      "eventId": "hub-event-insurance-equity-allocation",
+      "decision": "No selection",
+      "reason": "Economically material capital-flow regime, but unchanged V1.9 lacks a clean company-specific operating earnings bridge. This is an opportunity-ontology miss, not permission to force a broker/insurer stock pick."
+    },
+    {
+      "eventId": "hub-event-consumer-tradein-expansion",
+      "decision": "Research selection",
+      "weekEnd": "2025-05-02",
+      "ticker": "000333.SZ",
+      "name": "美的集团",
+      "cluster": "consumer-tradein",
+      "reason": "Broad demand policy plus Midea Q1 realized revenue/profit/margin conversion; price regime was neutral. Policy pull-forward and attribution uncertainty block Primary."
+    },
+    {
+      "eventId": "hub-event-shipbuilding-capacity-scarcity",
+      "decision": "Research selection",
+      "weekEnd": "2025-04-11",
+      "ticker": "600150.SH",
+      "name": "中国船舶",
+      "cluster": "shipbuilding-capacity-scarcity",
+      "reason": "Global capacity scarcity plus company Q1 profit inflection and RMB225bn orderbook create a direct multi-year earnings bridge. The expression remains Research because orderbook monetization is long-duration, merger/restructuring context adds complexity, and expectation burden is not proven roomy."
+    },
+    {
+      "eventId": "hub-event-tariff-exporter-margin-squeeze",
+      "decision": "No selection",
+      "reason": "The event is a cross-sectional risk filter rather than a clean positive thesis. Company incidence is heterogeneous and no cutoff-valid superior beneficiary was identified under unchanged V1.9."
+    },
+    {
+      "eventId": "hub-event-china-biotech-licenseout-acceleration",
+      "decision": "No selection",
+      "reason": "The industry monetization channel is real, but at the June checkpoint no equally fresh direct A-share license-out cash/earnings bridge was frozen for the selected-company layer. Later Hengrui deals cannot be backfilled."
+    },
+    {
+      "eventId": "hub-event-pork-refattening-crackdown",
+      "decision": "No selection",
+      "reason": "The policy may alter supply timing, but weak hog prices/oversupply make the earnings direction ambiguous. Cost leadership alone is not a fresh positive driver."
+    },
+    {
+      "eventId": "hub-event-coal-chemicals-cost-advantage",
+      "decision": "Research selection",
+      "weekEnd": "2025-09-05",
+      "ticker": "600989.SH",
+      "name": "宝丰能源",
+      "cluster": "coal-chemicals-cost-advantage",
+      "reason": "The broad hub surfaced a relative cost-curve change; Baofeng had already reported +73% H1 profit and +93% operating cash flow with large new polyolefin volume. Price regime was neutral. Commodity spread durability and new-capacity supply risk block Primary."
+    },
+    {
+      "eventId": "hub-event-memory-shortage-confirmation",
+      "decision": "Continuation",
+      "reason": "This is the same Q4 memory-tightness state already discovered in the legacy pool; it is retained only as a duplicate-control and cannot increase frequency."
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2025-04-11",
+      "ticker": "600150.SH",
+      "cluster": "shipbuilding-capacity-scarcity",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2025-05-02",
+      "ticker": "000333.SZ",
+      "cluster": "consumer-tradein",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2025-09-05",
+      "ticker": "600989.SH",
+      "cluster": "coal-chemicals-cost-advantage",
+      "selectionState": "Research selection"
+    }
+  ],
+  "summary": {
+    "promotedHubEvents": 7,
+    "researchSelections": 3,
+    "primarySelections": 0,
+    "noSelections": 4,
+    "continuationControls": 1,
+    "incrementalIndependentSelectionWeeks": 3
+  }
+}
