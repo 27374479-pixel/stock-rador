@@ -1,6 +1,8 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const {
+  HUB_CLASSES,
+  GENERIC_QUERY_PRIMITIVES,
   SOURCE_ROLES,
   auditMissedOpportunities,
   summarizeDiscoveryPack,
@@ -179,4 +181,108 @@ test('expanded discovery schema fails closed when a source item hides behind a b
 
   const errors = validateDiscoveryPack(p, m);
   assert.ok(errors.some((error) => error.includes('sourceRoleId')));
+});
+
+
+test('hub-first discovery schema requires generalist hub traces without preselecting sectors', () => {
+  const m = manifest();
+  m.discoveryPolicy.requiredSourceRoles = [
+    'official_policy_regulatory',
+    'official_statistics_customs',
+    'specialist_trade_pricing',
+    'reputable_news_wire',
+    'international_chain_primary',
+    'community_forum_weak_signal'
+  ];
+  m.discoveryPolicy.minimumCoveredSourceRoles = 5;
+  m.discoveryPolicy.requiredHubClasses = ['china_generalist', 'global_generalist'];
+  m.discoveryPolicy.minimumCoveredDiscoveryHubs = 2;
+
+  const p = pack();
+  p.schemaVersion = '2.2';
+  p.sourceRoles = [
+    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete', searchTrace: ['official regulator feeds'] },
+    { roleId: 'official_statistics_customs', purpose: 'official operating data', coverageStatus: 'complete', searchTrace: ['statistics and customs releases'] },
+    { roleId: 'specialist_trade_pricing', purpose: 'product pricing and lead times', coverageStatus: 'partial', limitations: 'selected publications', searchTrace: ['specialist pricing publications'] },
+    { roleId: 'reputable_news_wire', purpose: 'broad attributed reporting', coverageStatus: 'complete', searchTrace: ['general and financial news feeds'] },
+    { roleId: 'international_chain_primary', purpose: 'overseas customer and supplier evidence', coverageStatus: 'partial', limitations: 'selected markets', searchTrace: ['foreign issuer and government releases'] },
+    { roleId: 'community_forum_weak_signal', purpose: 'weak-signal discovery only', coverageStatus: 'unavailable', limitations: 'historical archive unavailable' }
+  ];
+  p.sourceItems[0].sourceRoleId = 'official_policy_regulatory';
+  p.sourceItems[1].sourceRoleId = 'reputable_news_wire';
+  p.sourceItems[2].sourceRoleId = 'specialist_trade_pricing';
+
+  p.discoveryHubs = [
+    {
+      hubId: 'wind',
+      hubClass: 'china_generalist',
+      coverageStatus: 'complete',
+      sectorPreselection: false,
+      queryPrimitives: ['surprise', 'shortage_surplus', 'inventory', 'orders_backlog_tender'],
+      searchTrace: ['broad weekly state-change scan']
+    },
+    {
+      hubId: 'lseg',
+      hubClass: 'global_generalist',
+      coverageStatus: 'partial',
+      limitations: 'selected archived coverage',
+      sectorPreselection: false,
+      queryPrimitives: ['surprise', 'price_spread', 'export_import', 'policy_regulation'],
+      searchTrace: ['global cross-market state-change scan']
+    }
+  ];
+  p.eventClusters[0].discoveryTrace = {
+    firstDetectedVia: 'generalist_hub',
+    hubIds: ['wind'],
+    discoveredAt: '2025-10-01T12:00:00Z'
+  };
+
+  assert.deepEqual(validateDiscoveryPack(p, m), []);
+  const summary = summarizeDiscoveryPack(p);
+  assert.equal(summary.coveredDiscoveryHubCount, 2);
+  assert.equal(summary.hubFirstEventCount, 1);
+  assert.equal(summary.nonHubFirstEventCount, 0);
+  assert.equal(summary.byHub.wind.firstDetectedEventCount, 1);
+  assert.ok(HUB_CLASSES.includes('china_generalist'));
+  assert.ok(GENERIC_QUERY_PRIMITIVES.includes('capital_flow_liquidity'));
+});
+
+test('hub-first discovery schema records specialist-only misses instead of silently counting them as hub discoveries', () => {
+  const m = manifest();
+  m.discoveryPolicy.requiredSourceRoles = ['official_policy_regulatory'];
+  m.discoveryPolicy.minimumCoveredSourceRoles = 1;
+  m.discoveryPolicy.requiredHubClasses = ['china_generalist'];
+  m.discoveryPolicy.minimumCoveredDiscoveryHubs = 1;
+
+  const p = pack();
+  p.schemaVersion = '2.2';
+  p.sourceRoles = [
+    { roleId: 'official_policy_regulatory', purpose: 'policy changes', coverageStatus: 'complete', searchTrace: ['official regulator feeds'] }
+  ];
+  for (const item of p.sourceItems) item.sourceRoleId = 'official_policy_regulatory';
+  p.discoveryHubs = [
+    {
+      hubId: 'wind',
+      hubClass: 'china_generalist',
+      coverageStatus: 'complete',
+      sectorPreselection: false,
+      queryPrimitives: ['surprise', 'shortage_surplus', 'inventory', 'orders_backlog_tender'],
+      searchTrace: ['generic weekly scan']
+    }
+  ];
+  p.eventClusters[0].discoveryTrace = {
+    firstDetectedVia: 'specialist_validator',
+    hubIds: [],
+    discoveredAt: '2025-10-03T00:00:00Z',
+    hubMissReason: 'generic hub scan did not surface the event before specialist verification'
+  };
+
+  assert.deepEqual(validateDiscoveryPack(p, m), []);
+  const summary = summarizeDiscoveryPack(p);
+  assert.equal(summary.hubFirstEventCount, 0);
+  assert.equal(summary.nonHubFirstEventCount, 1);
+
+  const bad = structuredClone(p);
+  delete bad.eventClusters[0].discoveryTrace.hubMissReason;
+  assert.ok(validateDiscoveryPack(bad, m).some((error) => error.includes('hubMissReason')));
 });
