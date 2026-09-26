@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "source-quality-holdout-2023q2-q4-v1",
+  "classificationCutoff": "before reading 2023Q2-Q4 outcome.json in this experiment",
+  "quorumDefinitionRef": "backtests/source-quality-ablation-v1.json",
+  "cases": [
+    {
+      "run": "2023q2-multisource-deep-v1.0-001",
+      "hypothesisId": "h-2023q2-aviation-spring",
+      "ticker": "601021.SH",
+      "quorumPass": true,
+      "reason": "CAAC official demand data + Spring Airlines Q1 filing + independent broker research with forecasts/valuation."
+    },
+    {
+      "run": "2023q2-multisource-deep-v1.0-001",
+      "hypothesisId": "h-2023q2-lithium-tianqi",
+      "ticker": "002466.SZ",
+      "quorumPass": false,
+      "reason": "Reuters/TrendForce physical-cycle evidence + Tianqi Q1 filing, but no independent sell-side expectation/valuation research for the selected expression in the frozen evidence set."
+    },
+    {
+      "run": "2023q2-multisource-deep-v1.0-001",
+      "hypothesisId": "h-2023q2-power-huadian",
+      "ticker": "600027.SH",
+      "quorumPass": true,
+      "reason": "NBS coal/profit official data + Huadian Q1 filing + Minsheng research with explicit forward EPS/PE."
+    },
+    {
+      "run": "2023q3-multisource-deep-v1.1-001",
+      "hypothesisId": "h-2023q3-auto-export-byd",
+      "ticker": "002594.SZ",
+      "quorumPass": true,
+      "reason": "MIIT auto data + BYD H1 filing + independent broker report with earnings forecasts/valuation."
+    },
+    {
+      "run": "2023q3-multisource-deep-v1.1-001",
+      "hypothesisId": "h-2023q3-memory-bottoming",
+      "ticker": "603986.SH",
+      "quorumPass": false,
+      "reason": "TrendForce industry evidence + GigaDevice H1 filing, but no independent selected-company sell-side expectation/valuation cross-check in the frozen set."
+    },
+    {
+      "run": "2023q3-multisource-deep-v1.1-001",
+      "hypothesisId": "h-2023q3-oil-cnooc",
+      "ticker": "600938.SH",
+      "quorumPass": false,
+      "reason": "Reuters oil evidence and independent CNOOC research/valuation were present, but the frozen set lacked a selected-company first-party CNOOC H1 filing/IR source, so the three-origin company-primary quorum is incomplete."
+    },
+    {
+      "run": "2023q4-multisource-deep-v1.0-001",
+      "hypothesisId": "h-2023q4-ai-optical-innolight",
+      "ticker": "300308.SZ",
+      "quorumPass": true,
+      "reason": "NVIDIA/TrendForce demand evidence + Innolight Q3 filing + multiple independent broker reports with forward forecasts/PE."
+    },
+    {
+      "run": "2023q4-multisource-deep-v1.0-001",
+      "hypothesisId": "h-2023q4-memory-price-reversal",
+      "ticker": "603986.SH",
+      "quorumPass": false,
+      "reason": "TrendForce price reversal + GigaDevice Q3 filing, but the only frozen research reference was for Beijing Junzheng rather than the selected GigaDevice expression; selected-company expectation triangulation is incomplete."
+    }
+  ]
+}
