@@ -1,0 +1,24 @@
+name: validate-skill-v2.0-discovery-only
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - skills/stock-rador/versions/2.0.0/SKILL.md
+      - scripts/validate-skill-v200-discovery-only.cjs
+      - .github/workflows/validate-skill-v2.0-discovery-only.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - run: node scripts/validate-skill-v200-discovery-only.cjs
