@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "opportunity-cost-gate-2020q4-replication-v1",
+  "priorRuleRef": "backtests/opportunity-cost-gate-2021-preregister-v1.json",
+  "ruleUnchanged": true,
+  "frozenRule": {
+    "blockWhenAll": [
+      "opportunityTimingTest.lateCycleRisk.conclusion == high",
+      "expectationBurdenTest.conclusion == tight",
+      "opportunityTimingTest.priceRegime.lookback60Excess >= 0.20"
+    ],
+    "otherwise": "retain"
+  },
+  "cases": [
+    {
+      "hypothesisId": "h-2020q4-container-freight-boom",
+      "ticker": "601919.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.15240278068713828,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2020q4-industrial-metals-recovery",
+      "ticker": "601899.SH",
+      "lateCycleRisk": "moderate",
+      "expectationBurden": "room",
+      "lookback60Excess": 0.288408886284353,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2020q4-nev-acceleration",
+      "ticker": "002594.SZ",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.5366086345802091,
+      "gateDecision": "block"
+    }
+  ],
+  "guardrail": "2020Q4 outcome.json has not been read in this replication before this file is committed."
+}
