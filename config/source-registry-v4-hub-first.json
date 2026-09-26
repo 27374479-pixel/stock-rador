@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "4.0",
+  "name": "generalist-hub-first-source-registry",
+  "purpose": "Use broad professional information platforms as the discovery entry layer so the Skill does not pre-commit to sectors. Specialist and official sources are validation/deep-dive layers only.",
+  "architecture": {
+    "discoveryEntry": "generalist_professional_hubs",
+    "validation": "official_primary_plus_specialist_industry",
+    "expectationMeasurement": "sell_side_consensus_and_valuation",
+    "weakSignals": "community_and_web"
+  },
+  "discoveryHubs": [
+    {
+      "name": "Wind Financial Terminal",
+      "regionBias": "China-first global",
+      "role": "tier_A_primary_discovery_hub",
+      "strengths": [
+        "A-share/company/industry/macro/event/news breadth",
+        "global stocks, bonds, commodities, FX and macro coverage",
+        "cross-sector news and research aggregation",
+        "large macro/industry indicator library",
+        "Client API for programmable retrieval"
+      ],
+      "discoveryUse": [
+        "cross-market event scan",
+        "abnormal news/topic clustering",
+        "industry/macro inflection search",
+        "company announcement/forecast/estimate deltas",
+        "cross-sectional screens"
+      ],
+      "doNotUseAs": [
+        "sole factual verifier",
+        "sole independent origin"
+      ]
+    },
+    {
+      "name": "iFinD",
+      "regionBias": "China-first",
+      "role": "tier_A_primary_discovery_hub",
+      "strengths": [
+        "broad institutional financial database",
+        "cross-asset/company/industry research workflows",
+        "news/research/data integration",
+        "A-share-oriented screening and financial workflows"
+      ],
+      "discoveryUse": [
+        "cross-sector A-share event discovery",
+        "company/industry screening",
+        "research/news/document search",
+        "candidate expansion from an initial event"
+      ],
+      "doNotUseAs": [
+        "sole factual verifier",
+        "independent origin when only mirroring third-party content"
+      ]
+    },
+    {
+      "name": "LSEG Workspace",
+      "regionBias": "global",
+      "role": "tier_A_global_crosscheck_hub",
+      "strengths": [
+        "Reuters News plus broad authoritative-source aggregation",
+        "company fundamentals and estimates",
+        "industry and macro data",
+        "idea-generation screeners and analytics",
+        "machine-readable news/data options"
+      ],
+      "discoveryUse": [
+        "global cross-check of China-linked themes",
+        "commodity/macro/company event discovery",
+        "supplier/customer/global peer confirmation",
+        "consensus and estimate-change context"
+      ]
+    },
+    {
+      "name": "Bloomberg Terminal",
+      "regionBias": "global",
+      "role": "tier_A_global_crosscheck_hub",
+      "strengths": [
+        "real-time market-moving data",
+        "global company and macro news",
+        "research and analytical tools",
+        "cross-asset market context"
+      ],
+      "discoveryUse": [
+        "global event and macro discovery",
+        "cross-asset transmission checks",
+        "company/supply-chain/news cross-check",
+        "market pricing and expectation context"
+      ]
+    },
+    {
+      "name": "S&P Capital IQ Pro",
+      "regionBias": "global",
+      "role": "tier_B_structured_market_intelligence_hub",
+      "strengths": [
+        "company and industry intelligence",
+        "news, research, transcripts and filings",
+        "sector-specific and asset-level datasets",
+        "transaction/private-market intelligence",
+        "cross-sector screening"
+      ],
+      "discoveryUse": [
+        "industry landscaping",
+        "company/peer/capital-flow discovery",
+        "private/public value-chain mapping",
+        "cross-sector event confirmation"
+      ]
+    },
+    {
+      "name": "FactSet",
+      "regionBias": "global",
+      "role": "tier_B_structured_market_intelligence_hub",
+      "strengths": [
+        "fundamentals, estimates and company-event data",
+        "multi-provider feeds and APIs",
+        "portfolio and investment-research workflows",
+        "fast filing/fundamental normalization"
+      ],
+      "discoveryUse": [
+        "estimate revisions and KPI screening",
+        "company-event monitoring",
+        "cross-company abnormality detection",
+        "global peer and ownership/context checks"
+      ]
+    },
+    {
+      "name": "AlphaSense",
+      "regionBias": "global_documents",
+      "role": "tier_B_document_intelligence_hub",
+      "strengths": [
+        "broad company filings, news, trade journals and research",
+        "expert transcript and company-document search",
+        "semantic discovery across large document universe",
+        "supplier/customer/competitor narrative discovery"
+      ],
+      "discoveryUse": [
+        "semantic theme discovery",
+        "cross-document contradiction search",
+        "supplier/customer signal discovery",
+        "expert/commentary triangulation"
+      ]
+    }
+  ],
+  "discoveryRules": [
+    "The weekly discovery process must begin from one or more generalist hubs, not from a predefined sector source list.",
+    "Discovery queries are cross-market and state-change oriented: surprise, shortage, inventory, price, order, utilization, backlog, export, margin, policy, capacity, default, tender, demand, supply, earnings revision, capital flow, regulation.",
+    "Sector assignment happens after event discovery, never before.",
+    "A hub result is a pointer, not proof. The underlying original source must be recovered whenever possible.",
+    "The same story mirrored across multiple hubs counts as one origin.",
+    "Hub disagreement is a feature: conflicting coverage triggers adversarial research rather than majority voting.",
+    "Specialist sources may generate a candidate only if the same candidate would survive a hub-agnostic event description; specialist feeds must not define the weekly universe."
+  ],
+  "validationLayers": [
+    {
+      "layer": "V1_original_primary",
+      "sources": [
+        "regulators",
+        "exchanges",
+        "company filings/IR",
+        "government releases",
+        "procurement/award records",
+        "official statistics"
+      ],
+      "purpose": "establish fact and timing"
+    },
+    {
+      "layer": "V2_specialist_industry",
+      "sources": [
+        "TrendForce",
+        "SMM",
+        "Mysteel",
+        "卓创/隆众",
+        "SCFI/SCFIS",
+        "industry associations",
+        "commodity/transport specialist services"
+      ],
+      "purpose": "quantify physical magnitude, persistence, breadth and causal mechanism"
+    },
+    {
+      "layer": "V3_company_mapping",
+      "sources": [
+        "issuer filings",
+        "customer/supplier first-party",
+        "contracts/orders",
+        "historical segment economics"
+      ],
+      "purpose": "map event to listed-company earnings/cash sensitivity"
+    },
+    {
+      "layer": "V4_expectation_and_crowding",
+      "sources": [
+        "broker research",
+        "consensus estimates",
+        "valuation databases",
+        "target-price/estimate-revision history"
+      ],
+      "purpose": "measure what is already expected; later bullish research can be evidence of crowding"
+    }
+  ],
+  "weeklyWorkflow": [
+    "1. Run broad event discovery across at least one China-centric hub and one global hub.",
+    "2. Cluster candidate events without assigning sectors first.",
+    "3. For each cluster, retrieve original source and timestamp.",
+    "4. Only then classify sector/value-chain and query relevant specialist/official validators.",
+    "5. Map direct A-share expressions using issuer/customer/supplier evidence.",
+    "6. Measure expectation, valuation and price absorption using hub consensus/research data.",
+    "7. Freeze selection before outcome reveal.",
+    "8. Record misses: events later found from specialist/official sources that the hubs failed to surface."
+  ],
+  "auditMetrics": [
+    "hub_event_recall",
+    "specialist_only_miss_rate",
+    "sector_family_entropy",
+    "time_from_original_event_to_hub_detection",
+    "time_from_hub_detection_to_selection",
+    "independent_opportunity_weeks_per_52",
+    "60d_excess_win_rate",
+    "median_60d_excess",
+    "false_positive_rate_by_hub",
+    "duplicate_origin_rate"
+  ],
+  "experimentDesign": {
+    "A": "old concentrated source discovery",
+    "B": "generalist hub-first discovery, same downstream V1.9 rules",
+    "C": "hub-first plus specialist/official validation, same selection rules",
+    "D": "C plus separately validated timing/absorption changes",
+    "keyQuestion": "Does hub-first discovery increase recall and sector diversity without lowering 60d excess-win rate?"
+  }
+}
