@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "opportunity-cost-gate-replication-summary-v1",
+  "rule": "block iff lateCycleRisk=high AND expectationBurden=tight AND lookback60Excess>=20%",
+  "windows": [
+    "2019Q3-Q4",
+    "2020Q4",
+    "2021Q1-Q4"
+  ],
+  "retained": {
+    "count": 11,
+    "excessWinCount": 11,
+    "excessWinRate": 1,
+    "meanExcess60": 0.24653218109444355,
+    "medianExcess60": 0.17421300217253632
+  },
+  "blocked": {
+    "count": 9,
+    "excessWinCount": 7,
+    "excessWinRate": 0.7777777777777778,
+    "meanExcess60": 0.0484640046119298,
+    "medianExcess60": 0.039320807154030746
+  },
+  "all": {
+    "count": 20,
+    "excessWinCount": 18,
+    "excessWinRate": 0.9,
+    "meanExcess60": 0.15740150167731237,
+    "medianExcess60": 0.11823866671950845
+  },
+  "fisherExactOneSidedRetainedBetterExcessP": 0.18947368421052632,
+  "conclusion": {
+    "hardGate": "not_justified",
+    "softPenaltyOrRankingFeature": "promising_but_unproven",
+    "rationale": [
+      "Retained candidates had much higher average/median excess and no excess failures across these three windows.",
+      "The rule still blocked seven excess winners, including a large NOR Flash winner, so binary exclusion destroys valid opportunity recall.",
+      "Statistical evidence remains weak because the sample is small and historical windows are heterogeneous.",
+      "Future work should preserve the raw crowded-continuation state as an opportunity-cost feature and test ranking/sizing separately on untouched windows rather than suppressing the candidate."
+    ]
+  }
+}
