@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2025-hubfirst-proxy-v4-001",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-26T10:10:00+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "version": "1.9.0"
+  },
+  "discoveryExtension": {
+    "protocolPath": "backtests/hub-first-discovery-ab-protocol-v4.json",
+    "selectionRulesChanged": false,
+    "sourcePackSchema": "2.2",
+    "validationClass": "exploratory_proxy_not_terminal",
+    "note": "Public Reuters/First Financial archives proxy the generalist-hub discovery concept because paid historical terminal archives are not connected in this run."
+  },
+  "discoveryWindow": {
+    "startDate": "2025-01-01",
+    "endDate": "2025-12-31"
+  },
+  "screeningPath": "backtests/runs/2025-hubfirst-proxy-v4-001/screening.json",
+  "discoveryPolicy": {
+    "requiredLanes": [
+      "generalist_professional_news"
+    ],
+    "minimumCoveredLanes": 1,
+    "requiredSourceRoles": [
+      "reputable_news_wire"
+    ],
+    "minimumCoveredSourceRoles": 1,
+    "requiredHubClasses": [
+      "china_generalist",
+      "global_generalist"
+    ],
+    "minimumCoveredDiscoveryHubs": 2,
+    "screeningTarget": "event_cluster",
+    "postOutcomeMissAudit": {
+      "candidateUniverse": "All material state changes later found in 2025 under the frozen broad miss-audit rule.",
+      "candidateRule": "Compare old 2025 event universe with hub-first proxy census and classify source-universe/retrieval misses.",
+      "causalEligibilityRule": "Only public evidence available by each event timestamp may support an ex-ante causal event.",
+      "samePeriodMayTuneSkill": false
+    }
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001
+  },
+  "implementationPaths": [
+    "scripts/discovery-core.cjs",
+    "config/source-registry-v4-hub-first.json",
+    "backtests/hub-first-discovery-ab-protocol-v4.json"
+  ]
+}
