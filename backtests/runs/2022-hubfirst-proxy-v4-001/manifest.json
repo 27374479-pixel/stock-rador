@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.4",
+  "runId": "2022-hubfirst-proxy-v4-001",
+  "evaluationMode": "historical_replay",
+  "createdAt": "2026-09-27T06:50:00+08:00",
+  "skill": {
+    "path": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "version": "1.9.0"
+  },
+  "discoveryExtension": {
+    "protocolPath": "backtests/hub-first-discovery-ab-protocol-v4.json",
+    "selectionRulesChanged": false,
+    "sourcePackSchema": "2.2",
+    "validationClass": "exploratory_proxy_not_terminal",
+    "note": "Public First Financial/Reuters-style archives proxy generalist professional hubs. Existing 2022 outcome files are not read before decisions are frozen."
+  },
+  "discoveryWindow": {
+    "startDate": "2022-01-01",
+    "endDate": "2022-12-31"
+  },
+  "screeningPath": "backtests/runs/2022-hubfirst-proxy-v4-001/screening.json",
+  "discoveryPolicy": {
+    "requiredLanes": [
+      "generalist_professional_news"
+    ],
+    "minimumCoveredLanes": 1,
+    "requiredSourceRoles": [
+      "reputable_news_wire"
+    ],
+    "minimumCoveredSourceRoles": 1,
+    "requiredHubClasses": [
+      "china_generalist",
+      "global_generalist"
+    ],
+    "minimumCoveredDiscoveryHubs": 2,
+    "screeningTarget": "event_cluster",
+    "postOutcomeMissAudit": {
+      "candidateUniverse": "Material 2022 state changes surfaced by generic hub queries but absent from the frozen legacy 2022 event census.",
+      "candidateRule": "No sector preselection; use generic surprise/shortage/order/inventory/margin/policy/capital-flow primitives.",
+      "causalEligibilityRule": "Only evidence available by each event timestamp may support an ex-ante event.",
+      "samePeriodMayTuneSkill": false
+    }
+  },
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "outcomePolicy": {
+    "entryRule": "next_trading_day_open_after_cutoff_date",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001
+  },
+  "implementationPaths": [
+    "scripts/discovery-core.cjs",
+    "config/source-registry-v4-hub-first.json",
+    "backtests/hub-first-discovery-ab-protocol-v4.json"
+  ]
+}
