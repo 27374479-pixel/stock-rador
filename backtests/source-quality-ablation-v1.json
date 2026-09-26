@@ -1,0 +1,135 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "source-quality-ablation-2025-2026-v1",
+  "validationClass": "exploratory_contaminated",
+  "question": "Does a higher-quality research-source quorum materially improve 60d hit rate without changing downstream stock-selection rules?",
+  "quorumDefinition": {
+    "industryState": "At least one cutoff-valid physical-industry, official, specialist, or high-quality news source establishing the state change.",
+    "companyPrimary": "At least one cutoff-valid issuer filing/IR source establishing direct exposure or realized company economics.",
+    "independentResearch": "At least one cutoff-valid independent sell-side/research report with forward earnings, valuation, expectation, or cross-sectional analysis.",
+    "independence": "Transport mirrors do not count as independent origins; original broker/research house identity is used.",
+    "note": "Quorum is an evidence-quality feature only. It does not waive timing, absorption, valuation, or causal gates."
+  },
+  "cases": [
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-04-04",
+      "ticker": "601899.SH",
+      "cluster": "gold-upstream",
+      "quorumPass": true,
+      "reason": "Reuters gold state change + Zijin/company evidence + multiple independent broker research/valuation references."
+    },
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-05-02",
+      "ticker": "603986.SH",
+      "cluster": "memory-cycle",
+      "quorumPass": false,
+      "reason": "TrendForce + GigaDevice Q1 were available, but the frozen early-May evidence set lacked a same-checkpoint independent sell-side earnings/expectation cross-check."
+    },
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-05-02",
+      "ticker": "300274.SZ",
+      "cluster": "solar-inverter-storage",
+      "quorumPass": true,
+      "reason": "TrendForce/NEA state evidence + Sungrow Q1 + independent broker earnings/valuation research."
+    },
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-06-20",
+      "ticker": "600111.SH",
+      "cluster": "rareearth-upstream",
+      "quorumPass": true,
+      "reason": "Reuters physical bottleneck + North Rare Q1/operating data + independent research/valuation references."
+    },
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-08-01",
+      "ticker": "002138.SZ",
+      "cluster": "passive-components",
+      "quorumPass": true,
+      "reason": "TrendForce industry divergence + Sunlord H1 + independent broker research with forecasts/valuation."
+    },
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-08-22",
+      "ticker": "000400.SZ",
+      "cluster": "power-equipment",
+      "quorumPass": true,
+      "reason": "ABB/GE Vernova industry orders + Xuji H1 + independent broker research/forecast."
+    },
+    {
+      "cohort": "2025_eventtime",
+      "weekEnd": "2025-08-29",
+      "ticker": "603986.SH",
+      "cluster": "memory-cycle",
+      "quorumPass": true,
+      "reason": "TrendForce shortage evidence + GigaDevice H1 + independent broker forward estimates/valuation."
+    },
+    {
+      "cohort": "2025_broadsource_incremental",
+      "weekEnd": "2025-05-02",
+      "ticker": "000333.SZ",
+      "cluster": "appliance-tradein",
+      "quorumPass": false,
+      "reason": "Official trade-in policy + Midea Q1 were frozen, but the miss-audit pack did not yet contain an independent sell-side expectation/valuation cross-check."
+    },
+    {
+      "cohort": "2025_broadsource_incremental",
+      "weekEnd": "2025-08-08",
+      "ticker": "600031.SH",
+      "cluster": "machinery-reacceleration",
+      "quorumPass": false,
+      "reason": "Industry sales + Sany Q1 were frozen, but the miss-audit pack did not yet contain an independent sell-side expectation/valuation cross-check."
+    },
+    {
+      "cohort": "2026_h1",
+      "weekEnd": "2026-01-16",
+      "ticker": "300014.SZ",
+      "cluster": "lithium-storage",
+      "quorumPass": true,
+      "reason": "Reuters/TrendForce demand-pricing evidence + EVE Q3 + independent broker research baseline."
+    },
+    {
+      "cohort": "2026_h1",
+      "weekEnd": "2026-02-06",
+      "ticker": "603986.SH",
+      "cluster": "memory-cycle",
+      "quorumPass": true,
+      "reason": "TrendForce forecast reset + GigaDevice Q3 + independent broker research baseline."
+    },
+    {
+      "cohort": "2026_h1",
+      "weekEnd": "2026-03-06",
+      "ticker": "600026.SH",
+      "cluster": "energy-shipping",
+      "quorumPass": true,
+      "reason": "Reuters physical freight shock + COSCO Energy company baseline + independent broker research on rate sensitivity."
+    },
+    {
+      "cohort": "2026_h1",
+      "weekEnd": "2026-04-24",
+      "ticker": "300750.SZ",
+      "cluster": "ess-battery",
+      "quorumPass": true,
+      "reason": "TrendForce industry data + CATL Q1 + two independent research/consensus references with earnings surprise and valuation."
+    },
+    {
+      "cohort": "2026_h1",
+      "weekEnd": "2026-05-01",
+      "ticker": "300408.SZ",
+      "cluster": "passive-components",
+      "quorumPass": true,
+      "reason": "TrendForce MLCC divergence + Sanhuan Q1 + independent broker forecast/target valuation."
+    },
+    {
+      "cohort": "2026_h1",
+      "weekEnd": "2026-05-29",
+      "ticker": "603986.SH",
+      "cluster": "memory-cycle",
+      "quorumPass": true,
+      "reason": "TrendForce structural/price evidence + GigaDevice Q1 + independent broker estimate reset and valuation."
+    }
+  ]
+}
