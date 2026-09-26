@@ -1,0 +1,23 @@
+name: hub-first-schema-ci
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - scripts/discovery-core.cjs
+      - tests/discovery-core.test.js
+      - .github/workflows/hub-first-schema-ci.yml
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
