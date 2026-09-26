@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotId": "2022-hubfirst-games-20220415",
+  "cutoffDate": "2022-04-15",
+  "fetchedAt": "2026-09-26T22:50:37.093Z",
+  "provider": "Tencent public daily hfq kline",
+  "benchmarkTicker": "000300.SH",
+  "opportunityTickers": [
+    "603444.SH",
+    "002555.SZ"
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60
+    ],
+    "basketStatistic": "equal_weight_mean",
+    "breadthDefinition": "fraction of frozen opportunity names with positive benchmark-relative trailing return",
+    "cutoffGuard": "all bars are requested no later than cutoffDate",
+    "adjustmentPolicy": "backward-adjusted (hfq) series is used to preserve corporate-action-adjusted historical returns and avoid negative long-history qfq levels; no post-cutoff bars are requested",
+    "favorableRule": "20d and 60d basket excess >= 0 and both breadth >= 0.5",
+    "adverseRule": "20d and 60d basket excess < 0 and both breadth < 0.5",
+    "otherwise": "neutral"
+  },
+  "benchmark": {
+    "20": {
+      "startDate": "2022-03-16",
+      "endDate": "2022-04-15",
+      "return": 0.007860772651152148
+    },
+    "60": {
+      "startDate": "2022-01-12",
+      "endDate": "2022-04-15",
+      "return": -0.1355524003318488
+    }
+  },
+  "names": {
+    "20": [
+      {
+        "ticker": "603444.SH",
+        "startDate": "2022-03-16",
+        "endDate": "2022-04-15",
+        "return": 0.09332984110354459,
+        "benchmarkReturn": 0.007860772651152148,
+        "excessReturn": 0.08546906845239244
+      },
+      {
+        "ticker": "002555.SZ",
+        "startDate": "2022-03-16",
+        "endDate": "2022-04-15",
+        "return": 0.1326405734866929,
+        "benchmarkReturn": 0.007860772651152148,
+        "excessReturn": 0.12477980083554074
+      }
+    ],
+    "60": [
+      {
+        "ticker": "603444.SH",
+        "startDate": "2022-01-12",
+        "endDate": "2022-04-15",
+        "return": -0.13968719228743498,
+        "benchmarkReturn": -0.1355524003318488,
+        "excessReturn": -0.004134791955586192
+      },
+      {
+        "ticker": "002555.SZ",
+        "startDate": "2022-01-12",
+        "endDate": "2022-04-15",
+        "return": -0.15091432060151555,
+        "benchmarkReturn": -0.1355524003318488,
+        "excessReturn": -0.015361920269666762
+      }
+    ]
+  },
+  "metrics": {
+    "lookback20Excess": 0.10512443464396659,
+    "lookback60Excess": -0.009748356112626477,
+    "positiveBreadth20": 1,
+    "positiveBreadth60": 0
+  },
+  "conclusion": "neutral",
+  "sourceUrls": {
+    "000300.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh000300,day,2021-10-17,2022-04-15,300,hfq",
+    "603444.SH": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sh603444,day,2021-10-17,2022-04-15,300,hfq",
+    "002555.SZ": "https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=sz002555,day,2021-10-17,2022-04-15,300,hfq"
+  }
+}
