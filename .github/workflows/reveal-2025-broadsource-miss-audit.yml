@@ -1,0 +1,36 @@
+name: reveal-2025-broadsource-miss-audit
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/reveal-2025-broadsource-miss-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - run: |
+          rm -f backtests/runs/2025-broadsource-miss-audit-v1/outcome.json
+          node scripts/evaluate-2025-broadsource-miss-audit.cjs
+      - name: Commit outcome
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025-broadsource-miss-audit-v1/outcome.json
+          git commit -m "backtest: reveal 2025 broad-source miss outcomes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
