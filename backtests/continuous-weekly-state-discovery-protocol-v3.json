@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "3.0",
+  "title": "Continuous Weekly Economic-State Discovery Protocol",
+  "objective": "Increase independent A-share opportunity frequency by improving event generation density, not by weakening underwriting or promotion thresholds.",
+  "inherits": {
+    "selectionRules": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "sourceExpansion": "backtests/discovery-source-expansion-protocol-v2.json",
+    "hubFirstProtocol": "backtests/hub-first-discovery-ab-protocol-v4.json"
+  },
+  "coreChange": {
+    "oldPattern": "large_event_or_story -> review -> company underwriting",
+    "newPattern": "weekly_generic_state_scan -> clustered economic_state_changes -> company mapping -> unchanged underwriting",
+    "selectionThresholdRelaxed": false,
+    "frequencyQuota": false,
+    "sectorWhitelist": false,
+    "namedWinnerQueries": false
+  },
+  "weeklyScan": {
+    "checkpoint": "every Friday after close",
+    "lookbackCalendarDays": 35,
+    "baselineLookbackCalendarDays": 180,
+    "mustRunEvenWhenNoLargeNewsEventExists": true,
+    "genericStatePrimitives": [
+      "price_level_or_spread_inflection",
+      "inventory_draw_or_build",
+      "new_orders_or_backlog_acceleration",
+      "capacity_utilization_or_outage",
+      "supply_lead_time_or_delivery_bottleneck",
+      "import_export_volume_or_trade_flow_shift",
+      "cost_input_or_margin_pool_redistribution",
+      "policy_regulation_or_market_structure_change",
+      "procurement_tender_or_award_acceleration",
+      "capital_expenditure_or_capacity_commitment",
+      "channel_sales_or_end_demand_inflection",
+      "working_capital_cash_conversion_change",
+      "customer_supplier_reallocation",
+      "technology_standard_certification_or_qualification",
+      "labor_logistics_or_freight_constraint",
+      "financing_liquidity_or_credit_availability_change"
+    ],
+    "requiredSearchPerspective": [
+      "positive beneficiary",
+      "negative incidence",
+      "relative winner_loser",
+      "company_exception_inside_mixed_sector"
+    ],
+    "eventFormationRule": [
+      "A candidate event may be formed from one high-authority step-change or from two or more independent weaker state changes that point to the same causal mechanism.",
+      "A macro state change alone is context unless it can be decomposed into a narrower profit-pool transfer, bottleneck, order pool, cost shift, or company exception.",
+      "Do not require a headline, sell-side report, or named theme before creating an event cluster.",
+      "Repeated confirmation of the same mechanism is continuation unless magnitude, duration, incidence, or beneficiary set changes materially."
+    ]
+  },
+  "sourceOrder": [
+    "generalist_professional_hubs",
+    "official_statistics_and_policy",
+    "industry_association_and_physical_data",
+    "procurement_tender_logistics_and_pricing",
+    "international_first_party_supply_chain",
+    "company_filings_and_ir",
+    "specialist_trade_sources",
+    "community_weak_signals_for_discovery_only"
+  ],
+  "triage": {
+    "purpose": "Spend deep-research budget on economically distinct changes without using later stock returns.",
+    "dimensions": [
+      "magnitude_change_vs_baseline",
+      "persistence_or_lead_time",
+      "profit_pool_transfer_clarity",
+      "listed_expression_availability",
+      "evidence_independence",
+      "novelty_vs_existing_cluster"
+    ],
+    "hardRule": "Triage may prioritize research order but cannot itself create a stock selection."
+  },
+  "frequencyMetrics": [
+    "weekly_scan_completion_rate",
+    "raw_state_changes_per_week",
+    "unique_event_clusters_per_week",
+    "company_mappable_clusters_per_week",
+    "independent_research_selection_weeks_per_52",
+    "independent_primary_selection_weeks_per_52",
+    "median_days_between_independent_research_selections"
+  ],
+  "qualityGuardrails": [
+    "60d_positive_rate",
+    "60d_CSI300_excess_win_rate",
+    "median_60d_excess",
+    "matched_control_win_rate_when_available",
+    "max_drawdown_distribution",
+    "duplicate_cluster_rate",
+    "postoutcome_false_positive_rate"
+  ],
+  "acceptance": {
+    "principle": "Prefer a higher opportunity count only when discovery recall rises without a material collapse in quality.",
+    "noMinimumTradeQuota": true,
+    "noTargetHitRateOptimizedOnSameWindow": true,
+    "holdoutRequirement": "Freeze this protocol before testing on a new historical year; do not tune primitives from that year's revealed outcomes."
+  }
+}
