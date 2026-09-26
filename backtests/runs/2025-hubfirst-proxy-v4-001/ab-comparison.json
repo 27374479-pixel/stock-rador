@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "2025-hubfirst-proxy-v4-selection-comparison",
+  "validationClass": "exploratory_proxy_not_terminal",
+  "legacy": {
+    "source": "backtests/runs/2025-weekly-eventtime-v1.9-001/weekly-outcome.json",
+    "selections": 7,
+    "independentSelectionWeeks": 6,
+    "independentSelectionWeekRate": 0.11538461538461539,
+    "positive60Rate": 0.8571428571428571,
+    "excessWin60Rate": 0.8571428571428571,
+    "medianNet60": 0.28890694669083583,
+    "medianExcess60": 0.16485324046969718
+  },
+  "hubIncremental": {
+    "source": "backtests/runs/2025-hubfirst-proxy-v4-001/outcome.json",
+    "selections": 3,
+    "independentSelectionWeeks": 3,
+    "positive60Rate": 1,
+    "excessWin60Rate": 0.6666666666666666,
+    "medianNet60": 0.05294251203342104,
+    "medianExcess60": 0.018338948703617186
+  },
+  "union": {
+    "selections": 10,
+    "independentSelectionWeeks": 8,
+    "independentSelectionWeekRate": 0.15384615384615385,
+    "opportunityWeekIncreaseVsLegacy": 0.3333333333333333,
+    "positive60Rate": 0.9,
+    "excessWin60Rate": 0.8,
+    "meanNet60": 0.25000239840726,
+    "medianNet60": 0.17447443622353176,
+    "meanExcess60": 0.16867498411977938,
+    "medianExcess60": 0.12044922283986137,
+    "newIndependentWeeks": [
+      "2025-04-11",
+      "2025-09-05"
+    ]
+  },
+  "incrementalSelections": [
+    {
+      "ticker": "600150.SH",
+      "weekEnd": "2025-04-11",
+      "net60": 0.102022351362282,
+      "excess60": 0.038931822099601776
+    },
+    {
+      "ticker": "000333.SZ",
+      "weekEnd": "2025-05-02",
+      "net60": 0.003422980539929732,
+      "excess60": -0.09083220739591225
+    },
+    {
+      "ticker": "600989.SH",
+      "weekEnd": "2025-09-05",
+      "net60": 0.05294251203342104,
+      "excess60": 0.018338948703617186
+    }
+  ],
+  "interpretation": [
+    "Hub-first proxy increased 2025 independent selection weeks from 6 to 8 (+33.3%) without relaxing V1.9 selection gates.",
+    "Incremental candidates were all positive in absolute terms, but only two of three beat CSI300.",
+    "The combined excess-win rate declined from 85.7% to 80.0%; median excess declined from 16.5% to 12.0%. Recall improved more than per-selection edge.",
+    "The public proxy is not equivalent to Wind/LSEG/Bloomberg terminal history; results support further testing, not final adoption."
+  ],
+  "nextAblation": [
+    "Repeat hub-first discovery on another historical year using the same generic primitives and frozen V1.9 downstream rules.",
+    "Keep source-layer and timing-layer changes separate.",
+    "Test market-regime opportunity-cost filtering on a different window; do not use the Midea failure to tune and validate on 2025 simultaneously."
+  ]
+}
