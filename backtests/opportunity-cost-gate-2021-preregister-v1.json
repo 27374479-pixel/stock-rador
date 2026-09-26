@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "opportunity-cost-gate-2021-preregister-v1",
+  "validationClass": "historical_holdout_like",
+  "purpose": "Test a generic crowded-continuation opportunity-cost block before reading 2021 selection outcomes in this experiment.",
+  "frozenRule": {
+    "name": "crowded_continuation_block_v1",
+    "blockWhenAll": [
+      "opportunityTimingTest.lateCycleRisk.conclusion == high",
+      "expectationBurdenTest.conclusion == tight",
+      "opportunityTimingTest.priceRegime.lookback60Excess >= 0.20"
+    ],
+    "otherwise": "retain",
+    "rationale": "A thesis can be economically correct but offer poor current allocation asymmetry when the sector has already substantially outperformed, late-cycle risk is explicitly high, and the forward expectation burden is tight.",
+    "nonGoals": [
+      "Do not reject de-rated contrarian candidates merely because current price momentum is weak.",
+      "Do not require positive momentum.",
+      "Do not change company-quality, causal, or Primary gates.",
+      "Do not use sector identity in the rule."
+    ]
+  },
+  "cases": [
+    {
+      "run": "2021q1-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q1-polysilicon-tongwei",
+      "ticker": "600438.SH",
+      "lateCycleRisk": "low",
+      "expectationBurden": "room",
+      "lookback60Excess": -0.018181254707995625,
+      "gateDecision": "retain"
+    },
+    {
+      "run": "2021q1-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q1-rareearth-shenghe",
+      "ticker": "600392.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.5658908182356374,
+      "gateDecision": "block"
+    },
+    {
+      "run": "2021q2-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q2-autochip-star",
+      "ticker": "603290.SH",
+      "lateCycleRisk": "moderate",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.13208585337316484,
+      "gateDecision": "retain"
+    },
+    {
+      "run": "2021q2-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q2-metals-zijin",
+      "ticker": "601899.SH",
+      "lateCycleRisk": "moderate",
+      "expectationBurden": "tight",
+      "lookback60Excess": -0.01326904167295162,
+      "gateDecision": "retain"
+    },
+    {
+      "run": "2021q2-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q2-nev-catl",
+      "ticker": "300750.SZ",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.23673079995153443,
+      "gateDecision": "block"
+    },
+    {
+      "run": "2021q3-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q3-coal-shenhua",
+      "ticker": "601088.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 2.470499621157073,
+      "gateDecision": "block"
+    },
+    {
+      "run": "2021q3-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q3-shipping-cosco",
+      "ticker": "601919.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.29149310095914466,
+      "gateDecision": "block"
+    },
+    {
+      "run": "2021q4-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q4-lithium-saltlake",
+      "ticker": "000792.SZ",
+      "lateCycleRisk": "moderate",
+      "expectationBurden": "room",
+      "lookback60Excess": -0.13489216294712536,
+      "gateDecision": "retain"
+    },
+    {
+      "run": "2021q4-multisource-deep-v1.2-001",
+      "hypothesisId": "h-2021q4-power-reset-huaneng",
+      "ticker": "600011.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.6852505466937954,
+      "gateDecision": "block"
+    }
+  ],
+  "preregisteredMetrics": [
+    "retained 60d positive rate",
+    "retained 60d CSI300 excess-win rate",
+    "retained median 60d excess",
+    "blocked 60d positive rate",
+    "blocked 60d excess-win rate",
+    "selection retention rate",
+    "incremental discrimination lift vs unfiltered 2021 selections"
+  ],
+  "guardrail": "If this rule works on 2021, it is still not promoted into the Skill until it replicates on another untouched historical window."
+}
