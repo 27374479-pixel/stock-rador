@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "opportunity-cost-gate-2021-result-v1",
+  "preregistrationCommit": "6abf9afe85e34f0cbd7b973f3f359cf34ad2b9d9",
+  "rule": "block iff lateCycleRisk=high AND expectationBurden=tight AND lookback60Excess>=20%",
+  "baseline": {
+    "count": 9,
+    "positiveCount": 6,
+    "positiveRate": 0.6666666666666666,
+    "excessWinCount": 7,
+    "excessWinRate": 0.7777777777777778,
+    "meanNet60": 0.0990760646618915,
+    "medianNet60": 0.11238426452903694,
+    "meanExcess60": 0.13591424427326507,
+    "medianExcess60": 0.154544894272856
+  },
+  "retained": {
+    "count": 4,
+    "positiveCount": 3,
+    "positiveRate": 0.75,
+    "excessWinCount": 4,
+    "excessWinRate": 1,
+    "meanNet60": 0.2763765617786331,
+    "medianNet60": 0.2089316800134814,
+    "meanExcess60": 0.3210390233303573,
+    "medianExcess60": 0.2004299675700969,
+    "tickers": [
+      "600438.SH",
+      "603290.SH",
+      "601899.SH",
+      "000792.SZ"
+    ]
+  },
+  "blocked": {
+    "count": 5,
+    "positiveCount": 3,
+    "positiveRate": 0.6,
+    "excessWinCount": 3,
+    "excessWinRate": 0.6,
+    "meanNet60": -0.042764333031501775,
+    "medianNet60": 0.04963897814321139,
+    "meanExcess60": -0.012185578972408729,
+    "medianExcess60": 0.039320807154030746,
+    "tickers": [
+      "600392.SH",
+      "300750.SZ",
+      "601088.SH",
+      "601919.SH",
+      "600011.SH"
+    ]
+  },
+  "blockedCases": [
+    {
+      "ticker": "600392.SH",
+      "net60": 0.11238426452903694,
+      "excess60": 0.07523059468623394
+    },
+    {
+      "ticker": "300750.SZ",
+      "net60": 0.15090203591361728,
+      "excess60": 0.20548222661756643
+    },
+    {
+      "ticker": "601088.SH",
+      "net60": 0.04963897814321139,
+      "excess60": 0.039320807154030746
+    },
+    {
+      "ticker": "601919.SH",
+      "net60": -0.23283886506708396,
+      "excess60": -0.24355131477767922
+    },
+    {
+      "ticker": "600011.SH",
+      "net60": -0.29390807867629054,
+      "excess60": -0.13741020854219554
+    }
+  ],
+  "fisherExactOneSidedRetainedBetterExcessP": 0.2777777777777778,
+  "interpretation": [
+    "The preregistered rule concentrated 2021 excess returns: retained selections were 4/4 excess winners versus 3/5 among blocked selections.",
+    "Median excess improved from +15.45% unfiltered to +20.04% retained; the blocked group median was only +3.93%.",
+    "The gate is not a pure failure detector: it would have discarded profitable CATL, Shenghe and Shenhua selections.",
+    "The two large blocked failures (COSCO Shipping and Huaneng) drove much of the mean difference.",
+    "The sample is too small and Fisher p~0.278 is not strong evidence. The rule must be replicated unchanged on another unread historical window before any Skill change."
+  ]
+}
