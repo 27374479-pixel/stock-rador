@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Hub-First Discovery A/B Protocol V4",
+  "objective": "Test whether generalist professional information hubs materially increase event recall, sector breadth and weekly opportunity frequency without changing downstream V1.9 selection rules.",
+  "arms": {
+    "A": {
+      "name": "legacy_concentrated_discovery",
+      "sourceDefinition": "Existing 2025 quarterly source packs and their frozen event clusters.",
+      "downstreamRulesChanged": false
+    },
+    "B": {
+      "name": "hub_first_discovery",
+      "sourceDefinition": "Broad generalist-hub event discovery using generic state-change primitives without sector preselection; original facts recovered after hub detection.",
+      "downstreamRulesChanged": false
+    },
+    "C": {
+      "name": "hub_first_plus_validation",
+      "sourceDefinition": "Arm B plus original-source and specialist validation after event discovery.",
+      "downstreamRulesChanged": false
+    }
+  },
+  "hubFirstPackSchema": "2.2",
+  "discoveryCadence": {
+    "checkpoint": "weekly",
+    "genericQueryPrimitives": [
+      "surprise",
+      "shortage_surplus",
+      "price_spread",
+      "inventory",
+      "orders_backlog_tender",
+      "utilization_capacity",
+      "export_import",
+      "demand_volume_traffic",
+      "margin_cost",
+      "policy_regulation",
+      "capital_flow_liquidity",
+      "estimate_revision",
+      "distress_refinancing"
+    ],
+    "sectorPreselection": false,
+    "eventUnit": "economic_state_change_cluster",
+    "deduplicateNarrativeRepeats": true
+  },
+  "requiredHubCoverage": {
+    "minimumCoveredDiscoveryHubs": 2,
+    "requiredHubClasses": [
+      "china_generalist",
+      "global_generalist"
+    ],
+    "preferredExamples": [
+      "Wind",
+      "iFinD",
+      "LSEG Workspace",
+      "Bloomberg Terminal",
+      "S&P Capital IQ Pro",
+      "FactSet",
+      "AlphaSense"
+    ],
+    "proxyRule": "When paid historical terminals are unavailable, a public-web archive from the same broad professional publisher may be used only as an exploratory proxy and must be labeled proxy_not_terminal."
+  },
+  "unchangedDownstream": {
+    "inheritSelectionRulesFrom": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "relaxPrimaryGates": false,
+    "frequencyQuota": false,
+    "benchmark": "000300.SH",
+    "outcomeWindowsTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "dedupKey": "economic_hypothesis_cluster + preferred_ticker",
+    "dedupTradingDays": 60
+  },
+  "metrics": {
+    "recall": [
+      "event_clusters_per_52_weeks",
+      "incremental_hub_events_vs_arm_A",
+      "hub_first_event_share",
+      "specialist_only_miss_rate",
+      "mean_hub_detection_lag_days"
+    ],
+    "breadth": [
+      "sector_family_entropy",
+      "missing_sector_family_count",
+      "largest_sector_family_share"
+    ],
+    "selection": [
+      "independent_opportunity_weeks_per_52",
+      "event_to_research_conversion",
+      "event_to_primary_conversion"
+    ],
+    "quality": [
+      "60d_positive_rate",
+      "60d_excess_win_rate",
+      "median_60d_net",
+      "median_60d_excess",
+      "median_max_drawdown"
+    ]
+  },
+  "acceptance": {
+    "sourceLayerOnly": "Prefer B/C over A only if recall or opportunity-week frequency rises materially and 60d excess quality is not materially degraded.",
+    "noSameWindowRuleTuning": true,
+    "nextStepIfRecallImprovesButQualityFalls": "Keep hub-first discovery but optimize timing/absorption separately on a different window."
+  }
+}
