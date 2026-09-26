@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2025-broadsource-miss-audit-v1",
+  "validationClass": "exploratory_contaminated",
+  "purpose": "Test whether omitted source families would have surfaced non-tech weekly candidates under unchanged V1.9-style selection discipline.",
+  "sourceBiasCases": [
+    {
+      "eventId": "miss-2025-appliance-tradein",
+      "weekEnd": "2025-05-02",
+      "family": "consumer_appliances",
+      "evidence": [
+        {
+          "url": "https://app.www.gov.cn/govdata/gov/202501/09/523473/article.html",
+          "availableAt": "2025-01-09",
+          "claim": "2025 trade-in policy expanded appliance categories and subsidy coverage."
+        },
+        {
+          "url": "https://www.midea.com.cn/en/about-midea/news/midea-group-reports-q1-2025-results--revenue-hits-rmb128-4b-with",
+          "availableAt": "2025-04-29",
+          "claim": "Midea Q1 revenue +20.6% and attributable profit +38.0% with margin expansion."
+        }
+      ],
+      "decision": "Research selection",
+      "ticker": "000333.SZ",
+      "name": "美的集团",
+      "reason": "Policy-led demand and company-level realized profit conversion were both public by the first May weekly checkpoint; price regime was neutral and Midea itself had near-flat 20d/60d excess, so this is a legitimate non-tech Research candidate the old event census never saw."
+    },
+    {
+      "eventId": "miss-2025-machinery-reacceleration",
+      "weekEnd": "2025-08-08",
+      "family": "industrial_machinery",
+      "evidence": [
+        {
+          "url": "https://www.sanygroup.com/mediaNews/15425.html",
+          "availableAt": "2025-08-08",
+          "claim": "July excavator sales +25.2% YoY, domestic +17.2%, Jan-Jul domestic +22.3%."
+        },
+        {
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=11063450&stockid=600031",
+          "availableAt": "2025-04-30",
+          "claim": "Sany Q1 revenue +19.18%, attributable profit +56.40%, ex-item +78.54%, operating cash flow +0.81%."
+        }
+      ],
+      "decision": "Research selection",
+      "ticker": "600031.SH",
+      "name": "三一重工",
+      "reason": "Physical machinery demand acceleration and strong pre-existing company profit/cash conversion form a direct bridge; mild favorable price absorption blocks treating the signal as undiscovered Primary alpha but supports Research selection."
+    },
+    {
+      "eventId": "miss-2025-innovative-drug-payment",
+      "weekEnd": "2025-07-11",
+      "family": "healthcare",
+      "evidence": [
+        {
+          "url": "https://www.nhsa.gov.cn/art/2025/7/10/art_109_17198.html",
+          "availableAt": "2025-07-10",
+          "claim": "NHSA launched the 2025 basic-medical-insurance and commercial-health-insurance innovative-drug catalog adjustment framework."
+        }
+      ],
+      "decision": "No selection",
+      "reason": "This is a real healthcare regime change omitted from old discovery, but policy support alone does not isolate a specific A-share product/earnings bridge. It demonstrates source-coverage bias, not an automatic stock pick."
+    },
+    {
+      "eventId": "miss-2025-insurance-equity-allocation",
+      "weekEnd": "2025-01-24",
+      "family": "financial_market_structure",
+      "evidence": [
+        {
+          "url": "https://www.reuters.com/markets/asia/china-unveils-plan-encourage-insurance-funds-into-stock-markets-2025-01-22/",
+          "availableAt": "2025-01-22",
+          "claim": "Authorities encouraged major insurers and long-term funds to increase A-share equity allocations with longer performance evaluation horizons."
+        }
+      ],
+      "decision": "No selection",
+      "reason": "This is a potentially important capital-flow/rerating event absent from the old discovery universe, but the current Skill has no dedicated market-structure expression route and therefore cannot map it cleanly through company earnings."
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2025-05-02",
+      "ticker": "000333.SZ",
+      "cluster": "appliance-tradein",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2025-08-08",
+      "ticker": "600031.SH",
+      "cluster": "machinery-reacceleration",
+      "selectionState": "Research selection"
+    }
+  ]
+}
