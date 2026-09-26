@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "opportunity-cost-gate-2019q3q4-replication-v1",
+  "priorRuleRef": "backtests/opportunity-cost-gate-2021-preregister-v1.json",
+  "ruleUnchanged": true,
+  "frozenRule": {
+    "blockWhenAll": [
+      "opportunityTimingTest.lateCycleRisk.conclusion == high",
+      "expectationBurdenTest.conclusion == tight",
+      "opportunityTimingTest.priceRegime.lookback60Excess >= 0.20"
+    ],
+    "otherwise": "retain"
+  },
+  "cases": [
+    {
+      "hypothesisId": "h-2019q3-cobalt-mutanda-exit",
+      "ticker": "603799.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.15403974768115425,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2019q3-etc-buildout",
+      "ticker": "002869.SZ",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.20373041299635933,
+      "gateDecision": "block"
+    },
+    {
+      "hypothesisId": "h-2019q3-machinery-reacceleration",
+      "ticker": "600031.SH",
+      "lateCycleRisk": "moderate",
+      "expectationBurden": "room",
+      "lookback60Excess": 0.16543656642111895,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2019q3-pork-scarcity-acceleration",
+      "ticker": "002714.SZ",
+      "lateCycleRisk": "high",
+      "expectationBurden": "room",
+      "lookback60Excess": 0.04920039607659734,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2019q4-construction-machinery-acceleration",
+      "ticker": "600031.SH",
+      "lateCycleRisk": "moderate",
+      "expectationBurden": "room",
+      "lookback60Excess": 0.09666050235588768,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2019q4-nor-flash-cycle",
+      "ticker": "603986.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.5393357124128264,
+      "gateDecision": "block"
+    },
+    {
+      "hypothesisId": "h-2019q4-pork-scarcity",
+      "ticker": "002714.SZ",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": -0.007705965068817784,
+      "gateDecision": "retain"
+    },
+    {
+      "hypothesisId": "h-2019q4-tesla-localization",
+      "ticker": "601689.SH",
+      "lateCycleRisk": "high",
+      "expectationBurden": "tight",
+      "lookback60Excess": 0.23743869653640828,
+      "gateDecision": "block"
+    }
+  ],
+  "guardrail": "2019Q3-Q4 outcome files are not read in this replication until this classification is committed."
+}
