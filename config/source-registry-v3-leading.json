@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "3.0",
+  "name": "leading-source-registry",
+  "purpose": "Discover A-share opportunities from leading physical, transactional and operating evidence before sell-side research becomes consensus.",
+  "principle": "Discovery is led by observable state changes. Sell-side research is downstream expectation/valuation evidence, never the primary discovery engine.",
+  "sourcePriority": [
+    {
+      "tier": "L0",
+      "name": "transactional_physical_leading",
+      "role": "primary_discovery",
+      "targetLatency": "daily_to_weekly",
+      "examples": [
+        "Shanghai Shipping Exchange: SCFI/SCFIS/CCFI and bulk freight indices",
+        "Commodity exchanges: SHFE/DCE/CZCE/GFEX warehouse receipts, inventory, positions and settlement data",
+        "General Administration of Customs: monthly preliminary releases, HS commodity quantity/value/unit-value indices",
+        "China Government Procurement Network and sector procurement platforms: tender intentions, tender notices, awards and contract announcements",
+        "Power/energy operating data: NEA electricity consumption, installed capacity, grid/power investment; exchange/grid procurement where auditable",
+        "Auto high-frequency: industry association weekly/monthly retail, wholesale, export and inventory data",
+        "Construction machinery: excavator/loader monthly sales and export data",
+        "Agriculture: hog prices, breeding sow capacity, feed prices, slaughter and inventory data",
+        "Freight/logistics: route freight, port throughput, tanker/container/bulk indices",
+        "Company product price lists, order wins, monthly operating announcements and verified channel/booking data"
+      ],
+      "use": "Trigger new economic-state candidates before narrative consensus forms."
+    },
+    {
+      "tier": "L1",
+      "name": "issuer_operating_primary",
+      "role": "company_mapping_and_fast_confirmation",
+      "targetLatency": "same_day_to_quarterly",
+      "examples": [
+        "CNINFO/exchange filings",
+        "issuer IR records and earnings-call materials",
+        "performance forecasts/pre-announcements",
+        "order/backlog/tender wins",
+        "contract liabilities, inventory, cash conversion, capex and utilization disclosures"
+      ],
+      "use": "Map the L0 state change into direct listed-company economics using the latest already-available baseline; do not wait for a new quarter if an older baseline is still decision-valid."
+    },
+    {
+      "tier": "L2",
+      "name": "specialist_industry",
+      "role": "cross_check_and_quantification",
+      "targetLatency": "daily_to_monthly",
+      "examples": [
+        "TrendForce for memory/display/PV/battery/components",
+        "SMM for metals and energy-transition materials",
+        "Mysteel for steel/coal/ore/construction chains",
+        "卓创资讯/隆众资讯 for chemicals, energy and agricultural pricing/operating rates",
+        "Counterpoint/IDC/Omdia/Canalys for consumer electronics and computing",
+        "Drewry/Freightos/Clarksons/Kpler/Vortexa where accessible for shipping/energy flow",
+        "industry associations for retail, autos, machinery, chemicals, medicine and logistics"
+      ],
+      "use": "Confirm that the L0 observation is broad, persistent and economically causal rather than a noisy local print."
+    },
+    {
+      "tier": "L3",
+      "name": "high_quality_news",
+      "role": "trigger_context_and_adversarial_crosscheck",
+      "targetLatency": "intraday_to_daily",
+      "examples": [
+        "Reuters",
+        "Bloomberg/FT/WSJ where accessible",
+        "财新/第一财经/证券时报/中国证券报/上海证券报",
+        "official ministry press conferences and regulator releases"
+      ],
+      "use": "Explain why the physical state changed, discover policy/geopolitical triggers, and search contradictions. News does not replace the underlying data if direct data exist."
+    },
+    {
+      "tier": "L4",
+      "name": "sell_side_research",
+      "role": "expectation_measurement_only",
+      "targetLatency": "after_event",
+      "examples": [
+        "Original broker research from major Chinese and global institutions",
+        "Eastmoney/Sina/10jqka only as transport/index layers to locate the original research"
+      ],
+      "use": "Measure consensus earnings, estimate revisions, valuation, crowdedness and counter-theses after a candidate already exists. Never count the existence of a bullish report as a discovery signal."
+    },
+    {
+      "tier": "L5",
+      "name": "community_weak_signals",
+      "role": "idea_generation_only",
+      "targetLatency": "intraday",
+      "examples": [
+        "雪球/Reddit/industry forums/social media",
+        "job postings, supplier/customer chatter and user discussions when legally/publicly accessible"
+      ],
+      "use": "Generate search directions only. No selection may rely on L5 without independent L0-L3 verification."
+    }
+  ],
+  "requiredLeadingCoverage": [
+    {
+      "family": "transport_shipping",
+      "mustScan": [
+        "freight indices",
+        "port/route data",
+        "fleet/orderbook or tender data"
+      ],
+      "preferred": "L0"
+    },
+    {
+      "family": "resources_materials",
+      "mustScan": [
+        "spot/futures basis",
+        "exchange inventory/warehouse receipts",
+        "treatment charges/operating rates",
+        "imports/exports"
+      ],
+      "preferred": "L0-L2"
+    },
+    {
+      "family": "industrial_machinery",
+      "mustScan": [
+        "association unit sales",
+        "exports",
+        "orders/tenders",
+        "company order/backlog"
+      ],
+      "preferred": "L0-L1"
+    },
+    {
+      "family": "consumer",
+      "mustScan": [
+        "official retail/channel data",
+        "trade-in/subsidy execution",
+        "weekly platform/channel data where auditable",
+        "company same-store/operating data"
+      ],
+      "preferred": "L0-L1"
+    },
+    {
+      "family": "auto",
+      "mustScan": [
+        "weekly/monthly retail/wholesale/export",
+        "inventory/discounts",
+        "battery/vehicle production data",
+        "company deliveries"
+      ],
+      "preferred": "L0-L2"
+    },
+    {
+      "family": "agriculture",
+      "mustScan": [
+        "hog/crop prices",
+        "capacity/herd data",
+        "feed costs",
+        "slaughter/inventory"
+      ],
+      "preferred": "L0"
+    },
+    {
+      "family": "healthcare",
+      "mustScan": [
+        "drug/device approvals",
+        "procurement/tender volume and prices",
+        "insurance/reimbursement lists",
+        "hospital procurement",
+        "company product sales disclosures"
+      ],
+      "preferred": "L0-L1"
+    },
+    {
+      "family": "power_energy",
+      "mustScan": [
+        "electricity demand",
+        "grid investment",
+        "installed capacity/utilization",
+        "grid/equipment tenders",
+        "fuel cost"
+      ],
+      "preferred": "L0-L1"
+    },
+    {
+      "family": "technology_hardware",
+      "mustScan": [
+        "component contract/spot pricing",
+        "shipments",
+        "inventory",
+        "lead times",
+        "capex/utilization",
+        "hyperscaler/vendor first-party demand signals"
+      ],
+      "preferred": "L0-L2"
+    },
+    {
+      "family": "chemicals",
+      "mustScan": [
+        "spot price",
+        "plant operating rate",
+        "maintenance/shutdown",
+        "inventory",
+        "spread",
+        "imports/exports"
+      ],
+      "preferred": "L0-L2"
+    },
+    {
+      "family": "financial_market_structure",
+      "mustScan": [
+        "fund flows",
+        "issuance/repurchase/dividend rules",
+        "margin/financing data",
+        "insurance/pension allocation policy",
+        "exchange turnover/liquidity"
+      ],
+      "preferred": "L0-L3"
+    },
+    {
+      "family": "property",
+      "mustScan": [
+        "weekly transactions",
+        "land auctions",
+        "mortgage/rate policy",
+        "developer sales/cash/financing"
+      ],
+      "preferred": "L0-L3"
+    }
+  ],
+  "sourceScoring": {
+    "dimensions": [
+      "lead_time",
+      "direct_observability",
+      "economic_causality",
+      "company_mapping_directness",
+      "independence",
+      "historical_archivability",
+      "machine_retrievability"
+    ],
+    "rule": "A source with lower prestige but materially earlier direct physical evidence can outrank a later research report for discovery."
+  },
+  "weeklyWorkflow": [
+    "1. L0 broad scan by required family; record explicit no-change/unavailable states so coverage is auditable.",
+    "2. Cluster new state changes and compare them with prior-week baselines.",
+    "3. Use L1 existing company baselines to map beneficiaries/losers immediately; do not wait for a new report if exposure and economics are already sufficiently known.",
+    "4. Use L2/L3 to cross-check persistence, causality and contradictions.",
+    "5. Only after candidate mapping, query L4 research to estimate consensus/valuation and test whether the signal is already crowded.",
+    "6. Apply unchanged timing, price-absorption, quality and opportunity-cost gates.",
+    "7. Freeze decision before outcome reveal."
+  ],
+  "antiLateRules": [
+    "A sell-side report cannot be the first evidence item that creates an event cluster unless no earlier primary/physical source exists and the report contains unique independently verifiable data.",
+    "If a research report arrives after the stock has materially rerated, it is expectation/crowding evidence, not bullish confirmation.",
+    "When L0 reveals a new state and the selected company has a recent decision-valid L1 baseline, the system must re-underwrite immediately rather than wait for the next quarterly report.",
+    "A candidate discovered only after late L4 confirmation must be flagged evidence_latency_risk."
+  ]
+}
