@@ -1,0 +1,23 @@
+name: source-quality-ablation
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/source-quality-ablation.yml
+      - scripts/evaluate-source-quality-ablation.cjs
+      - backtests/source-quality-ablation-v1.json
+
+permissions:
+  contents: read
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node scripts/evaluate-source-quality-ablation.cjs
