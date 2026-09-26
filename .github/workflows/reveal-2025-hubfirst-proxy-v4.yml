@@ -1,0 +1,37 @@
+name: reveal-2025-hubfirst-proxy-v4
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/reveal-2025-hubfirst-proxy-v4.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Reveal locked hub-first outcomes
+        run: |
+          rm -f backtests/runs/2025-hubfirst-proxy-v4-001/outcome.json
+          node scripts/evaluate-2025-hubfirst-proxy-v4.cjs
+      - name: Commit outcome
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025-hubfirst-proxy-v4-001/outcome.json
+          git commit -m "backtest: reveal 2025 hub-first proxy outcomes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
