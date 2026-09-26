@@ -1,0 +1,131 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2020-continuous-state-discovery-v3-census-001",
+  "validationClass": "historical_holdout_like_discovery_census",
+  "protocol": "backtests/continuous-weekly-state-discovery-protocol-v3.json",
+  "selectionRules": "skills/stock-rador/versions/1.9.0/SKILL.md",
+  "constructedBeforeOutcomeRevealForThisExperiment": true,
+  "selectionOutcomesViewedForTheseIncrementalEvents": false,
+  "purpose": "Freeze a denser 2020 event census generated from generic economic-state primitives before company underwriting and outcome evaluation.",
+  "events": [
+    {
+      "eventId": "2020-01-30-protective-equipment-demand-capacity",
+      "firstAvailableAt": "2020-01-30",
+      "primitive": ["new_orders_or_backlog_acceleration","capacity_utilization_or_outage"],
+      "direction": "positive_producer_negative_buyer",
+      "summary": "Protective-mask demand surged globally while manufacturers ran at or near capacity.",
+      "source": "Reuters",
+      "url": "https://finance.yahoo.com/news/china-virus-triggers-global-rush-144955439.html"
+    },
+    {
+      "eventId": "2020-02-27-port-logistics-backlog-unwind",
+      "firstAvailableAt": "2020-02-27",
+      "primitive": ["labor_logistics_or_freight_constraint","supply_lead_time_or_delivery_bottleneck"],
+      "direction": "constraint_then_normalization",
+      "summary": "Major Chinese container ports were clearing severe labor-driven congestion as workers returned.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/economy/chinas-top-container-ports-unclog-backlog-as-virus-curbs-ease-2095448"
+    },
+    {
+      "eventId": "2020-04-30-export-order-collapse",
+      "firstAvailableAt": "2020-04-30",
+      "primitive": ["new_orders_or_backlog_acceleration","import_export_volume_or_trade_flow_shift"],
+      "direction": "negative_export_exposure",
+      "summary": "Export orders collapsed even as domestic production resumed, creating a strong customer/end-market divergence.",
+      "source": "Reuters",
+      "url": "https://www.straitstimes.com/business/economy/chinas-factories-struggle-to-fire-in-april-as-slump-in-export-orders-deepens"
+    },
+    {
+      "eventId": "2020-06-03-oil-demand-recovery",
+      "firstAvailableAt": "2020-06-03",
+      "primitive": ["channel_sales_or_end_demand_inflection","import_export_volume_or_trade_flow_shift"],
+      "direction": "demand_recovery",
+      "summary": "Chinese oil demand recovered to more than 90% of pre-pandemic levels, an early physical-demand normalization signal.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/coronavirus/china-drives-global-oil-demand-recovery-out-of-coronavirus-collapse-2190478"
+    },
+    {
+      "eventId": "2020-06-21-infrastructure-manufacturing-divergence",
+      "firstAvailableAt": "2020-06-21",
+      "primitive": ["channel_sales_or_end_demand_inflection","customer_supplier_reallocation"],
+      "direction": "relative_winner_loser",
+      "summary": "Infrastructure-linked construction demand was strong while manufacturing recovery lagged, creating sector incidence divergence inside the same macro rebound.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/commodities-news/soft-underbelly-in-chinas-steel-sector-boom-points-to-bumpier-economic-recovery-2208117"
+    },
+    {
+      "eventId": "2020-09-15-retail-demand-turn",
+      "firstAvailableAt": "2020-09-15",
+      "primitive": ["channel_sales_or_end_demand_inflection"],
+      "direction": "domestic_consumption_recovery",
+      "summary": "Retail sales turned positive for the first time in 2020 while industrial output accelerated.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/economy/chinas-industrial-output-accelerates-more-than-expected-in-august-retail-sales-turn-up-2295490"
+    },
+    {
+      "eventId": "2020-10-13-auto-sales-six-month-acceleration",
+      "firstAvailableAt": "2020-10-13",
+      "primitive": ["channel_sales_or_end_demand_inflection","new_orders_or_backlog_acceleration"],
+      "direction": "auto_demand_recovery",
+      "summary": "China auto sales rose 12.8% year on year in September, the sixth consecutive monthly gain.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/china-auto-sales-jump-13-in-golden-september-as-shoppers-return-to-showrooms-2322860"
+    },
+    {
+      "eventId": "2020-10-26-services-consumption-reopening",
+      "firstAvailableAt": "2020-10-26",
+      "primitive": ["channel_sales_or_end_demand_inflection"],
+      "direction": "services_consumption_recovery",
+      "summary": "Cinema, live-performance, restaurant and leisure activity showed a broader household-spending reopening signal.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/stock-market-news/packed-bars-and-maskless-catwalks-with-covid-curbs-fading-china-set-for-consumption-rebound-2332719"
+    },
+    {
+      "eventId": "2020-12-10-container-shortage-freight-spike",
+      "firstAvailableAt": "2020-12-10",
+      "primitive": ["labor_logistics_or_freight_constraint","supply_lead_time_or_delivery_bottleneck","cost_input_or_margin_pool_redistribution"],
+      "direction": "shipping_beneficiary_exporter_cost",
+      "summary": "A severe global container shortage pushed freight costs to records while Chinese exports surged.",
+      "source": "Reuters",
+      "url": "https://uk.investing.com/news/economic-indicators/boxed-out-chinas-exports-pinched-by-global-run-on-shipping-containers-2264675"
+    },
+    {
+      "eventId": "2020-12-17-chip-supply-shortage",
+      "firstAvailableAt": "2020-12-17",
+      "primitive": ["capacity_utilization_or_outage","supply_lead_time_or_delivery_bottleneck","customer_supplier_reallocation"],
+      "direction": "upstream_scarcity_downstream_constraint",
+      "summary": "Global semiconductor shortages began delaying production across autos and electronics.",
+      "source": "Reuters",
+      "url": "https://www.investing.com/news/technology-news/analysisglobal-chip-shortage-threatens-production-of-laptops-smartphones-and-more-2370629"
+    },
+    {
+      "eventId": "2020-12-18-north-asia-energy-squeeze",
+      "firstAvailableAt": "2020-12-18",
+      "primitive": ["price_level_or_spread_inflection","inventory_draw_or_build","supply_lead_time_or_delivery_bottleneck"],
+      "direction": "upstream_energy_positive_downstream_cost",
+      "summary": "Cold weather, low inventories and constrained fuel supply pushed coal and LNG prices sharply higher across North Asia.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/energy/perfect-winter-storm-jolts-north-asian-energy-prices-2020-12-18/"
+    },
+    {
+      "eventId": "2020-12-21-export-orders-labor-capacity-strain",
+      "firstAvailableAt": "2020-12-21",
+      "primitive": ["new_orders_or_backlog_acceleration","labor_logistics_or_freight_constraint","capital_expenditure_or_capacity_commitment"],
+      "direction": "export_manufacturing_positive_with_cost_pressure",
+      "summary": "Export demand exceeded expectations, factories struggled to hire, wages rose and some producers expanded automation/capacity.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/world/china/chinas-stunning-export-comeback-has-factories-scrambling-workers-2020-12-21/"
+    }
+  ],
+  "censusMetrics": {
+    "incrementalCandidateEventCount": 12,
+    "distinctCalendarWeeks": 12,
+    "note": "These are discovery candidates only. No event is a stock selection until company mapping and unchanged V1.9 underwriting are completed."
+  },
+  "guardrails": [
+    "Do not use later stock returns to decide which of these events deserve company mapping.",
+    "Negative and relative-incidence events remain in the denominator even when they produce no long candidate.",
+    "Do not add named sectors merely because they later performed well.",
+    "Company underwriting must preserve direct exposure, earnings conversion, valuation, expectation, timing, quality and adversarial gates."
+  ]
+}
