@@ -1,0 +1,436 @@
+{
+  "schemaVersion": "2.0",
+  "purpose": "Balanced, research-first discovery registry for A-share weekly opportunity research. This registry expands recall without relaxing downstream selection gates.",
+  "independenceRules": [
+    "A portal or mirror (Eastmoney, Sina, 10jqka) is transport only; independence belongs to the original broker/research house.",
+    "Syndicated Reuters/Bloomberg copies count as one origin.",
+    "Company filing plus company IR transcript count as one company-origin group unless independently audited data adds a separate origin.",
+    "A research report that merely repeats a filing is interpretation, not a second factual origin for the underlying reported number."
+  ],
+  "sourceQuorum": {
+    "preferredForSelection": [
+      "one physical/industry/official state-change source",
+      "one company first-party filing or IR source",
+      "one independent research report with forward earnings/valuation/expectation analysis"
+    ],
+    "preferredIndependentOriginGroups": 3,
+    "note": "This is an experimental evidence-quality feature, not yet a promotion gate. It must be validated independently before entering the Skill."
+  },
+  "discoveryRoles": [
+    {
+      "role": "sell_side_research",
+      "priority": "highest_after_primary_facts",
+      "sources": [
+        {
+          "name": "东方财富研报中心/Choice展示层",
+          "region": "CN",
+          "access": "public_index",
+          "independence": "transport_only",
+          "coverage": [
+            "个股研报",
+            "行业研报",
+            "盈利预测",
+            "宏观",
+            "策略",
+            "海外机构摘要"
+          ]
+        },
+        {
+          "name": "新浪财经研报镜像",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "transport_only",
+          "coverage": [
+            "券商个股点评",
+            "行业报告",
+            "盈利预测摘要"
+          ]
+        },
+        {
+          "name": "中金/中信/华泰/国泰海通/广发/招商/东吴/国金/华创/国盛/华安等原始券商研究",
+          "region": "CN",
+          "access": "public_or_mirrored",
+          "independence": "original_broker",
+          "coverage": [
+            "盈利预测",
+            "估值",
+            "预期差",
+            "行业景气",
+            "公司验证"
+          ]
+        },
+        {
+          "name": "Goldman Sachs/JPMorgan/UBS/Morgan Stanley/BofA public research abstracts",
+          "region": "global",
+          "access": "public_partial_or_aggregated",
+          "independence": "original_broker",
+          "coverage": [
+            "China sector",
+            "global cross-check",
+            "consensus/valuation",
+            "industry structure"
+          ]
+        }
+      ]
+    },
+    {
+      "role": "issuer_primary",
+      "priority": "mandatory_for_company_mapping",
+      "sources": [
+        {
+          "name": "巨潮资讯/CNINFO",
+          "region": "CN",
+          "access": "public",
+          "independence": "issuer_filing",
+          "coverage": [
+            "年报",
+            "季报",
+            "业绩预告",
+            "公告",
+            "投资者关系记录"
+          ]
+        },
+        {
+          "name": "上交所/深交所/北交所公告",
+          "region": "CN",
+          "access": "public",
+          "independence": "exchange_filing",
+          "coverage": [
+            "法定披露",
+            "问询回复",
+            "交易信息"
+          ]
+        },
+        {
+          "name": "公司官网IR/业绩会/电话会材料",
+          "region": "CN+global",
+          "access": "public_partial",
+          "independence": "issuer_primary",
+          "coverage": [
+            "订单",
+            "产能",
+            "出货",
+            "价格",
+            "客户",
+            "指引"
+          ]
+        }
+      ]
+    },
+    {
+      "role": "official_macro_policy",
+      "priority": "high",
+      "sources": [
+        {
+          "name": "国家统计局",
+          "region": "CN",
+          "access": "public",
+          "independence": "official",
+          "coverage": [
+            "PMI",
+            "PPI/CPI",
+            "工业增加值",
+            "投资",
+            "零售"
+          ]
+        },
+        {
+          "name": "央行/证监会/财政部/商务部/发改委/海关总署",
+          "region": "CN",
+          "access": "public",
+          "independence": "official",
+          "coverage": [
+            "流动性",
+            "资本市场",
+            "财政",
+            "消费政策",
+            "价格机制",
+            "进出口"
+          ]
+        },
+        {
+          "name": "国家医保局/药监局/CDE",
+          "region": "CN",
+          "access": "public",
+          "independence": "official",
+          "coverage": [
+            "医保目录",
+            "支付改革",
+            "创新药",
+            "审批"
+          ]
+        },
+        {
+          "name": "国家能源局/中电联",
+          "region": "CN",
+          "access": "public",
+          "independence": "official_or_industry",
+          "coverage": [
+            "装机",
+            "发电",
+            "电网投资",
+            "用电"
+          ]
+        },
+        {
+          "name": "US EIA/IEA/USDA/Fed/BEA/BLS and relevant foreign regulators",
+          "region": "global",
+          "access": "public",
+          "independence": "official",
+          "coverage": [
+            "energy",
+            "agriculture",
+            "macro",
+            "global demand cross-check"
+          ]
+        }
+      ]
+    },
+    {
+      "role": "industry_physical_data",
+      "priority": "high",
+      "sources": [
+        {
+          "name": "上海航运交易所 SCFI/SCFIS",
+          "region": "CN",
+          "access": "public",
+          "independence": "industry_index",
+          "coverage": [
+            "集运",
+            "航线价格",
+            "结算运价"
+          ]
+        },
+        {
+          "name": "中国汽车工业协会/乘联会",
+          "region": "CN",
+          "access": "public",
+          "independence": "industry_association",
+          "coverage": [
+            "汽车销量",
+            "出口",
+            "新能源渗透"
+          ]
+        },
+        {
+          "name": "中国工程机械工业协会",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "industry_association",
+          "coverage": [
+            "挖掘机",
+            "装载机",
+            "工程机械销量"
+          ]
+        },
+        {
+          "name": "农业农村部",
+          "region": "CN",
+          "access": "public",
+          "independence": "official",
+          "coverage": [
+            "生猪",
+            "饲料",
+            "农产品价格",
+            "产能"
+          ]
+        },
+        {
+          "name": "SMM/上海有色",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "specialist",
+          "coverage": [
+            "有色",
+            "新能源金属",
+            "库存",
+            "加工费",
+            "现货"
+          ]
+        },
+        {
+          "name": "Mysteel/钢联",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "specialist",
+          "coverage": [
+            "钢铁",
+            "煤焦",
+            "矿石",
+            "建材",
+            "库存",
+            "开工"
+          ]
+        },
+        {
+          "name": "卓创资讯/隆众资讯",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "specialist",
+          "coverage": [
+            "化工",
+            "能源",
+            "农产品",
+            "价格与开工"
+          ]
+        },
+        {
+          "name": "TrendForce",
+          "region": "global",
+          "access": "public_partial",
+          "independence": "specialist",
+          "coverage": [
+            "memory",
+            "semiconductor",
+            "display",
+            "PV",
+            "battery",
+            "components"
+          ]
+        },
+        {
+          "name": "Counterpoint/IDC/Canalys/Omdia",
+          "region": "global",
+          "access": "public_partial",
+          "independence": "specialist",
+          "coverage": [
+            "smartphone",
+            "PC",
+            "server",
+            "semiconductor",
+            "consumer electronics"
+          ]
+        },
+        {
+          "name": "S&P Global Commodity Insights/Fastmarkets",
+          "region": "global",
+          "access": "public_partial_or_subscription",
+          "independence": "specialist",
+          "coverage": [
+            "metals",
+            "energy",
+            "chemicals",
+            "commodity balances"
+          ]
+        },
+        {
+          "name": "Drewry/Freightos/Clarksons",
+          "region": "global",
+          "access": "public_partial_or_subscription",
+          "independence": "specialist",
+          "coverage": [
+            "shipping",
+            "freight",
+            "fleet",
+            "orderbook",
+            "rates"
+          ]
+        }
+      ]
+    },
+    {
+      "role": "high_quality_news_crosscheck",
+      "priority": "supporting",
+      "sources": [
+        {
+          "name": "Reuters",
+          "region": "global",
+          "access": "public_partial",
+          "independence": "newswire",
+          "coverage": [
+            "physical bottlenecks",
+            "policy",
+            "companies",
+            "commodities",
+            "global cross-check"
+          ]
+        },
+        {
+          "name": "Bloomberg/Financial Times/WSJ",
+          "region": "global",
+          "access": "public_partial_or_subscription",
+          "independence": "news",
+          "coverage": [
+            "capital flows",
+            "policy",
+            "companies",
+            "global industry"
+          ]
+        },
+        {
+          "name": "财新/第一财经/证券时报/中国证券报/上海证券报",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "news",
+          "coverage": [
+            "政策落地",
+            "产业调查",
+            "公司渠道",
+            "资本市场"
+          ]
+        }
+      ]
+    },
+    {
+      "role": "consumer_channel_and_alternative",
+      "priority": "high_for_recall",
+      "sources": [
+        {
+          "name": "商务部/地方商务部门零售与以旧换新数据",
+          "region": "CN",
+          "access": "public",
+          "independence": "official",
+          "coverage": [
+            "家电",
+            "汽车",
+            "零售",
+            "餐饮"
+          ]
+        },
+        {
+          "name": "携程/同程/航旅纵横/酒店集团可核验经营数据",
+          "region": "CN",
+          "access": "public_partial",
+          "independence": "company_or_platform",
+          "coverage": [
+            "旅游",
+            "酒店",
+            "航空需求"
+          ]
+        },
+        {
+          "name": "上市公司渠道/门店/订单/价格的可审计经营披露",
+          "region": "CN",
+          "access": "public",
+          "independence": "issuer_primary",
+          "coverage": [
+            "消费",
+            "渠道",
+            "库存",
+            "促销"
+          ]
+        }
+      ]
+    }
+  ],
+  "weeklyCoverageRequirement": [
+    "technology_hardware",
+    "power_energy",
+    "resources_materials",
+    "industrial_machinery",
+    "transport_shipping",
+    "consumer",
+    "healthcare",
+    "agriculture",
+    "auto",
+    "financial_market_structure",
+    "property",
+    "chemicals"
+  ],
+  "antiBiasRules": [
+    "No single specialist or publisher may define the weekly event universe.",
+    "A weekly scan is incomplete if any required coverage family is not searched or explicitly marked unavailable/no material change.",
+    "Research-report search happens after broad event discovery and again after company mapping; reports may confirm, contradict, quantify expectations, or expose consensus saturation.",
+    "Do not promote because multiple bullish reports agree; agreement can itself be evidence that expectations are crowded."
+  ]
+}
