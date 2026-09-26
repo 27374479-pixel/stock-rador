@@ -1,0 +1,35 @@
+name: validate-2025-hubfirst-proxy-v4
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - backtests/runs/2025-hubfirst-proxy-v4-001/**
+      - .github/workflows/validate-2025-hubfirst-proxy-v4.yml
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Validate hub-first source pack and screening
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const {validateDiscoveryPack,validateDiscoveryScreening,summarizeDiscoveryPack}=require('./scripts/discovery-core.cjs');
+          const base='backtests/runs/2025-hubfirst-proxy-v4-001';
+          const m=JSON.parse(fs.readFileSync(base+'/manifest.json','utf8'));
+          const p=JSON.parse(fs.readFileSync(base+'/source-pack.json','utf8'));
+          const s=JSON.parse(fs.readFileSync(base+'/screening.json','utf8'));
+          const errors=[...validateDiscoveryPack(p,m),...validateDiscoveryScreening(s,p,m)];
+          if(errors.length){console.error(errors.join('\n'));process.exit(1);}
+          console.log(JSON.stringify(summarizeDiscoveryPack(p),null,2));
+          NODE
