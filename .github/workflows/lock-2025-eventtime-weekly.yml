@@ -1,0 +1,58 @@
+name: lock-2025-eventtime-weekly
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/lock-2025-eventtime-weekly.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Build 2025 weekly lock
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const crypto=require('node:crypto');
+          const run='backtests/runs/2025-weekly-eventtime-v1.9-001';
+          const decisionPath=run+'/weekly-decisions.json';
+          const decision=JSON.parse(fs.readFileSync(decisionPath,'utf8'));
+          const paths=[
+            decisionPath,
+            'backtests/runs/2025q1-multisource-deep-v0.9-001/source-pack.json',
+            'backtests/runs/2025q2-multisource-deep-v0.9-001/source-pack.json',
+            'backtests/runs/2025q3-multisource-deep-v0.8-001/source-pack.json',
+            'backtests/runs/2025q4-multisource-deep-v0.6-002/source-pack.json',
+            ...fs.readdirSync(run+'/regime').filter(x=>x.endsWith('.snapshot.json')).sort().map(x=>run+'/regime/'+x)
+          ];
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          const lock={
+            schemaVersion:'1.0',runId:decision.runId,lockedAt:new Date().toISOString(),
+            validationClass:decision.validationClass,candidateCount:decision.frozenSelections.length,
+            selectionDigest:crypto.createHash('sha256').update(JSON.stringify(decision.frozenSelections)).digest('hex'),
+            files:paths.map(p=>({path:p,sha256:sha(p)}))
+          };
+          fs.writeFileSync(run+'/lock.json',JSON.stringify(lock,null,2)+'\n');
+          NODE
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2025-weekly-eventtime-v1.9-001/lock.json
+          git commit -m "backtest: lock 2025 event-time weekly replay"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
