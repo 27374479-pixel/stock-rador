@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "experimentId": "2025-hubfirst-proxy-v4-discovery-comparison",
+  "armA": {
+    "label": "legacy_2025_event_census",
+    "eventCount": 31,
+    "source": "2025Q1-Q4 frozen multisource source packs"
+  },
+  "armB": {
+    "label": "hub_first_public_proxy_first_pass",
+    "proxyEventCount": 8,
+    "promotedProxyEvents": 7,
+    "rejectedAsContinuation": 1,
+    "caveat": "Public Reuters/First Financial archives proxy the hub-first concept; paid terminal history is not connected."
+  },
+  "mapping": [
+    {
+      "hubEvent": "hub-event-insurance-equity-allocation",
+      "legacyMatch": null,
+      "status": "incremental_event",
+      "family": "financial_market_structure"
+    },
+    {
+      "hubEvent": "hub-event-consumer-tradein-expansion",
+      "legacyMatch": null,
+      "status": "incremental_event",
+      "family": "consumer"
+    },
+    {
+      "hubEvent": "hub-event-shipbuilding-capacity-scarcity",
+      "legacyMatch": null,
+      "status": "incremental_event",
+      "family": "industrial_shipbuilding"
+    },
+    {
+      "hubEvent": "hub-event-tariff-exporter-margin-squeeze",
+      "legacyMatch": "event-q2-manufacturing-tariff-shock",
+      "status": "overlap_earlier_detection",
+      "family": "cross_industry_exporters",
+      "legacyFirstAvailableAt": "2025-04-30T09:30:00+08:00",
+      "hubFirstAvailableAt": "2025-04-06T23:03:20+08:00",
+      "calendarLeadDays": 23.44
+    },
+    {
+      "hubEvent": "hub-event-china-biotech-licenseout-acceleration",
+      "legacyMatch": null,
+      "status": "incremental_event",
+      "family": "healthcare"
+    },
+    {
+      "hubEvent": "hub-event-pork-refattening-crackdown",
+      "legacyMatch": null,
+      "status": "incremental_event",
+      "family": "agriculture"
+    },
+    {
+      "hubEvent": "hub-event-coal-chemicals-cost-advantage",
+      "legacyMatch": null,
+      "status": "incremental_event",
+      "family": "chemicals"
+    },
+    {
+      "hubEvent": "hub-event-memory-shortage-confirmation",
+      "legacyMatch": "event-memory-structural-tightness",
+      "status": "continuation_duplicate",
+      "family": "technology_hardware"
+    }
+  ],
+  "summary": {
+    "incrementalIndependentEvents": 6,
+    "unionEventCount": 37,
+    "eventRecallIncreaseVsLegacy": 0.1935483870967742,
+    "relativeUnionIncrease": 0.1935483870967742,
+    "previouslyMissingFamiliesAdded": [
+      "financial_market_structure",
+      "consumer",
+      "healthcare",
+      "agriculture",
+      "chemicals"
+    ],
+    "overlapWithEarlierDetectionCount": 1,
+    "keyObservation": "A generalist hub-first scan broadened the event universe without using sector-specific sources as entry points."
+  },
+  "nextGate": "Apply unchanged V1.9 company mapping/timing gates to the six incremental events, freeze resulting decisions, then reveal 60d outcomes. Do not count improved recall as algorithm improvement until selection quality is measured."
+}
