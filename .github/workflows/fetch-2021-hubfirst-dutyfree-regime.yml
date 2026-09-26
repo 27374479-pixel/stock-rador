@@ -1,0 +1,38 @@
+name: fetch-2021-hubfirst-dutyfree-regime
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/fetch-2021-hubfirst-dutyfree-regime.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test
+      - name: Fetch duty-free pre-cutoff regime
+        run: |
+          D=backtests/runs/2021-hubfirst-proxy-v4-001/regime
+          rm -f "$D/dutyfree-20210115.snapshot.json"
+          node scripts/fetch-precutoff-regime-hfq.cjs "$D/dutyfree-20210115.json" "$D/dutyfree-20210115.snapshot.json"
+      - name: Commit snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2021-hubfirst-proxy-v4-001/regime/dutyfree-20210115.snapshot.json
+          git commit -m "backtest: freeze 2021 hub-first duty-free regime"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
