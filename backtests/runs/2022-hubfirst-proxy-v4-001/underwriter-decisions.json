@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2022-hubfirst-proxy-v4-001",
+  "validationClass": "exploratory_proxy_not_terminal",
+  "policy": {
+    "inheritSelectionRulesFrom": "skills/stock-rador/versions/1.9.0/SKILL.md",
+    "discoveryLayerOnlyChanged": true,
+    "primaryGateRelaxed": false,
+    "timingGateRelaxed": false,
+    "companyMappingGateRelaxed": false,
+    "note": "Frozen before reading 2022 existing outcome.json or fetching post-entry prices for this run."
+  },
+  "eventDecisions": [
+    {
+      "eventId": "hub-event-game-license-normalization",
+      "decision": "Research selection",
+      "weekEnd": "2022-04-15",
+      "ticker": "603444.SH",
+      "name": "吉比特",
+      "cluster": "game-license-normalization",
+      "reason": "Regulatory access reopened after eight months; Gigabit had strong 2021 revenue/profit/cash growth and a directly affected publishing ecosystem. The two-name game basket had +10.5% 20d excess but ~0% 60d excess, so timing is neutral rather than obviously over-absorbed. Policy scarcity and title-specific monetization keep it Research."
+    },
+    {
+      "eventId": "hub-event-hog-cycle-turn",
+      "decision": "Research selection",
+      "weekEnd": "2022-05-27",
+      "ticker": "002714.SZ",
+      "name": "牧原股份",
+      "cluster": "hog-cycle-turn",
+      "reason": "Eight-week hog-price recovery plus breeding-capacity contraction creates a direct price-minus-cost bridge; Muyuan had scale and improving unit cost, while the stock basket was still weak over 20d. However Q1 remained deeply loss-making and company-level profit conversion was not yet realized, so Research only."
+    },
+    {
+      "eventId": "hub-event-input-cost-collapse",
+      "decision": "No selection",
+      "reason": "The cost reversal is real but customers were also repricing downward. Without evidence that a specific company retains the input-cost benefit, the event fails the company margin-capture gate."
+    },
+    {
+      "eventId": "hub-event-export-order-cliff",
+      "decision": "No selection",
+      "reason": "This is a downside demand filter. It can invalidate export-manufacturing theses but does not itself provide a clean positive A-share expression."
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2022-04-15",
+      "ticker": "603444.SH",
+      "cluster": "game-license-normalization",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2022-05-27",
+      "ticker": "002714.SZ",
+      "cluster": "hog-cycle-turn",
+      "selectionState": "Research selection"
+    }
+  ],
+  "summary": {
+    "promotedHubEvents": 4,
+    "researchSelections": 2,
+    "primarySelections": 0,
+    "noSelections": 2,
+    "incrementalIndependentSelectionWeeks": 2
+  }
+}
