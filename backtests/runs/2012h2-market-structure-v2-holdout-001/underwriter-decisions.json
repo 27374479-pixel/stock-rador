@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2012h2-market-structure-v2-holdout-001",
+  "validationClass": "historical_proxy_not_terminal_market_structure_v2_holdout",
+  "candidate": "backtests/market-structure-rerating-route-candidate-v2.json",
+  "existing2012OutcomeFilesReadBeforeFreeze": false,
+  "futureOutcomeUsedInDecision": false,
+  "decisions": [
+    {
+      "clusterId": "margin-financing-refinancing-realized-flow",
+      "weekEnd": "2012-09-14",
+      "decision": "Research selection",
+      "ticker": "600837.SH",
+      "name": "海通证券",
+      "selectionState": "Research selection",
+      "route": "market_structure_v2",
+      "reasoning": [
+        "Transfer-financing formally launched and, within 10 trading days, system margin-financing balance had risen by nearly RMB3bn while Securities Finance had lent about RMB7.1bn, close to its RMB7.5bn initial capital ceiling.",
+        "This satisfies V2's realized-system-flow condition rather than relying on policy authorization alone.",
+        "Haitong had direct, already-material economics: 2012H1 margin-financing interest income was about RMB218m, among the industry's highest, with roughly 10% market share around Q1.",
+        "Price absorption at Sep-14 was moderate: 20d excess about +7.6pp, 60d excess only +0.8pp; the event was not an extreme momentum chase.",
+        "Incremental economics were not pure: large brokers had ample own capital and transfer-financing cost around 6%, reducing the incremental spread. This keeps the case at Research."
+      ],
+      "routeEvidence": {
+        "qualifyingStructureEvent": "clear",
+        "quantifiedCompanyBaseline": "clear",
+        "realizedSystemFlowConversion": "realized_and_accelerating",
+        "netIncidence": "positive_but_spread_constrained",
+        "expectationAbsorption": "moderate"
+      },
+      "primaryBlockedBy": [
+        "high_transfer_funding_cost",
+        "large_broker_own_capital_reduces_incremental_need",
+        "bear_market_client_demand_risk"
+      ],
+      "controls": [
+        "600030.SH"
+      ]
+    },
+    {
+      "clusterId": "qfii-quota-expansion",
+      "weekEnd": "2012-04-06",
+      "decision": "No selection",
+      "ticker": "600030.SH",
+      "name": "中信证券",
+      "selectionState": "No selection",
+      "route": "negative_control",
+      "systemFlowState": "authorized_not_realized",
+      "reasoning": [
+        "The QFII ceiling increased from USD30bn to USD80bn, but the additional quota was capacity rather than immediate deployed flow.",
+        "At the initial event checkpoint there was no realized-system-flow evidence satisfying V2.",
+        "Citic had already outperformed CSI300 by about +16.8pp over 60d, adding expectation burden.",
+        "Later quota approvals cannot be used to retroactively convert the April authorization into realized flow."
+      ],
+      "shadowOutcomeRequired": true
+    },
+    {
+      "clusterId": "broad-monetary-easing",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "route": "negative_control",
+      "systemFlowState": "conflicted",
+      "reasoning": [
+        "Rate cuts changed system liquidity broadly but no unique company quantity/sensitivity with one-directional net incidence was frozen."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2012-09-14",
+      "ticker": "600837.SH",
+      "cluster": "margin-financing-refinancing-realized-flow",
+      "selectionState": "Research selection",
+      "route": "market_structure_v2"
+    }
+  ],
+  "shadowControls": [
+    {
+      "weekEnd": "2012-04-06",
+      "ticker": "600030.SH",
+      "cluster": "qfii-quota-expansion",
+      "selectionState": "No selection",
+      "reason": "Authorized quota without realized system flow."
+    }
+  ],
+  "controls": [
+    {
+      "weekEnd": "2012-09-14",
+      "ticker": "600030.SH",
+      "role": "same-event margin-financing broker control"
+    }
+  ]
+}
