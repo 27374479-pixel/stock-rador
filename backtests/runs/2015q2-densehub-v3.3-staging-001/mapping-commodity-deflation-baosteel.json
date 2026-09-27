@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2015q2-densehub-v3.3-staging-001",
+  "clusterId": "commodity-input-deflation",
+  "stage": "company_exception_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2015-04-24",
+  "futureOutcomeViewed": false,
+  "hubTrigger": {
+    "date": "2015-04-02",
+    "source": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2015-04-02/iron-ore-seen-extending-slump-below-50-as-miner-currencies-drop",
+    "claim": "Iron ore fell below USD50/t and could fall further as global low-cost supply and weak China demand pressured prices."
+  },
+  "causalNeighborhood": "Falling ore is not automatically bullish for steel because steel prices and demand can fall too. Search for steelmakers whose product mix, market share or cost position lets input-cost decline improve spread despite sector losses.",
+  "candidate": {
+    "ticker": "600019.SH",
+    "name": "宝钢股份",
+    "expressionType": "high_end_steel_company_exception_inside_weak_sector",
+    "evidence": [
+      {
+        "date": "2015-04-23",
+        "source": "Baosteel 2015Q1 / China Securities Journal",
+        "url": "https://www.cs.com.cn/ssgs/gsxw/201504/t20150424_4695567.html",
+        "claim": "Q1 attributable profit RMB1.547bn, +2.46% YoY, even as company described weak steel demand, falling ore support and renewed industry losses."
+      },
+      {
+        "date": "2015-04-24",
+        "source": "Contemporaneous earnings analysis",
+        "url": "https://www.mrjjxw.com/articles/2015-04-25/911908.html",
+        "claim": "Company explained margin improvement through cost reduction and product-mix optimization; selling prices declined less than costs. Analysts also highlighted lower ore cost and strong electrical-steel pricing."
+      },
+      {
+        "date": "2015-04-24",
+        "source": "China Securities Journal",
+        "url": "https://www.cs.com.cn/ssgs/gsxw/201504/t20150424_4695567.html",
+        "claim": "Baosteel held roughly half of the domestic automotive high-strength-steel market and continued to expand high-end automotive steel products."
+      }
+    ],
+    "eventIncrementalEarningsBridge": "credible_positive_company_exception",
+    "profitPoolState": "sector_shrinking_but_company_spread_resilient_due_cost_and_mix",
+    "absoluteVsRelativeCatalyst": "absolute_but_modest",
+    "risks": [
+      "steel demand remained weak and pricing pressure severe",
+      "Q1 profit growth only modest despite margin improvement",
+      "industry-wide price decline can overwhelm raw-material relief",
+      "bull-market liquidity may lift even weak cyclicals independent of fundamentals"
+    ]
+  },
+  "nextGate": "Freeze 20/60/120d price absorption and contemporaneous valuation at Apr-24. Only Research if the company exception is not already crowded."
+}
