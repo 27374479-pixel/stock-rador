@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "clusterId": "producer-deflation-margin-redistribution",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2023-06-30",
+  "futureOutcomeViewed": false,
+  "hubTrigger": [
+    {
+      "date": "2023-06-09",
+      "source": "Bloomberg",
+      "claim": "China inflation remained near zero and producer-price deflation deepened, prompting the causal question of where input-cost relief could transfer margins."
+    }
+  ],
+  "causalNeighborhood": "Do not buy commodity users generically. Search for companies with stable/regulated output pricing, high sensitivity to a falling commodity input and evidence that lower input cost is already reaching reported earnings.",
+  "validation": [
+    {
+      "date": "2023-04-25",
+      "source": "华能国际2023Q1",
+      "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9084502&stockid=600011",
+      "claim": "Q1 attributable profit RMB2.25bn, +335.3%; company explicitly attributed domestic power earnings improvement to lower coal prices plus higher electricity prices."
+    },
+    {
+      "date": "2023-06-26",
+      "source": "第一财经",
+      "url": "https://m.yicai.com/news/101791253.html",
+      "claim": "Q5500 thermal coal around RMB820/t and failed to rise into peak summer demand."
+    },
+    {
+      "date": "2023-06-28",
+      "source": "第一财经",
+      "url": "https://www.yicai.com/news/101793798.html",
+      "claim": "Q5500 coal fell from roughly RMB1175/t at the start of 2023 to about RMB795/t in mid/late June, around a 32% decline; supply/import growth and weak demand were cited."
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "expressionType": "regulated_output_high_coal_cost_sensitivity",
+      "mappingConclusion": "clear_absolute_margin_transfer",
+      "eventIncrementalEarningsBridge": "clear_continuing_cost_relief",
+      "profitPoolState": "margin_transfer_from_coal_to_thermal_power",
+      "expectationEvidence": [
+        {
+          "date": "2023-05-15",
+          "source": "东方证券",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP202305161586672684_1.pdf",
+          "claim": "Q1 turnaround and fuel-cost decline were already recognized; May-12 share price RMB9.86, target RMB11.90; stock had already risen 21.3% over three months."
+        }
+      ],
+      "expectationBurden": "moderate_to_tight",
+      "risks": [
+        "coal-cost relief already partially priced",
+        "electricity tariff downside",
+        "large renewable/overseas earnings mix complicates pure thermal-power expression"
+      ]
+    },
+    {
+      "ticker": "600027.SH",
+      "name": "华电国际",
+      "expressionType": "thermal_power_control",
+      "mappingConclusion": "credible",
+      "evidence": [
+        {
+          "date": "2023-04-28",
+          "source": "华电国际2023Q1",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9164820&stockid=600027",
+          "claim": "Q1 attributable profit +82.3%; company cited lower coal prices and higher electricity/heat prices."
+        }
+      ],
+      "risks": [
+        "investment income/coal holdings complicate consolidated sensitivity"
+      ]
+    }
+  ],
+  "nextGate": "freeze price absorption at 2023-06-30; reject if the margin transfer was already highly absorbed without a fresh magnitude reset"
+}
