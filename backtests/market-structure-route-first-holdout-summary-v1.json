@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Market-Structure Route First Holdout Summary",
+  "motivatingRun": "2014h2-hubfirst-v3.3-mapping-holdout-001",
+  "holdoutRun": "2013h2-market-structure-route-holdout-001",
+  "results": {
+    "selected": {
+      "ticker": "600030.SH",
+      "name": "中信证券",
+      "net20": -0.059347595214478965,
+      "excess20": 0.03064724224685289,
+      "net60": -0.19686432462750147,
+      "excess60": -0.049614087841771126,
+      "net120": -0.11996373372358926,
+      "excess120": 0.012274491013507638
+    },
+    "sameEventControl": {
+      "ticker": "600837.SH",
+      "name": "海通证券",
+      "net60": -0.2379193145192351,
+      "excess60": -0.09066907773350474
+    },
+    "negativeControl": {
+      "ticker": "600648.SH",
+      "name": "外高桥",
+      "net60": -0.4426043476196241,
+      "excess60": -0.34810415144364004
+    }
+  },
+  "comparisonToMotivatingCase": {
+    "motivatingShadow": "2014 Stock Connect / broker",
+    "keyObservedDifference": [
+      "2014 had contemporaneously realized system-level market activity: Shanghai turnover had already reached a record before/around the access-rule change.",
+      "2013 IPO reform reopened a future underwriting channel but actual IPO issuance and fee realization had not yet occurred at the selection checkpoint.",
+      "IPO restart also had an explicit adverse secondary-market liquidity channel, making the net incidence less one-directional."
+    ]
+  },
+  "conclusions": {
+    "marketStructureRouteV1": "not_validated",
+    "narrativeNegativeControl": "supported",
+    "mechanicalRuleChangeAlone": "insufficient",
+    "strongestStatement": "A pre-report market-structure selection likely needs not only a mechanical rule-to-company mapping, but also contemporaneous realized system-level flow/volume/usage evidence showing the new regime is already being used.",
+    "productionDecision": "Do not adopt V1 market-structure route into the production Skill."
+  }
+}
