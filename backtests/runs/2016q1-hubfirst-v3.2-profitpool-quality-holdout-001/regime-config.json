@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2016q1-hubfirst-v3.2-profitpool-quality-holdout-001",
+  "snapshots": [
+    {
+      "id": "cinema-light-20160226",
+      "cutoffDate": "2016-02-26",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "300251.SZ"
+      ],
+      "qualityLabel": "single_project_large_but_lumpy"
+    },
+    {
+      "id": "cinema-wanda-20160311",
+      "cutoffDate": "2016-03-11",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "002739.SZ"
+      ],
+      "qualityLabel": "recurring_operating_throughput"
+    },
+    {
+      "id": "airline-20160331",
+      "cutoffDate": "2016-03-31",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "600029.SH",
+        "601111.SH",
+        "600115.SH"
+      ],
+      "qualityLabel": "recurring_operating_improvement_with_offset"
+    }
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "priceSeries": "Tencent public daily hfq",
+    "metric": "ticker return minus CSI300 return",
+    "guard": "No post-cutoff bars requested."
+  }
+}
