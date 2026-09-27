@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q1q3-hubfirst-v3.2-profitpool-holdout-001",
+  "validationClass": "historical_proxy_not_terminal_external_holdout",
+  "protocol": "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+  "profitPoolCandidate": "backtests/emerging-profit-pool-materiality-candidate-v1.json",
+  "existing2017Q1Q3OutcomeFilesReadBeforeFreeze": false,
+  "futureOutcomeUsedInDecision": false,
+  "decisions": [
+    {
+      "clusterId": "environmental-enforcement-capacity-bottleneck",
+      "weekEnd": "2017-09-29",
+      "decision": "Research selection",
+      "ticker": "300137.SZ",
+      "name": "先河环保",
+      "selectionState": "Research selection",
+      "profitPoolLabel": "emerging_pool",
+      "associationDepth": 1,
+      "reasoning": [
+        "Broad policy/enforcement hubs triggered a search for monitoring/compliance demand, not an environmental-equipment sector screen.",
+        "H1 already showed grid-monitoring order execution contributing to growth, establishing real company conversion.",
+        "The Sep-28 Hebei '1+18' monitoring contract was RMB228.8m, roughly 29% of 2016 revenue, large enough to make a previously emerging monitoring/data-services pool materially relevant to consolidated results.",
+        "The stock was not strongly front-run immediately before the event: 20d excess versus CSI300 about -2.5pp and 60d excess about +5.4pp.",
+        "Valuation/expectation burden was high, so this remains Research rather than High-priority."
+      ],
+      "primaryBlockedBy": [
+        "high_valuation_and_expectation_burden",
+        "government_project_execution_and_cash_collection",
+        "lumpy_order_risk"
+      ],
+      "controls": [
+        "300203.SZ",
+        "002658.SZ"
+      ]
+    },
+    {
+      "clusterId": "aluminium-capacity-enforcement",
+      "weekEnd": "2017-08-18",
+      "decision": "No selection",
+      "ticker": "601600.SH",
+      "name": "中国铝业",
+      "selectionState": "No selection",
+      "profitPoolLabel": "known_cycle",
+      "reasoning": [
+        "Supply-side reform and aluminum capacity cuts produced very strong real earnings conversion; H1 attributable profit rose roughly tenfold.",
+        "But this remained the company's existing core aluminum/alumina profit pool rather than a newly material business line.",
+        "The market had already aggressively repriced the cycle by Aug-18: 20d/60d/120d excess versus CSI300 about +21.3/+48.5/+26.2pp.",
+        "The economic thesis is correct, but expectation and price absorption are too high for a new entry at this checkpoint."
+      ],
+      "shadowOutcomeRequired": true,
+      "controls": [
+        "000807.SZ",
+        "600219.SH"
+      ]
+    },
+    {
+      "clusterId": "rmb-appreciation-margin-transfer",
+      "weekEnd": "2017-09-15",
+      "decision": "Research selection",
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "selectionState": "Research selection",
+      "profitPoolLabel": "known_macro_transfer",
+      "reasoning": [
+        "The broad RMB-appreciation hub signal maps directly to Air China's USD liabilities and FX-sensitive earnings.",
+        "H1 financial statements quantify the bridge: a 1% RMB appreciation versus USD increases net profit/equity by about RMB290.6m; H1 had already swung from an FX loss to an FX gain.",
+        "By Sep-12 sell-side research had explicitly quantified this benefit and expected Q3 airline profit acceleration, so this is not an undiscovered emerging profit pool.",
+        "However, price absorption was low/negative: 20d/60d/120d excess versus CSI300 about -5.7/-13.1/-5.4pp.",
+        "The test therefore keeps this known-macro case as Research rather than filtering it out by label."
+      ],
+      "primaryBlockedBy": [
+        "fx_move_can_reverse",
+        "fuel_inflation_can_offset_fx",
+        "benefit_already_entering_sell_side_consensus"
+      ],
+      "controls": [
+        "600115.SH",
+        "600029.SH"
+      ]
+    },
+    {
+      "clusterId": "supply-side-core-cycle-repricing",
+      "decision": "No additional selection",
+      "selectionState": "No selection",
+      "profitPoolLabel": "known_cycle",
+      "reasoning": [
+        "Steel/coal profitability recovery was real but already the dominant supply-side-reform narrative.",
+        "No additional company case was frozen that offered lower absorption and a distinct incremental earnings pool without duplicating the aluminum control."
+      ]
+    },
+    {
+      "clusterId": "industrial-strength-equipment-throughput",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "profitPoolLabel": "unclear",
+      "reasoning": [
+        "Macro factory-output strength did not by itself establish a sufficiently specific company order/backlog reset before the holdout cutoff.",
+        "Do not convert strong industrial activity into a generic machinery trade."
+      ]
+    },
+    {
+      "clusterId": "trade-growth-steel-input-divergence",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "profitPoolLabel": "mixed",
+      "reasoning": [
+        "The value-chain margin signal was plausible, but the frozen evidence did not isolate a cleaner incremental company bridge than the already heavily repriced core commodity cycle."
+      ]
+    },
+    {
+      "clusterId": "shipbuilding-decapacity-restructuring",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "profitPoolLabel": "unclear",
+      "reasoning": [
+        "Capacity reduction alone did not prove sufficient demand/order-quality recovery at a listed yard within the holdout window.",
+        "Avoid treating sector consolidation as an earnings catalyst without company conversion."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2017-09-15",
+      "ticker": "601111.SH",
+      "cluster": "rmb-appreciation-margin-transfer",
+      "selectionState": "Research selection",
+      "profitPoolLabel": "known_macro_transfer"
+    },
+    {
+      "weekEnd": "2017-09-29",
+      "ticker": "300137.SZ",
+      "cluster": "environmental-enforcement-capacity-bottleneck",
+      "selectionState": "Research selection",
+      "profitPoolLabel": "emerging_pool"
+    }
+  ],
+  "shadowControls": [
+    {
+      "weekEnd": "2017-08-18",
+      "ticker": "601600.SH",
+      "cluster": "aluminium-capacity-enforcement",
+      "selectionState": "No selection",
+      "profitPoolLabel": "known_cycle",
+      "reason": "Measure avoided known-cycle outcome without treating it as a portfolio selection."
+    }
+  ],
+  "diagnostics": {
+    "hubItemCount": 17,
+    "associationClusterCount": 7,
+    "researchSelectionCount": 2,
+    "highPrioritySelectionCount": 0,
+    "independentOpportunityWeeks": 2,
+    "labelsAmongSelections": {
+      "emerging_pool": 1,
+      "known_macro_transfer": 1
+    },
+    "shadowKnownCycleCount": 1,
+    "frequencyQuota": false
+  }
+}
