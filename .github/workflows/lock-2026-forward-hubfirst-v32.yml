@@ -1,0 +1,72 @@
+name: lock-2026-forward-hubfirst-v32
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/lock-2026-forward-hubfirst-v32.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Assert prospective state and build immutable lock
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const run='backtests/runs/2026-09-27-forward-hubfirst-v3.2-001';
+          if(fs.existsSync(run+'/outcome.json')) throw new Error('Prospective lock refused: outcome.json already exists');
+          const d=JSON.parse(fs.readFileSync(run+'/underwriter-decisions.json','utf8'));
+          const paths=[
+            'config/source-registry-v4-hub-first.json',
+            'backtests/hub-first-associative-discovery-protocol-v3.1.json',
+            'backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json',
+            run+'/discovery-pack.json',
+            run+'/mapping-aidc-power.json',
+            run+'/mapping-battery-recycling.json',
+            run+'/mapping-yuan-airlines.json',
+            run+'/mapping-manufacturing-export.json',
+            run+'/expectation-snapshot.json',
+            run+'/regime-config.json',
+            run+'/manufacturing-regime-config.json',
+            run+'/regime/forward-20260925.snapshot.json',
+            run+'/regime/manufacturing-export-20260925.snapshot.json',
+            run+'/underwriter-decisions.json',
+            run+'/evaluation-plan.json'
+          ];
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          for(const p of paths) if(!fs.existsSync(p)) throw new Error('Missing lock input '+p);
+          const lock={
+            schemaVersion:'1.0',
+            runId:d.runId,
+            lockedAt:new Date().toISOString(),
+            validationClass:d.validationClass,
+            protocol:'v3.2-candidate',
+            futureOutcomeAbsentAtLock:true,
+            candidateCount:d.frozenSelections.length,
+            selectionDigest:crypto.createHash('sha256').update(JSON.stringify(d.frozenSelections)).digest('hex'),
+            discoveryDenominator:{hubItemCount:13,associationClusterCount:6},
+            files:paths.map(p=>({path:p,sha256:sha(p)}))
+          };
+          fs.writeFileSync(run+'/lock.json',JSON.stringify(lock,null,2)+'\n');
+          NODE
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2026-09-27-forward-hubfirst-v3.2-001/lock.json
+          git commit -m "forward: lock 2026-09-27 hub-first v3.2 sample"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
