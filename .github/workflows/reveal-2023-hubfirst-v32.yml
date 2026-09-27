@@ -1,0 +1,103 @@
+name: reveal-2023-hubfirst-v32
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/reveal-2023-hubfirst-v32.yml
+
+permissions:
+  contents: write
+
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify lock and reveal only frozen selections
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const RUN='backtests/runs/2023-hubfirst-causal-neighborhood-v3.2-001';
+          const BENCH='000300.SH',COST=0.001;
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          const lock=JSON.parse(fs.readFileSync(RUN+'/lock.json','utf8'));
+          for(const f of lock.files){if(!fs.existsSync(f.path)||sha(f.path)!==f.sha256)throw Error('lock mismatch '+f.path);}
+          const d=JSON.parse(fs.readFileSync(RUN+'/underwriter-decisions.json','utf8'));
+          if(crypto.createHash('sha256').update(JSON.stringify(d.frozenSelections)).digest('hex')!==lock.selectionDigest) throw Error('selection digest mismatch');
+          const sym=t=>{const m=/^(\d{6})\.(SH|SZ)$/.exec(t);if(!m)throw Error('bad ticker '+t);return(m[2]==='SH'?'sh':'sz')+m[1]};
+          async function get(t){
+            const s=sym(t),u='https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+s+',day,2023-01-01,2024-06-30,800,hfq';
+            const r=await fetch(u,{headers:{'User-Agent':'stock-rador-v3.2-reveal/1.0'},signal:AbortSignal.timeout(30000)});
+            if(!r.ok)throw Error('HTTP '+r.status);
+            const j=await r.json(),n=j?.data?.[s],rows=(n?.hfqday??n?.day??[]).map(x=>({date:x[0],open:+x[1],close:+x[2]})).sort((a,b)=>a.date.localeCompare(b.date));
+            if(!rows.length)throw Error('no rows '+t);
+            return rows;
+          }
+          const net=(o,c)=>c/o*(1-COST)/(1+COST)-1;
+          const maxDD=(rows,entryDate,exitDate)=>{
+            const xs=rows.filter(x=>x.date>=entryDate&&x.date<=exitDate).map(x=>x.close);
+            let peak=-Infinity,dd=0;
+            for(const v of xs){peak=Math.max(peak,v);if(peak>0)dd=Math.min(dd,v/peak-1);}
+            return dd;
+          };
+          const stats=xs=>{
+            const vals=xs.map(x=>x.horizons['60']).filter(Boolean);
+            const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
+            const med=a=>{const b=[...a].sort((x,y)=>x-y),n=b.length;return n%2?b[(n-1)/2]:(b[n/2-1]+b[n/2])/2};
+            return {
+              count:vals.length,
+              positiveCount:vals.filter(x=>x.positive).length,
+              positiveRate:vals.filter(x=>x.positive).length/vals.length,
+              excessWinCount:vals.filter(x=>x.excessWin).length,
+              excessWinRate:vals.filter(x=>x.excessWin).length/vals.length,
+              meanNetReturn:mean(vals.map(x=>x.netReturn)),
+              medianNetReturn:med(vals.map(x=>x.netReturn)),
+              meanExcessReturn:mean(vals.map(x=>x.excessReturn)),
+              medianExcessReturn:med(vals.map(x=>x.excessReturn)),
+              medianMaxDrawdown:med(vals.map(x=>x.maxCloseDrawdown))
+            };
+          };
+          (async()=>{
+            const tickers=[BENCH,...new Set(d.frozenSelections.map(x=>x.ticker))],ser={};
+            for(const t of tickers)ser[t]=await get(t);
+            const b=ser[BENCH],results=[];
+            for(const x of d.frozenSelections){
+              const bi=b.findIndex(q=>q.date>x.weekEnd); if(bi<0)throw Error('no benchmark entry '+x.weekEnd);
+              const nominal=b[bi].date,a=ser[x.ticker],e=a.find(q=>q.date>=nominal); if(!e)throw Error('no entry '+x.ticker);
+              const horizons={};
+              for(const n of [20,60,120]){
+                const be=b[bi+n-1]; if(!be)throw Error('no horizon '+n);
+                const z=a.find(q=>q.date>=be.date); if(!z)throw Error('no exit '+x.ticker+' '+n);
+                const bb=b.find(q=>q.date>=z.date); if(!bb)throw Error('no benchmark exit');
+                const nr=net(e.open,z.close),br=bb.close/b[bi].open-1,ex=nr-br;
+                horizons[n]={exitDate:z.date,netReturn:nr,benchmarkReturn:br,excessReturn:ex,positive:nr>0,excessWin:ex>0,maxCloseDrawdown:maxDD(a,e.date,z.date)};
+              }
+              results.push({...x,entryDate:e.date,horizons});
+            }
+            const out={
+              schemaVersion:'1.0',runId:d.runId,lockedAt:lock.lockedAt,selectionDigest:lock.selectionDigest,
+              revealedAt:new Date().toISOString(),revealMethod:'fresh_public_price_fetch_not_existing_2023_repo_outcomes',
+              discoveryContext:{hubItemCount:18,associationClusterCount:7,researchSelections:3,independentOpportunityWeeks:3,secondOrderSelections:1},
+              performance60d:stats(results),results
+            };
+            fs.writeFileSync(RUN+'/outcome.json',JSON.stringify(out,null,2)+'\n');
+            console.log(JSON.stringify(out,null,2));
+          })().catch(e=>{console.error(e.stack||e);process.exit(1)});
+          NODE
+      - name: Commit outcome
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2023-hubfirst-causal-neighborhood-v3.2-001/outcome.json
+          git commit -m "backtest: reveal 2023 v3.2 external-replication outcomes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
