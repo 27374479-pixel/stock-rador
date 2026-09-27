@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2012h2-market-structure-v2-holdout-001",
+  "frozenBeforeOutcome": true,
+  "benchmark": "000300.SH",
+  "entryRule": "next executable A-share session after each frozen weekEnd",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "evaluateSelections": [
+    "600837.SH"
+  ],
+  "evaluateShadowControls": [
+    "600030.SH@2012-04-06"
+  ],
+  "compareControl": [
+    "600030.SH@2012-09-14"
+  ],
+  "questions": [
+    "Does realized system flow improve V1 market-structure precision?",
+    "Does the QFII authorized-only negative control underperform after its initial policy reaction?",
+    "Is the direct-exposure control materially different from the selected broker?"
+  ],
+  "guardrails": [
+    "Do not use 2012 year-end margin-financing balances before reveal.",
+    "Do not change V2 based on this same holdout.",
+    "A successful single case is insufficient for production adoption."
+  ]
+}
