@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "frozenBeforeOutcomeReveal": true,
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "entryRule": "next executable trading-session open after each frozen weekEnd",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "metrics": [
+    "net_return",
+    "CSI300_excess_return",
+    "positive_return",
+    "excess_win",
+    "close_path_max_drawdown"
+  ],
+  "associationMetrics": [
+    "selection_count",
+    "independent_opportunity_weeks",
+    "second_order_selection_count",
+    "quality_by_association_depth"
+  ],
+  "contaminationGuardrails": [
+    "Do not read existing repository 2023 outcome files until this run is locked.",
+    "Reveal outcomes only through a newly created evaluator from public price data.",
+    "No outcome may alter frozen discovery, mapping, expectation or decision files.",
+    "Any v3.2 change motivated by this run must be validated on a later untouched sample."
+  ]
+}
