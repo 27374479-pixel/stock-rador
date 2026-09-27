@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "clusterId": "auto-export-roro-bottleneck",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2023-09-01",
+  "futureOutcomeViewed": false,
+  "hubTrigger": {
+    "date": "2023-08-08",
+    "source": "第一财经",
+    "claim": "Overall July exports fell 14.5% in USD terms while automobile exports grew 118.5%, exposing a major structural divergence inside weak trade."
+  },
+  "causalNeighborhood": "Rapid automobile export growth consumes scarce ro-ro/PCTC capacity; if capacity is tight, freight economics can improve for direct operators and create order demand for car-carrier newbuilds.",
+  "validation": [
+    {
+      "date": "2023-08-29",
+      "source": "招商轮船2023H1",
+      "claim": "International ro-ro demand was strong, market rentals repeatedly hit records and space was hard to secure; company increased foreign-trade ro-ro capacity to five vessels and opened Gulf/Red Sea/Thailand routes."
+    },
+    {
+      "date": "2023-08-29",
+      "source": "招商轮船2023H1",
+      "claim": "Ro-ro segment revenue RMB867m, +7.44% YoY; segment net profit RMB126m versus RMB9m, +1304.76%."
+    },
+    {
+      "date": "2023-09-06",
+      "source": "Seatrade Maritime",
+      "claim": "Lack of ro-ro capacity and congestion caused delays of three months or more and pushed some vehicle exports into containers."
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "601872.SH",
+      "name": "招商轮船",
+      "expressionType": "direct_roro_operator",
+      "mappingConclusion": "clear_absolute_company_conversion",
+      "eventIncrementalEarningsBridge": "clear_positive",
+      "profitPoolState": "expanding_due_to_capacity_scarcity_and_high_rates",
+      "risks": [
+        "ro-ro remains a minority segment of diversified group",
+        "oil/dry-bulk/container segments can dominate consolidated earnings",
+        "auto-export cycle may slow"
+      ]
+    },
+    {
+      "ticker": "600428.SH",
+      "name": "中远海特",
+      "expressionType": "specialty_shipping_control",
+      "mappingConclusion": "credible_but_less_pure_at_cutoff",
+      "risks": [
+        "automobile business less isolated in pre-cutoff company disclosure",
+        "specialty cargo mix creates attribution ambiguity"
+      ]
+    }
+  ],
+  "nextGate": "freeze 20/60d price absorption at 2023-09-01 and expectation/valuation context before selection"
+}
