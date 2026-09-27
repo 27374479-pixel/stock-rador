@@ -1,0 +1,73 @@
+name: reveal-2014h2-v33-mapping-holdout
+on:
+  push:
+    branches: [ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926]
+    paths: [.github/workflows/reveal-2014h2-v33-mapping-holdout.yml]
+permissions: {contents: write}
+jobs:
+  reveal:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926, fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const RUN='backtests/runs/2014h2-hubfirst-v3.3-mapping-holdout-001',BENCH='000300.SH',COST=.001;
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          const lock=JSON.parse(fs.readFileSync(RUN+'/lock.json','utf8'));
+          for(const f of lock.files){if(!fs.existsSync(f.path)||sha(f.path)!==f.sha256)throw Error('lock mismatch '+f.path)}
+          const d=JSON.parse(fs.readFileSync(RUN+'/underwriter-decisions.json','utf8'));
+          if(crypto.createHash('sha256').update(JSON.stringify(d.frozenSelections)).digest('hex')!==lock.selectionDigest)throw Error('selection digest mismatch');
+          if(crypto.createHash('sha256').update(JSON.stringify(d.shadowControls)).digest('hex')!==lock.shadowDigest)throw Error('shadow digest mismatch');
+          const sym=t=>{const m=/^(\d{6})\.(SH|SZ)$/.exec(t);return(m[2]==='SH'?'sh':'sz')+m[1]};
+          async function get(t){
+            const s=sym(t),u='https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+s+',day,2014-07-01,2016-03-31,900,hfq';
+            const r=await fetch(u,{headers:{'User-Agent':'stock-rador-v3.3-reveal/1.0'},signal:AbortSignal.timeout(30000)});
+            if(!r.ok)throw Error('HTTP '+r.status);
+            const j=await r.json(),n=j?.data?.[s],rows=(n?.hfqday??n?.day??[]).map(x=>({date:x[0],open:+x[1],close:+x[2]})).sort((a,b)=>a.date.localeCompare(b.date));
+            if(!rows.length)throw Error('no rows '+t);return rows;
+          }
+          const net=(o,c)=>c/o*(1-COST)/(1+COST)-1;
+          const maxDD=(rows,a,b)=>{let peak=-Infinity,dd=0;for(const x of rows.filter(x=>x.date>=a&&x.date<=b)){peak=Math.max(peak,x.close);if(peak>0)dd=Math.min(dd,x.close/peak-1)}return dd};
+          async function evalCase(x,ser,b){
+            const bi=b.findIndex(q=>q.date>x.weekEnd);if(bi<0)throw Error('no benchmark entry '+x.ticker);
+            const nominal=b[bi].date,a=ser[x.ticker],e=a.find(q=>q.date>=nominal);if(!e)throw Error('no stock entry '+x.ticker);
+            const h={};
+            for(const n of [20,60,120]){
+              const be=b[bi+n-1];if(!be)throw Error('no horizon '+n);
+              const z=a.find(q=>q.date>=be.date);if(!z)throw Error('no stock exit '+x.ticker+' '+n);
+              const bb=b.find(q=>q.date>=z.date);if(!bb)throw Error('no benchmark exit');
+              const nr=net(e.open,z.close),br=bb.close/b[bi].open-1,ex=nr-br;
+              h[n]={exitDate:z.date,netReturn:nr,benchmarkReturn:br,excessReturn:ex,positive:nr>0,excessWin:ex>0,maxCloseDrawdown:maxDD(a,e.date,z.date)};
+            }
+            return {...x,entryDate:e.date,horizons:h};
+          }
+          const aggregate=xs=>{
+            const v=xs.map(x=>x.horizons[60]);
+            const mean=a=>a.reduce((s,x)=>s+x,0)/a.length;
+            return{count:v.length,positiveCount:v.filter(x=>x.positive).length,excessWinCount:v.filter(x=>x.excessWin).length,
+              positiveRate:v.filter(x=>x.positive).length/v.length,excessWinRate:v.filter(x=>x.excessWin).length/v.length,
+              meanNetReturn:mean(v.map(x=>x.netReturn)),meanExcessReturn:mean(v.map(x=>x.excessReturn))};
+          };
+          (async()=>{
+            const cases=[...d.frozenSelections,...d.shadowControls],ts=[BENCH,...new Set(cases.map(x=>x.ticker))],ser={};for(const t of ts)ser[t]=await get(t);
+            const b=ser[BENCH],selected=[],shadows=[];
+            for(const x of d.frozenSelections)selected.push(await evalCase(x,ser,b));
+            for(const x of d.shadowControls)shadows.push(await evalCase(x,ser,b));
+            const out={schemaVersion:'1.0',runId:d.runId,lockedAt:lock.lockedAt,revealedAt:new Date().toISOString(),
+              revealMethod:'fresh_public_price_fetch_after_lock',funnel:lock.funnel,selectedPerformance60d:aggregate(selected),
+              selected,shadowControls:shadows,nonExecutableCases:d.nonExecutableCases};
+            fs.writeFileSync(RUN+'/outcome.json',JSON.stringify(out,null,2)+'\n');console.log(JSON.stringify(out,null,2));
+          })().catch(e=>{console.error(e.stack||e);process.exit(1)});
+          NODE
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2014h2-hubfirst-v3.3-mapping-holdout-001/outcome.json
+          git commit -m "backtest: reveal 2014H2 v3.3 mapping holdout outcomes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
