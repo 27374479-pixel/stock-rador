@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2013h2-market-structure-route-holdout-001",
+  "snapshots": [
+    {
+      "id": "ipo-brokers-20131206",
+      "cutoffDate": "2013-12-06",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "600030.SH",
+        "600837.SH"
+      ]
+    },
+    {
+      "id": "ftz-negative-control-20131011",
+      "cutoffDate": "2013-10-11",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "600648.SH"
+      ]
+    }
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "priceSeries": "Tencent public daily hfq",
+    "metric": "ticker return minus CSI300 return",
+    "guard": "No post-cutoff bars requested."
+  }
+}
