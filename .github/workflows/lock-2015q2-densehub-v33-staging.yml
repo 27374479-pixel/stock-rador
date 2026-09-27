@@ -1,0 +1,66 @@
+name: lock-2015q2-densehub-v33-staging
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/lock-2015q2-densehub-v33-staging.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Build immutable staging lock
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const run='backtests/runs/2015q2-densehub-v3.3-staging-001';
+          if(fs.existsSync(run+'/outcome.json')) throw new Error('outcome should not exist before lock');
+          const d=JSON.parse(fs.readFileSync(run+'/underwriter-decisions.json','utf8'));
+          const paths=[
+            'backtests/dense-hub-ingest-protocol-v3.3-candidate.json',
+            run+'/discovery-pack.json',
+            run+'/mapping-commodity-deflation-baosteel.json',
+            run+'/mapping-chip-policy-negative-control.json',
+            run+'/regime-config.json',
+            run+'/regime/baosteel-20150424.snapshot.json',
+            run+'/expectation-snapshot.json',
+            run+'/underwriter-decisions.json'
+          ];
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          for(const p of paths) if(!fs.existsSync(p)) throw new Error('missing '+p);
+          const lock={
+            schemaVersion:'1.0',
+            runId:d.runId,
+            lockedAt:new Date().toISOString(),
+            validationClass:d.validationClass,
+            protocol:'v3.3-candidate-staging',
+            outcomeAbsentAtLock:true,
+            candidateCount:d.frozenSelections.length,
+            selectionDigest:crypto.createHash('sha256').update(JSON.stringify(d.frozenSelections)).digest('hex'),
+            discoveryDenominator:{reviewedHubItems:46,associationClusters:12},
+            completenessState:'incomplete_proxy',
+            files:paths.map(p=>({path:p,sha256:sha(p)}))
+          };
+          fs.writeFileSync(run+'/lock.json',JSON.stringify(lock,null,2)+'\n');
+          NODE
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2015q2-densehub-v3.3-staging-001/lock.json
+          git commit -m "backtest: lock 2015Q2 dense-hub v3.3 staging"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
