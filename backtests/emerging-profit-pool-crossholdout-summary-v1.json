@@ -1,0 +1,121 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Emerging Profit-Pool Cross-Holdout Summary V1",
+  "candidate": "backtests/emerging-profit-pool-materiality-candidate-v1.json",
+  "windows": [
+    {
+      "runId": "2017q1q3-hubfirst-v3.2-profitpool-holdout-001",
+      "contaminationGuard": "locked before outcome; 2017Q4 excluded",
+      "cases": [
+        {
+          "ticker": "601111.SH",
+          "name": "中国国航",
+          "label": "known_macro_transfer",
+          "selected": true,
+          "net60": 0.21489223231919286,
+          "excess60": 0.1763058656469605,
+          "excessWin": true
+        },
+        {
+          "ticker": "300137.SZ",
+          "name": "先河环保",
+          "label": "emerging_pool",
+          "selected": true,
+          "net60": -0.2069554809967461,
+          "excess60": -0.23783440767655806,
+          "excessWin": false
+        },
+        {
+          "ticker": "601600.SH",
+          "name": "中国铝业",
+          "label": "known_cycle",
+          "selected": false,
+          "shadow": true,
+          "net60": 0.06471150350832855,
+          "excess60": -0.03887814663744393,
+          "excessWin": false,
+          "note": "Long suspension made 20/60/120 executable exits collapse to the same later reopening date; interpret cautiously."
+        }
+      ]
+    },
+    {
+      "runId": "2019h1-hubfirst-v3.2-profitpool-holdout-001",
+      "contaminationGuard": "second window preregistered before 2017 outcome; 2019Q3-Q4 excluded",
+      "cases": [
+        {
+          "ticker": "002463.SZ",
+          "name": "沪电股份",
+          "label": "emerging_pool",
+          "selected": true,
+          "net60": 1.1159996452670695,
+          "excess60": 1.054071366698815,
+          "excessWin": true
+        },
+        {
+          "ticker": "002234.SZ",
+          "name": "民和股份",
+          "label": "known_cycle",
+          "selected": false,
+          "shadow": true,
+          "net60": 0.07112164943490251,
+          "excess60": 0.15778490680226098,
+          "excessWin": true,
+          "maxCloseDrawdown60": -0.35435435435435436
+        },
+        {
+          "ticker": "600111.SH",
+          "name": "北方稀土",
+          "label": "known_theme",
+          "selected": false,
+          "shadow": true,
+          "net60": -0.10693486624844772,
+          "excess60": -0.14135217543564438,
+          "excessWin": false
+        }
+      ]
+    }
+  ],
+  "labelDiagnostics": {
+    "emerging_pool": {
+      "n": 2,
+      "excessWins": 1,
+      "excessWinRate": 0.5,
+      "meanExcess60": 0.40811847951112845,
+      "medianExcess60": 0.40811847951112845,
+      "warning": "Mean/median are dominated by one extreme Hudian winner and are not statistically reliable."
+    },
+    "known_cycle_shadow": {
+      "n": 2,
+      "excessWins": 1,
+      "excessWinRate": 0.5,
+      "meanExcess60": 0.059453380082408525,
+      "medianExcess60": 0.059453380082408525,
+      "warning": "One case has suspension timing distortion; shadow outcomes are diagnostic, not portfolio returns."
+    },
+    "known_macro_transfer": {
+      "n": 1,
+      "excessWins": 1,
+      "excessWinRate": 1,
+      "meanExcess60": 0.1763058656469605
+    },
+    "known_theme": {
+      "n": 1,
+      "excessWins": 0,
+      "excessWinRate": 0,
+      "meanExcess60": -0.14135217543564438
+    }
+  },
+  "conclusions": {
+    "labelOnlyPromotion": "rejected",
+    "labelAsResearchFeature": "promising_but_unproven",
+    "priceAbsorptionHardGate": "still_not_supported",
+    "strongestSupportedStatement": "A newly material profit pool can surface major opportunities, but novelty alone does not discriminate quality. Direct operating conversion, repeatability/duration, cash economics, and expectation burden remain necessary.",
+    "examples": [
+      "Hudian: emerging 5G pool + pre-event reported profit/cash conversion + batch-delivery readiness + limited short-term absorption -> strong success.",
+      "Xianhe: emerging monitoring pool + very large single contract, but high valuation and lumpy government-project execution/cash economics -> failure.",
+      "Air China: not an emerging pool, but direct large FX sensitivity plus low price absorption -> success.",
+      "Minhe: heavily absorbed known cycle still produced positive 60d excess, although with large drawdown -> hard crowdedness exclusion would destroy recall."
+    ]
+  },
+  "productionDecision": "Do not add an emerging-profit-pool hard gate or promotion bonus to the production Skill yet."
+}
