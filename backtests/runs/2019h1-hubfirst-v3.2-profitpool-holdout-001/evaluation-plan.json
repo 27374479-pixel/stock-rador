@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2019h1-hubfirst-v3.2-profitpool-holdout-001",
+  "frozenBeforeOutcome": true,
+  "benchmark": "000300.SH",
+  "entryRule": "next executable A-share session after each frozen weekEnd",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "evaluateSelections": [
+    "002463.SZ"
+  ],
+  "evaluateShadowControls": [
+    "002234.SZ",
+    "600111.SH"
+  ],
+  "guardrails": [
+    "Do not change profit-pool labels after outcome.",
+    "Shadow controls do not count as selections.",
+    "Combine 2017 and 2019 holdouts before judging the candidate.",
+    "Do not promote the candidate based on a single successful emerging-pool case."
+  ]
+}
