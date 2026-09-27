@@ -1,0 +1,49 @@
+name: lock-2016q1-v32-quality-holdout
+on:
+  push:
+    branches: [ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926]
+    paths: [.github/workflows/lock-2016q1-v32-quality-holdout.yml]
+permissions: {contents: write}
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926, fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const run='backtests/runs/2016q1-hubfirst-v3.2-profitpool-quality-holdout-001';
+          if(fs.existsSync(run+'/outcome.json'))throw Error('outcome exists before lock');
+          const d=JSON.parse(fs.readFileSync(run+'/underwriter-decisions.json','utf8'));
+          const paths=[
+           'backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json',
+           'backtests/profit-pool-quality-candidate-v2.json',
+           run+'/discovery-pack.json',run+'/mapping-cinema-quality.json',run+'/mapping-airline-offsetting-drivers.json',
+           run+'/regime-config.json',
+           run+'/regime/cinema-light-20160226.snapshot.json',
+           run+'/regime/cinema-wanda-20160311.snapshot.json',
+           run+'/regime/airline-20160331.snapshot.json',
+           run+'/underwriter-decisions.json',run+'/evaluation-plan.json'
+          ];
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          for(const p of paths)if(!fs.existsSync(p))throw Error('missing '+p);
+          const o={schemaVersion:'1.0',runId:d.runId,lockedAt:new Date().toISOString(),validationClass:d.validationClass,
+           outcomeAbsentAtLock:true,existing2016Q1OutcomeFilesReadBeforeLock:false,
+           selectedCount:d.frozenSelections.length,shadowCount:d.shadowControls.length,nonExecutableCount:d.nonExecutableCases.length,
+           selectionDigest:crypto.createHash('sha256').update(JSON.stringify(d.frozenSelections)).digest('hex'),
+           shadowDigest:crypto.createHash('sha256').update(JSON.stringify(d.shadowControls)).digest('hex'),
+           funnel:d.funnel,
+           files:paths.map(p=>({path:p,sha256:sha(p)}))};
+          fs.writeFileSync(run+'/lock.json',JSON.stringify(o,null,2)+'\n');
+          NODE
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2016q1-hubfirst-v3.2-profitpool-quality-holdout-001/lock.json
+          git commit -m "backtest: lock 2016Q1 quality holdout"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
