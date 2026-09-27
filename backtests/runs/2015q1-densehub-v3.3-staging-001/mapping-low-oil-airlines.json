@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2015q1-densehub-v3.3-staging-001",
+  "clusterId": "low-oil-import-bargaining",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2015-04-03",
+  "futureOutcomeViewed": false,
+  "hubTrigger": {
+    "date": "2015-01-28",
+    "hub": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2015-01-28/foreign-oil-habit-no-burden-on-china-as-suppliers-seen-lining-up",
+    "claim": "Global crude suppliers were competing for Chinese demand while oil prices were depressed, improving China's buyer economics."
+  },
+  "causalNeighborhood": "Follow lower crude/jet-fuel costs into fuel-intensive transport only where fuel is a large, disclosed cost and passenger demand is not collapsing.",
+  "candidates": [
+    {
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "expressionType": "jet_fuel_cost_relief",
+      "evidence": [
+        {
+          "date": "2015-03-26",
+          "source": "Air China 2014 annual results",
+          "url": "https://www.investegate.co.uk/announcement/rns/air-china-ltd---airc/annual-report/3945037",
+          "claim": "2014 jet-fuel cost RMB34.54bn, about 35% of operating expense; air-traffic revenue RMB101.39bn."
+        },
+        {
+          "date": "2015-03-26",
+          "source": "中国证券报",
+          "url": "https://www.cs.com.cn/ssgs/gsxw/201503/t20150326_4673284.html",
+          "claim": "2014 attributable profit +13.97%; passenger revenue +6.86%, so fuel relief was not occurring against a collapsing traffic base."
+        }
+      ],
+      "eventIncrementalBridge": "clear_cost_relief_if_low_oil_persists",
+      "risks": [
+        "fuel benefit already obvious to market by late March",
+        "RMB weakness raises USD debt/lease costs",
+        "demand cyclicality"
+      ]
+    },
+    {
+      "ticker": "600115.SH",
+      "name": "东方航空",
+      "expressionType": "jet_fuel_cost_relief_control",
+      "evidence": [
+        {
+          "date": "2015-03-28",
+          "source": "China Eastern 2014 annual report",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1679555&stockid=600115",
+          "claim": "2014 annual report available before the Apr-3 checkpoint; company was similarly fuel-intensive and exposed to FX."
+        }
+      ],
+      "eventIncrementalBridge": "clear_industry_cost_relief",
+      "risks": [
+        "higher USD-liability sensitivity",
+        "expectation absorption"
+      ]
+    },
+    {
+      "ticker": "600029.SH",
+      "name": "南方航空",
+      "expressionType": "jet_fuel_cost_relief_control",
+      "evidence": [
+        {
+          "date": "2015-03-31",
+          "source": "China Southern 2014 annual report",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1685731&stockid=600029",
+          "claim": "2014 annual report available before Apr-3; fuel remained a major operating cost."
+        }
+      ],
+      "eventIncrementalBridge": "clear_industry_cost_relief",
+      "risks": [
+        "FX exposure",
+        "large fleet/capex needs"
+      ]
+    }
+  ],
+  "nextGate": "Freeze price absorption and contemporaneous expectation burden at 2015-04-03. Do not infer a buy merely from fuel sensitivity."
+}
