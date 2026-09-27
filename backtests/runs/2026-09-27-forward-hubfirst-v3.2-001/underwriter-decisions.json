@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-27-forward-hubfirst-v3.2-001",
+  "validationClass": "forward_proxy_not_terminal",
+  "decisionAt": "2026-09-27T09:05:00+09:00",
+  "protocol": "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+  "downstreamSkill": "skills/stock-rador/versions/1.9.0/SKILL.md",
+  "futureOutcomeDataViewed": false,
+  "outcomeFileMustNotExistBeforeLock": true,
+  "policy": {
+    "discovery": "Broad professional/generalist hubs define the event universe; causal-neighborhood reasoning only begins after hub detection.",
+    "selection": "Unchanged V1.9-style direct exposure, earnings/cash conversion, expectation, price absorption, quality and adversarial discipline.",
+    "frequencyQuota": false,
+    "primaryGateRelaxed": false
+  },
+  "decisions": [
+    {
+      "clusterId": "china-manufacturing-export-ecosystem-density",
+      "decision": "Research selection",
+      "ticker": "000425.SZ",
+      "name": "徐工机械",
+      "selectionState": "Research selection",
+      "associationDepth": 1,
+      "eventNovelty": "continuation_magnitude_update",
+      "reasoning": [
+        "Broad Reuters/FT coverage indicates China's global manufacturing/export ecosystem is gaining share, including in higher-value machinery.",
+        "XCMG already converted that macro state into company economics: 2026H1 overseas sales rose about 21% and exceeded half of revenue, with overseas gross margin improving.",
+        "Expectation burden remains moderate rather than extreme: 28-institution consensus EPS is about RMB0.66 for 2026 and RMB0.86 for 2027, while recent research examples imply roughly low-teens 2026E PE and high-single-digit/around-10x 2027E PE.",
+        "Price absorption is favorable for a research entry: 20d/60d/120d excess versus CSI300 were approximately -4.9pp/-3.0pp/-24.7pp at the cutoff.",
+        "This week's hub event is a broad continuation/magnitude update rather than a fresh company-specific order shock, so High-priority is not justified."
+      ],
+      "controls": [
+        "600031.SH",
+        "000528.SZ",
+        "000157.SZ"
+      ],
+      "primaryBlockedBy": [
+        "hub_event_is_continuation_not_fresh_company_reset",
+        "global_cycle_and_fx_uncertainty"
+      ],
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "If the broad export/industrial-share signal is economically meaningful, overseas order/revenue conversion should be visible over the next one to two reporting cycles; no longer horizon is selected ex post."
+      },
+      "falsifiers": [
+        "Overseas order/revenue growth decelerates materially.",
+        "Overseas gross margin deteriorates despite revenue growth.",
+        "Currency/tariff effects overwhelm operating growth.",
+        "Consensus earnings are revised down without a compensating valuation reset."
+      ]
+    },
+    {
+      "clusterId": "yuan-appreciation-margin-transfer",
+      "decision": "Research selection",
+      "ticker": "600029.SH",
+      "name": "南方航空",
+      "selectionState": "Research selection",
+      "associationDepth": 1,
+      "eventNovelty": "fresh_macro_cost_relief",
+      "reasoning": [
+        "Reuters reported the RMB at a more-than-3.5-year high while oil fell to roughly a two-week low around/below USD100 as Middle East supply prospects improved.",
+        "The company has direct sensitivity to both channels: a 1% RMB appreciation improves the H1 loss by roughly RMB237m equivalent, while fuel-price changes have multi-billion-RMB operating-cost sensitivity.",
+        "The market had not strongly front-run the thesis: 20d and 60d excess versus CSI300 were only about +1.1pp and +1.0pp, while 120d excess was about -12.9pp.",
+        "However, H1 attributable loss was still roughly RMB3.7bn and oil/currency moves can reverse quickly; this is an event-driven cost-relief research case, not a structural High-priority thesis."
+      ],
+      "controls": [
+        "600115.SH",
+        "601111.SH"
+      ],
+      "primaryBlockedBy": [
+        "large_baseline_loss",
+        "oil_and_fx_persistence_unresolved",
+        "geopolitical_reversal_risk"
+      ],
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120,
+        "rationale": "Fuel and FX changes can flow through airline earnings quickly, but a durable re-rating requires several weeks of sustained cost relief and traffic/yield stability."
+      },
+      "falsifiers": [
+        "Brent reverses materially higher and stays elevated.",
+        "RMB appreciation reverses materially.",
+        "Traffic/yields weaken enough to offset cost relief.",
+        "Company guidance or monthly operating data show no margin improvement despite the macro inputs."
+      ]
+    },
+    {
+      "clusterId": "aidc-delivery-power-bottleneck",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "The hub signal is economically real and direct A-share power-supply companies have already converted AIDC demand into revenue/deliveries.",
+        "Zhongheng's data-center power revenue grew about 98.5% in H1 and its stock has sharply de-rated over 60d, but the remaining expectation burden is still very high: a Sep-23 research example implied roughly 101x 2026E and 59x 2027E PE.",
+        "Megmeet also has real AIDC deliveries but a high forward valuation burden; Kehua has lower burden but weaker fresh order evidence and mixed 2026 profit quality.",
+        "Therefore the cluster remains a high-quality hypothesis, but no expression currently combines fresh company incrementality, sufficiently low expectation burden and clean earnings quality."
+      ],
+      "reconsiderWhen": [
+        "A new customer/order disclosure creates a company-specific incremental driver.",
+        "Valuation/expectation burden falls without fundamental deterioration.",
+        "A lower-burden expression shows direct AIDC revenue/order acceleration."
+      ]
+    },
+    {
+      "clusterId": "battery-recycling-feedstock-scarcity",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "GEM is a genuine company exception: recycling/disassembly volume grew about 39% despite broad industry feedstock scarcity, and recovered materials feed its own closed loop.",
+        "The September hub story mainly diagnoses industry structure and does not itself create a fresh absolute earnings catalyst for GEM.",
+        "This would repeat the 2020 relative-winner error if company exception were treated as sufficient for entry."
+      ],
+      "companyExceptionFound": "002340.SZ",
+      "reconsiderWhen": [
+        "A new captive-feedstock contract or regulatory transfer of feedstock creates incremental absolute economics.",
+        "Company recycling earnings contribution accelerates materially beyond the pre-event baseline."
+      ]
+    },
+    {
+      "clusterId": "property-funding-model-reset",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "Vanke-specific bank support and Beijing's ready-home/presale reform are material funding-model developments.",
+        "The current evidence is primarily liquidity/risk containment and policy transition; no clean listed-company incremental earnings/FCF bridge has been established.",
+        "Relative safety or policy support is not sufficient for an absolute opportunity."
+      ]
+    },
+    {
+      "clusterId": "rareearth-export-friction",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "Lower magnet exports can improve upstream bargaining power while damaging downstream manufacturers, so incidence is split.",
+        "The current forward pack does not yet establish a fresh, company-specific quota/export/licensing earnings delta with acceptable expectation burden.",
+        "Keep the event in the denominator rather than forcing an upstream scarcity trade."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2026-09-25",
+      "ticker": "000425.SZ",
+      "cluster": "china-manufacturing-export-ecosystem-density",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2026-09-25",
+      "ticker": "600029.SH",
+      "cluster": "yuan-appreciation-margin-transfer",
+      "selectionState": "Research selection"
+    }
+  ],
+  "diagnostics": {
+    "hubItemCount": 13,
+    "associationClusterCount": 6,
+    "researchSelectionCount": 2,
+    "highPrioritySelectionCount": 0,
+    "noSelectionClusterCount": 4,
+    "independentOpportunityWeeks": 1,
+    "selectionConversionRate": 0.3333333333333333,
+    "note": "The forward sample is one weekly checkpoint. Frequency is evaluated across repeated future checkpoints, not by inflating selections within one week."
+  },
+  "outcomePolicy": {
+    "benchmark": "000300.SH",
+    "entryRule": "next_executable_trading_session_open_after_2026-09-25",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "oneWayCostRate": 0.001,
+    "noOutcomeRevealBeforeMaturity": true
+  }
+}
