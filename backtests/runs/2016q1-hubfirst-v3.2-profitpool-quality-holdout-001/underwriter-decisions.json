@@ -1,0 +1,162 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2016q1-hubfirst-v3.2-profitpool-quality-holdout-001",
+  "validationClass": "historical_proxy_not_terminal_quality_holdout",
+  "protocol": "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+  "qualityCandidate": "backtests/profit-pool-quality-candidate-v2.json",
+  "existing2016Q1OutcomeFilesReadBeforeFreeze": false,
+  "futureOutcomeUsedInDecision": false,
+  "decisions": [
+    {
+      "clusterId": "low-oil-vs-yuan-airline-economics",
+      "weekEnd": "2016-03-31",
+      "decision": "Research selection",
+      "ticker": "600029.SH",
+      "name": "南方航空",
+      "selectionState": "Research selection",
+      "qualityLabel": "recurring_operating_improvement_with_offset",
+      "reasoning": [
+        "Broad hubs exposed a two-sided macro shock: oil collapsed while RMB weakness created very large FX losses.",
+        "The 2015 annual report showed real recurring conversion rather than a thematic story: fuel cost fell 30.36%, attributable profit rose 117.2%, and operating cash flow rose 70.1%.",
+        "The same report also quantified the offset: FX loss reached RMB5.702bn, so the thesis explicitly includes both drivers rather than treating low oil as a one-factor positive.",
+        "Price absorption was low: 20/60/120d excess versus CSI300 about -3.5/-11.9/-15.6pp.",
+        "This is a cyclical operating improvement with a material offsetting macro risk, so it remains Research only."
+      ],
+      "qualityDimensions": {
+        "operating_conversion": "reported_recurring",
+        "repeatability_duration": "cyclical_input_relief",
+        "cash_economics": "strong_operating_cash_but_large_fx_offset",
+        "consolidated_materiality": "clear",
+        "expectation_absorption": "low"
+      },
+      "primaryBlockedBy": [
+        "rmb_depreciation_can_offset_fuel_savings",
+        "oil_rebound_risk",
+        "passenger_yield_pressure"
+      ],
+      "controls": [
+        "601111.SH",
+        "600115.SH"
+      ]
+    },
+    {
+      "clusterId": "cinema-throughput-vs-single-hit",
+      "weekEnd": "2016-02-26",
+      "decision": "No selection",
+      "ticker": "300251.SZ",
+      "name": "光线传媒",
+      "selectionState": "No selection",
+      "qualityLabel": "single_project_large_but_lumpy",
+      "reasoning": [
+        "The Mermaid was unquestionably company-material in headline scale: 6.5-day box office exceeded 50% of the company's most recent audited annual revenue.",
+        "But box office is not company profit: investment share, final settlement and profit-sharing economics were not sufficiently disclosed at the cutoff.",
+        "The event is a single blockbuster rather than recurring operating conversion; repeatability and cash economics were unresolved.",
+        "Price was not crowded—20/60d excess was about -5.9/-5.1pp—so rejection is specifically a profit-pool-quality decision rather than a price-absorption decision."
+      ],
+      "shadowOutcomeRequired": true,
+      "reconsiderationTrigger": "Reported company earnings/cash conversion from the film, available only after the holdout cutoff, may be used in post-outcome diagnosis but not to change this decision."
+    },
+    {
+      "clusterId": "cinema-throughput-vs-single-hit",
+      "weekEnd": "2016-03-11",
+      "decision": "No selection",
+      "ticker": "002739.SZ",
+      "name": "万达院线",
+      "selectionState": "No selection",
+      "qualityLabel": "recurring_operating_throughput",
+      "noSelectionReason": "non_executable_suspension",
+      "reasoning": [
+        "Jan-Feb box-office revenue +69.6% and viewers +81.2% gave unusually clean recurring operating conversion.",
+        "However the stock had been suspended from 2016-02-24 for a planned acquisition/restructuring and was not executable when the confirming February operating brief was published.",
+        "A high-quality economic thesis cannot count as an opportunity if the listed expression cannot be traded."
+      ]
+    },
+    {
+      "clusterId": "housing-credit-reflation",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "qualityLabel": "unclear",
+      "reasoning": [
+        "Lower down payments and rising home prices were real broad-hub changes.",
+        "Within the Q1 cutoff, the run did not establish a sufficiently clean company-specific recurring earnings/cash conversion without using already-contaminated prior project motifs or later-quarter results."
+      ]
+    },
+    {
+      "clusterId": "iron-ore-stimulus-repricing",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "qualityLabel": "known_cycle",
+      "reasoning": [
+        "Iron ore's record 19% one-day jump was a powerful expectations reset, but the following day major banks/miners already questioned its durability.",
+        "No clean A-share company-level Q1 earnings conversion was frozen that justified chasing the commodity repricing."
+      ]
+    },
+    {
+      "clusterId": "chemchina-syngenta-global-agri-platform",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "qualityLabel": "narrative_optional",
+      "reasoning": [
+        "The parent-level Syngenta acquisition was strategically large but did not create a direct, contemporaneous earnings or asset-injection bridge to an A-share listed subsidiary within the holdout."
+      ]
+    },
+    {
+      "clusterId": "autonomous-driving-race",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "qualityLabel": "narrative_optional",
+      "reasoning": [
+        "Baidu's autonomous-driving push was strategically interesting, but the run did not establish a listed A-share supplier with reported customer/order conversion before Q1 end."
+      ]
+    },
+    {
+      "clusterId": "yuan-capital-outflow-financial-stress",
+      "decision": "No additional selection",
+      "selectionState": "No selection",
+      "qualityLabel": "known_macro_transfer",
+      "reasoning": [
+        "The most direct listed-company expression with quantified economics was already captured in the airline case; no additional clean asymmetric company bridge was frozen."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2016-03-31",
+      "ticker": "600029.SH",
+      "cluster": "low-oil-vs-yuan-airline-economics",
+      "selectionState": "Research selection",
+      "qualityLabel": "recurring_operating_improvement_with_offset"
+    }
+  ],
+  "shadowControls": [
+    {
+      "weekEnd": "2016-02-26",
+      "ticker": "300251.SZ",
+      "cluster": "cinema-throughput-vs-single-hit",
+      "selectionState": "No selection",
+      "qualityLabel": "single_project_large_but_lumpy"
+    }
+  ],
+  "nonExecutableCases": [
+    {
+      "weekEnd": "2016-03-11",
+      "ticker": "002739.SZ",
+      "cluster": "cinema-throughput-vs-single-hit",
+      "qualityLabel": "recurring_operating_throughput",
+      "reason": "suspended_since_2016-02-24"
+    }
+  ],
+  "funnel": {
+    "hubItems": 15,
+    "associationClusters": 7,
+    "clustersWithCompanyLevelValidation": 2,
+    "clustersWithExecutableAShareExpression": 2,
+    "clustersReachingUnderwriting": 2,
+    "researchSelections": 1,
+    "shadowNoSelections": 1,
+    "nonExecutableHighQualityCases": 1,
+    "noSelectionWithoutCompanyBridge": 4,
+    "selectionConversionFromHubCluster": 0.14285714285714285,
+    "interpretation": "In this holdout the main frequency bottleneck is company-level evidence/expression mapping, not the number of hub events."
+  }
+}
