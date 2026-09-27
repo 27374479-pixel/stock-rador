@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2014h2-hubfirst-v3.3-mapping-holdout-001",
+  "clusterId": "stock-connect-and-turnover-brokerage",
+  "stage": "mapping_latency_test_pre_outcome",
+  "cutoffWeekEnd": "2014-11-14",
+  "futureOutcomeViewed": false,
+  "hubTrigger": [
+    {
+      "date": "2014-11-11",
+      "source": "Bloomberg",
+      "claim": "Shanghai trading turnover reached a record before Stock Connect."
+    },
+    {
+      "date": "2014-11-16",
+      "source": "Bloomberg",
+      "claim": "Stock Connect opened cross-border access and raised potential trading activity."
+    }
+  ],
+  "candidate": {
+    "ticker": "601377.SH",
+    "name": "兴业证券",
+    "expressionType": "brokerage_volume_sensitivity",
+    "preEventEvidence": [
+      {
+        "date": "2014-08-29",
+        "source": "2014H1 report",
+        "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1481317&stockid=601377",
+        "claim": "Brokerage business was still a major business line; H1 stock/fund trading market share about 1.49%, with total agency trading volume disclosed."
+      }
+    ],
+    "evidenceClosure": "not_yet_closed",
+    "missingLink": "no_operating_conversion_yet",
+    "rationale": "The economic incidence is direct, but by the Nov-14 checkpoint there was no public Q4 company disclosure showing the new record turnover/Stock Connect flow had converted into brokerage revenue. v3.3 should retain the candidate and missing link rather than promote it."
+  }
+}
