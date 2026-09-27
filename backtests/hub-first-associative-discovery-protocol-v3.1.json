@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "3.1",
+  "title": "Hub-First Associative Discovery Protocol",
+  "status": "active_candidate",
+  "supersedes": "backtests/continuous-weekly-state-discovery-protocol-v3.json",
+  "objective": "Increase opportunity recall and sector breadth by reading broad professional information hubs first, then using AI associative reasoning to form economic hypotheses, and only afterward validating facts and mapping A-share expressions.",
+  "canonicalSourceRegistry": "config/source-registry-v4-hub-first.json",
+  "inheritsDownstreamSelectionRulesFrom": "skills/stock-rador/versions/1.9.0/SKILL.md",
+  "architecture": {
+    "stage1_discovery": "generalist_professional_information_hubs",
+    "stage2_association": "AI links dispersed news into causal economic changes without sector preselection",
+    "stage3_verification": "official, primary, company, industry and physical-data sources",
+    "stage4_mapping": "value-chain and A-share company expression search",
+    "stage5_underwriting": "unchanged V1.9 causal, expectation, valuation, quality, timing and adversarial gates",
+    "stage6_freeze_then_reveal": "selection locked before outcome"
+  },
+  "primaryDiscoveryHubs": {
+    "tierA": [
+      "Bloomberg Terminal / Bloomberg News",
+      "LSEG Workspace / Reuters News",
+      "Wind Financial Terminal",
+      "iFinD"
+    ],
+    "tierB": [
+      "S&P Capital IQ Pro",
+      "FactSet",
+      "AlphaSense",
+      "Financial Times",
+      "Wall Street Journal",
+      "Caixin"
+    ],
+    "historicalProxyRule": "When terminal archives are unavailable, public archives from Bloomberg, Reuters and other broad professional publishers may proxy discovery only; every run must be labeled proxy_not_terminal."
+  },
+  "discoveryRules": [
+    "Begin from the broad hub feed or broad time-window digest, not from an industry, ticker, winner, or specialist-source list.",
+    "Do not require a predefined primitive query taxonomy to generate the event universe.",
+    "State-change primitives may be used only after reading hub items, as an interpretation/checklist tool to understand what changed and what may be connected.",
+    "Sector and value-chain labels are assigned after candidate events are discovered.",
+    "A hub story is a pointer, not proof; recover the original source or independent primary evidence before underwriting.",
+    "Multiple stories may be combined into one hypothesis when they form a coherent causal chain even if no single story names the investment implication.",
+    "Search for second-order and cross-industry effects: beneficiary, harmed party, substitute, bottleneck relief, capacity response, margin transfer, supplier/customer spillover and financing effects.",
+    "Do not force a stock pick from every event."
+  ],
+  "associativeReasoningQuestions": [
+    "What changed relative to the prior state?",
+    "Which other hub stories from the same or adjacent weeks become more meaningful when read together?",
+    "Where does money, volume, scarcity, bargaining power or utilization move because of this change?",
+    "Who benefits directly, who is hurt, and who benefits indirectly one or two links away?",
+    "Could the obvious beneficiary already be fully priced while a less-obvious expression is not?",
+    "Which A-share companies have verifiable exposure to the changed profit pool?",
+    "What evidence would falsify the connection?"
+  ],
+  "verificationPriority": [
+    "official statistics and regulators",
+    "exchange filings and issuer IR",
+    "customer/supplier first-party evidence",
+    "industry associations and physical operating data",
+    "specialist pricing/logistics/order data",
+    "independent reputable reporting"
+  ],
+  "frequencyPolicy": {
+    "cadence": "weekly",
+    "readBroadHubFeedEveryCheckpoint": true,
+    "minimumHubClasses": 2,
+    "minimumOneChinaCentricAndOneGlobalHub": true,
+    "tradeQuota": false,
+    "selectionThresholdRelaxed": false,
+    "goal": "More opportunities must come from a broader and smarter discovery universe, not weaker underwriting."
+  },
+  "audit": {
+    "recordHubItemsReviewed": true,
+    "recordAssociationTrace": true,
+    "recordOriginalSourceRecovery": true,
+    "recordSpecialistOnlyMisses": true,
+    "metrics": [
+      "hub_items_reviewed_per_week",
+      "distinct_economic_changes_per_week",
+      "cross_sector_associations_formed",
+      "verified_event_clusters_per_52_weeks",
+      "independent_opportunity_weeks_per_52",
+      "sector_family_entropy",
+      "hub_detection_lag",
+      "event_to_research_conversion",
+      "60d_excess_win_rate",
+      "median_60d_excess"
+    ]
+  },
+  "antiOverfitting": [
+    "No named winner queries.",
+    "No sector whitelist.",
+    "No specialist feed may define the initial weekly universe.",
+    "Do not add a search category because a later winner belonged to it.",
+    "Do not tune association rules on revealed returns from the same historical year."
+  ]
+}
