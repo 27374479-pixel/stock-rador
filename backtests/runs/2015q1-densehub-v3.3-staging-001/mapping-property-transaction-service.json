@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2015q1-densehub-v3.3-staging-001",
+  "clusterId": "property-policy-easing",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2015-04-10",
+  "futureOutcomeViewed": false,
+  "hubTrigger": {
+    "date": "2015-03-30",
+    "hub": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2015-03-30/yuan-rises-as-pboc-s-zhou-signals-room-for-easing-amid-slowdown",
+    "claim": "Authorities lowered second-home down-payment requirements and shortened the home-sale tax holding period, directly lowering transaction frictions."
+  },
+  "causalNeighborhood": "Instead of defaulting to developers, follow the policy into businesses paid on transaction volume. A light-asset agency can benefit from turnover even if developer investment remains weak.",
+  "candidates": [
+    {
+      "ticker": "002285.SZ",
+      "name": "世联行",
+      "expressionType": "real_estate_transaction_service",
+      "evidence": [
+        {
+          "date": "2015-03-24",
+          "source": "2014 annual report",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=1666604&stockid=002285",
+          "claim": "Company described itself as the A-share transaction-service platform centered on expanding the real-estate transaction entrance and deepening services."
+        },
+        {
+          "date": "2015-04-10",
+          "source": "Q1 agency-sales disclosure / BOCI summary",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP201504140009184791_1.pdf",
+          "claim": "Q1 2015 agency sales RMB62.8bn, +23.14% YoY; Jan-Feb company sales grew while national commodity-home sales value fell, and market share increased."
+        }
+      ],
+      "eventIncrementalBridge": "clear_transaction_volume_and_share_gain",
+      "profitPoolState": "transaction_service_pool_can_expand_with_policy_driven_turnover_even_if_development_investment_stays_weak",
+      "risks": [
+        "Q1 sales include acquired agency business",
+        "policy can front-load demand",
+        "high-growth internet/finance initiatives add execution risk"
+      ]
+    }
+  ],
+  "nextGate": "Freeze Apr-10 price absorption and expectation/valuation. This is a second-order policy expression, not a generic property long."
+}
