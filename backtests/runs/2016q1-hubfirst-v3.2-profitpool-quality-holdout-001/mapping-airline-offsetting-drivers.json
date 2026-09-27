@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2016q1-hubfirst-v3.2-profitpool-quality-holdout-001",
+  "clusterId": "low-oil-vs-yuan-airline-economics",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2016-03-31",
+  "futureOutcomeViewed": false,
+  "hubTrigger": [
+    {
+      "date": "2016-01-06",
+      "source": "Bloomberg",
+      "claim": "Brent fell below USD35 while the yuan weakened to a five-year low, creating opposing airline cost and FX effects."
+    },
+    {
+      "date": "2016-02-15",
+      "source": "Bloomberg",
+      "claim": "The yuan rebounded sharply after policy support, partially relieving FX pressure while oil remained low versus prior-year levels."
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "600029.SH",
+      "name": "南方航空",
+      "qualityLabel": "recurring_operating_improvement_with_offset",
+      "evidence": [
+        {
+          "date": "2016-03-31",
+          "source": "2015 annual report",
+          "claim": "Fuel cost fell 30.36% YoY to RMB26.274bn and attributable profit rose 117.2%; operating cash flow rose 70.1%."
+        },
+        {
+          "date": "2016-03-31",
+          "source": "2015 annual report",
+          "claim": "FX loss reached RMB5.702bn, up sharply from RMB276m, showing currency could offset a large portion of fuel-cost relief."
+        }
+      ],
+      "qualityDimensions": {
+        "operating_conversion": "reported_recurring",
+        "repeatability_duration": "cyclical_input_relief",
+        "cash_economics": "strong_operating_cash_but_large_fx_offset",
+        "consolidated_materiality": "clear",
+        "expectation_absorption": "pending_price_snapshot"
+      },
+      "mappingConclusion": "clear_net_economic_bridge_but_two_driver_conflict",
+      "risks": [
+        "yuan depreciation reversal risk",
+        "oil rebound risk",
+        "ticket yield pressure"
+      ]
+    },
+    {
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "qualityLabel": "airline_control",
+      "evidence": [
+        {
+          "date": "2016-03-31",
+          "source": "2015 annual report",
+          "claim": "2015 attributable profit rose 77.45%; company identified low oil prices and strong international-route growth as major positives, while FX losses remained material."
+        }
+      ],
+      "mappingConclusion": "credible_control"
+    }
+  ],
+  "preliminaryDisposition": "Research only if price absorption is low and the combined fuel-plus-FX asymmetry remains positive; otherwise No selection."
+}
