@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "title": "2013H2 Market-Structure Route Holdout Summary",
+  "runId": "2013h2-market-structure-route-holdout-001",
+  "lockedBeforeOutcome": true,
+  "results": [
+    {
+      "ticker": "600030.SH",
+      "name": "中信证券",
+      "selected": true,
+      "net20": -0.059347595214478965,
+      "excess20": 0.03064724224685289,
+      "net60": -0.19686432462750147,
+      "excess60": -0.049614087841771126,
+      "net120": -0.11996373372358926,
+      "excess120": 0.012274491013507638,
+      "diagnosis": "mechanical_revenue_channel_reopened_but_system_offset_and_weak_market_regime_dominated"
+    },
+    {
+      "ticker": "600837.SH",
+      "name": "海通证券",
+      "selected": false,
+      "control": true,
+      "net60": -0.2379193145192351,
+      "excess60": -0.09066907773350474,
+      "diagnosis": "same_event_exposure_control_also_failed"
+    },
+    {
+      "ticker": "600648.SH",
+      "name": "外高桥",
+      "selected": false,
+      "shadow": true,
+      "net60": -0.4426043476196241,
+      "excess60": -0.34810415144364004,
+      "net120": -0.4698190010683514,
+      "excess120": -0.3747848826265955,
+      "diagnosis": "correct_rejection_of_narrative_dominant_massively_absorbed_policy_concept"
+    }
+  ],
+  "conclusions": {
+    "marketStructureRouteValidation": "not_validated",
+    "narrativeNegativeControl": "validated_in_this_window",
+    "mechanicalBridgeAlone": "insufficient",
+    "keyFailureMode": "An event can mechanically reopen a company revenue channel while simultaneously worsening the broader market opportunity set or creating offsetting system effects. IPO restart increased underwriting opportunity but also equity supply/liquidity pressure; quarterly revenue latency was not the only missing issue.",
+    "comparisonTo2014": "2014 Stock Connect shadow succeeded, but 2013 IPO restart failed. The difference cannot be resolved by the existing route definition without post-outcome overfitting.",
+    "productionDecision": "Do not adopt the market-structure route into the production Skill.",
+    "nextResearchQuestion": "Test whether explicit two-sided system-incidence analysis (direct company benefit versus market/liquidity/supply offset) improves discrimination on a fresh untouched window before any adoption."
+  }
+}
