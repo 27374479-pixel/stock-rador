@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q1q3-hubfirst-v3.2-profitpool-holdout-001",
+  "frozenBeforeOutcome": true,
+  "benchmark": "000300.SH",
+  "entryRule": "next executable A-share session after each frozen weekEnd",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "evaluateSelections": [
+    "601111.SH",
+    "300137.SZ"
+  ],
+  "evaluateShadowControls": [
+    "601600.SH"
+  ],
+  "comparisons": [
+    "selected_60d_positive_and_excess_win",
+    "emerging_pool_vs_known_macro_selected",
+    "emerging_pool_vs_avoided_known_cycle_shadow",
+    "20d_60d_120d_persistence",
+    "max_close_drawdown"
+  ],
+  "guardrails": [
+    "Shadow controls are diagnostic only and do not count as selections.",
+    "Do not alter labels after seeing returns.",
+    "Do not promote the emerging-profit-pool candidate based on this single holdout alone.",
+    "Any rule adoption requires a second untouched replication."
+  ]
+}
