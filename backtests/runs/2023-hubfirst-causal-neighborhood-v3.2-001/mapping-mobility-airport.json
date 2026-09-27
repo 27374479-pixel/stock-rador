@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "clusterId": "reopening-mobility-spend-divergence",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2023-05-05",
+  "futureOutcomeViewed": false,
+  "hubTrigger": {
+    "date": "2023-05-05",
+    "source": "Bloomberg",
+    "url": "https://www.bloomberg.com/news/newsletters/2023-05-05/next-china-travel-mayhem",
+    "claim": "Labor Day domestic trips reached 274m, about 19% above 2019, while total tourism spending was only about 0.7% above 2019."
+  },
+  "causalNeighborhood": "When trip volume recovers much faster than spend per trip, throughput-linked infrastructure with high fixed costs may capture operating leverage more directly than discretionary travel retailers, hotels or destination spending.",
+  "candidates": [
+    {
+      "ticker": "600004.SH",
+      "name": "白云机场",
+      "expressionType": "passenger_throughput_fixed_cost_infrastructure",
+      "mappingConclusion": "clear_operating_recovery_but_expectation_heavy",
+      "evidence": [
+        {
+          "date": "2023-04-19",
+          "source": "白云机场2023Q1",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9007108&stockid=600004",
+          "claim": "Q1 revenue RMB1.359bn +9.71%, attributable profit turned positive to RMB44.7m, operating cash flow RMB251.9m +41.65%."
+        },
+        {
+          "date": "2023-04-18",
+          "source": "国金证券",
+          "url": "https://pdf.dfcfw.com/pdf/H3_AP202304191585568204_1.PDF",
+          "claim": "2023E net profit RMB649m and PE about 57.8x; international passenger recovery and duty-free income recovery were already central expectations."
+        }
+      ],
+      "eventIncrementalEarningsBridge": "credible_volume_operating_leverage",
+      "expectationBurden": "tight",
+      "risks": [
+        "2023 recovery already consensus",
+        "international traffic still below pre-pandemic levels",
+        "non-aeronautical/duty-free economics depend on spend, not only passenger count"
+      ]
+    },
+    {
+      "ticker": "000089.SZ",
+      "name": "深圳机场",
+      "expressionType": "passenger_throughput_control",
+      "mappingConclusion": "weaker_due_to_q1_loss",
+      "evidence": [
+        {
+          "date": "2023-04-28",
+          "source": "深圳机场2023Q1",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9137569&stockid=000089",
+          "claim": "Q1 revenue +39.99% but attributable loss remained RMB107.9m."
+        }
+      ]
+    },
+    {
+      "ticker": "600009.SH",
+      "name": "上海机场",
+      "expressionType": "international_hub_control",
+      "mappingConclusion": "weaker_due_to_q1_loss",
+      "evidence": [
+        {
+          "date": "2023-04-29",
+          "source": "上海机场2023Q1",
+          "url": "https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=9162015&stockid=600009",
+          "claim": "Q1 revenue improved substantially but attributable loss remained about RMB99.3m."
+        }
+      ]
+    }
+  ],
+  "preliminaryConclusion": "White Cloud Airport provides the cleanest early company conversion, but the reopening thesis was already strongly embedded in analyst forecasts and valuation. Freeze price absorption before final disposition."
+}
