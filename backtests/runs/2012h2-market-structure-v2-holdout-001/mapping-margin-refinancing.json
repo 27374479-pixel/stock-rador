@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2012h2-market-structure-v2-holdout-001",
+  "clusterId": "margin-financing-refinancing-realized-flow",
+  "stage": "pre_outcome_market_structure_v2_mapping",
+  "earliestEvidenceClosedWeekEnd": "2012-09-14",
+  "futureOutcomeViewed": false,
+  "event": [
+    {
+      "date": "2012-08-28",
+      "source": "第一财经",
+      "claim": "Transfer-financing formally launched, directly expanding brokers' funding sources for margin-financing business."
+    },
+    {
+      "date": "2012-09-13",
+      "source": "第一财经",
+      "claim": "After 10 trading days, market margin-financing balance was nearly RMB3bn above Aug-29 and Securities Finance had lent RMB7.1bn, near its RMB7.5bn initial capital ceiling."
+    },
+    {
+      "date": "2012-08-30",
+      "source": "contemporaneous market reporting",
+      "claim": "Eleven pilot brokers, including Haitong, submitted financing instructions of RMB500m each, for about RMB5.5bn in aggregate."
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "600837.SH",
+      "name": "海通证券",
+      "expressionType": "leading_margin_financing_broker",
+      "baselineEvidence": [
+        {
+          "date": "2012-06-30",
+          "source": "industry/H1 reporting",
+          "claim": "Haitong generated about RMB218m margin-financing interest income in 2012H1, among the industry leaders; its Q1 margin-financing balance share was about 10%."
+        },
+        {
+          "date": "2012-08-24",
+          "source": "board resolution",
+          "claim": "Board approved participation in transfer-financing business, subject to regulatory approval."
+        }
+      ],
+      "routeEvidence": {
+        "qualifyingStructureEvent": "clear",
+        "quantifiedCompanyBaseline": "clear",
+        "realizedSystemFlowConversion": "realized_and_accelerating",
+        "netIncidence": "positive_but_funding_cost_reduces_spread",
+        "expectationAbsorption": "pending_price_snapshot"
+      },
+      "risks": [
+        "6% transfer-financing funding cost limited incremental spread",
+        "large brokers had own capital and might not need external funding",
+        "bear-market client demand may cap utilization"
+      ]
+    },
+    {
+      "ticker": "600030.SH",
+      "name": "中信证券",
+      "expressionType": "margin_financing_control",
+      "baselineEvidence": [
+        {
+          "date": "2012-06-30",
+          "source": "contemporaneous reporting",
+          "claim": "H1 margin-financing balance about RMB5.01bn, 8.2% market share, ranking third; H1 margin-financing interest income about RMB163m."
+        }
+      ],
+      "routeEvidence": {
+        "qualifyingStructureEvent": "clear",
+        "quantifiedCompanyBaseline": "clear",
+        "realizedSystemFlowConversion": "realized_and_accelerating",
+        "netIncidence": "positive_but_diversified",
+        "expectationAbsorption": "pending_price_snapshot"
+      }
+    }
+  ],
+  "nextGate": "freeze 20/60/120d price absorption at 2012-09-14 and select only if exposure asymmetry remains acceptable."
+}
