@@ -1,0 +1,27 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-001",
+  "purpose":"Freeze pre-outcome price absorption for hub-discovered company mappings. This is not outcome reveal.",
+  "snapshots":[
+    {
+      "id":"drug-procurement-20200904",
+      "cutoffDate":"2020-09-04",
+      "benchmarkTicker":"000300.SH",
+      "tickers":["600521.SH","600062.SH","601607.SH"],
+      "mappingPath":"backtests/runs/2020-hubfirst-associative-v3.1-001/mapping-drug-procurement.json"
+    },
+    {
+      "id":"property-deleveraging-20201009",
+      "cutoffDate":"2020-10-09",
+      "benchmarkTicker":"000300.SH",
+      "tickers":["600048.SH","000002.SZ","001979.SZ"],
+      "mappingPath":"backtests/runs/2020-hubfirst-associative-v3.1-001/mapping-property-deleveraging.json"
+    }
+  ],
+  "methodology":{
+    "lookbacksTradingDays":[20,60],
+    "priceSeries":"Tencent public daily hfq",
+    "metric":"ticker return minus CSI300 return",
+    "guard":"No bars after cutoffDate are requested."
+  }
+}
