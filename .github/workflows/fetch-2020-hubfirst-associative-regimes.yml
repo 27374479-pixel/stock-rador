@@ -1,0 +1,80 @@
+name: fetch-2020-hubfirst-associative-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/fetch-2020-hubfirst-associative-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fetch cutoff-bounded price regimes
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const cfg=JSON.parse(fs.readFileSync('backtests/runs/2020-hubfirst-associative-v3.1-001/regime-config.json','utf8'));
+          const outDir='backtests/runs/2020-hubfirst-associative-v3.1-001/regime';
+          fs.mkdirSync(outDir,{recursive:true});
+          const sym=t=>{const m=/^(\d{6})\.(SH|SZ)$/.exec(t); if(!m) throw new Error('bad '+t); return (m[2]==='SH'?'sh':'sz')+m[1];};
+          const dt=d=>new Date(d+'T00:00:00Z');
+          const minusDays=(d,n)=>{const x=dt(d); x.setUTCDate(x.getUTCDate()-n); return x.toISOString().slice(0,10);};
+          async function fetchSeries(ticker,cutoff){
+            const s=sym(ticker), start=minusDays(cutoff,180);
+            const u='https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+s+',day,'+start+','+cutoff+',260,hfq';
+            const r=await fetch(u,{headers:{'User-Agent':'stock-rador/1.0'},signal:AbortSignal.timeout(30000)});
+            if(!r.ok) throw new Error('HTTP '+r.status);
+            const j=await r.json(); const n=j?.data?.[s];
+            const rows=(n?.hfqday??n?.day??[]).map(x=>({date:x[0],open:+x[1],close:+x[2]})).sort((a,b)=>a.date.localeCompare(b.date));
+            if(rows.length<65) throw new Error('too few rows '+ticker+' '+rows.length);
+            return {url:u,rows};
+          }
+          function trailing(rows,n){
+            const end=rows.at(-1), start=rows.at(-(n+1));
+            return {startDate:start.date,endDate:end.date,return:end.close/start.close-1};
+          }
+          (async()=>{
+            for(const s of cfg.snapshots){
+              const ts=[s.benchmarkTicker,...s.tickers], ser={};
+              for(const t of ts) ser[t]=await fetchSeries(t,s.cutoffDate);
+              const br={};
+              for(const n of cfg.methodology.lookbacksTradingDays) br[n]=trailing(ser[s.benchmarkTicker].rows,n);
+              const names={};
+              for(const t of s.tickers){
+                names[t]={};
+                for(const n of cfg.methodology.lookbacksTradingDays){
+                  const r=trailing(ser[t].rows,n);
+                  names[t][n]={...r,benchmarkReturn:br[n].return,excessReturn:r.return-br[n].return};
+                }
+              }
+              const report={
+                schemaVersion:'1.0',snapshotId:s.id,cutoffDate:s.cutoffDate,fetchedAt:new Date().toISOString(),
+                provider:'Tencent public daily hfq kline',benchmarkTicker:s.benchmarkTicker,
+                methodology:cfg.methodology,benchmark:br,names,
+                sourceUrls:Object.fromEntries(ts.map(t=>[t,ser[t].url]))
+              };
+              fs.writeFileSync(outDir+'/'+s.id+'.snapshot.json',JSON.stringify(report,null,2)+'\n');
+            }
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - name: Commit snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2020-hubfirst-associative-v3.1-001/regime/*.snapshot.json
+          git commit -m "backtest: fetch 2020 hub-first cutoff regimes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
