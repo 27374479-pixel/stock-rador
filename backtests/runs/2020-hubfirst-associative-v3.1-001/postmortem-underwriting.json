@@ -1,0 +1,50 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-001",
+  "type":"postoutcome_failure_diagnostic",
+  "mayTuneSameRun":false,
+  "observedFailures":[
+    {
+      "ticker":"600521.SH",
+      "cluster":"drug-procurement-share-reset",
+      "failureClass":"baseline_strength_mistaken_for_event_incrementality",
+      "diagnosis":[
+        "Strong H1 revenue/profit/cash metrics predated the procurement event and therefore demonstrated company quality, not incremental upside caused by the new event.",
+        "The event reallocated volume but also sharply compressed unit prices; share gain and profit-pool expansion are not equivalent.",
+        "The underwriting memo did not quantify incremental post-bid product profit contribution under the new prices."
+      ]
+    },
+    {
+      "ticker":"000002.SZ",
+      "cluster":"property-deleveraging-relative-winner",
+      "failureClass":"relative_safety_without_absolute_earnings_catalyst",
+      "diagnosis":[
+        "Low leverage and strong liquidity can create a relative competitive advantage while the sector's total profit/valuation pool still contracts.",
+        "The underwriting case identified financing resilience but did not establish a near-term incremental earnings, FCF, market-share or capital-return bridge attributable to the policy.",
+        "A relative winner is not automatically an absolute benchmark-beating opportunity."
+      ]
+    }
+  ],
+  "genericHypothesesForFutureValidation":[
+    {
+      "name":"event_incremental_earnings_bridge",
+      "question":"What changes in forward revenue, unit economics, margin, utilization, cash flow or capital intensity because of this event versus the frozen pre-event baseline?",
+      "proposedState":["clear_positive","credible_positive","relative_only","neutral","negative","unresolved"],
+      "antiOverfit":"Do not require a fixed earnings threshold learned from these two cases."
+    },
+    {
+      "name":"profit_pool_state",
+      "question":"Is the affected profit pool expanding, stable, shrinking, or merely being redistributed among competitors?",
+      "proposedState":["expanding","stable","redistributing","shrinking","conflicted"],
+      "antiOverfit":"Share gain inside a shrinking pool may still be attractive, but requires explicit absolute profit math."
+    },
+    {
+      "name":"absolute_vs_relative_catalyst",
+      "question":"Does the event create an absolute earnings/FCF/valuation catalyst for the selected company, or only make it safer/better than weaker peers?",
+      "proposedState":["absolute","absolute_and_relative","relative_only","defensive_only","unresolved"],
+      "antiOverfit":"Relative-only cases should not be automatically rejected; test whether another expression captures the same event with an absolute bridge."
+    }
+  ],
+  "promotionPolicy":"None of these hypotheses changes V1.9 or v3.1 yet. Freeze and test them unchanged on a different historical year or forward sample before adoption.",
+  "discoveryConclusion":"The failures do not invalidate hub-first discovery. They separate discovery recall from underwriting conversion quality."
+}
