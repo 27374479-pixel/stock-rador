@@ -1,0 +1,543 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2015q1-densehub-v3.3-staging-001",
+  "validationClass": "historical_incomplete_proxy_untouched_year_staging",
+  "protocol": "backtests/dense-hub-ingest-protocol-v3.3-candidate.json",
+  "cutoffWindow": {
+    "start": "2015-01-01",
+    "end": "2015-03-31"
+  },
+  "untouchedChecks": {
+    "repositoryBranchesMatching2015": 0,
+    "activeBranchFilesMatching2015": 0,
+    "commitsMatching2015": 0,
+    "outcomeFilesRead": false
+  },
+  "coverage": {
+    "completenessState": "incomplete_proxy",
+    "reason": "Recovered from public Bloomberg/Yicai web archives and search indexes. The archive slice is not provably enumerable like Bloomberg Terminal/Wind/LSEG, so absence of an item cannot be treated as evidence it did not exist.",
+    "globalHub": "Bloomberg",
+    "chinaHub": "第一财经/一财",
+    "searchMethod": "Broad month + top-level business/markets/economy/company/technology/commodity/property/transport section reconstruction; no ticker, winner or event-family queries used to define the initial universe.",
+    "noTradeQuota": true,
+    "noEventQuota": true
+  },
+  "reviewedHubItems": [
+    {
+      "publishedAt": "2015-01-01",
+      "hub": "Bloomberg",
+      "section": "economy",
+      "headline": "China Factory Gauge Slips to Lowest Level Since June 2013",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-01/china-factory-gauge-slips-to-lowest-level-since-june-2013",
+      "disposition": "event_candidate",
+      "eventClusterId": "manufacturing-deflation-easing"
+    },
+    {
+      "publishedAt": "2015-01-04",
+      "hub": "Bloomberg",
+      "section": "credit",
+      "headline": "China’s Cities Face Judgment Day on Debts as Costs Soar",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-04/china-s-cities-face-judgment-day-on-debts-as-costs-soar",
+      "disposition": "event_candidate",
+      "eventClusterId": "local-debt-funding-reset"
+    },
+    {
+      "publishedAt": "2015-01-04",
+      "hub": "Bloomberg",
+      "section": "markets",
+      "headline": "Shanghai Rally Widens Valuation Premium to 5-Year High",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-04/shanghai-rally-widens-valuation-premium-to-5-year-high",
+      "disposition": "context_only",
+      "eventClusterId": null
+    },
+    {
+      "publishedAt": "2015-01-06",
+      "hub": "第一财经",
+      "section": "economy",
+      "headline": "通缩隐忧延续 专家称宏观政策不会随便调整",
+      "url": "https://www.yicai.com/news/4060232.html",
+      "disposition": "event_candidate",
+      "eventClusterId": "manufacturing-deflation-easing"
+    },
+    {
+      "publishedAt": "2015-01-11",
+      "hub": "Bloomberg",
+      "section": "markets",
+      "headline": "It’s Amateur Hour in the Booming Chinese Stock Market",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-11/it-s-amateur-hour-in-the-booming-chinese-stock-market",
+      "disposition": "context_only",
+      "eventClusterId": null
+    },
+    {
+      "publishedAt": "2015-01-13",
+      "hub": "Bloomberg",
+      "section": "economy_trade",
+      "headline": "China Export Machine Delivers Again in Prop for Growth",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-13/china-s-exports-rise-more-than-economists-forecast-in-december",
+      "disposition": "event_candidate",
+      "eventClusterId": "export-import-divergence"
+    },
+    {
+      "publishedAt": "2015-01-15",
+      "hub": "第一财经",
+      "section": "finance",
+      "headline": "降息后企业融资成本不降反升？央妈说NO！",
+      "url": "https://www.yicai.com/news/4064015.html",
+      "disposition": "context_only",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-01-16",
+      "hub": "Bloomberg",
+      "section": "technology_companies",
+      "headline": "Xiaomi to Invest in More Startups to Bolster Smart Home Push",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-16/xiaomi-to-invest-in-more-startups-to-capitalize-on-smart-homes",
+      "disposition": "event_candidate",
+      "eventClusterId": "smart-home-ecosystem-expansion"
+    },
+    {
+      "publishedAt": "2015-01-18",
+      "hub": "Bloomberg",
+      "section": "property_credit",
+      "headline": "Kaisa on Brink of Dollar Default Spooks Money Managers",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-18/kaisa-on-brink-of-dollar-default-spooks-world-s-money-managers",
+      "disposition": "event_candidate",
+      "eventClusterId": "property-credit-stress"
+    },
+    {
+      "publishedAt": "2015-01-19",
+      "hub": "Bloomberg",
+      "section": "markets_regulation",
+      "headline": "Chinese Stocks Plunge Most in Six Years on Lending Curbs",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-19/china-s-stock-index-futures-plunge-on-margin-trading-suspensions",
+      "disposition": "event_candidate",
+      "eventClusterId": "equity-margin-credit-curb"
+    },
+    {
+      "publishedAt": "2015-01-19",
+      "hub": "Bloomberg",
+      "section": "macro_finance",
+      "headline": "China’s $20 Trillion Headache Underscored by Stock Swings",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-19/china-s-20-trillion-headache-underscored-by-stock-market-swings",
+      "disposition": "context_only",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-01-20",
+      "hub": "第一财经",
+      "section": "economy",
+      "headline": "“三期叠加”新常态第一年 2015继续防风险稳投资",
+      "url": "https://www.yicai.com/news/4065684.html",
+      "disposition": "context_only",
+      "eventClusterId": "manufacturing-deflation-easing"
+    },
+    {
+      "publishedAt": "2015-01-20",
+      "hub": "Bloomberg",
+      "section": "companies_capital",
+      "headline": "Itochu, Charoen Pay $10.4 Billion for Stake in Citic",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-20/itochu-charoen-to-invest-10-4-billion-in-citic-on-china-push",
+      "disposition": "context_only",
+      "eventClusterId": null
+    },
+    {
+      "publishedAt": "2015-01-22",
+      "hub": "Bloomberg",
+      "section": "commodities",
+      "headline": "Copper Futures Decline Most in a Week on China Demand Concern",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-22/copper-falls-from-week-high-before-european-stimulus-decision",
+      "disposition": "event_candidate",
+      "eventClusterId": "commodity-demand-weakness"
+    },
+    {
+      "publishedAt": "2015-01-23",
+      "hub": "Bloomberg",
+      "section": "economy_markets",
+      "headline": "Chinese Stocks in Hong Kong Climb to Highest Since 2011 on PMI",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-23/china-s-stock-index-futures-rise-before-flash-pmi-data",
+      "disposition": "context_only",
+      "eventClusterId": "manufacturing-deflation-easing"
+    },
+    {
+      "publishedAt": "2015-01-27",
+      "hub": "Bloomberg",
+      "section": "economy_companies",
+      "headline": "China’s Stocks Fall After Industrial Companies’ Profits Slump",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-27/china-s-stock-index-futures-rise-before-industrial-profits-data",
+      "disposition": "event_candidate",
+      "eventClusterId": "manufacturing-deflation-easing"
+    },
+    {
+      "publishedAt": "2015-01-28",
+      "hub": "Bloomberg",
+      "section": "energy_trade",
+      "headline": "Foreign Oil Habit No Burden on China as Suppliers Seen Lining Up",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-28/foreign-oil-habit-no-burden-on-china-as-suppliers-seen-lining-up",
+      "disposition": "event_candidate",
+      "eventClusterId": "low-oil-import-bargaining"
+    },
+    {
+      "publishedAt": "2015-01-29",
+      "hub": "Bloomberg",
+      "section": "technology_companies",
+      "headline": "Alibaba Revenue Misses Estimates, Shares Tumble",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-29/alibaba-profit-misses-estimates-as-jack-ma-boosts-app-spending",
+      "disposition": "context_only",
+      "eventClusterId": null
+    },
+    {
+      "publishedAt": "2015-01-30",
+      "hub": "Bloomberg",
+      "section": "markets",
+      "headline": "China Stocks Have Biggest Weekly Loss in Year on Margin Risk",
+      "url": "https://www.bloomberg.com/news/articles/2015-01-30/china-s-stock-index-futures-rise-before-manufacturing-data",
+      "disposition": "duplicate_origin",
+      "eventClusterId": "equity-margin-credit-curb"
+    },
+    {
+      "publishedAt": "2015-02-02",
+      "hub": "第一财经",
+      "section": "macro_fx",
+      "headline": "全球央行刮降息风 中国“央妈”下一步怎么走?",
+      "url": "https://www.yicai.com/news/4570734.html",
+      "disposition": "event_candidate",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-03",
+      "hub": "Bloomberg",
+      "section": "technology_finance",
+      "headline": "Alibaba, LendingClub Offer U.S. Buyers Loans for China Goods",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-03/alibaba-picks-lendingclub-as-finance-partner-after-bank-of-china",
+      "disposition": "event_candidate",
+      "eventClusterId": "crossborder-ecommerce-financing"
+    },
+    {
+      "publishedAt": "2015-02-03",
+      "hub": "第一财经",
+      "section": "finance",
+      "headline": "春节越来越近，但“降准”的子弹似乎还在飞着",
+      "url": "https://www.yicai.com/news/4571658.html",
+      "disposition": "context_only",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-04",
+      "hub": "Bloomberg",
+      "section": "markets_commodities",
+      "headline": "China’s Stocks Rise for Second Day as Commodity Producers Rally",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-04/china-s-stock-index-futures-rise-before-services-data",
+      "disposition": "context_only",
+      "eventClusterId": null
+    },
+    {
+      "publishedAt": "2015-02-04",
+      "hub": "Bloomberg",
+      "section": "macro_finance",
+      "headline": "Emerging-Market Stocks Rise as China Easing Buoys Growth Outlook",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-04/emerging-stocks-climb-as-energy-shares-advance-ringgit-rallies",
+      "disposition": "event_candidate",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-06",
+      "hub": "第一财经",
+      "section": "finance",
+      "headline": "2015年降准第一季：7000亿流动性“去哪儿”?",
+      "url": "https://www.yicai.com/news/4572992.html",
+      "disposition": "event_candidate",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-06",
+      "hub": "第一财经",
+      "section": "fx",
+      "headline": "央行降准之后 人民币为何不见“暴跌”?",
+      "url": "https://www.yicai.com/news/4572991.html",
+      "disposition": "context_only",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-09",
+      "hub": "Bloomberg",
+      "section": "trade_rates",
+      "headline": "China Swap Rate Drops on Bets PBOC to Ease After Trade Data",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-09/shanghai-exchange-repo-jumps-most-in-a-week-on-ipo-funding-needs",
+      "disposition": "event_candidate",
+      "eventClusterId": "export-import-divergence"
+    },
+    {
+      "publishedAt": "2015-02-10",
+      "hub": "Bloomberg",
+      "section": "inflation",
+      "headline": "Yen Falls as Slowing China Inflation Fuels Stimulus Speculation",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-10/yen-falls-as-slowing-china-inflation-fuels-stimulus-speculation",
+      "disposition": "event_candidate",
+      "eventClusterId": "manufacturing-deflation-easing"
+    },
+    {
+      "publishedAt": "2015-02-15",
+      "hub": "Bloomberg",
+      "section": "credit",
+      "headline": "Credit Growth Boosts Chinese Bank, Industrial Stocks",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-15/credit-growth-boosts-chinese-bank-industrial-stocks",
+      "disposition": "event_candidate",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-16",
+      "hub": "第一财经",
+      "section": "credit",
+      "headline": "1月金融数据高低参差 春节前会降息吗",
+      "url": "https://www.yicai.com/news/4576487.html",
+      "disposition": "event_candidate",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-17",
+      "hub": "Bloomberg",
+      "section": "fx_capital",
+      "headline": "Yuan Nears Weak End of Trading Band on Capital Outflow Signs",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-17/yuan-declines-on-capital-outflow-signs-amid-pboc-easing-bets",
+      "disposition": "event_candidate",
+      "eventClusterId": "capital-outflow-dollar-funding"
+    },
+    {
+      "publishedAt": "2015-02-23",
+      "hub": "Bloomberg",
+      "section": "markets_companies",
+      "headline": "China Shares in Hong Kong Halt Five-Day Gain as Oil Shares Fall",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-23/china-shares-in-hong-kong-halt-five-day-advance-lenovo-drops",
+      "disposition": "context_only",
+      "eventClusterId": "property-credit-stress"
+    },
+    {
+      "publishedAt": "2015-02-25",
+      "hub": "Bloomberg",
+      "section": "property_policy",
+      "headline": "China Said to Prepare Steps to Counter Housing Market Slump",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-25/china-said-to-ready-policies-to-aid-property-if-slump-continues",
+      "disposition": "event_candidate",
+      "eventClusterId": "property-policy-easing"
+    },
+    {
+      "publishedAt": "2015-02-28",
+      "hub": "Bloomberg",
+      "section": "macro_policy",
+      "headline": "China Steps Up Easing With Second Rate Cut in Three Months",
+      "url": "https://www.bloomberg.com/news/articles/2015-02-28/china-steps-up-easing-with-second-rate-cut-in-three-months",
+      "disposition": "event_candidate",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-02-28",
+      "hub": "第一财经",
+      "section": "macro_policy",
+      "headline": "章俊：降息空间很大 可能还会下调2-3次",
+      "url": "https://www.yicai.com/news/4579846.html",
+      "disposition": "duplicate_origin",
+      "eventClusterId": "monetary-easing-credit-transmission"
+    },
+    {
+      "publishedAt": "2015-03-03",
+      "hub": "第一财经",
+      "section": "policy_infrastructure",
+      "headline": "“一带一路”给哪些产业发展带来多重机遇？",
+      "url": "https://www.yicai.com/news/4580680.html",
+      "disposition": "event_candidate",
+      "eventClusterId": "belt-road-infrastructure-capex"
+    },
+    {
+      "publishedAt": "2015-03-03",
+      "hub": "Bloomberg",
+      "section": "technology_companies",
+      "headline": "Alibaba Shares at Post-IPO Low After JD.com Tops Estimates",
+      "url": "https://www.bloomberg.com/news/articles/2015-03-03/alibaba-shares-at-post-ipo-low-after-jd-com-sales-top-estimates",
+      "disposition": "context_only",
+      "eventClusterId": null
+    },
+    {
+      "publishedAt": "2015-03-05",
+      "hub": "Bloomberg",
+      "section": "economy_policy",
+      "headline": "China Lowers Growth Goal to About 7% as Li Flags Challenges",
+      "url": "https://www.bloomberg.com/news/articles/2015-03-05/china-lowers-growth-target-to-about-7-as-headwinds-intensify",
+      "disposition": "event_candidate",
+      "eventClusterId": "belt-road-infrastructure-capex"
+    },
+    {
+      "publishedAt": "2015-03-05",
+      "hub": "第一财经",
+      "section": "markets_policy",
+      "headline": "“一带一路”四龙头尾盘异动 疑似内幕消息泄露",
+      "url": "https://www.yicai.com/news/4582220.html",
+      "disposition": "context_only",
+      "eventClusterId": "belt-road-infrastructure-capex"
+    },
+    {
+      "publishedAt": "2015-03-18",
+      "hub": "Bloomberg",
+      "section": "corporate_finance",
+      "headline": "China’s Companies Are Coming Home for Funds",
+      "url": "https://www.bloomberg.com/news/videos/2015-03-18/china-s-companies-are-coming-home-for-funds",
+      "disposition": "event_candidate",
+      "eventClusterId": "capital-outflow-dollar-funding"
+    },
+    {
+      "publishedAt": "2015-03-20",
+      "hub": "Bloomberg",
+      "section": "infrastructure_policy",
+      "headline": "Who’s Afraid of the Asian Infrastructure Investment Bank?",
+      "url": "https://www.bloomberg.com/news/articles/2015-03-20/who-s-afraid-of-the-asian-infrastructure-investment-bank-",
+      "disposition": "event_candidate",
+      "eventClusterId": "belt-road-infrastructure-capex"
+    },
+    {
+      "publishedAt": "2015-03-30",
+      "hub": "Bloomberg",
+      "section": "property_policy",
+      "headline": "Yuan Forwards Rally Most in Nine Months as Property Rules Eased",
+      "url": "https://www.bloomberg.com/news/articles/2015-03-30/yuan-rises-as-pboc-s-zhou-signals-room-for-easing-amid-slowdown",
+      "disposition": "event_candidate",
+      "eventClusterId": "property-policy-easing"
+    },
+    {
+      "publishedAt": "2015-03-30",
+      "hub": "第一财经",
+      "section": "markets_policy",
+      "headline": "“一带一路”概念暴涨：风口还能站吗？",
+      "url": "https://www.yicai.com/news/4592414.html",
+      "disposition": "context_only",
+      "eventClusterId": "belt-road-infrastructure-capex"
+    }
+  ],
+  "associationClusters": [
+    {
+      "clusterId": "manufacturing-deflation-easing",
+      "association": "Manufacturing, industrial profits and inflation were weakening together. After this hub signal, search for margin transfer from falling inputs and for businesses whose demand is policy-supported rather than assuming broad stimulus beneficiaries.",
+      "causalDirections": [
+        "input_cost_relief",
+        "policy_response",
+        "weak_demand_filter",
+        "company_exception"
+      ],
+      "status": "verify"
+    },
+    {
+      "clusterId": "monetary-easing-credit-transmission",
+      "association": "RRR/rate cuts and high bank lending coexist with weak M2/social-financing transmission. Search for direct funding-cost or balance-sheet beneficiaries only where cheaper credit actually changes earnings/cash flow.",
+      "causalDirections": [
+        "bank_margin",
+        "borrower_interest_cost",
+        "credit_creation",
+        "asset_price_transmission"
+      ],
+      "status": "verify"
+    },
+    {
+      "clusterId": "property-credit-stress",
+      "association": "Kaisa dollar-bond stress signals property-credit propagation. Map customer/supplier/financing exposure and avoid treating low leverage alone as a buy catalyst.",
+      "causalDirections": [
+        "developer_funding",
+        "supplier_credit",
+        "bank_exposure",
+        "distressed_asset_transfer"
+      ],
+      "status": "risk_and_exception_search"
+    },
+    {
+      "clusterId": "property-policy-easing",
+      "association": "Authorities moved from contemplating to implementing lower second-home down payments and shorter sales-tax holding periods. Search for transaction-volume sensitivity, mortgage origination and property-service throughput, not generic developer beta.",
+      "causalDirections": [
+        "home_transaction_volume",
+        "mortgage_origination",
+        "brokerage_services",
+        "appliance_furnishing_followthrough"
+      ],
+      "status": "verify"
+    },
+    {
+      "clusterId": "low-oil-import-bargaining",
+      "association": "Low global oil prices and rising Chinese import dependence improve buyer bargaining power while hurting upstream producers. Follow the cost shock into fuel-intensive transport and petrochemical feedstocks, but separate inventory losses from ongoing input relief.",
+      "causalDirections": [
+        "airline_fuel_cost",
+        "shipping_bunker_cost",
+        "petrochemical_feedstock",
+        "refinery_inventory_loss"
+      ],
+      "status": "high_priority_verify_and_map"
+    },
+    {
+      "clusterId": "belt-road-infrastructure-capex",
+      "association": "Lower growth targets, explicit rail/water investment, Belt-and-Road infrastructure priorities and AIIB formation point to a multi-year capital-goods/export-finance channel. Search for verified order/backlog conversion and overseas execution rather than buying policy labels.",
+      "causalDirections": [
+        "rail_equipment",
+        "engineering_backlog",
+        "power_grid_export",
+        "construction_machinery",
+        "project_finance"
+      ],
+      "status": "high_priority_verify_and_map"
+    },
+    {
+      "clusterId": "capital-outflow-dollar-funding",
+      "association": "Capital outflow, a stronger dollar and rising foreign-currency debt-service costs coincide with easier domestic funding, creating incentives for Chinese corporates to refinance onshore.",
+      "causalDirections": [
+        "domestic_bond_underwriting",
+        "fx_debt_relief_by_refinancing",
+        "brokerage_capital_markets",
+        "high_usd_debt_risk"
+      ],
+      "status": "verify"
+    },
+    {
+      "clusterId": "smart-home-ecosystem-expansion",
+      "association": "Xiaomi's broad investment into appliance/hardware startups signals ecosystem expansion beyond smartphones. Search for component/ODM/appliance partners only after first-party supplier/product evidence, not from concept labels.",
+      "causalDirections": [
+        "ODM_supply",
+        "sensors_connectivity",
+        "appliance_components",
+        "channel_ecosystem"
+      ],
+      "status": "verify"
+    },
+    {
+      "clusterId": "export-import-divergence",
+      "association": "Exports were initially resilient while imports weakened sharply. Search for export manufacturers with demand resilience and for commodity/import-cost beneficiaries, while treating the divergence as a warning on domestic demand.",
+      "causalDirections": [
+        "export_order_resilience",
+        "import_cost_relief",
+        "domestic_demand_weakness"
+      ],
+      "status": "verify"
+    },
+    {
+      "clusterId": "equity-margin-credit-curb",
+      "association": "Margin-lending restrictions caused a large market-structure shock. Treat primarily as timing/liquidity context; do not force a company earnings long.",
+      "causalDirections": [
+        "brokerage_volume",
+        "market_liquidity",
+        "crowding"
+      ],
+      "status": "context_risk"
+    }
+  ],
+  "metrics": {
+    "reviewedItemCount": 43,
+    "eventCandidateOrDuplicateCount": 31,
+    "contextOnlyCount": 12,
+    "associationClusterCount": 10,
+    "coveredHubClasses": [
+      "global_generalist",
+      "china_generalist"
+    ],
+    "completenessState": "incomplete_proxy"
+  },
+  "guardrails": [
+    "No existing 2015 repository outcomes exist or were read before this freeze.",
+    "Public-web absence cannot be interpreted as event absence.",
+    "Do not add a stock because it later performed well.",
+    "Specialist sources may only be queried after one of these frozen hub-triggered associations.",
+    "This staging run tests v3.3 workflow mechanics; it cannot prove terminal-grade source completeness."
+  ]
+}
