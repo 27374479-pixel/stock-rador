@@ -1,0 +1,91 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-001",
+  "clusterId":"property-deleveraging-and-supplier-concentration",
+  "stage":"post_hub_discovery_relative_company_mapping_pre_outcome",
+  "mappingCutoff":"2020-10-09",
+  "futureStockOutcomeViewedForThisMapping":false,
+  "hubOrigin":[
+    {
+      "hub":"Bloomberg",
+      "date":"2020-10-08",
+      "headline":"What China’s Three Red Lines Mean for Property Firms",
+      "url":"https://www.bloomberg.com/news/articles/2020-10-08/what-china-s-three-red-lines-mean-for-property-firms-quicktake"
+    },
+    {
+      "hub":"Bloomberg",
+      "date":"2020-10-26",
+      "headline":"Why Evergrande’s Investors Can’t Afford to Force a Default",
+      "url":"https://www.bloomberg.com/news/articles/2020-10-26/why-china-evergrande-s-investors-can-t-afford-to-force-a-default",
+      "note":"Used only for later cluster expansion; not required for the 2020-10-09 mapping cutoff."
+    }
+  ],
+  "economicInterpretation":[
+    "A leverage cap is a relative competitive event, not simply a bearish property headline.",
+    "Highly leveraged developers face tighter balance-sheet growth constraints; companies with stronger liquidity and lower net debt can potentially gain financing flexibility, land-acquisition capacity or market share.",
+    "Supplier/customer concentration becomes more important because financing stress at one developer can propagate to suppliers."
+  ],
+  "candidates":[
+    {
+      "ticker":"600048.SH",
+      "name":"保利发展",
+      "expressionType":"low_leverage_large_developer",
+      "mappingConclusion":"strong_relative_expression",
+      "evidence":[
+        {
+          "date":"2020-08-25",
+          "source":"Poly Developments 2020 interim report",
+          "url":"https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6534272",
+          "claim":"At 2020-06-30, cash was about RMB125.7bn; short-term borrowings about RMB3.9bn and current maturities of non-current liabilities about RMB60.4bn, giving roughly 2x cash coverage of these short debt items."
+        },
+        {
+          "date":"2020-08-25",
+          "source":"Poly Developments 2020 interim report",
+          "url":"https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6534272",
+          "claim":"Using disclosed borrowings/bonds and cash, adjusted net debt was materially below equity, indicating substantial financing headroom relative to heavily levered peers."
+        }
+      ],
+      "reasoning":"The hub event shifts the question from 'is property good?' to 'who has financing capacity when leverage growth is capped?'. Poly is a direct relative-winner candidate.",
+      "nextGate":"verify_full_three-red-line_metrics_and_expectation_absorption"
+    },
+    {
+      "ticker":"000002.SZ",
+      "name":"万科A",
+      "expressionType":"liquid_low_net_debt_large_developer",
+      "mappingConclusion":"strong_relative_control",
+      "evidence":[
+        {
+          "date":"2020-08-28",
+          "source":"Vanke 2020 interim report",
+          "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6564982&stockid=000002",
+          "claim":"At 2020-06-30, cash was RMB194.3bn; short borrowings plus current maturities were about RMB96.3bn, while adjusted net debt/equity was disclosed around 27%."
+        }
+      ],
+      "reasoning":"Vanke is a strong balance-sheet control and may be equally or more robust. It prevents choosing Poly merely because Poly looks conservative in isolation.",
+      "nextGate":"pairwise_valuation_growth_and_full_three-red-line_comparison"
+    },
+    {
+      "ticker":"001979.SZ",
+      "name":"招商蛇口",
+      "expressionType":"state_backed_developer_with_mixed_earnings",
+      "mappingConclusion":"research_control",
+      "evidence":[
+        {
+          "date":"2020-08-25",
+          "source":"China Merchants Shekou 2020 interim report",
+          "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6534679&stockid=001979",
+          "claim":"H1 revenue grew strongly but attributable profit fell sharply, making balance-sheet advantage alone insufficient for a clean earnings thesis."
+        }
+      ],
+      "reasoning":"This is useful as a counterexample: policy-relative balance-sheet strength must still connect to company earnings, not just funding access.",
+      "nextGate":"do_not_promote_without_earnings_bridge"
+    }
+  ],
+  "relativeHypothesis":"Three-red-line regulation may redistribute financing capacity and future growth toward lower-leverage developers rather than simply depress the whole sector.",
+  "guardrails":[
+    "No later return used.",
+    "Do not treat state ownership as an automatic positive.",
+    "Do not use leverage alone; valuation, land quality, sales, margins and cash conversion still matter.",
+    "Supplier risk should be evaluated separately from developer relative-winner mapping."
+  ]
+}
