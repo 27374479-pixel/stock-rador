@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-27-forward-hubfirst-v3.2-001",
+  "frozenBeforeFutureOutcome": true,
+  "purpose": "Prospective evaluation contract for the first v3.2 causal-neighborhood forward sample.",
+  "benchmark": {
+    "ticker": "000300.SH",
+    "name": "沪深300"
+  },
+  "entryRule": "next executable A-share trading session open after the frozen week-end date 2026-09-25",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "rationale": "60 trading days remains the cross-run comparison horizon; 20d measures event repricing and 120d checks persistence without choosing the best horizon after the fact.",
+  "metrics": [
+    "net_return",
+    "CSI300_excess_return",
+    "positive_return",
+    "excess_win",
+    "close_path_max_drawdown",
+    "matched_control_return_when_available",
+    "selection_rank_within_frozen_controls_when_available"
+  ],
+  "discoveryMetrics": [
+    "hub_items_reviewed",
+    "association_clusters",
+    "research_selections",
+    "independent_opportunity_weeks",
+    "association_depth_of_selection",
+    "hub_to_evidence_closed_latency_days"
+  ],
+  "forwardGuardrails": [
+    "No outcome or post-entry price data may alter the frozen discovery pack, mappings, expectation snapshot or underwriter decisions.",
+    "Do not promote a No selection cluster after observing later winners.",
+    "Post-outcome misses may diagnose source, association, verification, mapping or underwriting failure but may not tune the reported v3.2 sample.",
+    "Any rule change motivated by this sample must be tested on a later untouched sample."
+  ],
+  "selectionControls": {
+    "000425.SZ": [
+      "600031.SH",
+      "000528.SZ",
+      "000157.SZ"
+    ],
+    "600029.SH": [
+      "600115.SH",
+      "601111.SH"
+    ]
+  }
+}
