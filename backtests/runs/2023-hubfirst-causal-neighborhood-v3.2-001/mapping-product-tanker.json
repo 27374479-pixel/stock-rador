@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "clusterId": "refined-product-export-surge",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2023-04-21",
+  "futureOutcomeViewed": false,
+  "hubTrigger": {
+    "date": "2023-03-20",
+    "source": "Bloomberg",
+    "claim": "China diesel exports rose about tenfold in the first two months of 2023 as refiners used export quotas."
+  },
+  "validation": [
+    {
+      "date": "2023-03-20",
+      "source": "S&P Global Commodity Insights",
+      "claim": "China clean-product exports surged 171.2% YoY in Jan-Feb to 9.56m tonnes; gasoil exports rose 1005.4% YoY."
+    },
+    {
+      "date": "2023-04-19",
+      "source": "招商南油2023Q1",
+      "claim": "Revenue RMB1.618bn, +47.76%; attributable profit RMB406m, +292.67%; ex-item profit +281.92%; operating cash flow +464.29%."
+    },
+    {
+      "date": "2023-04-19",
+      "source": "招商南油2023Q1",
+      "claim": "Company attributed revenue growth mainly to sharply higher international product-tanker rates and higher foreign-trade business revenue amid constrained effective capacity."
+    }
+  ],
+  "causalNeighborhood": "An export surge matters to a tanker operator through seaborne product volume, distance and freight rates, not simply refinery production.",
+  "candidates": [
+    {
+      "ticker": "601975.SH",
+      "name": "招商南油",
+      "expressionType": "direct_product_tanker_operator",
+      "mappingConclusion": "clear_absolute_company_conversion",
+      "eventIncrementalEarningsBridge": "clear_positive",
+      "profitPoolState": "high_rate_and_trade_flow_support",
+      "risks": [
+        "strong 2022 tanker upcycle may already be expected",
+        "China export surge can be temporary as domestic demand recovers",
+        "freight rates are cyclical and volatile"
+      ]
+    },
+    {
+      "ticker": "600026.SH",
+      "name": "中远海能",
+      "expressionType": "diversified_oil_tanker_control",
+      "mappingConclusion": "lower_expression_purity_for_clean_products",
+      "risks": [
+        "crude tanker economics dominate consolidated exposure"
+      ]
+    }
+  ],
+  "nextGate": "freeze price absorption at 2023-04-21; separate fresh China-export evidence from already-priced 2022 tanker-cycle expectations"
+}
