@@ -1,0 +1,51 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-001",
+  "validationClass":"historical_proxy_not_terminal",
+  "decisionAt":"2026-09-27T08:55:00+08:00",
+  "futureOutcomeDataViewedForTheseSelections":false,
+  "policy":"Hub-first discovery and associative mapping; unchanged V1.9-style downstream underwriting. Research selections are counted for opportunity-frequency diagnostics but are not Primary recommendations.",
+  "decisions":[
+    {
+      "clusterId":"centralized-drug-procurement-price-reset",
+      "weekEnd":"2020-09-04",
+      "decision":"Research selection",
+      "ticker":"600521.SH",
+      "name":"华海药业",
+      "reasoning":[
+        "Bloomberg surfaced the national procurement price reset; verification showed all three HuaHai submitted products won.",
+        "The 2020 interim report showed revenue +24.6%, attributable profit +72.8% and ex-item profit +102.9%, so the event had a real company earnings engine rather than a thematic-only story.",
+        "Price absorption was mixed: 60d excess versus CSI300 was already about +14.2pp, while 20d excess was about -1.8pp.",
+        "Severe procurement price cuts leave product-level margin durability insufficiently resolved for High-priority."
+      ],
+      "controls":["600062.SH","601607.SH"],
+      "selectionState":"Research selection",
+      "primaryBlockedBy":["product_margin_uncertainty","moderate_prior_absorption"]
+    },
+    {
+      "clusterId":"property-deleveraging-and-supplier-concentration",
+      "weekEnd":"2020-10-09",
+      "decision":"Research selection",
+      "ticker":"000002.SZ",
+      "name":"万科A",
+      "reasoning":[
+        "Bloomberg surfaced the three-red-line financing regime as a relative competitive shock, not merely a sector-negative headline.",
+        "Vanke's H1 report showed revenue +5.1%, attributable profit +5.6%, operating cash flow +155.3% and net debt ratio 27.0%, providing a credible balance-sheet advantage.",
+        "At the cutoff, 60d excess versus CSI300 was about -1.1pp and 20d excess about +3.5pp, so the relative-strength thesis was not obviously over-absorbed.",
+        "The policy-to-market-share/earnings transmission was not yet realized, and property-development margins were under pressure, so High-priority is not justified."
+      ],
+      "controls":["600048.SH","001979.SZ"],
+      "selectionState":"Research selection",
+      "primaryBlockedBy":["policy_transmission_not_yet_realized","margin_pressure"]
+    }
+  ],
+  "frozenSelections":[
+    {"weekEnd":"2020-09-04","ticker":"600521.SH","cluster":"drug-procurement-share-reset","selectionState":"Research selection"},
+    {"weekEnd":"2020-10-09","ticker":"000002.SZ","cluster":"property-deleveraging-relative-winner","selectionState":"Research selection"}
+  ],
+  "frequencyDiagnostic":{
+    "hubDiscoveredClustersUnderwritten":2,
+    "researchSelectionWeeks":2,
+    "primarySelectionWeeks":0
+  }
+}
