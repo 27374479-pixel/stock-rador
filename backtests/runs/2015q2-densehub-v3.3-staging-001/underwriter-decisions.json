@@ -1,0 +1,153 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2015q2-densehub-v3.3-staging-001",
+  "validationClass": "historical_incomplete_proxy_untouched_year_staging",
+  "protocol": "backtests/dense-hub-ingest-protocol-v3.3-candidate.json",
+  "outcomeDataViewedBeforeFreeze": false,
+  "policy": {
+    "discovery": "46 reviewed broad-hub items; public archive remains incomplete_proxy.",
+    "association": "Unchanged v3.2 causal-neighborhood reasoning.",
+    "underwriting": "Unchanged V1.9-style direct exposure, event-incremental earnings/cash conversion, expectation, valuation and absorption gates.",
+    "tradeQuota": false
+  },
+  "decisions": [
+    {
+      "clusterId": "macro-slowdown-easing",
+      "decision": "No selection",
+      "reasoning": [
+        "Easing intensified but the cluster remained too broad; no incremental company order/funding-cost bridge survived without relying on general beta."
+      ]
+    },
+    {
+      "clusterId": "equity-bubble-leverage-liquidity",
+      "decision": "No selection",
+      "reasoning": [
+        "Record retail accounts, extreme tech valuations and margin financing made this a crowding/timing risk regime, not a clean fundamental long."
+      ]
+    },
+    {
+      "clusterId": "property-credit-refinancing",
+      "decision": "No selection",
+      "reasoning": [
+        "Developer distress plus equity refinancing was real, but no clean A-share absolute earnings catalyst was verified; relative safety is insufficient."
+      ]
+    },
+    {
+      "clusterId": "equity-refinancing-deleveraging",
+      "decision": "No selection",
+      "reasoning": [
+        "Bull-market equity issuance could repair balance sheets, but no company was frozen where dilution/refinancing created a clearly positive incremental per-share earnings/FCF bridge."
+      ]
+    },
+    {
+      "clusterId": "commodity-input-deflation",
+      "weekEnd": "2015-04-24",
+      "decision": "Research selection",
+      "ticker": "600019.SH",
+      "name": "宝钢股份",
+      "selectionState": "Research selection",
+      "associationDepth": 1,
+      "eventNovelty": "fresh_input_cost_magnitude_plus_company_exception",
+      "reasoning": [
+        "Bloomberg exposed the extreme iron-ore price decline and domestic high-cost mine pressure; the initial event was not a Baosteel story.",
+        "The sector-level implication was ambiguous because steel demand and steel prices were also weak, so v3.3 searched for a company exception rather than promoting the industry.",
+        "Baosteel Q1 net profit rose 2.46% while the company itself described the steel sector as returning to losses. Management/analysts attributed resilience to cost reduction and product-mix optimization; high-end automotive/electrical steel supported differentiation.",
+        "CICC judged Q1 above its expectation of a YoY decline. At the cutoff the stock still lagged CSI300 by roughly -6.4pp/-7.7pp/-35.8pp over 20/60/120d.",
+        "Expectation burden was not empty: CICC forecast 2015 profit +24.5% and about 20x 2015E PE, so this is Research rather than High-priority."
+      ],
+      "primaryBlockedBy": [
+        "weak_sector_demand",
+        "full_year_profit_recovery_already_expected",
+        "company_exception_profit_growth_modest"
+      ],
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120
+      },
+      "falsifiers": [
+        "Steel selling prices fall materially faster than ore/other input costs.",
+        "Automotive/electrical-steel product mix fails to preserve spreads.",
+        "Industry demand deterioration overwhelms company-specific cost/mix advantages."
+      ]
+    },
+    {
+      "clusterId": "local-debt-swap-funding-cost",
+      "decision": "No selection",
+      "reasoning": [
+        "Debt swaps and falling money-market rates were significant, but no company-level new project/credit-loss/earnings bridge was verified without broad infrastructure or bank beta."
+      ]
+    },
+    {
+      "clusterId": "ecommerce-mobile-economics",
+      "decision": "No selection",
+      "reasoning": [
+        "Alibaba's mobile traffic/monetization shift was economically important, but no A-share logistics/payment/merchant-service expression had a sufficiently dated and material incremental company bridge in this staging pack."
+      ]
+    },
+    {
+      "clusterId": "made-in-china-2025",
+      "decision": "No selection",
+      "reasoning": [
+        "Industrial policy was large but extremely broad; by mid-June Yicai reported the Industrial 4.0 index had risen about 81% since Mar-10, materially ahead of the market. No fresh company order reset justified paying through the theme crowding."
+      ]
+    },
+    {
+      "clusterId": "ipo-liquidity-drain",
+      "decision": "No selection",
+      "reasoning": [
+        "IPO funding freezes were a market-liquidity event. Brokerage/financial expressions were inseparable from extreme bull-market crowding."
+      ]
+    },
+    {
+      "clusterId": "rmb-internationalization-payment-infrastructure",
+      "decision": "No selection",
+      "reasoning": [
+        "CIPS was a real national financial-infrastructure build, but pre-Q2-cutoff public evidence did not reliably identify an A-share IT vendor with a material CIPS construction contract. Association without supplier proof is rejected."
+      ]
+    },
+    {
+      "clusterId": "domestic-semiconductor-industrial-policy",
+      "decision": "No selection",
+      "bestCandidate": "002371.SZ",
+      "reasoning": [
+        "The industrial-policy opportunity was large, but the direct A-share equipment expression 七星电子 had Q1 revenue -28.3% and negative ex-item earnings. Policy scale had not yet converted into company economics at the cutoff."
+      ]
+    },
+    {
+      "clusterId": "outbound-capital-europe",
+      "decision": "No selection",
+      "reasoning": [
+        "Outbound acquisition and European-asset demand were visible, but no company transaction was frozen with a clear technology/channel/cash-flow bridge and acceptable price absorption before quarter-end."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2015-04-24",
+      "ticker": "600019.SH",
+      "cluster": "commodity-input-deflation",
+      "selectionState": "Research selection"
+    }
+  ],
+  "diagnostics": {
+    "reviewedHubItems": 46,
+    "associationClusters": 12,
+    "researchSelections": 1,
+    "highPrioritySelections": 0,
+    "independentOpportunityWeeks": 1,
+    "completenessState": "incomplete_proxy",
+    "eventToResearchConversion": 0.08333333333333333
+  },
+  "outcomePolicy": {
+    "benchmark": "000300.SH",
+    "entryRule": "next executable A-share session after frozen weekEnd",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "primaryEvaluationHorizon": 60,
+    "oneWayCostRate": 0.001
+  }
+}
