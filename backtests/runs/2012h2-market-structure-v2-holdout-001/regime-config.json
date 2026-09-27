@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2012h2-market-structure-v2-holdout-001",
+  "snapshots": [
+    {
+      "id": "margin-refinancing-20120914",
+      "cutoffDate": "2012-09-14",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "600837.SH",
+        "600030.SH"
+      ]
+    },
+    {
+      "id": "qfii-negative-20120406",
+      "cutoffDate": "2012-04-06",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "600030.SH"
+      ]
+    }
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "priceSeries": "Tencent public daily hfq",
+    "metric": "ticker return minus CSI300 return",
+    "guard": "No bars after each cutoffDate are requested."
+  }
+}
