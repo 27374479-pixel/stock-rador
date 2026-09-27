@@ -1,0 +1,58 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-002",
+  "parentDiscoveryLock":"backtests/runs/2020-hubfirst-associative-v3.1-001/lock.json",
+  "clusterId":"exporter-domestic-channel-pivot",
+  "stage":"incremental_underwriting_pre_outcome",
+  "mappingCutoff":"2020-09-25",
+  "futureStockOutcomeViewedForThisMapping":false,
+  "hubOrigin":{
+    "hub":"Bloomberg",
+    "date":"2020-09-24",
+    "headline":"Alibaba’s Big Data Is Helping China’s Exporters Pivot to China",
+    "url":"https://www.bloomberg.com/news/articles/2020-09-24/alibaba-s-big-data-is-helping-china-s-exporters-pivot-to-china"
+  },
+  "association":"The important second-order question is not which exporters can survive weak overseas demand, but which manufacturers have both globally competitive OEM/ODM capacity and a functioning domestic-brand/channel engine, allowing capacity to migrate between markets.",
+  "candidate":{
+    "ticker":"002705.SZ",
+    "name":"新宝股份",
+    "expressionType":"dual_channel_export_manufacturer_plus_domestic_brand",
+    "mappingConclusion":"clear",
+    "evidence":[
+      {
+        "date":"2020-08-27",
+        "source":"Xinbao 2020 interim report",
+        "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6548672&stockid=002705",
+        "claim":"H1 revenue +24.78%, attributable profit +79.19%, operating cash flow +34.76%."
+      },
+      {
+        "date":"2020-08-27",
+        "source":"Xinbao 2020 interim report",
+        "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6548672&stockid=002705",
+        "claim":"Domestic sales +90.87%; Morphy Richards domestic revenue about RMB720m, +240%; Donlim domestic revenue about RMB170m, +70%."
+      },
+      {
+        "date":"2020-08-27",
+        "source":"Xinbao 2020 interim report",
+        "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6548672&stockid=002705",
+        "claim":"The company explicitly described itself as an export-oriented OEM/ODM leader while elevating domestic brands to strategic importance."
+      }
+    ],
+    "causalBridge":[
+      "Global supply-chain disruption and home-related demand favor flexible Chinese manufacturers with reliable delivery.",
+      "Domestic channel growth reduces dependence on a single overseas demand path.",
+      "Shared R&D/manufacturing across OEM and domestic brands can improve capacity utilization and operating leverage.",
+      "The company had already demonstrated the domestic-channel engine before the September hub story."
+    ],
+    "controls":[
+      {"ticker":"002032.SZ","name":"苏泊尔","role":"domestic_branded_small_appliance_control"},
+      {"ticker":"002959.SZ","name":"小熊电器","role":"domestic_online_small_appliance_control"}
+    ],
+    "nextGate":"price_absorption_expectation_burden_and_pairwise_expression_quality"
+  },
+  "guardrails":[
+    "Do not use the later 2020 annual report in the selection decision.",
+    "Do not infer future Q4 export strength from later data.",
+    "The selection must be based only on the hub story plus evidence available by 2020-09-25."
+  ]
+}
