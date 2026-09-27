@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "snapshots": [
+    {
+      "id": "product-tanker-20230421",
+      "cutoffDate": "2023-04-21",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "601975.SH",
+        "600026.SH"
+      ],
+      "mappingPath": "backtests/runs/2023-hubfirst-causal-neighborhood-v3.2-001/mapping-product-tanker.json"
+    },
+    {
+      "id": "auto-roro-20230901",
+      "cutoffDate": "2023-09-01",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "601872.SH",
+        "600428.SH"
+      ],
+      "mappingPath": "backtests/runs/2023-hubfirst-causal-neighborhood-v3.2-001/mapping-auto-roro.json"
+    }
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "priceSeries": "Tencent public daily hfq",
+    "metric": "ticker return minus CSI300 return",
+    "guard": "No bars after each cutoffDate are requested."
+  }
+}
