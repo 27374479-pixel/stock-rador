@@ -1,0 +1,98 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-001",
+  "clusterId":"centralized-drug-procurement-price-reset",
+  "stage":"post_hub_discovery_company_mapping_pre_outcome",
+  "mappingCutoff":"2020-08-31",
+  "futureStockOutcomeViewedForThisMapping":false,
+  "hubOrigin":{
+    "hub":"Bloomberg",
+    "date":"2020-08-20",
+    "headline":"Foreign Drug Giants Undercut by Up to 95% in China Bidding",
+    "url":"https://www.bloomberg.com/news/articles/2020-08-20/foreign-drug-giants-undercut-by-up-to-95-in-china-bidding-war"
+  },
+  "economicInterpretation":[
+    "The event is not generically bullish for pharmaceuticals: centralized procurement compresses unit prices while reallocating volume and market share.",
+    "The investable question is which listed manufacturer can survive the price reset through low cost, multiple winning products, API integration or operational scale.",
+    "A diversified distributor with small winning-product exposure may receive little earnings benefit even if it wins many tenders."
+  ],
+  "candidates":[
+    {
+      "ticker":"600521.SH",
+      "name":"华海药业",
+      "expressionType":"integrated_api_and_formulation_share_gainer",
+      "mappingConclusion":"strongest_current_expression",
+      "evidence":[
+        {
+          "date":"2020-08-20",
+          "source":"National Business Daily",
+          "url":"https://www.nbd.com.cn/articles/2020-08-20/1486243.html",
+          "claim":"All three HuaHai products that entered the third centralized procurement round won bids: valsartan, olanzapine ODT and sertraline."
+        },
+        {
+          "date":"2020-08-31",
+          "source":"HuaHai 2020 interim report",
+          "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6578068&stockid=600521",
+          "claim":"H1 revenue +24.6% YoY, attributable profit +72.8%, ex-item profit +102.9%, operating cash flow positive."
+        }
+      ],
+      "reasoning":"Multiple wins plus already-improving earnings make the volume-share reallocation mechanism company-level rather than thematic. The API/formulation combination is potentially useful under severe price compression.",
+      "nextGate":"expectation_burden_price_absorption_and_product_margin"
+    },
+    {
+      "ticker":"600062.SH",
+      "name":"华润双鹤",
+      "expressionType":"generic_bid_winner",
+      "mappingConclusion":"credible_but_weaker",
+      "evidence":[
+        {
+          "date":"2020-08-20",
+          "source":"National Business Daily",
+          "url":"https://www.nbd.com.cn/articles/2020-08-20/1486243.html",
+          "claim":"Several subsidiaries/products were proposed winners in the third procurement round."
+        },
+        {
+          "date":"2020-08-25",
+          "source":"China Resources Double-Crane 2020 interim report",
+          "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6533743&stockid=600062",
+          "claim":"H1 revenue -14.8% YoY and attributable profit -13.2%, so the pre-existing earnings engine was weaker than HuaHai."
+        }
+      ],
+      "reasoning":"Tender wins are real, but contemporaneous company earnings were contracting. This should not outrank a company with both share-gain evidence and operating acceleration.",
+      "nextGate":"quantify_bid_revenue_and_margin_contribution"
+    },
+    {
+      "ticker":"601607.SH",
+      "name":"上海医药",
+      "expressionType":"diversified_manufacturer_distributor",
+      "mappingConclusion":"low_purity_expression",
+      "evidence":[
+        {
+          "date":"2020-08-20",
+          "source":"National Business Daily / company disclosure summary",
+          "url":"https://www.nbd.com.cn/articles/2020-08-20/1486243.html",
+          "claim":"Six products were proposed winners, but the listed company is highly diversified."
+        },
+        {
+          "date":"2020-08-28",
+          "source":"Shanghai Pharmaceuticals 2020 interim report",
+          "url":"https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=6555897&stockid=601607",
+          "claim":"The group's scale is very large relative to the procurement-winning product set, weakening the earnings sensitivity of this single event."
+        }
+      ],
+      "reasoning":"A high count of winning products does not automatically create high earnings sensitivity; expression purity is materially lower.",
+      "nextGate":"reject_unless_segment_earnings_sensitivity_is_material"
+    }
+  ],
+  "frozenRankingForUnderwriting":[
+    "600521.SH",
+    "600062.SH",
+    "601607.SH"
+  ],
+  "guardrails":[
+    "No later stock return used.",
+    "Do not treat tender winning as positive unless post-cut price economics remain viable.",
+    "Do not equate number of products with earnings impact.",
+    "Final selection requires contemporaneous price/expectation and product-margin evidence."
+  ]
+}
