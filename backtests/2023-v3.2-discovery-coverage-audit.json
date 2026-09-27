@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0",
+  "title": "2023 Discovery Coverage A/B Audit: Sparse Hub v3.2 vs Legacy Quarterly Discovery",
+  "runId": "2023-v3.2-discovery-coverage-audit-001",
+  "comparedRuns": {
+    "sparseHub": "backtests/runs/2023-hubfirst-causal-neighborhood-v3.2-001",
+    "legacy": [
+      "backtests/runs/2023q2-multisource-deep-v1.0-001",
+      "backtests/runs/2023q3-multisource-deep-v1.1-001",
+      "backtests/runs/2023q4-multisource-deep-v1.0-001"
+    ]
+  },
+  "contaminationNote": "This audit was created only after the v3.2 run was locked and freshly revealed. Legacy 2023 outcomes were not read before the v3.2 selection digest was frozen.",
+  "headline": {
+    "sparseHubItems": 18,
+    "sparseAssociationClusters": 7,
+    "sparseIndependentSelectionWeeks": 3,
+    "legacyIndependentSelectionWeeksQ2Q4": 8,
+    "conclusion": "The dominant recall bottleneck is now hub-ingestion coverage, not lack of causal-neighborhood reasoning. Eighteen hand-picked hub items per year are not a defensible proxy for a Bloomberg/Wind/LSEG weekly information stream."
+  },
+  "missTaxonomy": {
+    "hub_intake_miss": "A material event was present in broad professional/generalist coverage but was not included in the frozen hub denominator.",
+    "association_miss": "The broad hub event was ingested but the economically relevant second/third-order expression was not generated or verified.",
+    "mapping_underwriting_miss": "The event and relevant economic mechanism were covered, but the company expression, expectation burden, timing or selection decision was inferior.",
+    "no_actionable_miss": "The event was absent or rejected, but later evidence shows no meaningful lost opportunity under the frozen 60d benchmark test."
+  },
+  "cases": [
+    {
+      "family": "thermal_power_margin_recovery",
+      "sparseHubCoverage": "covered",
+      "legacyExpression": "600027.SH 华电国际",
+      "v32Expression": "600011.SH 华能国际",
+      "legacy60dExcess": -0.16122439962356838,
+      "v3260dExcess": -0.06367806494308759,
+      "diagnosis": "mapping_underwriting_miss",
+      "interpretation": "Both systems understood the coal-price-to-power-margin mechanism and both failed. v3.2 chose a less-bad expression but this is not a discovery-recall problem."
+    },
+    {
+      "family": "aviation_reopening",
+      "sparseHubCoverage": "covered_via_mobility_spend_divergence",
+      "legacyExpression": "601021.SH 春秋航空",
+      "legacy60dExcess": -0.015335384015772835,
+      "v32Expression": "No selection",
+      "diagnosis": "mapping_underwriting_difference",
+      "interpretation": "v3.2 recognized the throughput-vs-spend divergence but rejected airport exposure due high expectation burden. Legacy airline selection was only a small 60d excess loser. This is not evidence for loosening the v3.2 gate."
+    },
+    {
+      "family": "lithium_rebound",
+      "sparseHubCoverage": "missed",
+      "broadHubEvidenceAvailable": [
+        {
+          "date": "2023-05-15",
+          "hub": "第一财经",
+          "url": "https://www.yicai.com/news/101756093.html",
+          "claim": "Battery-grade lithium carbonate had risen for ten consecutive sessions and rebounded about 35.6% from the late-April low."
+        },
+        {
+          "date": "2023-05-19",
+          "hub": "第一财经",
+          "url": "https://www.yicai.com/news/101761506.html",
+          "claim": "Lithium carbonate approached RMB300k/t after a rapid rebound from below RMB180k/t."
+        }
+      ],
+      "legacyExpression": "002466.SZ 天齐锂业",
+      "legacy60dExcess": -0.1537832772845028,
+      "diagnosis": "hub_intake_miss",
+      "interpretation": "The sparse hub feed failed to ingest a clearly visible broad-market event. The missed legacy selection later failed, so this miss did not cost return, but it proves the source universe was incomplete."
+    },
+    {
+      "family": "auto_export",
+      "sparseHubCoverage": "covered",
+      "legacyExpression": "002594.SZ 比亚迪",
+      "v32Expression": "601872.SH 招商轮船 / ro-ro",
+      "legacy60dExcess": -0.1296067079366957,
+      "v3260dExcess": 0.08072416120247039,
+      "v32120dExcess": 0.24980271224805806,
+      "diagnosis": "association_and_expression_improvement",
+      "interpretation": "This is the cleanest evidence for causal-neighborhood value. The same broad state change produced a failed obvious first-order automaker expression in legacy discovery but a successful second-order scarce ro-ro-capacity expression in v3.2."
+    },
+    {
+      "family": "oil_upcycle",
+      "sparseHubCoverage": "missed",
+      "legacyExpression": "600938.SH 中国海油",
+      "legacy60dExcess": 0.12557908249249916,
+      "diagnosis": "hub_intake_miss",
+      "interpretation": "A positive legacy opportunity was absent from the 18-item hub denominator. The loss is attributable to sparse intake before association is even attempted."
+    },
+    {
+      "family": "memory_bottoming_q3",
+      "sparseHubCoverage": "missed",
+      "broadHubEvidenceAvailable": [
+        {
+          "date": "2023-01-30/31",
+          "hub": "Bloomberg",
+          "claim": "The global memory rout, inventory glut and producer capex/output cuts were repeatedly covered as a major cycle event."
+        },
+        {
+          "date": "2023-10-10",
+          "hub": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2023-10-10/samsung-s-sales-drop-13-in-sign-of-persisting-chip-slump",
+          "claim": "Samsung's profit decline slowed, with AI-related demand identified as important to memory-price recovery."
+        }
+      ],
+      "legacyExpression": "603986.SH 兆易创新",
+      "legacy60dExcess": 0.07263957483270977,
+      "diagnosis": "hub_intake_miss",
+      "interpretation": "The sparse hub feed missed a broad global semiconductor cycle that generalist Bloomberg coverage repeatedly surfaced."
+    },
+    {
+      "family": "memory_reversal_q4",
+      "sparseHubCoverage": "missed",
+      "broadHubEvidenceAvailable": [
+        {
+          "date": "2023-10-30",
+          "hub": "Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2023-10-30/samsung-profit-beats-estimates-in-sign-of-chip-recovery",
+          "claim": "Samsung said the memory recovery was taking hold after profit beat expectations."
+        }
+      ],
+      "legacyExpression": "603986.SH 兆易创新",
+      "legacy60dExcess": -0.23845286236128493,
+      "diagnosis": "hub_intake_miss",
+      "interpretation": "Again the intake was incomplete, though the missed legacy trade later failed. Dense ingestion must improve recall without implying automatic promotion."
+    },
+    {
+      "family": "ai_infrastructure_optical",
+      "sparseHubCoverage": "missed",
+      "broadHubEvidenceAvailable": [
+        {
+          "date": "2023-06-05",
+          "hub": "第一财经",
+          "url": "https://www.yicai.com/brief/101774744.html",
+          "claim": "A-share supplier disclosure showed 400G optical modules in mass production and 800G silicon-photonics modules ready for small-batch delivery."
+        },
+        {
+          "date": "2023-06-30",
+          "hub": "第一财经",
+          "url": "https://www.yicai.com/brief/101795169.html",
+          "claim": "Another supplier reported 800G optical-module products entering small-batch supply."
+        }
+      ],
+      "legacyExpression": "300308.SZ 中际旭创",
+      "legacy60dNet": 0.545805573324444,
+      "legacy60dExcess": 0.575937712119327,
+      "legacy120dExcess": 0.7297829495128911,
+      "diagnosis": "hub_intake_miss_high_cost",
+      "interpretation": "This is the most expensive miss. The broad AI/high-speed interconnect transition was visible in professional/generalist coverage, but the 18-item v3.2 denominator never ingested the event family, so causal association had no chance to operate."
+    }
+  ],
+  "conclusions": [
+    "v3.2 improves expression search when the broad event is actually ingested.",
+    "Sparse hand-picked hub samples create a false ceiling on opportunity frequency and can miss the year's highest-value opportunity family.",
+    "The next change must target source-ingestion completeness while leaving v3.2 causal association and downstream underwriting unchanged.",
+    "More hub items must not imply more selections: dense ingest, sparse promotion."
+  ],
+  "prohibitedInference": "Do not conclude that all legacy misses should have been selected. Several missed families later lost money. The audit diagnoses event-universe incompleteness, not a reason to relax underwriting."
+}
