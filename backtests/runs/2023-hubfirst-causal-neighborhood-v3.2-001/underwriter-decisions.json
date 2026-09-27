@@ -1,0 +1,208 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2023-hubfirst-causal-neighborhood-v3.2-001",
+  "validationClass": "historical_proxy_not_terminal_external_replication",
+  "protocol": "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+  "existing2023OutcomeFilesReadBeforeFreeze": false,
+  "futureOutcomeUsedInDecision": false,
+  "policy": {
+    "discovery": "Broad Bloomberg/Yicai professional-hub items define the universe; causal-neighborhood hypotheses are generated only after hub detection.",
+    "validation": "Specialist/primary/company evidence may verify or kill a hub-triggered hypothesis but may not define the initial universe.",
+    "downstreamRulesChanged": false,
+    "frequencyQuota": false,
+    "primaryGateRelaxed": false
+  },
+  "decisions": [
+    {
+      "clusterId": "refined-product-export-surge",
+      "weekEnd": "2023-04-21",
+      "decision": "Research selection",
+      "ticker": "601975.SH",
+      "name": "招商南油",
+      "selectionState": "Research selection",
+      "associationDepth": 1,
+      "eventNovelty": "fresh_trade_flow_inside_known_upcycle",
+      "reasoning": [
+        "Bloomberg exposed an extreme China diesel-export flow change rather than a tanker-sector screen.",
+        "S&P Global independently quantified Jan-Feb clean-product exports +171.2% and gasoil exports +1005.4%, creating an incremental seaborne product-flow driver.",
+        "Q1 company results converted the shipping cycle into earnings: attributable profit +292.7%, ex-item +281.9%, and company attributed revenue growth to high international product-tanker rates and higher foreign-trade revenue.",
+        "However, the broader MR product-tanker upcycle and the company's rate sensitivity were already well understood before the cutoff; Apr-19 research described Q1 as in line with expectations and valued 2023E at about 11x PE.",
+        "Price was deeply de-rated despite earnings: 20d/60d/120d excess versus CSI300 about -9.7/-15.9/-44.2pp."
+      ],
+      "controls": [
+        "600026.SH"
+      ],
+      "primaryBlockedBy": [
+        "fresh_driver_is_incremental_inside_known_cycle",
+        "freight_rate_cycle_reversal_risk",
+        "q1_result_was_in_line_with_expectations"
+      ],
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120
+      },
+      "falsifiers": [
+        "China clean-product exports normalize sharply as domestic demand absorbs refinery output.",
+        "MR freight rates fall enough to offset increased operating fleet.",
+        "Company foreign-trade TCE or earnings guidance deteriorates despite the export flow."
+      ]
+    },
+    {
+      "clusterId": "reopening-mobility-spend-divergence",
+      "weekEnd": "2023-05-05",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "bestCandidate": "600004.SH",
+      "reasoning": [
+        "Bloomberg identified a real divergence: domestic trip volume exceeded 2019 while aggregate spending barely exceeded 2019, favoring throughput-linked infrastructure over spend-sensitive travel businesses.",
+        "White Cloud Airport had already returned to Q1 profitability and positive operating cash flow, making the company mapping economically credible.",
+        "But airport reopening/international-traffic recovery was already a central consensus thesis; an Apr-18 report implied about 57.8x 2023E PE.",
+        "Price absorption was not extreme, but expectation burden was too high for a hub item that mainly refined an already-known reopening thesis."
+      ],
+      "reconsiderWhen": [
+        "traffic recovery materially exceeds forecasts while valuation compresses",
+        "international traffic/airport monetization resets higher than consensus"
+      ]
+    },
+    {
+      "clusterId": "producer-deflation-margin-redistribution",
+      "weekEnd": "2023-06-30",
+      "decision": "Research selection",
+      "ticker": "600011.SH",
+      "name": "华能国际",
+      "selectionState": "Research selection",
+      "associationDepth": 1,
+      "eventNovelty": "fresh_cost_decline_magnitude_inside_known_margin_recovery",
+      "reasoning": [
+        "Bloomberg's producer-deflation signal triggered a margin-transfer search rather than an electric-utility sector scan.",
+        "Physical coal validation showed Q5500 falling from roughly RMB1175/t at the start of 2023 to roughly RMB795-820/t in late June, even entering peak summer demand.",
+        "Huaneng Q1 had already shown the causal bridge: profit +335.3%, explicitly helped by lower coal prices plus higher power prices.",
+        "The recovery was already partly expected: May research used about 14x 2023E PE and the stock had strongly rerated over prior months.",
+        "At end-June, 60d/120d excess were about +10.6/+16.2pp, while 20d excess had reversed to about -7.5pp. The much larger coal-price decline is a magnitude update, not a brand-new thesis."
+      ],
+      "controls": [
+        "600027.SH"
+      ],
+      "primaryBlockedBy": [
+        "margin_recovery_already_consensus",
+        "prior_medium_term_rerating",
+        "tariff_and_coal_reversal_risk"
+      ],
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120
+      },
+      "falsifiers": [
+        "Thermal coal prices rebound materially and persist.",
+        "Power tariffs or utilization fall enough to offset fuel-cost relief.",
+        "Reported thermal-power unit margins fail to improve despite lower coal input cost."
+      ]
+    },
+    {
+      "clusterId": "auto-export-roro-bottleneck",
+      "weekEnd": "2023-09-01",
+      "decision": "Research selection",
+      "ticker": "601872.SH",
+      "name": "招商轮船",
+      "selectionState": "Research selection",
+      "associationDepth": 2,
+      "eventNovelty": "underappreciated_segment_acceleration_inside_diversified_group",
+      "reasoning": [
+        "Yicai broad trade coverage exposed a striking divergence: overall exports -14.5% while automobile exports +118.5%.",
+        "Causal-neighborhood reasoning followed the auto-export surge into scarce ro-ro/PCTC capacity instead of defaulting to automakers.",
+        "The H1 company report closed the company bridge: ro-ro profit RMB126m, +1304.8%, with international rentals at records and scarce slots.",
+        "The consolidated company remained inexpensive: late-Aug research implied roughly 8x 2023E PE and large target-price upside.",
+        "Price absorption at Sep-1 was modest: 20d/60d excess about +2.7/+8.7pp, with 120d excess about -13.8pp.",
+        "Ro-ro remained a minority segment, so the event could be diluted by oil/dry-bulk/container earnings."
+      ],
+      "controls": [
+        "600428.SH"
+      ],
+      "primaryBlockedBy": [
+        "roro_segment_is_minority_of_group",
+        "diversified_shipping_cycle_risk",
+        "auto_export_growth_persistence_uncertain"
+      ],
+      "expectedRealization": {
+        "earliestTradingDays": 20,
+        "baseTradingDays": 60,
+        "latestTradingDays": 120
+      },
+      "falsifiers": [
+        "China auto exports decelerate materially.",
+        "PCTC charter rates or utilization fall sharply.",
+        "Ro-ro profit fails to continue expanding within consolidated earnings."
+      ]
+    },
+    {
+      "clusterId": "goods-trade-weak-service-resilience",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "The hub evidence supports services being relatively stronger than goods trade, but the cleanest throughput expression was already evaluated in the mobility/airport cluster.",
+        "No separate company-level absolute earnings bridge was frozen without duplicating the same reopening exposure."
+      ]
+    },
+    {
+      "clusterId": "property-crisis-credit-propagation",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "Property stress is a strong risk/credit-propagation signal, but no long A-share expression with a clean absolute earnings catalyst was established.",
+        "A low-leverage or relatively safer developer would repeat the relative-winner-without-absolute-catalyst failure class seen in prior diagnostics."
+      ]
+    },
+    {
+      "clusterId": "recovery-green-shoots-vs-trade-slump",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "reasoning": [
+        "The mixed domestic/external regime is useful for company-exception search but did not produce an additional independently verified company catalyst beyond the frozen auto-export and margin-transfer clusters.",
+        "Do not create another selection merely to increase annual frequency."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2023-04-21",
+      "ticker": "601975.SH",
+      "cluster": "refined-product-export-surge",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2023-06-30",
+      "ticker": "600011.SH",
+      "cluster": "producer-deflation-margin-redistribution",
+      "selectionState": "Research selection"
+    },
+    {
+      "weekEnd": "2023-09-01",
+      "ticker": "601872.SH",
+      "cluster": "auto-export-roro-bottleneck",
+      "selectionState": "Research selection"
+    }
+  ],
+  "diagnostics": {
+    "hubItemCount": 18,
+    "associationClusterCount": 7,
+    "underwrittenClusterCount": 7,
+    "researchSelectionCount": 3,
+    "highPrioritySelectionCount": 0,
+    "independentOpportunityWeeks": 3,
+    "secondOrderSelectionCount": 1,
+    "note": "No minimum trade count is targeted; all seven association clusters remain in the denominator."
+  },
+  "outcomePolicy": {
+    "benchmark": "000300.SH",
+    "entryRule": "next executable A-share session after each frozen weekEnd",
+    "holdingTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "primaryEvaluationHorizon": 60,
+    "oneWayCostRate": 0.001
+  }
+}
