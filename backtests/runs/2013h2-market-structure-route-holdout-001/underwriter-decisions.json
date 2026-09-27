@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2013h2-market-structure-route-holdout-001",
+  "validationClass": "historical_proxy_not_terminal_market_structure_holdout",
+  "candidate": "backtests/market-structure-rerating-route-candidate-v1.json",
+  "existing2013OutcomeFilesReadBeforeFreeze": false,
+  "futureOutcomeUsedInDecision": false,
+  "decisions": [
+    {
+      "clusterId": "ipo-restart-broker-investment-banking",
+      "weekEnd": "2013-12-06",
+      "decision": "Research selection",
+      "ticker": "600030.SH",
+      "name": "中信证券",
+      "selectionState": "Research selection",
+      "route": "market_structure",
+      "reasoning": [
+        "The broad-hub event was a regulatory reopening of IPO issuance after a more-than-one-year freeze, with roughly 50 companies expected to complete approval preparations by end-Jan and 760+ in the queue.",
+        "The mapping is mechanical rather than narrative: in H1, Citic Securities completed zero domestic IPOs because the channel was closed, while its refinancing underwriting market share was 11.46% and ranked first, proving existing distribution and underwriting capability.",
+        "Fresh IPO fee revenue could not yet be reported by the event week, but the regulatory quantity change directly reopens a previously blocked revenue product.",
+        "Price absorption was positive but not extreme: 20/60/120d excess versus CSI300 about +9.0/+10.8/+10.4pp.",
+        "IPO supply can also drain secondary-market liquidity, so the signal remains Research rather than High-priority."
+      ],
+      "routeEvidence": {
+        "mechanicalEconomics": "clear",
+        "quantifiedBaseline": "clear",
+        "freshOperatingConversion": "not_yet_possible",
+        "priceAbsorption": "moderate",
+        "controlChecked": "600837.SH"
+      },
+      "primaryBlockedBy": [
+        "ipo_fee_realization_timing",
+        "secondary_market_liquidity_offset",
+        "investment_banking_not_majority_of_group_earnings"
+      ]
+    },
+    {
+      "clusterId": "shanghai-ftz-concept-vs-direct-economics",
+      "weekEnd": "2013-10-11",
+      "decision": "No selection",
+      "ticker": "600648.SH",
+      "name": "外高桥",
+      "selectionState": "No selection",
+      "route": "negative_control",
+      "reasoning": [
+        "FTZ policy optionality was real, but direct company monetization remained insufficiently quantified.",
+        "Price absorption was extreme: 20/60/120d excess versus CSI300 about +167/+214/+422pp.",
+        "This is precisely the narrative-only policy case the market-structure route is designed to reject."
+      ],
+      "shadowOutcomeRequired": true
+    },
+    {
+      "clusterId": "interbank-liquidity-stress",
+      "decision": "No selection",
+      "selectionState": "No selection",
+      "route": "negative_control",
+      "reasoning": [
+        "Cash-crunch and liquidity injections changed system funding conditions but created broad, offsetting effects across banks and brokers.",
+        "No uniquely quantified listed-company asymmetry was frozen that met the route's mechanical-economics requirement."
+      ]
+    }
+  ],
+  "frozenSelections": [
+    {
+      "weekEnd": "2013-12-06",
+      "ticker": "600030.SH",
+      "cluster": "ipo-restart-broker-investment-banking",
+      "selectionState": "Research selection",
+      "route": "market_structure"
+    }
+  ],
+  "shadowControls": [
+    {
+      "weekEnd": "2013-10-11",
+      "ticker": "600648.SH",
+      "cluster": "shanghai-ftz-concept-vs-direct-economics",
+      "selectionState": "No selection",
+      "reason": "Narrative-dominant and massively price-absorbed policy concept."
+    }
+  ],
+  "controls": [
+    {
+      "weekEnd": "2013-12-06",
+      "ticker": "600837.SH",
+      "role": "same-event broker exposure control"
+    }
+  ]
+}
