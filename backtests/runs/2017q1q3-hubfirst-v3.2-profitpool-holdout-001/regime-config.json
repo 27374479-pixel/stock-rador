@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q1q3-hubfirst-v3.2-profitpool-holdout-001",
+  "snapshots": [
+    {
+      "id": "aluminium-known-cycle-20170818",
+      "cutoffDate": "2017-08-18",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "601600.SH",
+        "000807.SZ",
+        "600219.SH"
+      ],
+      "label": "known_cycle"
+    },
+    {
+      "id": "environmental-emerging-pool-20170929",
+      "cutoffDate": "2017-09-29",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "300137.SZ",
+        "300203.SZ",
+        "002658.SZ"
+      ],
+      "label": "emerging_pool"
+    }
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "priceSeries": "Tencent public daily hfq",
+    "metric": "ticker return minus CSI300 return",
+    "guard": "No bars after each cutoffDate are requested."
+  }
+}
