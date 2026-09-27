@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2014h2-hubfirst-v3.3-mapping-holdout-001",
+  "snapshots": [
+    {
+      "id": "oil-tanker-20140905",
+      "cutoffDate": "2014-09-05",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "600026.SH"
+      ]
+    },
+    {
+      "id": "railway-20141031",
+      "cutoffDate": "2014-10-31",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "601186.SH",
+        "601766.SH"
+      ]
+    },
+    {
+      "id": "broker-shadow-20141114",
+      "cutoffDate": "2014-11-14",
+      "benchmarkTicker": "000300.SH",
+      "tickers": [
+        "601377.SH",
+        "600837.SH"
+      ]
+    }
+  ],
+  "methodology": {
+    "lookbacksTradingDays": [
+      20,
+      60,
+      120
+    ],
+    "priceSeries": "Tencent public daily hfq",
+    "metric": "ticker return minus CSI300 return",
+    "guard": "No bars after each cutoffDate are requested."
+  }
+}
