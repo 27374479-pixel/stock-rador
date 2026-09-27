@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Market-Structure / Rerating Route Candidate V1",
+  "status": "postoutcome_hypothesis_not_adopted",
+  "motivation": [
+    "2014 Stock Connect + record turnover mapped directly to brokers, but fresh Q4 brokerage revenue was not yet observable; waiting for reported conversion missed a large subsequent rerating.",
+    "2014 oil-tanker fundamental improvement delivered positive absolute return but materially lagged a broad liquidity/rerating bull market."
+  ],
+  "scope": "Parallel route for event classes where the event directly changes market access, balance-sheet capacity, transaction volume, capital allocation, regulatory economics or valuation regime before quarterly earnings evidence can exist.",
+  "qualifyingEventTypes": [
+    "market_access_or_trading_rule_change",
+    "liquidity_or_credit_regime_shift",
+    "regulatory_change_with_mechanical_revenue_sensitivity",
+    "capital_structure_or_balance_sheet_constraint_release",
+    "index_or_market_structure_flow_change"
+  ],
+  "requiredEvidence": [
+    "Broad professional hub event is frozen before company search.",
+    "There is a direct mechanical mapping from event to company revenue/capital/volume sensitivity.",
+    "Pre-event company filings provide a quantified baseline sensitivity, market share, balance-sheet exposure or business mix.",
+    "The event itself changes the relevant quantity or rule immediately; no speculative multi-hop narrative.",
+    "Price absorption and cross-sectional relative opportunity are explicitly measured.",
+    "At least one control company is checked to separate pure exposure from generic market beta."
+  ],
+  "disqualifiers": [
+    "pure thematic narrative without mechanical economics",
+    "more than two unsupported causal jumps",
+    "only long-run TAM story",
+    "event already fully absorbed with no new magnitude/duration reset",
+    "company exposure too diversified to quantify"
+  ],
+  "outputStates": [
+    "Research selection",
+    "No selection",
+    "Wait for operating conversion"
+  ],
+  "relationshipToFundamentalRoute": "Parallel, not replacement. Fundamental recurring-earnings route keeps company conversion requirements. Market-structure route allows pre-report selection only when the economic mapping is mechanical and quantified.",
+  "antiOverfit": [
+    "Do not validate on 2014 Stock Connect.",
+    "Do not hard-code brokers or Stock Connect.",
+    "Do not use broad bull-market momentum as a substitute for a qualifying event.",
+    "No automatic promotion for liquidity easing."
+  ],
+  "validationPlan": {
+    "historical": "Test unchanged on a clean untouched window with at least one market-structure event and one negative control.",
+    "prospective": "Apply unchanged to future 2026 weekly hub checkpoints.",
+    "successMetrics": [
+      "60d_excess_win_rate",
+      "median_60d_excess",
+      "false_positive_rate",
+      "incremental_opportunity_weeks",
+      "max_drawdown"
+    ]
+  }
+}
