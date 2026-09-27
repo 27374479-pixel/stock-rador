@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Emerging Profit-Pool Candidate Second Replication Plan",
+  "frozenBeforeFirstHoldoutOutcome": true,
+  "candidate": "backtests/emerging-profit-pool-materiality-candidate-v1.json",
+  "firstHoldout": "2017Q1-Q3",
+  "secondHoldout": "2019H1",
+  "rationale": "Repository experiments exist for 2019Q3-Q4 but no matching v3.2/profit-pool training artifacts were found for 2019H1. Freeze H1 as the second replication window before revealing the 2017 holdout.",
+  "rules": [
+    "Use the same broad professional/generalist hub-first discovery architecture.",
+    "Assign profit-pool labels before price outcomes.",
+    "Do not use 2019Q3-Q4 artifacts or known winners to construct the H1 universe.",
+    "Do not alter the emerging-pool definition or label states after the 2017 result.",
+    "Production adoption requires evidence across both holdouts, not one successful example."
+  ],
+  "evaluation": [
+    "60d_excess_win_rate_by_label",
+    "median_60d_excess_by_label",
+    "selection_frequency",
+    "false_positive_rate",
+    "price_absorption_at_selection"
+  ]
+}
