@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2013h2-market-structure-route-holdout-001",
+  "validationClass": "historical_proxy_not_terminal_market_structure_holdout",
+  "candidate": "backtests/market-structure-rerating-route-candidate-v1.json",
+  "cutoffScope": "2013-06-01 through 2013-12-31",
+  "existing2013ArtifactsFoundBeforeConstruction": false,
+  "existing2013OutcomeFilesReadForConstruction": false,
+  "namedHistoricalWinnerQueries": false,
+  "purpose": "Untouched H2 2013 validation of the parallel market-structure/rerating route using broad generalist hubs first.",
+  "hubItems": [
+    {
+      "date": "2013-06-19",
+      "hub": "Bloomberg",
+      "title": "China Stocks Fall to a Six-Month Low on Cash Crunch, IPO Concern",
+      "url": "https://www.bloomberg.com/news/articles/2013-06-19/china-stock-index-futures-fall-amid-ipo-property-curbs-concern"
+    },
+    {
+      "date": "2013-07-02",
+      "hub": "Bloomberg",
+      "title": "China Overnight Money Rate Drops on Cash Injection Speculation",
+      "url": "https://www.bloomberg.com/news/articles/2013-07-02/china-overnight-money-rate-drops-on-cash-injection-speculation"
+    },
+    {
+      "date": "2013-09-25",
+      "hub": "Bloomberg",
+      "title": "Shanghai Free-Trade Zone Plans Spark Surge in Residential Prices",
+      "url": "https://www.bloomberg.com/news/articles/2013-09-25/shanghai-free-trade-zone-plans-spark-surge-in-residential-prices"
+    },
+    {
+      "date": "2013-09-30",
+      "hub": "第一财经",
+      "title": "银八条布局上海自由贸易试验区金融监管",
+      "url": "https://www.yicai.com/news/3035591.html"
+    },
+    {
+      "date": "2013-09-30",
+      "hub": "第一财经",
+      "title": "上海自贸区总体方案公布 解读金融改革路线图",
+      "url": "https://www.yicai.com/news/3035621.html"
+    },
+    {
+      "date": "2013-11-30",
+      "hub": "Bloomberg",
+      "title": "China Sets IPO Reform Plan Signaling End of Freeze on Listings",
+      "url": "https://www.bloomberg.com/news/articles/2013-11-30/china-issues-ipo-reform-plan-signaling-end-of-one-year-freeze"
+    },
+    {
+      "date": "2013-12-02",
+      "hub": "第一财经",
+      "title": "新股发行改革再提速 大步迈向注册制",
+      "url": "https://www.yicai.com/news/3162992.html"
+    },
+    {
+      "date": "2013-12-02",
+      "hub": "第一财经",
+      "title": "券商百感交集11·30",
+      "url": "https://www.yicai.com/news/3162984.html"
+    },
+    {
+      "date": "2013-12-03",
+      "hub": "第一财经",
+      "title": "自贸区金改路线出炉 资本项目开放打头阵",
+      "url": "https://m.yicai.com/news/3168984.html"
+    },
+    {
+      "date": "2013-12-19",
+      "hub": "Bloomberg",
+      "title": "PBOC Adds to Bank Funds Amid Worst Cash Crunch Since June",
+      "url": "https://www.bloomberg.com/news/articles/2013-12-19/china-rate-swap-surges-to-record-as-reverse-repos-kept-on-hold"
+    }
+  ],
+  "clusters": [
+    {
+      "clusterId": "ipo-restart-broker-investment-banking",
+      "routeCandidate": "market_structure",
+      "association": "Ending a >1-year IPO freeze mechanically reopens an underwriting revenue channel for listed brokers with strong equity-financing franchises. Fresh quarterly conversion cannot exist immediately, so pre-event business mix/market share and the regulatory quantity change are the core evidence.",
+      "status": "high_priority_route_test"
+    },
+    {
+      "clusterId": "shanghai-ftz-concept-vs-direct-economics",
+      "routeCandidate": "negative_control",
+      "association": "FTZ launch changed policy expectations, but many listed 'concept' exposures had unclear company-level monetization while property and concept equities had already repriced sharply. Use as a test that the route does not accept narrative-only policy themes.",
+      "status": "negative_control"
+    },
+    {
+      "clusterId": "interbank-liquidity-stress",
+      "routeCandidate": "negative_control",
+      "association": "Cash crunch and selective liquidity injections directly affect funding conditions, but bank/broker incidence is broad and offsetting; require a uniquely quantified company asymmetry rather than generic beta.",
+      "status": "likely_no_selection"
+    }
+  ],
+  "denominator": {
+    "hubItemCount": 10,
+    "associationClusterCount": 3
+  },
+  "guardrails": [
+    "No 2014 operating results may be used before freeze.",
+    "The IPO-restart route can use pre-event underwriting market share and explicit regulatory issuance quantity, but not later IPO fee revenue.",
+    "FTZ concept exposure without mechanical company economics is rejected regardless of price momentum.",
+    "No broad market momentum is sufficient by itself."
+  ]
+}
