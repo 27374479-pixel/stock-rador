@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2014h2-hubfirst-v3.3-mapping-holdout-001",
+  "frozenBeforeOutcome": true,
+  "benchmark": "000300.SH",
+  "entryRule": "next executable A-share session after each frozen weekEnd",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "evaluateSelections": [
+    "600026.SH",
+    "601186.SH"
+  ],
+  "evaluateShadowControls": [
+    "601377.SH"
+  ],
+  "excludeFromReturnEvaluation": [
+    {
+      "ticker": "601766.SH",
+      "reason": "non_executable_at_decision"
+    }
+  ],
+  "mappingMetrics": [
+    "mapping_rate_from_hub_cluster",
+    "evidence_closure_rate_from_hub_cluster",
+    "selection_conversion_from_hub_cluster",
+    "missing_link_distribution"
+  ],
+  "guardrails": [
+    "Do not revise the mapping funnel after outcome.",
+    "Shadow broker does not count as a selection even if it later rallies.",
+    "Non-executable CSR does not count as a missed opportunity return.",
+    "v3.3 is accepted only if mapping/evidence closure improves without clear degradation of 60d excess quality."
+  ]
+}
