@@ -1,0 +1,49 @@
+name: fetch-2017-rmb-airline-regime
+on:
+  push:
+    branches: [ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926]
+    paths: [.github/workflows/fetch-2017-rmb-airline-regime.yml]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const RUN='backtests/runs/2017q1q3-hubfirst-v3.2-profitpool-holdout-001';
+          const c=JSON.parse(fs.readFileSync(RUN+'/rmb-airline-regime-config.json','utf8'));
+          const sym=t=>{const m=/^(\d{6})\.(SH|SZ)$/.exec(t);return(m[2]==='SH'?'sh':'sz')+m[1]};
+          const minus=(d,n)=>{const x=new Date(d+'T00:00:00Z');x.setUTCDate(x.getUTCDate()-n);return x.toISOString().slice(0,10)};
+          async function get(t){
+            const s=sym(t),u='https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+s+',day,'+minus(c.cutoffDate,280)+','+c.cutoffDate+',450,hfq';
+            const r=await fetch(u,{headers:{'User-Agent':'stock-rador-v3.2/1.0'},signal:AbortSignal.timeout(30000)});
+            if(!r.ok)throw Error('HTTP '+r.status);
+            const j=await r.json(),n=j?.data?.[s],rows=(n?.hfqday??n?.day??[]).map(x=>({date:x[0],close:+x[2]})).sort((a,b)=>a.date.localeCompare(b.date));
+            if(rows.length<125)throw Error('too few '+t+' '+rows.length);
+            return{u,rows};
+          }
+          const tr=(a,n)=>{const e=a.at(-1),s=a.at(-(n+1));return{startDate:s.date,endDate:e.date,return:e.close/s.close-1}};
+          (async()=>{
+            const ts=[c.benchmarkTicker,...c.tickers],ser={};for(const t of ts)ser[t]=await get(t);
+            const b={};for(const n of c.lookbacksTradingDays)b[n]=tr(ser[c.benchmarkTicker].rows,n);
+            const names={};for(const t of c.tickers){names[t]={};for(const n of c.lookbacksTradingDays){const z=tr(ser[t].rows,n);names[t][n]={...z,benchmarkReturn:b[n].return,excessReturn:z.return-b[n].return}}}
+            const o={schemaVersion:'1.0',snapshotId:c.snapshotId,label:c.label,cutoffDate:c.cutoffDate,fetchedAt:new Date().toISOString(),provider:'Tencent public daily hfq',benchmark:b,names,sourceUrls:Object.fromEntries(ts.map(t=>[t,ser[t].u]))};
+            fs.mkdirSync(RUN+'/regime',{recursive:true});fs.writeFileSync(RUN+'/regime/'+c.snapshotId+'.snapshot.json',JSON.stringify(o,null,2)+'\n');
+          })().catch(e=>{console.error(e);process.exit(1)});
+          NODE
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2017q1q3-hubfirst-v3.2-profitpool-holdout-001/regime/rmb-airline-20170915.snapshot.json
+          git commit -m "backtest: fetch 2017 RMB-airline cutoff regime"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
