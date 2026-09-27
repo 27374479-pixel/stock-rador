@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-27-forward-hubfirst-v3.2-001",
+  "clusterId": "yuan-appreciation-margin-transfer",
+  "stage": "forward_company_mapping_pre_price_decision",
+  "cutoffDate": "2026-09-27",
+  "futureOutcomeDataViewed": false,
+  "hubTrigger": [
+    {
+      "date": "2026-09-21",
+      "source": "Reuters",
+      "claim": "RMB reached a more-than-3.5-year high and PBOC resistance to appreciation eased."
+    },
+    {
+      "date": "2026-09-22",
+      "source": "Reuters",
+      "claim": "Brent and WTI fell to roughly two-week lows, with Brent below $100 amid improved Middle East supply prospects."
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "600029.SH",
+      "name": "南方航空",
+      "expressionType": "fx_and_fuel_cost_relief",
+      "evidence": [
+        "At 2026H1, a 1% RMB appreciation versus USD would reduce net loss by about RMB237m, the largest sensitivity among the three state airline controls examined.",
+        "H1 attributable loss was RMB3.696bn, making cost relief potentially meaningful but insufficient by itself to prove a turnaround."
+      ],
+      "eventBridge": "clear_cost_relief_but_baseline_loss_large",
+      "risk": [
+        "airline still loss-making",
+        "oil remains elevated despite recent decline",
+        "currency move may not persist"
+      ]
+    },
+    {
+      "ticker": "600115.SH",
+      "name": "中国东航",
+      "expressionType": "fx_cost_relief_control",
+      "evidence": [
+        "A 1% RMB appreciation versus USD would reduce loss by about RMB153m; H1 already recorded RMB585m FX gains because RMB strengthened."
+      ],
+      "eventBridge": "clear_but_smaller",
+      "risk": [
+        "H1 loss worsened",
+        "fuel cost +36.22% YoY"
+      ]
+    },
+    {
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "expressionType": "fx_cost_relief_control",
+      "evidence": [
+        "A 1% RMB appreciation versus USD would increase net profit/equity by roughly RMB151m equivalent at H1 balance-sheet exposures."
+      ],
+      "eventBridge": "clear_but_smaller",
+      "risk": [
+        "H1 still loss-making"
+      ]
+    }
+  ],
+  "mappingConclusion": "This is a fresh absolute cost-relief channel rather than a relative-only sector story, but operating losses and still-high fuel prices keep it from automatic promotion."
+}
