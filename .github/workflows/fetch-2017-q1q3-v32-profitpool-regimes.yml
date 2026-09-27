@@ -1,0 +1,68 @@
+name: fetch-2017-q1q3-v32-profitpool-regimes
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/fetch-2017-q1q3-v32-profitpool-regimes.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Fetch cutoff-bounded regimes
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const RUN='backtests/runs/2017q1q3-hubfirst-v3.2-profitpool-holdout-001';
+          const cfg=JSON.parse(fs.readFileSync(RUN+'/regime-config.json','utf8'));
+          const sym=t=>{const m=/^(\d{6})\.(SH|SZ)$/.exec(t);if(!m)throw Error('bad '+t);return(m[2]==='SH'?'sh':'sz')+m[1]};
+          const minus=(d,n)=>{const x=new Date(d+'T00:00:00Z');x.setUTCDate(x.getUTCDate()-n);return x.toISOString().slice(0,10)};
+          async function get(t,cutoff){
+            const s=sym(t),u='https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param='+s+',day,'+minus(cutoff,280)+','+cutoff+',450,hfq';
+            const r=await fetch(u,{headers:{'User-Agent':'stock-rador-v3.2/1.0'},signal:AbortSignal.timeout(30000)});
+            if(!r.ok)throw Error('HTTP '+r.status);
+            const j=await r.json(),n=j?.data?.[s],rows=(n?.hfqday??n?.day??[]).map(x=>({date:x[0],close:+x[2]})).sort((a,b)=>a.date.localeCompare(b.date));
+            if(rows.length<125)throw Error('too few '+t+' '+rows.length);
+            return{u,rows};
+          }
+          const tr=(rows,n)=>{const e=rows.at(-1),s=rows.at(-(n+1));return{startDate:s.date,endDate:e.date,return:e.close/s.close-1}};
+          (async()=>{
+            fs.mkdirSync(RUN+'/regime',{recursive:true});
+            for(const snap of cfg.snapshots){
+              const ts=[snap.benchmarkTicker,...snap.tickers],ser={};
+              for(const t of ts)ser[t]=await get(t,snap.cutoffDate);
+              const b={};for(const n of cfg.methodology.lookbacksTradingDays)b[n]=tr(ser[snap.benchmarkTicker].rows,n);
+              const names={};
+              for(const t of snap.tickers){
+                names[t]={};
+                for(const n of cfg.methodology.lookbacksTradingDays){
+                  const z=tr(ser[t].rows,n);
+                  names[t][n]={...z,benchmarkReturn:b[n].return,excessReturn:z.return-b[n].return};
+                }
+              }
+              const out={schemaVersion:'1.0',snapshotId:snap.id,label:snap.label,cutoffDate:snap.cutoffDate,fetchedAt:new Date().toISOString(),provider:'Tencent public daily hfq',benchmark:b,names,sourceUrls:Object.fromEntries(ts.map(t=>[t,ser[t].u]))};
+              fs.writeFileSync(RUN+'/regime/'+snap.id+'.snapshot.json',JSON.stringify(out,null,2)+'\n');
+            }
+          })().catch(e=>{console.error(e.stack||e);process.exit(1)});
+          NODE
+      - name: Commit snapshots
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2017q1q3-hubfirst-v3.2-profitpool-holdout-001/regime/*.snapshot.json
+          git commit -m "backtest: fetch 2017 Q1-Q3 profit-pool regimes"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
