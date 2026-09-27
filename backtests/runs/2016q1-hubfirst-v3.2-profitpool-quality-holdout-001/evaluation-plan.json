@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2016q1-hubfirst-v3.2-profitpool-quality-holdout-001",
+  "frozenBeforeOutcome": true,
+  "benchmark": "000300.SH",
+  "entryRule": "next executable A-share session after each frozen weekEnd",
+  "transactionCosts": {
+    "oneWayRate": 0.001,
+    "roundTripApplied": true
+  },
+  "horizonsTradingDays": [
+    20,
+    60,
+    120
+  ],
+  "primaryEvaluationHorizon": 60,
+  "evaluateSelections": [
+    "600029.SH"
+  ],
+  "evaluateShadowControls": [
+    "300251.SZ"
+  ],
+  "excludeFromReturnEvaluation": [
+    {
+      "ticker": "002739.SZ",
+      "reason": "non_executable_at_decision"
+    }
+  ],
+  "qualityQuestions": [
+    "Does reported recurring conversion with a known offset outperform a single-project headline with unresolved cash economics?",
+    "Does excluding a non-executable but high-quality company preserve auditability without falsely reducing discovery quality?",
+    "Is the dominant frequency bottleneck company mapping rather than hub discovery?"
+  ],
+  "guardrails": [
+    "Do not revise the Q1 funnel after observing outcomes.",
+    "Do not use the April 2016 Light earnings preview to change the February decision.",
+    "Wanda is excluded from return evaluation because no executable entry existed at decision time.",
+    "Any change to production rules requires replication beyond this window."
+  ]
+}
