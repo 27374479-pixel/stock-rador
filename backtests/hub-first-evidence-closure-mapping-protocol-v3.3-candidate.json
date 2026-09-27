@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "3.3-candidate",
+  "title": "Hub-First Evidence-Closure and Company-Mapping Protocol",
+  "status": "candidate_not_promoted",
+  "inherits": [
+    "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+    "backtests/profit-pool-quality-candidate-v2.json"
+  ],
+  "objective": "Increase opportunity frequency by improving post-hub company mapping and evidence closure, without expanding discovery from specialist/sector screens and without weakening underwriting.",
+  "discoveryEntryUnchanged": "Bloomberg/Reuters/Wind/iFinD/Yicai/FT-style generalist professional hubs remain the discovery entry. This protocol begins only after a hub event has been frozen.",
+  "mappingLoop": {
+    "step1": "Translate the hub event into explicit economic incidence: who receives more volume, price, utilization, bargaining power, lower input cost, lower financing cost, or lower risk?",
+    "step2": "Enumerate first-, second-, and third-order listed-expression archetypes bounded by max three causal jumps.",
+    "step3": "For each archetype, search A-share companies by business exposure and contemporaneous filings/IR, not by later winner identity.",
+    "step4": "Require a direct exposure sentence plus at least one contemporaneous conversion datapoint: order/backlog, segment revenue, utilization, margin, cash flow, unit economics, or quantified sensitivity.",
+    "step5": "Search one control company with superficially similar exposure to test expression purity.",
+    "step6": "If no company closes the evidence chain, record the exact missing link instead of ending with a generic No selection."
+  },
+  "missingLinkTaxonomy": [
+    "no_listed_expression",
+    "exposure_not_direct",
+    "company_segment_too_small",
+    "no_operating_conversion_yet",
+    "cash_economics_unresolved",
+    "event_already_fully_absorbed",
+    "company_not_executable",
+    "conflicting_offsetting_driver",
+    "evidence_not_available_by_cutoff"
+  ],
+  "searchDirectionsAfterHub": [
+    "direct beneficiary and direct harmed party",
+    "scarce complementary asset",
+    "bottleneck supplier",
+    "substitute/import-substitution provider",
+    "downstream input-cost beneficiary",
+    "customer or supplier company exception",
+    "financing/working-capital beneficiary",
+    "listed operator with quantified sensitivity"
+  ],
+  "frequencyMetrics": [
+    "association_clusters",
+    "clusters_with_at_least_one_mappable_A_share",
+    "companies_checked_per_cluster",
+    "clusters_with_company_level_conversion_evidence",
+    "clusters_reaching_underwriting",
+    "research_selection_weeks",
+    "median_hub_to_company_mapping_days",
+    "missing_link_distribution"
+  ],
+  "guardrails": [
+    "No sector whitelist.",
+    "No independent specialist-feed scanning before hub trigger.",
+    "No minimum trade quota.",
+    "No lowering of V1.9 underwriting gates.",
+    "Do not use later winners to backfill companies.",
+    "A single-project event remains eligible for Research if economics are sufficiently quantified; quality affects ranking, not automatic eligibility.",
+    "Non-executable stocks never count as opportunity weeks."
+  ],
+  "validationPlan": {
+    "firstTest": "Apply unchanged to a clean historical window not used to derive the taxonomy.",
+    "forwardTest": "Apply to subsequent 2026 weekly forward checkpoints.",
+    "acceptance": "Higher mapping/evidence-closure rate and more independent opportunity weeks without material degradation in 60d excess quality."
+  }
+}
