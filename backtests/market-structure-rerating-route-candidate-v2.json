@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "2.0-candidate",
+  "title": "Market-Structure / Rerating Route Candidate V2 — Realized System Flow",
+  "status": "postoutcome_hypothesis_not_adopted",
+  "replacesForTesting": "backtests/market-structure-rerating-route-candidate-v1.json",
+  "derivesFrom": "Contrast between 2014 Stock Connect broker shadow and failed 2013 IPO-restart holdout; neither case may validate V2.",
+  "purpose": "Test whether market-structure events can be underwritten before company quarterly conversion only when the changed rule/access is already producing observable system-level flows.",
+  "requiredLayers": [
+    {
+      "name": "qualifying_structure_event",
+      "requirement": "A rule/access/liquidity/capital-constraint change with direct mechanical economic incidence."
+    },
+    {
+      "name": "quantified_company_baseline",
+      "requirement": "Pre-event company filing quantifies exposure through market share, business mix, balance-sheet sensitivity, transaction economics or capacity."
+    },
+    {
+      "name": "realized_system_flow_conversion",
+      "requirement": "Before selection, independent data show actual turnover, transaction volume, fund flow, issuance, credit use, utilization, customer count or another system-level quantity changed materially under the new regime."
+    },
+    {
+      "name": "net_incidence",
+      "requirement": "Major offsetting channels are identified and the expected net effect is directionally positive; a reopening that simultaneously drains another key profit pool is not enough."
+    },
+    {
+      "name": "expectation_absorption",
+      "requirement": "Price/consensus absorption is measured and cannot be extreme without a fresh magnitude or duration reset."
+    }
+  ],
+  "statesForSystemFlow": [
+    "realized_and_accelerating",
+    "realized_but_small",
+    "authorized_not_realized",
+    "conflicted",
+    "unresolved"
+  ],
+  "hardExclusionForRoute": [
+    "authorized_not_realized",
+    "conflicted",
+    "unresolved"
+  ],
+  "note": "These exclusions apply only to this exceptional pre-report route. The normal fundamental route remains unchanged and can later select the company once operating conversion is reported.",
+  "antiOverfit": [
+    "Do not validate V2 on 2013 IPO restart or 2014 Stock Connect.",
+    "Do not hard-code brokers, exchanges or IPOs.",
+    "Do not treat equity-price momentum itself as system-flow conversion.",
+    "Do not infer realized usage from policy announcement language."
+  ],
+  "validationPlan": {
+    "historical": "Find an untouched window with a qualifying market-structure event and observable system flow before company results.",
+    "prospective": "Apply unchanged to future 2026 weekly checkpoints.",
+    "metrics": [
+      "60d_excess_win_rate",
+      "median_60d_excess",
+      "incremental_opportunity_weeks",
+      "false_positive_rate"
+    ]
+  }
+}
