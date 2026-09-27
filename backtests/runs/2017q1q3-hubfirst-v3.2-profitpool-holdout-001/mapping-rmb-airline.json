@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2017q1q3-hubfirst-v3.2-profitpool-holdout-001",
+  "clusterId": "rmb-appreciation-margin-transfer",
+  "stage": "company_mapping_pre_outcome",
+  "earliestEvidenceClosedWeekEnd": "2017-09-15",
+  "futureOutcomeViewed": false,
+  "profitPoolLabel": "known_macro_transfer",
+  "hubTrigger": {
+    "date": "2017-09-06",
+    "source": "第一财经",
+    "claim": "August 2017 RMB appreciation was about 1.69%, turning FX into a potentially material earnings driver for USD-liability companies."
+  },
+  "causalNeighborhood": "Map the currency move into companies with large USD-denominated liabilities and RMB reporting, then distinguish a real earnings bridge from a new profit pool. FX remeasurement is a known macro transfer, not an emerging business line.",
+  "candidates": [
+    {
+      "ticker": "601111.SH",
+      "name": "中国国航",
+      "expressionType": "usd_liability_fx_relief",
+      "companyEvidence": [
+        {
+          "date": "2017-08-31",
+          "source": "中国国航2017H1",
+          "claim": "H1 revenue RMB58.15bn +8.65%; finance expense fell sharply, with RMB1.27bn FX gain versus RMB1.698bn FX loss in prior year."
+        },
+        {
+          "date": "2017-08-31",
+          "source": "中国国航2017H1",
+          "claim": "At 2017-06-30, a 1% RMB appreciation versus USD would increase net profit/equity by about RMB290.6m."
+        }
+      ],
+      "expectationEvidence": [
+        {
+          "date": "2017-09-12",
+          "source": "中金点睛 mirrored article",
+          "claim": "Sell-side explicitly quantified each 1% RMB appreciation as roughly RMB291m/RMB322m/RMB265m profit benefit for Air China/China Eastern/China Southern and expected Q3 airline profit acceleration; Air China was the preferred A-share."
+        }
+      ],
+      "eventIncrementalEarningsBridge": "clear_macro_remeasurement",
+      "profitPoolMateriality": "not_new_profit_pool",
+      "expectationBurden": "explicitly_entering_consensus_by_cutoff",
+      "risks": [
+        "RMB appreciation can reverse",
+        "fuel-price inflation can offset FX gains",
+        "underlying operating profit remained sensitive to yield and fuel"
+      ]
+    },
+    {
+      "ticker": "600115.SH",
+      "name": "中国东航",
+      "expressionType": "usd_liability_fx_relief_control",
+      "evidence": [
+        "2017H1 produced RMB674m FX gain versus RMB1.355bn prior-year FX loss; headline net profit +34.46% included material disposal gain."
+      ],
+      "risk": "profit quality complicated by disposal of Eastern Air Logistics"
+    },
+    {
+      "ticker": "600029.SH",
+      "name": "南方航空",
+      "expressionType": "usd_liability_fx_relief_control",
+      "evidence": [
+        "2017H1 finance expense fell 69.61%; RMB561m FX gain versus RMB1.506bn prior-year loss, while attributable profit still fell 11.62% because fuel costs surged."
+      ],
+      "risk": "fuel inflation visibly offset currency benefit"
+    }
+  ],
+  "preliminaryDisposition": "known_macro_control_pending_price_absorption",
+  "nextGate": "freeze 20/60/120d price absorption at 2017-09-15; likely No selection if benefit is already priced or if fuel/yield uncertainty dominates."
+}
