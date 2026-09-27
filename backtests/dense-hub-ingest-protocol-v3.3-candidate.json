@@ -1,0 +1,156 @@
+{
+  "schemaVersion": "3.3-candidate",
+  "title": "Dense Hub Ingest + Causal-Neighborhood Association Protocol",
+  "status": "candidate_not_promoted",
+  "supersedesForDiscoveryCoverage": "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+  "inheritsAssociationAndUnderwriting": [
+    "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+    "skills/stock-rador/versions/1.9.0/SKILL.md"
+  ],
+  "objective": "Increase event-universe recall by consuming a dense, auditable slice of broad professional information hubs at every weekly checkpoint, while leaving v3.2 causal-neighborhood reasoning and all downstream underwriting gates unchanged.",
+  "principle": "Dense ingest, sparse promotion.",
+  "architecture": {
+    "stage1": "dense_bounded_generalist_hub_ingest",
+    "stage2": "deduplicate_and_cluster_broad_events",
+    "stage3": "unchanged_v3.2_causal_neighborhood_association",
+    "stage4": "primary_and_specialist_verification",
+    "stage5": "company_mapping",
+    "stage6": "unchanged_v1.9_underwriting",
+    "stage7": "freeze_then_reveal"
+  },
+  "discoveryEntry": {
+    "allowed": "Broad professional/generalist hubs only.",
+    "preferredGlobal": [
+      "Bloomberg Terminal/News",
+      "LSEG Workspace/Reuters",
+      "Financial Times",
+      "WSJ"
+    ],
+    "preferredChina": [
+      "Wind",
+      "iFinD",
+      "第一财经/一财",
+      "财新"
+    ],
+    "prohibitedAtEntry": [
+      "industry-specific feeds",
+      "ticker/name queries",
+      "historical-winner queries",
+      "primitive-by-primitive sector scanning",
+      "specialist commodity/technology/logistics feeds used to define the initial universe"
+    ]
+  },
+  "weeklyCoverageContract": {
+    "checkpoint": "Friday after close",
+    "window": "Since prior checkpoint through current checkpoint",
+    "minimumHubClasses": [
+      "one China-centric generalist hub",
+      "one global generalist hub"
+    ],
+    "feedSliceRule": "For each selected hub, ingest a bounded top-level business/markets/economy/technology/commodities/China-or-Asia news slice or an equivalent terminal/news-digest stream for the entire weekly window. Do not reconstruct the week by searching only event keywords.",
+    "retainEveryReviewedItem": true,
+    "reviewedItemFields": [
+      "hub",
+      "publishedAt",
+      "headline",
+      "url_or_terminal_ref",
+      "top_level_section",
+      "origin_or_mirror_when_known",
+      "disposition",
+      "eventClusterId_or_null"
+    ],
+    "allowedDispositions": [
+      "event_candidate",
+      "context_only",
+      "duplicate_origin",
+      "no_material_change",
+      "unable_to_verify"
+    ],
+    "sectionCoverageLogRequired": true,
+    "emptySectionAllowedWithExplicitTrace": true,
+    "noMinimumTradeQuota": true,
+    "noMinimumEventQuota": true
+  },
+  "completenessStates": {
+    "complete_terminal_or_feed": "The hub/feed API or archive provides an enumerable bounded slice for the entire checkpoint window and the full slice is preserved/audited.",
+    "bounded_digest": "A professional weekly/daily digest is enumerable but narrower than a full terminal feed; its exact scope is frozen.",
+    "incomplete_proxy": "Public-web search/archive cannot prove complete enumeration. The checkpoint may be used for exploratory diagnostics but must not be presented as complete hub coverage.",
+    "unavailable": "The source could not be accessed; limitation is explicit and does not count toward minimum covered hub classes."
+  },
+  "proxyRules": [
+    "A search-engine reconstruction is always incomplete_proxy, even if many articles are recovered.",
+    "Do not report hub_item_recall=100% from a public proxy unless the archive itself is enumerable and bounded.",
+    "When historical full terminal feeds are unavailable, compare proxy coverage against later post-lock miss audits rather than treating absence as evidence the event did not exist."
+  ],
+  "dedupAndClustering": {
+    "originRule": "Mirrors of one original release/story count as one origin.",
+    "eventUnit": "economic_state_change_cluster",
+    "sectorAssignmentAfterDiscovery": true,
+    "continuationRule": "Repeated coverage is continuation unless magnitude, duration, incidence, beneficiary set or causal mechanism changes materially."
+  },
+  "causalAssociation": "Unchanged from v3.2 candidate. Every event candidate receives the same bounded causal-neighborhood reasoning after hub ingestion; no new association directions are added by this version.",
+  "downstream": "Unchanged V1.9/v3.2 direct exposure, event-incremental earnings/cash bridge, profit-pool state, expectation, valuation, timing, quality and adversarial gates.",
+  "auditMetrics": {
+    "ingest": [
+      "reviewed_hub_items_per_checkpoint",
+      "unique_origin_items_per_checkpoint",
+      "hub_classes_covered",
+      "top_level_sections_covered",
+      "coverage_completeness_state",
+      "duplicate_origin_rate"
+    ],
+    "discovery": [
+      "economic_event_clusters_per_checkpoint",
+      "hub_to_event_conversion_rate",
+      "postlock_hub_intake_miss_rate",
+      "source_universe_miss_rate",
+      "median_hub_detection_lag_days"
+    ],
+    "association": [
+      "first_order_hypotheses",
+      "second_order_hypotheses",
+      "third_order_hypotheses",
+      "verified_association_rate",
+      "association_miss_rate"
+    ],
+    "selection": [
+      "independent_research_selection_weeks_per_52",
+      "independent_primary_selection_weeks_per_52",
+      "event_to_research_conversion",
+      "event_to_primary_conversion"
+    ],
+    "quality": [
+      "60d_positive_rate",
+      "60d_CSI300_excess_win_rate",
+      "median_60d_excess",
+      "median_max_drawdown",
+      "matched_control_win_rate_when_available"
+    ]
+  },
+  "missAudit": {
+    "requiredAfterOutcomeLock": true,
+    "classes": [
+      "hub_intake_miss",
+      "association_miss",
+      "verification_miss",
+      "company_mapping_miss",
+      "underwriting_miss",
+      "timing_or_absorption_miss",
+      "no_actionable_miss"
+    ],
+    "rule": "A post-lock miss can diagnose the pipeline but cannot retroactively change the scored run."
+  },
+  "acceptance": {
+    "sourceLayer": "Adopt dense ingest only if an untouched replication shows materially higher event recall/opportunity-week frequency and does not materially degrade downstream selection quality.",
+    "associationLayer": "v3.2 logic remains fixed during v3.3 source-layer validation.",
+    "noSameWindowRuleTuning": true,
+    "noFrequencyTargetOptimization": true
+  },
+  "antiOverfit": [
+    "No named sector or stock can be added because it was missed in 2023.",
+    "Do not add AI, lithium, oil, memory, shipping or any other 2023 family as a mandatory search category.",
+    "The fix is coverage of the broad hub feed, not a checklist of missed themes.",
+    "2023 may motivate v3.3 but cannot validate it.",
+    "The locked 2026-09-27 forward v3.2 sample remains unchanged."
+  ]
+}
