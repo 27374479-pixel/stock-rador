@@ -1,0 +1,212 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-27-forward-hubfirst-v3.2-001",
+  "validationClass": "forward_proxy_not_terminal",
+  "cutoffAt": "2026-09-27T08:55:00+09:00",
+  "protocol": "backtests/hub-first-causal-neighborhood-protocol-v3.2-candidate.json",
+  "downstreamSkill": "skills/stock-rador/versions/1.9.0/SKILL.md",
+  "futureOutcomeExists": false,
+  "purpose": "True prospective weekly discovery sample. Broad professional/generalist hubs define the event universe; causal-neighborhood reasoning is applied only after hub detection; specialist/primary sources validate or kill associations.",
+  "discoveryRules": {
+    "sectorPreselection": false,
+    "namedTickerQueryAtDiscovery": false,
+    "minimumHubClasses": 2,
+    "sourceRoles": [
+      "global_generalist",
+      "china_generalist"
+    ],
+    "specialistSourcesDefineUniverse": false
+  },
+  "hubItems": [
+    {
+      "date": "2026-09-21",
+      "hub": "Reuters",
+      "title": "Xi rolls into summit with China's trade engine roaring",
+      "url": "https://www.reuters.com/world/china/xi-rolls-into-trump-summit-with-chinas-trade-engine-roaring-2026-09-21/",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-23",
+      "hub": "Financial Times",
+      "title": "China's share of global container exports soars to 40%",
+      "url": "https://www.ft.com/content/51c49052-0799-4920-9189-8399f15c1f51",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-22",
+      "hub": "Reuters",
+      "title": "China's industrial rise hits German manufacturers hard, ECB finds",
+      "url": "https://www.reuters.com/world/china/chinas-industrial-rise-hits-german-manufacturers-hard-ecb-finds-2026-09-22/",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-21",
+      "hub": "Reuters",
+      "title": "Yuan hits fresh multi-year peak as PBOC eases curb",
+      "url": "https://www.reuters.com/world/asia-pacific/yuan-hits-fresh-multi-year-peak-pboc-eases-curb-ahead-trump-xi-summit-2026-09-21/",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-22",
+      "hub": "Bloomberg",
+      "title": "China's Gold Imports Top 1,000 Tons on Strong Investment Demand",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-22/china-s-gold-imports-top-1-000-tons-on-strong-investment-demand",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-22",
+      "hub": "Reuters",
+      "title": "Alibaba deepens AI push with new chip, bigger model; shares jump 5%",
+      "url": "https://www.reuters.com/business/retail-consumer/alibaba-plans-ai-model-with-5-trillion-10-trillion-parameters-unveils-new-chip-2026-09-22/",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-21",
+      "hub": "第一财经",
+      "title": "智算中心上演交付竞赛，算电协同迎来双向基建大考",
+      "url": "https://m.yicai.com/news/103372841.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2026-09-23",
+      "hub": "第一财经",
+      "title": "建设新型电力系统，多家能源央企发声",
+      "url": "https://www.yicai.com/news/103376224.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2026-09-23",
+      "hub": "第一财经",
+      "title": "黑粉进口放开超一年，电池回收业仍“无米下锅”",
+      "url": "https://www.yicai.com/news/103375903.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2026-09-22",
+      "hub": "Reuters",
+      "title": "China asks banks to keep Vanke loans off bad-debt books, sources say",
+      "url": "https://www.reuters.com/world/asia-pacific/china-asks-banks-keep-vanke-loans-off-bad-debt-books-sources-say-2026-09-22/",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-24",
+      "hub": "第一财经",
+      "title": "北京官宣现房销售细则：新老项目划断、土地款可分期",
+      "url": "https://www.yicai.com/news/103377931.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2026-09-22",
+      "hub": "Financial Times",
+      "title": "Chinese rare earth shipments to US drop ahead of summit",
+      "url": "https://www.ft.com/content/eeef7db4-b26d-426f-896b-f7b95bb84223",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2026-09-22",
+      "hub": "Reuters",
+      "title": "Corporate bond buyers get picky with flood of AI debt",
+      "url": "https://www.reuters.com/legal/transactional/corporate-bond-buyers-get-picky-with-flood-ai-debt-2026-09-22/",
+      "role": "global_generalist"
+    }
+  ],
+  "associationClusters": [
+    {
+      "clusterId": "china-manufacturing-export-ecosystem-density",
+      "hubItems": [
+        0,
+        1,
+        2
+      ],
+      "association": "China's export share and high-value manufacturing competitiveness are rising while global firms still struggle to replicate China's supplier, labor, power and logistics ecosystem. Search only after this hub signal for measurable second-order beneficiaries in automation, industrial power, logistics and supplier localization.",
+      "directions": [
+        "capacity_bottlenecks",
+        "automation_capex",
+        "supplier_localization",
+        "logistics_complement"
+      ],
+      "status": "verify_before_company_mapping"
+    },
+    {
+      "clusterId": "yuan-appreciation-margin-transfer",
+      "hubItems": [
+        3,
+        4
+      ],
+      "association": "A stronger yuan changes landed input costs and FX translation while record gold imports show one concrete import response. Search for companies with large USD-linked input costs or liabilities and RMB revenue, while treating export-heavy firms as possible losers.",
+      "directions": [
+        "import_cost_relief",
+        "fx_liability_relief",
+        "export_margin_pressure"
+      ],
+      "status": "relative_mapping_only_until_absolute_earnings_bridge"
+    },
+    {
+      "clusterId": "aidc-delivery-power-bottleneck",
+      "hubItems": [
+        5,
+        6,
+        7,
+        12
+      ],
+      "association": "AI demand remains strong, Alibaba is expanding the full stack and targeting >20GW data-center capacity by 2032, while China-generalist reporting says AIDC delivery has compressed from years to months and stress is propagating into power and cooling. Test power-conversion and infrastructure suppliers for already-realized order/revenue conversion and financing/capex risk.",
+      "directions": [
+        "power_conversion",
+        "grid_connection",
+        "thermal_management",
+        "modular_delivery",
+        "financing_constraint"
+      ],
+      "status": "high_priority_verify_and_map"
+    },
+    {
+      "clusterId": "battery-recycling-feedstock-scarcity",
+      "hubItems": [
+        8
+      ],
+      "association": "Recycling capacity materially exceeds compliant feedstock. The economic question is not 'recycling growth' but which operators control captive/contracted feedstock or closed-loop material flows and which standalone capacity is stranded.",
+      "directions": [
+        "captive_feedstock",
+        "closed_loop_materials",
+        "industry_consolidation",
+        "capacity_impairment"
+      ],
+      "status": "verify_company_exceptions"
+    },
+    {
+      "clusterId": "property-funding-model-reset",
+      "hubItems": [
+        9,
+        10
+      ],
+      "association": "Vanke-specific bank support and Beijing's presale/ready-home reform both point to a shift in the property funding model. Separate temporary liquidity support from durable business-model advantage; test cash-rich developers, construction-finance implications and supplier/customer credit risk.",
+      "directions": [
+        "developer_working_capital",
+        "bank_credit_exposure",
+        "supplier_credit",
+        "ready_home_capital_intensity"
+      ],
+      "status": "risk_and_relative_mapping"
+    },
+    {
+      "clusterId": "rareearth-export-friction",
+      "hubItems": [
+        11
+      ],
+      "association": "Lower magnet exports and elevated supply-risk pricing may shift bargaining power upstream while hurting downstream manufacturers. Verify actual licensing/export volumes, company quota/resource exposure and downstream pass-through before any stock selection.",
+      "directions": [
+        "upstream_scarcity",
+        "downstream_margin_pressure",
+        "substitution",
+        "inventory_buffer"
+      ],
+      "status": "verify_physical_incidence"
+    }
+  ],
+  "denominator": {
+    "hubItemCount": 13,
+    "associationClusterCount": 6,
+    "note": "All six clusters remain in the denominator even if they yield no A-share selection."
+  },
+  "nextStep": "Validate clusters in frozen priority order based on economic materiality and evidence closability, not on current stock performance. Freeze mappings and pre-cutoff price/expectation states before any selection."
+}
