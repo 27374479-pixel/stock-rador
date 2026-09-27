@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2016q1-hubfirst-v3.2-profitpool-quality-holdout-001",
+  "clusterId": "cinema-throughput-vs-single-hit",
+  "stage": "company_mapping_pre_outcome",
+  "futureOutcomeViewed": false,
+  "hubTrigger": [
+    {
+      "date": "2016-02-22",
+      "source": "Bloomberg",
+      "claim": "The Mermaid set a new China box-office record and the national cinema market was growing rapidly."
+    },
+    {
+      "date": "2016-02-25",
+      "source": "Bloomberg",
+      "claim": "China's box office was growing roughly one-third annually and could overtake the U.S. market."
+    }
+  ],
+  "cases": [
+    {
+      "ticker": "300251.SZ",
+      "name": "光线传媒",
+      "qualityLabel": "single_project_large_but_lumpy",
+      "evidence": [
+        {
+          "date": "2016-02-14",
+          "source": "company announcement",
+          "claim": "The Mermaid exceeded RMB1.6bn box office in 6.5 days, more than 50% of the company's most recent audited annual revenue."
+        },
+        {
+          "date": "2016-02-16",
+          "source": "industry reporting",
+          "claim": "Exact investment share, settlement and profit-sharing economics remained undisclosed/uncertain despite the huge headline box office."
+        }
+      ],
+      "qualityDimensions": {
+        "operating_conversion": "single_contract_only",
+        "repeatability_duration": "single_large_project",
+        "cash_economics": "unresolved",
+        "consolidated_materiality": "credible_but_profit_share_unclear",
+        "expectation_absorption": "pending_price_snapshot"
+      },
+      "mappingConclusion": "economically_direct_but_quality_incomplete",
+      "risks": [
+        "film-specific hit risk",
+        "profit sharing unknown",
+        "headline box office not equal company profit",
+        "follow-up slate repeatability uncertain"
+      ],
+      "earliestEvidenceClosedWeekEnd": "2016-02-26"
+    },
+    {
+      "ticker": "002739.SZ",
+      "name": "万达院线",
+      "qualityLabel": "recurring_operating_throughput",
+      "evidence": [
+        {
+          "date": "2016-01-16",
+          "source": "Wanda 2015 operating summary",
+          "claim": "2015 Wanda Cinema revenue RMB8.0bn +49.9%, box-office revenue RMB6.3bn +49.6%, viewers 151m +48.9%, with 292 cinemas and 2,557 screens."
+        },
+        {
+          "date": "2016-03-08",
+          "source": "company February operating brief",
+          "claim": "Jan-Feb 2016 cumulative box-office revenue RMB1.581bn +69.6% and viewers 38.31m +81.2%; 300 cinemas and 2,617 screens by Feb-end."
+        }
+      ],
+      "qualityDimensions": {
+        "operating_conversion": "reported_recurring",
+        "repeatability_duration": "multi_month_recurring",
+        "cash_economics": "acceptable_existing_core_business",
+        "consolidated_materiality": "clear",
+        "expectation_absorption": "pending_price_snapshot"
+      },
+      "mappingConclusion": "high_quality_recurring_conversion",
+      "risks": [
+        "cinema industry valuation may already be high",
+        "screen expansion requires capex",
+        "box-office growth may normalize"
+      ],
+      "earliestEvidenceClosedWeekEnd": "2016-03-11"
+    }
+  ],
+  "comparisonPurpose": "Test whether recurring reported throughput is a higher-quality investable expression than a single blockbuster whose company profit share remains uncertain."
+}
