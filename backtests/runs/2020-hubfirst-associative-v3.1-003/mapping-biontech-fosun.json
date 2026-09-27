@@ -1,0 +1,74 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-003",
+  "validationClass":"historical_proxy_incremental_after_prior_outcomes",
+  "clusterId":"biontech-china-supply-commercialization",
+  "stage":"hub_discovery_to_company_mapping_pre_outcome",
+  "mappingCutoff":"2020-12-18",
+  "futureStockOutcomeViewedForThisMapping":false,
+  "selectionLogicChangedFromV3_1":false,
+  "hubOrigin":{
+    "hub":"Bloomberg",
+    "date":"2020-12-16",
+    "headline":"China Secures 100 Million Doses of BioNTech Vaccine",
+    "url":"https://www.bloomberg.com/news/articles/2020-12-16/china-secures-100-million-doses-of-biontech-shot-to-boost-supply",
+    "discoveryRole":"broad_generalist_hub"
+  },
+  "primaryEvidence":[
+    {
+      "date":"2020-03-16",
+      "source":"Fosun Pharma",
+      "url":"https://www.fosunpharma.com/content/details37_7319.html",
+      "claim":"Fosun Pharma obtained the exclusive right to develop and commercialize BioNTech's COVID-19 mRNA vaccine products in mainland China, Hong Kong, Macau and Taiwan."
+    },
+    {
+      "date":"2020-12-16",
+      "source":"Fosun Pharma announcement 临2020-198",
+      "url":"https://www.fosunpharma.com/uploads/2020121684134.pdf",
+      "claim":"For mainland/Hong Kong/Macau sales during the agreed period, Fosun/BioNTech share annual sales gross profit 65%/35% for finished-product supply and 60%/40% when BioNTech supplies bulk formulation."
+    },
+    {
+      "date":"2020-12-16",
+      "source":"Fosun Pharma announcement 临2020-198",
+      "url":"https://www.fosunpharma.com/uploads/2020121684134.pdf",
+      "claim":"Subject to mainland approval and Fosun placing orders, BioNTech committed to supply no fewer than 100 million doses to mainland China in 2021; first 50 million doses required EUR250m of advance payments in two stages."
+    }
+  ],
+  "eventIncrementalEarningsBridge":{
+    "conclusion":"clear_positive_conditional",
+    "baseline":"Before the December amendment, Fosun already held exclusive regional commercialization rights but exact mainland supply quantity and gross-profit sharing for the vaccine remained less concretely defined.",
+    "newEventDelta":[
+      "At least 100 million-dose 2021 mainland supply commitment if approved and ordered.",
+      "Explicit 65% Fosun share of annual sales gross profit for finished-product supply, or 60% for bulk formulation supply.",
+      "Concrete initial 50 million-dose payment schedule."
+    ],
+    "profitPoolState":"expanding_if_approved",
+    "absoluteVsRelativeCatalyst":"absolute",
+    "keyCondition":"Mainland regulatory approval and actual orders",
+    "falsifier":"Approval delay/failure, no material mainland orders, unfavorable realized pricing/costs, or supply constraints preventing delivery."
+  },
+  "candidate":{
+    "ticker":"600196.SH",
+    "name":"复星医药",
+    "expressionType":"exclusive_regional_commercialization_rights",
+    "mappingConclusion":"direct_and_unique",
+    "controls":[
+      {"ticker":"300122.SZ","name":"智飞生物","role":"A-share vaccine-sector control without BioNTech China commercialization right"},
+      {"ticker":"300601.SZ","name":"康泰生物","role":"A-share vaccine-sector control without BioNTech China commercialization right"}
+    ],
+    "nextGate":"freeze contemporaneous price absorption and expectation burden before selection"
+  },
+  "riskState":{
+    "regulatoryApproval":"material_unresolved",
+    "salesPriceAndUnitEconomics":"partly_unresolved",
+    "supplyExecution":"material_but_contractually_bounded",
+    "companyExposure":"clear",
+    "eventIncrementality":"clear"
+  },
+  "guardrails":[
+    "Do not use later Hong Kong/Macau approvals or later mainland non-approval to make the 2020-12-18 decision.",
+    "Do not use later vaccine sales or stock returns.",
+    "The 100 million doses are conditional, not guaranteed realized sales.",
+    "Primary status is not allowed while mainland approval remains unresolved."
+  ]
+}
