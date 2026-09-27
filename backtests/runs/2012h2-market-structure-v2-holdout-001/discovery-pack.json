@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2012h2-market-structure-v2-holdout-001",
+  "validationClass": "historical_proxy_not_terminal_market_structure_v2_holdout",
+  "candidate": "backtests/market-structure-rerating-route-candidate-v2.json",
+  "cutoffScope": "2012-04-01 through 2012-12-31",
+  "existing2012ArtifactsFoundBeforeConstruction": false,
+  "existing2012OutcomeFilesReadForConstruction": false,
+  "namedHistoricalWinnerQueries": false,
+  "purpose": "Untouched 2012 validation of the realized-system-flow condition for the exceptional pre-report market-structure route.",
+  "hubItems": [
+    {
+      "date": "2012-04-03",
+      "hub": "CSRC/Yicai/Bloomberg",
+      "title": "QFII investment quota expanded to USD80bn",
+      "role": "broad_market_structure"
+    },
+    {
+      "date": "2012-04-06",
+      "hub": "Bloomberg",
+      "title": "China stocks rise after QFII quota expansion",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2012-06-08",
+      "hub": "Bloomberg",
+      "title": "China cuts interest rate for first time since 2008",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2012-07-09",
+      "hub": "Bloomberg",
+      "title": "Inflation at two-year low as commodity shares weaken",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2012-08-09",
+      "hub": "Bloomberg",
+      "title": "China stocks rise as inflation cools",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2012-08-28",
+      "hub": "第一财经",
+      "title": "规则齐备 转融通正式开闸",
+      "url": "https://www.yicai.com/news/2027445.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2012-09-05",
+      "hub": "Bloomberg",
+      "title": "Shanghai index falls to lowest since 2009",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2012-09-13",
+      "hub": "第一财经",
+      "title": "转融通满10日融资余额稳步增长",
+      "url": "https://www.yicai.com/news/2073450.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2012-09-20",
+      "hub": "Bloomberg",
+      "title": "China stocks fall to lowest since 2009",
+      "role": "global_generalist"
+    },
+    {
+      "date": "2012-09-25",
+      "hub": "第一财经",
+      "title": "QFII获批投资额度突破300亿美元",
+      "url": "https://www.yicai.com/news/2107858.html",
+      "role": "china_generalist"
+    },
+    {
+      "date": "2012-11-27",
+      "hub": "Bloomberg",
+      "title": "China stocks below 2,000 as trading value hits 2008 low",
+      "role": "global_generalist"
+    }
+  ],
+  "clusters": [
+    {
+      "clusterId": "margin-financing-refinancing-realized-flow",
+      "routeCandidate": "market_structure_v2",
+      "association": "Transfer-financing rules expanded broker funding for margin finance; unlike a mere authorization event, the system showed rapid actual borrowing and margin-balance growth within ten trading days. Map brokers with already-material margin-financing income/share.",
+      "systemFlowState": "realized_and_accelerating",
+      "status": "high_priority_route_test"
+    },
+    {
+      "clusterId": "qfii-quota-expansion",
+      "routeCandidate": "negative_control",
+      "association": "The QFII ceiling was raised sharply, but quota authorization did not mechanically equal immediate capital deployment or company earnings. Treat early price reaction as a negative control until actual quota usage/flow becomes material.",
+      "systemFlowState": "authorized_not_realized_at_initial_event",
+      "status": "negative_control"
+    },
+    {
+      "clusterId": "broad-monetary-easing",
+      "routeCandidate": "negative_control",
+      "association": "Rate cuts and easier liquidity affect many sectors with offsetting incidence; without a direct realized quantity and quantified company sensitivity, this is not a market-structure selection.",
+      "systemFlowState": "conflicted",
+      "status": "no_selection"
+    }
+  ],
+  "denominator": {
+    "hubItemCount": 11,
+    "associationClusterCount": 3
+  },
+  "guardrails": [
+    "V2 definition is unchanged from preregistration.",
+    "No 2013 company results or later price outcomes are used before freeze.",
+    "Price momentum itself is not system-flow evidence.",
+    "QFII authorization is not treated as realized usage."
+  ]
+}
