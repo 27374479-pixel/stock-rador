@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "runId": "2026-09-27-forward-hubfirst-v3.2-001",
+  "clusterId": "aidc-delivery-power-bottleneck",
+  "stage": "forward_company_mapping_pre_price_decision",
+  "cutoffDate": "2026-09-27",
+  "futureOutcomeDataViewed": false,
+  "hubTrigger": [
+    {
+      "date": "2026-09-22",
+      "source": "Reuters",
+      "claim": "Alibaba announced a new AI chip/model push and a >20GW 2032 Alibaba Cloud data-center capacity target while describing AI demand as exceptionally robust and supply-constrained."
+    },
+    {
+      "date": "2026-09-21",
+      "source": "第一财经",
+      "claim": "Domestic AIDC delivery cycles are compressing from years toward months, shifting bottleneck pressure into power, cooling and park-level electricity systems."
+    }
+  ],
+  "candidates": [
+    {
+      "ticker": "002364.SZ",
+      "name": "中恒电气",
+      "expressionType": "direct_data_center_power",
+      "evidence": [
+        "2026H1 data-center power revenue RMB808m, +98.48% YoY.",
+        "HVDC and Panama products are already in multi-year batch delivery; 800V is moving toward industrialization."
+      ],
+      "eventBridge": "clear_existing_conversion",
+      "freshness": "continuation_plus_new_demand_magnitude",
+      "risk": [
+        "gross-margin pressure",
+        "new hub event does not prove incremental Alibaba-specific orders"
+      ]
+    },
+    {
+      "ticker": "002851.SZ",
+      "name": "麦格米特",
+      "expressionType": "AIDC_server_and_system_power",
+      "evidence": [
+        "2026H1 data-center/network power growth was significant; customized data-center/server power projects moved from development into delivery and have been batch-delivered since 2026Q1.",
+        "Company says it is an Nvidia-recommended data-center power provider and has begun batch delivery to some North American large customers."
+      ],
+      "eventBridge": "clear_existing_conversion",
+      "freshness": "continuation_plus_architecture_upgrade",
+      "risk": [
+        "diversified revenue base",
+        "large upfront R&D/capex",
+        "reported net profit includes material non-recurring gains"
+      ]
+    },
+    {
+      "ticker": "002335.SZ",
+      "name": "科华数据",
+      "expressionType": "data_center_infrastructure_solution",
+      "evidence": [
+        "2026H1 report shows mass-market 100kW UPS modules and megawatt-class UPS/data-center infrastructure products designed for AI scenarios."
+      ],
+      "eventBridge": "credible_but_less_quantified",
+      "freshness": "continuation",
+      "risk": [
+        "current forward pack lacks equally clean new order/revenue delta"
+      ]
+    }
+  ],
+  "mappingConclusion": "Two direct main-board expressions have realized AIDC revenue/delivery conversion. The current hub event is primarily a magnitude/duration update, not yet company-specific fresh orders, so price absorption and expectation burden are decisive."
+}
