@@ -1,0 +1,83 @@
+{
+  "schemaVersion":"1.0",
+  "runId":"2020-hubfirst-associative-v3.1-006",
+  "clusterId":"trade-reacceleration-container-bottleneck",
+  "stage":"earliest_evidence_closed_company_mapping_pre_outcome",
+  "mappingCutoff":"2020-10-30",
+  "futureStockOutcomeViewedForThisMapping":false,
+  "discoveryChain":[
+    {
+      "date":"2020-10-04",
+      "layer":"generalist_hub",
+      "source":"First Financial / Yicai",
+      "claim":"Chinese export orders were unusually strong, prompting the associative question of where physical capacity constraints would emerge."
+    },
+    {
+      "date":"2020-10-13",
+      "layer":"generalist_hub",
+      "source":"Bloomberg",
+      "url":"https://www.bloomberg.com/news/articles/2020-10-13/china-exports-up-imports-surge-in-september-on-global-recovery",
+      "claim":"China exports and imports both accelerated in September."
+    },
+    {
+      "date":"2020-09-16",
+      "layer":"specialist_validation_retrieved_after_hub_detection",
+      "source":"S&P Global Platts",
+      "url":"https://www.spglobal.com/commodity-insights/en/news-research/latest-news/shipping/091620-container-shortage-in-asia-may-keep-trans-pacific-rates-elevated-in-october",
+      "claim":"Container shortage in Asia was already severe and expected to persist; trans-Pacific demand exceeded supply."
+    },
+    {
+      "date":"2020-10-06",
+      "layer":"specialist_validation",
+      "source":"Flexport",
+      "url":"https://www.flexport.com/global-logistics-update/freight-market-update-october-6-2020/",
+      "claim":"Multiple Chinese ports/origins had specific 40GP/40HQ equipment shortages and tight space."
+    },
+    {
+      "date":"2020-10-14",
+      "layer":"independent_industry_validation",
+      "source":"South China Morning Post",
+      "url":"https://www.scmp.com/economy/global-economy/article/3105336/global-container-shortage-drives-spike-shipping-rates-brings",
+      "claim":"Chinese container factories were running near full capacity; manufacturing capacity constrained Q4 orders, with deliveries extending into early 2021."
+    },
+    {
+      "date":"2020-10-27",
+      "layer":"company_conversion",
+      "source":"CIMC",
+      "url":"https://www.cimc.com/en/index.php?a=show&c=index&catid=17&id=2074&m=content",
+      "claim":"CIMC Q3 revenue increased about 27.5% YoY and quarterly net profit increased more than twenty-fold; first-nine-month earnings returned to growth."
+    }
+  ],
+  "candidate":{
+    "ticker":"000039.SZ",
+    "name":"中集集团",
+    "expressionType":"second_order_container_equipment_bottleneck",
+    "eventIncrementalEarningsBridge":"credible_positive",
+    "profitPoolState":"expanding_due_to_volume_price_and_utilization",
+    "absoluteVsRelativeCatalyst":"absolute_and_relative",
+    "directExposure":"clear",
+    "reasoning":[
+      "The hub did not name CIMC as the investment conclusion; CIMC is obtained by following the export surge into the physical container bottleneck.",
+      "Physical evidence showed equipment scarcity and constrained manufacturing capacity before the company earnings confirmation.",
+      "Q3 company results supplied contemporaneous operating conversion rather than relying on a later annual report.",
+      "Compared with the obvious carrier expression, CIMC is one step upstream but has direct exposure to the scarce asset being ordered."
+    ],
+    "controls":[
+      {"ticker":"601919.SH","name":"中远海控","role":"obvious_first_order_carrier_expression"},
+      {"ticker":"300124.SZ","name":"汇川技术","role":"third_order_automation_association"}
+    ]
+  },
+  "priceAbsorption":{
+    "cimc20dExcess":0.2184438649877285,
+    "cimc60dExcess":0.29427193682408603,
+    "carrier60dExcess":0.4317475944430753,
+    "automation60dExcess":0.2680151133896562,
+    "conclusion":"high_but_event_earnings_just_confirmed"
+  },
+  "riskState":{
+    "cyclePeakRisk":"material",
+    "continuationRisk":"material",
+    "containerBusinessPurity":"moderate_due_to_diversified_group",
+    "eventPersistence":"credible_not_certain"
+  }
+}
