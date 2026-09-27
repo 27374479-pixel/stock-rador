@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Profit-Pool Quality Candidate V2",
+  "status": "postoutcome_hypothesis_not_adopted",
+  "derivesFrom": "Cross-holdout contrast between 2017 Xianhe and 2019 Hudian; must not be validated on those cases.",
+  "purpose": "Test whether the quality of a newly material profit pool is better described by operating conversion, repeatability and cash economics than by nominal order/revenue size alone.",
+  "dimensions": [
+    {
+      "name": "operating_conversion",
+      "question": "Before selection, is the new pool already visible in reported recurring revenue, gross margin, operating profit or cash flow rather than only an announced contract or TAM?",
+      "states": [
+        "reported_recurring",
+        "orders_with_unit_economics",
+        "single_contract_only",
+        "narrative_only",
+        "unclear"
+      ]
+    },
+    {
+      "name": "repeatability_duration",
+      "question": "Is demand likely to recur across customers/periods or is it one-off/lumpy?",
+      "states": [
+        "multi_year_recurring",
+        "repeatable_project_pipeline",
+        "single_large_project",
+        "cyclical_spike",
+        "unclear"
+      ]
+    },
+    {
+      "name": "cash_economics",
+      "question": "Are margin, working-capital, collection and capex requirements good enough for the new revenue to become value?",
+      "states": [
+        "strong",
+        "acceptable",
+        "weak",
+        "unresolved"
+      ]
+    },
+    {
+      "name": "consolidated_materiality",
+      "question": "Can the pool become large enough to change consolidated earnings sensitivity without being offset by weaker legacy segments?",
+      "states": [
+        "clear",
+        "credible",
+        "diluted",
+        "unclear"
+      ]
+    },
+    {
+      "name": "expectation_absorption",
+      "question": "How much of the pool is already embedded in price and consensus?",
+      "states": [
+        "low",
+        "moderate",
+        "tight",
+        "extreme"
+      ]
+    }
+  ],
+  "rules": [
+    "No dimension is a hard gate.",
+    "Do not infer states from later returns.",
+    "Single-contract size alone cannot establish high profit-pool quality.",
+    "A known macro/cycle opportunity remains eligible if direct economics and expectation asymmetry are attractive.",
+    "No same-window threshold tuning."
+  ],
+  "validationRequirement": "Test unchanged on an untouched historical window plus prospective samples before any production adoption."
+}
