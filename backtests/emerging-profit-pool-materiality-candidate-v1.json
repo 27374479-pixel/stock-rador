@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0",
+  "title": "Emerging Profit-Pool Materiality Candidate",
+  "status": "postoutcome_hypothesis_not_adopted",
+  "motivatedByRuns": [
+    "2020-hubfirst-associative-v3.1-006",
+    "2023-hubfirst-causal-neighborhood-v3.2-001"
+  ],
+  "purpose": "Test whether hub-first opportunities are higher quality when the associated economic change creates a newly material profit pool inside a company, rather than merely confirming an already-known sector or cycle.",
+  "definition": {
+    "knownCycleGettingBetter": "The company already participates in a widely followed profit pool and the new hub item primarily confirms magnitude, persistence, or another good datapoint.",
+    "emergingProfitPoolBecomingMaterial": "A previously small, under-modeled, or non-core earnings stream is accelerating enough that its contribution to consolidated earnings, cash flow, or valuation relevance may change materially."
+  },
+  "preOutcomeQuestions": [
+    "Was the profit stream already a central sell-side/company narrative before the hub event?",
+    "Was the segment/product/customer contribution previously small or non-core relative to consolidated earnings?",
+    "Does the new event increase the segment's likely contribution enough to alter consolidated earnings sensitivity?",
+    "Is there contemporaneous company evidence of order/revenue/margin conversion?",
+    "Is the consolidated valuation/price still largely anchored to the old business mix rather than the emerging profit pool?"
+  ],
+  "labels": [
+    "known_cycle",
+    "emerging_pool",
+    "mixed",
+    "unclear"
+  ],
+  "rules": [
+    "This label is a research/ranking feature only; it is not a hard gate.",
+    "Do not infer materiality from later stock returns.",
+    "Do not promote an emerging pool without direct company evidence.",
+    "Do not reject a known cycle automatically; compare quality on untouched samples.",
+    "No same-window threshold tuning."
+  ],
+  "validationPlan": {
+    "primaryHoldout": "2017Q1-Q3",
+    "reason": "2017Q4 has prior repository experiments; Q1-Q3 are kept separate as the external holdout.",
+    "successMetrics": [
+      "60d_excess_win_rate_by_label",
+      "median_60d_excess_by_label",
+      "selection_frequency",
+      "false_positive_rate"
+    ],
+    "adoptionRequirement": "Replicate on at least two untouched windows before changing the production Skill."
+  }
+}
