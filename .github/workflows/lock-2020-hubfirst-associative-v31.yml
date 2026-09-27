@@ -1,0 +1,58 @@
+name: lock-2020-hubfirst-associative-v31
+
+on:
+  push:
+    branches:
+      - ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+    paths:
+      - .github/workflows/lock-2020-hubfirst-associative-v31.yml
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Build immutable lock
+        run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const run='backtests/runs/2020-hubfirst-associative-v3.1-001';
+          const decision=JSON.parse(fs.readFileSync(run+'/underwriter-decisions.json','utf8'));
+          const paths=[
+            'backtests/hub-first-associative-discovery-protocol-v3.1.json',
+            run+'/discovery-pack.json',
+            run+'/mapping-trade-shipping-container.json',
+            run+'/mapping-drug-procurement.json',
+            run+'/mapping-property-deleveraging.json',
+            run+'/regime-config.json',
+            run+'/regime/drug-procurement-20200904.snapshot.json',
+            run+'/regime/property-deleveraging-20201009.snapshot.json',
+            run+'/underwriter-decisions.json'
+          ];
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          const lock={
+            schemaVersion:'1.0',runId:decision.runId,lockedAt:new Date().toISOString(),
+            validationClass:decision.validationClass,candidateCount:decision.frozenSelections.length,
+            selectionDigest:crypto.createHash('sha256').update(JSON.stringify(decision.frozenSelections)).digest('hex'),
+            files:paths.map(p=>({path:p,sha256:sha(p)}))
+          };
+          fs.writeFileSync(run+'/lock.json',JSON.stringify(lock,null,2)+'\n');
+          NODE
+      - name: Commit lock
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2020-hubfirst-associative-v3.1-001/lock.json
+          git commit -m "backtest: lock 2020 hub-first associative v3.1"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
