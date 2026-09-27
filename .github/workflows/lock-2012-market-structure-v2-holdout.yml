@@ -1,0 +1,42 @@
+name: lock-2012-market-structure-v2-holdout
+on:
+  push:
+    branches: [ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926]
+    paths: [.github/workflows/lock-2012-market-structure-v2-holdout.yml]
+permissions: {contents: write}
+jobs:
+  lock:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926, fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: '24'}
+      - run: |
+          node - <<'NODE'
+          const fs=require('node:fs'),crypto=require('node:crypto');
+          const run='backtests/runs/2012h2-market-structure-v2-holdout-001';
+          if(fs.existsSync(run+'/outcome.json'))throw Error('outcome exists before lock');
+          const d=JSON.parse(fs.readFileSync(run+'/underwriter-decisions.json','utf8'));
+          const paths=[
+           'backtests/market-structure-rerating-route-candidate-v2.json',run+'/discovery-pack.json',run+'/mapping-margin-refinancing.json',
+           run+'/mapping-qfii-negative-control.json',run+'/regime-config.json',
+           run+'/regime/margin-refinancing-20120914.snapshot.json',run+'/regime/qfii-negative-20120406.snapshot.json',
+           run+'/underwriter-decisions.json',run+'/evaluation-plan.json'];
+          const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
+          for(const p of paths)if(!fs.existsSync(p))throw Error('missing '+p);
+          const o={schemaVersion:'1.0',runId:d.runId,lockedAt:new Date().toISOString(),validationClass:d.validationClass,
+           outcomeAbsentAtLock:true,existing2012OutcomeFilesReadBeforeLock:false,
+           selectionDigest:crypto.createHash('sha256').update(JSON.stringify(d.frozenSelections)).digest('hex'),
+           shadowDigest:crypto.createHash('sha256').update(JSON.stringify(d.shadowControls)).digest('hex'),
+           files:paths.map(p=>({path:p,sha256:sha(p)}))};
+          fs.writeFileSync(run+'/lock.json',JSON.stringify(o,null,2)+'\n');
+          NODE
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backtests/runs/2012h2-market-structure-v2-holdout-001/lock.json
+          git commit -m "backtest: lock 2012 market-structure V2 holdout"
+          git pull --rebase origin ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
+          git push origin HEAD:ai-skill-v2.0-2024-2025-weekly-diagnostic-20260926
